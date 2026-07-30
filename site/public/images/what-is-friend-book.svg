@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" aria-hidden="true">
+  <defs>
+    <radialGradient id="wibg" cx="50%" cy="40%" r="70%"><stop offset="0%" stop-color="#F7F3EC"/><stop offset="100%" stop-color="#EDE6DA"/></radialGradient>
+    <radialGradient id="wiwash" cx="70%" cy="20%" r="45%"><stop offset="0%" stop-color="#E8D5D0" stop-opacity=".4"/><stop offset="100%" stop-color="#E8D5D0" stop-opacity="0"/></radialGradient>
+  </defs>
+  <rect width="640" height="720" rx="8" fill="url(#wibg)"/>
+  <rect width="640" height="720" rx="8" fill="url(#wiwash)"/>
+  <!-- open book -->
+  <g transform="translate(80 160)">
+    <path d="M0 80 C40 40 120 40 240 60 L240 420 C160 400 60 400 0 440 Z" fill="#FAF8F4" stroke="#DDD8CE" stroke-width="1.5"/>
+    <path d="M240 60 C360 40 440 40 480 80 L480 440 C420 400 320 400 240 420 Z" fill="#F3EFE8" stroke="#DDD8CE" stroke-width="1.5"/>
+    <line x1="60" y1="140" x2="200" y2="150" stroke="#DDD8CE"/>
+    <line x1="60" y1="180" x2="190" y2="190" stroke="#DDD8CE"/>
+    <line x1="60" y1="220" x2="180" y2="230" stroke="#DDD8CE"/>
+    <circle cx="360" cy="220" r="48" fill="#7A9E7E" opacity=".12"/>
+    <path d="M340 230 C355 200 375 200 390 230" fill="none" stroke="#7A9E7E" stroke-width="1.2" opacity=".45"/>
+  </g>
+  <g opacity=".4" fill="#7A9E7E">
+    <ellipse cx="520" cy="120" rx="12" ry="20" transform="rotate(30 520 120)"/>
+    <ellipse cx="545" cy="95" rx="10" ry="16" transform="rotate(10 545 95)"/>
+  </g>
+</svg>

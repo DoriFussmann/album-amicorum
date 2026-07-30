@@ -1,0 +1,48 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import Reveal from './Reveal.astro';
+import BookCard from './BookCard.astro';
+
+interface Props {
+  books: CollectionEntry<'books'>[];
+}
+
+const { books } = Astro.props;
+const offsets = ['none', 'up', 'down', 'up'] as const;
+---
+
+<section id="collection" aria-labelledby="collection-heading" class="section-space">
+  <div class="site-container">
+    <Reveal>
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <h2 id="collection-heading">The Collection</h2>
+        <p class="mt-4 text-ink">
+          Created with care — each Friend Book invites a different kind of wonder.
+        </p>
+      </div>
+    </Reveal>
+
+    {
+      books.length === 0 ? (
+        <p class="text-center text-ink-muted">Books are being bound. Please check back soon.</p>
+      ) : (
+        <ul class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+          {books.map((book, i) => (
+            <li>
+              <Reveal delay={i * 90}>
+                <BookCard
+                  title={book.data.title}
+                  tagline={book.data.tagline}
+                  price={book.data.price}
+                  cover={book.data.cover}
+                  interior={book.data.interior}
+                  offset={offsets[i % offsets.length]}
+                />
+              </Reveal>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>

@@ -1,7 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
-import { SITE_NAME, SITE_URL, SAME_AS } from '../config/site';
+import { SITE_NAME, SITE_URL, SITE_LOGO_PATH, SAME_AS } from '../config/site';
 import { absoluteUrl } from '../lib/url';
 import '@fontsource/cormorant-garamond/400.css';
 import '@fontsource/cormorant-garamond/600.css';
@@ -48,13 +48,16 @@ if (!title || !description) {
 const canonical = canonicalUrl || absoluteUrl(canonicalPath);
 const resolvedOgTitle = ogTitle || title;
 const resolvedOgDescription = ogDescription || description;
-const resolvedOgImage = ogImage || undefined;
+const defaultOgImage = absoluteUrl('/images/og-default.png');
+const resolvedOgImage = ogImage || defaultOgImage;
+const logoAbsolute = absoluteUrl(SITE_LOGO_PATH);
 
 const organizationLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
   name: SITE_NAME,
   url: SITE_URL,
+  logo: logoAbsolute,
   sameAs: SAME_AS,
 };
 
@@ -71,6 +74,10 @@ const allLd = [organizationLd, ...jsonLdBlocks.filter(Boolean)];
     <meta name="description" content={description} />
     <meta name="robots" content={robots} />
     <link rel="canonical" href={canonical} />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" href="/favicon-32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/favicon-192.png" sizes="192x192" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <link rel="alternate" type="application/rss+xml" title={`${SITE_NAME} RSS`} href={absoluteUrl('/rss.xml')} />
 
     <meta property="og:type" content="website" />
@@ -79,12 +86,12 @@ const allLd = [organizationLd, ...jsonLdBlocks.filter(Boolean)];
     <meta property="og:title" content={resolvedOgTitle} />
     <meta property="og:description" content={resolvedOgDescription} />
     <meta property="og:url" content={canonical} />
-    {resolvedOgImage && <meta property="og:image" content={resolvedOgImage} />}
+    <meta property="og:image" content={resolvedOgImage} />
 
     <meta name="twitter:card" content={twitterCard} />
     <meta name="twitter:title" content={resolvedOgTitle} />
     <meta name="twitter:description" content={resolvedOgDescription} />
-    {resolvedOgImage && <meta name="twitter:image" content={resolvedOgImage} />}
+    <meta name="twitter:image" content={resolvedOgImage} />
 
     {allLd.map((block) => (
       <script type="application/ld+json" set:html={JSON.stringify(block)} />
@@ -96,5 +103,32 @@ const allLd = [organizationLd, ...jsonLdBlocks.filter(Boolean)];
       <slot />
     </main>
     <Footer />
+    <script>
+      function initReveal() {
+        const nodes = document.querySelectorAll('[data-reveal]');
+        if (!nodes.length) return;
+
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+          nodes.forEach((node) => node.classList.add('is-visible'));
+          return;
+        }
+
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            });
+          },
+          { threshold: 0.16, rootMargin: '0px 0px -8% 0px' },
+        );
+
+        nodes.forEach((node) => observer.observe(node));
+      }
+
+      initReveal();
+      document.addEventListener('astro:page-load', initReveal);
+    </script>
   </body>
 </html>

@@ -9,7 +9,7 @@ import Sources from '../components/Sources.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import { Image } from 'astro:assets';
 import { absoluteUrl } from '../lib/url';
-import { SITE_NAME, SITE_URL } from '../config/site';
+import { SITE_NAME, SITE_URL, SITE_LOGO_PATH } from '../config/site';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -65,6 +65,10 @@ const articleLd = {
     '@type': 'Organization',
     name: SITE_NAME,
     url: SITE_URL,
+    logo: {
+      '@type': 'ImageObject',
+      url: absoluteUrl(SITE_LOGO_PATH),
+    },
   },
 };
 

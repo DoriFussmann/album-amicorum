@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" aria-hidden="true">
+  <defs>
+    <radialGradient id="mbg" cx="50%" cy="35%" r="75%"><stop offset="0%" stop-color="#F3EFE8"/><stop offset="100%" stop-color="#E8D5D0" stop-opacity=".5"/></radialGradient>
+  </defs>
+  <rect width="400" height="520" rx="8" fill="url(#mbg)"/>
+  <g opacity=".5">
+    <ellipse cx="120" cy="300" rx="8" ry="22" fill="#B8963E" transform="rotate(-15 120 300)"/>
+    <ellipse cx="160" cy="320" rx="7" ry="20" fill="#7A9E7E" transform="rotate(10 160 320)"/>
+    <ellipse cx="210" cy="290" rx="9" ry="24" fill="#E8D5D0"/>
+    <ellipse cx="250" cy="330" rx="7" ry="18" fill="#8FA8A0" transform="rotate(-8 250 330)"/>
+    <ellipse cx="290" cy="305" rx="8" ry="21" fill="#B8963E" opacity=".7" transform="rotate(18 290 305)"/>
+    <path d="M120 340 C140 360 180 370 210 350 C240 370 280 360 290 340" fill="none" stroke="#7A9E7E" stroke-width="1"/>
+  </g>
+  <text x="200" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="22" fill="#3B3530">Meadow</text>
+</svg>

@@ -1,21 +1,29 @@
 ---
-import { SITE_NAME } from '../config/site';
+import Logo from './Logo.astro';
+
+const links = [
+  { href: '/#what-is', label: 'About' },
+  { href: '/#collection', label: 'Shop' },
+  { href: '/#story', label: 'Story' },
+  { href: '/#why-parents', label: 'For Parents' },
+];
 ---
 
-<header class="sticky top-0 z-40 border-b border-border/60 bg-canvas/90 backdrop-blur-sm">
+<header class="sticky top-0 z-40 border-b border-border/40 bg-canvas/80 backdrop-blur-md">
   <div class="site-container">
     <nav class="flex min-h-16 items-center justify-between gap-6 py-2" aria-label="Primary">
-      <a
-        href="/"
-        class="font-display text-2xl font-semibold tracking-wide text-ink-heading no-underline transition-colors duration-gentle hover:text-primary hover:no-underline focus-ring rounded-sm"
-      >
-        {SITE_NAME}
-      </a>
+      <Logo size="sm" withWordmark={true} />
 
       <ul class="hidden items-center gap-1 md:flex">
-        <li><a class="nav-link" href="/">Home</a></li>
-        <li><a class="nav-link" href="/articles/">Articles</a></li>
-        <li><a class="nav-link" href="/team/">Team</a></li>
+        {
+          links.map((link) => (
+            <li>
+              <a class="nav-link" href={link.href}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
 
       <details class="group relative md:hidden">
@@ -34,15 +42,15 @@ import { SITE_NAME } from '../config/site';
         <ul
           class="absolute right-0 mt-2 min-w-[12rem] rounded-soft border border-border bg-surface p-2 shadow-soft"
         >
-          <li>
-            <a class="nav-link block w-full" href="/">Home</a>
-          </li>
-          <li>
-            <a class="nav-link block w-full" href="/articles/">Articles</a>
-          </li>
-          <li>
-            <a class="nav-link block w-full" href="/team/">Team</a>
-          </li>
+          {
+            links.map((link) => (
+              <li>
+                <a class="nav-link block w-full" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </details>
     </nav>

@@ -1,0 +1,59 @@
+---
+import Reveal from './Reveal.astro';
+
+const quotes = [
+  {
+    quote:
+      'Our daughter asks for her Friend Book the way other children ask for a story. The pages already feel like home.',
+    author: 'Mara L.',
+    tone: 'bg-blush/40',
+  },
+  {
+    quote:
+      'Helping friendships grow — that is exactly what happened when her class filled a Meadow book together.',
+    author: 'James & Priya',
+    tone: 'bg-oatmeal/70',
+  },
+  {
+    quote:
+      'Made to be treasured. We keep it on the shelf beside her first picture books, and it belongs there.',
+    author: 'Elena V.',
+    tone: 'bg-primary-soft/15',
+  },
+];
+---
+
+<section id="testimonials" aria-labelledby="testimonials-heading" class="section-space">
+  <div class="site-container">
+    <Reveal>
+      <div class="mx-auto mb-14 max-w-2xl text-center">
+        <h2 id="testimonials-heading">From families who keep them</h2>
+        <p class="mt-4 text-ink">Quiet words from parents who chose the slower keepsake.</p>
+      </div>
+    </Reveal>
+
+    <ul class="grid gap-8 md:grid-cols-3">
+      {
+        quotes.map((item, i) => (
+          <li>
+            <Reveal delay={i * 100}>
+              <blockquote
+                class:list={[
+                  'flex h-full flex-col justify-between rounded-soft px-7 py-8',
+                  item.tone,
+                ]}
+              >
+                <p class="font-display text-xl leading-[1.4] text-ink-heading md:text-2xl">
+                  “{item.quote}”
+                </p>
+                <footer class="mt-8 text-sm font-semibold tracking-wide text-ink">
+                  — {item.author}
+                </footer>
+              </blockquote>
+            </Reveal>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</section>

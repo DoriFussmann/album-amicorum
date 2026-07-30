@@ -1,6 +1,6 @@
-# Site Name
+# Album Amicorum
 
-> Site Name content index for AI systems and answer engines. Lists published articles only.
+> Album Amicorum content index for AI systems and answer engines. Lists published articles only.
 
 ## Articles
 

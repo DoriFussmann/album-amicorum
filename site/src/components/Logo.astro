@@ -1,0 +1,77 @@
+---
+import { SITE_NAME } from '../config/site';
+
+interface Props {
+  /** Visual size of the mark */
+  size?: 'sm' | 'md' | 'lg';
+  /** Show the site name beside (or below) the mark */
+  withWordmark?: boolean;
+  /** Stack mark above wordmark (hero) */
+  stacked?: boolean;
+  /** Link to home (default true) */
+  link?: boolean;
+  class?: string;
+}
+
+const {
+  size = 'sm',
+  withWordmark = true,
+  stacked = false,
+  link = true,
+  class: className = '',
+} = Astro.props;
+
+const markClass = {
+  sm: 'h-8 w-8 md:h-9 md:w-9',
+  md: 'h-14 w-14',
+  lg: 'h-24 w-24 md:h-32 md:w-32',
+}[size];
+
+const wordmarkClass = {
+  sm: 'text-xl md:text-2xl',
+  md: 'text-3xl',
+  lg: 'text-3xl md:text-4xl',
+}[size];
+
+const shellClass = [
+  'inline-flex no-underline transition-opacity duration-gentle hover:opacity-90 hover:no-underline focus-ring rounded-sm',
+  stacked ? 'flex-col items-start gap-4' : 'items-center gap-2.5 md:gap-3',
+  className,
+].filter(Boolean).join(' ');
+---
+
+{
+  link ? (
+    <a href="/" class={shellClass} aria-label={SITE_NAME}>
+      <img
+        src="/images/logo.png"
+        alt=""
+        width="745"
+        height="768"
+        class={`shrink-0 object-contain ${markClass}`}
+        decoding="async"
+      />
+      {withWordmark && (
+        <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>
+          {SITE_NAME}
+        </span>
+      )}
+    </a>
+  ) : (
+    <span class={shellClass} role="img" aria-label={SITE_NAME}>
+      <img
+        src="/images/logo.png"
+        alt=""
+        width="745"
+        height="768"
+        class={`shrink-0 object-contain ${markClass}`}
+        decoding="async"
+      />
+      {withWordmark && (
+        <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>
+          {SITE_NAME}
+        </span>
+      )}
+    </span>
+  )
+}

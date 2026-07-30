@@ -69,4 +69,17 @@ const services = defineCollection({
   }),
 });
 
-export const collections = { articles, team, services };
+const books = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/content/books' }),
+  schema: z.object({
+    title: z.string(),
+    slug: z.string(),
+    tagline: z.string(),
+    price: z.string(),
+    cover: z.string(),
+    interior: z.string(),
+    order: z.number(),
+  }),
+});
+
+export const collections = { articles, team, services, books };

@@ -1,0 +1,13 @@
+---
+interface Props {
+  class?: string;
+  delay?: number;
+}
+
+const { class: className = '', delay = 0 } = Astro.props;
+const delayMs = Math.max(0, delay);
+---
+
+<div class:list={['reveal', className]} style={`--reveal-delay: ${delayMs}ms`} data-reveal>
+  <slot />
+</div>

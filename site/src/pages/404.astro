@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
 import { SITE_NAME } from '../config/site';
 ---
 
@@ -11,15 +12,9 @@ import { SITE_NAME } from '../config/site';
 >
   <section aria-labelledby="not-found-heading" class="section-space">
     <div class="site-container mx-auto max-w-content text-center">
-      <img
-        src="/images/botanical-sprig.svg"
-        alt=""
-        width="120"
-        height="80"
-        class="mx-auto mb-8 w-28 opacity-70"
-        loading="lazy"
-        decoding="async"
-      />
+      <div class="mb-8 flex justify-center">
+        <Logo size="md" withWordmark={false} link={false} />
+      </div>
       <h1 id="not-found-heading">Page not found</h1>
       <p class="mt-4 text-ink-muted">The page you requested does not exist.</p>
       <nav aria-label="Recovery" class="mt-10">

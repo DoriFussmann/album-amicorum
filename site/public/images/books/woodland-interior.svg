@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" aria-hidden="true">
+  <rect width="400" height="520" rx="8" fill="#FAF8F4"/>
+  <rect x="24" y="24" width="352" height="472" rx="4" fill="#F7F3EC" stroke="#DDD8CE"/>
+  <text x="200" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#3B3530">A page for a friend</text>
+  <line x1="60" y1="140" x2="340" y2="140" stroke="#DDD8CE"/>
+  <line x1="60" y1="180" x2="340" y2="180" stroke="#DDD8CE"/>
+  <line x1="60" y1="220" x2="300" y2="220" stroke="#DDD8CE"/>
+  <line x1="60" y1="260" x2="340" y2="260" stroke="#DDD8CE"/>
+  <line x1="60" y1="300" x2="280" y2="300" stroke="#DDD8CE"/>
+  <circle cx="200" cy="390" r="48" fill="#7A9E7E" opacity=".12"/>
+  <path d="M175 400 C190 360 210 360 225 400" fill="none" stroke="#7A9E7E" stroke-width="1.2" opacity=".5"/>
+</svg>

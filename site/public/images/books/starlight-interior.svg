@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" aria-hidden="true">
+  <rect width="400" height="520" rx="8" fill="#FAF8F4"/>
+  <rect x="24" y="24" width="352" height="472" rx="4" fill="#F7F3EC" stroke="#DDD8CE"/>
+  <text x="200" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#3B3530">Wish upon a friend</text>
+  <line x1="60" y1="150" x2="340" y2="150" stroke="#DDD8CE"/>
+  <line x1="60" y1="190" x2="340" y2="190" stroke="#DDD8CE"/>
+  <line x1="60" y1="230" x2="300" y2="230" stroke="#DDD8CE"/>
+  <circle cx="200" cy="360" r="40" fill="#8A9BA8" opacity=".12"/>
+  <circle cx="185" cy="350" r="2" fill="#B8963E" opacity=".6"/>
+  <circle cx="215" cy="365" r="1.5" fill="#B8963E" opacity=".5"/>
+</svg>

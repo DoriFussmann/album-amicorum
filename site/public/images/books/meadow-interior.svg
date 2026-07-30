@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 520" aria-hidden="true">
+  <rect width="400" height="520" rx="8" fill="#FAF8F4"/>
+  <rect x="24" y="24" width="352" height="472" rx="4" fill="#F7F3EC" stroke="#DDD8CE"/>
+  <text x="200" y="90" text-anchor="middle" font-family="Georgia, serif" font-size="20" fill="#3B3530">Draw a memory</text>
+  <rect x="70" y="130" width="260" height="180" rx="6" fill="#EDE6DA" opacity=".6"/>
+  <line x1="60" y1="350" x2="340" y2="350" stroke="#DDD8CE"/>
+  <line x1="60" y1="390" x2="320" y2="390" stroke="#DDD8CE"/>
+  <line x1="60" y1="430" x2="300" y2="430" stroke="#DDD8CE"/>
+</svg>

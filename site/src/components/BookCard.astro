@@ -1,0 +1,45 @@
+---
+interface Props {
+  title: string;
+  tagline: string;
+  price: string;
+  cover: string;
+  interior: string;
+  offset?: 'up' | 'down' | 'none';
+}
+
+const { title, tagline, price, cover, interior, offset = 'none' } = Astro.props;
+
+const offsetClass =
+  offset === 'up' ? 'md:-translate-y-6' : offset === 'down' ? 'md:translate-y-8' : '';
+---
+
+<article class:list={['book-card group', offsetClass]}>
+  <div class="media-warm aspect-[400/520] overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
+    <div class="relative h-full w-full">
+      <img
+        src={cover}
+        alt=""
+        width="400"
+        height="520"
+        class="absolute inset-0 h-full w-full object-cover transition-opacity duration-500 ease-out group-hover:opacity-0"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        src={interior}
+        alt=""
+        width="400"
+        height="520"
+        class="absolute inset-0 h-full w-full object-cover opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </div>
+  <div class="mt-5">
+    <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
+    <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
+    <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
+  </div>
+</article>

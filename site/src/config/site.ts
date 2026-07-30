@@ -1,6 +1,6 @@
-// TEMPLATE: replace these three values before deploying a real site.
 export const SITE_URL = "https://example.com";
-export const SITE_NAME = "Site Name";
+export const SITE_NAME = "Album Amicorum";
+export const SITE_LOGO_PATH = "/images/logo.png";
 export const SAME_AS: string[] = [];
 
 /** Hosts that must never appear in externalLinks (template placeholder + www). */

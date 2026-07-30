@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 720" aria-hidden="true">
+  <defs>
+    <radialGradient id="cebg" cx="50%" cy="30%" r="75%"><stop offset="0%" stop-color="#F7F3EC"/><stop offset="100%" stop-color="#E8D5D0" stop-opacity=".35"/></radialGradient>
+  </defs>
+  <rect width="640" height="720" rx="8" fill="url(#cebg)"/>
+  <!-- soft figures exchanging a book  abstracted, non-literal -->
+  <g transform="translate(100 220)">
+    <ellipse cx="80" cy="60" rx="36" ry="40" fill="#E8D5D0" opacity=".85"/>
+    <path d="M40 110 C50 180 110 190 120 120" fill="#8FA8A0" opacity=".45"/>
+    <ellipse cx="320" cy="70" rx="36" ry="40" fill="#D8CFC0" opacity=".9"/>
+    <path d="M280 120 C290 190 350 195 360 125" fill="#7A9E7E" opacity=".4"/>
+    <!-- book between them -->
+    <rect x="160" y="140" width="100" height="70" rx="4" fill="#F3EFE8" stroke="#B8963E" stroke-width="1.5" opacity=".9"/>
+    <line x1="210" y1="140" x2="210" y2="210" stroke="#DDD8CE"/>
+    <path d="M120 160 L160 165" stroke="#5A5248" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+    <path d="M260 165 L300 160" stroke="#5A5248" stroke-width="2" stroke-linecap="round" opacity=".25"/>
+  </g>
+  <g opacity=".35" fill="#7A9E7E">
+    <ellipse cx="480" cy="520" rx="10" ry="16" transform="rotate(-20 480 520)"/>
+    <ellipse cx="510" cy="500" rx="9" ry="15" transform="rotate(15 510 500)"/>
+    <path d="M480 540 C500 560 530 555 540 530" fill="none" stroke="#7A9E7E" stroke-width="1"/>
+  </g>
+</svg>

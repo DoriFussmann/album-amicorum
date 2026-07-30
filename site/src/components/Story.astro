@@ -1,0 +1,40 @@
+---
+import Reveal from './Reveal.astro';
+---
+
+<section id="story" aria-labelledby="story-heading" class="section-space bg-surface/50">
+  <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <Reveal class="order-2 lg:order-1">
+      <div class="media-warm">
+        <img
+          src="/images/vintage-album.svg"
+          alt="A vintage album amicorum resting in soft natural light"
+          width="720"
+          height="540"
+          class="h-auto w-full"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </Reveal>
+    <div class="order-1 lg:order-2">
+      <Reveal>
+        <h2 id="story-heading">The Album Amicorum Story</h2>
+      </Reveal>
+      <Reveal delay={90}>
+        <p class="mt-6 leading-[1.7]">
+          In the sixteenth century, traveling students carried an <em>album amicorum</em> —
+          a “book of friends” — filling its pages with inscriptions, coats of arms, verses, and
+          drawings from the people they met along the way.
+        </p>
+      </Reveal>
+      <Reveal delay={160}>
+        <p class="mt-4 leading-[1.7]">
+          We carry that tradition forward for modern childhood. Album Amicorum makes Friend Books
+          that help children gather the stories of those who love them — so friendship is kept by
+          hand, and childhood is not scrolled past.
+        </p>
+      </Reveal>
+    </div>
+  </div>
+</section>

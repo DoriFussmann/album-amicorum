@@ -1,0 +1,66 @@
+---
+import Reveal from './Reveal.astro';
+
+const features = [
+  {
+    title: 'Collaborative',
+    body: 'Friends, family, and teachers each leave a page — a drawing, a story, a memory only they could write.',
+  },
+  {
+    title: 'Handwritten',
+    body: 'Ink, pencil, and pressed flowers. No screens, no feeds — just the quiet mark of a real hand.',
+  },
+  {
+    title: 'A lifelong keepsake',
+    body: 'Made to be treasured on a shelf for years, then opened again when childhood feels far away.',
+  },
+];
+---
+
+<section id="what-is" aria-labelledby="what-is-heading" class="section-space">
+  <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
+    <div>
+      <Reveal>
+        <h2 id="what-is-heading">What is a Friend Book?</h2>
+      </Reveal>
+      <Reveal delay={80}>
+        <p class="mt-6 max-w-content leading-[1.7]">
+          A Friend Book is a handmade album where the people who shape a child’s world leave
+          something of themselves behind — words, sketches, photographs, and small treasures of
+          everyday friendship.
+        </p>
+      </Reveal>
+      <Reveal delay={140}>
+        <p class="mt-4 max-w-content leading-[1.7]">
+          Inspired by the album amicorum of centuries past, it helps children collect memories,
+          not just signatures.
+        </p>
+      </Reveal>
+      <ul class="mt-10 space-y-6">
+        {
+          features.map((feature, i) => (
+            <Reveal delay={180 + i * 70}>
+              <li class="border-t border-border pt-5">
+                <h3 class="text-lg md:text-xl">{feature.title}</h3>
+                <p class="mt-2 leading-[1.7] text-ink">{feature.body}</p>
+              </li>
+            </Reveal>
+          ))
+        }
+      </ul>
+    </div>
+    <Reveal delay={120} class="lg:justify-self-end">
+      <div class="media-warm max-w-md lg:max-w-none">
+        <img
+          src="/images/what-is-friend-book.svg"
+          alt="An open Friend Book with soft watercolor botanical accents"
+          width="640"
+          height="720"
+          class="h-auto w-full"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+    </Reveal>
+  </div>
+</section>

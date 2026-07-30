@@ -1,6 +1,14 @@
 ---
+import Logo from './Logo.astro';
 import { SITE_NAME } from '../config/site';
-import { absoluteUrl } from '../lib/url';
+
+const links = [
+  { href: '/#what-is', label: 'About' },
+  { href: '/#collection', label: 'Shop' },
+  { href: '/#story', label: 'Story' },
+  { href: '/#testimonials', label: 'Stories' },
+  { href: 'mailto:hello@albumamicorum.com', label: 'Contact' },
+];
 ---
 
 <footer class="mt-auto bg-surface">
@@ -18,15 +26,23 @@ import { absoluteUrl } from '../lib/url';
 
   <div class="site-container pb-12 pt-2">
     <div class="flex flex-col items-start justify-between gap-8 md:flex-row md:items-center">
-      <p class="font-display text-xl text-ink-heading">
-        &copy; {new Date().getFullYear()} {SITE_NAME}
-      </p>
+      <div class="flex flex-col gap-3">
+        <Logo size="sm" withWordmark={true} class="opacity-90" />
+        <p class="text-sm text-ink-muted">
+          &copy; {new Date().getFullYear()} {SITE_NAME}
+        </p>
+      </div>
       <nav aria-label="Footer">
         <ul class="flex flex-wrap gap-x-2 gap-y-1">
-          <li><a class="nav-link" href="/">Home</a></li>
-          <li><a class="nav-link" href="/articles/">Articles</a></li>
-          <li><a class="nav-link" href="/team/">Team</a></li>
-          <li><a class="nav-link" href={absoluteUrl('/rss.xml')}>RSS</a></li>
+          {
+            links.map((link) => (
+              <li>
+                <a class="nav-link" href={link.href}>
+                  {link.label}
+                </a>
+              </li>
+            ))
+          }
         </ul>
       </nav>
     </div>
