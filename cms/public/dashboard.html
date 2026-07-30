@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMS — Dashboard</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Articles</a>
+        <a href="/team.html">Team</a>
+        <a href="/dashboard.html">Dashboard</a>
+      </nav>
+      <h1>Article health dashboard</h1>
+    </header>
+
+    <p id="dash-error" role="alert" hidden></p>
+
+    <table>
+      <thead>
+        <tr>
+          <th>title</th>
+          <th>slug</th>
+          <th>draft</th>
+          <th>internalLinks</th>
+          <th>externalLinks</th>
+          <th>faqs</th>
+          <th>updatedDate</th>
+        </tr>
+      </thead>
+      <tbody id="dash-body">
+        <tr>
+          <td colspan="7">Loading…</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <script>
+      async function parseJson(res) {
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('application/json')) {
+          const text = await res.text();
+          throw new Error(text || `HTTP ${res.status}`);
+        }
+        return res.json();
+      }
+
+      (async () => {
+        const tbody = document.getElementById('dash-body');
+        const err = document.getElementById('dash-error');
+        try {
+          const res = await fetch('/articles');
+          const data = await parseJson(res);
+          if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load');
+          tbody.innerHTML = '';
+          if (!data.articles.length) {
+            tbody.innerHTML = '<tr><td colspan="7">No articles</td></tr>';
+            return;
+          }
+          for (const a of data.articles) {
+            const tr = document.createElement('tr');
+            const updated = a.updatedDate
+              ? new Date(a.updatedDate).toISOString().slice(0, 10)
+              : '';
+            tr.innerHTML = `
+              <td>${escapeHtml(a.title)}</td>
+              <td>${escapeHtml(a.slug)}</td>
+              <td>${a.draft ? 'true' : 'false'}</td>
+              <td>${(a.internalLinks || []).length}</td>
+              <td>${(a.externalLinks || []).length}</td>
+              <td>${(a.faqs || []).length}</td>
+              <td>${updated}</td>`;
+            tbody.appendChild(tr);
+          }
+        } catch (e) {
+          err.hidden = false;
+          err.textContent = e.message;
+          tbody.innerHTML = '';
+        }
+      })();
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,44 @@
+---
+interface LinkItem {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  links: LinkItem[];
+}
+
+const { links } = Astro.props;
+---
+
+<section aria-labelledby="related-heading" class="mx-auto mt-12 max-w-content">
+  <h2 id="related-heading" class="mb-6 text-2xl">Related</h2>
+  <ul class="space-y-3">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            class="group inline-flex min-h-11 items-center gap-2 text-primary no-underline hover:underline"
+          >
+            <svg
+              class="h-4 w-4 shrink-0 text-secondary transition-transform duration-gentle group-hover:translate-x-0.5"
+              viewBox="0 0 16 16"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 8h10M9 4l4 4-4 4"
+                stroke="currentColor"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

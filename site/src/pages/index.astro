@@ -1,0 +1,118 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../config/site';
+
+const services = (await getCollection('services')).sort((a, b) => a.data.order - b.data.order);
+
+const latestArticles = (await getCollection('articles'))
+  .filter((a) => !a.data.draft)
+  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
+  .slice(0, 5);
+---
+
+<BaseLayout
+  title={`${SITE_NAME} — Home`}
+  description={`${SITE_NAME} publishes practical guides and reference articles. Browse services and the latest writing.`}
+  canonicalPath="/"
+>
+  <section
+    aria-labelledby="home-intro"
+    class="relative isolate overflow-hidden border-b border-border/50"
+  >
+    <img
+      src="/images/hero-wash.svg"
+      alt=""
+      width="1440"
+      height="900"
+      class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div class="site-container flex min-h-[78vh] flex-col justify-center py-20 md:py-28">
+      <p
+        class="mb-6 font-display text-3xl font-semibold tracking-wide text-ink-heading md:text-4xl"
+      >
+        {SITE_NAME}
+      </p>
+      <h1 id="home-intro" class="max-w-3xl text-balance">
+        Childhood is too precious to scroll past.
+      </h1>
+      <p class="mt-6 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
+        Beautiful Friend Books inspired by a centuries-old tradition of preserving friendships,
+        memories, and childhood by hand.
+      </p>
+      <div class="mt-10 flex flex-wrap items-center gap-4">
+        <a class="btn btn-primary" href="#services-heading">Explore the Collection</a>
+        <a class="btn btn-secondary" href="/articles/">Browse Articles</a>
+      </div>
+      <img
+        src="/images/botanical-sprig.svg"
+        alt=""
+        width="120"
+        height="80"
+        class="mt-16 w-28 opacity-80 md:w-32"
+        loading="lazy"
+        decoding="async"
+      />
+    </div>
+  </section>
+
+  {
+    services.length > 0 && (
+      <section aria-labelledby="services-heading" class="section-space bg-surface/40">
+        <div class="site-container">
+          <div class="mx-auto mb-12 max-w-2xl text-center">
+            <h2 id="services-heading">Services</h2>
+            <p class="mt-4 text-ink-muted">
+              Thoughtful offerings shaped with the same care as a keepsake meant to last.
+            </p>
+          </div>
+          <ul class="grid gap-10 md:grid-cols-2 lg:grid-cols-3 md:gap-x-12 md:gap-y-14">
+            {services.map((service) => (
+              <li class="border-t border-border pt-6">
+                <h3 class="mb-3">{service.data.title}</h3>
+                <p class="leading-[1.7] text-ink">{service.data.summary}</p>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )
+  }
+
+  <section aria-labelledby="latest-heading" class="section-space">
+    <div class="site-container">
+      <div class="mb-12 flex flex-col items-start justify-between gap-4 md:flex-row md:items-end">
+        <h2 id="latest-heading">Latest Articles</h2>
+        <a
+          href="/articles/"
+          class="inline-flex min-h-11 items-center text-sm font-semibold text-primary no-underline hover:underline"
+        >
+          View all articles
+        </a>
+      </div>
+      {
+        latestArticles.length === 0 ? (
+          <p class="text-ink-muted">No articles published yet.</p>
+        ) : (
+          <ul class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {latestArticles.map((article) => (
+              <li>
+                <a
+                  href={`/articles/${article.data.slug}/`}
+                  class="card-link group block h-full rounded-soft border border-border/70 bg-canvas p-6 no-underline"
+                >
+                  <span class="font-display text-xl font-semibold text-ink-heading transition-colors duration-gentle group-hover:text-primary">
+                    {article.data.title}
+                  </span>
+                  <p class="mt-3 text-sm leading-[1.7] text-ink">{article.data.description}</p>
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

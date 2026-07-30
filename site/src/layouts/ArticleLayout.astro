@@ -1,0 +1,208 @@
+---
+import { getEntry, type CollectionEntry } from 'astro:content';
+import { getImage } from 'astro:assets';
+import BaseLayout from './BaseLayout.astro';
+import Breadcrumbs from '../components/Breadcrumbs.astro';
+import AuthorBio from '../components/AuthorBio.astro';
+import RelatedLinks from '../components/RelatedLinks.astro';
+import Sources from '../components/Sources.astro';
+import FaqBlock from '../components/FaqBlock.astro';
+import { Image } from 'astro:assets';
+import { absoluteUrl } from '../lib/url';
+import { SITE_NAME, SITE_URL } from '../config/site';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const { data } = article;
+const author = await getEntry('team', data.author);
+
+if (!author) {
+  throw new Error(
+    `Article "${data.slug}" references author "${data.author}" but no matching team entry exists.`
+  );
+}
+
+const updatedDate = data.updatedDate ?? data.date;
+const defaultCanonicalPath = `/articles/${data.slug}/`;
+const hasAbsoluteCanonical = Boolean(data.canonical && /^https?:\/\//i.test(data.canonical));
+
+const heroProcessed = await getImage({ src: data.image });
+const ogImageAbsolute = new URL(heroProcessed.src, SITE_URL).href;
+const resolvedOgImage = data.ogImage
+  ? /^https?:\/\//i.test(data.ogImage)
+    ? data.ogImage
+    : absoluteUrl(data.ogImage)
+  : ogImageAbsolute;
+
+const personLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: author.data.name,
+  jobTitle: author.data.role,
+  description: author.data.bio,
+  url: absoluteUrl(`/team/#${author.data.slug}`),
+  sameAs: author.data.sameAs ?? [],
+};
+
+const articleLd = {
+  '@context': 'https://schema.org',
+  '@type': data.schemaType || 'BlogPosting',
+  headline: data.title,
+  description: data.description,
+  datePublished: data.date.toISOString(),
+  dateModified: updatedDate.toISOString(),
+  author: {
+    '@type': 'Person',
+    name: author.data.name,
+    url: absoluteUrl(`/team/#${author.data.slug}`),
+  },
+  image: ogImageAbsolute,
+  mainEntityOfPage: absoluteUrl(`/articles/${data.slug}/`),
+  publisher: {
+    '@type': 'Organization',
+    name: SITE_NAME,
+    url: SITE_URL,
+  },
+};
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
+    { '@type': 'ListItem', position: 2, name: 'Articles', item: absoluteUrl('/articles/') },
+    {
+      '@type': 'ListItem',
+      position: 3,
+      name: data.title,
+      item: absoluteUrl(`/articles/${data.slug}/`),
+    },
+  ],
+};
+
+const faqLd =
+  data.faqs && data.faqs.length > 0
+    ? {
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: data.faqs.map((faq) => ({
+          '@type': 'Question',
+          name: faq.question,
+          acceptedAnswer: {
+            '@type': 'Answer',
+            text: faq.answer,
+          },
+        })),
+      }
+    : null;
+
+const jsonLd = [articleLd, personLd, breadcrumbLd, faqLd].filter(Boolean) as Record<
+  string,
+  unknown
+>[];
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<BaseLayout
+  title={data.title}
+  description={data.description}
+  canonicalPath={hasAbsoluteCanonical ? defaultCanonicalPath : data.canonical || defaultCanonicalPath}
+  canonicalUrl={hasAbsoluteCanonical ? data.canonical : undefined}
+  robots={data.robots}
+  ogTitle={data.ogTitle}
+  ogDescription={data.ogDescription}
+  ogImage={resolvedOgImage}
+  twitterCard={data.twitterCard}
+  locale={data.locale}
+  jsonLd={jsonLd}
+>
+  <article class="site-container section-space">
+    <Breadcrumbs
+      items={[
+        { label: 'Home', href: '/' },
+        { label: 'Articles', href: '/articles/' },
+        { label: data.title, href: `/articles/${data.slug}/` },
+      ]}
+    />
+
+    <header class="mx-auto mb-10 max-w-content text-center md:text-left">
+      <h1 class="mb-4">{data.title}</h1>
+      <p class="text-sm font-light text-ink-muted">
+        Published on {formatDate(data.date)} · Updated on {formatDate(updatedDate)}
+      </p>
+      <p class="mt-2 text-sm text-ink-muted">
+        <span>Category: {data.category}</span>
+        {
+          data.tags?.length > 0 && (
+            <span>
+              {' '}
+              · Tags: {data.tags.join(', ')}
+            </span>
+          )
+        }
+      </p>
+    </header>
+
+    <figure class="media-warm mx-auto mb-12 max-w-page overflow-hidden rounded-soft">
+      <Image
+        src={data.image}
+        alt={data.imageAlt}
+        width={1200}
+        height={630}
+        loading="eager"
+        class="h-auto w-full object-cover"
+      />
+    </figure>
+
+    <div class="prose-article">
+      <slot />
+    </div>
+
+    {
+      data.image2 && data.image2Alt && (
+        <figure class="media-warm mx-auto mt-12 max-w-content overflow-hidden rounded-soft">
+          <Image
+            src={data.image2}
+            alt={data.image2Alt}
+            width={1200}
+            height={800}
+            loading="lazy"
+            class="h-auto w-full object-cover"
+          />
+        </figure>
+      )
+    }
+
+    {
+      data.image3 && data.image3Alt && (
+        <figure class="media-warm mx-auto mt-8 max-w-content overflow-hidden rounded-soft">
+          <Image
+            src={data.image3}
+            alt={data.image3Alt}
+            width={1200}
+            height={800}
+            loading="lazy"
+            class="h-auto w-full object-cover"
+          />
+        </figure>
+      )
+    }
+
+    <AuthorBio author={author} />
+
+    {data.internalLinks && data.internalLinks.length > 0 && (
+      <RelatedLinks links={data.internalLinks} />
+    )}
+
+    {data.externalLinks && data.externalLinks.length > 0 && (
+      <Sources links={data.externalLinks} />
+    )}
+
+    {data.faqs && data.faqs.length > 0 && <FaqBlock faqs={data.faqs} />}
+  </article>
+</BaseLayout>

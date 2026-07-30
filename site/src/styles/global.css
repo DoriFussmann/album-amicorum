@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply bg-canvas font-body text-base text-ink antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4 {
+    @apply font-display font-bold text-ink-heading;
+  }
+
+  h1 {
+    @apply text-3xl md:text-4xl;
+  }
+
+  h2 {
+    @apply text-2xl md:text-3xl;
+  }
+
+  h3 {
+    @apply text-xl md:text-2xl font-semibold;
+  }
+
+  p {
+    @apply text-ink;
+  }
+
+  a {
+    @apply text-primary underline-offset-4 transition-colors duration-gentle;
+  }
+
+  a:hover {
+    @apply underline;
+  }
+
+  a:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas rounded-sm;
+  }
+
+  ::selection {
+    @apply bg-oatmeal text-ink-heading;
+  }
+}
+
+@layer components {
+  .site-container {
+    @apply mx-auto w-full max-w-page px-6 md:px-12;
+  }
+
+  .btn {
+    @apply inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-pill px-8 py-3
+      font-body text-sm font-semibold no-underline transition-all duration-gentle;
+  }
+
+  .btn:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-canvas shadow-soft;
+  }
+
+  .btn-primary:hover {
+    @apply -translate-y-0.5 bg-ink-heading text-canvas shadow-lift no-underline;
+  }
+
+  .btn-secondary {
+    @apply border border-primary bg-transparent text-primary;
+  }
+
+  .btn-secondary:hover {
+    @apply -translate-y-0.5 bg-surface shadow-lift no-underline;
+  }
+
+  .nav-link {
+    @apply inline-flex min-h-11 items-center px-3 font-body text-sm font-light
+      text-ink no-underline tracking-wide;
+  }
+
+  .nav-link:hover {
+    @apply text-primary no-underline;
+  }
+
+  .nav-link:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas rounded-sm;
+  }
+
+  .prose-article {
+    @apply mx-auto max-w-content text-ink;
+  }
+
+  .prose-article :where(p) {
+    @apply mb-6 text-base leading-[1.7];
+  }
+
+  .prose-article :where(h2) {
+    @apply mb-4 mt-12 text-2xl font-bold text-ink-heading;
+  }
+
+  .prose-article :where(h3) {
+    @apply mb-3 mt-8 text-xl font-semibold text-ink-heading;
+  }
+
+  .prose-article :where(ul, ol) {
+    @apply mb-6 list-disc space-y-2 pl-6;
+  }
+
+  .prose-article :where(ol) {
+    @apply list-decimal;
+  }
+
+  .prose-article :where(a) {
+    @apply text-primary no-underline;
+  }
+
+  .prose-article :where(a:hover) {
+    @apply underline;
+  }
+
+  .prose-article :where(a:visited) {
+    @apply text-ink-muted;
+  }
+
+  .prose-article :where(blockquote) {
+    @apply my-8 border-l-2 border-primary/40 pl-6 italic text-ink-muted;
+  }
+
+  .prose-article :where(img) {
+    @apply my-8 h-auto w-full rounded-soft;
+  }
+
+  .prose-article :where(hr) {
+    @apply my-12 border-0 border-t border-border;
+  }
+
+  .card-link {
+    @apply block rounded-soft transition-all duration-gentle;
+  }
+
+  .card-link:hover {
+    @apply -translate-y-1 shadow-lift;
+  }
+
+  .card-link:focus-visible {
+    @apply outline-none ring-2 ring-primary ring-offset-2 ring-offset-canvas;
+  }
+
+  .section-space {
+    @apply py-16 md:py-24;
+  }
+
+  .media-warm {
+    @apply relative overflow-hidden rounded-soft;
+  }
+
+  .media-warm::after {
+    content: '';
+    @apply pointer-events-none absolute inset-0 rounded-soft;
+    background: rgba(250, 248, 244, 0.05);
+    box-shadow: inset 0 0 48px rgba(59, 53, 48, 0.06);
+  }
+
+  .botanical-rule {
+    @apply relative border-0 border-t border-border;
+  }
+
+  .focus-ring {
+    @apply focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary
+      focus-visible:ring-offset-2 focus-visible:ring-offset-canvas;
+  }
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMS — Articles</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Articles</a>
+        <a href="/team.html">Team</a>
+        <a href="/dashboard.html">Dashboard</a>
+      </nav>
+      <h1>New / Edit Article</h1>
+    </header>
+
+    <section aria-labelledby="existing-heading">
+      <h2 id="existing-heading">Existing articles</h2>
+      <ul id="article-list"><li>Loading…</li></ul>
+    </section>
+
+    <section aria-labelledby="md-drop-heading">
+      <h2 id="md-drop-heading">Markdown source</h2>
+      <p>Drop a single <code>.md</code> file here to parse frontmatter.</p>
+      <div id="md-drop" tabindex="0" role="button" aria-label="Drop markdown file">
+        <p>Drop .md file</p>
+      </div>
+      <input type="file" id="md-file" accept=".md,text/markdown" hidden />
+    </section>
+
+    <section aria-labelledby="missing-heading">
+      <h2 id="missing-heading">Missing Fields</h2>
+      <p id="missing-summary">Drop a markdown file or fill fields to validate.</p>
+    </section>
+
+    <section aria-labelledby="checklist-heading">
+      <h2 id="checklist-heading">Field checklist (24)</h2>
+      <ul id="field-checklist"></ul>
+    </section>
+
+    <section aria-labelledby="images-heading">
+      <h2 id="images-heading">Images (max 3)</h2>
+      <p>Maximum file size: <strong>10MB</strong> per image. First file is the hero (required).</p>
+      <p>
+        When editing, existing images are kept automatically. Drop or choose new files only to
+        replace them.
+      </p>
+      <div
+        id="image-drop"
+        tabindex="0"
+        role="button"
+        aria-label="Drop images or click to choose"
+        style="border:2px dashed #666;padding:1.25rem;margin:0.75rem 0;cursor:pointer;background:#f7f7f7;"
+      >
+        <p style="margin:0"><strong>Drop images here</strong> or click to choose files</p>
+        <p style="margin:0.35rem 0 0;color:#444;font-size:0.9rem">Up to 3 images (1st = hero)</p>
+      </div>
+      <p>
+        <button type="button" id="image-choose">Choose images…</button>
+        <input type="file" id="image-files" accept="image/*" multiple hidden />
+      </p>
+      <ul id="image-slots">
+        <li>
+          Hero (image)
+          <span id="slot-image-status">not uploaded</span>
+          <button type="button" data-replace-slot="image">Replace</button>
+          <label>Alt (min 10 chars) <input type="text" id="imageAlt" minlength="10" /></label>
+        </li>
+        <li>
+          image2 (optional)
+          <span id="slot-image2-status">not uploaded</span>
+          <button type="button" data-replace-slot="image2">Replace</button>
+          <button type="button" data-clear-slot="image2">Clear</button>
+          <label>Alt <input type="text" id="image2Alt" minlength="10" /></label>
+        </li>
+        <li>
+          image3 (optional)
+          <span id="slot-image3-status">not uploaded</span>
+          <button type="button" data-replace-slot="image3">Replace</button>
+          <button type="button" data-clear-slot="image3">Clear</button>
+          <label>Alt <input type="text" id="image3Alt" minlength="10" /></label>
+        </li>
+      </ul>
+    </section>
+
+    <section aria-labelledby="core-fields-heading">
+      <h2 id="core-fields-heading">Core fields</h2>
+      <p>
+        <label>title <input type="text" id="title" /> <span id="title-count"></span></label>
+      </p>
+      <p>
+        <label
+          >description <textarea id="description" rows="3"></textarea>
+          <span id="description-count"></span
+        ></label>
+      </p>
+      <p><label>slug <input type="text" id="slug" /></label></p>
+      <p><label>date <input type="date" id="date" /></label></p>
+      <p><label>updatedDate <input type="date" id="updatedDate" /></label></p>
+      <p>
+        <label
+          >author
+          <select id="author">
+            <option value="">— select team member —</option>
+          </select></label
+        >
+      </p>
+      <p><label>category <input type="text" id="category" /></label></p>
+      <p>
+        <label>tags (comma-separated, 4–6) <input type="text" id="tags" /></label>
+      </p>
+      <p>
+        <label>keywords (comma-separated, optional) <input type="text" id="keywords" /></label>
+      </p>
+      <p><label>canonical (optional) <input type="url" id="canonical" /></label></p>
+      <p><label>robots <input type="text" id="robots" value="index, follow" /></label></p>
+      <p><label>schemaType <input type="text" id="schemaType" value="BlogPosting" /></label></p>
+      <p><label>locale <input type="text" id="locale" value="en-US" /></label></p>
+      <p>
+        <label>twitterCard <input type="text" id="twitterCard" value="summary_large_image" /></label>
+      </p>
+      <p><label><input type="checkbox" id="draft" /> draft</label></p>
+      <p>
+        <label
+          >ogTitle (only if different from title)
+          <input type="text" id="ogTitle" placeholder="leave blank to fall back to title"
+        /></label>
+      </p>
+      <p>
+        <label
+          >ogDescription (only if different from description)
+          <textarea id="ogDescription" rows="2" placeholder="leave blank to fall back"></textarea
+        ></label>
+      </p>
+      <p>
+        <label
+          >ogImage (only if different from hero)
+          <input type="text" id="ogImage" placeholder="leave blank to fall back"
+        /></label>
+      </p>
+    </section>
+
+    <section aria-labelledby="body-heading">
+      <h2 id="body-heading">Body (markdown)</h2>
+      <textarea id="body" rows="12"></textarea>
+    </section>
+
+    <section aria-labelledby="internal-heading">
+      <h2 id="internal-heading">internalLinks</h2>
+      <div id="internal-rows"></div>
+      <button type="button" id="add-internal">Add internal link</button>
+    </section>
+
+    <section aria-labelledby="external-heading">
+      <h2 id="external-heading">externalLinks</h2>
+      <div id="external-rows"></div>
+      <button type="button" id="add-external">Add external link</button>
+    </section>
+
+    <section aria-labelledby="faqs-heading">
+      <h2 id="faqs-heading">faqs (optional)</h2>
+      <div id="faq-rows"></div>
+      <button type="button" id="add-faq">Add FAQ</button>
+    </section>
+
+    <section aria-labelledby="actions-heading">
+      <h2 id="actions-heading">Actions</h2>
+      <p id="collision-warning" hidden></p>
+      <p id="generate-reason"></p>
+      <p id="warnings"></p>
+      <p id="error-box" role="alert" hidden></p>
+      <p id="success-box" hidden></p>
+      <button type="button" id="preview-jsonld">Preview JSON-LD</button>
+      <button type="button" id="generate" disabled>Generate</button>
+      <label><input type="checkbox" id="overwrite" /> Overwrite existing slug</label>
+    </section>
+
+    <section aria-labelledby="preview-heading" id="jsonld-preview-section" hidden>
+      <h2 id="preview-heading">JSON-LD preview</h2>
+      <pre id="jsonld-preview"></pre>
+    </section>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

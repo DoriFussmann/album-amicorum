@@ -1,0 +1,83 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../../config/site';
+
+const team = await getCollection('team');
+---
+
+<BaseLayout
+  title={`Team — ${SITE_NAME}`}
+  description={`Meet the people behind ${SITE_NAME}.`}
+  canonicalPath="/team/"
+>
+  <section aria-labelledby="team-heading" class="section-space">
+    <div class="site-container">
+      <div class="mx-auto mb-16 max-w-2xl text-center">
+        <h1 id="team-heading">Team</h1>
+        <p class="mt-4 text-ink-muted">The people behind the pages.</p>
+        <img
+          src="/images/botanical-sprig.svg"
+          alt=""
+          width="120"
+          height="80"
+          class="mx-auto mt-8 w-24 opacity-70"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
+
+      {
+        team.length === 0 ? (
+          <p class="text-center text-ink-muted">No team members yet.</p>
+        ) : (
+          <div class="mx-auto flex max-w-3xl flex-col gap-16">
+            {team.map((member) => (
+              <article
+                id={member.data.slug}
+                class="scroll-mt-24 border-t border-border pt-12 first:border-t-0 first:pt-0"
+              >
+                <div class="flex flex-col gap-8 sm:flex-row sm:items-start">
+                  <figure class="media-warm shrink-0">
+                    <Image
+                      src={member.data.photo}
+                      alt={`Photo of ${member.data.name}`}
+                      width={240}
+                      height={240}
+                      loading="lazy"
+                      class="h-60 w-60 rounded-soft object-cover"
+                    />
+                  </figure>
+                  <div class="min-w-0 space-y-3">
+                    <h2>{member.data.name}</h2>
+                    <p class="text-lg text-primary">{member.data.role}</p>
+                    {member.data.credentials && (
+                      <p class="text-sm font-light text-ink-muted">{member.data.credentials}</p>
+                    )}
+                    <p class="leading-[1.7]">{member.data.bio}</p>
+                    {member.data.sameAs && member.data.sameAs.length > 0 && (
+                      <ul class="flex flex-wrap gap-x-4 gap-y-2 pt-2">
+                        {member.data.sameAs.map((url) => (
+                          <li>
+                            <a
+                              href={url}
+                              rel="noopener noreferrer"
+                              class="inline-flex min-h-11 items-center text-sm text-primary no-underline hover:underline"
+                            >
+                              {url}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>

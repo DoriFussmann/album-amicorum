@@ -1,0 +1,31 @@
+---
+interface LinkItem {
+  label: string;
+  url: string;
+}
+
+interface Props {
+  links: LinkItem[];
+}
+
+const { links } = Astro.props;
+---
+
+<section aria-labelledby="sources-heading" class="mx-auto mt-12 max-w-content">
+  <h2 id="sources-heading" class="mb-6 text-2xl">Sources / Further reading</h2>
+  <ul class="space-y-3 border-l border-border pl-6">
+    {
+      links.map((link) => (
+        <li>
+          <a
+            href={link.url}
+            rel="noopener noreferrer"
+            class="inline-flex min-h-11 items-center text-primary no-underline hover:underline"
+          >
+            {link.label}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</section>

@@ -1,0 +1,60 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+
+interface Props {
+  author: CollectionEntry<'team'>;
+}
+
+const { author } = Astro.props;
+const { data } = author;
+---
+
+<section
+  aria-labelledby="author-bio-heading"
+  class="mx-auto mt-16 max-w-content border-t border-border pt-12"
+>
+  <h2 id="author-bio-heading" class="mb-8 text-2xl">About the author</h2>
+  <div class="flex flex-col gap-6 sm:flex-row sm:items-start">
+    <figure class="media-warm shrink-0">
+      <Image
+        src={data.photo}
+        alt={`Photo of ${data.name}`}
+        width={160}
+        height={160}
+        loading="lazy"
+        class="h-40 w-40 rounded-soft object-cover"
+      />
+    </figure>
+    <div class="min-w-0 space-y-3">
+      <p class="text-lg">
+        <a
+          href={`/team/#${data.slug}`}
+          class="font-display text-xl font-semibold text-ink-heading no-underline hover:text-primary hover:underline"
+        >
+          {data.name}
+        </a>
+        <span class="text-ink-muted"> — {data.role}</span>
+      </p>
+      {data.credentials && <p class="text-sm font-light text-ink-muted">{data.credentials}</p>}
+      <p class="leading-[1.7]">{data.bio}</p>
+      {
+        data.sameAs && data.sameAs.length > 0 && (
+          <ul class="flex flex-wrap gap-x-4 gap-y-2 pt-2">
+            {data.sameAs.map((url) => (
+              <li>
+                <a
+                  href={url}
+                  rel="noopener noreferrer"
+                  class="inline-flex min-h-11 items-center text-sm text-primary no-underline hover:underline"
+                >
+                  {url}
+                </a>
+              </li>
+            ))}
+          </ul>
+        )
+      }
+    </div>
+  </div>
+</section>

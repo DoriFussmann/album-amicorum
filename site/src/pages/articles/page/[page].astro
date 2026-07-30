@@ -1,0 +1,103 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../../../config/site';
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 9;
+  const all = (await getCollection('articles'))
+    .filter((a) => !a.data.draft)
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+
+  const totalPages = Math.ceil(all.length / PAGE_SIZE);
+  // Pages 2..N only — page 1 lives at /articles/
+  if (totalPages <= 1) return [];
+
+  return Array.from({ length: totalPages - 1 }, (_, i) => {
+    const pageNum = i + 2;
+    const start = (pageNum - 1) * PAGE_SIZE;
+    return {
+      params: { page: String(pageNum) },
+      props: {
+        articles: all.slice(start, start + PAGE_SIZE),
+        currentPage: pageNum,
+        totalPages,
+      },
+    };
+  });
+}
+
+const { articles, currentPage, totalPages } = Astro.props;
+---
+
+<BaseLayout
+  title={`Articles — Page ${currentPage} — ${SITE_NAME}`}
+  description={`Browse all published articles from ${SITE_NAME}.`}
+  canonicalPath={`/articles/page/${currentPage}/`}
+>
+  <section aria-labelledby="articles-heading" class="section-space">
+    <div class="site-container">
+      <div class="mx-auto mb-12 max-w-2xl text-center">
+        <h1 id="articles-heading">Articles</h1>
+        <p class="mt-4 text-ink-muted">Stories, guides, and notes worth keeping.</p>
+      </div>
+
+      <ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        {
+          articles.map((article) => (
+            <li>
+              <a
+                href={`/articles/${article.data.slug}/`}
+                class="card-link group flex h-full flex-col rounded-soft border border-border/70 bg-canvas p-6 no-underline"
+              >
+                <span class="font-display text-xl font-semibold text-ink-heading transition-colors duration-gentle group-hover:text-primary">
+                  {article.data.title}
+                </span>
+                <p class="mt-3 flex-1 text-sm leading-[1.7] text-ink">{article.data.description}</p>
+                <p class="mt-4 text-xs font-light uppercase tracking-wider text-ink-muted">
+                  <time datetime={article.data.date.toISOString()}>
+                    {article.data.date.toLocaleDateString('en-US', {
+                      year: 'numeric',
+                      month: 'long',
+                      day: 'numeric',
+                    })}
+                  </time>
+                </p>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+
+      <nav aria-label="Pagination" class="mt-16">
+        <ul class="flex flex-wrap items-center justify-center gap-4">
+          <li>
+            <a
+              class="btn btn-secondary"
+              href={currentPage === 2 ? '/articles/' : `/articles/page/${currentPage - 1}/`}
+            >
+              Previous
+            </a>
+          </li>
+          <li>
+            <span
+              aria-current="page"
+              class="inline-flex min-h-11 items-center px-3 text-sm text-ink-muted"
+            >
+              Page {currentPage} of {totalPages}
+            </span>
+          </li>
+          {
+            currentPage < totalPages && (
+              <li>
+                <a class="btn btn-secondary" href={`/articles/page/${currentPage + 1}/`}>
+                  Next
+                </a>
+              </li>
+            )
+          }
+        </ul>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>

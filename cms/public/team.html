@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMS — Team</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a href="/">Articles</a>
+        <a href="/team.html">Team</a>
+        <a href="/dashboard.html">Dashboard</a>
+      </nav>
+      <h1>New / Edit Team Member</h1>
+    </header>
+
+    <section aria-labelledby="list-heading">
+      <h2 id="list-heading">Existing team</h2>
+      <ul id="team-list"><li>Loading…</li></ul>
+    </section>
+
+    <section aria-labelledby="form-heading">
+      <h2 id="form-heading">Team member form</h2>
+      <p id="team-error" role="alert" hidden></p>
+      <p id="team-success" hidden></p>
+      <form id="team-form">
+        <p><label>name <input name="name" id="tm-name" required /></label></p>
+        <p><label>slug <input name="slug" id="tm-slug" required /></label></p>
+        <p><label>role <input name="role" id="tm-role" required /></label></p>
+        <p><label>bio <textarea name="bio" id="tm-bio" rows="4" required></textarea></label></p>
+        <p><label>credentials (optional) <input name="credentials" id="tm-credentials" /></label></p>
+        <p>
+          <label
+            >sameAs (one URL per line)
+            <textarea name="sameAs" id="tm-sameAs" rows="3"></textarea
+          ></label>
+        </p>
+        <p>
+          <label
+            >photo (required for new; optional on edit if already set)
+            <input type="file" name="photo" id="tm-photo" accept="image/*"
+          /></label>
+        </p>
+        <p id="existing-photo" hidden></p>
+        <p><label><input type="checkbox" id="tm-overwrite" /> Overwrite existing slug</label></p>
+        <button type="submit">Save team member</button>
+        <button type="button" id="tm-reset">Reset form</button>
+      </form>
+    </section>
+
+    <script>
+      async function parseJson(res) {
+        const ct = res.headers.get('content-type') || '';
+        if (!ct.includes('application/json')) {
+          const text = await res.text();
+          throw new Error(text || `HTTP ${res.status}`);
+        }
+        return res.json();
+      }
+
+      const listEl = document.getElementById('team-list');
+      const errEl = document.getElementById('team-error');
+      const okEl = document.getElementById('team-success');
+      let editingSlug = null;
+      let existingPhoto = null;
+
+      function showError(msg) {
+        errEl.hidden = false;
+        errEl.textContent = msg;
+        okEl.hidden = true;
+      }
+      function showOk(msg) {
+        okEl.hidden = false;
+        okEl.textContent = msg;
+        errEl.hidden = true;
+      }
+
+      async function loadTeam() {
+        try {
+          const res = await fetch('/api/team');
+          const data = await parseJson(res);
+          if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load team');
+          listEl.innerHTML = '';
+          if (!data.team.length) {
+            listEl.innerHTML = '<li>No team members yet.</li>';
+            return;
+          }
+          for (const m of data.team) {
+            const li = document.createElement('li');
+            li.innerHTML = `<strong>${m.name}</strong> (${m.slug}) — ${m.role}
+              <button type="button" data-edit="${m.slug}">Edit</button>
+              <button type="button" data-delete="${m.slug}">Delete</button>`;
+            listEl.appendChild(li);
+          }
+          listEl.querySelectorAll('[data-edit]').forEach((btn) => {
+            btn.addEventListener('click', () => {
+              const m = data.team.find((t) => t.slug === btn.getAttribute('data-edit'));
+              if (!m) return;
+              editingSlug = m.slug;
+              existingPhoto = m.photo;
+              document.getElementById('tm-name').value = m.name || '';
+              document.getElementById('tm-slug').value = m.slug || '';
+              document.getElementById('tm-role').value = m.role || '';
+              document.getElementById('tm-bio').value = m.bio || '';
+              document.getElementById('tm-credentials').value = m.credentials || '';
+              document.getElementById('tm-sameAs').value = (m.sameAs || []).join('\n');
+              document.getElementById('tm-overwrite').checked = true;
+              const ep = document.getElementById('existing-photo');
+              ep.hidden = false;
+              ep.textContent = `Existing photo path: ${m.photo}`;
+            });
+          });
+          listEl.querySelectorAll('[data-delete]').forEach((btn) => {
+            btn.addEventListener('click', async () => {
+              const slug = btn.getAttribute('data-delete');
+              if (!confirm(`Delete team member ${slug}?`)) return;
+              try {
+                const res = await fetch(`/api/team/${slug}`, { method: 'DELETE' });
+                const data = await parseJson(res);
+                if (!res.ok || !data.ok) throw new Error(data.error || 'Delete failed');
+                showOk(`Deleted ${slug}`);
+                loadTeam();
+              } catch (e) {
+                showError(e.message);
+              }
+            });
+          });
+        } catch (e) {
+          listEl.innerHTML = `<li>Error: ${e.message}</li>`;
+        }
+      }
+
+      document.getElementById('tm-reset').addEventListener('click', () => {
+        editingSlug = null;
+        existingPhoto = null;
+        document.getElementById('team-form').reset();
+        document.getElementById('existing-photo').hidden = true;
+      });
+
+      document.getElementById('team-form').addEventListener('submit', async (ev) => {
+        ev.preventDefault();
+        errEl.hidden = true;
+        okEl.hidden = true;
+        const fd = new FormData();
+        fd.append('name', document.getElementById('tm-name').value);
+        fd.append('slug', document.getElementById('tm-slug').value);
+        fd.append('role', document.getElementById('tm-role').value);
+        fd.append('bio', document.getElementById('tm-bio').value);
+        fd.append('credentials', document.getElementById('tm-credentials').value);
+        const sameAs = document
+          .getElementById('tm-sameAs')
+          .value.split('\n')
+          .map((s) => s.trim())
+          .filter(Boolean);
+        fd.append('sameAs', JSON.stringify(sameAs));
+        fd.append('overwrite', document.getElementById('tm-overwrite').checked ? 'true' : 'false');
+        if (existingPhoto) fd.append('existingPhoto', existingPhoto);
+        const photo = document.getElementById('tm-photo').files[0];
+        if (photo) fd.append('photo', photo);
+
+        try {
+          const res = await fetch('/api/team', { method: 'POST', body: fd });
+          const data = await parseJson(res);
+          if (!res.ok || !data.ok) throw new Error(data.error || 'Save failed');
+          showOk(`Saved ${data.slug}`);
+          loadTeam();
+        } catch (e) {
+          showError(e.message);
+        }
+      });
+
+      loadTeam();
+    </script>
+  </body>
+</html>

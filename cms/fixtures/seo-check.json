@@ -1,0 +1,103 @@
+{
+  "title": "CMS UI Verification Pass Confirms Trailing Slash Checks",
+  "titleMatchesCms": true,
+  "desc": "This article was generated through the real CMS index.html UI to verify drag-drop parsing, image session uploads, validation, JSON-LD preview, and Generate.",
+  "descMatchesCms": true,
+  "canon": "https://example.com/articles/cms-ui-verification-article/",
+  "h1Count": 1,
+  "h1s": [
+    "CMS UI Verification Pass Confirms Trailing Slash Checks"
+  ],
+  "headings": [
+    "h1",
+    "h2",
+    "h2",
+    "h2",
+    "h2",
+    "h3"
+  ],
+  "headingSkips": [],
+  "types": [
+    "Organization",
+    "BlogPosting",
+    "Person",
+    "BreadcrumbList",
+    "FAQPage"
+  ],
+  "blocks": [
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "Site Name",
+      "url": "https://example.com",
+      "sameAs": []
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      "headline": "CMS UI Verification Pass Confirms Trailing Slash Checks",
+      "description": "This article was generated through the real CMS index.html UI to verify drag-drop parsing, image session uploads, validation, JSON-LD preview, and Generate.",
+      "datePublished": "2026-07-30T00:00:00.000Z",
+      "dateModified": "2026-07-30T00:00:00.000Z",
+      "author": {
+        "@type": "Person",
+        "name": "Alex Rivera",
+        "url": "https://example.com/team/#alex-rivera"
+      },
+      "image": "https://example.com/_astro/hero.DiK8CVO8_mYiba.webp",
+      "mainEntityOfPage": "https://example.com/articles/cms-ui-verification-article/",
+      "publisher": {
+        "@type": "Organization",
+        "name": "Site Name",
+        "url": "https://example.com"
+      }
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Alex Rivera",
+      "jobTitle": "Senior Content Strategist",
+      "description": "Alex has spent over a decade researching how people find and trust information online, with a focus on clear technical writing and evidence-based recommendations.",
+      "url": "https://example.com/team/#alex-rivera",
+      "sameAs": []
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://example.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Articles",
+          "item": "https://example.com/articles/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "CMS UI Verification Pass Confirms Trailing Slash Checks",
+          "item": "https://example.com/articles/cms-ui-verification-article/"
+        }
+      ]
+    },
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Does the CMS UI generate articles correctly?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes when all required fields and session image uploads pass validation."
+          }
+        }
+      ]
+    }
+  ]
+}

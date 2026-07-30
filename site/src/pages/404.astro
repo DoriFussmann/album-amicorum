@@ -1,0 +1,33 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE_NAME } from '../config/site';
+---
+
+<BaseLayout
+  title={`Page not found — ${SITE_NAME}`}
+  description={`The page you requested could not be found on ${SITE_NAME}.`}
+  canonicalPath="/404/"
+  robots="noindex, follow"
+>
+  <section aria-labelledby="not-found-heading" class="section-space">
+    <div class="site-container mx-auto max-w-content text-center">
+      <img
+        src="/images/botanical-sprig.svg"
+        alt=""
+        width="120"
+        height="80"
+        class="mx-auto mb-8 w-28 opacity-70"
+        loading="lazy"
+        decoding="async"
+      />
+      <h1 id="not-found-heading">Page not found</h1>
+      <p class="mt-4 text-ink-muted">The page you requested does not exist.</p>
+      <nav aria-label="Recovery" class="mt-10">
+        <ul class="flex flex-wrap items-center justify-center gap-4">
+          <li><a class="btn btn-primary" href="/">Home</a></li>
+          <li><a class="btn btn-secondary" href="/articles/">Articles</a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+</BaseLayout>
