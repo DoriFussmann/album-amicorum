@@ -3,51 +3,94 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CMS — Team</title>
+    <title>CMS — Team · Album Amicorum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/cms.css" />
   </head>
   <body>
-    <header>
-      <nav>
-        <a href="/">Articles</a>
-        <a href="/team.html">Team</a>
-        <a href="/dashboard.html">Dashboard</a>
-      </nav>
-      <h1>New / Edit Team Member</h1>
+    <header class="cms-header">
+      <div class="site-shell cms-header__inner">
+        <a class="brand" href="/">
+          <span class="brand__name">Album Amicorum</span>
+          <span class="brand__meta">Local CMS</span>
+        </a>
+        <nav class="cms-nav" aria-label="CMS">
+          <a href="/">Articles</a>
+          <a href="/team.html" aria-current="page">Team</a>
+          <a href="/dashboard.html">Dashboard</a>
+        </nav>
+      </div>
     </header>
 
-    <section aria-labelledby="list-heading">
-      <h2 id="list-heading">Existing team</h2>
-      <ul id="team-list"><li>Loading…</li></ul>
-    </section>
+    <main class="site-shell">
+      <div class="page-intro">
+        <h1>New / Edit Team Member</h1>
+        <p>Authors available in the article form come from this list.</p>
+      </div>
 
-    <section aria-labelledby="form-heading">
-      <h2 id="form-heading">Team member form</h2>
-      <p id="team-error" role="alert" hidden></p>
-      <p id="team-success" hidden></p>
-      <form id="team-form">
-        <p><label>name <input name="name" id="tm-name" required /></label></p>
-        <p><label>slug <input name="slug" id="tm-slug" required /></label></p>
-        <p><label>role <input name="role" id="tm-role" required /></label></p>
-        <p><label>bio <textarea name="bio" id="tm-bio" rows="4" required></textarea></label></p>
-        <p><label>credentials (optional) <input name="credentials" id="tm-credentials" /></label></p>
-        <p>
-          <label
-            >sameAs (one URL per line)
-            <textarea name="sameAs" id="tm-sameAs" rows="3"></textarea
-          ></label>
-        </p>
-        <p>
-          <label
-            >photo (required for new; optional on edit if already set)
-            <input type="file" name="photo" id="tm-photo" accept="image/*"
-          /></label>
-        </p>
-        <p id="existing-photo" hidden></p>
-        <p><label><input type="checkbox" id="tm-overwrite" /> Overwrite existing slug</label></p>
-        <button type="submit">Save team member</button>
-        <button type="button" id="tm-reset">Reset form</button>
-      </form>
-    </section>
+      <div class="stack">
+        <section class="panel" aria-labelledby="list-heading">
+          <h2 id="list-heading">Existing team</h2>
+          <ul class="plain-list" id="team-list">
+            <li>Loading…</li>
+          </ul>
+        </section>
+
+        <section class="panel" aria-labelledby="form-heading">
+          <h2 id="form-heading">Team member form</h2>
+          <p id="team-error" class="alert alert-error" role="alert" hidden></p>
+          <p id="team-success" class="alert alert-success" hidden></p>
+          <form id="team-form" class="field-grid">
+            <div class="field-grid cols-2">
+              <label class="field">
+                <span>name</span>
+                <input name="name" id="tm-name" required />
+              </label>
+              <label class="field">
+                <span>slug</span>
+                <input name="slug" id="tm-slug" required />
+              </label>
+              <label class="field">
+                <span>role</span>
+                <input name="role" id="tm-role" required />
+              </label>
+              <label class="field">
+                <span>credentials (optional)</span>
+                <input name="credentials" id="tm-credentials" />
+              </label>
+            </div>
+            <label class="field">
+              <span>bio</span>
+              <textarea name="bio" id="tm-bio" rows="4" required></textarea>
+            </label>
+            <label class="field">
+              <span>sameAs (one URL per line)</span>
+              <textarea name="sameAs" id="tm-sameAs" rows="3"></textarea>
+            </label>
+            <label class="field">
+              <span>photo (required for new; optional on edit if already set)</span>
+              <input type="file" name="photo" id="tm-photo" accept="image/*" />
+            </label>
+            <p id="existing-photo" class="field-hint" hidden></p>
+            <label class="check-row">
+              <input type="checkbox" id="tm-overwrite" />
+              <span>Overwrite existing slug</span>
+            </label>
+            <div class="btn-row">
+              <button type="submit" class="btn btn-primary">Save team member</button>
+              <button type="button" class="btn btn-ghost" id="tm-reset">Reset form</button>
+            </div>
+          </form>
+        </section>
+      </div>
+    </main>
+
+    <div id="toast-host" class="toast-host" aria-live="polite"></div>
 
     <script>
       async function parseJson(res) {
@@ -62,18 +105,40 @@
       const listEl = document.getElementById('team-list');
       const errEl = document.getElementById('team-error');
       const okEl = document.getElementById('team-success');
+      const toastHost = document.getElementById('toast-host');
       let editingSlug = null;
       let existingPhoto = null;
+
+      function escapeHtml(s) {
+        return String(s)
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;')
+          .replace(/"/g, '&quot;');
+      }
+
+      function showToast(message, type, title) {
+        const toast = document.createElement('div');
+        toast.className = `toast toast-${type}`;
+        toast.innerHTML = `<span class="toast__title">${escapeHtml(title)}</span>${escapeHtml(message)}`;
+        toastHost.appendChild(toast);
+        setTimeout(() => {
+          toast.classList.add('is-leaving');
+          setTimeout(() => toast.remove(), 220);
+        }, 4200);
+      }
 
       function showError(msg) {
         errEl.hidden = false;
         errEl.textContent = msg;
         okEl.hidden = true;
+        showToast(msg, 'error', 'Error');
       }
       function showOk(msg) {
         okEl.hidden = false;
         okEl.textContent = msg;
         errEl.hidden = true;
+        showToast(msg, 'success', 'Saved');
       }
 
       async function loadTeam() {
@@ -88,9 +153,12 @@
           }
           for (const m of data.team) {
             const li = document.createElement('li');
-            li.innerHTML = `<strong>${m.name}</strong> (${m.slug}) — ${m.role}
-              <button type="button" data-edit="${m.slug}">Edit</button>
-              <button type="button" data-delete="${m.slug}">Delete</button>`;
+            li.className = 'team-item';
+            li.innerHTML = `<strong>${escapeHtml(m.name)}</strong>
+              <span class="status-pill">${escapeHtml(m.slug)}</span>
+              <span class="field-hint">${escapeHtml(m.role || '')}</span>
+              <button type="button" class="btn btn-ghost" data-edit="${escapeHtml(m.slug)}">Edit</button>
+              <button type="button" class="btn btn-danger" data-delete="${escapeHtml(m.slug)}">Delete</button>`;
             listEl.appendChild(li);
           }
           listEl.querySelectorAll('[data-edit]').forEach((btn) => {
@@ -127,7 +195,7 @@
             });
           });
         } catch (e) {
-          listEl.innerHTML = `<li>Error: ${e.message}</li>`;
+          listEl.innerHTML = `<li>Error: ${escapeHtml(e.message)}</li>`;
         }
       }
 

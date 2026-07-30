@@ -43,6 +43,7 @@ let pendingReplaceSlot = null;
 let lastValidation = null;
 let knownRoutes = { articles: [], team: [], services: [] };
 let generating = false;
+let lastCanGenerate = false;
 
 async function parseJsonResponse(res) {
   const ct = res.headers.get('content-type') || '';
@@ -57,18 +58,45 @@ function $(id) {
   return document.getElementById(id);
 }
 
-function showError(msg) {
+function showToast(message, type = 'success', title) {
+  const host = $('toast-host');
+  if (!host) return;
+  const toast = document.createElement('div');
+  toast.className = `toast toast-${type}`;
+  const heading =
+    title ||
+    (type === 'success' ? 'Done' : type === 'warning' ? 'Not ready' : 'Error');
+  toast.innerHTML = `<span class="toast__title">${escapeHtml(heading)}</span>${escapeHtml(message)}`;
+  host.appendChild(toast);
+  window.setTimeout(() => {
+    toast.classList.add('is-leaving');
+    window.setTimeout(() => toast.remove(), 220);
+  }, 4200);
+}
+
+function setPreloader(visible, text = 'Generating article…') {
+  const el = $('preloader');
+  if (!el) return;
+  const label = $('preloader-text');
+  if (label && text) label.textContent = text;
+  el.hidden = !visible;
+  document.body.style.overflow = visible ? 'hidden' : '';
+}
+
+function showError(msg, toastTitle = 'Error') {
   const el = $('error-box');
   el.hidden = false;
   el.textContent = msg;
   $('success-box').hidden = true;
+  showToast(msg, 'error', toastTitle);
 }
 
-function showSuccess(msg) {
+function showSuccess(msg, toastTitle = 'Done') {
   const el = $('success-box');
   el.hidden = false;
   el.textContent = msg;
   $('error-box').hidden = true;
+  showToast(msg, 'success', toastTitle);
 }
 
 function clearAlerts() {
@@ -142,11 +170,11 @@ function collectRows(containerId, fields) {
 }
 
 function addRow(containerId, fields, values = {}) {
-  const row = document.createElement('p');
+  const row = document.createElement('div');
   row.dataset.row = '1';
   fields.forEach((f) => {
     const label = document.createElement('label');
-    label.textContent = f + ' ';
+    label.appendChild(document.createTextNode(f));
     const input = document.createElement('input');
     input.type = 'text';
     input.dataset.field = f;
@@ -154,10 +182,10 @@ function addRow(containerId, fields, values = {}) {
     input.addEventListener('input', () => scheduleValidate());
     label.appendChild(input);
     row.appendChild(label);
-    row.appendChild(document.createTextNode(' '));
   });
   const remove = document.createElement('button');
   remove.type = 'button';
+  remove.className = 'btn btn-danger';
   remove.textContent = 'Remove';
   remove.addEventListener('click', () => {
     row.remove();
@@ -170,13 +198,17 @@ function addRow(containerId, fields, values = {}) {
 function updateCharCounters() {
   const t = $('title').value;
   const tc = $('title-count');
+  const titleOk = t.length >= TITLE_MIN && t.length <= TITLE_MAX;
   tc.textContent = `${t.length} chars (need ${TITLE_MIN}–${TITLE_MAX})`;
-  tc.style.color = t.length >= TITLE_MIN && t.length <= TITLE_MAX ? 'green' : 'red';
+  tc.classList.toggle('is-ok', titleOk);
+  tc.classList.toggle('is-bad', !titleOk);
 
   const d = $('description').value;
   const dc = $('description-count');
+  const descOk = d.length >= DESCRIPTION_MIN && d.length <= DESCRIPTION_MAX;
   dc.textContent = `${d.length} chars (need ${DESCRIPTION_MIN}–${DESCRIPTION_MAX})`;
-  dc.style.color = d.length >= DESCRIPTION_MIN && d.length <= DESCRIPTION_MAX ? 'green' : 'red';
+  dc.classList.toggle('is-ok', descOk);
+  dc.classList.toggle('is-bad', !descOk);
 }
 
 function sessionImagesPayload() {
@@ -203,19 +235,23 @@ function renderChecklist(validation) {
     const li = document.createElement('li');
     const status = byField[field];
     const ok = status ? status.ok : false;
+    li.className = ok ? 'is-ok' : 'is-bad';
     if (ok) {
       li.textContent = `✓ ${field}${status.message ? ` — ${status.message}` : ''}`;
     } else {
       const label = document.createElement('span');
-      label.textContent = `✗ ${field}${status?.message ? ` — ${status.message}` : ' — needs input'}: `;
+      label.textContent = `✗ ${field}${status?.message ? ` — ${status.message}` : ' — needs input'}`;
       li.appendChild(label);
-      // editable hint: focus corresponding control if exists
       const btn = document.createElement('button');
       btn.type = 'button';
+      btn.className = 'btn btn-ghost';
       btn.textContent = 'Focus';
       btn.addEventListener('click', () => {
         const el = $(field) || $(field === 'image' ? 'image-drop' : field);
-        if (el) el.focus?.();
+        if (el) {
+          el.focus?.();
+          el.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+        }
       });
       li.appendChild(btn);
     }
@@ -233,9 +269,33 @@ function basenamePath(p) {
   return parts[parts.length - 1] || p;
 }
 
-function updateGenerateButton(validation, collision) {
-  const btn = $('generate');
+function setGenerateEnabled(canGenerate, reasonText) {
+  const enabled = Boolean(canGenerate) && !generating;
+  lastCanGenerate = enabled;
+
+  for (const id of ['generate', 'generate-sticky']) {
+    const btn = $(id);
+    if (!btn) continue;
+    btn.disabled = false;
+    btn.setAttribute('aria-disabled', enabled ? 'false' : 'true');
+    btn.classList.toggle('is-disabled', !enabled);
+  }
+
   const reason = $('generate-reason');
+  if (reason) reason.textContent = reasonText;
+
+  const barReason = $('action-bar-reason');
+  if (barReason) barReason.textContent = reasonText;
+
+  const pill = $('action-bar-pill');
+  if (pill) {
+    pill.textContent = enabled ? 'Ready' : generating ? 'Generating…' : 'Not ready';
+    pill.classList.toggle('is-ready', enabled);
+    pill.classList.toggle('is-blocked', !enabled);
+  }
+}
+
+function updateGenerateButton(validation, collision) {
   const reasons = [];
 
   if (!validation?.ok) {
@@ -258,10 +318,10 @@ function updateGenerateButton(validation, collision) {
     validation?.ok && hasHeroImage() && (!collision?.exists || $('overwrite').checked)
   );
 
-  btn.disabled = !canGenerate || generating;
-  reason.textContent = canGenerate
-    ? 'Ready to generate.'
-    : `Generate disabled: ${unique.join(' · ')}`;
+  setGenerateEnabled(
+    canGenerate,
+    canGenerate ? 'Ready to generate.' : `Generate disabled: ${unique.join(' · ')}`
+  );
 
   $('warnings').textContent = (validation?.warnings || []).join('\n');
 }
@@ -289,8 +349,7 @@ async function runValidate() {
     updateGenerateButton(json.validation, json.collision);
   } catch (e) {
     showError(e.message);
-    $('generate').disabled = true;
-    $('generate-reason').textContent = `Generate disabled: ${e.message}`;
+    setGenerateEnabled(false, `Generate disabled: ${e.message}`);
   }
 }
 
@@ -348,32 +407,50 @@ function toDateInput(v) {
   return d.toISOString().slice(0, 10);
 }
 
+function setSlotStatus(el, text, filled) {
+  el.textContent = text;
+  el.classList.toggle('is-ready', filled);
+  el.classList.toggle('is-blocked', !filled);
+}
+
 function updateImageSlotStatus() {
   const prior = $('title').dataset.priorImage || '';
   const prior2 = $('title').dataset.priorImage2 || '';
   const prior3 = $('title').dataset.priorImage3 || '';
 
-  $('slot-image-status').textContent = sessionImageFiles.image
-    ? `new: ${sessionImageFiles.image.name}`
-    : prior
-      ? `keeping: ${basenamePath(prior)}`
-      : 'not uploaded';
+  setSlotStatus(
+    $('slot-image-status'),
+    sessionImageFiles.image
+      ? `new: ${sessionImageFiles.image.name}`
+      : prior
+        ? `keeping: ${basenamePath(prior)}`
+        : 'not uploaded',
+    Boolean(sessionImageFiles.image || prior)
+  );
 
-  $('slot-image2-status').textContent = sessionImageFiles.image2
-    ? `new: ${sessionImageFiles.image2.name}`
-    : clearedImageSlots.image2
-      ? 'cleared'
-      : prior2
-        ? `keeping: ${basenamePath(prior2)}`
-        : 'not uploaded';
+  setSlotStatus(
+    $('slot-image2-status'),
+    sessionImageFiles.image2
+      ? `new: ${sessionImageFiles.image2.name}`
+      : clearedImageSlots.image2
+        ? 'cleared'
+        : prior2
+          ? `keeping: ${basenamePath(prior2)}`
+          : 'not uploaded',
+    Boolean(sessionImageFiles.image2 || (!clearedImageSlots.image2 && prior2))
+  );
 
-  $('slot-image3-status').textContent = sessionImageFiles.image3
-    ? `new: ${sessionImageFiles.image3.name}`
-    : clearedImageSlots.image3
-      ? 'cleared'
-      : prior3
-        ? `keeping: ${basenamePath(prior3)}`
-        : 'not uploaded';
+  setSlotStatus(
+    $('slot-image3-status'),
+    sessionImageFiles.image3
+      ? `new: ${sessionImageFiles.image3.name}`
+      : clearedImageSlots.image3
+        ? 'cleared'
+        : prior3
+          ? `keeping: ${basenamePath(prior3)}`
+          : 'not uploaded',
+    Boolean(sessionImageFiles.image3 || (!clearedImageSlots.image3 && prior3))
+  );
 }
 
 function isImageFile(file) {
@@ -425,8 +502,7 @@ function acceptImages(fileList) {
     const file = incoming[0];
     if (file.size > 10 * 1024 * 1024) {
       showError(`${file.name} exceeds 10MB limit (max 10MB per file)`);
-      $('generate').disabled = true;
-      $('generate-reason').textContent = `Generate disabled: ${file.name} exceeds 10MB`;
+      setGenerateEnabled(false, `Generate disabled: ${file.name} exceeds 10MB`);
       return;
     }
     if (!isImageFile(file)) {
@@ -444,8 +520,7 @@ function acceptImages(fileList) {
       blockedBySize = true;
       const msg = `${file.name} exceeds 10MB limit (max 10MB per file)`;
       showError(msg);
-      $('generate').disabled = true;
-      $('generate-reason').textContent = `Generate disabled: ${msg}`;
+      setGenerateEnabled(false, `Generate disabled: ${msg}`);
       continue;
     }
     if (!isImageFile(file)) {
@@ -468,9 +543,8 @@ function acceptImages(fileList) {
       if (!$('error-box').textContent.includes('10MB')) {
         showError(msg);
       }
-      $('generate').disabled = true;
       if (!$('generate-reason').textContent.includes('10MB')) {
-        $('generate-reason').textContent = `Generate disabled: ${msg}`;
+        setGenerateEnabled(false, `Generate disabled: ${msg}`);
       }
     }, 400);
   }
@@ -504,11 +578,13 @@ async function loadArticleList() {
   }
   for (const a of data.articles) {
     const li = document.createElement('li');
+    li.className = 'article-item';
     li.innerHTML = `<a href="?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
-      (${a.slug}) ${a.draft ? '[draft]' : ''}
-      <button type="button" data-unpublish="${a.slug}">Unpublish</button>
-      <button type="button" data-publish="${a.slug}">Publish</button>
-      <button type="button" data-delete="${a.slug}">Delete</button>`;
+      <span class="status-pill">${escapeHtml(a.slug)}</span>
+      ${a.draft ? '<span class="status-pill is-blocked">draft</span>' : '<span class="status-pill is-ready">live</span>'}
+      <button type="button" class="btn btn-ghost" data-unpublish="${a.slug}">Unpublish</button>
+      <button type="button" class="btn btn-ghost" data-publish="${a.slug}">Publish</button>
+      <button type="button" class="btn btn-danger" data-delete="${a.slug}">Delete</button>`;
     ul.appendChild(li);
   }
 
@@ -520,7 +596,7 @@ async function loadArticleList() {
         });
         const json = await parseJsonResponse(res);
         if (!res.ok || !json.ok) throw new Error(json.error || 'Unpublish failed');
-        showSuccess('Unpublished (draft: true)');
+        showSuccess('Unpublished (draft: true)', 'Updated');
         loadArticleList();
       } catch (e) {
         showError(e.message);
@@ -535,7 +611,7 @@ async function loadArticleList() {
         });
         const json = await parseJsonResponse(res);
         if (!res.ok || !json.ok) throw new Error(json.error || 'Publish failed');
-        showSuccess('Published (draft: false)');
+        showSuccess('Published (draft: false)', 'Updated');
         loadArticleList();
       } catch (e) {
         showError(e.message);
@@ -550,7 +626,7 @@ async function loadArticleList() {
         const res = await fetch(`/articles/${slug}`, { method: 'DELETE' });
         const json = await parseJsonResponse(res);
         if (!res.ok || !json.ok) throw new Error(json.error || 'Delete failed');
-        showSuccess(`Deleted ${slug}`);
+        showSuccess(`Deleted ${slug}`, 'Deleted');
         loadArticleList();
       } catch (e) {
         showError(e.message);
@@ -591,9 +667,14 @@ function setupDropZone(el, fileInput, onFiles) {
   });
   el.addEventListener('dragover', (e) => {
     e.preventDefault();
+    el.classList.add('is-dragover');
+  });
+  el.addEventListener('dragleave', () => {
+    el.classList.remove('is-dragover');
   });
   el.addEventListener('drop', (e) => {
     e.preventDefault();
+    el.classList.remove('is-dragover');
     pendingReplaceSlot = null;
     if (e.dataTransfer?.files?.length) onFiles(e.dataTransfer.files);
   });
@@ -636,7 +717,7 @@ async function handleMarkdownFiles(fileList) {
     const json = await parseJsonResponse(res);
     if (!res.ok || !json.ok) throw new Error(json.error || 'Parse failed');
     fillFormFromData(json.data, json.body);
-    showSuccess(`Parsed ${file.name}`);
+    showSuccess(`Parsed ${file.name}`, 'Markdown loaded');
   } catch (e) {
     showError(e.message);
   }
@@ -696,10 +777,22 @@ function buildJsonLdPreview() {
 
 async function onGenerate() {
   if (generating) return;
+
+  if (!lastCanGenerate) {
+    const reason =
+      $('generate-reason')?.textContent ||
+      $('action-bar-reason')?.textContent ||
+      'Complete validation before generating.';
+    showToast(reason.replace(/^Generate disabled:\s*/, ''), 'warning', 'Not ready');
+    $('actions-panel')?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+    return;
+  }
+
   clearAlerts();
   generating = true;
-  $('generate').disabled = true;
-  $('generate-reason').textContent = 'Generating…';
+  setGenerateEnabled(false, 'Generating…');
+  setPreloader(true, 'Generating article…');
+  const preloaderStartedAt = Date.now();
 
   try {
     if (!hasHeroImage()) {
@@ -714,7 +807,6 @@ async function onGenerate() {
     }
 
     const data = collectFormData();
-    // Keep existing relative paths for slots without a new upload; strip session markers
     if (sessionImageFiles.image) data.image = '(session upload)';
     if (sessionImageFiles.image2) data.image2 = '(session upload)';
     if (sessionImageFiles.image3) data.image3 = '(session upload)';
@@ -739,9 +831,10 @@ async function onGenerate() {
     if (!res.ok || !json.ok) {
       throw new Error(json.error || `Generate failed (HTTP ${res.status})`);
     }
-    showSuccess(`Generated ${json.slug}.md and rebuilt llms.txt`);
+    const elapsed = Date.now() - preloaderStartedAt;
+    if (elapsed < 450) await new Promise((r) => setTimeout(r, 450 - elapsed));
+    showSuccess(`Generated ${json.slug}.md and rebuilt llms.txt`, 'Article generated');
     await loadArticleList();
-    // Refresh prior paths from what we just wrote
     if (sessionImageFiles.image) {
       $('title').dataset.priorImage =
         `../../assets/articles/${json.slug}/hero${extFromName(sessionImageFiles.image.name)}`;
@@ -764,17 +857,22 @@ async function onGenerate() {
     updateImageSlotStatus();
     scheduleValidate();
   } catch (e) {
-    showError(e.message);
-    $('generate-reason').textContent = `Generate failed: ${e.message}`;
+    const elapsed = Date.now() - preloaderStartedAt;
+    if (elapsed < 300) await new Promise((r) => setTimeout(r, 300 - elapsed));
+    showError(e.message, 'Generate failed');
+    setGenerateEnabled(false, `Generate failed: ${e.message}`);
   } finally {
     generating = false;
+    setPreloader(false);
     const preservedError = $('error-box').hidden ? null : $('error-box').textContent;
     const preservedReason = $('generate-reason').textContent;
     await runValidate();
     if (preservedError) {
-      showError(preservedError);
-      $('generate').disabled = true;
-      $('generate-reason').textContent = preservedReason;
+      // Avoid a second toast; restore inline alert + disabled state only
+      $('error-box').hidden = false;
+      $('error-box').textContent = preservedError;
+      $('success-box').hidden = true;
+      setGenerateEnabled(false, preservedReason);
     }
   }
 }
@@ -851,6 +949,7 @@ async function init() {
   });
 
   $('generate').addEventListener('click', onGenerate);
+  $('generate-sticky')?.addEventListener('click', onGenerate);
 
   try {
     const routesRes = await fetch('/api/known-routes');
