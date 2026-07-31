@@ -12,6 +12,8 @@ const { title, tagline, price, cover, interior, offset = 'none' } = Astro.props;
 
 const offsetClass =
   offset === 'up' ? 'md:-translate-y-6' : offset === 'down' ? 'md:translate-y-8' : '';
+
+const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}`;
 ---
 
 <article class:list={['book-card group', offsetClass]}>
@@ -41,5 +43,90 @@ const offsetClass =
     <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
     <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
     <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
+    <div class="mt-4">
+      <button type="button" class="btn btn-secondary" data-preview-open={previewId}>
+        Preview
+      </button>
+    </div>
   </div>
+
+  {/* Presentational preview only — no Add to Cart / Order This Edition (commerce is future work). */}
+  <dialog
+    id={previewId}
+    class="book-preview-dialog w-[min(100%,36rem)] max-h-[90vh] overflow-y-auto rounded-soft border border-border bg-canvas p-0 shadow-lift backdrop:bg-ink/40"
+    aria-labelledby={`${previewId}-title`}
+  >
+    <div class="px-6 py-8 md:px-8">
+      <h2 id={`${previewId}-title`} class="text-2xl">My Friends Book — {title}</h2>
+      <div class="mt-6 grid gap-4 sm:grid-cols-2">
+        <div class="media-warm aspect-[400/520] overflow-hidden bg-surface">
+          <img
+            src={cover}
+            alt=""
+            width="400"
+            height="520"
+            class="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+        <div class="media-warm aspect-[400/520] overflow-hidden bg-surface">
+          <img
+            src={interior}
+            alt=""
+            width="400"
+            height="520"
+            class="h-full w-full object-cover"
+            loading="lazy"
+            decoding="async"
+          />
+        </div>
+      </div>
+      <p class="mt-6 leading-[1.7]">
+        My Friends Book invites friends to leave handwritten memories, drawings, favorite things, and
+        messages that together become a keepsake unlike any other.
+      </p>
+      <p class="mt-4 leading-[1.7]">
+        Every completed book tells a different story because every friendship is different.
+      </p>
+      <p class="mt-6 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
+      <div class="mt-8">
+        <button type="button" class="btn btn-secondary" data-preview-close>
+          Continue Browsing
+        </button>
+      </div>
+    </div>
+  </dialog>
 </article>
+
+<script>
+  function initBookPreviews() {
+    document.querySelectorAll<HTMLButtonElement>('[data-preview-open]').forEach((button) => {
+      const id = button.getAttribute('data-preview-open');
+      if (!id) return;
+      const dialog = document.getElementById(id);
+      if (!(dialog instanceof HTMLDialogElement)) return;
+
+      button.addEventListener('click', () => {
+        dialog.showModal();
+      });
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-preview-close]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const dialog = button.closest('dialog');
+        if (dialog instanceof HTMLDialogElement) dialog.close();
+      });
+    });
+
+    document.querySelectorAll('dialog.book-preview-dialog').forEach((dialog) => {
+      if (!(dialog instanceof HTMLDialogElement)) return;
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    });
+  }
+
+  initBookPreviews();
+  document.addEventListener('astro:page-load', initBookPreviews);
+</script>

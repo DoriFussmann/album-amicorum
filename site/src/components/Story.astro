@@ -1,38 +1,45 @@
 ---
 import Reveal from './Reveal.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+// Image brief / prompt: imageBriefs.story in src/data/imageBriefs.ts
 ---
 
 <section id="story" aria-labelledby="story-heading" class="section-space bg-surface/50">
   <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <Reveal class="order-2 lg:order-1">
-      <div class="media-warm">
-        <img
-          src="/images/vintage-album.svg"
-          alt="A vintage album amicorum resting in soft natural light"
-          width="720"
-          height="540"
-          class="h-auto w-full"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      <ImagePlaceholder
+        briefId="story"
+        label="Photograph forthcoming"
+        caption="A tradition of friendship books"
+        aspectClass="aspect-[4/3]"
+      />
     </Reveal>
     <div class="order-1 lg:order-2">
       <Reveal>
-        <h2 id="story-heading">The Album Amicorum Story</h2>
+        <p class="text-sm font-semibold tracking-wide text-ink-muted">Our Story</p>
+        <h2 id="story-heading" class="mt-3">
+          Inspired by a tradition that began more than 450 years ago.
+        </h2>
       </Reveal>
       <Reveal delay={90}>
         <p class="mt-6 leading-[1.7]">
-          In the sixteenth century, traveling students carried an <em>album amicorum</em> —
-          a “book of friends” — filling its pages with inscriptions, coats of arms, verses, and
-          drawings from the people they met along the way.
+          More than four centuries ago, students traveling across Renaissance Europe carried small
+          books from place to place, inviting friends and teachers to leave handwritten messages,
+          poems, drawings, and signatures along the way.
         </p>
       </Reveal>
       <Reveal delay={160}>
         <p class="mt-4 leading-[1.7]">
-          We carry that tradition forward for modern childhood. Album Amicorum makes Friend Books
-          that help children gather the stories of those who love them — so friendship is kept by
-          hand, and childhood is not scrolled past.
+          These books became known as <em>Album Amicorum</em>—Latin for "Book of Friends."
+        </p>
+      </Reveal>
+      <Reveal delay={200}>
+        <p class="mt-4 leading-[1.7]">That timeless tradition inspired our own.</p>
+      </Reveal>
+      <Reveal delay={240}>
+        <p class="mt-4 leading-[1.7]">
+          Today, My Friends Book carries the same spirit into childhood, inviting a new generation to
+          preserve friendships one handwritten page at a time.
         </p>
       </Reveal>
     </div>

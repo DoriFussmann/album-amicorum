@@ -3,10 +3,12 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import WhatIs from '../components/WhatIs.astro';
-import Story from '../components/Story.astro';
+import OneOfAKind from '../components/OneOfAKind.astro';
 import Collection from '../components/Collection.astro';
 import WhyParents from '../components/WhyParents.astro';
+import Story from '../components/Story.astro';
 import Testimonials from '../components/Testimonials.astro';
+import ClosingCta from '../components/ClosingCta.astro';
 import { SITE_NAME } from '../config/site';
 
 const books = (await getCollection('books')).sort((a, b) => a.data.order - b.data.order);
@@ -19,8 +21,10 @@ const books = (await getCollection('books')).sort((a, b) => a.data.order - b.dat
 >
   <Hero />
   <WhatIs />
-  <Story />
+  <OneOfAKind />
   <Collection books={books} />
   <WhyParents />
+  <Story />
   <Testimonials />
+  <ClosingCta />
 </BaseLayout>

@@ -1,5 +1,8 @@
 ---
 import Reveal from './Reveal.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+// No approved image brief in Website Specification v1.0 for this section.
+// See imageBriefs.whyParents in src/data/imageBriefs.ts
 
 const reasons = [
   {
@@ -41,17 +44,11 @@ const reasons = [
       </ul>
     </div>
     <Reveal delay={120}>
-      <div class="media-warm">
-        <img
-          src="/images/children-exchange.svg"
-          alt="Two children gently exchanging a Friend Book"
-          width="640"
-          height="720"
-          class="h-auto w-full"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      <ImagePlaceholder
+        briefId="why-parents"
+        label="Photograph forthcoming"
+        aspectClass="aspect-[4/5]"
+      />
     </Reveal>
   </div>
 </section>

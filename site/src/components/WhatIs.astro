@@ -1,18 +1,20 @@
 ---
 import Reveal from './Reveal.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+// Image brief / prompt: imageBriefs.whatIs in src/data/imageBriefs.ts
 
 const features = [
   {
-    title: 'Collaborative',
-    body: 'Friends, family, and teachers each leave a page — a drawing, a story, a memory only they could write.',
+    title: 'Every friend leaves a page',
+    body: 'Each friend adds their own memories, drawings, and handwriting, making every page as unique as the person who created it.',
   },
   {
-    title: 'Handwritten',
-    body: 'Ink, pencil, and pressed flowers. No screens, no feeds — just the quiet mark of a real hand.',
+    title: 'Written by hand',
+    body: 'Some memories deserve more than a screen. Handwriting captures personality in a way nothing else can.',
   },
   {
-    title: 'A lifelong keepsake',
-    body: 'Made to be treasured on a shelf for years, then opened again when childhood feels far away.',
+    title: 'Made to be treasured',
+    body: 'Long after childhood has passed, My Friends Book becomes a keepsake filled with the voices, creativity, and friendships that shaped those years.',
   },
 ];
 ---
@@ -21,19 +23,21 @@ const features = [
   <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <div>
       <Reveal>
-        <h2 id="what-is-heading">What is a Friend Book?</h2>
+        <p class="text-sm font-semibold tracking-wide text-ink-muted">What is My Friends Book?</p>
+        <h2 id="what-is-heading" class="mt-3">
+          A book that becomes the story of childhood friendships.
+        </h2>
       </Reveal>
       <Reveal delay={80}>
         <p class="mt-6 max-w-content leading-[1.7]">
-          A Friend Book is a handmade album where the people who shape a child’s world leave
-          something of themselves behind — words, sketches, photographs, and small treasures of
-          everyday friendship.
+          My Friends Book is a beautifully illustrated Friend Book where friends leave behind
+          handwritten memories, drawings, favorite things, and little pieces of themselves.
         </p>
       </Reveal>
       <Reveal delay={140}>
         <p class="mt-4 max-w-content leading-[1.7]">
-          Inspired by the album amicorum of centuries past, it helps children collect memories,
-          not just signatures.
+          As each page is filled, the book becomes something no one else will ever own—a one-of-a-kind
+          keepsake created by the people who matter most.
         </p>
       </Reveal>
       <ul class="mt-10 space-y-6">
@@ -50,17 +54,12 @@ const features = [
       </ul>
     </div>
     <Reveal delay={120} class="lg:justify-self-end">
-      <div class="media-warm max-w-md lg:max-w-none">
-        <img
-          src="/images/what-is-friend-book.svg"
-          alt="An open Friend Book with soft watercolor botanical accents"
-          width="640"
-          height="720"
-          class="h-auto w-full"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+      <ImagePlaceholder
+        briefId="what-is"
+        label="Photograph forthcoming"
+        caption="Friends sharing My Friends Book"
+        aspectClass="aspect-[4/5] max-w-md lg:max-w-none"
+      />
     </Reveal>
   </div>
 </section>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="520" viewBox="0 0 400 520" role="img" aria-label="Book interior placeholder">
+  <rect width="400" height="520" fill="#FAF8F4"/>
+  <line x1="200" y1="24" x2="200" y2="496" stroke="#E5DFD3" stroke-width="1"/>
+  <rect x="24" y="24" width="352" height="472" fill="none" stroke="#C9C2B4" stroke-width="1"/>
+  <text x="200" y="250" text-anchor="middle" fill="#8A8478" font-family="Georgia, serif" font-size="18" font-style="italic">Interior forthcoming</text>
+</svg>

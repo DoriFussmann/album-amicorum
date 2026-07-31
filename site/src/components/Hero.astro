@@ -1,39 +1,42 @@
 ---
 import Logo from './Logo.astro';
+import ImagePlaceholder from './ImagePlaceholder.astro';
+// Image brief / prompt: imageBriefs.hero in src/data/imageBriefs.ts
 ---
 
 <section
   aria-labelledby="hero-heading"
-  class="relative isolate flex min-h-[100svh] items-center overflow-hidden"
+  class="relative isolate overflow-hidden"
 >
-  <img
-    src="/images/hero-wash.svg"
-    alt=""
-    width="1440"
-    height="900"
-    class="pointer-events-none absolute inset-0 -z-10 h-full w-full object-cover"
-    decoding="async"
-    fetchpriority="high"
-  />
-  <div
-    class="pointer-events-none absolute inset-0 -z-10 bg-gradient-to-b from-canvas/20 via-canvas/55 to-canvas"
-    aria-hidden="true"
-  >
-  </div>
-
-  <div class="site-container hero-enter w-full py-24 md:py-32">
+  <div class="site-container hero-enter w-full py-16 md:py-24">
     <div class="mb-8">
       <Logo size="lg" withWordmark={true} stacked={true} link={false} />
     </div>
+
+    <ImagePlaceholder
+      briefId="hero"
+      label="Photograph forthcoming"
+      caption="A quiet moment with My Friends Book"
+      aspectClass="aspect-video w-full max-w-5xl"
+      class="mb-12"
+    />
+
     <h1 id="hero-heading" class="max-w-3xl text-balance">
       Childhood is too precious to scroll past.
     </h1>
     <p class="mt-6 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
-      Beautiful Friend Books inspired by a centuries-old tradition of preserving friendships,
-      memories, and childhood by hand.
+      Some memories are too meaningful to live on a screen.
     </p>
-    <div class="mt-10">
+    <p class="mt-4 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
+      My Friends Book invites children to collect the stories, drawings, and handwritten memories of
+      the friends who shape their childhood—creating a keepsake that becomes more precious with every
+      page.
+    </p>
+    <div class="mt-10 flex flex-col items-start gap-4 sm:flex-row sm:items-center sm:gap-8">
       <a class="btn btn-primary" href="#collection">Explore the Collection</a>
+      <a class="text-sm font-semibold text-primary no-underline hover:underline" href="#what-is">
+        Discover My Friends Book
+      </a>
     </div>
   </div>
 </section>

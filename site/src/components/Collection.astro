@@ -8,25 +8,30 @@ interface Props {
 }
 
 const { books } = Astro.props;
-const offsets = ['none', 'up', 'down', 'up'] as const;
+const offsets = ['none', 'up', 'down', 'up', 'none', 'down', 'up'] as const;
 ---
 
 <section id="collection" aria-labelledby="collection-heading" class="section-space">
   <div class="site-container">
     <Reveal>
       <div class="mx-auto mb-14 max-w-2xl text-center">
-        <h2 id="collection-heading">The Collection</h2>
-        <p class="mt-4 text-ink">
-          Created with care — each Friend Book invites a different kind of wonder.
+        <p class="text-sm font-semibold tracking-wide text-ink-muted">Choose a world.</p>
+        <h2 id="collection-heading" class="mt-3">My Friends Book</h2>
+        <p class="mt-4 text-ink">Every edition tells the same story.</p>
+        <p class="mt-2 text-ink">
+          Choose the world your child will be excited to share with friends.
         </p>
       </div>
     </Reveal>
 
     {
       books.length === 0 ? (
-        <p class="text-center text-ink-muted">Books are being bound. Please check back soon.</p>
+        <div class="mx-auto max-w-md text-center">
+          <p class="text-ink">No editions available right now.</p>
+          <p class="mt-2 text-ink-muted">Please check back soon.</p>
+        </div>
       ) : (
-        <ul class="grid gap-10 sm:grid-cols-2 lg:grid-cols-4 lg:gap-8">
+        <ul class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-8">
           {books.map((book, i) => (
             <li>
               <Reveal delay={i * 90}>

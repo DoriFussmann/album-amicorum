@@ -1,0 +1,40 @@
+---
+/**
+ * Presentational image placeholder.
+ * Detailed briefs and generation prompts live in src/data/imageBriefs.ts — not in the public UI.
+ */
+interface Props {
+  /** Short visitor-facing label, e.g. "Photograph forthcoming" */
+  label?: string;
+  /** Optional short caption shown publicly (one line max). */
+  caption?: string;
+  /** Aspect ratio utility classes, e.g. aspect-video */
+  aspectClass?: string;
+  class?: string;
+  /** Brief id from imageBriefs — stored as data attribute for future asset work. */
+  briefId?: string;
+}
+
+const {
+  label = 'Photograph forthcoming',
+  caption,
+  aspectClass = 'aspect-video',
+  class: className = '',
+  briefId,
+} = Astro.props;
+---
+
+<figure
+  class:list={['image-placeholder media-warm overflow-hidden bg-surface', aspectClass, className]}
+  data-image-brief={briefId}
+  aria-label={label}
+>
+  <div class="flex h-full w-full flex-col items-center justify-center gap-2 px-6 py-10 text-center">
+    <span class="font-display text-lg italic text-ink-muted md:text-xl">{label}</span>
+    {
+      caption && (
+        <span class="max-w-sm text-sm leading-[1.5] text-ink-muted/80">{caption}</span>
+      )
+    }
+  </div>
+</figure>
