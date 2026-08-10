@@ -1,4 +1,4 @@
-export const SITE_URL = "https://example.com";
+export const SITE_URL = "https://www.albumamicorum.com";
 export const SITE_NAME = "Album Amicorum";
 export const SITE_LOGO_PATH = "/images/logo.png";
 export const SAME_AS: string[] = [];
