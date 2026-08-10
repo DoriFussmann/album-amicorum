@@ -30,7 +30,7 @@
     <main class="site-shell">
       <div class="page-intro">
         <h1>New / Edit Article</h1>
-        <p>Parse markdown, complete the checklist, then generate into the site content collection.</p>
+        <p>Parse markdown, set author and hero image, then add into the site content collection.</p>
       </div>
 
       <div class="stack">
@@ -51,6 +51,61 @@
           <input type="file" id="md-file" accept=".md,text/markdown" hidden />
         </section>
 
+        <section class="panel" aria-labelledby="required-heading">
+          <h2 id="required-heading">Required before adding</h2>
+          <p class="panel__lede">
+            Choose an author and upload the hero image. These are not inferred from the markdown drop.
+          </p>
+
+          <label class="field">
+            <span>author</span>
+            <select id="author" required>
+              <option value="">— select team member —</option>
+            </select>
+          </label>
+
+          <div style="margin-top: 1.25rem">
+            <h3 class="panel__subheading">Hero image (required)</h3>
+            <p class="panel__lede">
+              Maximum file size: <strong>10MB</strong>. When editing, the existing hero is kept until you
+              replace it.
+            </p>
+            <div
+              id="image-drop"
+              class="dropzone"
+              tabindex="0"
+              role="button"
+              aria-label="Drop hero image or click to choose"
+            >
+              <p><strong>Drop hero image here</strong></p>
+              <p>or click to choose</p>
+            </div>
+            <p class="btn-row" style="margin-top: 0.85rem">
+              <button type="button" class="btn btn-secondary" id="image-choose">Choose hero image…</button>
+              <input type="file" id="image-files" accept="image/*" hidden />
+            </p>
+            <ul class="slot-list" id="image-slots">
+              <li>
+                <div class="slot-meta">
+                  <strong>Hero (image)</strong>
+                  <div><span class="status-pill" id="slot-image-status">not uploaded</span></div>
+                </div>
+                <button type="button" class="btn btn-ghost" data-replace-slot="image">Replace</button>
+                <label>
+                  Alt (min 10 chars)
+                  <input type="text" id="imageAlt" minlength="10" />
+                </label>
+              </li>
+            </ul>
+          </div>
+
+          <div class="btn-row" style="margin-top: 1.25rem">
+            <button type="button" class="btn btn-primary" id="generate-top" aria-disabled="true">Add</button>
+            <span class="status-pill is-blocked" id="action-top-pill">Not ready</span>
+          </div>
+          <p id="generate-reason-top" class="reason-text"></p>
+        </section>
+
         <section class="panel" aria-labelledby="missing-heading">
           <h2 id="missing-heading">Missing fields</h2>
           <p id="missing-summary" class="panel__lede">Drop a markdown file or fill fields to validate.</p>
@@ -59,65 +114,6 @@
         <section class="panel" aria-labelledby="checklist-heading">
           <h2 id="checklist-heading">Field checklist (24)</h2>
           <ul class="checklist" id="field-checklist"></ul>
-        </section>
-
-        <section class="panel" aria-labelledby="images-heading">
-          <h2 id="images-heading">Images (max 3)</h2>
-          <p class="panel__lede">
-            Maximum file size: <strong>10MB</strong> per image. First file is the hero (required). When editing,
-            existing images are kept automatically — drop or choose new files only to replace them.
-          </p>
-          <div
-            id="image-drop"
-            class="dropzone"
-            tabindex="0"
-            role="button"
-            aria-label="Drop images or click to choose"
-          >
-            <p><strong>Drop images here</strong></p>
-            <p>or click to choose · up to 3 (1st = hero)</p>
-          </div>
-          <p class="btn-row" style="margin-top: 0.85rem">
-            <button type="button" class="btn btn-secondary" id="image-choose">Choose images…</button>
-            <input type="file" id="image-files" accept="image/*" multiple hidden />
-          </p>
-          <ul class="slot-list" id="image-slots">
-            <li>
-              <div class="slot-meta">
-                <strong>Hero (image)</strong>
-                <div><span class="status-pill" id="slot-image-status">not uploaded</span></div>
-              </div>
-              <button type="button" class="btn btn-ghost" data-replace-slot="image">Replace</button>
-              <label>
-                Alt (min 10 chars)
-                <input type="text" id="imageAlt" minlength="10" />
-              </label>
-            </li>
-            <li>
-              <div class="slot-meta">
-                <strong>image2 (optional)</strong>
-                <div><span class="status-pill" id="slot-image2-status">not uploaded</span></div>
-              </div>
-              <button type="button" class="btn btn-ghost" data-replace-slot="image2">Replace</button>
-              <button type="button" class="btn btn-danger" data-clear-slot="image2">Clear</button>
-              <label>
-                Alt
-                <input type="text" id="image2Alt" minlength="10" />
-              </label>
-            </li>
-            <li>
-              <div class="slot-meta">
-                <strong>image3 (optional)</strong>
-                <div><span class="status-pill" id="slot-image3-status">not uploaded</span></div>
-              </div>
-              <button type="button" class="btn btn-ghost" data-replace-slot="image3">Replace</button>
-              <button type="button" class="btn btn-danger" data-clear-slot="image3">Clear</button>
-              <label>
-                Alt
-                <input type="text" id="image3Alt" minlength="10" />
-              </label>
-            </li>
-          </ul>
         </section>
 
         <section class="panel" aria-labelledby="core-fields-heading">
@@ -137,12 +133,6 @@
               <label class="field">
                 <span>slug</span>
                 <input type="text" id="slug" />
-              </label>
-              <label class="field">
-                <span>author</span>
-                <select id="author">
-                  <option value="">— select team member —</option>
-                </select>
               </label>
               <label class="field">
                 <span>date</span>
@@ -236,6 +226,55 @@
           </p>
         </section>
 
+        <section class="panel" aria-labelledby="optional-images-heading">
+          <h2 id="optional-images-heading">Optional images (image2 / image3)</h2>
+          <p class="panel__lede">
+            Rarely needed. Maximum <strong>10MB</strong> per file. Drop files here or use Replace on a slot.
+          </p>
+          <div
+            id="optional-image-drop"
+            class="dropzone"
+            tabindex="0"
+            role="button"
+            aria-label="Drop optional images or click to choose"
+          >
+            <p><strong>Drop optional images here</strong></p>
+            <p>or click to choose · up to 2 (image2, then image3)</p>
+          </div>
+          <p class="btn-row" style="margin-top: 0.85rem">
+            <button type="button" class="btn btn-secondary" id="optional-image-choose">
+              Choose optional images…
+            </button>
+            <input type="file" id="optional-image-files" accept="image/*" multiple hidden />
+          </p>
+          <ul class="slot-list" id="optional-image-slots">
+            <li>
+              <div class="slot-meta">
+                <strong>image2 (optional)</strong>
+                <div><span class="status-pill" id="slot-image2-status">not uploaded</span></div>
+              </div>
+              <button type="button" class="btn btn-ghost" data-replace-slot="image2">Replace</button>
+              <button type="button" class="btn btn-danger" data-clear-slot="image2">Clear</button>
+              <label>
+                Alt
+                <input type="text" id="image2Alt" minlength="10" />
+              </label>
+            </li>
+            <li>
+              <div class="slot-meta">
+                <strong>image3 (optional)</strong>
+                <div><span class="status-pill" id="slot-image3-status">not uploaded</span></div>
+              </div>
+              <button type="button" class="btn btn-ghost" data-replace-slot="image3">Replace</button>
+              <button type="button" class="btn btn-danger" data-clear-slot="image3">Clear</button>
+              <label>
+                Alt
+                <input type="text" id="image3Alt" minlength="10" />
+              </label>
+            </li>
+          </ul>
+        </section>
+
         <section class="panel" aria-labelledby="actions-heading" id="actions-panel">
           <h2 id="actions-heading">Actions</h2>
           <p id="collision-warning" class="alert alert-warning" hidden></p>
@@ -245,7 +284,7 @@
           <p id="generate-reason" class="reason-text"></p>
           <div class="btn-row">
             <button type="button" class="btn btn-secondary" id="preview-jsonld">Preview JSON-LD</button>
-            <button type="button" class="btn btn-primary" id="generate" aria-disabled="true">Generate</button>
+            <button type="button" class="btn btn-primary" id="generate" aria-disabled="true">Add</button>
             <label class="check-row">
               <input type="checkbox" id="overwrite" />
               <span>Overwrite existing slug</span>
@@ -260,15 +299,15 @@
       </div>
     </main>
 
-    <div class="action-bar" aria-label="Generate actions">
+    <div class="action-bar" aria-label="Add actions">
       <div class="site-shell action-bar__inner">
         <div class="action-bar__status">
-          <p id="action-bar-reason">Fill required fields to enable Generate.</p>
+          <p id="action-bar-reason">Fill required fields to enable Add.</p>
         </div>
         <div class="action-bar__controls">
           <span class="status-pill is-blocked" id="action-bar-pill">Not ready</span>
           <button type="button" class="btn btn-primary" id="generate-sticky" aria-disabled="true">
-            Generate
+            Add
           </button>
         </div>
       </div>

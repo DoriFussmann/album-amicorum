@@ -273,7 +273,7 @@ function setGenerateEnabled(canGenerate, reasonText) {
   const enabled = Boolean(canGenerate) && !generating;
   lastCanGenerate = enabled;
 
-  for (const id of ['generate', 'generate-sticky']) {
+  for (const id of ['generate', 'generate-sticky', 'generate-top']) {
     const btn = $(id);
     if (!btn) continue;
     btn.disabled = false;
@@ -281,14 +281,17 @@ function setGenerateEnabled(canGenerate, reasonText) {
     btn.classList.toggle('is-disabled', !enabled);
   }
 
-  const reason = $('generate-reason');
-  if (reason) reason.textContent = reasonText;
+  for (const id of ['generate-reason', 'generate-reason-top']) {
+    const reason = $(id);
+    if (reason) reason.textContent = reasonText;
+  }
 
   const barReason = $('action-bar-reason');
   if (barReason) barReason.textContent = reasonText;
 
-  const pill = $('action-bar-pill');
-  if (pill) {
+  for (const id of ['action-bar-pill', 'action-top-pill']) {
+    const pill = $(id);
+    if (!pill) continue;
     pill.textContent = enabled ? 'Ready' : generating ? 'Generating…' : 'Not ready';
     pill.classList.toggle('is-ready', enabled);
     pill.classList.toggle('is-blocked', !enabled);
@@ -320,7 +323,7 @@ function updateGenerateButton(validation, collision) {
 
   setGenerateEnabled(
     canGenerate,
-    canGenerate ? 'Ready to generate.' : `Generate disabled: ${unique.join(' · ')}`
+    canGenerate ? 'Ready to add.' : `Add disabled: ${unique.join(' · ')}`
   );
 
   $('warnings').textContent = (validation?.warnings || []).join('\n');
@@ -349,7 +352,7 @@ async function runValidate() {
     updateGenerateButton(json.validation, json.collision);
   } catch (e) {
     showError(e.message);
-    setGenerateEnabled(false, `Generate disabled: ${e.message}`);
+    setGenerateEnabled(false, `Add disabled: ${e.message}`);
   }
 }
 
@@ -490,7 +493,8 @@ function slotIsEmpty(slot) {
   return true;
 }
 
-function acceptImages(fileList) {
+/** @param {'hero' | 'optional' | 'auto'} mode */
+function acceptImages(fileList, mode = 'auto') {
   const incoming = [...fileList];
   if (!incoming.length) return;
 
@@ -502,7 +506,7 @@ function acceptImages(fileList) {
     const file = incoming[0];
     if (file.size > 10 * 1024 * 1024) {
       showError(`${file.name} exceeds 10MB limit (max 10MB per file)`);
-      setGenerateEnabled(false, `Generate disabled: ${file.name} exceeds 10MB`);
+      setGenerateEnabled(false, `Add disabled: ${file.name} exceeds 10MB`);
       return;
     }
     if (!isImageFile(file)) {
@@ -520,13 +524,29 @@ function acceptImages(fileList) {
       blockedBySize = true;
       const msg = `${file.name} exceeds 10MB limit (max 10MB per file)`;
       showError(msg);
-      setGenerateEnabled(false, `Generate disabled: ${msg}`);
+      setGenerateEnabled(false, `Add disabled: ${msg}`);
       continue;
     }
     if (!isImageFile(file)) {
       showError(`${file.name} is not a recognized image file`);
       continue;
     }
+
+    if (mode === 'hero') {
+      assignImageToSlot('image', file);
+      break;
+    }
+
+    if (mode === 'optional') {
+      if (slotIsEmpty('image2')) assignImageToSlot('image2', file);
+      else if (slotIsEmpty('image3')) assignImageToSlot('image3', file);
+      else {
+        showError('Optional image slots are full. Use Replace or Clear on a slot.');
+        break;
+      }
+      continue;
+    }
+
     if (slotIsEmpty('image')) assignImageToSlot('image', file);
     else if (slotIsEmpty('image2')) assignImageToSlot('image2', file);
     else if (slotIsEmpty('image3')) assignImageToSlot('image3', file);
@@ -544,7 +564,7 @@ function acceptImages(fileList) {
         showError(msg);
       }
       if (!$('generate-reason').textContent.includes('10MB')) {
-        setGenerateEnabled(false, `Generate disabled: ${msg}`);
+        setGenerateEnabled(false, `Add disabled: ${msg}`);
       }
     }, 400);
   }
@@ -686,7 +706,10 @@ function setupDropZone(el, fileInput, onFiles) {
 
 function openImagePickerForSlot(slot) {
   pendingReplaceSlot = slot || null;
-  const input = $('image-files');
+  const inputId =
+    slot === 'image2' || slot === 'image3' ? 'optional-image-files' : 'image-files';
+  const input = $(inputId);
+  if (!input) return;
   input.value = '';
   input.click();
 }
@@ -717,6 +740,9 @@ async function handleMarkdownFiles(fileList) {
     const json = await parseJsonResponse(res);
     if (!res.ok || !json.ok) throw new Error(json.error || 'Parse failed');
     fillFormFromData(json.data, json.body);
+    // Force an explicit author choice on every new upload (do not keep parsed author).
+    $('author').value = '';
+    scheduleValidate();
     showSuccess(`Parsed ${file.name}`, 'Markdown loaded');
   } catch (e) {
     showError(e.message);
@@ -781,10 +807,15 @@ async function onGenerate() {
   if (!lastCanGenerate) {
     const reason =
       $('generate-reason')?.textContent ||
+      $('generate-reason-top')?.textContent ||
       $('action-bar-reason')?.textContent ||
-      'Complete validation before generating.';
-    showToast(reason.replace(/^Generate disabled:\s*/, ''), 'warning', 'Not ready');
-    $('actions-panel')?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
+      'Complete validation before adding.';
+    showToast(
+      reason.replace(/^Add disabled:\s*/, '').replace(/^Generate disabled:\s*/, ''),
+      'warning',
+      'Not ready'
+    );
+    $('required-heading')?.scrollIntoView?.({ behavior: 'smooth', block: 'center' });
     return;
   }
 
@@ -884,9 +915,19 @@ function extFromName(name) {
 
 async function init() {
   setupDropZone($('md-drop'), $('md-file'), handleMarkdownFiles);
-  setupDropZone($('image-drop'), $('image-files'), acceptImages);
+  setupDropZone($('image-drop'), $('image-files'), (files) => acceptImages(files, 'hero'));
+  setupDropZone($('optional-image-drop'), $('optional-image-files'), (files) =>
+    acceptImages(files, 'optional')
+  );
 
-  $('image-choose').addEventListener('click', () => openImagePickerForSlot(null));
+  $('image-choose').addEventListener('click', () => openImagePickerForSlot('image'));
+  $('optional-image-choose')?.addEventListener('click', () => {
+    pendingReplaceSlot = null;
+    const input = $('optional-image-files');
+    if (!input) return;
+    input.value = '';
+    input.click();
+  });
 
   document.querySelectorAll('[data-replace-slot]').forEach((btn) => {
     btn.addEventListener('click', () => {
@@ -950,6 +991,7 @@ async function init() {
 
   $('generate').addEventListener('click', onGenerate);
   $('generate-sticky')?.addEventListener('click', onGenerate);
+  $('generate-top')?.addEventListener('click', onGenerate);
 
   try {
     const routesRes = await fetch('/api/known-routes');

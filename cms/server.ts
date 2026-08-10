@@ -12,6 +12,7 @@ import {
 } from './lib/paths.ts';
 import { IMAGE_MAX_BYTES } from './lib/schema.ts';
 import { validateFrontmatter, type SessionImages } from './lib/validateFrontmatter.ts';
+import { normalizeParsedArticle } from './lib/normalizeParsedArticle.ts';
 import { writeArticle, setArticleDraft, deleteArticle } from './lib/writeArticle.ts';
 import { writeTeamMember, deleteTeamMember } from './lib/writeTeamMember.ts';
 import { generateLlmsTxt } from './lib/generateLlmsTxt.ts';
@@ -131,10 +132,14 @@ app.post('/parse', upload.single('markdown'), (req, res) => {
     const raw = fs.readFileSync(req.file.path, 'utf8');
     fs.unlinkSync(req.file.path);
     const parsed = matter(raw);
+    const normalized = normalizeParsedArticle({
+      data: (parsed.data ?? {}) as Record<string, unknown>,
+      body: parsed.content.trim(),
+    });
     res.json({
       ok: true,
-      data: parsed.data,
-      body: parsed.content.trim(),
+      data: normalized.data,
+      body: normalized.body,
     });
   } catch (err) {
     jsonError(res, 400, err instanceof Error ? err.message : 'Failed to parse markdown');
