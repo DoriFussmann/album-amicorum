@@ -1,4 +1,12 @@
-/* global document, fetch, FormData, File, URLSearchParams */
+/* global document, window, fetch, FormData, File, URLSearchParams */
+
+function pageKind() {
+  const path = window.location.pathname;
+  if (path.endsWith('add-article.html')) return 'article-form';
+  if (path.endsWith('team.html')) return 'team';
+  if (path.endsWith('dashboard.html')) return 'dashboard';
+  return 'article-list';
+}
 
 const CHECKLIST_FIELDS = [
   'title',
@@ -85,23 +93,31 @@ function setPreloader(visible, text = 'Generating article…') {
 
 function showError(msg, toastTitle = 'Error') {
   const el = $('error-box');
-  el.hidden = false;
-  el.textContent = msg;
-  $('success-box').hidden = true;
+  if (el) {
+    el.hidden = false;
+    el.textContent = msg;
+  }
+  const ok = $('success-box');
+  if (ok) ok.hidden = true;
   showToast(msg, 'error', toastTitle);
 }
 
 function showSuccess(msg, toastTitle = 'Done') {
   const el = $('success-box');
-  el.hidden = false;
-  el.textContent = msg;
-  $('error-box').hidden = true;
+  if (el) {
+    el.hidden = false;
+    el.textContent = msg;
+  }
+  const err = $('error-box');
+  if (err) err.hidden = true;
   showToast(msg, 'success', toastTitle);
 }
 
 function clearAlerts() {
-  $('error-box').hidden = true;
-  $('success-box').hidden = true;
+  const err = $('error-box');
+  const ok = $('success-box');
+  if (err) err.hidden = true;
+  if (ok) ok.hidden = true;
 }
 
 function csvToArray(val) {
@@ -129,8 +145,8 @@ function collectFormData() {
     twitterCard: $('twitterCard').value.trim() || 'summary_large_image',
     draft: $('draft').checked,
     imageAlt: $('imageAlt').value.trim(),
-    image2Alt: $('image2Alt').value.trim(),
-    image3Alt: $('image3Alt').value.trim(),
+    image2Alt: $('image2Alt')?.value.trim() || '',
+    image3Alt: $('image3Alt')?.value.trim() || '',
     ogTitle: $('ogTitle').value.trim(),
     ogDescription: $('ogDescription').value.trim(),
     ogImage: $('ogImage').value.trim(),
@@ -226,8 +242,27 @@ function sessionImagesPayload() {
   return out;
 }
 
+function updateMissingPanelHeader(validation) {
+  const label = $('missing-heading-label');
+  if (!label) return;
+  const count = (validation?.missing?.length || 0) + (validation?.invalid?.length || 0);
+  label.textContent =
+    count === 0 ? 'All required fields present' : `Missing Fields (${count})`;
+}
+
+function updateChecklistPanelHeader(validation) {
+  const label = $('checklist-heading-label');
+  if (!label) return;
+  const incomplete = (validation?.statuses || []).filter((s) => !s.ok).length;
+  label.textContent =
+    incomplete === 0
+      ? 'Field Checklist (complete)'
+      : `Field Checklist (${incomplete} incomplete)`;
+}
+
 function renderChecklist(validation) {
   const ul = $('field-checklist');
+  if (!ul) return;
   ul.innerHTML = '';
   const byField = Object.fromEntries((validation?.statuses || []).map((s) => [s.field, s]));
 
@@ -257,6 +292,8 @@ function renderChecklist(validation) {
     }
     ul.appendChild(li);
   }
+
+  updateChecklistPanelHeader(validation);
 }
 
 function hasHeroImage() {
@@ -309,11 +346,15 @@ function updateGenerateButton(validation, collision) {
   }
   if (collision?.exists && !$('overwrite').checked) {
     reasons.push(`Slug collision: ${collision.file} exists — enable overwrite or rename slug`);
-    $('collision-warning').hidden = false;
-    $('collision-warning').textContent =
-      `Warning: ${collision.file} already exists. Enable overwrite or change the slug.`;
+    const warn = $('collision-warning');
+    if (warn) {
+      warn.hidden = false;
+      warn.textContent =
+        `Warning: ${collision.file} already exists. Enable overwrite or change the slug.`;
+    }
   } else {
-    $('collision-warning').hidden = true;
+    const warn = $('collision-warning');
+    if (warn) warn.hidden = true;
   }
 
   const unique = [...new Set(reasons)];
@@ -326,7 +367,8 @@ function updateGenerateButton(validation, collision) {
     canGenerate ? 'Ready to add.' : `Add disabled: ${unique.join(' · ')}`
   );
 
-  $('warnings').textContent = (validation?.warnings || []).join('\n');
+  const warnings = $('warnings');
+  if (warnings) warnings.textContent = (validation?.warnings || []).join('\n');
 }
 
 let validateTimer = null;
@@ -347,7 +389,9 @@ async function runValidate() {
     const json = await parseJsonResponse(res);
     if (!res.ok || !json.ok) throw new Error(json.error || 'Validate failed');
     lastValidation = json.validation;
-    $('missing-summary').textContent = json.validation.summary;
+    const missingSummary = $('missing-summary');
+    if (missingSummary) missingSummary.textContent = json.validation.summary;
+    updateMissingPanelHeader(json.validation);
     renderChecklist(json.validation);
     updateGenerateButton(json.validation, json.collision);
   } catch (e) {
@@ -373,8 +417,8 @@ function fillFormFromData(data, body) {
   $('twitterCard').value = data.twitterCard || 'summary_large_image';
   $('draft').checked = Boolean(data.draft);
   $('imageAlt').value = data.imageAlt || '';
-  $('image2Alt').value = data.image2Alt || '';
-  $('image3Alt').value = data.image3Alt || '';
+  if ($('image2Alt')) $('image2Alt').value = data.image2Alt || '';
+  if ($('image3Alt')) $('image3Alt').value = data.image3Alt || '';
   $('ogTitle').value = data.ogTitle || '';
   $('ogDescription').value = data.ogDescription || '';
   $('ogImage').value = data.ogImage || '';
@@ -417,42 +461,18 @@ function setSlotStatus(el, text, filled) {
 }
 
 function updateImageSlotStatus() {
+  const statusEl = $('slot-image-status');
+  if (!statusEl || !$('title')) return;
   const prior = $('title').dataset.priorImage || '';
-  const prior2 = $('title').dataset.priorImage2 || '';
-  const prior3 = $('title').dataset.priorImage3 || '';
 
   setSlotStatus(
-    $('slot-image-status'),
+    statusEl,
     sessionImageFiles.image
       ? `new: ${sessionImageFiles.image.name}`
       : prior
         ? `keeping: ${basenamePath(prior)}`
         : 'not uploaded',
     Boolean(sessionImageFiles.image || prior)
-  );
-
-  setSlotStatus(
-    $('slot-image2-status'),
-    sessionImageFiles.image2
-      ? `new: ${sessionImageFiles.image2.name}`
-      : clearedImageSlots.image2
-        ? 'cleared'
-        : prior2
-          ? `keeping: ${basenamePath(prior2)}`
-          : 'not uploaded',
-    Boolean(sessionImageFiles.image2 || (!clearedImageSlots.image2 && prior2))
-  );
-
-  setSlotStatus(
-    $('slot-image3-status'),
-    sessionImageFiles.image3
-      ? `new: ${sessionImageFiles.image3.name}`
-      : clearedImageSlots.image3
-        ? 'cleared'
-        : prior3
-          ? `keeping: ${basenamePath(prior3)}`
-          : 'not uploaded',
-    Boolean(sessionImageFiles.image3 || (!clearedImageSlots.image3 && prior3))
   );
 }
 
@@ -591,6 +611,7 @@ async function loadArticleList() {
   const data = await parseJsonResponse(res);
   if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load articles');
   const ul = $('article-list');
+  if (!ul) return;
   ul.innerHTML = '';
   if (!data.articles.length) {
     ul.innerHTML = '<li>No articles yet.</li>';
@@ -599,7 +620,7 @@ async function loadArticleList() {
   for (const a of data.articles) {
     const li = document.createElement('li');
     li.className = 'article-item';
-    li.innerHTML = `<a href="?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
+    li.innerHTML = `<a href="/add-article.html?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
       <span class="status-pill">${escapeHtml(a.slug)}</span>
       ${a.draft ? '<span class="status-pill is-blocked">draft</span>' : '<span class="status-pill is-ready">live</span>'}
       <button type="button" class="btn btn-ghost" data-unpublish="${a.slug}">Unpublish</button>
@@ -680,6 +701,7 @@ async function loadEditFromQuery() {
 }
 
 function setupDropZone(el, fileInput, onFiles) {
+  if (!el || !fileInput) return;
   el.addEventListener('click', () => {
     pendingReplaceSlot = null;
     fileInput.value = '';
@@ -913,30 +935,23 @@ function extFromName(name) {
   return m ? m[0].toLowerCase() : '.jpg';
 }
 
-async function init() {
+async function initArticleListPage() {
+  try {
+    await loadArticleList();
+  } catch (e) {
+    showError(e.message);
+  }
+}
+
+async function initArticleFormPage() {
   setupDropZone($('md-drop'), $('md-file'), handleMarkdownFiles);
   setupDropZone($('image-drop'), $('image-files'), (files) => acceptImages(files, 'hero'));
-  setupDropZone($('optional-image-drop'), $('optional-image-files'), (files) =>
-    acceptImages(files, 'optional')
-  );
 
   $('image-choose').addEventListener('click', () => openImagePickerForSlot('image'));
-  $('optional-image-choose')?.addEventListener('click', () => {
-    pendingReplaceSlot = null;
-    const input = $('optional-image-files');
-    if (!input) return;
-    input.value = '';
-    input.click();
-  });
 
   document.querySelectorAll('[data-replace-slot]').forEach((btn) => {
     btn.addEventListener('click', () => {
       openImagePickerForSlot(btn.getAttribute('data-replace-slot'));
-    });
-  });
-  document.querySelectorAll('[data-clear-slot]').forEach((btn) => {
-    btn.addEventListener('click', () => {
-      clearOptionalImageSlot(btn.getAttribute('data-clear-slot'));
     });
   });
 
@@ -970,8 +985,6 @@ async function init() {
     'twitterCard',
     'draft',
     'imageAlt',
-    'image2Alt',
-    'image3Alt',
     'ogTitle',
     'ogDescription',
     'ogImage',
@@ -999,12 +1012,25 @@ async function init() {
     if (routesRes.ok && routesJson.ok) knownRoutes = routesJson;
 
     await loadTeamOptions();
-    await loadArticleList();
     await loadEditFromQuery();
-    renderChecklist({ statuses: CHECKLIST_FIELDS.map((f) => ({ field: f, ok: false, message: 'not validated yet' })) });
+    renderChecklist({
+      statuses: CHECKLIST_FIELDS.map((f) => ({ field: f, ok: false, message: 'not validated yet' })),
+    });
+    updateMissingPanelHeader({ missing: [], invalid: [] });
     scheduleValidate();
   } catch (e) {
     showError(e.message);
+  }
+}
+
+async function init() {
+  const kind = pageKind();
+  if (kind === 'article-list') {
+    await initArticleListPage();
+    return;
+  }
+  if (kind === 'article-form') {
+    await initArticleFormPage();
   }
 }
 

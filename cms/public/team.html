@@ -19,76 +19,84 @@
           <span class="brand__name">Album Amicorum</span>
           <span class="brand__meta">Local CMS</span>
         </a>
-        <nav class="cms-nav" aria-label="CMS">
-          <a href="/">Articles</a>
-          <a href="/team.html" aria-current="page">Team</a>
-          <a href="/dashboard.html">Dashboard</a>
-        </nav>
       </div>
     </header>
 
-    <main class="site-shell">
-      <div class="page-intro">
-        <h1>New / Edit Team Member</h1>
-        <p>Authors available in the article form come from this list.</p>
-      </div>
+    <div class="cms-shell">
+      <aside class="cms-sidebar" aria-label="CMS navigation">
+        <ul class="sidebar-nav">
+          <li><a href="/">Articles</a></li>
+          <li><a href="/add-article.html">Add Article</a></li>
+          <li><a href="/team.html" aria-current="page">Team</a></li>
+          <li><a href="/dashboard.html">Dashboard</a></li>
+        </ul>
+      </aside>
 
-      <div class="stack">
-        <section class="panel" aria-labelledby="list-heading">
-          <h2 id="list-heading">Existing team</h2>
-          <ul class="plain-list" id="team-list">
-            <li>Loading…</li>
-          </ul>
-        </section>
+      <div class="cms-main">
+        <main class="site-shell">
+          <div class="page-intro">
+            <h1>New / Edit Team Member</h1>
+            <p>Authors available in the article form come from this list.</p>
+          </div>
 
-        <section class="panel" aria-labelledby="form-heading">
-          <h2 id="form-heading">Team member form</h2>
-          <p id="team-error" class="alert alert-error" role="alert" hidden></p>
-          <p id="team-success" class="alert alert-success" hidden></p>
-          <form id="team-form" class="field-grid">
-            <div class="field-grid cols-2">
-              <label class="field">
-                <span>name</span>
-                <input name="name" id="tm-name" required />
-              </label>
-              <label class="field">
-                <span>slug</span>
-                <input name="slug" id="tm-slug" required />
-              </label>
-              <label class="field">
-                <span>role</span>
-                <input name="role" id="tm-role" required />
-              </label>
-              <label class="field">
-                <span>credentials (optional)</span>
-                <input name="credentials" id="tm-credentials" />
-              </label>
-            </div>
-            <label class="field">
-              <span>bio</span>
-              <textarea name="bio" id="tm-bio" rows="4" required></textarea>
-            </label>
-            <label class="field">
-              <span>sameAs (one URL per line)</span>
-              <textarea name="sameAs" id="tm-sameAs" rows="3"></textarea>
-            </label>
-            <label class="field">
-              <span>photo (required for new; optional on edit if already set)</span>
-              <input type="file" name="photo" id="tm-photo" accept="image/*" />
-            </label>
-            <p id="existing-photo" class="field-hint" hidden></p>
-            <label class="check-row">
-              <input type="checkbox" id="tm-overwrite" />
-              <span>Overwrite existing slug</span>
-            </label>
-            <div class="btn-row">
-              <button type="submit" class="btn btn-primary">Save team member</button>
-              <button type="button" class="btn btn-ghost" id="tm-reset">Reset form</button>
-            </div>
-          </form>
-        </section>
+          <div class="stack">
+            <section class="panel" aria-labelledby="list-heading">
+              <h2 id="list-heading">Existing team</h2>
+              <ul class="plain-list" id="team-list">
+                <li>Loading…</li>
+              </ul>
+            </section>
+
+            <section class="panel" aria-labelledby="form-heading">
+              <h2 id="form-heading">Team member form</h2>
+              <p id="team-error" class="alert alert-error" role="alert" hidden></p>
+              <p id="team-success" class="alert alert-success" hidden></p>
+              <form id="team-form" class="field-grid">
+                <div class="field-grid cols-2">
+                  <label class="field">
+                    <span>name</span>
+                    <input name="name" id="tm-name" required />
+                  </label>
+                  <label class="field">
+                    <span>slug</span>
+                    <input name="slug" id="tm-slug" required />
+                  </label>
+                  <label class="field">
+                    <span>role</span>
+                    <input name="role" id="tm-role" required />
+                  </label>
+                  <label class="field">
+                    <span>credentials (optional)</span>
+                    <input name="credentials" id="tm-credentials" />
+                  </label>
+                </div>
+                <label class="field">
+                  <span>bio</span>
+                  <textarea name="bio" id="tm-bio" rows="4" required></textarea>
+                </label>
+                <label class="field">
+                  <span>sameAs (one URL per line)</span>
+                  <textarea name="sameAs" id="tm-sameAs" rows="3"></textarea>
+                </label>
+                <label class="field">
+                  <span>photo (required for new; optional on edit if already set)</span>
+                  <input type="file" name="photo" id="tm-photo" accept="image/*" />
+                </label>
+                <p id="existing-photo" class="field-hint" hidden></p>
+                <label class="check-row">
+                  <input type="checkbox" id="tm-overwrite" />
+                  <span>Overwrite existing slug</span>
+                </label>
+                <div class="btn-row">
+                  <button type="submit" class="btn btn-primary">Save team member</button>
+                  <button type="button" class="btn btn-ghost" id="tm-reset">Reset form</button>
+                </div>
+              </form>
+            </section>
+          </div>
+        </main>
       </div>
-    </main>
+    </div>
 
     <div id="toast-host" class="toast-host" aria-live="polite"></div>
 

@@ -6,7 +6,7 @@ interface Props {
 }
 
 const { headings } = Astro.props;
-const items = headings.filter((heading) => heading.depth === 2);
+const items = headings.filter((heading) => heading.depth === 2 || heading.depth === 3);
 ---
 
 {
@@ -17,7 +17,7 @@ const items = headings.filter((heading) => heading.depth === 2);
       </h2>
       <ol class="columns-1 gap-x-12 space-y-2 md:columns-2">
         {items.map((heading, index) => (
-          <li class="break-inside-avoid">
+          <li class:list={['break-inside-avoid', heading.depth === 3 && 'pl-5']}>
             <a
               href={`#${heading.slug}`}
               class="group inline-flex min-h-11 items-baseline gap-3 text-base text-ink no-underline hover:text-primary"

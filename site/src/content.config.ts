@@ -31,6 +31,7 @@ const articles = defineCollection({
       draft: z.boolean().default(false),
       updatedDate: z.coerce.date().optional(),
       keywords: z.array(z.string()).optional(),
+      pillarKeyword: z.string().optional(),
       canonical: z.string().optional(),
       image2: image().optional(),
       image2Alt: z.string().min(10).optional(),
