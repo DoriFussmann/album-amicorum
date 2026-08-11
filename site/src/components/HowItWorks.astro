@@ -1,0 +1,1055 @@
+---
+import Reveal from './Reveal.astro';
+
+const steps = [
+  {
+    id: 'make-it-yours',
+    title: 'Make it yours',
+    body: 'Write your name on the first page and fill out two pages about you: favorites, dreams, what makes you <em>you</em> right now.',
+    icon: 'butterfly',
+    label: 'Step 1',
+  },
+  {
+    id: 'mark-your-place',
+    title: 'Mark your place',
+    body: 'Slide the bookmark to the next empty page so friends know exactly where to write.',
+    icon: 'bookmark',
+    label: 'Step 2',
+  },
+  {
+    id: 'pass-it-on',
+    title: 'Pass it on',
+    body: 'Hand it to friends, cousins, teammates, teachers, coaches — anyone who\u2019s made life a little brighter.',
+    icon: 'pass',
+    label: 'Step 3',
+  },
+  {
+    id: 'watch-it-grow',
+    title: 'Watch it grow',
+    body: 'Each person fills a page, adds a photo, leaves a piece of themselves. Years from now, you\u2019ll have a book full of people who loved you.',
+    icon: 'bloom',
+    label: 'Step 4',
+  },
+] as const;
+---
+
+<section
+  id="how-it-works"
+  class="hiw section-space"
+  aria-labelledby="how-it-works-heading"
+  data-hiw
+>
+  <div class="hiw-wash" aria-hidden="true">
+    <img src="/images/hero-wash.svg" alt="" width="1440" height="900" decoding="async" />
+  </div>
+  <div class="hiw-torn hiw-torn--top" aria-hidden="true"></div>
+
+  <div class="site-container relative z-[1]">
+    <div class="mx-auto max-w-2xl text-center">
+      <Reveal>
+        <p class="text-sm font-semibold tracking-wide text-ink-muted">How It Works</p>
+        <h2 id="how-it-works-heading" class="mt-3">Four steps to a lifetime of memories</h2>
+      </Reveal>
+    </div>
+
+    <Reveal delay={120}>
+      <div class="hiw-stage mt-12 md:mt-16" data-hiw-stage>
+        <div class="hiw-book" data-hiw-book aria-live="polite">
+          <div class="hiw-cover" data-hiw-cover aria-hidden="true">
+            <div class="hiw-cover-face">
+              <span class="hiw-cover-mark">My Friends Book</span>
+              <span class="hiw-cover-sub">Open me</span>
+              <svg class="hiw-cover-critter" viewBox="0 0 64 48" aria-hidden="true">
+                <ellipse cx="32" cy="30" rx="18" ry="12" fill="#E8D5D0" />
+                <ellipse cx="22" cy="16" rx="6" ry="9" fill="#E8D5D0" />
+                <ellipse cx="42" cy="16" rx="6" ry="9" fill="#E8D5D0" />
+                <circle cx="26" cy="28" r="1.4" fill="#3B3530" />
+                <circle cx="38" cy="28" r="1.4" fill="#3B3530" />
+                <ellipse cx="32" cy="33" rx="2.5" ry="1.5" fill="#B8963E" opacity="0.7" />
+              </svg>
+            </div>
+          </div>
+
+          <div class="hiw-spread" id="hiw-panel" data-hiw-spread role="tabpanel" aria-labelledby="hiw-tab-make-it-yours">
+            <div class="hiw-page hiw-page--left">
+              <div class="hiw-page-inner" data-hiw-left>
+                <span class="hiw-step-num">01</span>
+                <div class="hiw-illo" data-icon="butterfly">
+                  <svg class="hiw-svg hiw-svg--butterfly" viewBox="0 0 160 140" fill="none" aria-hidden="true">
+                    <ellipse cx="80" cy="108" rx="42" ry="18" fill="#F3EFE8" stroke="#B8963E" stroke-width="1.5"></ellipse>
+                    <path d="M58 108h44" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="3 3"></path>
+                    <text x="80" y="112" text-anchor="middle" fill="#6B6358" font-size="9" font-family="Georgia, serif">my name</text>
+                    <g class="hiw-butterfly">
+                      <g class="hiw-wing hiw-wing--l">
+                        <g transform="rotate(-18 58 52)">
+                          <ellipse cx="58" cy="52" rx="28" ry="36" fill="#E8D5D0" opacity="0.9"></ellipse>
+                          <ellipse cx="52" cy="58" rx="14" ry="20" fill="#8FA8A0" opacity="0.35"></ellipse>
+                        </g>
+                      </g>
+                      <g class="hiw-wing hiw-wing--r">
+                        <g transform="rotate(18 102 52)">
+                          <ellipse cx="102" cy="52" rx="28" ry="36" fill="#E8D5D0" opacity="0.9"></ellipse>
+                          <ellipse cx="108" cy="58" rx="14" ry="20" fill="#7A9E7E" opacity="0.3"></ellipse>
+                        </g>
+                      </g>
+                      <ellipse cx="80" cy="58" rx="5" ry="22" fill="#5A5248" opacity="0.55"></ellipse>
+                      <circle cx="80" cy="38" r="3" fill="#5A5248" opacity="0.5"></circle>
+                      <path d="M78 36c-4-8-10-12-14-12M82 36c4-8 10-12 14-12" stroke="#5A5248" stroke-width="1.2" stroke-linecap="round" opacity="0.45"></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <div class="hiw-gutter" aria-hidden="true"></div>
+
+            <div class="hiw-page hiw-page--right">
+              <div class="hiw-page-inner hiw-page-inner--right" data-hiw-right>
+                <p class="hiw-step-label" data-hiw-label>Step 1</p>
+                <h3 class="hiw-step-title" data-hiw-title>Make it yours</h3>
+                <p class="hiw-step-body" data-hiw-body>
+                  Write your name on the first page and fill out two pages about you: favorites,
+                  dreams, what makes you <em>you</em> right now.
+                </p>
+              </div>
+
+              <div class="hiw-flipper" data-hiw-flipper aria-hidden="true">
+                <div class="hiw-flip-face hiw-flip-face--front" data-hiw-flip-front></div>
+                <div class="hiw-flip-face hiw-flip-face--back" data-hiw-flip-back></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hiw-controls mt-8 md:mt-10" role="tablist" aria-label="How it works steps">
+          {
+            steps.map((step, i) => (
+              <button
+                type="button"
+                class="hiw-dot"
+                role="tab"
+                id={`hiw-tab-${step.id}`}
+                aria-controls="hiw-panel"
+                aria-selected={i === 0 ? 'true' : 'false'}
+                aria-label={`${step.label}: ${step.title}`}
+                data-hiw-dot={i}
+                tabindex={i === 0 ? 0 : -1}
+              >
+                <span class="hiw-dot-pip" />
+                <span class="hiw-dot-label">{i + 1}</span>
+              </button>
+            ))
+          }
+        </div>
+
+        <div class="hiw-hint mt-4 text-center text-sm text-ink-muted md:hidden">
+          Swipe to turn the page
+        </div>
+
+        <p class="hiw-closing mt-10 text-center font-display text-lg italic text-ink-muted md:mt-12">
+          Happy memory-making. <span aria-hidden="true">🦔</span>
+        </p>
+      </div>
+    </Reveal>
+  </div>
+
+  <div class="hiw-torn hiw-torn--bottom" aria-hidden="true"></div>
+
+  {/* Illustration templates for JS cloning */}
+  <template id="hiw-illo-butterfly">
+    <svg class="hiw-svg hiw-svg--butterfly" viewBox="0 0 160 140" fill="none" aria-hidden="true">
+      <ellipse class="hiw-tag" cx="80" cy="108" rx="42" ry="18" fill="#F3EFE8" stroke="#B8963E" stroke-width="1.5" />
+      <path d="M58 108h44" stroke="#DDD8CE" stroke-width="1" stroke-dasharray="3 3" />
+      <text x="80" y="112" text-anchor="middle" fill="#6B6358" font-size="9" font-family="Georgia, serif">my name</text>
+      <g class="hiw-butterfly">
+        <g class="hiw-wing hiw-wing--l">
+          <g transform="rotate(-18 58 52)">
+            <ellipse cx="58" cy="52" rx="28" ry="36" fill="#E8D5D0" opacity="0.9" />
+            <ellipse cx="52" cy="58" rx="14" ry="20" fill="#8FA8A0" opacity="0.35" />
+          </g>
+        </g>
+        <g class="hiw-wing hiw-wing--r">
+          <g transform="rotate(18 102 52)">
+            <ellipse cx="102" cy="52" rx="28" ry="36" fill="#E8D5D0" opacity="0.9" />
+            <ellipse cx="108" cy="58" rx="14" ry="20" fill="#7A9E7E" opacity="0.3" />
+          </g>
+        </g>
+        <ellipse cx="80" cy="58" rx="5" ry="22" fill="#5A5248" opacity="0.55" />
+        <circle cx="80" cy="38" r="3" fill="#5A5248" opacity="0.5" />
+        <path d="M78 36c-4-8-10-12-14-12M82 36c4-8 10-12 14-12" stroke="#5A5248" stroke-width="1.2" stroke-linecap="round" opacity="0.45" />
+      </g>
+    </svg>
+  </template>
+
+  <template id="hiw-illo-bookmark">
+    <svg class="hiw-svg hiw-svg--bookmark" viewBox="0 0 160 140" fill="none" aria-hidden="true">
+      <rect x="36" y="28" width="88" height="96" rx="3" fill="#F7F3EC" stroke="#DDD8CE" stroke-width="1.5" />
+      <path d="M48 48h64M48 62h48M48 76h56" stroke="#E8E2D6" stroke-width="2" stroke-linecap="round" />
+      <g class="hiw-ribbon">
+        <path d="M108 18v78l-12-10-12 10V18z" fill="#B8963E" opacity="0.85" />
+        <path d="M96 18h24" stroke="#B8963E" stroke-width="3" stroke-linecap="round" />
+        <path d="M108 18c8-10 18-12 26-8" stroke="#7A9E7E" stroke-width="1.5" fill="none" opacity="0.6" />
+      </g>
+      <ellipse cx="48" cy="108" rx="8" ry="5" fill="#8FA8A0" opacity="0.35" />
+    </svg>
+  </template>
+
+  <template id="hiw-illo-pass">
+    <svg class="hiw-svg hiw-svg--pass" viewBox="0 0 160 140" fill="none" aria-hidden="true">
+      <g class="hiw-booklet" opacity="0.95">
+        <rect x="58" y="48" width="44" height="34" rx="2" fill="#F3EFE8" stroke="#B8963E" stroke-width="1.5" />
+        <line x1="80" y1="48" x2="80" y2="82" stroke="#DDD8CE" />
+      </g>
+      <g class="hiw-hands" opacity="0.7">
+        <path d="M28 78c12-8 28-6 36 2" stroke="#5A5248" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <path d="M96 80c10 6 24 8 36 2" stroke="#5A5248" stroke-width="2.5" stroke-linecap="round" fill="none" />
+        <circle cx="28" cy="78" r="5" fill="#E8D5D0" />
+        <circle cx="132" cy="82" r="5" fill="#D8CFC0" />
+      </g>
+      <g class="hiw-prints" fill="#7A9E7E">
+        <ellipse class="hiw-print" cx="40" cy="112" rx="4" ry="6" opacity="0.35" transform="rotate(-20 40 112)" />
+        <ellipse class="hiw-print" cx="58" cy="118" rx="3.5" ry="5.5" opacity="0.28" transform="rotate(10 58 118)" />
+        <ellipse class="hiw-print" cx="78" cy="114" rx="4" ry="6" opacity="0.22" transform="rotate(-8 78 114)" />
+        <ellipse class="hiw-print" cx="98" cy="120" rx="3.5" ry="5" opacity="0.18" transform="rotate(15 98 120)" />
+        <ellipse class="hiw-print" cx="118" cy="116" rx="4" ry="6" opacity="0.14" transform="rotate(-12 118 116)" />
+      </g>
+      <g class="hiw-bird" opacity="0.85">
+        <ellipse cx="122" cy="36" rx="14" ry="9" fill="#8A9BA8" />
+        <path class="hiw-wing-bird" d="M118 34c-8-2-14 2-16 8 8-2 14 0 18-4z" fill="#7A9E9A" />
+        <circle cx="132" cy="34" r="3.5" fill="#8A9BA8" />
+        <path d="M135 34l6 1" stroke="#B8963E" stroke-width="1.5" stroke-linecap="round" />
+      </g>
+    </svg>
+  </template>
+
+  <template id="hiw-illo-bloom">
+    <svg class="hiw-svg hiw-svg--bloom" viewBox="0 0 160 140" fill="none" aria-hidden="true">
+      <g class="hiw-pages">
+        <rect x="42" y="78" width="52" height="36" rx="2" fill="#F7F3EC" stroke="#DDD8CE" transform="rotate(-8 68 96)" />
+        <rect x="50" y="70" width="52" height="36" rx="2" fill="#F3EFE8" stroke="#DDD8CE" transform="rotate(-3 76 88)" />
+        <rect x="56" y="62" width="52" height="36" rx="2" fill="#FAF8F4" stroke="#B8963E" stroke-width="1.25" />
+        <path d="M66 72h32M66 80h24M66 88h28" stroke="#E8E2D6" stroke-width="1.5" stroke-linecap="round" />
+      </g>
+      <g class="hiw-flower">
+        <path class="hiw-stem" d="M108 118c2-18 8-32 4-48" stroke="#7A9E7E" stroke-width="2" stroke-linecap="round" />
+        <ellipse class="hiw-leaf" cx="98" cy="90" rx="10" ry="5" fill="#7A9E7E" opacity="0.55" transform="rotate(-30 98 90)" />
+        <ellipse class="hiw-leaf hiw-leaf--r" cx="118" cy="96" rx="9" ry="4.5" fill="#8FA8A0" opacity="0.5" transform="rotate(35 118 96)" />
+        <g class="hiw-blossom">
+          <ellipse cx="112" cy="58" rx="10" ry="14" fill="#E8D5D0" transform="rotate(0 112 58)" />
+          <ellipse cx="112" cy="58" rx="10" ry="14" fill="#E8D5D0" transform="rotate(60 112 58)" />
+          <ellipse cx="112" cy="58" rx="10" ry="14" fill="#E8D5D0" transform="rotate(120 112 58)" />
+          <circle cx="112" cy="58" r="5" fill="#B8963E" opacity="0.75" />
+        </g>
+      </g>
+    </svg>
+  </template>
+
+  <script define:vars={{ steps }}>
+    const FLIP_MS = 620;
+
+    function pad(n) {
+      return String(n + 1).padStart(2, '0');
+    }
+
+    function getIllo(icon) {
+      const tpl = document.getElementById(`hiw-illo-${icon}`);
+      return tpl ? tpl.content.cloneNode(true) : null;
+    }
+
+    function renderLeft(container, step, index) {
+      container.replaceChildren();
+      const num = document.createElement('span');
+      num.className = 'hiw-step-num';
+      num.textContent = pad(index);
+      const illo = document.createElement('div');
+      illo.className = 'hiw-illo';
+      illo.dataset.icon = step.icon;
+      const svg = getIllo(step.icon);
+      if (svg) illo.appendChild(svg);
+      container.append(num, illo);
+    }
+
+    function renderRight(container, step) {
+      container.replaceChildren();
+      const label = document.createElement('p');
+      label.className = 'hiw-step-label';
+      label.textContent = step.label;
+      const title = document.createElement('h3');
+      title.className = 'hiw-step-title';
+      title.textContent = step.title;
+      const body = document.createElement('p');
+      body.className = 'hiw-step-body';
+      body.innerHTML = step.body;
+      container.append(label, title, body);
+    }
+
+    function initHowItWorks() {
+      const root = document.querySelector('[data-hiw]');
+      if (!root || root.dataset.hiwReady === '1') return;
+      root.dataset.hiwReady = '1';
+
+      const book = root.querySelector('[data-hiw-book]');
+      const stage = root.querySelector('[data-hiw-stage]');
+      const leftEl = root.querySelector('[data-hiw-left]');
+      const rightEl = root.querySelector('[data-hiw-right]');
+      const flipper = root.querySelector('[data-hiw-flipper]');
+      const flipFront = root.querySelector('[data-hiw-flip-front]');
+      const flipBack = root.querySelector('[data-hiw-flip-back]');
+      const dots = Array.from(root.querySelectorAll('[data-hiw-dot]'));
+      const panel = root.querySelector('#hiw-panel');
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      let index = 0;
+      let busy = false;
+
+      function setDots(i) {
+        dots.forEach((dot, di) => {
+          const selected = di === i;
+          dot.setAttribute('aria-selected', selected ? 'true' : 'false');
+          dot.tabIndex = selected ? 0 : -1;
+          dot.classList.toggle('is-active', selected);
+        });
+        if (panel) panel.setAttribute('aria-labelledby', dots[i]?.id || '');
+      }
+
+      function paint(i) {
+        const step = steps[i];
+        renderLeft(leftEl, step, i);
+        renderRight(rightEl, step);
+        setDots(i);
+        index = i;
+      }
+
+      paint(0);
+
+      function openBook() {
+        if (book.classList.contains('is-open')) return;
+        window.setTimeout(() => book.classList.add('is-open'), reduceMotion ? 0 : 150);
+      }
+
+      const openObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            openBook();
+            openObserver.disconnect();
+          });
+        },
+        { threshold: 0.35 },
+      );
+      openObserver.observe(book);
+
+      function goTo(next) {
+        if (busy || next === index || next < 0 || next >= steps.length) return;
+
+        if (reduceMotion) {
+          paint(next);
+          return;
+        }
+
+        const forward = next > index;
+        const from = steps[index];
+        const to = steps[next];
+        busy = true;
+        book.classList.add('is-flipping');
+
+        flipFront.replaceChildren();
+        flipBack.replaceChildren();
+
+        const frontInner = document.createElement('div');
+        const backInner = document.createElement('div');
+
+        if (forward) {
+          // Front (visible at 0°) = current right; back = next left as the turning leaf
+          frontInner.className = 'hiw-page-inner hiw-page-inner--right';
+          renderRight(frontInner, from);
+          backInner.className = 'hiw-page-inner';
+          renderLeft(backInner, to, next);
+        } else {
+          // Start at -180° (back face visible) = current right; un-turn to destination right
+          backInner.className = 'hiw-page-inner hiw-page-inner--right';
+          renderRight(backInner, from);
+          frontInner.className = 'hiw-page-inner hiw-page-inner--right';
+          renderRight(frontInner, to);
+        }
+
+        flipFront.appendChild(frontInner);
+        flipBack.appendChild(backInner);
+
+        flipper.classList.add('is-visible');
+        flipper.classList.toggle('is-forward', forward);
+        flipper.classList.toggle('is-backward', !forward);
+
+        renderRight(rightEl, to);
+
+        requestAnimationFrame(() => {
+          requestAnimationFrame(() => {
+            flipper.classList.add('is-turned');
+          });
+        });
+
+        window.setTimeout(() => {
+          renderLeft(leftEl, to, next);
+          flipper.classList.remove('is-turned', 'is-visible', 'is-forward', 'is-backward');
+          flipFront.replaceChildren();
+          flipBack.replaceChildren();
+          book.classList.remove('is-flipping');
+          setDots(next);
+          index = next;
+          busy = false;
+        }, FLIP_MS);
+      }
+
+      dots.forEach((dot) => {
+        dot.addEventListener('click', () => {
+          const i = Number(dot.dataset.hiwDot);
+          goTo(i);
+        });
+      });
+
+      root.querySelector('.hiw-controls')?.addEventListener('keydown', (e) => {
+        let next = index;
+        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = Math.min(steps.length - 1, index + 1);
+        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = Math.max(0, index - 1);
+        else if (e.key === 'Home') next = 0;
+        else if (e.key === 'End') next = steps.length - 1;
+        else return;
+        e.preventDefault();
+        goTo(next);
+        dots[next]?.focus();
+      });
+
+      // Swipe (mobile) + wheel nudge on the book
+      let touchX = null;
+      stage.addEventListener(
+        'touchstart',
+        (e) => {
+          touchX = e.changedTouches[0]?.clientX ?? null;
+        },
+        { passive: true },
+      );
+      stage.addEventListener(
+        'touchend',
+        (e) => {
+          if (touchX == null) return;
+          const dx = (e.changedTouches[0]?.clientX ?? touchX) - touchX;
+          touchX = null;
+          if (Math.abs(dx) < 40) return;
+          if (dx < 0) goTo(index + 1);
+          else goTo(index - 1);
+        },
+        { passive: true },
+      );
+
+      let wheelLock = 0;
+      book.addEventListener(
+        'wheel',
+        (e) => {
+          if (Math.abs(e.deltaY) < 12 && Math.abs(e.deltaX) < 12) return;
+          const now = Date.now();
+          if (now < wheelLock) return;
+          const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+          if (Math.abs(delta) < 20) return;
+          e.preventDefault();
+          wheelLock = now + FLIP_MS + 80;
+          if (delta > 0) goTo(index + 1);
+          else goTo(index - 1);
+        },
+        { passive: false },
+      );
+    }
+
+    initHowItWorks();
+    document.addEventListener('astro:page-load', () => {
+      const root = document.querySelector('[data-hiw]');
+      if (root) delete root.dataset.hiwReady;
+      initHowItWorks();
+    });
+  </script>
+</section>
+
+<style>
+  .hiw {
+    position: relative;
+    overflow: hidden;
+    background-color: #faf8f4;
+  }
+
+  .hiw-wash {
+    pointer-events: none;
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .hiw-wash img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    opacity: 0.95;
+  }
+
+  .hiw-torn {
+    pointer-events: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    height: 28px;
+    background-color: #faf8f4;
+  }
+
+  .hiw-torn--top {
+    top: 0;
+    clip-path: polygon(
+      0 0,
+      100% 0,
+      100% 55%,
+      96% 100%,
+      92% 60%,
+      87% 95%,
+      82% 55%,
+      76% 100%,
+      70% 50%,
+      64% 90%,
+      58% 45%,
+      52% 100%,
+      46% 55%,
+      40% 95%,
+      34% 50%,
+      28% 100%,
+      22% 60%,
+      16% 95%,
+      10% 55%,
+      5% 100%,
+      0 50%
+    );
+  }
+
+  .hiw-torn--bottom {
+    bottom: 0;
+    clip-path: polygon(
+      0 45%,
+      4% 0,
+      9% 50%,
+      14% 5%,
+      20% 55%,
+      26% 0,
+      32% 50%,
+      38% 10%,
+      44% 55%,
+      50% 0,
+      56% 50%,
+      62% 8%,
+      68% 55%,
+      74% 0,
+      80% 50%,
+      86% 10%,
+      92% 55%,
+      97% 0,
+      100% 45%,
+      100% 100%,
+      0 100%
+    );
+  }
+
+  .hiw-stage {
+    --hiw-flip: 620ms;
+  }
+
+  .hiw-book {
+    position: relative;
+    margin-inline: auto;
+    width: min(100%, 52rem);
+    aspect-ratio: 16 / 10;
+    max-height: min(68vh, 28rem);
+    perspective: 2200px;
+    transform: scale(0.92);
+    transform-origin: center center;
+    transition:
+      transform 0.7s ease-in-out,
+      filter 0.7s ease-in-out;
+    filter: saturate(0.92);
+  }
+
+  .hiw-book.is-open {
+    transform: scale(1);
+    filter: none;
+  }
+
+  .hiw-cover {
+    position: absolute;
+    inset: 0;
+    z-index: 6;
+    display: grid;
+    place-items: center;
+    border-radius: 4px 10px 10px 4px;
+    background:
+      linear-gradient(135deg, rgba(250, 248, 244, 0.2), transparent 40%),
+      linear-gradient(160deg, #7a9e7e 0%, #4e684e 55%, #3b553b 100%);
+    box-shadow: 0 18px 40px -20px rgba(59, 53, 48, 0.35);
+    transform-origin: left center;
+    transform: rotateY(0deg);
+    transition: transform 0.7s ease-in-out, opacity 0.5s ease-in-out;
+    backface-visibility: hidden;
+  }
+
+  .hiw-book.is-open .hiw-cover {
+    transform: rotateY(-105deg);
+    opacity: 0;
+    pointer-events: none;
+  }
+
+  .hiw-cover-face {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    color: #faf8f4;
+    text-align: center;
+    padding: 1.5rem;
+  }
+
+  .hiw-cover-mark {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(1.5rem, 3vw, 2.25rem);
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+
+  .hiw-cover-sub {
+    font-family: Nunito, sans-serif;
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .hiw-cover-critter {
+    width: 4rem;
+    margin-top: 0.5rem;
+    opacity: 0.9;
+  }
+
+  .hiw-spread {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    grid-template-columns: 1fr 10px 1fr;
+    border-radius: 6px;
+    background: #f7f3ec;
+    box-shadow:
+      0 20px 48px -24px rgba(59, 53, 48, 0.28),
+      inset 0 0 0 1px rgba(221, 216, 206, 0.9);
+    overflow: hidden;
+    opacity: 0;
+    transform: translateX(0.5rem);
+    transition:
+      opacity 0.45s ease-out 0.15s,
+      transform 0.55s ease-out 0.15s;
+  }
+
+  .hiw-book.is-open .hiw-spread {
+    opacity: 1;
+    transform: none;
+  }
+
+  .hiw-gutter {
+    background: linear-gradient(
+      90deg,
+      rgba(59, 53, 48, 0.1),
+      rgba(59, 53, 48, 0.03) 40%,
+      rgba(250, 248, 244, 0.5) 50%,
+      rgba(59, 53, 48, 0.03) 60%,
+      rgba(59, 53, 48, 0.1)
+    );
+  }
+
+  .hiw-page {
+    position: relative;
+    min-width: 0;
+    background:
+      radial-gradient(120% 80% at 10% 0%, rgba(232, 213, 208, 0.28), transparent 50%),
+      radial-gradient(100% 70% at 90% 100%, rgba(122, 158, 126, 0.12), transparent 45%),
+      #f7f3ec;
+  }
+
+  .hiw-page--right {
+    background:
+      radial-gradient(120% 80% at 90% 0%, rgba(143, 168, 160, 0.18), transparent 50%),
+      radial-gradient(100% 70% at 20% 100%, rgba(232, 213, 208, 0.22), transparent 45%),
+      #faf8f4;
+  }
+
+  .hiw-page-inner {
+    display: flex;
+    height: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    padding: clamp(1rem, 3vw, 2rem);
+    text-align: center;
+  }
+
+  .hiw-page-inner--right {
+    align-items: flex-start;
+    text-align: left;
+    justify-content: center;
+  }
+
+  .hiw-step-num {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 700;
+    line-height: 1;
+    color: #4e684e;
+    opacity: 0.85;
+  }
+
+  .hiw-illo {
+    width: min(70%, 11rem);
+    aspect-ratio: 8 / 7;
+  }
+
+  .hiw-illo .hiw-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hiw-step-label {
+    margin: 0;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #6b6358;
+  }
+
+  .hiw-step-title {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.6vw, 1.9rem);
+    line-height: 1.2;
+  }
+
+  .hiw-step-body {
+    margin: 0;
+    max-width: 28ch;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    line-height: 1.7;
+    color: #5a5248;
+  }
+
+  .hiw-flipper {
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    transform-origin: left center;
+    transform-style: preserve-3d;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .hiw-flipper.is-visible {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  .hiw-flipper.is-forward {
+    transform: rotateY(0deg);
+  }
+
+  .hiw-flipper.is-forward.is-turned {
+    transition: transform var(--hiw-flip) ease-in-out;
+    transform: rotateY(-180deg);
+  }
+
+  .hiw-flipper.is-backward {
+    transform: rotateY(-180deg);
+  }
+
+  .hiw-flipper.is-backward.is-turned {
+    transition: transform var(--hiw-flip) ease-in-out;
+    transform: rotateY(0deg);
+  }
+
+  .hiw-flip-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    background:
+      radial-gradient(120% 80% at 90% 0%, rgba(143, 168, 160, 0.18), transparent 50%),
+      #faf8f4;
+    box-shadow: inset 0 0 0 1px rgba(221, 216, 206, 0.7);
+  }
+
+  .hiw-flip-face--back {
+    transform: rotateY(180deg);
+    background:
+      radial-gradient(120% 80% at 10% 0%, rgba(232, 213, 208, 0.28), transparent 50%),
+      #f7f3ec;
+  }
+
+  .hiw-controls {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+  }
+
+  .hiw-dot {
+    display: inline-flex;
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    border: 0;
+    background: transparent;
+    color: #6b6358;
+    cursor: pointer;
+    border-radius: 999px;
+    padding: 0.35rem 0.65rem;
+    transition: color 280ms ease, background-color 280ms ease;
+  }
+
+  .hiw-dot:hover {
+    color: #4e684e;
+    background: rgba(122, 158, 126, 0.12);
+  }
+
+  .hiw-dot:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px #faf8f4, 0 0 0 4px #4e684e;
+  }
+
+  .hiw-dot-pip {
+    width: 0.55rem;
+    height: 0.55rem;
+    border-radius: 999px;
+    background: #ddd8ce;
+    transition:
+      background-color 280ms ease,
+      transform 280ms ease,
+      box-shadow 280ms ease;
+  }
+
+  .hiw-dot.is-active .hiw-dot-pip {
+    background: #4e684e;
+    transform: scale(1.2);
+    box-shadow: 0 0 0 4px rgba(78, 104, 78, 0.15);
+  }
+
+  .hiw-dot-label {
+    font-size: 0.8rem;
+    font-weight: 600;
+  }
+
+  .hiw-dot.is-active .hiw-dot-label {
+    color: #3b3530;
+  }
+
+  .hiw-closing {
+    margin: 0;
+  }
+
+  /* Idle micro-motion — only when open and not reducing motion */
+  .hiw-book.is-open .hiw-wing--l {
+    transform-origin: 58px 58px;
+    animation: hiw-flutter-l 2.4s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-wing--r {
+    transform-origin: 102px 58px;
+    animation: hiw-flutter-r 2.4s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-ribbon {
+    transform-origin: 108px 18px;
+    animation: hiw-sway 2.8s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-wing-bird {
+    transform-origin: 122px 36px;
+    animation: hiw-bird 2.2s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-print {
+    animation: hiw-print 2.6s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-print:nth-child(2) {
+    animation-delay: 0.15s;
+  }
+  .hiw-book.is-open .hiw-print:nth-child(3) {
+    animation-delay: 0.3s;
+  }
+  .hiw-book.is-open .hiw-print:nth-child(4) {
+    animation-delay: 0.45s;
+  }
+  .hiw-book.is-open .hiw-print:nth-child(5) {
+    animation-delay: 0.6s;
+  }
+
+  .hiw-book.is-open .hiw-leaf {
+    transform-origin: 108px 90px;
+    animation: hiw-leaf 3s ease-in-out infinite;
+  }
+
+  .hiw-book.is-open .hiw-blossom {
+    transform-origin: 112px 58px;
+    animation: hiw-bloom 2.8s ease-in-out infinite;
+  }
+
+  @keyframes hiw-flutter-l {
+    0%,
+    100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.82);
+    }
+  }
+
+  @keyframes hiw-flutter-r {
+    0%,
+    100% {
+      transform: scaleX(1);
+    }
+    50% {
+      transform: scaleX(0.82);
+    }
+  }
+
+  @keyframes hiw-sway {
+    0%,
+    100% {
+      transform: rotate(0deg) translateY(0);
+    }
+    50% {
+      transform: rotate(2.5deg) translateY(2px);
+    }
+  }
+
+  @keyframes hiw-bird {
+    0%,
+    100% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(-12deg);
+    }
+  }
+
+  @keyframes hiw-print {
+    0%,
+    100% {
+      opacity: 0.15;
+    }
+    50% {
+      opacity: 0.4;
+    }
+  }
+
+  @keyframes hiw-leaf {
+    0%,
+    100% {
+      transform: rotate(-30deg);
+    }
+    50% {
+      transform: rotate(-18deg);
+    }
+  }
+
+  @keyframes hiw-bloom {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.06);
+    }
+  }
+
+  @media (max-width: 767px) {
+    .hiw-book {
+      aspect-ratio: 10 / 14;
+      max-height: none;
+      width: min(100%, 22rem);
+    }
+
+    .hiw-spread {
+      grid-template-columns: 1fr;
+      grid-template-rows: 42% 0 1fr;
+    }
+
+    .hiw-gutter {
+      display: none;
+    }
+
+    .hiw-page--left {
+      border-bottom: 1px solid rgba(221, 216, 206, 0.9);
+    }
+
+    .hiw-page-inner--right {
+      align-items: center;
+      text-align: center;
+      padding-top: 1.25rem;
+    }
+
+    .hiw-step-body {
+      max-width: 34ch;
+    }
+
+    .hiw-flipper {
+      /* On stacked mobile, flip the whole right (text) panel still reads as a turn */
+      inset: 42% 0 0 0;
+    }
+
+    .hiw-flip-face--back .hiw-page-inner {
+      justify-content: flex-start;
+      padding-top: 1.5rem;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .hiw-book,
+    .hiw-cover,
+    .hiw-spread,
+    .hiw-flipper,
+    .hiw-dot-pip {
+      transition: none !important;
+      animation: none !important;
+    }
+
+    .hiw-book {
+      transform: none;
+      filter: none;
+    }
+
+    .hiw-book.is-open .hiw-cover {
+      display: none;
+    }
+
+    .hiw-book .hiw-spread {
+      opacity: 1;
+      transform: none;
+    }
+
+    .hiw-book.is-open .hiw-wing--l,
+    .hiw-book.is-open .hiw-wing--r,
+    .hiw-book.is-open .hiw-ribbon,
+    .hiw-book.is-open .hiw-wing-bird,
+    .hiw-book.is-open .hiw-print,
+    .hiw-book.is-open .hiw-leaf,
+    .hiw-book.is-open .hiw-blossom {
+      animation: none !important;
+    }
+
+    .hiw-flipper {
+      display: none !important;
+    }
+  }
+</style>

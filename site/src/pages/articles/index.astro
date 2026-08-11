@@ -34,7 +34,7 @@ const articles = allArticles.slice(0, PAGE_SIZE);
               <li>
                 <a
                   href={`/articles/${article.data.slug}/`}
-                  class="card-link group flex h-full flex-col rounded-soft border border-border/70 bg-canvas p-6 no-underline"
+                  class="card-link group flex h-full flex-col rounded-soft border border-border/70 bg-canvas p-6 no-underline hover:no-underline"
                 >
                   <span class="font-display text-xl font-semibold text-ink-heading transition-colors duration-gentle group-hover:text-primary">
                     {article.data.title}

@@ -1,0 +1,84 @@
+---
+---
+
+<button
+  type="button"
+  data-scroll-top
+  class="scroll-to-top fixed bottom-6 right-6 z-30 flex h-11 w-11 items-center justify-center rounded-soft border border-border bg-canvas/90 text-ink-heading shadow-soft backdrop-blur-md transition-all duration-gentle hover:-translate-y-0.5 hover:border-primary/40 hover:text-primary hover:shadow-lift focus-ring"
+  aria-label="Scroll to top"
+>
+  <svg class="h-5 w-5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+    <path
+      d="M10 15V5M6 9l4-4 4 4"
+      stroke="currentColor"
+      stroke-width="1.25"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+</button>
+
+<style>
+  .scroll-to-top {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(0.5rem);
+  }
+
+  .scroll-to-top.is-visible {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .scroll-to-top {
+      transition: none;
+      transform: none;
+    }
+  }
+</style>
+
+<script>
+  let scrollTopCleanup: (() => void) | undefined;
+
+  function initScrollToTop() {
+    scrollTopCleanup?.();
+
+    const button = document.querySelector<HTMLButtonElement>('[data-scroll-top]');
+    if (!button) return;
+
+    const threshold = 400;
+    let ticking = false;
+
+    const update = () => {
+      button.classList.toggle('is-visible', window.scrollY > threshold);
+      ticking = false;
+    };
+
+    const onScroll = () => {
+      if (ticking) return;
+      ticking = true;
+      window.requestAnimationFrame(update);
+    };
+
+    const onClick = () => {
+      const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+    };
+
+    update();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    button.addEventListener('click', onClick);
+
+    scrollTopCleanup = () => {
+      window.removeEventListener('scroll', onScroll);
+      button.removeEventListener('click', onClick);
+    };
+  }
+
+  initScrollToTop();
+  document.addEventListener('astro:page-load', initScrollToTop);
+</script>

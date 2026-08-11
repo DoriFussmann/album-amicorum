@@ -4,7 +4,7 @@ title: Mermaids
 slug: mermaids
 tagline: Ocean stories waiting beneath the waves.
 price: "$30"
-cover: /images/books/placeholder-cover.svg
-interior: /images/books/placeholder-interior.svg
-order: 3
+cover: /images/books/mermaids-cover.jpg
+interior: /images/books/mermaids-interior.jpg
+order: 1
 ---

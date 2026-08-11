@@ -4,7 +4,7 @@ title: Flowers
 slug: flowers
 tagline: A garden filled with color, kindness, and imagination.
 price: "$30"
-cover: /images/books/placeholder-cover.svg
-interior: /images/books/placeholder-interior.svg
-order: 5
+cover: /images/books/flowers-cover.jpg
+interior: /images/books/flowers-interior.jpg
+order: 2
 ---

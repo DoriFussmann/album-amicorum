@@ -1,17 +1,19 @@
 ---
 import Reveal from './Reveal.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import SiteImage from './SiteImage.astro';
 // Image brief / prompt: imageBriefs.story in src/data/imageBriefs.ts
 ---
 
 <section id="story" aria-labelledby="story-heading" class="section-space bg-surface/50">
   <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <Reveal class="order-2 lg:order-1">
-      <ImagePlaceholder
-        briefId="story"
-        label="Photograph forthcoming"
+      <SiteImage
+        src="/images/story.jpg"
+        alt="Fairies edition of My Friends Book styled with linen, wildflowers, and colored pencils"
         caption="A tradition of friendship books"
         aspectClass="aspect-[4/3]"
+        width={1400}
+        height={1400}
       />
     </Reveal>
     <div class="order-1 lg:order-2">

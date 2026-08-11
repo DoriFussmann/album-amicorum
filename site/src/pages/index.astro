@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import WhatIs from '../components/WhatIs.astro';
+import HowItWorks from '../components/HowItWorks.astro';
 import OneOfAKind from '../components/OneOfAKind.astro';
 import Collection from '../components/Collection.astro';
 import WhyParents from '../components/WhyParents.astro';
@@ -21,6 +22,7 @@ const books = (await getCollection('books')).sort((a, b) => a.data.order - b.dat
 >
   <Hero />
   <WhatIs />
+  <HowItWorks />
   <OneOfAKind />
   <Collection books={books} />
   <WhyParents />

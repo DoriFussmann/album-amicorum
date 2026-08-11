@@ -1,6 +1,4 @@
 ---
-import Logo from './Logo.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
 // Image brief / prompt: imageBriefs.hero in src/data/imageBriefs.ts
 ---
 
@@ -9,22 +7,32 @@ import ImagePlaceholder from './ImagePlaceholder.astro';
   class="relative isolate overflow-hidden"
 >
   <div class="site-container hero-enter w-full py-16 md:py-24">
-    <div class="mb-8">
-      <Logo size="lg" withWordmark={true} stacked={true} link={false} />
-    </div>
+    <figure class="media-warm relative mb-12 aspect-video w-full max-w-5xl overflow-hidden">
+      <img
+        src="/images/hero.jpg"
+        alt="Children sitting together outdoors under a tree, sharing an open My Friends Book"
+        width="1800"
+        height="1800"
+        class="h-full w-full object-cover"
+        loading="eager"
+        decoding="async"
+      />
+      <div
+        class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/45 via-ink/25 to-ink/10"
+        aria-hidden="true"
+      ></div>
+      <div class="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
+        <h1
+          id="hero-heading"
+          class="max-w-2xl text-balance font-display text-3xl font-bold text-canvas drop-shadow-sm md:text-5xl md:leading-tight"
+        >
+          Friendships, kept by hand.
+        </h1>
+      </div>
+      <figcaption class="sr-only">A quiet moment with My Friends Book</figcaption>
+    </figure>
 
-    <ImagePlaceholder
-      briefId="hero"
-      label="Photograph forthcoming"
-      caption="A quiet moment with My Friends Book"
-      aspectClass="aspect-video w-full max-w-5xl"
-      class="mb-12"
-    />
-
-    <h1 id="hero-heading" class="max-w-3xl text-balance">
-      Childhood is too precious to scroll past.
-    </h1>
-    <p class="mt-6 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
+    <p class="max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
       Some memories are too meaningful to live on a screen.
     </p>
     <p class="mt-4 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">

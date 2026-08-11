@@ -95,7 +95,7 @@
   }
 
   .prose-article {
-    @apply mx-auto max-w-content text-ink;
+    @apply w-full text-ink;
   }
 
   .prose-article :where(p) {
@@ -103,11 +103,11 @@
   }
 
   .prose-article :where(h2) {
-    @apply mb-4 mt-12 text-2xl font-bold text-ink-heading;
+    @apply mb-4 mt-12 scroll-mt-24 text-2xl font-bold text-ink-heading;
   }
 
   .prose-article :where(h3) {
-    @apply mb-3 mt-8 text-xl font-semibold text-ink-heading;
+    @apply mb-3 mt-8 scroll-mt-24 text-xl font-semibold text-ink-heading;
   }
 
   .prose-article :where(ul, ol) {
@@ -143,11 +143,11 @@
   }
 
   .card-link {
-    @apply block rounded-soft transition-all duration-gentle;
+    @apply block rounded-soft no-underline transition-all duration-gentle;
   }
 
   .card-link:hover {
-    @apply -translate-y-1 shadow-lift;
+    @apply -translate-y-1 shadow-lift no-underline;
   }
 
   .card-link:focus-visible {

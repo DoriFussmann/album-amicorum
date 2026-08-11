@@ -1,6 +1,6 @@
 ---
 import Reveal from './Reveal.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import SiteImage from './SiteImage.astro';
 // No approved image brief in Website Specification v1.0 for this section.
 // See imageBriefs.whyParents in src/data/imageBriefs.ts
 
@@ -44,10 +44,12 @@ const reasons = [
       </ul>
     </div>
     <Reveal delay={120}>
-      <ImagePlaceholder
-        briefId="why-parents"
-        label="Photograph forthcoming"
+      <SiteImage
+        src="/images/why-parents.jpg"
+        alt="A child writing by hand in an open My Friends Book"
         aspectClass="aspect-[4/5]"
+        width={1400}
+        height={1400}
       />
     </Reveal>
   </div>

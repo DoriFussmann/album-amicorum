@@ -6,5 +6,5 @@ tagline: Adventure through a world long forgotten.
 price: "$30"
 cover: /images/books/placeholder-cover.svg
 interior: /images/books/placeholder-interior.svg
-order: 2
+order: 6
 ---

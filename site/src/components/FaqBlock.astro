@@ -13,16 +13,31 @@ const { faqs } = Astro.props;
 
 <section
   aria-labelledby="faq-heading"
-  class="mx-auto mt-16 max-w-content border-t border-border pt-12"
+  class="mt-16 w-full border-t border-border pt-12"
 >
   <h2 id="faq-heading" class="mb-8 text-2xl">Frequently asked questions</h2>
-  <div class="space-y-8">
+  <div class="divide-y divide-border border-y border-border">
     {
       faqs.map((faq) => (
-        <section class="rounded-soft bg-surface/60 px-6 py-5">
-          <h3 class="mb-3 text-xl font-semibold text-ink-heading">{faq.question}</h3>
-          <p class="leading-[1.7] text-ink">{faq.answer}</p>
-        </section>
+        <details class="group">
+          <summary class="flex min-h-11 cursor-pointer list-none items-center justify-between gap-4 py-5 font-display text-xl font-semibold text-ink-heading focus-ring [&::-webkit-details-marker]:hidden">
+            <span>{faq.question}</span>
+            <svg
+              class="h-5 w-5 shrink-0 text-ink-muted transition-transform duration-gentle group-open:rotate-45"
+              viewBox="0 0 20 20"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M10 4v12M4 10h12"
+                stroke="currentColor"
+                stroke-width="1.25"
+                stroke-linecap="round"
+              />
+            </svg>
+          </summary>
+          <p class="pb-5 leading-[1.7] text-ink">{faq.answer}</p>
+        </details>
       ))
     }
   </div>

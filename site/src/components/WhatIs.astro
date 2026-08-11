@@ -1,6 +1,6 @@
 ---
 import Reveal from './Reveal.astro';
-import ImagePlaceholder from './ImagePlaceholder.astro';
+import SiteImage from './SiteImage.astro';
 // Image brief / prompt: imageBriefs.whatIs in src/data/imageBriefs.ts
 
 const features = [
@@ -53,12 +53,14 @@ const features = [
         }
       </ul>
     </div>
-    <Reveal delay={120} class="lg:justify-self-end">
-      <ImagePlaceholder
-        briefId="what-is"
-        label="Photograph forthcoming"
+    <Reveal delay={120} class="w-full max-w-md justify-self-center lg:max-w-lg lg:justify-self-end">
+      <SiteImage
+        src="/images/what-is.jpg"
+        alt="Two children on the beach sharing a Mermaids edition of My Friends Book"
         caption="Friends sharing My Friends Book"
-        aspectClass="aspect-[4/5] max-w-md lg:max-w-none"
+        aspectClass="aspect-square w-full"
+        width={1400}
+        height={1400}
       />
     </Reveal>
   </div>
