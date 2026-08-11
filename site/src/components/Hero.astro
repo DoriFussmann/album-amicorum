@@ -4,35 +4,34 @@
 
 <section
   aria-labelledby="hero-heading"
-  class="relative isolate overflow-hidden"
+  class="relative isolate min-h-[min(88vh,52rem)] overflow-hidden"
 >
-  <div class="site-container hero-enter w-full py-16 md:py-24">
-    <figure class="media-warm relative mb-12 aspect-video w-full max-w-5xl overflow-hidden">
-      <img
-        src="/images/hero.jpg"
-        alt="Children sitting together outdoors under a tree, sharing an open My Friends Book"
-        width="1800"
-        height="1800"
-        class="h-full w-full object-cover"
-        loading="eager"
-        decoding="async"
-      />
-      <div
-        class="pointer-events-none absolute inset-0 z-[1] bg-gradient-to-t from-ink/45 via-ink/25 to-ink/10"
-        aria-hidden="true"
-      ></div>
-      <div class="absolute inset-0 z-10 flex items-center justify-center px-6 text-center">
-        <h1
-          id="hero-heading"
-          class="max-w-2xl text-balance font-display text-3xl font-bold text-canvas drop-shadow-sm md:text-5xl md:leading-tight"
-        >
-          Friendships, kept by hand.
-        </h1>
-      </div>
-      <figcaption class="sr-only">A quiet moment with My Friends Book</figcaption>
-    </figure>
+  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+    <img
+      src="/images/hero.jpg"
+      alt=""
+      width="1800"
+      height="1800"
+      class="h-full w-full object-cover object-center"
+      loading="eager"
+      decoding="async"
+      fetchpriority="high"
+    />
+    <div
+      class="absolute inset-0 bg-gradient-to-b from-canvas/55 via-canvas/72 to-canvas/92"
+    ></div>
+    <div class="absolute inset-0 bg-canvas/25"></div>
+  </div>
 
-    <p class="max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
+  <div class="site-container hero-enter relative z-10 flex min-h-[min(88vh,52rem)] w-full flex-col justify-center py-20 md:py-28">
+    <h1
+      id="hero-heading"
+      class="max-w-2xl text-balance font-display text-3xl font-bold text-ink-heading md:text-5xl md:leading-tight"
+    >
+      Friendships, kept by hand.
+    </h1>
+
+    <p class="mt-8 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">
       Some memories are too meaningful to live on a screen.
     </p>
     <p class="mt-4 max-w-xl text-lg text-ink md:text-xl md:leading-[1.5]">

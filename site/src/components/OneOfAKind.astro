@@ -1,28 +1,23 @@
 ---
 import Reveal from './Reveal.astro';
-import SiteImage from './SiteImage.astro';
-// Image brief / prompt: imageBriefs.oneOfAKind in src/data/imageBriefs.ts
 ---
 
 <section id="one-of-a-kind" aria-labelledby="one-of-a-kind-heading" class="section-space">
   <div class="site-container">
-    <Reveal>
-      <SiteImage
-        src="/images/one-of-a-kind.jpg"
-        alt="Open Flowers edition of My Friends Book showing illustrated pages ready for handwritten memories"
-        caption="Every page uniquely filled"
-        aspectClass="aspect-video w-full"
-        class="mb-12 md:mb-16"
-        width={1600}
-        height={1600}
-      />
-    </Reveal>
-
     <div class="mx-auto max-w-2xl text-center">
-      <Reveal delay={80}>
+      <Reveal>
+        <img
+          src="/images/botanical-sprig.svg"
+          alt=""
+          width="72"
+          height="48"
+          class="mx-auto mb-8 opacity-70"
+          decoding="async"
+          aria-hidden="true"
+        />
         <h2 id="one-of-a-kind-heading">Every Friend Book becomes one of a kind.</h2>
       </Reveal>
-      <Reveal delay={140}>
+      <Reveal delay={80}>
         <p class="mt-8 leading-[1.7]">No two books will ever be the same.</p>
         <p class="mt-4 leading-[1.7]">Every friend leaves something different behind.</p>
         <p class="mt-4 leading-[1.7]">Different handwriting.</p>
