@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
 keywords:
   - friend books for kids
   - Friend Books & Friendship Keepsakes
@@ -32,6 +32,12 @@ faqs:
     answer: "Friend Books are especially powerful at natural transition moments: the end of the school year, the last day of elementary school, a move to a new city, the start of summer camp, or a milestone birthday. These are the moments when friendships are most vivid and most at risk of being lost to time and distance. A Friend Book given at one of these occasions invites a child to immediately start collecting entries — turning the gift into an active, living project from the very first day."
   - question: What should I look for in a high-quality Friend Book?
     answer: "The most important qualities are thoughtful prompts that go beyond name and birthday, enough page space for both writing and drawing, durable paper that holds pencil and marker without bleeding, and illustration or design that signals to the child that the book — and their friendships — are worth treasuring. A beautifully illustrated Friend Book also tends to prompt more beautiful entries: children rise to the standard of the object they are holding. Heirloom-quality binding and cover materials matter too, since the whole point is a book that survives decades on a shelf."
+pillarKeyword: friend books for kids
+articleType: comprehensive
+targetKeyword: friend books for kids
+internalLinks:
+  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+    url: /articles/friendship-book-for-kids/
 ---
 
 ## What Is a Friend Book — and Why Does It Deserve Its Own Category?
@@ -191,3 +197,5 @@ Nostalgia is actively redefining what childhood looks and feels like in 2026, wi
 consumers are increasingly curating their "personal lore" in physical form, turning personalized keepsakes into tangible archives of identity, with junk journaling searches up 63% year-over-year — signaling growing demand for hands-on memory keeping. As digital fatigue rises, creativity is moving offline, with searches for analog hobbies such as journaling surging 136% over the past six months.
  The category of beautifully made, illustrated children's keepsakes that require no screen and produce something genuinely irreplaceable sits squarely at the intersection of these converging trends — with no indication that the direction is changing.
 <!-- WHERE-THINGS-STAND:END -->
+
+See Related below for more on this topic.

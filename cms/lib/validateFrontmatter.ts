@@ -370,6 +370,22 @@ export function validateFrontmatter(opts: {
     draft: typeof data.draft === 'boolean' ? data.draft : DEFAULTS.draft,
     updatedDate: (data.updatedDate as string) || (dateRaw as string),
     keywords: keywords.length ? keywords : undefined,
+    pillarKeyword:
+      typeof data.pillarKeyword === 'string' && data.pillarKeyword.trim()
+        ? data.pillarKeyword.trim()
+        : undefined,
+    supportingKeyword:
+      typeof data.supportingKeyword === 'string' && data.supportingKeyword.trim()
+        ? data.supportingKeyword.trim()
+        : undefined,
+    articleType:
+      typeof data.articleType === 'string' && data.articleType.trim()
+        ? data.articleType.trim()
+        : undefined,
+    targetKeyword:
+      typeof data.targetKeyword === 'string' && data.targetKeyword.trim()
+        ? data.targetKeyword.trim()
+        : undefined,
     canonical: canonical || undefined,
     image2Alt: typeof data.image2Alt === 'string' ? data.image2Alt : undefined,
     image3Alt: typeof data.image3Alt === 'string' ? data.image3Alt : undefined,

@@ -1,4 +1,4 @@
-/** Single source of truth for the 24-field article schema — field names must match site/src/content.config.ts exactly. */
+/** Single source of truth for the article schema — field names must match site/src/content.config.ts exactly. */
 
 export const ARTICLE_FIELD_NAMES = [
   'title',
@@ -17,6 +17,10 @@ export const ARTICLE_FIELD_NAMES = [
   'draft',
   'updatedDate',
   'keywords',
+  'pillarKeyword',
+  'supportingKeyword',
+  'articleType',
+  'targetKeyword',
   'canonical',
   'image2',
   'image2Alt',
@@ -32,7 +36,7 @@ export const ARTICLE_FIELD_NAMES = [
 
 export type ArticleFieldName = (typeof ARTICLE_FIELD_NAMES)[number];
 
-/** The 24 frontmatter fields shown in the CMS checklist (body is separate). */
+/** Frontmatter fields shown in the CMS checklist (body is separate). */
 export const CHECKLIST_FIELDS = [
   'title',
   'description',
@@ -50,6 +54,10 @@ export const CHECKLIST_FIELDS = [
   'draft',
   'updatedDate',
   'keywords',
+  'pillarKeyword',
+  'supportingKeyword',
+  'articleType',
+  'targetKeyword',
   'canonical',
   'image2',
   'image2Alt',
@@ -104,6 +112,10 @@ export interface ArticleFrontmatter {
   draft?: boolean;
   updatedDate?: string | Date;
   keywords?: string[];
+  pillarKeyword?: string;
+  supportingKeyword?: string;
+  articleType?: string;
+  targetKeyword?: string;
   canonical?: string;
   image2?: string;
   image2Alt?: string;

@@ -34,6 +34,10 @@ function buildFrontmatter(
   };
 
   if (data.keywords?.length) fm.keywords = data.keywords;
+  if (data.pillarKeyword) fm.pillarKeyword = data.pillarKeyword;
+  if (data.supportingKeyword) fm.supportingKeyword = data.supportingKeyword;
+  if (data.articleType) fm.articleType = data.articleType;
+  if (data.targetKeyword) fm.targetKeyword = data.targetKeyword;
   if (data.canonical) fm.canonical = data.canonical;
   if (imagePaths.image2) {
     fm.image2 = imagePaths.image2;
@@ -143,17 +147,73 @@ export function writeArticle(input: WriteArticleInput): { path: string; slug: st
   return { path: outMd, slug };
 }
 
-export function setArticleDraft(slug: string, draft: boolean): void {
+export function readArticleFile(slug: string): {
+  frontmatter: Record<string, unknown>;
+  body: string;
+  filename: string;
+} | null {
   const filePath = path.join(ARTICLES_DIR, `${slug}.md`);
-  if (!fs.existsSync(filePath)) throw new Error(`Article not found: ${slug}`);
+  if (!fs.existsSync(filePath)) return null;
   const raw = fs.readFileSync(filePath, 'utf8');
-  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
-  if (!match) throw new Error('Invalid frontmatter');
-  const fm = YAML.parse(match[1]) as Record<string, unknown>;
-  fm.draft = draft;
+  const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---(?:\r?\n)?([\s\S]*)$/);
+  if (!match) return { frontmatter: {}, body: raw, filename: `${slug}.md` };
+  return {
+    frontmatter: (YAML.parse(match[1]) as Record<string, unknown>) || {},
+    body: String(match[2] || '').trim(),
+    filename: `${slug}.md`,
+  };
+}
+
+export function setArticleDraft(slug: string, draft: boolean): void {
+  const existing = readArticleFile(slug);
+  if (!existing) throw new Error(`Article not found: ${slug}`);
+  const fm = { ...existing.frontmatter, draft };
   const yaml = YAML.stringify(fm, { lineWidth: 0 }).trimEnd();
-  fs.writeFileSync(filePath, `---\n${yaml}\n---\n${match[2]}`, 'utf8');
+  fs.writeFileSync(
+    path.join(ARTICLES_DIR, `${slug}.md`),
+    `---\n${yaml}\n---\n\n${existing.body}\n`,
+    'utf8'
+  );
   generateLlmsTxt();
+}
+
+/**
+ * Patch frontmatter and/or body in place (preserves unrelated fields).
+ * Used by Articles Health Connect / external-link writes.
+ */
+export function patchArticleContent(
+  slug: string,
+  options: {
+    frontmatterPatch?: Record<string, unknown>;
+    body?: string;
+    bumpUpdatedDate?: boolean;
+  }
+): { slug: string; updatedDate?: string } {
+  const existing = readArticleFile(slug);
+  if (!existing) throw new Error(`Article not found: ${slug}`);
+
+  const fm: Record<string, unknown> = {
+    ...existing.frontmatter,
+    ...(options.frontmatterPatch || {}),
+  };
+
+  if (options.bumpUpdatedDate !== false) {
+    fm.updatedDate = new Date().toISOString().slice(0, 10);
+  }
+
+  const body = options.body !== undefined ? options.body : existing.body;
+  const yaml = YAML.stringify(fm, { lineWidth: 0 }).trimEnd();
+  fs.writeFileSync(
+    path.join(ARTICLES_DIR, `${slug}.md`),
+    `---\n${yaml}\n---\n\n${body.trim()}\n`,
+    'utf8'
+  );
+  generateLlmsTxt();
+
+  return {
+    slug,
+    updatedDate: fm.updatedDate ? String(fm.updatedDate) : undefined,
+  };
 }
 
 export function deleteArticle(slug: string): void {

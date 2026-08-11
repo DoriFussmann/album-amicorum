@@ -18,7 +18,11 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
+pillarKeyword: friend books for kids
+supportingKeyword: friendship book for kids
+articleType: howto
+targetKeyword: how to start a friendship book for kids
 keywords:
   - how to start a friendship book for kids (no volume data)
   - friendship book for kids
@@ -32,6 +36,17 @@ faqs:
     answer: There's no magic number. Some families keep a single book across several years, adding pages from different grades and seasons of friendship. Others start a new book for a specific chapter — a school year, a move, a summer. The book is complete when it feels complete to your child, not when a certain quota is reached.
   - question: Can a friendship book double as a birthday or going-away gift?
     answer: Absolutely — and it's one of the most thoughtful ways to give one. Presenting a friendship book at a birthday party gives the child an immediate reason to start passing it around, and friends who are present can fill a page that same day. For a child who is moving away, a book that friends fill at a farewell gathering becomes an instant, irreplaceable record of that chapter of life.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
+  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+    url: /articles/friendship-book-for-kids-questions/
+  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+    url: /articles/friendship-book-for-kids/
+  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
+  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
+    url: /articles/when-to-give-a-friendship-book-for-kids/
 ---
 
 ## Why Starting a Friendship Book Is Worth Doing Right
@@ -130,3 +145,5 @@ Across households, parents are rediscovering the value of analog childhood throu
 More families are intentionally slowing down, limiting screen time, and reclaiming the kinds of offline experiences that once defined growing up — free play, imagination, and real connection — making analog living one of the biggest parenting trends of 2026. Nostalgia is redefining what childhood looks and feels like this year, with parents filling playrooms with throwback toys and gravitating toward handmade patterns and tactile experiences, using the past as a blueprint for a more grounded childhood. The so-called "analog bag" trend — screen-free activity kits built around offline materials — became one of the most searched and shared trends of 2026, spreading from social media into the daily routines of families everywhere.
  For friendship books specifically, no major product or category disruptions have emerged in the past 45 days; the space remains stable, with steady parent interest that mirrors the broader analog parenting movement gaining momentum this year.
 <!-- WHERE-THINGS-STAND:END -->
+
+See Related below for more on this topic.

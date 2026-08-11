@@ -19,6 +19,10 @@ locale: en-US
 twitterCard: summary_large_image
 draft: false
 updatedDate: 2026-08-11
+pillarKeyword: friend books for kids
+supportingKeyword: friendship book for kids
+articleType: comparison
+targetKeyword: friendship storybook vs friendship keepsake book for kids
 keywords:
   - friendship storybook vs friendship keepsake book for kids (no volume data)
   - friendship book for kids
@@ -32,6 +36,17 @@ faqs:
     answer: Absolutely — pairing the two makes a beautiful gift set. A thoughtfully chosen picture book about friendship gives a child a model of what great friendship looks like, while a keepsake book gives them a place to record the friendships they actually have. Together they make a complete, meaningful gift for birthdays, end-of-year celebrations, or any milestone moment involving friendships.
   - question: What should I look for in a quality friendship keepsake book?
     answer: Look for thick, quality paper that holds colored pencil and ink without bleed-through, prompts that are genuinely fun and varied (not just name-and-favorite-color), and illustrations that are beautiful enough to make the book feel worth keeping. A hardcover or durable binding matters too — this is a book meant to sit on a shelf for decades, not weeks.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
+  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+    url: /articles/friendship-book-for-kids-questions/
+  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+    url: /articles/friendship-book-for-kids/
+  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+    url: /articles/how-to-start-a-friendship-book-for-kids/
+  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
+    url: /articles/when-to-give-a-friendship-book-for-kids/
 ---
 
 # Friendship Storybooks vs. Keepsake Books: Which Is Right?
@@ -133,3 +148,5 @@ industry voices note that no amount of AI-generated content will replace the nee
  At the same time, 
 recent studies have linked strong childhood friendships with better mental health outcomes later on, with children who experience supportive friendships tending to report lower levels of loneliness and anxiety as they grow older
  — a finding that makes the case for tools that actively honour those friendships feel timely rather than nostalgic. The friendship keepsake book category sits squarely at the intersection of these two trends: a physically beautiful, screen-free artifact that treats children's real relationships as something worth preserving with care.
+
+See Related below for more on this topic.

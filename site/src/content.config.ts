@@ -32,6 +32,9 @@ const articles = defineCollection({
       updatedDate: z.coerce.date().optional(),
       keywords: z.array(z.string()).optional(),
       pillarKeyword: z.string().optional(),
+      supportingKeyword: z.string().optional(),
+      articleType: z.string().optional(),
+      targetKeyword: z.string().optional(),
       canonical: z.string().optional(),
       image2: image().optional(),
       image2Alt: z.string().min(10).optional(),
@@ -79,6 +82,7 @@ const books = defineCollection({
     price: z.string(),
     cover: z.string(),
     interior: z.string(),
+    gallery: z.array(z.string()).optional(),
     order: z.number(),
   }),
 });

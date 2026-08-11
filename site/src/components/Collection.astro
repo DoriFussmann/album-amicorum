@@ -37,10 +37,12 @@ const offsets = ['none', 'up', 'down', 'up', 'none', 'down', 'up'] as const;
               <Reveal delay={i * 90}>
                 <BookCard
                   title={book.data.title}
+                  slug={book.data.slug}
                   tagline={book.data.tagline}
                   price={book.data.price}
                   cover={book.data.cover}
                   interior={book.data.interior}
+                  gallery={book.data.gallery}
                   offset={offsets[i % offsets.length]}
                 />
               </Reveal>

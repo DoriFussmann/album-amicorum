@@ -31,6 +31,21 @@ faqs:
     answer: "The most meaningful moments tend to be school transitions — starting a new year, moving to a new school, or finishing primary school. But birthday celebrations and end-of-year class parties are equally good occasions, as they naturally gather the circle of friends who will fill the book. The underlying principle is simple: give it when friendships are at their most vivid and before time moves everyone along."
   - question: What should I look for when choosing a friendship book for kids?
     answer: "Look for four things: illustration quality that makes the book feel genuinely special (not a mass-market photocopied template); prompts that invite real self-expression — favourite things, drawings, memories, and messages — rather than simple tick-boxes; paper quality thick enough for coloured pencils without bleed-through; and a format broad enough in age range to remain relevant as the child grows. A beautifully designed book also signals to the child that the friendships being preserved matter, which shapes how carefully their friends treat the pages."
+pillarKeyword: friend books for kids
+supportingKeyword: friendship book for kids
+articleType: comprehensive
+targetKeyword: friendship book for kids
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
+  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+    url: /articles/friendship-book-for-kids-questions/
+  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
+  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+    url: /articles/how-to-start-a-friendship-book-for-kids/
+  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
+    url: /articles/when-to-give-a-friendship-book-for-kids/
 ---
 
 # Friendship Book for Kids: The Complete Guide to Keepsakes
@@ -154,3 +169,5 @@ Retail data described in industry trend reports characterises 2026 consumers as 
  This appetite extends directly to the gifts and keepsakes parents choose for children: handmade, handwritten, and beautifully designed objects are finding a larger and more receptive audience than they have in years. 
 In the children's product space specifically, content that helps children understand relationships and emotional connection continues to outperform across categories
 , reinforcing the cultural appetite for meaningful, friendship-centred keepsakes. No major product launches or news events specific to the friendship book niche have been reported in the past 45 days, making this a stable and steadily growing territory rather than one shaped by sudden developments.
+
+See Related below for more on this topic.

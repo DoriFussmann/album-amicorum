@@ -28,33 +28,101 @@ const links = [
         }
       </ul>
 
-      <details class="group relative md:hidden">
-        <summary
-          class="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-soft text-ink-heading focus-ring [&::-webkit-details-marker]:hidden"
-          aria-label="Open menu"
+      <div class="flex items-center gap-2">
+        <a
+          href="/cart/"
+          class="relative inline-flex min-h-11 min-w-11 items-center justify-center rounded-soft text-ink-heading no-underline focus-ring"
+          aria-label="Cart"
+          data-cart-link
         >
-          <span class="sr-only">Menu</span>
-          <svg class="h-6 w-6 group-open:hidden" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+          <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M6.5 7h11l-1 11h-9l-1-11Z"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linejoin="round"
+            />
+            <path
+              d="M9 7a3 3 0 0 1 6 0"
+              stroke="currentColor"
+              stroke-width="1.25"
+              stroke-linecap="round"
+            />
           </svg>
-          <svg class="hidden h-6 w-6 group-open:block" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
-          </svg>
-        </summary>
-        <ul
-          class="absolute right-0 mt-2 min-w-[12rem] rounded-soft border border-border bg-surface p-2 shadow-soft"
-        >
-          {
-            links.map((link) => (
-              <li>
-                <a class="nav-link block w-full" href={link.href}>
-                  {link.label}
-                </a>
-              </li>
-            ))
-          }
-        </ul>
-      </details>
+          <span
+            class="absolute -right-0.5 -top-0.5 hidden min-w-5 items-center justify-center rounded-full bg-primary px-1.5 py-0.5 text-[11px] font-semibold leading-none text-canvas"
+            data-cart-count
+            aria-hidden="true"
+          ></span>
+        </a>
+
+        <details class="group relative md:hidden">
+          <summary
+            class="flex min-h-11 min-w-11 cursor-pointer list-none items-center justify-center rounded-soft text-ink-heading focus-ring [&::-webkit-details-marker]:hidden"
+            aria-label="Open menu"
+          >
+            <span class="sr-only">Menu</span>
+            <svg class="h-6 w-6 group-open:hidden" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+            </svg>
+            <svg class="hidden h-6 w-6 group-open:block" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" />
+            </svg>
+          </summary>
+          <ul
+            class="absolute right-0 mt-2 min-w-[12rem] rounded-soft border border-border bg-surface p-2 shadow-soft"
+          >
+            {
+              links.map((link) => (
+                <li>
+                  <a class="nav-link block w-full" href={link.href}>
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <a class="nav-link block w-full" href="/cart/">Cart</a>
+            </li>
+          </ul>
+        </details>
+      </div>
     </nav>
   </div>
 </header>
+
+<script>
+  import { CART_UPDATED_EVENT, cartCount, getCart } from '../lib/cart';
+
+  function updateCartBadge() {
+    const count = cartCount(getCart());
+    document.querySelectorAll<HTMLElement>('[data-cart-count]').forEach((badge) => {
+      if (count > 0) {
+        badge.textContent = String(count);
+        badge.classList.remove('hidden');
+        badge.classList.add('inline-flex');
+      } else {
+        badge.textContent = '';
+        badge.classList.add('hidden');
+        badge.classList.remove('inline-flex');
+      }
+    });
+
+    document.querySelectorAll<HTMLAnchorElement>('[data-cart-link]').forEach((link) => {
+      link.setAttribute('aria-label', count > 0 ? `Cart, ${count} items` : 'Cart');
+    });
+  }
+
+  function initCartBadge() {
+    updateCartBadge();
+    if (document.documentElement.dataset.cartBadgeBound === 'true') return;
+    window.addEventListener(CART_UPDATED_EVENT, updateCartBadge);
+    window.addEventListener('storage', (event) => {
+      if (event.key === 'album-amicorum-cart') updateCartBadge();
+    });
+    document.documentElement.dataset.cartBadgeBound = 'true';
+  }
+
+  initCartBadge();
+  document.addEventListener('astro:page-load', initCartBadge);
+</script>

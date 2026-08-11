@@ -1,19 +1,23 @@
 ---
 interface Props {
   title: string;
+  slug: string;
   tagline: string;
   price: string;
   cover: string;
   interior: string;
+  gallery?: string[];
   offset?: 'up' | 'down' | 'none';
 }
 
-const { title, tagline, price, cover, interior, offset = 'none' } = Astro.props;
+const { title, slug, tagline, price, cover, interior, gallery, offset = 'none' } = Astro.props;
 
 const offsetClass =
   offset === 'up' ? 'md:-translate-y-6' : offset === 'down' ? 'md:translate-y-8' : '';
 
-const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}`;
+const previewId = `preview-${slug}`;
+const images = gallery?.length ? gallery : [cover, interior];
+const cartPayload = JSON.stringify({ slug, title, price, cover });
 ---
 
 <article class:list={['book-card group', offsetClass]}>
@@ -50,38 +54,74 @@ const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}`;
     </div>
   </div>
 
-  {/* Presentational preview only — no Add to Cart / Order This Edition (commerce is future work). */}
   <dialog
     id={previewId}
-    class="book-preview-dialog w-[min(100%,36rem)] max-h-[90vh] overflow-y-auto rounded-soft border border-border bg-canvas p-0 shadow-lift backdrop:bg-ink/40"
+    class="book-preview-dialog w-[min(100%,32rem)] max-h-[90vh] overflow-y-auto rounded-soft border border-border bg-canvas p-0 shadow-lift backdrop:bg-ink/40"
     aria-labelledby={`${previewId}-title`}
+    data-preview-gallery
   >
     <div class="px-6 py-8 md:px-8">
       <h2 id={`${previewId}-title`} class="text-2xl">My Friends Book — {title}</h2>
-      <div class="mt-6 grid gap-4 sm:grid-cols-2">
-        <div class="media-warm aspect-[400/520] overflow-hidden bg-surface">
+
+      <div class="relative mt-6" data-gallery>
+        <div class="media-warm aspect-[4/5] overflow-hidden bg-surface">
           <img
-            src={cover}
-            alt=""
-            width="400"
-            height="520"
-            class="h-full w-full object-cover"
-            loading="lazy"
+            data-gallery-image
+            src={images[0]}
+            alt={`${title} preview`}
+            width="640"
+            height="800"
+            class="h-full w-full object-cover transition-opacity duration-300"
             decoding="async"
           />
         </div>
-        <div class="media-warm aspect-[400/520] overflow-hidden bg-surface">
-          <img
-            src={interior}
-            alt=""
-            width="400"
-            height="520"
-            class="h-full w-full object-cover"
-            loading="lazy"
-            decoding="async"
-          />
-        </div>
+
+        {
+          images.length > 1 && (
+            <>
+              <button
+                type="button"
+                class="absolute left-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-canvas/90 text-ink-heading shadow-soft transition hover:bg-surface"
+                data-gallery-prev
+                aria-label="Previous image"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M14.5 6.5L9 12l5.5 5.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+              <button
+                type="button"
+                class="absolute right-2 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-canvas/90 text-ink-heading shadow-soft transition hover:bg-surface"
+                data-gallery-next
+                aria-label="Next image"
+              >
+                <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path
+                    d="M9.5 6.5L15 12l-5.5 5.5"
+                    stroke="currentColor"
+                    stroke-width="1.5"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </button>
+            </>
+          )
+        }
+
+        <p class="mt-3 text-center text-sm text-ink-muted" data-gallery-status aria-live="polite">
+          1 / {images.length}
+        </p>
       </div>
+
+      <script type="application/json" data-gallery-images set:html={JSON.stringify(images)} />
+
       <p class="mt-6 leading-[1.7]">
         My Friends Book invites friends to leave handwritten memories, drawings, favorite things, and
         messages that together become a keepsake unlike any other.
@@ -90,40 +130,180 @@ const previewId = `preview-${title.toLowerCase().replace(/\s+/g, '-')}`;
         Every completed book tells a different story because every friendship is different.
       </p>
       <p class="mt-6 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
-      <div class="mt-8">
+      <p class="mt-1 text-sm text-ink-muted">Shipping calculated separately at checkout.</p>
+
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+        <button
+          type="button"
+          class="btn btn-primary"
+          data-add-to-cart
+          data-cart-item={cartPayload}
+        >
+          Add to Cart
+        </button>
         <button type="button" class="btn btn-secondary" data-preview-close>
           Continue Browsing
         </button>
       </div>
+      <p class="mt-3 hidden text-sm text-ink-muted" data-cart-feedback aria-live="polite"></p>
     </div>
   </dialog>
 </article>
 
 <script>
+  import { addToCart } from '../lib/cart';
+
+  type GalleryState = {
+    images: string[];
+    index: number;
+    imageEl: HTMLImageElement;
+    statusEl: HTMLElement | null;
+  };
+
+  function parseImages(dialog: HTMLElement): string[] {
+    const script = dialog.querySelector<HTMLScriptElement>('[data-gallery-images]');
+    if (!script?.textContent) return [];
+    try {
+      const parsed = JSON.parse(script.textContent) as string[];
+      return Array.isArray(parsed) ? parsed.filter(Boolean) : [];
+    } catch {
+      return [];
+    }
+  }
+
+  function showImage(state: GalleryState, nextIndex: number) {
+    if (!state.images.length) return;
+    const total = state.images.length;
+    state.index = ((nextIndex % total) + total) % total;
+    const nextSrc = state.images[state.index];
+    state.imageEl.style.opacity = '0';
+    window.setTimeout(() => {
+      state.imageEl.src = nextSrc;
+      state.imageEl.style.opacity = '1';
+    }, 120);
+    if (state.statusEl) {
+      state.statusEl.textContent = `${state.index + 1} / ${total}`;
+    }
+  }
+
+  function initGallery(dialog: HTMLDialogElement) {
+    if (dialog.dataset.galleryReady === 'true') return;
+    const gallery = dialog.querySelector<HTMLElement>('[data-gallery]');
+    const imageEl = dialog.querySelector<HTMLImageElement>('[data-gallery-image]');
+    if (!gallery || !imageEl) return;
+
+    const state: GalleryState = {
+      images: parseImages(dialog),
+      index: 0,
+      imageEl,
+      statusEl: dialog.querySelector('[data-gallery-status]'),
+    };
+
+    dialog.querySelector('[data-gallery-prev]')?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showImage(state, state.index - 1);
+    });
+    dialog.querySelector('[data-gallery-next]')?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showImage(state, state.index + 1);
+    });
+
+    let touchStartX = 0;
+    gallery.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? 0;
+      },
+      { passive: true },
+    );
+    gallery.addEventListener(
+      'touchend',
+      (event) => {
+        const touchEndX = event.changedTouches[0]?.clientX ?? 0;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) < 40) return;
+        showImage(state, delta > 0 ? state.index - 1 : state.index + 1);
+      },
+      { passive: true },
+    );
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showImage(state, state.index - 1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showImage(state, state.index + 1);
+      }
+    });
+
+    dialog.dataset.galleryReady = 'true';
+  }
+
   function initBookPreviews() {
     document.querySelectorAll<HTMLButtonElement>('[data-preview-open]').forEach((button) => {
+      if (button.dataset.previewBound === 'true') return;
       const id = button.getAttribute('data-preview-open');
       if (!id) return;
       const dialog = document.getElementById(id);
       if (!(dialog instanceof HTMLDialogElement)) return;
 
+      initGallery(dialog);
+
       button.addEventListener('click', () => {
         dialog.showModal();
       });
+      button.dataset.previewBound = 'true';
     });
 
     document.querySelectorAll<HTMLButtonElement>('[data-preview-close]').forEach((button) => {
+      if (button.dataset.previewBound === 'true') return;
       button.addEventListener('click', () => {
         const dialog = button.closest('dialog');
         if (dialog instanceof HTMLDialogElement) dialog.close();
       });
+      button.dataset.previewBound = 'true';
     });
 
     document.querySelectorAll('dialog.book-preview-dialog').forEach((dialog) => {
       if (!(dialog instanceof HTMLDialogElement)) return;
+      if (dialog.dataset.backdropBound === 'true') return;
       dialog.addEventListener('click', (event) => {
         if (event.target === dialog) dialog.close();
       });
+      dialog.dataset.backdropBound = 'true';
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-add-to-cart]').forEach((button) => {
+      if (button.dataset.cartBound === 'true') return;
+      button.addEventListener('click', () => {
+        const raw = button.getAttribute('data-cart-item');
+        if (!raw) return;
+        try {
+          const item = JSON.parse(raw) as {
+            slug: string;
+            title: string;
+            price: string;
+            cover: string;
+          };
+          addToCart(item);
+          const feedback = button
+            .closest('dialog')
+            ?.querySelector<HTMLElement>('[data-cart-feedback]');
+          if (feedback) {
+            feedback.textContent = `${item.title} added to your cart.`;
+            feedback.classList.remove('hidden');
+          }
+          button.textContent = 'Added';
+          window.setTimeout(() => {
+            button.textContent = 'Add to Cart';
+          }, 1600);
+        } catch {
+          // Ignore malformed cart payloads.
+        }
+      });
+      button.dataset.cartBound = 'true';
     });
   }
 

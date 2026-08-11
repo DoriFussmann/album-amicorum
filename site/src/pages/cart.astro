@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout
+  title="Your Friend Book | Album Amicorum"
+  description="Review the Friend Book editions in your cart before checkout."
+  canonicalPath="/cart/"
+>
+  <section class="section-space" aria-labelledby="cart-heading">
+    <div class="site-container">
+      <div data-cart-empty class="text-center">
+        <h1 id="cart-heading-empty" class="text-3xl md:text-4xl">Your Friend Book is waiting.</h1>
+        <p class="mx-auto mt-4 max-w-xl text-ink">
+          Explore the collection and choose the world your child will love.
+        </p>
+        <div class="mt-8">
+          <a class="btn btn-primary" href="/#collection">Explore the Collection</a>
+        </div>
+      </div>
+
+      <div data-cart-filled class="hidden">
+        <h1 id="cart-heading" class="text-3xl md:text-4xl">Your Friend Book</h1>
+        <p class="mt-4 max-w-xl text-ink">
+          You're just a few steps away from beginning a new collection of childhood memories.
+        </p>
+
+        <ul class="mt-10 divide-y divide-border border-y border-border" data-cart-items></ul>
+
+        <div class="mt-8 space-y-3 text-sm">
+          <div class="flex items-center justify-between gap-4">
+            <span class="text-ink-muted">Subtotal</span>
+            <span class="font-semibold text-ink-heading" data-cart-subtotal>$0</span>
+          </div>
+          <div class="flex items-center justify-between gap-4">
+            <span class="text-ink-muted">Shipping</span>
+            <span class="font-semibold text-ink-heading" data-cart-shipping>$7</span>
+          </div>
+          <p class="text-ink-muted">Flat rate. Ships worldwide.</p>
+          <div class="flex items-center justify-between gap-4 border-t border-border pt-4 text-base">
+            <span class="font-semibold text-ink-heading">Total</span>
+            <span class="font-semibold text-ink-heading" data-cart-total>$0</span>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+          <button type="button" class="btn btn-primary" data-checkout-soon>
+            Continue to Checkout
+          </button>
+          <a class="btn btn-secondary" href="/#collection">Continue Browsing</a>
+        </div>
+        <p class="mt-3 text-sm text-ink-muted" data-checkout-note>
+          Checkout is coming soon. Your selections are saved in this browser.
+        </p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import {
+    SHIPPING_FLAT_RATE,
+    cartSubtotal,
+    formatMoney,
+    getCart,
+    parsePrice,
+    removeFromCart,
+    setCartQuantity,
+  } from '../lib/cart';
+
+  function renderCart() {
+    const items = getCart();
+    const emptyEl = document.querySelector<HTMLElement>('[data-cart-empty]');
+    const filledEl = document.querySelector<HTMLElement>('[data-cart-filled]');
+    const listEl = document.querySelector<HTMLUListElement>('[data-cart-items]');
+    if (!emptyEl || !filledEl || !listEl) return;
+
+    if (!items.length) {
+      emptyEl.classList.remove('hidden');
+      filledEl.classList.add('hidden');
+      listEl.innerHTML = '';
+      return;
+    }
+
+    emptyEl.classList.add('hidden');
+    filledEl.classList.remove('hidden');
+
+    listEl.innerHTML = items
+      .map(
+        (item) => `
+      <li class="flex flex-col gap-4 py-6 sm:flex-row sm:items-center" data-cart-row="${item.slug}">
+        <div class="media-warm h-28 w-20 shrink-0 overflow-hidden bg-surface sm:h-32 sm:w-24">
+          <img src="${item.cover}" alt="" width="96" height="128" class="h-full w-full object-cover" loading="lazy" decoding="async" />
+        </div>
+        <div class="min-w-0 flex-1">
+          <h2 class="text-xl font-semibold">My Friends Book — ${item.title}</h2>
+          <p class="mt-1 text-sm font-semibold tracking-wide text-ink-heading">${item.price}</p>
+          <div class="mt-4 flex flex-wrap items-center gap-4">
+            <label class="flex items-center gap-2 text-sm text-ink-muted">
+              <span>Quantity</span>
+              <input
+                type="number"
+                min="1"
+                max="20"
+                value="${item.quantity}"
+                class="w-16 rounded-soft border border-border bg-canvas px-2 py-2 text-ink-heading"
+                data-cart-qty="${item.slug}"
+              />
+            </label>
+            <button type="button" class="text-sm text-ink-muted underline-offset-4 hover:underline" data-cart-remove="${item.slug}">
+              Remove
+            </button>
+          </div>
+        </div>
+        <p class="text-sm font-semibold tracking-wide text-ink-heading sm:min-w-[4rem] sm:text-right">
+          ${formatMoney(parsePrice(item.price) * item.quantity)}
+        </p>
+      </li>
+    `,
+      )
+      .join('');
+
+    const subtotal = cartSubtotal(items);
+    const total = subtotal + (items.length ? SHIPPING_FLAT_RATE : 0);
+    const subtotalEl = document.querySelector('[data-cart-subtotal]');
+    const shippingEl = document.querySelector('[data-cart-shipping]');
+    const totalEl = document.querySelector('[data-cart-total]');
+    if (subtotalEl) subtotalEl.textContent = formatMoney(subtotal);
+    if (shippingEl) shippingEl.textContent = formatMoney(SHIPPING_FLAT_RATE);
+    if (totalEl) totalEl.textContent = formatMoney(total);
+
+    listEl.querySelectorAll<HTMLInputElement>('[data-cart-qty]').forEach((input) => {
+      input.addEventListener('change', () => {
+        const slug = input.getAttribute('data-cart-qty');
+        if (!slug) return;
+        const quantity = Math.max(1, Math.min(20, Number.parseInt(input.value, 10) || 1));
+        setCartQuantity(slug, quantity);
+        renderCart();
+      });
+    });
+
+    listEl.querySelectorAll<HTMLButtonElement>('[data-cart-remove]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const slug = button.getAttribute('data-cart-remove');
+        if (!slug) return;
+        removeFromCart(slug);
+        renderCart();
+      });
+    });
+  }
+
+  function initCartPage() {
+    renderCart();
+
+    const checkoutButton = document.querySelector<HTMLButtonElement>('[data-checkout-soon]');
+    const note = document.querySelector<HTMLElement>('[data-checkout-note]');
+    if (checkoutButton && checkoutButton.dataset.bound !== 'true') {
+      checkoutButton.addEventListener('click', () => {
+        if (note) {
+          note.textContent =
+            'Checkout is coming soon. Your Friend Book selections will stay saved here.';
+        }
+      });
+      checkoutButton.dataset.bound = 'true';
+    }
+  }
+
+  initCartPage();
+  document.addEventListener('astro:page-load', initCartPage);
+</script>

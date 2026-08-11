@@ -18,7 +18,11 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
+pillarKeyword: friend books for kids
+supportingKeyword: friendship book for kids
+articleType: faq
+targetKeyword: friendship book for kids questions
 keywords:
   - friendship book for kids questions (no volume data)
   - friendship book for kids
@@ -32,6 +36,17 @@ faqs:
     answer: Children are far less precious about this than adults expect. A crossed-out word or a redone drawing often becomes one of the most charming details on a page years later — evidence that a real person, not a performance, filled that spot. A well-designed friendship book embraces personality over perfection, and small imperfections are part of what makes each page irreplaceable.
   - question: Is a friendship book a good idea for a child who is moving to a new school?
     answer: "It may be the single best time to have one. Giving a child a friendship book before a big transition lets current friends fill pages before the move — preserving those relationships in handwriting and drawings rather than letting them fade. It also gives the child a conversation starter with new friends: a visible record that says their friendships are worth keeping."
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
+  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+    url: /articles/friendship-book-for-kids/
+  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
+  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+    url: /articles/how-to-start-a-friendship-book-for-kids/
+  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
+    url: /articles/when-to-give-a-friendship-book-for-kids/
 ---
 
 # Friendship Book for Kids: FAQ for Parents and Gift-Givers
@@ -126,3 +141,5 @@ Album Amicorum's *In My Friends Book* was built around every one of these questi
 <!-- WHERE-THINGS-STAND:START -->
 The broader context for friendship books and childhood keepsakes continues to strengthen heading into the second half of 2026. Pinterest's 2026 Parenting Trend Report identified a clear parent-driven shift toward what it called an "analog, grounded childhood," with searches for tactile, handmade, and vintage-style children's experiences rising sharply — a movement that fits naturally with the appeal of a handwritten, illustrated keepsake. Etsy's Spring and Summer 2026 Seller Trend Report echoed this directly, noting that "personal keepsakes, handwritten notes, journal accessories" are surging as shoppers reclaim rituals that cannot be swiped away, describing the analog revival as intentional nostalgia and a deliberate way to slow the scroll. Multiple parenting commentators have identified the slow analog childhood as one of the defining parenting orientations of 2026, with families prioritizing unstructured time, real-world connection, and offline rituals — precisely the conditions under which a friendship book thrives and gets used. There are no major product disruptions or format controversies to report in this corner of the keepsake market; it remains stable, well-regarded, and quietly growing in cultural relevance as the screen-free childhood impulse continues to build momentum among parents of elementary-aged children.
 <!-- WHERE-THINGS-STAND:END -->
+
+See Related below for more on this topic.

@@ -3,6 +3,7 @@
 function pageKind() {
   const path = window.location.pathname;
   if (path.endsWith('add-article.html')) return 'article-form';
+  if (path.endsWith('articles-health.html')) return 'articles-health';
   if (path.endsWith('team.html')) return 'team';
   if (path.endsWith('dashboard.html')) return 'dashboard';
   return 'article-list';
@@ -1043,7 +1044,863 @@ async function init() {
   }
   if (kind === 'article-form') {
     await initArticleFormPage();
+    return;
   }
+  if (kind === 'articles-health') {
+    await initArticlesHealth();
+  }
+}
+
+/* ---------------- Articles Health ---------------- */
+
+const healthSession = {
+  updatedSlugs: new Set(),
+  batchRunning: false,
+  articles: [],
+};
+
+const HEALTH_ICONS = {
+  links: '🔗',
+  meta: '🏷️',
+  schema: '🧩',
+  sitemap: '🗺️',
+  speed: '⚡',
+};
+
+function escapeAttr(s) {
+  return String(s)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+function setStatus(el, msg, isError = false) {
+  if (!el) return;
+  el.textContent = msg || '';
+  el.classList.toggle('is-error', Boolean(isError));
+}
+
+function updateHealthBanner() {
+  const banner = document.getElementById('health-session-banner');
+  if (!banner) return;
+  const n = healthSession.updatedSlugs.size;
+  if (!n) {
+    banner.hidden = true;
+    banner.textContent = '';
+    return;
+  }
+  banner.hidden = false;
+  banner.textContent = `${n} article${n === 1 ? '' : 's'} updated this session — remember to commit, push, and deploy.`;
+}
+
+function setHealthBatchProgress(message, options = {}) {
+  const el = document.getElementById('health-batch-progress');
+  if (!el) return;
+  const textEl = el.querySelector('.health-batch-progress-text');
+  const spinnerEl = el.querySelector('.health-batch-spinner');
+  const trackEl = el.querySelector('.health-batch-progress-track');
+  const barEl = el.querySelector('.health-batch-progress-bar');
+
+  if (!message) {
+    el.hidden = true;
+    el.classList.remove('is-active');
+    if (textEl) textEl.textContent = '';
+    if (spinnerEl) spinnerEl.hidden = true;
+    if (trackEl) trackEl.hidden = true;
+    if (barEl) barEl.style.width = '0%';
+    return;
+  }
+
+  const active = Boolean(options.active);
+  const total = Number(options.total) || 0;
+  const current = Number(options.current) || 0;
+
+  el.hidden = false;
+  el.classList.toggle('is-active', active);
+  if (textEl) textEl.textContent = message;
+  if (spinnerEl) spinnerEl.hidden = !active;
+  if (trackEl) {
+    const showBar = active && total > 0;
+    trackEl.hidden = !showBar;
+    if (showBar && barEl) {
+      const pct = Math.max(0, Math.min(100, Math.round((current / total) * 100)));
+      barEl.style.width = `${pct}%`;
+    }
+  }
+}
+
+function setHealthBatchControlsDisabled(disabled) {
+  healthSession.batchRunning = disabled;
+  [
+    'health-connect-all',
+    'health-propose-external-all',
+    'health-speed-check-all',
+    'health-refresh',
+  ].forEach((id) => {
+    const btn = document.getElementById(id);
+    if (btn) btn.disabled = disabled;
+  });
+  document
+    .querySelectorAll(
+      "[data-action='connect-all-internal'], [data-action='connect'], [data-action='propose'], [data-action='propose-all-external'], [data-action='add-external'], [data-action='speed-scan']"
+    )
+    .forEach((btn) => {
+      btn.disabled = disabled;
+    });
+}
+
+function scoreBandClass(score) {
+  if (typeof score !== 'number' || Number.isNaN(score)) return 'gray';
+  if (score >= 90) return 'green';
+  if (score >= 50) return 'orange';
+  return 'red';
+}
+
+function renderScoreRows(strategyResult) {
+  if (!strategyResult) {
+    return '<p class="health-meta">Not scanned yet.</p>';
+  }
+  if (!strategyResult.ok) {
+    return `<p class="health-score-error">${escapeHtml(
+      strategyResult.error || 'Scan failed'
+    )}</p>`;
+  }
+  const scores = strategyResult.scores || {};
+  const rows = [
+    ['Performance', scores.performance],
+    ['Accessibility', scores.accessibility],
+    ['Best Practices', scores.bestPractices],
+    ['SEO', scores.seo],
+  ];
+  return `<ul class="health-score-list">${rows
+    .map(([label, score]) => {
+      const band = scoreBandClass(score);
+      const text = typeof score === 'number' ? String(score) : '—';
+      return `<li>
+        <span>${label}</span>
+        <span class="health-score-pill is-${band}">${text}</span>
+      </li>`;
+    })
+    .join('')}</ul>`;
+}
+
+function patchArticleSpeedInSession(slug, speed) {
+  const article = healthSession.articles.find((a) => a.slug === slug);
+  if (!article) return null;
+  article.details = article.details || {};
+  article.details.speed = speed;
+  article.indicators = article.indicators || {};
+  article.indicators.speed = speed?.status || 'gray';
+  return article;
+}
+
+function updateRowSpeedUi(slug, speed) {
+  const row = document.querySelector(`.health-row[data-slug="${CSS.escape(slug)}"]`);
+  if (!row) return;
+  const indicator = row.querySelector('.health-indicators [title="Speed"]');
+  if (indicator) {
+    indicator.className = `health-indicator is-${escapeAttr(speed?.status || 'gray')}`;
+  }
+  const section = row.querySelector('[data-section="speed"]');
+  if (section) {
+    const article = healthSession.articles.find((a) => a.slug === slug) || {
+      slug,
+      publishedUrl: speed?.publishedUrl || null,
+    };
+    section.outerHTML = renderSpeedSection(article, speed, speed?.status || 'gray');
+    const nextSection = row.querySelector('[data-section="speed"]');
+    nextSection?.querySelector('[data-action="speed-scan"]')?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      void runSpeedScanForSlug(slug);
+    });
+  }
+}
+
+function hideExternalReview() {
+  const panel = document.getElementById('health-external-review');
+  const listPanel = document.getElementById('health-list-panel');
+  if (panel) panel.hidden = true;
+  if (listPanel) listPanel.hidden = false;
+}
+
+function showExternalReview(proposals, contextLabel) {
+  const panel = document.getElementById('health-external-review');
+  const listPanel = document.getElementById('health-list-panel');
+  const reviewList = document.getElementById('health-review-list');
+  const reviewStatus = document.getElementById('health-review-status');
+  if (!panel || !reviewList) return;
+
+  if (!proposals?.length) {
+    hideExternalReview();
+    setHealthBatchProgress(
+      contextLabel
+        ? `${contextLabel}: no on-topic proposals found.`
+        : 'No on-topic external candidates found.'
+    );
+    return;
+  }
+
+  reviewList.innerHTML = proposals
+    .map((p) => {
+      const checked = p.preChecked ? 'checked' : '';
+      const conf = p.confidence === 'high' ? 'high' : 'borderline';
+      return `<label class="health-review-item is-${conf}">
+        <input type="checkbox" data-review-id="${escapeAttr(p.id)}" data-slug="${escapeAttr(p.articleSlug)}" data-label="${escapeAttr(p.title)}" data-url="${escapeAttr(p.url)}" ${checked} />
+        <span class="health-review-item-body">
+          <a href="${escapeAttr(p.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.title)}</a>
+          <span class="health-review-item-meta">
+            <span>${escapeHtml(p.articleTitle || p.articleSlug)}</span>
+            <span class="health-confidence is-${conf}">${conf}</span>
+            <span>${escapeHtml(p.source || '')}</span>
+            <span>${escapeHtml(p.url)}</span>
+          </span>
+        </span>
+      </label>`;
+    })
+    .join('');
+
+  panel.hidden = false;
+  if (listPanel) listPanel.hidden = true;
+  setStatus(
+    reviewStatus,
+    `${proposals.length} candidate${proposals.length === 1 ? '' : 's'} ready for review${
+      contextLabel ? ` · ${contextLabel}` : ''
+    }. Unchecked items will be discarded.`
+  );
+  setHealthBatchProgress(
+    `Review ${proposals.length} proposed external link${proposals.length === 1 ? '' : 's'} before writing.`
+  );
+}
+
+async function runProposeAllExternal(slug) {
+  if (healthSession.batchRunning) return;
+  const statusEl = document.getElementById('health-status');
+  setHealthBatchControlsDisabled(true);
+  setHealthBatchProgress(
+    slug
+      ? `Proposing external links for ${slug}...`
+      : 'Proposing external links across articles...'
+  );
+  try {
+    const data = await parseJsonResponse(
+      await fetch('/api/articles-health/propose-external', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(slug ? { slug } : {}),
+      })
+    );
+    setHealthBatchControlsDisabled(false);
+    const searchNote =
+      data.searchUsedCount > 0
+        ? ` · live search used for ${data.searchUsedCount}`
+        : '';
+    const errorNote =
+      Array.isArray(data.searchErrors) && data.searchErrors.length
+        ? ` · ${data.searchErrors.length} with no proposals`
+        : '';
+    showExternalReview(
+      data.proposals || [],
+      slug
+        ? `${slug}${searchNote}${errorNote}`
+        : `${data.articlesNeeding || 0} article${
+            (data.articlesNeeding || 0) === 1 ? '' : 's'
+          } needing sources${searchNote}${errorNote}`
+    );
+  } catch (err) {
+    setStatus(statusEl, err.message, true);
+    setHealthBatchProgress(`Propose stopped: ${err.message}`);
+    setHealthBatchControlsDisabled(false);
+  }
+}
+
+async function runAddSelectedExternal() {
+  const reviewList = document.getElementById('health-review-list');
+  const reviewStatus = document.getElementById('health-review-status');
+  if (!reviewList) return;
+
+  const checked = [...reviewList.querySelectorAll("input[type='checkbox']:checked")];
+  const items = checked.map((input) => ({
+    slug: input.getAttribute('data-slug'),
+    label: input.getAttribute('data-label'),
+    url: input.getAttribute('data-url'),
+  }));
+
+  if (!items.length) {
+    setStatus(reviewStatus, 'Select at least one candidate, or Cancel.', true);
+    return;
+  }
+
+  const addBtn = document.getElementById('health-review-add');
+  const cancelBtn = document.getElementById('health-review-cancel');
+  if (addBtn) addBtn.disabled = true;
+  if (cancelBtn) cancelBtn.disabled = true;
+  setHealthBatchProgress(
+    `Writing ${items.length} selected external link${items.length === 1 ? '' : 's'}...`
+  );
+
+  try {
+    const data = await parseJsonResponse(
+      await fetch('/api/articles-health/add-external-selected', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      })
+    );
+    for (const w of data.written || []) healthSession.updatedSlugs.add(w.slug);
+    updateHealthBanner();
+    hideExternalReview();
+    setHealthBatchControlsDisabled(false);
+    await refreshArticlesHealth();
+    const written = (data.written || []).length;
+    const skipped = (data.skipped || []).length;
+    setHealthBatchProgress(
+      `Added ${written} external link${written === 1 ? '' : 's'}${
+        skipped ? ` · skipped ${skipped}` : ''
+      }.`
+    );
+  } catch (err) {
+    setStatus(reviewStatus, err.message, true);
+    setHealthBatchProgress(`Add Selected failed: ${err.message}`);
+    if (addBtn) addBtn.disabled = false;
+    if (cancelBtn) cancelBtn.disabled = false;
+  }
+}
+
+async function connectInternalLink(articleSlug, targetSlug, label) {
+  try {
+    await parseJsonResponse(
+      await fetch(`/api/articles/${encodeURIComponent(articleSlug)}/links/internal`, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ targetSlug, label }),
+      })
+    );
+    return { ok: true, skipped: false };
+  } catch (err) {
+    if (String(err.message || '').toLowerCase().includes('already present')) {
+      return { ok: true, skipped: true };
+    }
+    throw err;
+  }
+}
+
+async function connectAllInternalForArticle(articleSlug, missingInternal, onProgress) {
+  const missing = Array.isArray(missingInternal) ? missingInternal : [];
+  let connected = 0;
+  for (let i = 0; i < missing.length; i++) {
+    const target = missing[i];
+    if (onProgress) {
+      onProgress({
+        index: i + 1,
+        total: missing.length,
+        targetSlug: target.slug,
+        label: target.title,
+      });
+    }
+    const result = await connectInternalLink(articleSlug, target.slug, target.title);
+    if (!result.skipped) connected += 1;
+  }
+  if (connected > 0 || missing.length > 0) {
+    healthSession.updatedSlugs.add(articleSlug);
+  }
+  return { connected, attempted: missing.length };
+}
+
+function renderFindings(findings) {
+  if (!findings?.length) return '<p class="health-meta">No findings.</p>';
+  return `<ul class="health-findings">${findings
+    .map((f) => `<li>${escapeHtml(f)}</li>`)
+    .join('')}</ul>`;
+}
+
+function renderLinkList(links, emptyLabel) {
+  if (!links?.length) {
+    return `<p class="health-meta">${escapeHtml(emptyLabel)}</p>`;
+  }
+  return `<ul class="health-link-list">${links
+    .map(
+      (l) => `<li>
+        <a href="${escapeAttr(l.href || l.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(l.label)}</a>
+        <span class="health-meta">${escapeHtml(l.url)}</span>
+      </li>`
+    )
+    .join('')}</ul>`;
+}
+
+function renderSpeedSection(article, speed, indicatorStatus) {
+  const canScan = Boolean(speed?.canScan);
+  const scanned = Boolean(speed?.scanned);
+  const disabledReason = speed?.disabledReason || '';
+  const scanDisabled = !canScan;
+  const publishedUrl = speed?.publishedUrl || article.publishedUrl || '';
+  const scoreGrid =
+    scanned || speed?.mobile || speed?.desktop
+      ? `<div class="health-score-grid">
+          <div class="health-score-card">
+            <h4>Mobile</h4>
+            ${renderScoreRows(speed?.mobile)}
+          </div>
+          <div class="health-score-card">
+            <h4>Desktop</h4>
+            ${renderScoreRows(speed?.desktop)}
+          </div>
+        </div>`
+      : '';
+
+  return `
+    <section class="health-section" data-section="speed">
+      <h3><span class="health-indicator is-${escapeAttr(indicatorStatus)}">${HEALTH_ICONS.speed}</span> Speed</h3>
+      ${renderFindings(speed?.findings)}
+      ${
+        publishedUrl
+          ? `<p class="health-meta">Live URL: <a href="${escapeAttr(
+              publishedUrl
+            )}" target="_blank" rel="noopener noreferrer">${escapeHtml(publishedUrl)}</a></p>`
+          : '<p class="health-meta">No published URL available for this article.</p>'
+      }
+      ${
+        speed?.fetchedAt
+          ? `<p class="health-meta">Last scanned: ${escapeHtml(speed.fetchedAt)}</p>`
+          : ''
+      }
+      ${scoreGrid}
+      <div class="health-actions">
+        <button
+          type="button"
+          class="btn btn-secondary"
+          data-action="speed-scan"
+          ${scanDisabled ? 'disabled' : ''}
+          title="${escapeAttr(scanDisabled ? disabledReason || 'Scan unavailable' : 'Run PageSpeed Insights (mobile + desktop)')}"
+        >
+          ${scanned ? 'Rescan Speed' : 'Scan'}
+        </button>
+      </div>
+      ${
+        scanDisabled && disabledReason
+          ? `<p class="health-meta">${escapeHtml(disabledReason)}</p>`
+          : '<p class="health-meta">Manual scan only — PageSpeed calls are slow. Collapsed ⚡ uses mobile Performance once scanned.</p>'
+      }
+    </section>`;
+}
+
+async function runSpeedScanForSlug(slug, options = {}) {
+  const statusEl = document.getElementById('health-status');
+  const quiet = Boolean(options.quiet);
+  if (!quiet && healthSession.batchRunning) return null;
+  if (!quiet) setHealthBatchControlsDisabled(true);
+  if (!quiet) {
+    setHealthBatchProgress(`Scanning speed for ${slug} (mobile + desktop)...`, {
+      active: true,
+    });
+  }
+
+  try {
+    const data = await parseJsonResponse(
+      await fetch(`/api/articles/${encodeURIComponent(slug)}/speed-scan`, {
+        method: 'POST',
+      })
+    );
+    patchArticleSpeedInSession(slug, data.speed);
+    updateRowSpeedUi(slug, data.speed);
+    if (!quiet) {
+      const score = data.speed?.indicatorScore;
+      setHealthBatchProgress(
+        `Speed scan complete for ${slug}${
+          typeof score === 'number' ? ` · mobile Performance ${score}` : ''
+        }.`
+      );
+      setHealthBatchControlsDisabled(false);
+    }
+    return data;
+  } catch (err) {
+    if (!quiet) {
+      setStatus(statusEl, err.message, true);
+      setHealthBatchProgress(`Speed scan failed: ${err.message}`);
+      setHealthBatchControlsDisabled(false);
+    }
+    throw err;
+  }
+}
+
+async function runSpeedCheckAllArticles() {
+  if (healthSession.batchRunning) return;
+  const statusEl = document.getElementById('health-status');
+  const targets = (healthSession.articles || []).filter(
+    (a) => a.details?.speed?.canScan || (!a.draft && a.publishedUrl)
+  );
+  const queue = targets.filter((a) => a.details?.speed?.canScan !== false && !a.draft);
+
+  if (!queue.length) {
+    const anyDraftOnly = (healthSession.articles || []).every(
+      (a) => a.draft || !a.publishedUrl
+    );
+    setHealthBatchProgress(
+      anyDraftOnly
+        ? 'No published URLs available to scan.'
+        : 'Speed Check unavailable — configure GOOGLE_PAGESPEED_API_KEY or publish articles.'
+    );
+    return;
+  }
+
+  setHealthBatchControlsDisabled(true);
+  let okCount = 0;
+  let failCount = 0;
+
+  try {
+    for (let i = 0; i < queue.length; i++) {
+      const article = queue[i];
+      setHealthBatchProgress(
+        `Speed check ${i + 1} of ${queue.length}: ${article.slug}...`,
+        { active: true, current: i, total: queue.length }
+      );
+      try {
+        const scanned = await runSpeedScanForSlug(article.slug, { quiet: true });
+        okCount += 1;
+        const score = scanned?.speed?.indicatorScore;
+        setHealthBatchProgress(
+          `Speed check ${i + 1} of ${queue.length}: ${article.slug} done${
+            typeof score === 'number' ? ` (mobile ${score})` : ''
+          }.`,
+          { active: true, current: i + 1, total: queue.length }
+        );
+      } catch (err) {
+        failCount += 1;
+        setHealthBatchProgress(
+          `Speed check ${i + 1} of ${queue.length}: ${article.slug} failed — ${err.message}`,
+          { active: true, current: i + 1, total: queue.length }
+        );
+      }
+    }
+    setHealthBatchControlsDisabled(false);
+    setHealthBatchProgress(
+      `Speed check complete — ${okCount} scanned${failCount ? `, ${failCount} failed` : ''}.`
+    );
+    setStatus(
+      statusEl,
+      `Speed Check All finished — ${okCount} ok${failCount ? `, ${failCount} failed` : ''}.`
+    );
+  } catch (err) {
+    setStatus(statusEl, err.message, true);
+    setHealthBatchProgress(`Speed check stopped: ${err.message}`);
+    setHealthBatchControlsDisabled(false);
+  }
+}
+
+function renderHealthRow(article) {
+  const ind = article.indicators || {};
+  const d = article.details || {};
+  const links = d.links || {};
+  const row = document.createElement('article');
+  row.className = 'health-row';
+  row.dataset.slug = article.slug;
+
+  const speedStatus = ind.speed || 'gray';
+  const draftBadge = article.draft
+    ? '<span class="health-meta"> · draft</span>'
+    : '';
+
+  row.innerHTML = `
+    <button type="button" class="health-row-summary" aria-expanded="false">
+      <span class="health-row-title">${escapeHtml(article.title)}${draftBadge}</span>
+      <span class="health-indicators" aria-label="Health indicators">
+        <span class="health-indicator is-${escapeAttr(ind.links || 'gray')}" title="Links">${HEALTH_ICONS.links}</span>
+        <span class="health-indicator is-${escapeAttr(ind.meta || 'gray')}" title="Meta">${HEALTH_ICONS.meta}</span>
+        <span class="health-indicator is-${escapeAttr(ind.schema || 'gray')}" title="Schema">${HEALTH_ICONS.schema}</span>
+        <span class="health-indicator is-${escapeAttr(ind.sitemap || 'gray')}" title="Sitemap">${HEALTH_ICONS.sitemap}</span>
+        <span class="health-indicator is-${escapeAttr(speedStatus)}" title="Speed">${HEALTH_ICONS.speed}</span>
+      </span>
+    </button>
+    <div class="health-row-body">
+      <section class="health-section" data-section="links">
+        <h3><span class="health-indicator is-${escapeAttr(ind.links || 'gray')}">${HEALTH_ICONS.links}</span> Links</h3>
+        ${renderFindings(links.findings)}
+        <h4 class="health-meta">Internal links</h4>
+        ${renderLinkList(links.internalLinks, 'No internal links yet.')}
+        <div class="missing-internal"></div>
+        <h4 class="health-meta">External links (target: 3)</h4>
+        ${renderLinkList(links.externalLinks, 'No external links yet.')}
+        <div class="health-actions"></div>
+      </section>
+      <section class="health-section">
+        <h3><span class="health-indicator is-${escapeAttr(ind.meta || 'gray')}">${HEALTH_ICONS.meta}</span> Meta</h3>
+        ${renderFindings(d.meta?.findings)}
+        <p class="health-meta">Diagnostic only — no fix action.</p>
+      </section>
+      <section class="health-section">
+        <h3><span class="health-indicator is-${escapeAttr(ind.schema || 'gray')}">${HEALTH_ICONS.schema}</span> Schema</h3>
+        ${renderFindings(d.schema?.findings)}
+        <p class="health-meta">Diagnostic only — no fix action.</p>
+      </section>
+      <section class="health-section">
+        <h3><span class="health-indicator is-${escapeAttr(ind.sitemap || 'gray')}">${HEALTH_ICONS.sitemap}</span> Sitemap</h3>
+        ${renderFindings(d.sitemap?.findings)}
+        <p class="health-meta">Diagnostic only — no fix action.</p>
+      </section>
+      ${renderSpeedSection(article, d.speed, speedStatus)}
+    </div>
+  `;
+
+  const summary = row.querySelector('.health-row-summary');
+  summary.addEventListener('click', () => {
+    const open = row.classList.toggle('is-open');
+    summary.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+
+  const actions = row.querySelector('.health-actions');
+  const missingBox = row.querySelector('.missing-internal');
+
+  if (links.missingInternal?.length) {
+    missingBox.innerHTML = `
+      <div class="health-actions" style="margin-top:0.35rem;margin-bottom:0.35rem">
+        <button type="button" class="btn btn-primary" data-action="connect-all-internal">
+          Connect all internal links (${links.missingInternal.length})
+        </button>
+      </div>
+      <p class="health-connect-progress" data-role="connect-progress" hidden></p>
+      <h4 class="health-meta">Required connections</h4>
+      <ul class="health-link-list">${links.missingInternal
+        .map(
+          (m) => `<li>
+          <a href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(m.title)}</a>
+          <span class="health-meta">${escapeHtml(m.reason)}</span>
+          <button type="button" class="btn btn-secondary" data-action="connect" data-target-slug="${escapeAttr(m.slug)}" data-label="${escapeAttr(m.title)}">Connect</button>
+        </li>`
+        )
+        .join('')}</ul>`;
+  }
+
+  if (links.canPropose) {
+    const proposeBtn = document.createElement('button');
+    proposeBtn.type = 'button';
+    proposeBtn.className = 'btn btn-secondary';
+    proposeBtn.dataset.action = 'propose';
+    proposeBtn.textContent = 'Propose External Links';
+    actions.appendChild(proposeBtn);
+  }
+
+  row
+    .querySelector('[data-section="speed"] [data-action="speed-scan"]')
+    ?.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      void runSpeedScanForSlug(article.slug);
+    });
+
+  row.addEventListener('click', async (e) => {
+    const t = e.target;
+    if (!(t instanceof HTMLElement)) return;
+    const action = t.getAttribute('data-action');
+    if (!action) return;
+    e.preventDefault();
+    e.stopPropagation();
+    if (healthSession.batchRunning) return;
+
+    const progressEl = row.querySelector('[data-role="connect-progress"]');
+
+    try {
+      if (action === 'propose') {
+        // Per-article and system-wide both funnel into the shared review screen.
+        await runProposeAllExternal(article.slug);
+        return;
+      }
+
+      if (action === 'speed-scan') {
+        await runSpeedScanForSlug(article.slug);
+        return;
+      }
+
+      if (action === 'connect') {
+        t.disabled = true;
+        await connectInternalLink(
+          article.slug,
+          t.getAttribute('data-target-slug'),
+          t.getAttribute('data-label')
+        );
+        healthSession.updatedSlugs.add(article.slug);
+        updateHealthBanner();
+        await refreshArticlesHealth();
+        return;
+      }
+
+      if (action === 'connect-all-internal') {
+        const missing = article.details?.links?.missingInternal || [];
+        if (!missing.length) return;
+        setHealthBatchControlsDisabled(true);
+        if (progressEl) {
+          progressEl.hidden = false;
+          progressEl.textContent = `Connecting 1 of ${missing.length}...`;
+        }
+        const result = await connectAllInternalForArticle(
+          article.slug,
+          missing,
+          ({ index, total }) => {
+            if (progressEl) progressEl.textContent = `Connecting ${index} of ${total}...`;
+          }
+        );
+        updateHealthBanner();
+        setHealthBatchProgress(
+          `Connected ${result.connected} link${result.connected === 1 ? '' : 's'} on this article.`
+        );
+        setHealthBatchControlsDisabled(false);
+        await refreshArticlesHealth();
+      }
+    } catch (err) {
+      setStatus(document.getElementById('health-status'), err.message, true);
+      setHealthBatchControlsDisabled(false);
+      t.disabled = false;
+      if (progressEl) progressEl.hidden = true;
+    }
+  });
+
+  return row;
+}
+
+async function refreshArticlesHealth() {
+  const list = document.getElementById('health-list');
+  const statusEl = document.getElementById('health-status');
+  if (!list) return;
+  const openSlugs = new Set(
+    [...list.querySelectorAll('.health-row.is-open')].map((el) => el.dataset.slug)
+  );
+  const data = await parseJsonResponse(await fetch('/api/articles-health'));
+  healthSession.articles = data.articles || [];
+  list.innerHTML = '';
+  for (const article of healthSession.articles) {
+    const row = renderHealthRow(article);
+    if (openSlugs.has(article.slug)) {
+      row.classList.add('is-open');
+      row.querySelector('.health-row-summary')?.setAttribute('aria-expanded', 'true');
+    }
+    list.appendChild(row);
+  }
+  const counts = { green: 0, orange: 0, red: 0, gray: 0, unconfigured: 0 };
+  for (const a of healthSession.articles) {
+    const s = a.indicators?.links || 'gray';
+    counts[s] = (counts[s] || 0) + 1;
+  }
+  const globalBtn = document.getElementById('health-connect-all');
+  if (globalBtn && !healthSession.batchRunning) {
+    const needing = healthSession.articles.filter(
+      (a) => (a.details?.links?.missingInternal || []).length > 0
+    ).length;
+    globalBtn.disabled = needing === 0;
+    globalBtn.textContent =
+      needing > 0
+        ? `Connect all internal links (${needing} articles)`
+        : 'Connect all internal links';
+  }
+  const proposeAllBtn = document.getElementById('health-propose-external-all');
+  if (proposeAllBtn && !healthSession.batchRunning) {
+    const needingExt = healthSession.articles.filter(
+      (a) => (a.details?.links?.externalCount || 0) < 3
+    ).length;
+    proposeAllBtn.disabled = needingExt === 0;
+    proposeAllBtn.textContent =
+      needingExt > 0
+        ? `Propose All External Links (${needingExt})`
+        : 'Propose All External Links';
+  }
+  const speedAllBtn = document.getElementById('health-speed-check-all');
+  if (speedAllBtn && !healthSession.batchRunning) {
+    const scannable = healthSession.articles.filter((a) => a.details?.speed?.canScan).length;
+    speedAllBtn.disabled = scannable === 0;
+    speedAllBtn.textContent =
+      scannable > 0
+        ? `Speed Check All Articles (${scannable})`
+        : 'Speed Check All Articles';
+  }
+  const speedScanned = healthSession.articles.filter((a) => a.details?.speed?.scanned).length;
+  setStatus(
+    statusEl,
+    `${healthSession.articles.length} articles · Links: ${counts.green || 0} healthy, ${counts.orange || 0} needs attention, ${counts.red || 0} critical, ${counts.gray || 0} unclassified · Speed ${
+      data.pagespeedConfigured
+        ? `PageSpeed ready (${speedScanned} scanned)`
+        : 'not configured'
+    } · External search ${data.dataforseoConfigured ? 'DataForSEO ready' : 'not configured'}`
+  );
+  updateHealthBanner();
+  return data;
+}
+
+async function runGlobalConnectAllInternal() {
+  if (healthSession.batchRunning) return;
+  const statusEl = document.getElementById('health-status');
+  const data = await refreshArticlesHealth();
+  const queue = (data.articles || []).filter(
+    (a) => (a.details?.links?.missingInternal || []).length > 0
+  );
+  if (!queue.length) {
+    setHealthBatchProgress('No missing required internal links.');
+    return;
+  }
+
+  setHealthBatchControlsDisabled(true);
+  let totalConnected = 0;
+  let articlesTouched = 0;
+
+  try {
+    for (let aIndex = 0; aIndex < queue.length; aIndex++) {
+      const article = queue[aIndex];
+      const missing = article.details.links.missingInternal;
+      const result = await connectAllInternalForArticle(
+        article.slug,
+        missing,
+        ({ index, total }) => {
+          setHealthBatchProgress(
+            `Article ${aIndex + 1} of ${queue.length}: ${article.slug} — connecting ${index} of ${total} links...`,
+            { active: true, current: aIndex, total: queue.length }
+          );
+        }
+      );
+      if (result.connected > 0) articlesTouched += 1;
+      totalConnected += result.connected;
+    }
+
+    updateHealthBanner();
+    setHealthBatchControlsDisabled(false);
+    await refreshArticlesHealth();
+    setHealthBatchProgress(
+      `Connected ${totalConnected} link${totalConnected === 1 ? '' : 's'} across ${articlesTouched} article${articlesTouched === 1 ? '' : 's'}.`
+    );
+    setStatus(
+      statusEl,
+      `Batch complete — connected ${totalConnected} internal link${totalConnected === 1 ? '' : 's'} across ${articlesTouched} article${articlesTouched === 1 ? '' : 's'}.`
+    );
+  } catch (err) {
+    setStatus(statusEl, err.message, true);
+    setHealthBatchProgress(`Batch stopped: ${err.message}`);
+    setHealthBatchControlsDisabled(false);
+    await refreshArticlesHealth().catch(() => {});
+  }
+}
+
+async function initArticlesHealth() {
+  const list = document.getElementById('health-list');
+  if (!list) return;
+  document.getElementById('health-refresh')?.addEventListener('click', () => {
+    void refreshArticlesHealth().catch((err) => {
+      setStatus(document.getElementById('health-status'), err.message, true);
+    });
+  });
+  document.getElementById('health-connect-all')?.addEventListener('click', () => {
+    void runGlobalConnectAllInternal();
+  });
+  document.getElementById('health-propose-external-all')?.addEventListener('click', () => {
+    void runProposeAllExternal();
+  });
+  document.getElementById('health-speed-check-all')?.addEventListener('click', () => {
+    void runSpeedCheckAllArticles();
+  });
+  document.getElementById('health-review-cancel')?.addEventListener('click', () => {
+    hideExternalReview();
+    setHealthBatchProgress('External-link review cancelled — nothing written.');
+  });
+  document.getElementById('health-review-add')?.addEventListener('click', () => {
+    void runAddSelectedExternal();
+  });
+  await refreshArticlesHealth();
 }
 
 init();

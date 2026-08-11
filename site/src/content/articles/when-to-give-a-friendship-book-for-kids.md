@@ -19,7 +19,11 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-10
+updatedDate: 2026-08-11
+pillarKeyword: friend books for kids
+supportingKeyword: friendship book for kids
+articleType: flex
+targetKeyword: when to give a friendship book for kids
 keywords:
   - when to give a friendship book for kids (no volume data)
   - friendship book for kids
@@ -33,6 +37,17 @@ faqs:
     answer: A friendship book gives a new student a gentle, low-pressure reason to approach classmates and ask them to participate in something. Rather than navigating the awkwardness of introducing themselves cold, a child can ask a new friend to fill in a page — turning a social hurdle into a shared creative act. It works as a social bridge disguised as a beautiful object.
   - question: Does giving a friendship book have to be tied to a specific occasion?
     answer: "Not at all. Some of the most treasured friendship books are started on completely ordinary days — a random Tuesday in October, or a quiet afternoon after school. The lack of occasion can actually add to the meaning: it tells a child that their friendships are worth celebrating even when nothing special is happening, which turns the gift itself into the event."
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
+  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+    url: /articles/friendship-book-for-kids-questions/
+  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+    url: /articles/friendship-book-for-kids/
+  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
+  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+    url: /articles/how-to-start-a-friendship-book-for-kids/
 ---
 
 # 7 Occasions That Call for Giving a Friendship Book for Kids
@@ -138,3 +153,5 @@ Personalized and handmade gifts continue to be among the most popular gifting tr
 National Friendship Day 2026 fell on Sunday, August 2
 , just days before this article's publication — a reminder that the cultural appetite for honouring children's friendships with something real and lasting is as present as ever.
 <!-- WHERE-THINGS-STAND:END -->
+
+See Related below for more on this topic.

@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import express from 'express';
 import multer from 'multer';
 import matter from 'gray-matter';
+import { loadEnvLocal } from './lib/loadEnv.ts';
 import {
   ARTICLES_DIR,
   TEAM_DIR,
@@ -13,12 +14,31 @@ import {
 import { IMAGE_MAX_BYTES } from './lib/schema.ts';
 import { validateFrontmatter, type SessionImages } from './lib/validateFrontmatter.ts';
 import { normalizeParsedArticle } from './lib/normalizeParsedArticle.ts';
-import { writeArticle, setArticleDraft, deleteArticle } from './lib/writeArticle.ts';
+import {
+  writeArticle,
+  setArticleDraft,
+  deleteArticle,
+  readArticleFile,
+  patchArticleContent,
+} from './lib/writeArticle.ts';
 import { writeTeamMember, deleteTeamMember } from './lib/writeTeamMember.ts';
 import { generateLlmsTxt } from './lib/generateLlmsTxt.ts';
 import type { ArticleFrontmatter } from './lib/schema.ts';
+import {
+  buildArticlesHealthReport,
+  proposeExternalLinks,
+  proposeAllExternalLinks,
+  addExternalLinksSelected,
+  connectInternalLinkWrite,
+  mergeExternalLinks,
+  ensureSignpost,
+  EXTERNAL_SIGNPOST,
+  runArticleSpeedScan,
+  listSpeedScanTargets,
+} from './lib/articlesHealth.ts';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
+loadEnvLocal(__dirname);
 const PORT = Number(process.env.CMS_PORT) || 4322;
 
 fs.mkdirSync(STAGING_DIR, { recursive: true });
@@ -320,6 +340,120 @@ app.post('/api/rebuild-llms', (_req, res) => {
     res.json({ ok: true, content });
   } catch (err) {
     jsonError(res, 500, err instanceof Error ? err.message : 'Rebuild failed');
+  }
+});
+
+app.get('/api/articles-health', (_req, res) => {
+  try {
+    res.json({ ok: true, ...buildArticlesHealthReport() });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Health scan failed');
+  }
+});
+
+app.get('/api/articles-health/speed-targets', (_req, res) => {
+  try {
+    res.json({ ok: true, targets: listSpeedScanTargets() });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Speed targets failed');
+  }
+});
+
+app.post('/api/articles/:slug/speed-scan', async (req, res) => {
+  try {
+    const result = await runArticleSpeedScan(req.params.slug);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Speed scan failed';
+    const status =
+      message.includes('not found') ? 404 : message.includes('Not configured') ? 503 : 400;
+    jsonError(res, status, message);
+  }
+});
+
+app.get('/api/articles/:slug/propose-external', async (req, res) => {
+  try {
+    const result = await proposeExternalLinks(req.params.slug);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 404, err instanceof Error ? err.message : 'Propose failed');
+  }
+});
+
+app.post('/api/articles-health/propose-external', async (req, res) => {
+  try {
+    const slug = req.body?.slug ? String(req.body.slug).trim() : undefined;
+    const result = await proposeAllExternalLinks(slug ? { slug } : undefined);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Propose all failed');
+  }
+});
+
+app.post('/api/articles-health/add-external-selected', (req, res) => {
+  try {
+    const items = Array.isArray(req.body?.items) ? req.body.items : null;
+    if (!items) return jsonError(res, 400, 'items array is required');
+    const normalized = items.map(
+      (item: { slug?: string; label?: string; url?: string }) => ({
+        slug: String(item?.slug || '').trim(),
+        label: String(item?.label || '').trim(),
+        url: String(item?.url || '').trim(),
+      })
+    );
+    const result = addExternalLinksSelected(normalized);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Add selected failed');
+  }
+});
+
+app.post('/api/articles/:slug/links/external', (req, res) => {
+  try {
+    const label = String(req.body?.label || '').trim();
+    const url = String(req.body?.url || '').trim();
+    if (!label || !url) return jsonError(res, 400, 'label and url are required');
+    const existing = readArticleFile(req.params.slug);
+    if (!existing) return jsonError(res, 404, 'Article not found');
+    const existingLinks = Array.isArray(existing.frontmatter.externalLinks)
+      ? [...(existing.frontmatter.externalLinks as Array<{ label: string; url: string }>)]
+      : [];
+    const merged = mergeExternalLinks(existingLinks, [{ label, url }]);
+    if (!merged.written.length) {
+      return jsonError(res, 400, merged.skipped[0]?.reason || 'Nothing written');
+    }
+    const body = ensureSignpost(existing.body, EXTERNAL_SIGNPOST);
+    const result = patchArticleContent(req.params.slug, {
+      frontmatterPatch: { externalLinks: merged.links },
+      body,
+      bumpUpdatedDate: true,
+    });
+    res.json({
+      ok: true,
+      ...result,
+      externalLinks: merged.links,
+      trimmed: merged.trimmed,
+    });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'External link write failed');
+  }
+});
+
+app.post('/api/articles/:slug/links/internal', (req, res) => {
+  try {
+    const targetSlug = String(req.body?.targetSlug || '').trim();
+    if (!targetSlug) return jsonError(res, 400, 'targetSlug is required');
+    const label = req.body?.label ? String(req.body.label).trim() : undefined;
+    const result = connectInternalLinkWrite(req.params.slug, targetSlug, label);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Internal link write failed';
+    const status = message.includes('not found')
+      ? 404
+      : message.toLowerCase().includes('already present')
+        ? 409
+        : 400;
+    jsonError(res, status, message);
   }
 });
 
