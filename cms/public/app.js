@@ -606,6 +606,24 @@ async function loadTeamOptions() {
   if (current) sel.value = current;
 }
 
+function formatArticleDate(value) {
+  if (!value) return 'No date';
+  const d = new Date(value);
+  if (Number.isNaN(d.valueOf())) return String(value);
+  return d.toISOString().slice(0, 10);
+}
+
+async function toggleArticleStatus(slug, makeDraft) {
+  const action = makeDraft ? 'unpublish' : 'publish';
+  const res = await fetch(`/articles/${slug}/${action}`, { method: 'POST' });
+  const json = await parseJsonResponse(res);
+  if (!res.ok || !json.ok) {
+    throw new Error(json.error || (makeDraft ? 'Could not set Draft' : 'Could not publish'));
+  }
+  showSuccess(makeDraft ? 'Marked as Draft' : 'Marked as Published', 'Updated');
+  await loadArticleList();
+}
+
 async function loadArticleList() {
   const res = await fetch('/articles');
   const data = await parseJsonResponse(res);
@@ -620,40 +638,34 @@ async function loadArticleList() {
   for (const a of data.articles) {
     const li = document.createElement('li');
     li.className = 'article-item';
-    li.innerHTML = `<a href="/add-article.html?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
-      <span class="status-pill">${escapeHtml(a.slug)}</span>
-      ${a.draft ? '<span class="status-pill is-blocked">draft</span>' : '<span class="status-pill is-ready">live</span>'}
-      <button type="button" class="btn btn-ghost" data-unpublish="${a.slug}">Unpublish</button>
-      <button type="button" class="btn btn-ghost" data-publish="${a.slug}">Publish</button>
-      <button type="button" class="btn btn-danger" data-delete="${a.slug}">Delete</button>`;
+    const statusLabel = a.draft ? 'Draft' : 'Published';
+    const statusClass = a.draft ? 'is-blocked' : 'is-ready';
+    const nextAction = a.draft ? 'publish' : 'unpublish';
+    const dateLabel = formatArticleDate(a.date ?? a.updatedDate);
+    li.innerHTML = `
+      <div class="article-item__main">
+        <a class="article-item__title" href="/add-article.html?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
+        <span class="article-item__slug">${escapeHtml(a.slug)}</span>
+      </div>
+      <time class="article-item__date" datetime="${escapeHtml(dateLabel)}">${escapeHtml(dateLabel)}</time>
+      <button
+        type="button"
+        class="status-pill status-pill--toggle ${statusClass}"
+        data-toggle-status="${escapeHtml(a.slug)}"
+        data-next="${nextAction}"
+        title="${a.draft ? 'Click to publish' : 'Click to set as draft'}"
+        aria-label="${statusLabel}. Click to ${a.draft ? 'publish' : 'set as draft'}"
+      >${statusLabel}</button>
+      <button type="button" class="btn btn-danger" data-delete="${escapeHtml(a.slug)}">Delete</button>`;
     ul.appendChild(li);
   }
 
-  ul.querySelectorAll('[data-unpublish]').forEach((btn) => {
+  ul.querySelectorAll('[data-toggle-status]').forEach((btn) => {
     btn.addEventListener('click', async () => {
+      const slug = btn.getAttribute('data-toggle-status');
+      const makeDraft = btn.getAttribute('data-next') === 'unpublish';
       try {
-        const res = await fetch(`/articles/${btn.getAttribute('data-unpublish')}/unpublish`, {
-          method: 'POST',
-        });
-        const json = await parseJsonResponse(res);
-        if (!res.ok || !json.ok) throw new Error(json.error || 'Unpublish failed');
-        showSuccess('Unpublished (draft: true)', 'Updated');
-        loadArticleList();
-      } catch (e) {
-        showError(e.message);
-      }
-    });
-  });
-  ul.querySelectorAll('[data-publish]').forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      try {
-        const res = await fetch(`/articles/${btn.getAttribute('data-publish')}/publish`, {
-          method: 'POST',
-        });
-        const json = await parseJsonResponse(res);
-        if (!res.ok || !json.ok) throw new Error(json.error || 'Publish failed');
-        showSuccess('Published (draft: false)', 'Updated');
-        loadArticleList();
+        await toggleArticleStatus(slug, makeDraft);
       } catch (e) {
         showError(e.message);
       }

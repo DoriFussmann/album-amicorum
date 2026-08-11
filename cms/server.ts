@@ -73,6 +73,7 @@ app.get('/articles', (_req, res) => {
       slug: e.slug,
       title: e.data.title ?? e.slug,
       draft: Boolean(e.data.draft),
+      date: e.data.date ?? null,
       updatedDate: e.data.updatedDate ?? e.data.date ?? null,
       internalLinks: e.data.internalLinks ?? [],
       externalLinks: e.data.externalLinks ?? [],
