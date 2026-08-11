@@ -48,6 +48,13 @@ internalLinks:
     url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
   - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
     url: /articles/how-to-start-a-friendship-book-for-kids/
+externalLinks:
+  - label: That first “I'm not your friend anymore” It's one of those ...
+    url: https://www.instagram.com/reel/DWZKb_QDwbg/?hl=en
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+  - label: What books show it's normal to share friends and help shy ...
+    url: https://www.facebook.com/groups/mybookloversclub/posts/7714267648642144/
 ---
 
 # 7 Occasions That Call for Giving a Friendship Book for Kids
@@ -155,3 +162,5 @@ National Friendship Day 2026 fell on Sunday, August 2
 <!-- WHERE-THINGS-STAND:END -->
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

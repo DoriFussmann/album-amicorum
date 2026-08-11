@@ -38,6 +38,13 @@ targetKeyword: friend books for kids
 internalLinks:
   - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
     url: /articles/friendship-book-for-kids/
+externalLinks:
+  - label: Books About Friendship for Young Children
+    url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+  - label: "My Friends: Books for Young Children"
+    url: https://www.colorincolorado.org/booklist/my-friends-books-young-children
 ---
 
 ## What Is a Friend Book — and Why Does It Deserve Its Own Category?
@@ -199,3 +206,5 @@ consumers are increasingly curating their "personal lore" in physical form, turn
 <!-- WHERE-THINGS-STAND:END -->
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

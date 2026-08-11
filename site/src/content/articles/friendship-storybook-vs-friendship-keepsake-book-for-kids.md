@@ -47,6 +47,13 @@ internalLinks:
     url: /articles/how-to-start-a-friendship-book-for-kids/
   - label: 7 Occasions That Call for Giving a Friendship Book for Kids
     url: /articles/when-to-give-a-friendship-book-for-kids/
+externalLinks:
+  - label: Books About Friendship for Young Children
+    url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+  - label: What books show it's normal to share friends and help shy ...
+    url: https://www.facebook.com/groups/mybookloversclub/posts/7714267648642144/
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
 ---
 
 # Friendship Storybooks vs. Keepsake Books: Which Is Right?
@@ -150,3 +157,5 @@ recent studies have linked strong childhood friendships with better mental healt
  — a finding that makes the case for tools that actively honour those friendships feel timely rather than nostalgic. The friendship keepsake book category sits squarely at the intersection of these two trends: a physically beautiful, screen-free artifact that treats children's real relationships as something worth preserving with care.
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

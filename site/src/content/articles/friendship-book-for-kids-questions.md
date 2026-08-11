@@ -47,6 +47,13 @@ internalLinks:
     url: /articles/how-to-start-a-friendship-book-for-kids/
   - label: 7 Occasions That Call for Giving a Friendship Book for Kids
     url: /articles/when-to-give-a-friendship-book-for-kids/
+externalLinks:
+  - label: Five Great Picture Books About Friendship for K-1!
+    url: https://susanjonesteaching.com/picture-books-about-friendship-read-alouds-for-kindergarten-first-and-second-grade/
+  - label: How to Talk to Kids About Making Friends
+    url: https://www.scholastic.com/parents/books-and-reading/raise-a-reader-blog/books-about-friendship-kids.html
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
 ---
 
 # Friendship Book for Kids: FAQ for Parents and Gift-Givers
@@ -143,3 +150,5 @@ The broader context for friendship books and childhood keepsakes continues to st
 <!-- WHERE-THINGS-STAND:END -->
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

@@ -47,6 +47,13 @@ internalLinks:
     url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
   - label: 7 Occasions That Call for Giving a Friendship Book for Kids
     url: /articles/when-to-give-a-friendship-book-for-kids/
+externalLinks:
+  - label: How To Make Friends For Kids
+    url: https://www.amazon.com/how-make-friends-kids/s?k=how+to+make+friends+for+kids
+  - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
+    url: https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
 ---
 
 ## Why Starting a Friendship Book Is Worth Doing Right
@@ -147,3 +154,5 @@ More families are intentionally slowing down, limiting screen time, and reclaimi
 <!-- WHERE-THINGS-STAND:END -->
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

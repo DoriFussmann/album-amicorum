@@ -46,6 +46,13 @@ internalLinks:
     url: /articles/how-to-start-a-friendship-book-for-kids/
   - label: 7 Occasions That Call for Giving a Friendship Book for Kids
     url: /articles/when-to-give-a-friendship-book-for-kids/
+externalLinks:
+  - label: Books About Friendship for Young Children
+    url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+  - label: Books To Show Kids How To Be a Friend
+    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+  - label: All About Friends - A colourful guide for children on making ...
+    url: https://www.youtube.com/watch?v=4iLgR5vSBrg
 ---
 
 # Friendship Book for Kids: The Complete Guide to Keepsakes
@@ -171,3 +178,5 @@ In the children's product space specifically, content that helps children unders
 , reinforcing the cultural appetite for meaningful, friendship-centred keepsakes. No major product launches or news events specific to the friendship book niche have been reported in the past 45 days, making this a stable and steadily growing territory rather than one shaped by sudden developments.
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.
