@@ -21,8 +21,8 @@ const books = (await getCollection('books')).sort((a, b) => a.data.order - b.dat
 >
   <Hero />
   <WhatIs />
-  <HowItWorks />
   <Collection books={books} />
+  <HowItWorks />
   <WhyParents />
   <Story />
   <Testimonials />
