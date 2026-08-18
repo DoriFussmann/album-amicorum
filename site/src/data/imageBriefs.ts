@@ -39,18 +39,6 @@ export const imageBriefs = {
     prompt:
       'Two children exchanging a beautifully illustrated Friend Book across a wooden table, open pages with handwritten memories, colored pencils, pressed flowers, soft natural window light, Scandinavian home, calm atmosphere, editorial lifestyle photography, Waldorf-inspired, muted earth tones.',
   },
-  oneOfAKind: {
-    id: 'one-of-a-kind',
-    purpose: 'Show several completed pages. Every page visibly different.',
-    composition:
-      'Open children\'s friendship memory book showing several completed pages, each page filled by a different child with unique handwriting, drawings, doodles, favorite colors.',
-    lighting: 'Soft natural lighting.',
-    environment: 'Calm studio or home table surface.',
-    mood: 'Quiet. Wonder. Keepsake.',
-    aspectRatio: '16:9',
-    prompt:
-      'Open children\'s friendship memory book showing several completed pages, each page filled by a different child with unique handwriting, drawings, doodles, favorite colors, soft watercolor illustrations, premium editorial photography, calm natural lighting.',
-  },
   story: {
     id: 'story',
     purpose: 'Connect the historical Album Amicorum tradition to My Friends Book.',

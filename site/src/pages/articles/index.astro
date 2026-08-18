@@ -1,8 +1,10 @@
 ---
 import { Image } from 'astro:assets';
 import { getCollection, getEntry } from 'astro:content';
+import ArticlesFilters from '../../components/ArticlesFilters.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_NAME } from '../../config/site';
+import { buildArticleFilterOptions } from '../../lib/articleFilters';
 
 const PAGE_SIZE = 9;
 
@@ -23,13 +25,7 @@ const articlesWithAuthors = await Promise.all(
   })
 );
 
-const topics = [
-  ...new Set(
-    allArticles
-      .map((a) => a.data.pillarKeyword)
-      .filter((topic): topic is string => Boolean(topic))
-  ),
-].sort((a, b) => a.localeCompare(b));
+const filterOptions = buildArticleFilterOptions(allArticles.map((a) => a.data));
 ---
 
 <BaseLayout
@@ -49,40 +45,7 @@ const topics = [
           <p class="text-center text-ink-muted">No articles published yet.</p>
         ) : (
           <>
-            <form
-              id="articles-filters"
-              class="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end"
-              role="search"
-            >
-              <div class="min-w-0 flex-1">
-                <label for="articles-search" class="mb-2 block text-sm text-ink-muted">
-                  Search by title
-                </label>
-                <input
-                  id="articles-search"
-                  name="q"
-                  type="search"
-                  autocomplete="off"
-                  placeholder="Search articles…"
-                  class="min-h-11 w-full rounded-soft border border-border bg-canvas px-3 text-sm text-ink-heading placeholder:text-ink-muted"
-                />
-              </div>
-              <div class="w-full sm:w-64">
-                <label for="articles-topic" class="mb-2 block text-sm text-ink-muted">
-                  Topic
-                </label>
-                <select
-                  id="articles-topic"
-                  name="topic"
-                  class="min-h-11 w-full rounded-soft border border-border bg-canvas px-3 text-sm text-ink-heading"
-                >
-                  <option value="">All topics</option>
-                  {topics.map((topic) => (
-                    <option value={topic}>{topic}</option>
-                  ))}
-                </select>
-              </div>
-            </form>
+            <ArticlesFilters options={filterOptions} />
 
             <p id="articles-empty" class="mb-0 text-center text-sm text-ink-muted" hidden>
               No articles match your filters.
@@ -92,7 +55,8 @@ const topics = [
               {articlesWithAuthors.map(({ article, authorName }) => (
                 <li
                   data-title={article.data.title.toLowerCase()}
-                  data-topic={article.data.pillarKeyword ?? ''}
+                  data-pillar={article.data.pillarKeyword ?? ''}
+                  data-cluster={article.data.supportingKeyword ?? ''}
                 >
                   <a
                     href={`/articles/${article.data.slug}/`}
@@ -157,79 +121,4 @@ const topics = [
       }
     </div>
   </section>
-
-  <script>
-    const form = document.getElementById('articles-filters');
-    const searchInput = document.getElementById('articles-search');
-    const topicSelect = document.getElementById('articles-topic');
-    const emptyMessage = document.getElementById('articles-empty');
-    const grid = document.getElementById('articles-grid');
-    const pagination = document.querySelector('[data-articles-pagination]');
-
-    if (
-      form instanceof HTMLFormElement &&
-      searchInput instanceof HTMLInputElement &&
-      topicSelect instanceof HTMLSelectElement &&
-      emptyMessage instanceof HTMLElement &&
-      grid instanceof HTMLElement
-    ) {
-      const items = [...grid.querySelectorAll<HTMLElement>(':scope > li')];
-
-      const applyFilters = () => {
-        const query = searchInput.value.trim().toLowerCase();
-        const topic = topicSelect.value;
-        let visibleCount = 0;
-
-        for (const item of items) {
-          const title = item.dataset.title ?? '';
-          const itemTopic = item.dataset.topic ?? '';
-          const matchesSearch = !query || title.includes(query);
-          const matchesTopic = !topic || itemTopic === topic;
-          const show = matchesSearch && matchesTopic;
-          item.hidden = !show;
-          if (show) visibleCount += 1;
-        }
-
-        emptyMessage.hidden = visibleCount > 0;
-        if (pagination instanceof HTMLElement) {
-          pagination.hidden = Boolean(query || topic);
-        }
-      };
-
-      const syncFromParams = () => {
-        const params = new URLSearchParams(window.location.search);
-        searchInput.value = params.get('q') ?? '';
-        const topic = params.get('topic') ?? '';
-        topicSelect.value = [...topicSelect.options].some((o) => o.value === topic) ? topic : '';
-        applyFilters();
-      };
-
-      const writeParams = () => {
-        const params = new URLSearchParams();
-        const query = searchInput.value.trim();
-        const topic = topicSelect.value;
-        if (query) params.set('q', query);
-        if (topic) params.set('topic', topic);
-        const next = params.toString();
-        const url = next ? `${window.location.pathname}?${next}` : window.location.pathname;
-        window.history.replaceState({}, '', url);
-      };
-
-      searchInput.addEventListener('input', () => {
-        writeParams();
-        applyFilters();
-      });
-      topicSelect.addEventListener('change', () => {
-        writeParams();
-        applyFilters();
-      });
-      form.addEventListener('submit', (event) => {
-        event.preventDefault();
-        writeParams();
-        applyFilters();
-      });
-
-      syncFromParams();
-    }
-  </script>
 </BaseLayout>

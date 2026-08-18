@@ -31,7 +31,7 @@ const offsets = ['none', 'up', 'down', 'up', 'none', 'down', 'up'] as const;
           <p class="mt-2 text-ink-muted">Please check back soon.</p>
         </div>
       ) : (
-        <ul class="grid gap-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-8">
+        <ul class="grid gap-12 overflow-visible sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 lg:gap-x-8 lg:gap-y-14">
           {books.map((book, i) => (
             <li>
               <Reveal delay={i * 90}>
