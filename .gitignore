@@ -1,7 +1,16 @@
 node_modules/
 dist/
 .astro/
+.vercel/
 cms/uploads/
 cms/staging/
 *.log
 .DS_Store
+
+# Local secrets
+.env
+.env.*
+!.env.example
+**/.env
+**/.env.*
+!**/.env.example

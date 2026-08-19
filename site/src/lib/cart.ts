@@ -84,3 +84,7 @@ export function setCartQuantity(slug: string, quantity: number): CartItem[] {
 export function removeFromCart(slug: string): CartItem[] {
   return saveCart(getCart().filter((item) => item.slug !== slug));
 }
+
+export function clearCart(): CartItem[] {
+  return saveCart([]);
+}

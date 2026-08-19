@@ -44,14 +44,15 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         </div>
 
         <div class="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-          <button type="button" class="btn btn-primary" data-checkout-soon>
+          <button type="button" class="btn btn-primary" data-checkout>
             Continue to Checkout
           </button>
           <a class="btn btn-secondary" href="/#collection">Continue Browsing</a>
         </div>
-        <p class="mt-3 text-sm text-ink-muted" data-checkout-note>
-          Checkout is coming soon. Your selections are saved in this browser.
+        <p class="mt-3 text-sm text-ink-muted">
+          Payments are securely processed through Stripe.
         </p>
+        <p class="mt-2 min-h-5 text-sm text-ink-muted" data-checkout-note aria-live="polite"></p>
       </div>
     </div>
   </section>
@@ -149,17 +150,55 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     });
   }
 
+  async function startCheckout(button: HTMLButtonElement, note: HTMLElement | null) {
+    const items = getCart().map((item) => ({
+      slug: item.slug,
+      quantity: item.quantity,
+    }));
+
+    if (!items.length) {
+      if (note) note.textContent = 'Your cart is empty.';
+      return;
+    }
+
+    const originalLabel = button.textContent;
+    button.disabled = true;
+    button.textContent = 'Preparing your order...';
+    if (note) note.textContent = '';
+
+    try {
+      const response = await fetch('/api/checkout/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ items }),
+      });
+
+      const data = (await response.json()) as { url?: string; error?: string };
+      if (!response.ok || !data.url) {
+        if (note) {
+          note.textContent = data.error || 'Something went wrong. Please try again.';
+        }
+        button.disabled = false;
+        button.textContent = originalLabel || 'Continue to Checkout';
+        return;
+      }
+
+      window.location.href = data.url;
+    } catch {
+      if (note) note.textContent = 'Something went wrong. Please try again.';
+      button.disabled = false;
+      button.textContent = originalLabel || 'Continue to Checkout';
+    }
+  }
+
   function initCartPage() {
     renderCart();
 
-    const checkoutButton = document.querySelector<HTMLButtonElement>('[data-checkout-soon]');
+    const checkoutButton = document.querySelector<HTMLButtonElement>('[data-checkout]');
     const note = document.querySelector<HTMLElement>('[data-checkout-note]');
     if (checkoutButton && checkoutButton.dataset.bound !== 'true') {
       checkoutButton.addEventListener('click', () => {
-        if (note) {
-          note.textContent =
-            'Checkout is coming soon. Your Friend Book selections will stay saved here.';
-        }
+        void startCheckout(checkoutButton, note);
       });
       checkoutButton.dataset.bound = 'true';
     }
