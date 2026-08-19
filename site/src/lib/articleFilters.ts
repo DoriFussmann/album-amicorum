@@ -13,15 +13,13 @@ export function titleCaseKeyword(value: string): string {
 export type ArticleFilterOption = {
   value: string;
   label: string;
-  kind: 'pillar' | 'cluster';
 };
 
 type ArticleKeywordFields = {
   pillarKeyword?: string | undefined;
-  supportingKeyword?: string | undefined;
 };
 
-/** Pillar keywords with their supporting clusters grouped under each pillar. */
+/** Unique pillar keywords from published articles, sorted alphabetically. */
 export function buildArticleFilterOptions(
   articles: ArticleKeywordFields[]
 ): ArticleFilterOption[] {
@@ -33,35 +31,8 @@ export function buildArticleFilterOptions(
     ),
   ].sort((a, b) => a.localeCompare(b));
 
-  const options: ArticleFilterOption[] = [];
-  const seenClusters = new Set<string>();
-
-  for (const pillar of pillars) {
-    options.push({
-      value: pillar,
-      label: titleCaseKeyword(pillar),
-      kind: 'pillar',
-    });
-
-    const clusters = [
-      ...new Set(
-        articles
-          .filter((a) => a.pillarKeyword?.trim() === pillar)
-          .map((a) => a.supportingKeyword?.trim())
-          .filter((k): k is string => Boolean(k) && k !== pillar)
-      ),
-    ].sort((a, b) => a.localeCompare(b));
-
-    for (const cluster of clusters) {
-      if (seenClusters.has(cluster)) continue;
-      seenClusters.add(cluster);
-      options.push({
-        value: cluster,
-        label: titleCaseKeyword(cluster),
-        kind: 'cluster',
-      });
-    }
-  }
-
-  return options;
+  return pillars.map((pillar) => ({
+    value: pillar,
+    label: titleCaseKeyword(pillar),
+  }));
 }

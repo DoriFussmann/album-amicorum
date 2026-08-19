@@ -27,7 +27,7 @@ const { options } = Astro.props;
     options.length > 0 && (
       <div>
         <p id="articles-filter-label" class="mb-3 text-sm text-ink-muted">
-          Filter
+          Filter by pillar
         </p>
         <div
           id="articles-topic-group"
@@ -47,12 +47,8 @@ const { options } = Astro.props;
             <button
               type="button"
               data-topic={option.value}
-              data-kind={option.kind}
               aria-pressed="false"
-              class:list={[
-                'article-filter-chip',
-                option.kind === 'cluster' && 'article-filter-chip--cluster',
-              ]}
+              class="article-filter-chip"
             >
               {option.label}
             </button>
@@ -95,10 +91,6 @@ const { options } = Astro.props;
   .article-filter-chip[aria-pressed='true'] {
     border-bottom-color: #4e684e;
     color: #3b3530;
-  }
-
-  .article-filter-chip--cluster {
-    font-weight: 500;
   }
 </style>
 
@@ -143,9 +135,8 @@ const { options } = Astro.props;
       for (const item of items) {
         const title = item.dataset.title ?? '';
         const pillar = item.dataset.pillar ?? '';
-        const cluster = item.dataset.cluster ?? '';
         const matchesSearch = !query || title.includes(query);
-        const matchesTopic = !topic || pillar === topic || cluster === topic;
+        const matchesTopic = !topic || pillar === topic;
         const show = matchesSearch && matchesTopic;
         item.hidden = !show;
         if (show) visibleCount += 1;

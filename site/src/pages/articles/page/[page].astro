@@ -70,7 +70,6 @@ const filterOptions = buildArticleFilterOptions(allArticles.map((a) => a.data));
             <li
               data-title={article.data.title.toLowerCase()}
               data-pillar={article.data.pillarKeyword ?? ''}
-              data-cluster={article.data.supportingKeyword ?? ''}
             >
               <a
                 href={`/articles/${article.data.slug}/`}
