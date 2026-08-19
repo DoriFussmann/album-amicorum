@@ -4,6 +4,7 @@ import {
   getSiteUrl,
   validateCheckoutItems,
 } from '../../lib/stripeCatalog';
+import { getEnv } from '../../lib/serverEnv';
 import { SHIPPING_COUNTRIES } from '../../lib/shippingCountries';
 import { getStripe } from '../../lib/stripeServer';
 
@@ -26,6 +27,10 @@ export const POST: APIRoute = async ({ request }) => {
     const validated = validateCheckoutItems(itemsRaw);
     if (!validated.ok) {
       return json({ error: validated.error }, 400);
+    }
+
+    if (!getEnv('STRIPE_SECRET_KEY')) {
+      return json({ error: 'Checkout is not configured (missing STRIPE_SECRET_KEY).' }, 500);
     }
 
     const siteUrl = getSiteUrl();
@@ -70,6 +75,14 @@ export const POST: APIRoute = async ({ request }) => {
     return json({ url: session.url });
   } catch (error) {
     console.error('[checkout] Failed to create session:', error);
+    const stripeMessage =
+      error && typeof error === 'object' && 'message' in error
+        ? String((error as { message: unknown }).message)
+        : '';
+    // Surface Stripe config errors (e.g. missing/wrong Price ID) without leaking secrets.
+    if (stripeMessage && /No such price|Invalid API Key|No such product/i.test(stripeMessage)) {
+      return json({ error: stripeMessage }, 500);
+    }
     return json({ error: 'Something went wrong. Please try again.' }, 500);
   }
 };
