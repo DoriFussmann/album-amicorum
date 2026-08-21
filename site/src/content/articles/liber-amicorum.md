@@ -17,7 +17,7 @@ robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
-draft: true
+draft: false
 updatedDate: 2026-08-21
 keywords:
   - liber amicorum
