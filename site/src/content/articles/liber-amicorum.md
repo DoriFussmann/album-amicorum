@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-21
+updatedDate: 2026-08-22
 keywords:
   - liber amicorum
   - album amicorum
@@ -33,6 +33,9 @@ faqs:
     answer: Stammbuch is the German word for the album amicorum tradition. It literally means 'stem book' or 'family tree book,' reflecting the German custom of recording friendships and lineages in the same kind of personal volume. The terms album amicorum, liber amicorum, and Stammbuch all refer to the same centuries-old tradition of personal friendship books — the name simply varies by language and context.
   - question: Why does the terminology matter for parents choosing a Friend Book today?
     answer: Knowing the distinction helps parents choose and describe what they're looking for. If you search 'liber amicorum,' you may find mostly academic Festschrift publications rather than the personal, illustrated keepsakes intended for children. Searching 'album amicorum' or 'Friend Book' is more likely to lead you to the handcrafted, child-centred tradition — books designed to be filled by real friends, passed between children, and kept as lifelong keepsakes.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
 ---
 
 If you have ever typed either "album amicorum" or "liber amicorum" into a search bar, you may have found yourself staring at two different worlds. One returns beautifully illustrated historical friendship books, pages filled with ink drawings and handwritten mottoes passed between students centuries ago. The other returns dense academic volumes published in honour of retiring law professors. Both carry a Latin label that translates, word for word, as "book of friends." So what is actually going on — and does the distinction matter for a parent looking for a meaningful keepsake for their child?
@@ -110,3 +113,5 @@ Whatever name you give it, the act is the same one students practised in sixteen
 The topic of album amicorum and liber amicorum terminology is stable within academic circles, with no major definitional shifts reported in recent weeks. What is notable in the broader cultural context, however, is the strong momentum behind the values these traditions represent. Parenting commentary in 2026 has broadly identified the "analog childhood" movement as one of the year's defining trends, with recent reporting describing families actively limiting screen time and seeking offline, tactile experiences — boredom, backyard play, crafts, and real-world connection — as a deliberate counter to digital overload. Pinterest's 2026 Parenting Trend Report similarly noted that 
 "handmade patterns and vintage bedroom ideas suggest a desire for slower, more tactile experiences," and that these trends point to parents using the past as a blueprint for a more analog, grounded childhood.
  A centuries-old friendship book tradition, whatever it is called, sits squarely within that impulse — and the renewed cultural appetite for handmade, meaningful keepsakes suggests the album amicorum's moment of rediscovery is very much ongoing.
+
+See Related below for more on this topic.

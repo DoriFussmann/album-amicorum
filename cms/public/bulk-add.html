@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMS — Bulk Add · Album Amicorum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/cms.css" />
+  </head>
+  <body class="has-sticky-actions">
+    <header class="cms-header">
+      <div class="site-shell cms-header__inner">
+        <a class="brand" href="/">
+          <span class="brand__name">Album Amicorum</span>
+          <span class="brand__meta">Local CMS</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="cms-shell">
+      <aside class="cms-sidebar" aria-label="CMS navigation">
+        <ul class="sidebar-nav">
+          <li><a href="/">Articles</a></li>
+          <li><a href="/add-article.html">Add Article</a></li>
+          <li><a href="/bulk-add.html" aria-current="page">Bulk Add</a></li>
+          <li><a href="/articles-health.html">Articles Health</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/dashboard.html">Dashboard</a></li>
+        </ul>
+      </aside>
+
+      <div class="cms-main">
+        <main class="site-shell">
+          <div class="page-intro">
+            <h1>Bulk Add</h1>
+            <p>
+              Drop several <code>.md</code> files and hero images together. Matching uses slug, filename,
+              and folder name. Author defaults to Dori Fussmann.
+            </p>
+          </div>
+
+          <div class="stack">
+            <section class="panel" aria-labelledby="bulk-drop-heading">
+              <h2 id="bulk-drop-heading">Files</h2>
+              <p class="panel__lede">
+                Mix markdown and images in one drop. Name images like the article slug
+                (<code>album-amicorum.png</code> or <code>album-amicorum-hero.png</code>), or keep each
+                article’s image in a folder named after the slug.
+              </p>
+              <div
+                id="bulk-drop"
+                class="dropzone dropzone--tall"
+                tabindex="0"
+                role="button"
+                aria-label="Drop markdown and image files"
+              >
+                <p><strong>Drop .md files and images</strong></p>
+                <p>or click to choose multiple files</p>
+              </div>
+              <input type="file" id="bulk-files" accept=".md,.markdown,text/markdown,image/*" multiple hidden />
+              <p id="bulk-file-count" class="panel__lede" style="margin-top: 0.85rem"></p>
+            </section>
+
+            <section class="panel" aria-labelledby="bulk-options-heading">
+              <h2 id="bulk-options-heading">Options</h2>
+              <label class="field">
+                <span>author</span>
+                <select id="bulk-author" required>
+                  <option value="dori-fussmann">Dori Fussmann (dori-fussmann)</option>
+                </select>
+              </label>
+              <label class="check-row" style="margin-top: 1rem">
+                <input type="checkbox" id="bulk-overwrite" />
+                <span>Overwrite existing slugs</span>
+              </label>
+            </section>
+
+            <section class="panel" aria-labelledby="bulk-preview-heading">
+              <h2 id="bulk-preview-heading">Matched articles</h2>
+              <p id="bulk-unmatched" class="panel__lede" hidden></p>
+              <div class="table-wrap">
+                <table class="bulk-table">
+                  <thead>
+                    <tr>
+                      <th>Status</th>
+                      <th>Article</th>
+                      <th>Markdown</th>
+                      <th>Hero image</th>
+                      <th>Notes</th>
+                    </tr>
+                  </thead>
+                  <tbody id="bulk-preview-body">
+                    <tr>
+                      <td colspan="5">Drop files to preview matches.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <p id="bulk-error" class="alert alert-error" role="alert" hidden></p>
+            <p id="bulk-success" class="alert alert-success" hidden></p>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div class="action-bar" aria-label="Bulk add actions">
+      <div class="site-shell action-bar__inner">
+        <div class="action-bar__status">
+          <p id="bulk-action-reason">Drop markdown and images, then Add.</p>
+        </div>
+        <div class="action-bar__controls">
+          <span class="status-pill is-blocked" id="bulk-action-pill">Not ready</span>
+          <button type="button" class="btn btn-primary" id="bulk-add" aria-disabled="true">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div id="preloader" class="preloader" hidden>
+      <div class="preloader__panel" role="status" aria-live="assertive">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="preloader-text">Matching files…</p>
+      </div>
+    </div>
+
+    <div id="toast-host" class="toast-host" aria-live="polite" aria-relevant="additions"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

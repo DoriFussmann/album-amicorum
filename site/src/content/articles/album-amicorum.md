@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-21
+updatedDate: 2026-08-22
 keywords:
   - album amicorum
   - Friend Books & Friendship Keepsakes
@@ -32,6 +32,9 @@ faqs:
     answer: The album amicorum is the direct ancestor of the modern autograph book, school yearbook, and children's friendship book. German immigrants carried the Stammbuch tradition to the United States in the 18th century, where it eventually evolved into the school yearbook. Meanwhile, in Europe, the practice gradually migrated from university students to women and children, ultimately becoming the familiar poetry album and friend book that children still cherish today.
   - question: What is the best modern version of an album amicorum for children?
     answer: For children ages 5–12, the ideal modern album amicorum is a beautifully illustrated Friend Book designed to be passed among classmates, neighbors, and family friends, each of whom fills in a dedicated page with their favorite things, handwritten messages, and drawings. Unlike a digital chat or social media profile, this kind of book creates a permanent, tangible record of childhood friendships that can be revisited for decades.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
 ---
 
 # Album Amicorum: The 500-Year-Old Friendship Book Tradition
@@ -150,3 +153,5 @@ The analog childhood movement has emerged as one of 2026's biggest parenting tre
 
 Efforts to delay smartphones and restrict social media for children are accelerating, and "going analog" is gaining broad momentum — from board games and puzzles to a renewed appetite for handmade, tactile objects that create boundaries, reduce overstimulation, and support healthier childhood development. In the children's creative and publishing realm, observers note a marked shift toward nostalgia, tradition, comfort, and the analogue, with an increasing desire for products that feel safe, familiar, and full of deeper meaning.
  Taken together, these signals suggest that a centuries-old tradition built on handwriting, personal contribution, and tangible memory is arriving at a moment of renewed cultural appetite — not as a relic, but as a considered alternative.
+
+See Related below for more on this topic.

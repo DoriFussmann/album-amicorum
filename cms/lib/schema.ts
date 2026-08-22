@@ -85,6 +85,9 @@ export const DEFAULTS = {
   draft: false,
 } as const;
 
+/** Default article author (team member slug) for new / bulk uploads. */
+export const DEFAULT_AUTHOR_SLUG = 'dori-fussmann';
+
 export interface LinkItem {
   label: string;
   url: string;

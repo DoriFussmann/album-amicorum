@@ -11,7 +11,7 @@ import {
   SERVICES_DIR,
   STAGING_DIR,
 } from './lib/paths.ts';
-import { IMAGE_MAX_BYTES } from './lib/schema.ts';
+import { DEFAULT_AUTHOR_SLUG, IMAGE_MAX_BYTES } from './lib/schema.ts';
 import { validateFrontmatter, type SessionImages } from './lib/validateFrontmatter.ts';
 import { normalizeParsedArticle } from './lib/normalizeParsedArticle.ts';
 import {
@@ -23,6 +23,13 @@ import {
 } from './lib/writeArticle.ts';
 import { writeTeamMember, deleteTeamMember } from './lib/writeTeamMember.ts';
 import { generateLlmsTxt } from './lib/generateLlmsTxt.ts';
+import {
+  defaultImageAlt,
+  isImageName,
+  isMarkdownName,
+  matchBulkUploads,
+  type BulkMarkdownHint,
+} from './lib/matchBulkUploads.ts';
 import type { ArticleFrontmatter } from './lib/schema.ts';
 import {
   buildArticlesHealthReport,
@@ -58,6 +65,188 @@ const upload = multer({
 
 function jsonError(res: express.Response, status: number, message: string, extra?: Record<string, unknown>) {
   res.status(status).json({ ok: false, error: message, ...extra });
+}
+
+function cleanupStaged(files: Express.Multer.File[] | undefined) {
+  for (const file of files || []) {
+    try {
+      if (file?.path && fs.existsSync(file.path)) fs.unlinkSync(file.path);
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+function todayIsoDate(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function fileByName(files: Express.Multer.File[], name: string | undefined) {
+  if (!name) return undefined;
+  const wanted = name.replace(/\\/g, '/');
+  return files.find((f) => {
+    const original = String(f.originalname || '').replace(/\\/g, '/');
+    return original === wanted || original.endsWith(`/${wanted}`) || original === name;
+  });
+}
+
+type BulkPayload = {
+  author?: string;
+  overwrite?: boolean;
+  items?: Array<{
+    markdown: string;
+    image?: string;
+    image2?: string;
+    image3?: string;
+  }>;
+};
+
+function resolveBulkAuthor(requested: string | undefined, teamSlugs: string[]): string {
+  if (requested && teamSlugs.includes(requested)) return requested;
+  if (teamSlugs.includes(DEFAULT_AUTHOR_SLUG)) return DEFAULT_AUTHOR_SLUG;
+  return teamSlugs[0] || '';
+}
+
+function planBulkFromFiles(files: Express.Multer.File[], payload: BulkPayload) {
+  const team = readEntries(TEAM_DIR);
+  const teamSlugs = team.map((t) => t.slug);
+  const author = resolveBulkAuthor(payload.author, teamSlugs);
+  const markdownFiles = files.filter((f) => isMarkdownName(f.originalname));
+  const imageFiles = files.filter((f) => isImageName(f.originalname));
+
+  const parsedMarkdown = markdownFiles.map((file) => {
+    const raw = fs.readFileSync(file.path, 'utf8');
+    const parsed = matter(raw);
+    const normalized = normalizeParsedArticle({
+      data: (parsed.data ?? {}) as Record<string, unknown>,
+      body: parsed.content.trim(),
+    });
+    return { file, data: normalized.data, body: normalized.body };
+  });
+
+  const mdHints: BulkMarkdownHint[] = parsedMarkdown.map((item) => ({
+    originalName: item.file.originalname,
+    slug: String(item.data.slug || '').trim(),
+    title: String(item.data.title || '').trim(),
+  }));
+  const autoMatch = matchBulkUploads(
+    mdHints,
+    imageFiles.map((f) => ({ originalName: f.originalname }))
+  );
+
+  const requestedItems =
+    Array.isArray(payload.items) && payload.items.length
+      ? payload.items
+      : autoMatch.matches.map((m) => ({
+          markdown: m.markdown,
+          image: m.image,
+          image2: m.image2,
+          image3: m.image3,
+        }));
+
+  const items = requestedItems.map((item) => {
+    const match = autoMatch.matches.find((m) => m.markdown === item.markdown);
+    const mdFile = fileByName(markdownFiles, item.markdown);
+    const parsed = parsedMarkdown.find(
+      (p) => p.file === mdFile || p.file.originalname === item.markdown
+    );
+    if (!mdFile || !parsed) {
+      return {
+        markdown: item.markdown,
+        slug: '',
+        title: '',
+        image: item.image,
+        image2: item.image2,
+        image3: item.image3,
+        matchReason: match?.matchReason || '',
+        ready: false,
+        error: 'Markdown file not found in upload',
+        collision: false,
+        data: {} as Record<string, unknown>,
+        body: '',
+        sessionImages: {} as SessionImages,
+      };
+    }
+
+    const imageFile = fileByName(imageFiles, item.image || match?.image);
+    const image2File = fileByName(imageFiles, item.image2 || match?.image2);
+    const image3File = fileByName(imageFiles, item.image3 || match?.image3);
+
+    const data = { ...parsed.data } as Record<string, unknown>;
+    const slug =
+      String(data.slug || '').trim() ||
+      mdFile.originalname.replace(/\.(md|markdown)$/i, '');
+    data.slug = slug;
+    data.author = author;
+    if (!data.date) data.date = todayIsoDate();
+    if (!data.updatedDate) data.updatedDate = data.date;
+    const alt = typeof data.imageAlt === 'string' ? data.imageAlt.trim() : '';
+    if (!alt || alt.length < 10) {
+      data.imageAlt = defaultImageAlt(String(data.title || ''), slug);
+    }
+
+    const sessionImages: SessionImages = {};
+    if (imageFile) {
+      sessionImages.image = {
+        stagedPath: imageFile.path,
+        originalName: imageFile.originalname,
+      };
+    }
+    if (image2File) {
+      sessionImages.image2 = {
+        stagedPath: image2File.path,
+        originalName: image2File.originalname,
+      };
+    }
+    if (image3File) {
+      sessionImages.image3 = {
+        stagedPath: image3File.path,
+        originalName: image3File.originalname,
+      };
+    }
+
+    const collision = fs.existsSync(path.join(ARTICLES_DIR, `${slug}.md`));
+    const validation = author
+      ? validateFrontmatter({
+          data,
+          sessionImages,
+          teamSlugs,
+          knownSlugs: knownSlugs(),
+        })
+      : {
+          ok: false,
+          summary: 'No team members found — add an author in Team first.',
+        };
+
+    let error = '';
+    if (!author) error = 'No team members found — add an author in Team first.';
+    else if (!validation.ok) error = validation.summary;
+    else if (collision && !payload.overwrite) {
+      error = `Slug already exists (${slug}.md). Enable overwrite to replace.`;
+    }
+
+    return {
+      markdown: item.markdown,
+      slug,
+      title: String(data.title || slug),
+      image: imageFile?.originalname,
+      image2: image2File?.originalname,
+      image3: image3File?.originalname,
+      matchReason: match?.matchReason || '',
+      ready: !error,
+      error: error || undefined,
+      collision,
+      data: validation && 'data' in validation ? { ...data, ...validation.data } : data,
+      body: parsed.body,
+      sessionImages,
+    };
+  });
+
+  return {
+    author,
+    unmatchedImages: autoMatch.unmatchedImages,
+    items,
+  };
 }
 
 function listMarkdown(dir: string): string[] {
@@ -271,6 +460,113 @@ app.post(
     }
   }
 );
+
+app.post('/bulk-preview', upload.array('files', 80), (req, res) => {
+  const files = (req.files as Express.Multer.File[] | undefined) || [];
+  try {
+    if (!files.length) return jsonError(res, 400, 'No files uploaded');
+    const payloadRaw = req.body.payload;
+    const payload = (payloadRaw ? JSON.parse(payloadRaw) : {}) as BulkPayload;
+    const plan = planBulkFromFiles(files, payload);
+    res.json({
+      ok: true,
+      author: plan.author,
+      unmatchedImages: plan.unmatchedImages,
+      items: plan.items.map((item) => ({
+        markdown: item.markdown,
+        slug: item.slug,
+        title: item.title,
+        image: item.image,
+        image2: item.image2,
+        image3: item.image3,
+        matchReason: item.matchReason,
+        ready: item.ready,
+        error: item.error,
+        collision: item.collision,
+      })),
+    });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Bulk preview failed');
+  } finally {
+    cleanupStaged(files);
+  }
+});
+
+app.post('/bulk-generate', upload.array('files', 80), (req, res) => {
+  const files = (req.files as Express.Multer.File[] | undefined) || [];
+  try {
+    if (!files.length) return jsonError(res, 400, 'No files uploaded');
+    const payloadRaw = req.body.payload;
+    const payload = (payloadRaw ? JSON.parse(payloadRaw) : {}) as BulkPayload;
+    const plan = planBulkFromFiles(files, payload);
+
+    if (!plan.author) {
+      return jsonError(res, 400, 'No team members found — add an author in Team first.');
+    }
+
+    const results: Array<{
+      markdown: string;
+      slug?: string;
+      title?: string;
+      ok: boolean;
+      error?: string;
+    }> = [];
+    let written = 0;
+
+    for (const item of plan.items) {
+      if (!item.ready) {
+        results.push({
+          markdown: item.markdown,
+          slug: item.slug,
+          title: item.title,
+          ok: false,
+          error: item.error,
+        });
+        continue;
+      }
+
+      try {
+        const result = writeArticle({
+          data: item.data as unknown as ArticleFrontmatter,
+          body: item.body,
+          sessionImages: item.sessionImages,
+          overwrite: Boolean(payload.overwrite),
+          skipLlmsTxt: true,
+        });
+        written += 1;
+        results.push({
+          markdown: item.markdown,
+          slug: result.slug,
+          title: item.title,
+          ok: true,
+        });
+      } catch (err) {
+        results.push({
+          markdown: item.markdown,
+          slug: item.slug,
+          title: item.title,
+          ok: false,
+          error: err instanceof Error ? err.message : 'Write failed',
+        });
+      }
+    }
+
+    if (written > 0) generateLlmsTxt();
+
+    res.json({
+      ok: written > 0,
+      author: plan.author,
+      written,
+      total: results.length,
+      unmatchedImages: plan.unmatchedImages,
+      results,
+    });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Bulk generate failed');
+  } finally {
+    cleanupStaged(files);
+  }
+});
 
 app.post('/articles/:slug/unpublish', (req, res) => {
   try {

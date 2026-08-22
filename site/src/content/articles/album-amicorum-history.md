@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-21
+updatedDate: 2026-08-22
 keywords:
   - album amicorum history (no volume data)
   - album amicorum
@@ -33,6 +33,9 @@ faqs:
     answer: By the 18th century, the tradition had already moved beyond university students into bourgeois and domestic circles, and it increasingly became a pastime for girls and young people. By the 1880s, illustrated album amicorum books designed specifically for children — including editions featuring Victorian illustrator Kate Greenaway's artwork — were in circulation, making the friend book a firmly child-centered tradition.
   - question: How is the album amicorum tradition connected to modern yearbooks?
     answer: Researchers have traced the modern school yearbook tradition in the United States directly back to the album amicorum, brought over by German immigrants in the 18th century. The impulse — collecting signatures, drawings, and messages from classmates and teachers at a meaningful moment in life — is the same one that produced the earliest Stammbücher at Wittenberg nearly 500 years ago.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
 ---
 
 ## A Tradition Half a Millennium in the Making
@@ -157,3 +160,5 @@ That is precisely the impulse behind the Album Amicorum Friend Book. Not a novel
 
 ## Where Things Stand
 The album amicorum tradition itself has seen no dramatic recent developments in the past 45 days, remaining a stable subject of historical scholarship and cultural interest. What has shifted meaningfully around it, however, is the broader cultural moment into which it fits. Data from early 2026 shows a striking surge in parental interest in analog, screen-free childhood experiences: recent reporting indicates that searches for "screen-free activities" have risen 200% year over year on major platforms, alongside sharp increases in searches for "family traditions" and related terms, pointing to a strong cultural appetite for exactly the kind of slow, handwritten, handmade connection the album amicorum tradition has always embodied. Parenting commentators have identified "analog childhood" as one of the defining movements of 2026, with families actively trading overscheduled, screen-saturated routines for crafts, unstructured play, and tangible keepsakes. This is the cultural water in which the album amicorum tradition swims today — not as nostalgia for its own sake, but as a live answer to a question many parents are urgently asking: how do we help our children hold on to what matters?
+
+See Related below for more on this topic.

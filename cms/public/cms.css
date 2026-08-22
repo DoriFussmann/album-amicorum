@@ -1373,3 +1373,36 @@ pre {
 }
 .health-confidence.is-high { box-shadow: inset 0 0 0 1px var(--success); }
 .health-confidence.is-borderline { box-shadow: inset 0 0 0 1px var(--warning); }
+
+.dropzone--tall {
+  min-height: 10rem;
+}
+
+.bulk-table {
+  width: 100%;
+}
+
+.bulk-table th,
+.bulk-table td {
+  vertical-align: top;
+}
+
+.bulk-table td:nth-child(2) {
+  min-width: 12rem;
+}
+
+.bulk-table .bulk-title {
+  font-weight: 600;
+  color: var(--ink-heading);
+}
+
+.bulk-table .bulk-slug {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--ink-muted);
+  word-break: break-all;
+}
+
+.bulk-table .bulk-error {
+  color: var(--error);
+}

@@ -20,7 +20,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-21
+updatedDate: 2026-08-22
 keywords:
   - amicorum meaning
   - album amicorum
@@ -34,6 +34,9 @@ faqs:
     answer: While the tradition began among male university students in 16th-century Germany, it quickly spread beyond academic circles. Historical records show that women kept beautifully illustrated albums too — one well-documented example is the album amicorum of Amalia Marburg, reflecting middle-class family life in 18th-century Germany. Over time, the friendship book tradition became part of everyday life for people of all ages, which is exactly how it evolved into the children's friendship books familiar today.
   - question: How is 'album amicorum' different from a modern yearbook?
     answer: "A yearbook is produced institutionally — photographs and text are assembled by a school and given to every student. An album amicorum is the opposite: it is personal, handmade, and entirely unique to its owner. Each page is filled in by a different friend, in their own handwriting, with their own drawings and messages. No two albums are alike. Historians note that the album amicorum is actually considered a predecessor of the modern yearbook tradition, brought to wider culture as the custom spread from European universities."
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
 ---
 
 ## What Does "Amicorum" Mean in Latin?
@@ -148,3 +151,5 @@ The broader cultural context for friendship keepsakes and analog childhood objec
  Separately, parenting communities have widely identified a 
 slow, "analog" childhood — boredom, crafts, backyard play, and more unstructured time, with fewer pricey classes
  — as one of the defining parenting intentions of 2026. No major academic discoveries or product-category disruptions relating specifically to the history of the album amicorum have emerged in the past 45 days; the topic remains historically stable, with cultural interest in its modern applications continuing to build steadily alongside broader analog and slow-childhood movements.
+
+See Related below for more on this topic.

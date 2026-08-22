@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-21
+updatedDate: 2026-08-22
 keywords:
   - how to start an album amicorum tradition with kids (no volume data)
   - album amicorum
@@ -33,6 +33,9 @@ faqs:
     answer: Absolutely — and so can grandparents, aunts, uncles, and close family friends. Some of the most treasured pages in any album amicorum are from adults who wrote to the child across the years. A parent's entry made when a child is six, read again at sixteen, becomes something genuinely irreplaceable. Reserve a page early and write from the heart.
   - question: How do you preserve a finished album amicorum long-term?
     answer: Store the completed book away from direct sunlight and humidity, ideally in a cloth or linen bag rather than a plastic sleeve, which can trap moisture. Avoid handling it with wet or sticky hands — a habit worth teaching children early. If the cover is illustrated or painted, keep it flat rather than upright on a shelf. A well-made, quality-bound book kept with reasonable care should last for generations.
+internalLinks:
+  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+    url: /articles/friend-books-for-kids/
 ---
 
 ## Why This Tradition Begins with a Moment, Not a Method
@@ -137,3 +140,5 @@ Nostalgia is redefining what childhood looks and feels like in 2026, with handma
 
 As screens grow more powerful and ever-present, more families are intentionally slowing down, limiting digital overload, and reclaiming the kinds of offline experiences that once defined growing up — free play, imagination, and real connection. The phrase "analog childhood" is being heard widely in 2026, as families trade packed schedules and glowing screens for backyard play, board games, and long, unstructured afternoons.
  Within that context, handwritten, illustrated keepsakes like the album amicorum are finding a natural and enthusiastic audience among parents who are actively looking for meaningful alternatives to digital memory-keeping.
+
+See Related below for more on this topic.

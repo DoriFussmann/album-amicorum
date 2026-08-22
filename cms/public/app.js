@@ -3,6 +3,7 @@
 function pageKind() {
   const path = window.location.pathname;
   if (path.endsWith('add-article.html')) return 'article-form';
+  if (path.endsWith('bulk-add.html')) return 'bulk-add';
   if (path.endsWith('articles-health.html')) return 'articles-health';
   if (path.endsWith('team.html')) return 'team';
   if (path.endsWith('dashboard.html')) return 'dashboard';
@@ -41,6 +42,7 @@ const TITLE_MAX = 60;
 const DESCRIPTION_MIN = 140;
 const DESCRIPTION_MAX = 160;
 const ALT_MIN = 10;
+const DEFAULT_AUTHOR_SLUG = 'dori-fussmann';
 
 /** @type {Record<string, File | null>} */
 const sessionImageFiles = { image: null, image2: null, image3: null };
@@ -591,11 +593,12 @@ function acceptImages(fileList, mode = 'auto') {
   }
 }
 
-async function loadTeamOptions() {
+async function loadTeamOptions(selectId = 'author') {
   const res = await fetch('/api/team');
   const data = await parseJsonResponse(res);
   if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load team');
-  const sel = $('author');
+  const sel = $(selectId);
+  if (!sel) return;
   const current = sel.value;
   sel.innerHTML = '<option value="">— select team member —</option>';
   for (const m of data.team) {
@@ -604,7 +607,12 @@ async function loadTeamOptions() {
     opt.textContent = `${m.name} (${m.slug})`;
     sel.appendChild(opt);
   }
-  if (current) sel.value = current;
+  const preferred = current || DEFAULT_AUTHOR_SLUG;
+  if ([...sel.options].some((opt) => opt.value === preferred)) {
+    sel.value = preferred;
+  } else if (current) {
+    sel.value = current;
+  }
 }
 
 function formatArticleDate(value) {
@@ -775,8 +783,7 @@ async function handleMarkdownFiles(fileList) {
     const json = await parseJsonResponse(res);
     if (!res.ok || !json.ok) throw new Error(json.error || 'Parse failed');
     fillFormFromData(json.data, json.body);
-    // Force an explicit author choice on every new upload (do not keep parsed author).
-    $('author').value = '';
+    $('author').value = DEFAULT_AUTHOR_SLUG;
     scheduleValidate();
     showSuccess(`Parsed ${file.name}`, 'Markdown loaded');
   } catch (e) {
@@ -948,6 +955,273 @@ function extFromName(name) {
   return m ? m[0].toLowerCase() : '.jpg';
 }
 
+const bulkState = {
+  files: [],
+  items: [],
+  unmatchedImages: [],
+  busy: false,
+};
+
+function bulkUploadName(file, used) {
+  const rel = file.webkitRelativePath || file.name || 'file';
+  let name = String(rel).replace(/[\\/]/g, '__');
+  if (!used.has(name)) {
+    used.add(name);
+    return name;
+  }
+  const dot = name.lastIndexOf('.');
+  const stem = dot > 0 ? name.slice(0, dot) : name;
+  const ext = dot > 0 ? name.slice(dot) : '';
+  let n = 2;
+  let next = `${stem}-${n}${ext}`;
+  while (used.has(next)) {
+    n += 1;
+    next = `${stem}-${n}${ext}`;
+  }
+  used.add(next);
+  return next;
+}
+
+function buildBulkFormData(includeItems) {
+  const fd = new FormData();
+  const used = new Set();
+  for (const file of bulkState.files) {
+    fd.append('files', file, bulkUploadName(file, used));
+  }
+  const payload = {
+    author: $('bulk-author')?.value || DEFAULT_AUTHOR_SLUG,
+    overwrite: Boolean($('bulk-overwrite')?.checked),
+  };
+  if (includeItems) {
+    payload.items = bulkState.items
+      .filter((item) => item.ready)
+      .map((item) => ({
+        markdown: item.markdown,
+        image: item.image,
+        image2: item.image2,
+        image3: item.image3,
+      }));
+  }
+  fd.append('payload', JSON.stringify(payload));
+  return fd;
+}
+
+function setBulkReady(readyCount, total, reason) {
+  const pill = $('bulk-action-pill');
+  const btn = $('bulk-add');
+  const label = $('bulk-action-reason');
+  const canAdd = readyCount > 0 && !bulkState.busy;
+  if (pill) {
+    pill.textContent = canAdd ? `${readyCount} ready` : 'Not ready';
+    pill.classList.toggle('is-ready', canAdd);
+    pill.classList.toggle('is-blocked', !canAdd);
+  }
+  if (btn) btn.setAttribute('aria-disabled', canAdd ? 'false' : 'true');
+  if (label) {
+    label.textContent =
+      reason ||
+      (canAdd
+        ? `${readyCount} of ${total} article${total === 1 ? '' : 's'} ready to add.`
+        : 'Drop markdown and images, then Add.');
+  }
+}
+
+function renderBulkPreview(plan) {
+  const tbody = $('bulk-preview-body');
+  const unmatched = $('bulk-unmatched');
+  bulkState.items = plan.items || [];
+  bulkState.unmatchedImages = plan.unmatchedImages || [];
+
+  if (unmatched) {
+    if (bulkState.unmatchedImages.length) {
+      unmatched.hidden = false;
+      unmatched.textContent = `Unmatched images: ${bulkState.unmatchedImages.join(', ')}`;
+    } else {
+      unmatched.hidden = true;
+      unmatched.textContent = '';
+    }
+  }
+
+  if (!tbody) return;
+  if (!bulkState.items.length) {
+    tbody.innerHTML = '<tr><td colspan="5">No markdown files found in this drop.</td></tr>';
+    setBulkReady(0, 0, 'Drop .md files together with images.');
+    return;
+  }
+
+  tbody.innerHTML = '';
+  for (const item of bulkState.items) {
+    const tr = document.createElement('tr');
+    const extras = [item.image2, item.image3].filter(Boolean);
+    const notes = item.error
+      ? `<span class="bulk-error">${escapeHtml(item.error)}</span>`
+      : escapeHtml(item.matchReason || '');
+    tr.innerHTML = `
+      <td><span class="status-pill ${item.ready ? 'is-ready' : 'is-blocked'}">${
+        item.ready ? 'Ready' : 'Blocked'
+      }</span></td>
+      <td>
+        <span class="bulk-title">${escapeHtml(item.title || item.slug || 'Untitled')}</span>
+        <span class="bulk-slug">${escapeHtml(item.slug || '')}</span>
+      </td>
+      <td>${escapeHtml(item.markdown || '')}</td>
+      <td>${escapeHtml(item.image || '—')}${
+        extras.length ? `<div class="bulk-slug">${escapeHtml(extras.join(', '))}</div>` : ''
+      }</td>
+      <td>${notes}</td>`;
+    tbody.appendChild(tr);
+  }
+
+  const readyCount = bulkState.items.filter((item) => item.ready).length;
+  setBulkReady(readyCount, bulkState.items.length);
+}
+
+async function runBulkPreview() {
+  if (!bulkState.files.length) return;
+  bulkState.busy = true;
+  setBulkReady(0, 0, 'Matching files…');
+  setPreloader(true, 'Matching files…');
+  try {
+    const res = await fetch('/bulk-preview', { method: 'POST', body: buildBulkFormData(false) });
+    const json = await parseJsonResponse(res);
+    if (!res.ok || !json.ok) throw new Error(json.error || 'Preview failed');
+    if ($('bulk-author') && json.author) $('bulk-author').value = json.author;
+    renderBulkPreview(json);
+    const err = $('bulk-error');
+    const ok = $('bulk-success');
+    if (err) err.hidden = true;
+    if (ok) ok.hidden = true;
+  } catch (e) {
+    showError(e.message);
+    const box = $('bulk-error');
+    if (box) {
+      box.hidden = false;
+      box.textContent = e.message;
+    }
+    setBulkReady(0, 0, e.message);
+  } finally {
+    bulkState.busy = false;
+    setPreloader(false);
+    const readyCount = bulkState.items.filter((item) => item.ready).length;
+    if (bulkState.items.length) setBulkReady(readyCount, bulkState.items.length);
+  }
+}
+
+async function runBulkAdd() {
+  if (bulkState.busy) return;
+  const readyCount = bulkState.items.filter((item) => item.ready).length;
+  if (!readyCount) {
+    showToast('No ready articles to add yet.', 'warning', 'Not ready');
+    return;
+  }
+  bulkState.busy = true;
+  setBulkReady(readyCount, bulkState.items.length, 'Adding articles…');
+  setPreloader(true, `Adding ${readyCount} article${readyCount === 1 ? '' : 's'}…`);
+  try {
+    const res = await fetch('/bulk-generate', { method: 'POST', body: buildBulkFormData(true) });
+    const json = await parseJsonResponse(res);
+    if (!res.ok) throw new Error(json.error || 'Bulk add failed');
+    const written = Number(json.written) || 0;
+    const failed = (json.results || []).filter((r) => !r.ok);
+    const message =
+      written > 0
+        ? `Added ${written} article${written === 1 ? '' : 's'}${
+            failed.length ? ` · ${failed.length} skipped` : ''
+          }.`
+        : failed[0]?.error || 'Nothing was added.';
+    if (written > 0) {
+      showSuccess(message, 'Articles added');
+      const box = $('bulk-success');
+      if (box) {
+        box.hidden = false;
+        box.textContent = message;
+      }
+      const err = $('bulk-error');
+      if (err) err.hidden = true;
+      bulkState.files = [];
+      bulkState.items = [];
+      bulkState.unmatchedImages = [];
+      const countEl = $('bulk-file-count');
+      if (countEl) countEl.textContent = '';
+      const tbody = $('bulk-preview-body');
+      if (tbody) {
+        tbody.innerHTML = `<tr><td colspan="5">${escapeHtml(message)} Drop more files to add another batch.</td></tr>`;
+      }
+      const unmatched = $('bulk-unmatched');
+      if (unmatched) {
+        unmatched.hidden = true;
+        unmatched.textContent = '';
+      }
+      setBulkReady(0, 0, 'Drop markdown and images, then Add.');
+    } else {
+      throw new Error(message);
+    }
+  } catch (e) {
+    showError(e.message, 'Bulk add failed');
+    const box = $('bulk-error');
+    if (box) {
+      box.hidden = false;
+      box.textContent = e.message;
+    }
+  } finally {
+    bulkState.busy = false;
+    setPreloader(false);
+  }
+}
+
+function acceptBulkFiles(fileList) {
+  const incoming = [...fileList];
+  if (!incoming.length) return;
+  const next = [];
+  for (const file of incoming) {
+    const name = file.name || '';
+    const isMd = /\.(md|markdown)$/i.test(name);
+    const isImg = isImageFile(file);
+    if (!isMd && !isImg) continue;
+    if (file.size > 10 * 1024 * 1024) {
+      showError(`${file.name} exceeds 10MB limit (max 10MB per file)`);
+      continue;
+    }
+    next.push(file);
+  }
+  if (!next.length) {
+    showError('Drop .md files and images only.');
+    return;
+  }
+  bulkState.files = next;
+  const mdCount = next.filter((f) => /\.(md|markdown)$/i.test(f.name)).length;
+  const imgCount = next.length - mdCount;
+  const countEl = $('bulk-file-count');
+  if (countEl) {
+    countEl.textContent = `${mdCount} markdown file${mdCount === 1 ? '' : 's'} · ${imgCount} image${
+      imgCount === 1 ? '' : 's'
+    }`;
+  }
+  void runBulkPreview();
+}
+
+async function initBulkAddPage() {
+  setupDropZone($('bulk-drop'), $('bulk-files'), acceptBulkFiles);
+  $('bulk-add')?.addEventListener('click', () => {
+    if ($('bulk-add').getAttribute('aria-disabled') === 'true') {
+      showToast($('bulk-action-reason')?.textContent || 'Not ready', 'warning', 'Not ready');
+      return;
+    }
+    void runBulkAdd();
+  });
+  $('bulk-author')?.addEventListener('change', () => {
+    if (bulkState.files.length) void runBulkPreview();
+  });
+  $('bulk-overwrite')?.addEventListener('change', () => {
+    if (bulkState.files.length) void runBulkPreview();
+  });
+  try {
+    await loadTeamOptions('bulk-author');
+  } catch (e) {
+    showError(e.message);
+  }
+}
+
 async function initArticleListPage() {
   try {
     await loadArticleList();
@@ -1044,6 +1318,10 @@ async function init() {
   }
   if (kind === 'article-form') {
     await initArticleFormPage();
+    return;
+  }
+  if (kind === 'bulk-add') {
+    await initBulkAddPage();
     return;
   }
   if (kind === 'articles-health') {

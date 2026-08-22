@@ -75,6 +75,8 @@ export interface WriteArticleInput {
   /** When true, omit optional image3 that was cleared in the editor */
   clearImage3?: boolean;
   overwrite?: boolean;
+  /** Skip llms.txt rebuild (bulk writes regenerate once at the end). */
+  skipLlmsTxt?: boolean;
 }
 
 export function writeArticle(input: WriteArticleInput): { path: string; slug: string } {
@@ -85,6 +87,7 @@ export function writeArticle(input: WriteArticleInput): { path: string; slug: st
     clearImage2 = false,
     clearImage3 = false,
     overwrite = false,
+    skipLlmsTxt = false,
   } = input;
   const slug = data.slug;
 
@@ -142,7 +145,7 @@ export function writeArticle(input: WriteArticleInput): { path: string; slug: st
   const markdown = `---\n${yaml}\n---\n\n${body.trim()}\n`;
   fs.writeFileSync(outMd, markdown, 'utf8');
 
-  generateLlmsTxt();
+  if (!skipLlmsTxt) generateLlmsTxt();
 
   return { path: outMd, slug };
 }
