@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-22
 keywords:
   - analog friendship activities for kids that make keepsakes (no volume data)
   - friendship activities for kids
@@ -33,6 +33,13 @@ faqs:
     answer: Most of the activities on this list work beautifully in groups of two to four children — small enough that every child contributes something individual rather than disappearing into a crowd. A few, like a collaborative illustrated map or a friendship time capsule, scale well to a small party of six to eight. For larger gatherings, consider choosing one activity that produces individual artifacts (like a 'favorite things' exchange page) so every child leaves with something personal.
   - question: What supplies do I actually need to run most of these activities?
     answer: "The core supply list is intentionally minimal: good-quality blank or lightly lined paper (heavier stock holds pen and colored pencil better), a set of fine-liner pens, colored pencils, and an eraser. A few activities call for embroidery thread (friendship bracelets), a box or tin (time capsules), or fabric markers (pillow or tote bag projects). The emphasis throughout is on tactile, durable materials — nothing that will fade, tear easily, or feel disposable."
+externalLinks:
+  - label: 5 Ways To Organize Keepsakes For Your Children
+    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: What to keep in children's memory boxes?
+    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+  - label: How to Create Meaningful Memory Boxes for Your Kids!
+    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
 ---
 
 Not every afternoon of play becomes a memory. Most dissolve into the general warmth of childhood — felt but not held, real in the moment and blurry by Tuesday. What separates the afternoons children remember at thirty from the ones they forget by dinner is rarely the activity itself. It is whether something was made, and whether that something was kept. This list exists for parents who already understand that distinction and are looking for activities that honor it: twelve analog friendship activities for children ages 5–12, each evaluated against two criteria before earning its place here. Does it deepen connection between children in the moment? And does it leave a physical object behind that can be kept, revisited, and treasured? Activities that pass only one test were left off. Every activity on this list passes both.
@@ -137,3 +144,5 @@ Pinterest's 2026 Parenting Trend Report found that searches are climbing for vin
  — a signal that parents are actively seeking the tactile, social experiences of earlier childhood eras for their own children. 
 Interest in analog activities has really taken off in the past few months, with activities that draw people away from screens and toward crafting, reading, and puzzle-solving increasing in popularity.
  For friendship keepsakes specifically, this convergence of analog revival and intentional parenting creates an unusually receptive moment: parents looking for meaningful, screen-free activities are finding that the supply of genuinely well-crafted options is finally catching up to the demand.
+
+For further reading, see the Sources listed below.

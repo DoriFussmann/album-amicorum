@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-22
 keywords:
   - friendship activities for kids
   - Children's Keepsakes & Memory
@@ -32,6 +32,13 @@ faqs:
     answer: "Screen-based activities are often passive and leave nothing behind. Hands-on, analog activities — drawing, writing, crafting, cooking together — require attention, communication, and effort, which deepens connection. Critically, they often produce something physical: a drawing, a letter, a bracelet, or a book. That tangible artifact becomes a record of the friendship at a specific moment in childhood, something no screenshot or video can fully replicate."
   - question: What is a friend book, and how does it work as a friendship activity?
     answer: A friend book (sometimes called a vriendenboekje, or friendship book) is a beautifully illustrated book that a child passes among their friends, asking each one to fill in a page with their handwriting, favorite things, drawings, and messages. Each completed page is a one-of-a-kind portrait of that friendship at that moment in time. Unlike a single afternoon's activity, a friend book accumulates over months or years, becoming a permanent, irreplaceable keepsake of childhood friendships.
+externalLinks:
+  - label: 5 Ways To Organize Keepsakes For Your Children
+    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: What to keep in children's memory boxes?
+    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+  - label: How to Create Meaningful Memory Boxes for Your Kids!
+    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
 ---
 
 # Friendship Activities for Kids: A Thoughtful Parent's Guide
@@ -145,3 +152,5 @@ in early 2026, the American Academy of Pediatrics reaffirmed its clinical report
  As the new school year begins in August 2026, there is renewed focus on helping children build and sustain friendships, with recent commentary noting that 
 while organized activities offer valuable experiences, much of childhood friendship develops during playdates, neighborhood gatherings, and spontaneous hangouts
  — exactly the settings where a friend book or a shared creative project can leave the most lasting impression.
+
+For further reading, see the Sources listed below.

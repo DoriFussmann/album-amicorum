@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-22
 keywords:
   - jonathan haidt screen free childhood advice
   - screen free childhood
@@ -33,6 +33,13 @@ faqs:
     answer: Haidt addresses this directly by pointing out that children managed emergencies for generations before smartphones existed. His suggested alternative is a simple flip phone — enough to call or text a parent — without giving children the full internet in their pocket. He also notes that many schools now have office phones children can use. The emergency argument, Haidt argues, often functions as a justification for something parents are already uneasy about rather than a genuine safety case.
   - question: What should fill the time when screens are removed?
     answer: "Haidt is emphatic that simply removing screens without replacing them with something better will feel like pure deprivation. His answer centers on three things: more unsupervised free play with other children, greater real-world independence (walking to a friend's house, running an errand alone), and — importantly — the restoration of face-to-face friendship and handwritten connection. The developmental benefits come not just from the absence of screens but from what fills that absence: genuine, embodied experience with peers."
+externalLinks:
+  - label: "Childhood Friendships: Impact and Role Across Life Stages"
+    url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+  - label: "Friendships in middle childhood: Links to peer and school ..."
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+  - label: Tips to Build Strong Childhood Friendships
+    url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOor_JP-HsnDdXpIlAhlyIl_NsmNr_EqYKKCFMz71xaB2GosYMhqE
 ---
 
 If you've picked up Jonathan Haidt's *The Anxious Generation* — or heard his name in a school WhatsApp group, a podcast, or a worried conversation with another parent — you probably left with a feeling more than a plan. The alarm bells rang clearly. But the specific, practical answers? Those were harder to find. This article works through the questions parents ask most often about Haidt's screen-free childhood advice, in plain language, so you can move from concern to action.
@@ -151,3 +158,5 @@ In April 2026, Haidt delivered what he described as his "most urgent" TED Talk, 
  Meanwhile, 
 a May 2026 warning from the Department of Health and Human Services noted that children spend about eight hours daily on screens — nearly as much time as they spend sleeping or in school — with growing evidence linking excessive screen use to anxiety, depression, and developmental challenges.
  The debate around Haidt's evidence base continues among researchers, but the policy and cultural momentum behind his four core norms shows no sign of slowing.
+
+For further reading, see the Sources listed below.

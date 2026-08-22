@@ -1338,11 +1338,8 @@ const healthSession = {
 };
 
 const HEALTH_ICONS = {
-  links: '🔗',
-  meta: '🏷️',
-  schema: '🧩',
-  sitemap: '🗺️',
-  speed: '⚡',
+  internal: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10.59 13.41a4.5 4.5 0 0 1 0-6.36l2.12-2.12a4.5 4.5 0 1 1 6.36 6.36l-1.77 1.77-1.13-1.13 1.77-1.77a2.9 2.9 0 1 0-4.1-4.1L11.72 8.18a2.9 2.9 0 0 0 0 4.1l.35.35-1.13 1.13-.35-.35Zm2.82-2.82a4.5 4.5 0 0 1 0 6.36l-2.12 2.12a4.5 4.5 0 1 1-6.36-6.36l1.77-1.77 1.13 1.13-1.77 1.77a2.9 2.9 0 1 0 4.1 4.1l2.12-2.12a2.9 2.9 0 0 0 0-4.1l-.35-.35 1.13-1.13.35.35Z"/></svg>`,
+  external: `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M14 5h5v5h-1.7V7.9l-6.55 6.55-1.2-1.2L16.1 6.7H14V5ZM7 7h6.25v1.7H8.7v8.6h8.6V12H19v7H7V7Z"/></svg>`,
 };
 
 function escapeAttr(s) {
@@ -1413,15 +1410,15 @@ function setHealthBatchControlsDisabled(disabled) {
   [
     'health-connect-all',
     'health-propose-external-all',
-    'health-speed-check-all',
-    'health-refresh',
+    'health-review-add',
+    'health-review-cancel',
   ].forEach((id) => {
     const btn = document.getElementById(id);
     if (btn) btn.disabled = disabled;
   });
   document
     .querySelectorAll(
-      "[data-action='connect-all-internal'], [data-action='connect'], [data-action='propose'], [data-action='propose-all-external'], [data-action='add-external'], [data-action='speed-scan']"
+      "[data-action='connect-all-internal'], [data-action='connect'], [data-action='propose']"
     )
     .forEach((btn) => {
       btn.disabled = disabled;
@@ -1522,20 +1519,16 @@ function showExternalReview(proposals, contextLabel) {
 
   reviewList.innerHTML = proposals
     .map((p) => {
-      const checked = p.preChecked ? 'checked' : '';
       const conf = p.confidence === 'high' ? 'high' : 'borderline';
-      return `<label class="health-review-item is-${conf}">
-        <input type="checkbox" data-review-id="${escapeAttr(p.id)}" data-slug="${escapeAttr(p.articleSlug)}" data-label="${escapeAttr(p.title)}" data-url="${escapeAttr(p.url)}" ${checked} />
+      return `<div class="health-review-item is-${conf}" data-review-id="${escapeAttr(p.id)}" data-slug="${escapeAttr(p.articleSlug)}" data-label="${escapeAttr(p.title)}" data-url="${escapeAttr(p.url)}">
         <span class="health-review-item-body">
           <a href="${escapeAttr(p.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(p.title)}</a>
           <span class="health-review-item-meta">
             <span>${escapeHtml(p.articleTitle || p.articleSlug)}</span>
-            <span class="health-confidence is-${conf}">${conf}</span>
-            <span>${escapeHtml(p.source || '')}</span>
             <span>${escapeHtml(p.url)}</span>
           </span>
         </span>
-      </label>`;
+      </div>`;
     })
     .join('');
 
@@ -1543,24 +1536,19 @@ function showExternalReview(proposals, contextLabel) {
   if (listPanel) listPanel.hidden = true;
   setStatus(
     reviewStatus,
-    `${proposals.length} candidate${proposals.length === 1 ? '' : 's'} ready for review${
+    `${proposals.length} suggested source${proposals.length === 1 ? '' : 's'}${
       contextLabel ? ` · ${contextLabel}` : ''
-    }. Unchecked items will be discarded.`
+    }. Click Connect All to write them.`
   );
-  setHealthBatchProgress(
-    `Review ${proposals.length} proposed external link${proposals.length === 1 ? '' : 's'} before writing.`
-  );
+  setHealthBatchProgress('');
 }
 
 async function runProposeAllExternal(slug) {
   if (healthSession.batchRunning) return;
   const statusEl = document.getElementById('health-status');
   setHealthBatchControlsDisabled(true);
-  setHealthBatchProgress(
-    slug
-      ? `Proposing external links for ${slug}...`
-      : 'Proposing external links across articles...'
-  );
+  setHealthBatchProgress('');
+  setPreloader(true, 'Finding external sources…');
   try {
     const data = await parseJsonResponse(
       await fetch('/api/articles-health/propose-external', {
@@ -1569,7 +1557,6 @@ async function runProposeAllExternal(slug) {
         body: JSON.stringify(slug ? { slug } : {}),
       })
     );
-    setHealthBatchControlsDisabled(false);
     const searchNote =
       data.searchUsedCount > 0
         ? ` · live search used for ${data.searchUsedCount}`
@@ -1588,7 +1575,9 @@ async function runProposeAllExternal(slug) {
     );
   } catch (err) {
     setStatus(statusEl, err.message, true);
-    setHealthBatchProgress(`Propose stopped: ${err.message}`);
+    setHealthBatchProgress(`Find & Suggest stopped: ${err.message}`);
+  } finally {
+    setPreloader(false);
     setHealthBatchControlsDisabled(false);
   }
 }
@@ -1598,15 +1587,15 @@ async function runAddSelectedExternal() {
   const reviewStatus = document.getElementById('health-review-status');
   if (!reviewList) return;
 
-  const checked = [...reviewList.querySelectorAll("input[type='checkbox']:checked")];
-  const items = checked.map((input) => ({
-    slug: input.getAttribute('data-slug'),
-    label: input.getAttribute('data-label'),
-    url: input.getAttribute('data-url'),
+  const nodes = [...reviewList.querySelectorAll('[data-slug][data-url]')];
+  const items = nodes.map((el) => ({
+    slug: el.getAttribute('data-slug'),
+    label: el.getAttribute('data-label'),
+    url: el.getAttribute('data-url'),
   }));
 
   if (!items.length) {
-    setStatus(reviewStatus, 'Select at least one candidate, or Cancel.', true);
+    setStatus(reviewStatus, 'No suggestions to connect.', true);
     return;
   }
 
@@ -1614,9 +1603,7 @@ async function runAddSelectedExternal() {
   const cancelBtn = document.getElementById('health-review-cancel');
   if (addBtn) addBtn.disabled = true;
   if (cancelBtn) cancelBtn.disabled = true;
-  setHealthBatchProgress(
-    `Writing ${items.length} selected external link${items.length === 1 ? '' : 's'}...`
-  );
+  setPreloader(true, 'Connecting external links…');
 
   try {
     const data = await parseJsonResponse(
@@ -1634,15 +1621,17 @@ async function runAddSelectedExternal() {
     const written = (data.written || []).length;
     const skipped = (data.skipped || []).length;
     setHealthBatchProgress(
-      `Added ${written} external link${written === 1 ? '' : 's'}${
+      `Connected ${written} external link${written === 1 ? '' : 's'}${
         skipped ? ` · skipped ${skipped}` : ''
       }.`
     );
   } catch (err) {
     setStatus(reviewStatus, err.message, true);
-    setHealthBatchProgress(`Add Selected failed: ${err.message}`);
+    setHealthBatchProgress(`Connect All failed: ${err.message}`);
     if (addBtn) addBtn.disabled = false;
     if (cancelBtn) cancelBtn.disabled = false;
+  } finally {
+    setPreloader(false);
   }
 }
 
@@ -1866,6 +1855,11 @@ async function runSpeedCheckAllArticles() {
   }
 }
 
+function renderLinkIndicator(kind, status, title) {
+  const tone = status === 'green' ? 'green' : 'red';
+  return `<span class="health-indicator is-${tone}" title="${escapeAttr(title)}" aria-label="${escapeAttr(title)}">${HEALTH_ICONS[kind]}</span>`;
+}
+
 function renderHealthRow(article) {
   const ind = article.indicators || {};
   const d = article.details || {};
@@ -1874,49 +1868,38 @@ function renderHealthRow(article) {
   row.className = 'health-row';
   row.dataset.slug = article.slug;
 
-  const speedStatus = ind.speed || 'gray';
   const draftBadge = article.draft
     ? '<span class="health-meta"> · draft</span>'
     : '';
+  const missingCount = links.missingInternal?.length || 0;
+  const externalCount = Number(links.externalCount) || 0;
+  const internalStatus = ind.internal || (missingCount === 0 ? 'green' : 'red');
+  const externalStatus = ind.external || (externalCount >= 3 ? 'green' : 'red');
+  const internalTitle =
+    missingCount === 0
+      ? 'Internal links: all connected'
+      : `Internal links: ${missingCount} missing`;
+  const externalTitle =
+    externalCount >= 3
+      ? `External links: ${externalCount} sources`
+      : `External links: ${externalCount} of 3`;
 
   row.innerHTML = `
     <button type="button" class="health-row-summary" aria-expanded="false">
       <span class="health-row-title">${escapeHtml(article.title)}${draftBadge}</span>
-      <span class="health-indicators" aria-label="Health indicators">
-        <span class="health-indicator is-${escapeAttr(ind.links || 'gray')}" title="Links">${HEALTH_ICONS.links}</span>
-        <span class="health-indicator is-${escapeAttr(ind.meta || 'gray')}" title="Meta">${HEALTH_ICONS.meta}</span>
-        <span class="health-indicator is-${escapeAttr(ind.schema || 'gray')}" title="Schema">${HEALTH_ICONS.schema}</span>
-        <span class="health-indicator is-${escapeAttr(ind.sitemap || 'gray')}" title="Sitemap">${HEALTH_ICONS.sitemap}</span>
-        <span class="health-indicator is-${escapeAttr(speedStatus)}" title="Speed">${HEALTH_ICONS.speed}</span>
+      <span class="health-indicators" aria-label="Link health">
+        ${renderLinkIndicator('internal', internalStatus, internalTitle)}
+        ${renderLinkIndicator('external', externalStatus, externalTitle)}
       </span>
     </button>
     <div class="health-row-body">
       <section class="health-section" data-section="links">
-        <h3><span class="health-indicator is-${escapeAttr(ind.links || 'gray')}">${HEALTH_ICONS.links}</span> Links</h3>
-        ${renderFindings(links.findings)}
-        <h4 class="health-meta">Internal links</h4>
+        <h3>Internal links</h3>
         ${renderLinkList(links.internalLinks, 'No internal links yet.')}
         <div class="missing-internal"></div>
-        <h4 class="health-meta">External links (target: 3)</h4>
+        <h3>External links</h3>
         ${renderLinkList(links.externalLinks, 'No external links yet.')}
-        <div class="health-actions"></div>
       </section>
-      <section class="health-section">
-        <h3><span class="health-indicator is-${escapeAttr(ind.meta || 'gray')}">${HEALTH_ICONS.meta}</span> Meta</h3>
-        ${renderFindings(d.meta?.findings)}
-        <p class="health-meta">Diagnostic only — no fix action.</p>
-      </section>
-      <section class="health-section">
-        <h3><span class="health-indicator is-${escapeAttr(ind.schema || 'gray')}">${HEALTH_ICONS.schema}</span> Schema</h3>
-        ${renderFindings(d.schema?.findings)}
-        <p class="health-meta">Diagnostic only — no fix action.</p>
-      </section>
-      <section class="health-section">
-        <h3><span class="health-indicator is-${escapeAttr(ind.sitemap || 'gray')}">${HEALTH_ICONS.sitemap}</span> Sitemap</h3>
-        ${renderFindings(d.sitemap?.findings)}
-        <p class="health-meta">Diagnostic only — no fix action.</p>
-      </section>
-      ${renderSpeedSection(article, d.speed, speedStatus)}
     </div>
   `;
 
@@ -1926,111 +1909,19 @@ function renderHealthRow(article) {
     summary.setAttribute('aria-expanded', open ? 'true' : 'false');
   });
 
-  const actions = row.querySelector('.health-actions');
   const missingBox = row.querySelector('.missing-internal');
-
   if (links.missingInternal?.length) {
     missingBox.innerHTML = `
-      <div class="health-actions" style="margin-top:0.35rem;margin-bottom:0.35rem">
-        <button type="button" class="btn btn-primary" data-action="connect-all-internal">
-          Connect all internal links (${links.missingInternal.length})
-        </button>
-      </div>
-      <p class="health-connect-progress" data-role="connect-progress" hidden></p>
       <h4 class="health-meta">Required connections</h4>
       <ul class="health-link-list">${links.missingInternal
         .map(
           (m) => `<li>
           <a href="${escapeAttr(m.url)}" target="_blank" rel="noopener noreferrer">${escapeHtml(m.title)}</a>
           <span class="health-meta">${escapeHtml(m.reason)}</span>
-          <button type="button" class="btn btn-secondary" data-action="connect" data-target-slug="${escapeAttr(m.slug)}" data-label="${escapeAttr(m.title)}">Connect</button>
         </li>`
         )
         .join('')}</ul>`;
   }
-
-  if (links.canPropose) {
-    const proposeBtn = document.createElement('button');
-    proposeBtn.type = 'button';
-    proposeBtn.className = 'btn btn-secondary';
-    proposeBtn.dataset.action = 'propose';
-    proposeBtn.textContent = 'Propose External Links';
-    actions.appendChild(proposeBtn);
-  }
-
-  row
-    .querySelector('[data-section="speed"] [data-action="speed-scan"]')
-    ?.addEventListener('click', (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      void runSpeedScanForSlug(article.slug);
-    });
-
-  row.addEventListener('click', async (e) => {
-    const t = e.target;
-    if (!(t instanceof HTMLElement)) return;
-    const action = t.getAttribute('data-action');
-    if (!action) return;
-    e.preventDefault();
-    e.stopPropagation();
-    if (healthSession.batchRunning) return;
-
-    const progressEl = row.querySelector('[data-role="connect-progress"]');
-
-    try {
-      if (action === 'propose') {
-        // Per-article and system-wide both funnel into the shared review screen.
-        await runProposeAllExternal(article.slug);
-        return;
-      }
-
-      if (action === 'speed-scan') {
-        await runSpeedScanForSlug(article.slug);
-        return;
-      }
-
-      if (action === 'connect') {
-        t.disabled = true;
-        await connectInternalLink(
-          article.slug,
-          t.getAttribute('data-target-slug'),
-          t.getAttribute('data-label')
-        );
-        healthSession.updatedSlugs.add(article.slug);
-        updateHealthBanner();
-        await refreshArticlesHealth();
-        return;
-      }
-
-      if (action === 'connect-all-internal') {
-        const missing = article.details?.links?.missingInternal || [];
-        if (!missing.length) return;
-        setHealthBatchControlsDisabled(true);
-        if (progressEl) {
-          progressEl.hidden = false;
-          progressEl.textContent = `Connecting 1 of ${missing.length}...`;
-        }
-        const result = await connectAllInternalForArticle(
-          article.slug,
-          missing,
-          ({ index, total }) => {
-            if (progressEl) progressEl.textContent = `Connecting ${index} of ${total}...`;
-          }
-        );
-        updateHealthBanner();
-        setHealthBatchProgress(
-          `Connected ${result.connected} link${result.connected === 1 ? '' : 's'} on this article.`
-        );
-        setHealthBatchControlsDisabled(false);
-        await refreshArticlesHealth();
-      }
-    } catch (err) {
-      setStatus(document.getElementById('health-status'), err.message, true);
-      setHealthBatchControlsDisabled(false);
-      t.disabled = false;
-      if (progressEl) progressEl.hidden = true;
-    }
-  });
 
   return row;
 }
@@ -2053,10 +1944,12 @@ async function refreshArticlesHealth() {
     }
     list.appendChild(row);
   }
-  const counts = { green: 0, orange: 0, red: 0, gray: 0, unconfigured: 0 };
+  const counts = { internalGreen: 0, internalRed: 0, externalGreen: 0, externalRed: 0 };
   for (const a of healthSession.articles) {
-    const s = a.indicators?.links || 'gray';
-    counts[s] = (counts[s] || 0) + 1;
+    if ((a.indicators?.internal || 'red') === 'green') counts.internalGreen += 1;
+    else counts.internalRed += 1;
+    if ((a.indicators?.external || 'red') === 'green') counts.externalGreen += 1;
+    else counts.externalRed += 1;
   }
   const globalBtn = document.getElementById('health-connect-all');
   if (globalBtn && !healthSession.batchRunning) {
@@ -2066,8 +1959,8 @@ async function refreshArticlesHealth() {
     globalBtn.disabled = needing === 0;
     globalBtn.textContent =
       needing > 0
-        ? `Connect all internal links (${needing} articles)`
-        : 'Connect all internal links';
+        ? `Connect All Internal Links (${needing})`
+        : 'Connect All Internal Links';
   }
   const proposeAllBtn = document.getElementById('health-propose-external-all');
   if (proposeAllBtn && !healthSession.batchRunning) {
@@ -2077,26 +1970,12 @@ async function refreshArticlesHealth() {
     proposeAllBtn.disabled = needingExt === 0;
     proposeAllBtn.textContent =
       needingExt > 0
-        ? `Propose All External Links (${needingExt})`
-        : 'Propose All External Links';
+        ? `Find & Suggest External Links (${needingExt})`
+        : 'Find & Suggest External Links';
   }
-  const speedAllBtn = document.getElementById('health-speed-check-all');
-  if (speedAllBtn && !healthSession.batchRunning) {
-    const scannable = healthSession.articles.filter((a) => a.details?.speed?.canScan).length;
-    speedAllBtn.disabled = scannable === 0;
-    speedAllBtn.textContent =
-      scannable > 0
-        ? `Speed Check All Articles (${scannable})`
-        : 'Speed Check All Articles';
-  }
-  const speedScanned = healthSession.articles.filter((a) => a.details?.speed?.scanned).length;
   setStatus(
     statusEl,
-    `${healthSession.articles.length} articles · Links: ${counts.green || 0} healthy, ${counts.orange || 0} needs attention, ${counts.red || 0} critical, ${counts.gray || 0} unclassified · Speed ${
-      data.pagespeedConfigured
-        ? `PageSpeed ready (${speedScanned} scanned)`
-        : 'not configured'
-    } · External search ${data.dataforseoConfigured ? 'DataForSEO ready' : 'not configured'}`
+    `${healthSession.articles.length} articles · Internal ${counts.internalGreen} green / ${counts.internalRed} red · External ${counts.externalGreen} green / ${counts.externalRed} red`
   );
   updateHealthBanner();
   return data;
@@ -2157,19 +2036,11 @@ async function runGlobalConnectAllInternal() {
 async function initArticlesHealth() {
   const list = document.getElementById('health-list');
   if (!list) return;
-  document.getElementById('health-refresh')?.addEventListener('click', () => {
-    void refreshArticlesHealth().catch((err) => {
-      setStatus(document.getElementById('health-status'), err.message, true);
-    });
-  });
   document.getElementById('health-connect-all')?.addEventListener('click', () => {
     void runGlobalConnectAllInternal();
   });
   document.getElementById('health-propose-external-all')?.addEventListener('click', () => {
     void runProposeAllExternal();
-  });
-  document.getElementById('health-speed-check-all')?.addEventListener('click', () => {
-    void runSpeedCheckAllArticles();
   });
   document.getElementById('health-review-cancel')?.addEventListener('click', () => {
     hideExternalReview();

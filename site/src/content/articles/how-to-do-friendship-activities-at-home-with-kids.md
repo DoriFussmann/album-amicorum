@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-22
 keywords:
   - how to do friendship activities at home with kids (no volume data)
   - friendship activities for kids
@@ -33,6 +33,13 @@ faqs:
     answer: "Don't force it — invite rather than require. Some children need to see a parent model it first ('I'm going to write one thing I noticed about you two today'). You can also make the capture phase physical rather than verbal: have each child draw a small picture of a moment from the afternoon and tuck it into an envelope with the date. The act of drawing is gentler than writing for children who feel self-conscious."
   - question: Can this work with children who aren't close friends yet — for example, after a first playdate?
     answer: Absolutely, and in some ways it works even better. The warm-up phase is specifically designed to lower inhibitions between children who don't know each other well. Low-stakes prompts like 'draw your favorite animal' or 'tell me one thing you like and one thing you wish for' give children something to talk about naturally. The capture phase then seals whatever connection did form that afternoon — even a new friendship deserves a record of its first page.
+externalLinks:
+  - label: 5 Ways To Organize Keepsakes For Your Children
+    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: What to keep in children's memory boxes?
+    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+  - label: How to Create Meaningful Memory Boxes for Your Kids!
+    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
 ---
 
 There is a moment near the end of a good afternoon that most parents rush past: the children are still buzzing, the table is littered with colored pencils and scraps of paper, and everyone is about to scatter to the kitchen or the backyard. That moment — messy, fleeting, warm — is exactly when something real could be saved. This guide is about how to design an afternoon so that it moves deliberately toward that moment, and how to make sure it doesn't disappear.
@@ -128,3 +135,5 @@ A systematic review tracking trends across pre- and post-pandemic periods found 
 , reinforcing the urgency many parents already feel. Against that backdrop, interest in purposeful analog activities — including friendship-focused crafts, handwritten keepsakes, and memory-making rituals for children — remains steady and culturally resonant, with no signs of major disruption or shifting consensus in recent weeks. 
 International Day of Friendship fell on July 30, 2026
 , generating renewed seasonal interest in structured friendship activities for children, a pattern likely to continue into the back-to-school period through August and September.
+
+For further reading, see the Sources listed below.

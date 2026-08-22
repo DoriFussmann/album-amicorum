@@ -212,12 +212,16 @@ function scanLinks(article: ArticleRecord, all: ArticleRecord[]) {
   let status: HealthStatus = 'gray';
   const findings: string[] = [];
 
+  const internalStatus: HealthStatus =
+    missingInternal.length === 0 ? 'green' : 'red';
+  const externalStatus: HealthStatus = externalCount >= 3 ? 'green' : 'red';
+
   const missingPillar = missingInternal.some((m) =>
     m.reason.includes('must link to its pillar')
   );
 
   if (!classified) {
-    status = 'gray';
+    status = internalStatus === 'green' && externalStatus === 'green' ? 'green' : 'red';
     findings.push(
       'Unclassified — missing pillarKeyword/articleType relationship metadata.'
     );
@@ -226,7 +230,7 @@ function scanLinks(article: ArticleRecord, all: ArticleRecord[]) {
   } else if (externalCount >= 3 && missingInternal.length === 0) {
     status = 'green';
   } else {
-    status = 'orange';
+    status = 'red';
   }
 
   if (externalCount < 3) {
@@ -265,6 +269,8 @@ function scanLinks(article: ArticleRecord, all: ArticleRecord[]) {
     })),
     canPropose: externalCount < 3,
     unclassified: !classified,
+    internalStatus,
+    externalStatus,
   };
 }
 
@@ -554,6 +560,8 @@ export function buildArticlesHealthReport() {
       targetKeyword: article.targetKeyword || null,
       indicators: {
         links: links.status,
+        internal: links.internalStatus,
+        external: links.externalStatus,
         meta: meta.status,
         schema: schema.status,
         sitemap: sitemap.status,
@@ -1071,7 +1079,7 @@ export async function proposeAllExternalLinks(options?: {
   const all = loadAllArticles();
   const targetSlugs = options?.slug
     ? all.filter((a) => a.slug === options.slug)
-    : published(all).filter((a) => a.externalLinks.length < 3);
+    : all.filter((a) => a.externalLinks.length < 3);
 
   if (options?.slug && targetSlugs.length === 0) {
     throw new Error(`Article not found: ${options.slug}`);

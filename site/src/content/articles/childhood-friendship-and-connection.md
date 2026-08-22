@@ -18,7 +18,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-22
 keywords:
   - childhood friendship and connection
   - Childhood Friendship & Connection
@@ -31,6 +31,13 @@ faqs:
     answer: The most effective thing parents can do is create the conditions friendship needs — unhurried, unstructured time for face-to-face play, ideally one-on-one. Resist the urge to over-schedule or to resolve every social conflict for your child; working through disagreements is itself a vital part of friendship development. Modelling your own genuine friendships, encouraging your child to listen actively and show interest in others, and keeping playdates low-key and screen-free will do more for their social life than any structured activity.
   - question: Why does preserving childhood friendship memories matter, and what's the best way to do it?
     answer: "Childhood is brief, and friendships shift quickly — the best friend at age seven may live across the country by age twelve. Physical, handwritten keepsakes create a permanent, irreplaceable record of those bonds: real handwriting, personal drawings, and specific memories that no photograph or digital file can fully capture. A Friend Book (or Album Amicorum), in which each friend fills in their own page, creates a living document of a friendship that can be revisited and treasured for a lifetime."
+externalLinks:
+  - label: "Childhood Friendships: Impact and Role Across Life Stages"
+    url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+  - label: "Friendships in middle childhood: Links to peer and school ..."
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+  - label: Tips to Build Strong Childhood Friendships
+    url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOor4281AkAbmaM4orlyRKVOzXKHQt3QIXn2gAI2td7-eUUjFTX-X
 ---
 
 ## Friendship Is Not a Luxury — It Is a Developmental Necessity
@@ -179,3 +186,5 @@ Choosing a gift or keepsake that slows things down, that invites real interactio
 
 ## Where Things Stand
 As the 2026–27 school year gets under way, childhood friendship is attracting fresh attention from researchers, parents, and practitioners alike. New findings published this week suggest that some elementary school children who appear unsociable actually simply prefer solo time as long as they feel they belong to a broader peer group — a nuance that underscores how deeply individual children's social needs are, and how much quality of connection matters over sheer quantity. Simultaneously, back-to-school reporting from school psychologists this week emphasised that early friendships are where children practise communicating, handling disagreements, and regulating their emotions — skills that carry far into adult life. Recent reporting also highlights that nine in ten parents believe their children want more friends, yet many children are struggling with the face-to-face social skills that screen time displaces. Against this backdrop, the analog childhood and digital-detox parenting movements — which prioritise outdoor play, boredom, and real-world social experiences over passive screen consumption — continue to gather momentum as one of the defining parenting trends of 2026, with families increasingly treating slow, unstructured time not as a luxury but as a developmental necessity.
+
+For further reading, see the Sources listed below.

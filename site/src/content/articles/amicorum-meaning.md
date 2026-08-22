@@ -37,6 +37,13 @@ faqs:
 internalLinks:
   - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
     url: /articles/friend-books-for-kids/
+externalLinks:
+  - label: "Helping Kids Make Friends: A Gift Guide"
+    url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/
+  - label: My Friendship Books
+    url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+  - label: The most popular items ordered as gifts in Friendship
+    url: https://www.amazon.com/gp/most-gifted/books/282914
 ---
 
 ## What Does "Amicorum" Mean in Latin?
@@ -153,3 +160,5 @@ slow, "analog" childhood — boredom, crafts, backyard play, and more unstructur
  — as one of the defining parenting intentions of 2026. No major academic discoveries or product-category disruptions relating specifically to the history of the album amicorum have emerged in the past 45 days; the topic remains historically stable, with cultural interest in its modern applications continuing to build steadily alongside broader analog and slow-childhood movements.
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

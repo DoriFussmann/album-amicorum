@@ -35,6 +35,13 @@ faqs:
 internalLinks:
   - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
     url: /articles/friend-books-for-kids/
+externalLinks:
+  - label: The most popular items ordered as gifts in Friendship
+    url: https://www.amazon.com/gp/most-gifted/books/282914
+  - label: My Friendship Books
+    url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+  - label: 60 Mighty Girl Books About Friendship
+    url: https://www.amightygirl.com/blog/?p=10315
 ---
 
 # Album Amicorum: The 500-Year-Old Friendship Book Tradition
@@ -155,3 +162,5 @@ Efforts to delay smartphones and restrict social media for children are accelera
  Taken together, these signals suggest that a centuries-old tradition built on handwriting, personal contribution, and tangible memory is arriving at a moment of renewed cultural appetite — not as a relic, but as a considered alternative.
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

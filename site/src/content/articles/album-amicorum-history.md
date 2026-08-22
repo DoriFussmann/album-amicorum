@@ -36,6 +36,13 @@ faqs:
 internalLinks:
   - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
     url: /articles/friend-books-for-kids/
+externalLinks:
+  - label: "Helping Kids Make Friends: A Gift Guide"
+    url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/
+  - label: My Friendship Books
+    url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+  - label: The most popular items ordered as gifts in Friendship
+    url: https://www.amazon.com/gp/most-gifted/books/282914
 ---
 
 ## A Tradition Half a Millennium in the Making
@@ -162,3 +169,5 @@ That is precisely the impulse behind the Album Amicorum Friend Book. Not a novel
 The album amicorum tradition itself has seen no dramatic recent developments in the past 45 days, remaining a stable subject of historical scholarship and cultural interest. What has shifted meaningfully around it, however, is the broader cultural moment into which it fits. Data from early 2026 shows a striking surge in parental interest in analog, screen-free childhood experiences: recent reporting indicates that searches for "screen-free activities" have risen 200% year over year on major platforms, alongside sharp increases in searches for "family traditions" and related terms, pointing to a strong cultural appetite for exactly the kind of slow, handwritten, handmade connection the album amicorum tradition has always embodied. Parenting commentators have identified "analog childhood" as one of the defining movements of 2026, with families actively trading overscheduled, screen-saturated routines for crafts, unstructured play, and tangible keepsakes. This is the cultural water in which the album amicorum tradition swims today — not as nostalgia for its own sake, but as a live answer to a question many parents are urgently asking: how do we help our children hold on to what matters?
 
 See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

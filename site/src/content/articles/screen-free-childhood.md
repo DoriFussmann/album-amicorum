@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-22
 keywords:
   - screen free childhood
   - Childhood Friendship & Connection
@@ -32,6 +32,13 @@ faqs:
     answer: This is exactly the pressure that makes individual limits so hard to sustain — and why collective action matters. The most effective strategy is to connect with other parents in your child's class or school community and agree together on a shared timeline for delaying smartphones. When your child knows that several friends are in the same situation, the peer-pressure argument dissolves. Movements like Smartphone Free Childhood have built structured tools — including school-based parent pacts — specifically to make this coordination easy.
   - question: What do screen-free children actually do with their time?
     answer: "The honest answer is: they play, they create, they read, they argue, they get bored and invent something new. Free outdoor play, hands-on creative projects, face-to-face games, handwriting, drawing, and analog keepsake rituals like friend books all fill the time that screens would otherwise consume — and research consistently shows these activities produce measurably stronger outcomes in focus, creativity, resilience, and social intelligence than equivalent hours spent on passive screen consumption."
+externalLinks:
+  - label: "Childhood Friendships: Impact and Role Across Life Stages"
+    url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+  - label: "Friendships in middle childhood: Links to peer and school ..."
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+  - label: Tips to Build Strong Childhood Friendships
+    url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOoqoqDaxolfBJNMyBcl-1eYh5snJK4jHVS7OPt5C5ycCROy2LiQC
 ---
 
 ## What a Screen-Free Childhood Actually Is (And What It Isn't)
@@ -160,3 +167,5 @@ parents across the United States and abroad continue joining a fast-growing scre
 , with grassroots groups coordinating through parent pacts and school-based WhatsApp communities. 
 Recent commentary describes a defining "digital detox parenting" trend taking shape in 2026 — one focused on restoring balance, protecting attention spans, and giving children the space to develop creativity, resilience, and real-world social skills.
  The overall landscape is one of rapid institutional and cultural convergence: what was a fringe parenting preference five years ago is now being codified into law on multiple continents.
+
+For further reading, see the Sources listed below.

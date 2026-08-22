@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-22
 keywords:
   - smartphone free childhood pact
   - screen free childhood
@@ -33,6 +33,13 @@ faqs:
     answer: Yes, even a small cohort matters. Research into peer pressure and parenting norms consistently shows that knowing even one or two other families are making the same choice gives parents confidence and gives children a credible, honest answer when they say 'but everyone else has one.' The pact's local WhatsApp groups are designed precisely to help you find those families at your own school.
   - question: What should we actually do with the time and attention freed up by delaying smartphones?
     answer: This is the most important question the pact leaves open — and it deserves a real answer. Outdoor play, creative projects, reading, and especially handwritten, face-to-face friendship rituals are all cited by parents as meaningful replacements. The goal is not to create an empty void but to fill that space with experiences that are richer, more embodied, and more memorable than a phone feed could ever be.
+externalLinks:
+  - label: "Childhood Friendships: Impact and Role Across Life Stages"
+    url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+  - label: Children's friendship quality trajectories from middle childhood ...
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/
+  - label: Friendship Statistics
+    url: https://www.kutestkids.com/blog/friendship-statistics
 ---
 
 ## What Is the Smartphone Free Childhood Pact? 8 Things Every Parent Should Know Before Signing
@@ -160,3 +167,5 @@ on 15 July 2026, the government announced that default overnight curfews from mi
  and 
 Wikipedia's entry on the organisation lists 350,000 self-reported members as of 2026.
  The broader legislative momentum — with the UK joining Australia and several European nations in pursuing age-based restrictions — means the values underpinning the pact are increasingly being written into law, even as the parent-led movement continues to operate as a community tool distinct from and ahead of formal regulation.
+
+For further reading, see the Sources listed below.

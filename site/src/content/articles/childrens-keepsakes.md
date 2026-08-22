@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-18
+updatedDate: 2026-08-22
 keywords:
   - children's keepsakes
   - Children's Keepsakes & Memory
@@ -32,6 +32,13 @@ faqs:
     answer: "Most childhood keepsakes are passive — things a parent collects about a child: photos, report cards, artwork, hospital bracelets. These are valuable, but the child is the subject, not the author. Active, participatory keepsakes are different: they are things a child creates with or for their own community, such as a friend book filled with messages from classmates. In this case, the child is the author and curator of their own memory — which developmental research links to stronger autobiographical memory, a more coherent sense of identity, and a deeper felt sense of being known and loved."
   - question: When is the best moment to give a child a friend book or social keepsake?
     answer: "The moments that most call for a social keepsake are often transitions: a best friend moving away, the last week of elementary school, a milestone birthday, or the final summer before secondary school. These are the times when children are most aware that something irreplaceable is about to change — and when the act of collecting handwritten messages and drawings from friends creates a tangible record of connection that can be returned to for a lifetime. A friend book given a few weeks before a transition gives children time to fill it before saying goodbye."
+externalLinks:
+  - label: 5 Ways To Organize Keepsakes For Your Children
+    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: What to keep in children's memory boxes?
+    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+  - label: How to Create Meaningful Memory Boxes for Your Kids!
+    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
 ---
 
 ## Why Children's Keepsakes Are About So Much More Than Nostalgia
@@ -172,3 +179,5 @@ the digital age has moved families from finite physical albums to enormous digit
  — a dynamic that is quietly driving renewed interest in physical, handwritten keepsakes that can be held, revisited, and passed on. Meanwhile, 
 observations from August 2026 note that some childhood memories are easy to photograph, but others live in the tiny things children leave behind — a handwritten note, a favourite ribbon — that can feel far more meaningful years later, as those small pieces often tell the clearest story of what childhood actually felt like.
  No major market disruption or regulatory development has altered this space recently; the conversation is quietly intensifying rather than shifting direction.
+
+For further reading, see the Sources listed below.

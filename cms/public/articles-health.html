@@ -39,10 +39,8 @@
           <div class="page-intro">
             <h1>Articles Health</h1>
             <p>
-              Scan articles across Links, Meta, Schema, Sitemap, and Speed (PageSpeed
-              Insights). Connect fixes required internal links. External proposals use
-              article sources, body links, the static pool, then live search only when
-              those yield nothing on-topic.
+              Internal links (chain) should connect every article as guided. External
+              links (arrow) need at least three sources. Green is healthy; red needs work.
             </p>
           </div>
 
@@ -55,20 +53,19 @@
             hidden
           >
             <div class="health-toolbar">
-              <h2 id="health-review-heading">Review proposed external links</h2>
+              <h2 id="health-review-heading">Suggested external links</h2>
               <div class="health-toolbar-actions">
                 <button type="button" id="health-review-cancel" class="btn btn-secondary">
                   Cancel
                 </button>
                 <button type="button" id="health-review-add" class="btn btn-primary">
-                  Add Selected
+                  Connect All
                 </button>
               </div>
             </div>
             <p class="health-meta health-review-help">
-              Candidates are checked by default. Uncheck any you do not want, then click
-              Add Selected. Nothing is written until then. The 5-link cap trims oldest
-              links first if exceeded.
+              These fill articles that have fewer than 3 external sources. Connect All
+              writes every suggestion below.
             </p>
             <div id="health-review-list" class="health-review-list"></div>
             <pre id="health-review-status" aria-live="polite"></pre>
@@ -78,16 +75,12 @@
             <div class="health-toolbar">
               <h2 id="health-list-heading">Articles</h2>
               <div class="health-toolbar-actions">
-                <button type="button" id="health-speed-check-all" class="btn btn-secondary">
-                  Speed Check All Articles
+                <button type="button" id="health-connect-all" class="btn btn-primary">
+                  Connect All Internal Links
                 </button>
                 <button type="button" id="health-propose-external-all" class="btn btn-secondary">
-                  Propose All External Links
+                  Find &amp; Suggest External Links
                 </button>
-                <button type="button" id="health-connect-all" class="btn btn-primary">
-                  Connect all internal links
-                </button>
-                <button type="button" id="health-refresh" class="btn btn-secondary">Rescan</button>
               </div>
             </div>
             <div
@@ -108,16 +101,21 @@
               </div>
             </div>
             <p id="health-legend" class="health-legend">
-              <span><span class="health-dot is-green" aria-hidden="true"></span> healthy</span>
-              <span><span class="health-dot is-orange" aria-hidden="true"></span> needs attention</span>
-              <span><span class="health-dot is-red" aria-hidden="true"></span> critical / missing</span>
-              <span><span class="health-dot is-gray" aria-hidden="true"></span> unscanned / unclassified</span>
-              <span><span class="health-dot is-unconfigured" aria-hidden="true"></span> not configured</span>
+              <span><span class="health-dot is-green" aria-hidden="true"></span> green — healthy</span>
+              <span><span class="health-dot is-red" aria-hidden="true"></span> red — needs work</span>
+              <span>Chain = internal links · Arrow = external sources (3+)</span>
             </p>
             <div id="health-list" class="health-list">Loading…</div>
             <pre id="health-status" aria-live="polite"></pre>
           </section>
         </main>
+      </div>
+    </div>
+
+    <div id="preloader" class="preloader" hidden>
+      <div class="preloader__panel" role="status" aria-live="assertive">
+        <div class="spinner" aria-hidden="true"></div>
+        <p id="preloader-text">Finding external sources…</p>
       </div>
     </div>
 

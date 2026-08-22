@@ -1145,13 +1145,20 @@ pre {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  min-width: 1.75rem;
-  height: 1.75rem;
+  width: 2.25rem;
+  height: 2.25rem;
+  min-width: 2.25rem;
   border-radius: 999px;
-  border: 1px solid var(--border);
+  border: 2px solid transparent;
   background: #fff;
+  color: #fff;
   font-size: 0.8125rem;
   line-height: 1;
+}
+.health-indicator svg {
+  width: 1.15rem;
+  height: 1.15rem;
+  display: block;
 }
 .health-dot,
 .health-indicator { box-shadow: inset 0 0 0 2px transparent; }
@@ -1164,8 +1171,10 @@ pre {
 }
 .health-dot.is-green,
 .health-indicator.is-green {
-  background: color-mix(in srgb, var(--success) 18%, #fff);
-  box-shadow: inset 0 0 0 2px var(--success);
+  background: #2f7a45;
+  border-color: #2f7a45;
+  color: #fff;
+  box-shadow: none;
 }
 .health-dot.is-orange,
 .health-indicator.is-orange {
@@ -1174,8 +1183,10 @@ pre {
 }
 .health-dot.is-red,
 .health-indicator.is-red {
-  background: color-mix(in srgb, var(--error) 14%, #fff);
-  box-shadow: inset 0 0 0 2px var(--error);
+  background: #c44545;
+  border-color: #c44545;
+  color: #fff;
+  box-shadow: none;
 }
 .health-dot.is-gray,
 .health-indicator.is-gray {
@@ -1336,14 +1347,11 @@ pre {
   gap: 0.45rem;
 }
 .health-review-item {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 0.55rem 0.75rem;
-  align-items: start;
-  padding: 0.55rem 0.7rem;
+  display: block;
+  padding: 0.7rem 0.85rem;
   border: 1px solid var(--border-soft);
   border-radius: var(--radius);
-  background: var(--surface);
+  background: #fff;
   font-size: 0.8125rem;
 }
 .health-review-item.is-borderline { border-style: dashed; }
