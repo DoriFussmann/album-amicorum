@@ -4,7 +4,7 @@ import { getCollection, getEntry } from 'astro:content';
 import ArticlesFilters from '../../components/ArticlesFilters.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_NAME } from '../../config/site';
-import { buildArticleFilterOptions } from '../../lib/articleFilters';
+import { articlePillarKeyword, buildArticleFilterOptions } from '../../lib/articleFilters';
 
 const PAGE_SIZE = 9;
 
@@ -55,7 +55,7 @@ const filterOptions = buildArticleFilterOptions(allArticles.map((a) => a.data));
               {articlesWithAuthors.map(({ article, authorName }) => (
                 <li
                   data-title={article.data.title.toLowerCase()}
-                  data-pillar={article.data.pillarKeyword ?? ''}
+                  data-pillar={articlePillarKeyword(article.data) ?? ''}
                 >
                   <a
                     href={`/articles/${article.data.slug}/`}

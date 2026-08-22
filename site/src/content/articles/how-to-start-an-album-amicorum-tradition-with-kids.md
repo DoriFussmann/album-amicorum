@@ -5,6 +5,7 @@ slug: how-to-start-an-album-amicorum-tradition-with-kids
 date: 2026-08-21
 author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
+pillarKeyword: Friend Books & Friendship Keepsakes
 tags:
   - Friend Books & Friendship Keepsakes
   - album amicorum

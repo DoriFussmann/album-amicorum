@@ -5,6 +5,7 @@ slug: analog-friendship-activities-for-kids-that-make-keepsakes
 date: 2026-08-18
 author: dori-fussmann
 category: Children's Keepsakes & Memory
+pillarKeyword: Children's Keepsakes & Memory
 tags:
   - Children's Keepsakes & Memory
   - friendship activities for kids

@@ -31,7 +31,7 @@ faqs:
     answer: "The most meaningful moments tend to be school transitions — starting a new year, moving to a new school, or finishing primary school. But birthday celebrations and end-of-year class parties are equally good occasions, as they naturally gather the circle of friends who will fill the book. The underlying principle is simple: give it when friendships are at their most vivid and before time moves everyone along."
   - question: What should I look for when choosing a friendship book for kids?
     answer: "Look for four things: illustration quality that makes the book feel genuinely special (not a mass-market photocopied template); prompts that invite real self-expression — favourite things, drawings, memories, and messages — rather than simple tick-boxes; paper quality thick enough for coloured pencils without bleed-through; and a format broad enough in age range to remain relevant as the child grows. A beautifully designed book also signals to the child that the friendships being preserved matter, which shapes how carefully their friends treat the pages."
-pillarKeyword: friend books for kids
+pillarKeyword: Friend Books & Friendship Keepsakes
 supportingKeyword: friendship book for kids
 articleType: comprehensive
 targetKeyword: friendship book for kids

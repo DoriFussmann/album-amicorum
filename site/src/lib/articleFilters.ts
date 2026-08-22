@@ -17,7 +17,17 @@ export type ArticleFilterOption = {
 
 type ArticleKeywordFields = {
   pillarKeyword?: string | undefined;
+  category?: string | undefined;
 };
+
+/** Company pillar keyword for an article (frontmatter, with category fallback). */
+export function articlePillarKeyword(
+  article: ArticleKeywordFields
+): string | undefined {
+  const pillar = article.pillarKeyword?.trim();
+  const category = article.category?.trim();
+  return pillar || category || undefined;
+}
 
 /** Unique pillar keywords from published articles, sorted alphabetically. */
 export function buildArticleFilterOptions(
@@ -25,9 +35,7 @@ export function buildArticleFilterOptions(
 ): ArticleFilterOption[] {
   const pillars = [
     ...new Set(
-      articles
-        .map((a) => a.pillarKeyword?.trim())
-        .filter((k): k is string => Boolean(k))
+      articles.map(articlePillarKeyword).filter((k): k is string => Boolean(k))
     ),
   ].sort((a, b) => a.localeCompare(b));
 

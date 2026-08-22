@@ -5,6 +5,7 @@ slug: smartphone-free-childhood-pact
 date: 2026-08-11
 author: dori-fussmann
 category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - screen free childhood
   - smartphone free childhood pact

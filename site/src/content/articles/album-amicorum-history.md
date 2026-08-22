@@ -5,6 +5,7 @@ slug: album-amicorum-history
 date: 2026-08-21
 author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
+pillarKeyword: Friend Books & Friendship Keepsakes
 tags:
   - album amicorum history
   - friendship book tradition

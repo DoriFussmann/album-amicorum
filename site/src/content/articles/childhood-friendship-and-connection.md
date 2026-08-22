@@ -5,6 +5,7 @@ slug: childhood-friendship-and-connection
 date: 2026-08-11
 author: dori-fussmann
 category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - childhood friendship and connection
   - childhood development

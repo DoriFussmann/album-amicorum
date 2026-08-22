@@ -5,6 +5,7 @@ slug: amicorum-meaning
 date: 2026-08-21
 author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
+pillarKeyword: Friend Books & Friendship Keepsakes
 tags:
   - album amicorum
   - amicorum meaning

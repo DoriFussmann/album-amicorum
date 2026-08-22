@@ -5,6 +5,7 @@ slug: jonathan-haidt-screen-free-childhood-advice
 date: 2026-08-11
 author: dori-fussmann
 category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - screen free childhood
   - jonathan haidt screen free childhood advice

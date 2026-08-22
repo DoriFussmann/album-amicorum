@@ -32,7 +32,7 @@ faqs:
     answer: "Friend Books are especially powerful at natural transition moments: the end of the school year, the last day of elementary school, a move to a new city, the start of summer camp, or a milestone birthday. These are the moments when friendships are most vivid and most at risk of being lost to time and distance. A Friend Book given at one of these occasions invites a child to immediately start collecting entries — turning the gift into an active, living project from the very first day."
   - question: What should I look for in a high-quality Friend Book?
     answer: "The most important qualities are thoughtful prompts that go beyond name and birthday, enough page space for both writing and drawing, durable paper that holds pencil and marker without bleeding, and illustration or design that signals to the child that the book — and their friendships — are worth treasuring. A beautifully illustrated Friend Book also tends to prompt more beautiful entries: children rise to the standard of the object they are holding. Heirloom-quality binding and cover materials matter too, since the whole point is a book that survives decades on a shelf."
-pillarKeyword: friend books for kids
+pillarKeyword: Friend Books & Friendship Keepsakes
 articleType: comprehensive
 targetKeyword: friend books for kids
 internalLinks:

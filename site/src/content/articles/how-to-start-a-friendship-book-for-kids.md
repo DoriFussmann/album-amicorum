@@ -19,7 +19,7 @@ locale: en-US
 twitterCard: summary_large_image
 draft: false
 updatedDate: 2026-08-11
-pillarKeyword: friend books for kids
+pillarKeyword: Friend Books & Friendship Keepsakes
 supportingKeyword: friendship book for kids
 articleType: howto
 targetKeyword: how to start a friendship book for kids

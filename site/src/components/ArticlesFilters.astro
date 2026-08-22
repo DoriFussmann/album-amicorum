@@ -134,9 +134,9 @@ const { options } = Astro.props;
 
       for (const item of items) {
         const title = item.dataset.title ?? '';
-        const pillar = item.dataset.pillar ?? '';
+        const pillar = (item.dataset.pillar ?? '').trim().toLowerCase();
         const matchesSearch = !query || title.includes(query);
-        const matchesTopic = !topic || pillar === topic;
+        const matchesTopic = !topic || pillar === topic.toLowerCase();
         const show = matchesSearch && matchesTopic;
         item.hidden = !show;
         if (show) visibleCount += 1;

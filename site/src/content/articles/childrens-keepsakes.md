@@ -5,6 +5,7 @@ slug: childrens-keepsakes
 date: 2026-08-18
 author: dori-fussmann
 category: Children's Keepsakes & Memory
+pillarKeyword: Children's Keepsakes & Memory
 tags:
   - children's keepsakes
   - childhood memory
