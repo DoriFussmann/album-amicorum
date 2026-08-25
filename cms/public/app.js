@@ -43,6 +43,17 @@ const DESCRIPTION_MIN = 140;
 const DESCRIPTION_MAX = 160;
 const ALT_MIN = 10;
 const DEFAULT_AUTHOR_SLUG = 'dori-fussmann';
+const LIVE_SITE_ORIGIN = 'https://www.albumamicorum.com';
+
+/** @type {{ articles: any[], authorNames: Record<string, string>, titleQuery: string, pillar: string, sortCol: string, sortDir: 'asc' | 'desc' }} */
+const articleListState = {
+  articles: [],
+  authorNames: {},
+  titleQuery: '',
+  pillar: '',
+  sortCol: 'date',
+  sortDir: 'desc',
+};
 
 /** @type {Record<string, File | null>} */
 const sessionImageFiles = { image: null, image2: null, image3: null };
@@ -600,7 +611,8 @@ async function loadTeamOptions(selectId = 'author') {
   const sel = $(selectId);
   if (!sel) return;
   const current = sel.value;
-  sel.innerHTML = '<option value="">— select team member —</option>';
+  sel.innerHTML =
+    selectId === 'bulk-author' ? '' : '<option value="">— select team member —</option>';
   for (const m of data.team) {
     const opt = document.createElement('option');
     opt.value = m.slug;
@@ -633,43 +645,153 @@ async function toggleArticleStatus(slug, makeDraft) {
   await loadArticleList();
 }
 
-async function loadArticleList() {
-  const res = await fetch('/articles');
-  const data = await parseJsonResponse(res);
-  if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load articles');
-  const ul = $('article-list');
-  if (!ul) return;
-  ul.innerHTML = '';
-  if (!data.articles.length) {
-    ul.innerHTML = '<li>No articles yet.</li>';
+function articleLiveUrl(article) {
+  const data = article?.data || {};
+  const explicit = data.published_url || data.publishedUrl;
+  if (explicit) return String(explicit);
+  if (article.draft) return '';
+  const slug = article.slug || data.slug;
+  return slug ? `${LIVE_SITE_ORIGIN}/articles/${slug}/` : '';
+}
+
+function articleSortValue(article, col) {
+  const data = article.data || {};
+  switch (col) {
+    case 'title':
+      return String(article.title || '').toLowerCase();
+    case 'draft':
+      return article.draft ? 1 : 0;
+    case 'date': {
+      const raw = article.updatedDate || article.date || data.updatedDate || data.date;
+      const t = raw ? new Date(raw).valueOf() : 0;
+      return Number.isNaN(t) ? 0 : t;
+    }
+    case 'author': {
+      const slug = data.author || '';
+      return String(articleListState.authorNames[slug] || slug).toLowerCase();
+    }
+    case 'internal':
+      return (article.internalLinks || data.internalLinks || []).length;
+    case 'external':
+      return (article.externalLinks || data.externalLinks || []).length;
+    default:
+      return '';
+  }
+}
+
+function getFilteredSortedArticles() {
+  const q = articleListState.titleQuery.trim().toLowerCase();
+  const pillar = articleListState.pillar.trim().toLowerCase();
+  const rows = articleListState.articles.filter((article) => {
+    const title = String(article.title || '').toLowerCase();
+    const articlePillar = String(article.data?.pillarKeyword || '').toLowerCase();
+    if (q && !title.includes(q)) return false;
+    if (pillar && articlePillar !== pillar) return false;
+    return true;
+  });
+  const { sortCol, sortDir } = articleListState;
+  rows.sort((a, b) => {
+    const va = articleSortValue(a, sortCol);
+    const vb = articleSortValue(b, sortCol);
+    let cmp = 0;
+    if (typeof va === 'number' && typeof vb === 'number') cmp = va - vb;
+    else cmp = String(va).localeCompare(String(vb), undefined, { numeric: true });
+    return sortDir === 'asc' ? cmp : -cmp;
+  });
+  return rows;
+}
+
+function populatePillarFilter() {
+  const sel = $('filter-pillar');
+  if (!sel) return;
+  const current = articleListState.pillar;
+  const pillars = [
+    ...new Set(
+      articleListState.articles
+        .map((a) => String(a.data?.pillarKeyword || '').trim())
+        .filter(Boolean)
+    ),
+  ].sort((a, b) => a.localeCompare(b));
+  sel.innerHTML = '<option value="">All pillars</option>';
+  for (const pillar of pillars) {
+    const opt = document.createElement('option');
+    opt.value = pillar;
+    opt.textContent = pillar;
+    sel.appendChild(opt);
+  }
+  sel.value = pillars.includes(current) ? current : '';
+  articleListState.pillar = sel.value;
+}
+
+function updateSortHeaders() {
+  document.querySelectorAll('.article-table th[data-col]').forEach((th) => {
+    th.classList.remove('sort-asc', 'sort-desc');
+    if (th.dataset.col === articleListState.sortCol) {
+      th.classList.add(articleListState.sortDir === 'asc' ? 'sort-asc' : 'sort-desc');
+    }
+  });
+}
+
+function renderArticleTable() {
+  const tbody = $('article-list');
+  if (!tbody) return;
+  tbody.innerHTML = '';
+  if (!articleListState.articles.length) {
+    tbody.innerHTML = '<tr><td colspan="7">No articles yet.</td></tr>';
+    updateSortHeaders();
     return;
   }
-  for (const a of data.articles) {
-    const li = document.createElement('li');
-    li.className = 'article-item';
+  const rows = getFilteredSortedArticles();
+  if (!rows.length) {
+    tbody.innerHTML = '<tr><td colspan="7">No articles match these filters.</td></tr>';
+    updateSortHeaders();
+    return;
+  }
+  for (const a of rows) {
+    const tr = document.createElement('tr');
     const statusLabel = a.draft ? 'Draft' : 'Published';
     const statusClass = a.draft ? 'is-blocked' : 'is-ready';
     const nextAction = a.draft ? 'publish' : 'unpublish';
-    const dateLabel = formatArticleDate(a.date ?? a.updatedDate);
-    li.innerHTML = `
-      <div class="article-item__main">
+    const dateLabel = formatArticleDate(a.updatedDate || a.date);
+    const authorSlug = a.data?.author || '';
+    const authorName = articleListState.authorNames[authorSlug] || authorSlug || '—';
+    const internalCount = (a.internalLinks || a.data?.internalLinks || []).length;
+    const externalCount = (a.externalLinks || a.data?.externalLinks || []).length;
+    const liveUrl = articleLiveUrl(a);
+    tr.innerHTML = `
+      <td>
         <a class="article-item__title" href="/add-article.html?edit=${encodeURIComponent(a.slug)}">${escapeHtml(a.title)}</a>
         <span class="article-item__slug">${escapeHtml(a.slug)}</span>
-      </div>
-      <time class="article-item__date" datetime="${escapeHtml(dateLabel)}">${escapeHtml(dateLabel)}</time>
-      <button
-        type="button"
-        class="status-pill status-pill--toggle ${statusClass}"
-        data-toggle-status="${escapeHtml(a.slug)}"
-        data-next="${nextAction}"
-        title="${a.draft ? 'Click to publish' : 'Click to set as draft'}"
-        aria-label="${statusLabel}. Click to ${a.draft ? 'publish' : 'set as draft'}"
-      >${statusLabel}</button>
-      <button type="button" class="btn btn-danger" data-delete="${escapeHtml(a.slug)}">Delete</button>`;
-    ul.appendChild(li);
+      </td>
+      <td>
+        <button
+          type="button"
+          class="status-pill status-pill--toggle ${statusClass}"
+          data-toggle-status="${escapeHtml(a.slug)}"
+          data-next="${nextAction}"
+          title="${a.draft ? 'Click to publish' : 'Click to set as draft'}"
+          aria-label="${statusLabel}. Click to ${a.draft ? 'publish' : 'set as draft'}"
+        >${statusLabel}</button>
+      </td>
+      <td><time datetime="${escapeHtml(dateLabel)}">${escapeHtml(dateLabel)}</time></td>
+      <td>${escapeHtml(authorName)}</td>
+      <td>${internalCount}</td>
+      <td>${externalCount}</td>
+      <td>
+        <div class="article-actions">
+          ${
+            liveUrl
+              ? `<a class="live-url-icon" href="${escapeHtml(liveUrl)}" target="_blank" rel="noopener noreferrer" title="Open live URL" aria-label="Open live URL">🔗</a>`
+              : ''
+          }
+          <a class="btn btn-ghost" href="/add-article.html?edit=${encodeURIComponent(a.slug)}">Edit</a>
+          <button type="button" class="btn btn-danger" data-delete="${escapeHtml(a.slug)}">Delete</button>
+        </div>
+      </td>`;
+    tbody.appendChild(tr);
   }
 
-  ul.querySelectorAll('[data-toggle-status]').forEach((btn) => {
+  tbody.querySelectorAll('[data-toggle-status]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const slug = btn.getAttribute('data-toggle-status');
       const makeDraft = btn.getAttribute('data-next') === 'unpublish';
@@ -680,7 +802,7 @@ async function loadArticleList() {
       }
     });
   });
-  ul.querySelectorAll('[data-delete]').forEach((btn) => {
+  tbody.querySelectorAll('[data-delete]').forEach((btn) => {
     btn.addEventListener('click', async () => {
       const slug = btn.getAttribute('data-delete');
       if (!confirm(`Delete article ${slug}?`)) return;
@@ -695,6 +817,17 @@ async function loadArticleList() {
       }
     });
   });
+  updateSortHeaders();
+}
+
+async function loadArticleList() {
+  const res = await fetch('/articles');
+  const data = await parseJsonResponse(res);
+  if (!res.ok || !data.ok) throw new Error(data.error || 'Failed to load articles');
+  if (!$('article-list')) return;
+  articleListState.articles = data.articles || [];
+  populatePillarFilter();
+  renderArticleTable();
 }
 
 function escapeHtml(s) {
@@ -1052,6 +1185,7 @@ function renderBulkPreview(plan) {
   tbody.innerHTML = '';
   for (const item of bulkState.items) {
     const tr = document.createElement('tr');
+    tr.classList.add(item.ready ? 'is-ready' : 'is-blocked');
     const extras = [item.image2, item.image3].filter(Boolean);
     const notes = item.error
       ? `<span class="bulk-error">${escapeHtml(item.error)}</span>`
@@ -1222,8 +1356,56 @@ async function initBulkAddPage() {
   }
 }
 
+function switchTab(active) {
+  const batch = $('panel-batch');
+  const single = $('panel-single');
+  if (!batch || !single) return;
+  batch.hidden = active !== 'batch';
+  single.hidden = active !== 'single';
+  $('tab-batch')?.setAttribute('aria-selected', String(active === 'batch'));
+  $('tab-single')?.setAttribute('aria-selected', String(active === 'single'));
+  document.querySelectorAll('[data-tab]').forEach((el) => {
+    el.hidden = el.dataset.tab !== active;
+  });
+}
+
+function initAddArticleTabs() {
+  if (!$('tab-batch') || !$('tab-single')) return;
+  $('tab-batch').addEventListener('click', () => switchTab('batch'));
+  $('tab-single').addEventListener('click', () => switchTab('single'));
+  const params = new URLSearchParams(location.search);
+  switchTab(params.get('edit') ? 'single' : 'batch');
+}
+
 async function initArticleListPage() {
   try {
+    const teamRes = await fetch('/api/team');
+    const teamJson = await parseJsonResponse(teamRes);
+    if (teamRes.ok && teamJson.ok) {
+      articleListState.authorNames = Object.fromEntries(
+        (teamJson.team || []).map((m) => [m.slug, m.name])
+      );
+    }
+    $('filter-title')?.addEventListener('input', () => {
+      articleListState.titleQuery = $('filter-title').value;
+      renderArticleTable();
+    });
+    $('filter-pillar')?.addEventListener('change', () => {
+      articleListState.pillar = $('filter-pillar').value;
+      renderArticleTable();
+    });
+    document.querySelectorAll('.article-table th[data-col]').forEach((th) => {
+      th.addEventListener('click', () => {
+        const col = th.dataset.col;
+        if (articleListState.sortCol === col) {
+          articleListState.sortDir = articleListState.sortDir === 'desc' ? 'asc' : 'desc';
+        } else {
+          articleListState.sortCol = col;
+          articleListState.sortDir = 'desc';
+        }
+        renderArticleTable();
+      });
+    });
     await loadArticleList();
   } catch (e) {
     showError(e.message);
@@ -1317,6 +1499,8 @@ async function init() {
     return;
   }
   if (kind === 'article-form') {
+    initAddArticleTabs();
+    await initBulkAddPage();
     await initArticleFormPage();
     return;
   }

@@ -27,7 +27,6 @@
         <ul class="sidebar-nav">
           <li><a href="/">Articles</a></li>
           <li><a href="/add-article.html" aria-current="page">Add Article</a></li>
-          <li><a href="/bulk-add.html">Bulk Add</a></li>
           <li><a href="/articles-health.html">Articles Health</a></li>
           <li><a href="/team.html">Team</a></li>
           <li><a href="/dashboard.html">Dashboard</a></li>
@@ -37,231 +36,317 @@
       <div class="cms-main">
         <main class="site-shell">
           <div class="page-intro">
-            <h1>New / Edit Article</h1>
+            <h1>Add Article</h1>
             <p>
-              Parse markdown, set author and hero image, then add into the site content collection.
-              For several articles at once, use <a href="/bulk-add.html">Bulk Add</a>.
+              Drop several markdown files and images together, or switch to Single Article for one
+              at a time. Author defaults to Dori Fussmann.
             </p>
           </div>
 
-          <div class="stack">
-            <section class="panel" aria-labelledby="md-drop-heading">
-              <h2 id="md-drop-heading">Markdown source</h2>
-              <p class="panel__lede">Drop a single <code>.md</code> file here to parse frontmatter.</p>
-              <div id="md-drop" class="dropzone" tabindex="0" role="button" aria-label="Drop markdown file">
-                <p><strong>Drop .md file</strong></p>
-                <p>or click to choose</p>
-              </div>
-              <input type="file" id="md-file" accept=".md,text/markdown" hidden />
-            </section>
+          <div class="tab-bar" role="tablist" aria-label="Add article mode">
+            <button type="button" class="tab-btn" id="tab-batch" role="tab" aria-selected="true" aria-controls="panel-batch">
+              Batch Upload
+            </button>
+            <button type="button" class="tab-btn" id="tab-single" role="tab" aria-selected="false" aria-controls="panel-single">
+              Single Article
+            </button>
+          </div>
 
-            <section class="panel" aria-labelledby="required-heading">
-              <h2 id="required-heading">Required before adding</h2>
-              <p class="panel__lede">
-                Author defaults to Dori Fussmann. Upload the hero image — it is not inferred from the markdown drop.
-              </p>
-
-              <label class="field">
-                <span>author</span>
-                <select id="author" required>
-                  <option value="">— select team member —</option>
-                </select>
-              </label>
-
-              <div style="margin-top: 1.25rem">
-                <h3 class="panel__subheading">Hero image (required)</h3>
+          <div id="panel-batch" role="tabpanel" aria-labelledby="tab-batch">
+            <div class="stack">
+              <section class="panel" aria-labelledby="bulk-drop-heading">
+                <h2 id="bulk-drop-heading">Files</h2>
                 <p class="panel__lede">
-                  Maximum file size: <strong>10MB</strong>. When editing, the existing hero is kept until you
-                  replace it.
+                  Mix markdown and images in one drop. Name images like the article slug
+                  (<code>album-amicorum.png</code> or <code>album-amicorum-hero.png</code>), or keep each
+                  article’s image in a folder named after the slug.
                 </p>
                 <div
-                  id="image-drop"
-                  class="dropzone"
+                  id="bulk-drop"
+                  class="dropzone dropzone--tall"
                   tabindex="0"
                   role="button"
-                  aria-label="Drop hero image or click to choose"
+                  aria-label="Drop markdown and image files"
                 >
-                  <p><strong>Drop hero image here</strong></p>
+                  <p><strong>Drop .md files + images together</strong></p>
+                  <p>Name images like their article slug — e.g. <code>my-article.png</code> or <code>my-article-hero.png</code></p>
+                  <p class="dropzone__sub">or click to choose multiple files</p>
+                </div>
+                <input type="file" id="bulk-files" accept=".md,.markdown,text/markdown,image/*" multiple hidden />
+                <p id="bulk-file-count" class="panel__lede" style="margin-top: 0.85rem"></p>
+              </section>
+
+              <section class="panel" aria-labelledby="bulk-options-heading">
+                <h2 id="bulk-options-heading">Options</h2>
+                <label class="field">
+                  <span>author</span>
+                  <select id="bulk-author" required>
+                    <option value="dori-fussmann">Dori Fussmann (dori-fussmann)</option>
+                  </select>
+                </label>
+                <label class="check-row" style="margin-top: 1rem">
+                  <input type="checkbox" id="bulk-overwrite" />
+                  <span>Overwrite existing slugs</span>
+                </label>
+              </section>
+
+              <section class="panel" aria-labelledby="bulk-preview-heading">
+                <h2 id="bulk-preview-heading">Matched articles</h2>
+                <p id="bulk-unmatched" class="panel__lede" hidden></p>
+                <div class="table-wrap">
+                  <table class="bulk-table">
+                    <thead>
+                      <tr>
+                        <th>Status</th>
+                        <th>Article</th>
+                        <th>Markdown</th>
+                        <th>Hero image</th>
+                        <th>Notes</th>
+                      </tr>
+                    </thead>
+                    <tbody id="bulk-preview-body">
+                      <tr>
+                        <td colspan="5">Drop files to preview matches.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+
+              <p id="bulk-error" class="alert alert-error" role="alert" hidden></p>
+              <p id="bulk-success" class="alert alert-success" hidden></p>
+            </div>
+          </div>
+
+          <div id="panel-single" role="tabpanel" aria-labelledby="tab-single" hidden>
+            <div class="stack">
+              <section class="panel" aria-labelledby="md-drop-heading">
+                <h2 id="md-drop-heading">Markdown source</h2>
+                <p class="panel__lede">Drop a single <code>.md</code> file here to parse frontmatter.</p>
+                <div id="md-drop" class="dropzone" tabindex="0" role="button" aria-label="Drop markdown file">
+                  <p><strong>Drop .md file</strong></p>
                   <p>or click to choose</p>
                 </div>
-                <p class="btn-row" style="margin-top: 0.85rem">
-                  <button type="button" class="btn btn-secondary" id="image-choose">Choose hero image…</button>
-                  <input type="file" id="image-files" accept="image/*" hidden />
+                <input type="file" id="md-file" accept=".md,text/markdown" hidden />
+              </section>
+
+              <section class="panel" aria-labelledby="required-heading">
+                <h2 id="required-heading">Required before adding</h2>
+                <p class="panel__lede">
+                  Author defaults to Dori Fussmann. Upload the hero image — it is not inferred from the markdown drop.
                 </p>
-                <ul class="slot-list" id="image-slots">
-                  <li>
-                    <div class="slot-meta">
-                      <strong>Hero (image)</strong>
-                      <div><span class="status-pill" id="slot-image-status">not uploaded</span></div>
-                    </div>
-                    <button type="button" class="btn btn-ghost" data-replace-slot="image">Replace</button>
-                    <label>
-                      Alt (min 10 chars)
-                      <input type="text" id="imageAlt" minlength="10" />
+
+                <label class="field">
+                  <span>author</span>
+                  <select id="author" required>
+                    <option value="">— select team member —</option>
+                  </select>
+                </label>
+
+                <div style="margin-top: 1.25rem">
+                  <h3 class="panel__subheading">Hero image (required)</h3>
+                  <p class="panel__lede">
+                    Maximum file size: <strong>10MB</strong>. When editing, the existing hero is kept until you
+                    replace it.
+                  </p>
+                  <div
+                    id="image-drop"
+                    class="dropzone"
+                    tabindex="0"
+                    role="button"
+                    aria-label="Drop hero image or click to choose"
+                  >
+                    <p><strong>Drop hero image here</strong></p>
+                    <p>or click to choose</p>
+                  </div>
+                  <p class="btn-row" style="margin-top: 0.85rem">
+                    <button type="button" class="btn btn-secondary" id="image-choose">Choose hero image…</button>
+                    <input type="file" id="image-files" accept="image/*" hidden />
+                  </p>
+                  <ul class="slot-list" id="image-slots">
+                    <li>
+                      <div class="slot-meta">
+                        <strong>Hero (image)</strong>
+                        <div><span class="status-pill" id="slot-image-status">not uploaded</span></div>
+                      </div>
+                      <button type="button" class="btn btn-ghost" data-replace-slot="image">Replace</button>
+                      <label>
+                        Alt (min 10 chars)
+                        <input type="text" id="imageAlt" minlength="10" />
+                      </label>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="btn-row" style="margin-top: 1.25rem">
+                  <button type="button" class="btn btn-primary" id="generate-top" aria-disabled="true">Add</button>
+                  <span class="status-pill is-blocked" id="action-top-pill">Not ready</span>
+                </div>
+                <p id="generate-reason-top" class="reason-text"></p>
+              </section>
+
+              <details class="panel collapsible-panel" id="missing-panel">
+                <summary id="missing-heading">
+                  <span id="missing-heading-label">Missing Fields</span>
+                </summary>
+                <p id="missing-summary" class="panel__lede">Drop a markdown file or fill fields to validate.</p>
+              </details>
+
+              <details class="panel collapsible-panel" id="checklist-panel">
+                <summary id="checklist-heading">
+                  <span id="checklist-heading-label">Field Checklist</span>
+                </summary>
+                <ul class="checklist" id="field-checklist"></ul>
+              </details>
+
+              <section class="panel" aria-labelledby="core-fields-heading">
+                <h2 id="core-fields-heading">Core fields</h2>
+                <div class="field-grid">
+                  <label class="field">
+                    <span>title</span>
+                    <input type="text" id="title" />
+                    <span class="char-count" id="title-count"></span>
+                  </label>
+                  <label class="field">
+                    <span>description</span>
+                    <textarea id="description" rows="3"></textarea>
+                    <span class="char-count" id="description-count"></span>
+                  </label>
+                  <div class="field-grid cols-2">
+                    <label class="field">
+                      <span>slug</span>
+                      <input type="text" id="slug" />
                     </label>
-                  </li>
-                </ul>
-              </div>
-
-              <div class="btn-row" style="margin-top: 1.25rem">
-                <button type="button" class="btn btn-primary" id="generate-top" aria-disabled="true">Add</button>
-                <span class="status-pill is-blocked" id="action-top-pill">Not ready</span>
-              </div>
-              <p id="generate-reason-top" class="reason-text"></p>
-            </section>
-
-            <details class="panel collapsible-panel" id="missing-panel">
-              <summary id="missing-heading">
-                <span id="missing-heading-label">Missing Fields</span>
-              </summary>
-              <p id="missing-summary" class="panel__lede">Drop a markdown file or fill fields to validate.</p>
-            </details>
-
-            <details class="panel collapsible-panel" id="checklist-panel">
-              <summary id="checklist-heading">
-                <span id="checklist-heading-label">Field Checklist</span>
-              </summary>
-              <ul class="checklist" id="field-checklist"></ul>
-            </details>
-
-            <section class="panel" aria-labelledby="core-fields-heading">
-              <h2 id="core-fields-heading">Core fields</h2>
-              <div class="field-grid">
-                <label class="field">
-                  <span>title</span>
-                  <input type="text" id="title" />
-                  <span class="char-count" id="title-count"></span>
-                </label>
-                <label class="field">
-                  <span>description</span>
-                  <textarea id="description" rows="3"></textarea>
-                  <span class="char-count" id="description-count"></span>
-                </label>
-                <div class="field-grid cols-2">
-                  <label class="field">
-                    <span>slug</span>
-                    <input type="text" id="slug" />
+                    <label class="field">
+                      <span>date</span>
+                      <input type="date" id="date" />
+                    </label>
+                    <label class="field">
+                      <span>updatedDate</span>
+                      <input type="date" id="updatedDate" />
+                    </label>
+                    <label class="field">
+                      <span>category</span>
+                      <input type="text" id="category" />
+                    </label>
+                    <label class="field">
+                      <span>tags (comma-separated, 4–6)</span>
+                      <input type="text" id="tags" />
+                    </label>
+                    <label class="field">
+                      <span>keywords (comma-separated, optional)</span>
+                      <input type="text" id="keywords" />
+                    </label>
+                    <label class="field">
+                      <span>canonical (optional)</span>
+                      <input type="url" id="canonical" />
+                    </label>
+                    <label class="field">
+                      <span>robots</span>
+                      <input type="text" id="robots" value="index, follow" />
+                    </label>
+                    <label class="field">
+                      <span>schemaType</span>
+                      <input type="text" id="schemaType" value="BlogPosting" />
+                    </label>
+                    <label class="field">
+                      <span>locale</span>
+                      <input type="text" id="locale" value="en-US" />
+                    </label>
+                    <label class="field">
+                      <span>twitterCard</span>
+                      <input type="text" id="twitterCard" value="summary_large_image" />
+                    </label>
+                  </div>
+                  <label class="check-row">
+                    <input type="checkbox" id="draft" />
+                    <span>draft</span>
                   </label>
                   <label class="field">
-                    <span>date</span>
-                    <input type="date" id="date" />
+                    <span>ogTitle (only if different from title)</span>
+                    <input type="text" id="ogTitle" placeholder="leave blank to fall back to title" />
                   </label>
                   <label class="field">
-                    <span>updatedDate</span>
-                    <input type="date" id="updatedDate" />
+                    <span>ogDescription (only if different from description)</span>
+                    <textarea id="ogDescription" rows="2" placeholder="leave blank to fall back"></textarea>
                   </label>
                   <label class="field">
-                    <span>category</span>
-                    <input type="text" id="category" />
-                  </label>
-                  <label class="field">
-                    <span>tags (comma-separated, 4–6)</span>
-                    <input type="text" id="tags" />
-                  </label>
-                  <label class="field">
-                    <span>keywords (comma-separated, optional)</span>
-                    <input type="text" id="keywords" />
-                  </label>
-                  <label class="field">
-                    <span>canonical (optional)</span>
-                    <input type="url" id="canonical" />
-                  </label>
-                  <label class="field">
-                    <span>robots</span>
-                    <input type="text" id="robots" value="index, follow" />
-                  </label>
-                  <label class="field">
-                    <span>schemaType</span>
-                    <input type="text" id="schemaType" value="BlogPosting" />
-                  </label>
-                  <label class="field">
-                    <span>locale</span>
-                    <input type="text" id="locale" value="en-US" />
-                  </label>
-                  <label class="field">
-                    <span>twitterCard</span>
-                    <input type="text" id="twitterCard" value="summary_large_image" />
+                    <span>ogImage (only if different from hero)</span>
+                    <input type="text" id="ogImage" placeholder="leave blank to fall back" />
                   </label>
                 </div>
-                <label class="check-row">
-                  <input type="checkbox" id="draft" />
-                  <span>draft</span>
-                </label>
+              </section>
+
+              <section class="panel" aria-labelledby="body-heading">
+                <h2 id="body-heading">Body (markdown)</h2>
                 <label class="field">
-                  <span>ogTitle (only if different from title)</span>
-                  <input type="text" id="ogTitle" placeholder="leave blank to fall back to title" />
+                  <span class="sr-only">Body markdown</span>
+                  <textarea id="body" rows="12"></textarea>
                 </label>
-                <label class="field">
-                  <span>ogDescription (only if different from description)</span>
-                  <textarea id="ogDescription" rows="2" placeholder="leave blank to fall back"></textarea>
-                </label>
-                <label class="field">
-                  <span>ogImage (only if different from hero)</span>
-                  <input type="text" id="ogImage" placeholder="leave blank to fall back" />
-                </label>
-              </div>
-            </section>
+              </section>
 
-            <section class="panel" aria-labelledby="body-heading">
-              <h2 id="body-heading">Body (markdown)</h2>
-              <label class="field">
-                <span class="sr-only">Body markdown</span>
-                <textarea id="body" rows="12"></textarea>
-              </label>
-            </section>
+              <section class="panel" aria-labelledby="internal-heading">
+                <h2 id="internal-heading">internalLinks</h2>
+                <div class="row-editor" id="internal-rows"></div>
+                <p class="btn-row" style="margin-top: 0.85rem">
+                  <button type="button" class="btn btn-ghost" id="add-internal">Add internal link</button>
+                </p>
+              </section>
 
-            <section class="panel" aria-labelledby="internal-heading">
-              <h2 id="internal-heading">internalLinks</h2>
-              <div class="row-editor" id="internal-rows"></div>
-              <p class="btn-row" style="margin-top: 0.85rem">
-                <button type="button" class="btn btn-ghost" id="add-internal">Add internal link</button>
-              </p>
-            </section>
+              <section class="panel" aria-labelledby="external-heading">
+                <h2 id="external-heading">externalLinks</h2>
+                <div class="row-editor" id="external-rows"></div>
+                <p class="btn-row" style="margin-top: 0.85rem">
+                  <button type="button" class="btn btn-ghost" id="add-external">Add external link</button>
+                </p>
+              </section>
 
-            <section class="panel" aria-labelledby="external-heading">
-              <h2 id="external-heading">externalLinks</h2>
-              <div class="row-editor" id="external-rows"></div>
-              <p class="btn-row" style="margin-top: 0.85rem">
-                <button type="button" class="btn btn-ghost" id="add-external">Add external link</button>
-              </p>
-            </section>
+              <section class="panel" aria-labelledby="faqs-heading">
+                <h2 id="faqs-heading">faqs (optional)</h2>
+                <div class="row-editor" id="faq-rows"></div>
+                <p class="btn-row" style="margin-top: 0.85rem">
+                  <button type="button" class="btn btn-ghost" id="add-faq">Add FAQ</button>
+                </p>
+              </section>
 
-            <section class="panel" aria-labelledby="faqs-heading">
-              <h2 id="faqs-heading">faqs (optional)</h2>
-              <div class="row-editor" id="faq-rows"></div>
-              <p class="btn-row" style="margin-top: 0.85rem">
-                <button type="button" class="btn btn-ghost" id="add-faq">Add FAQ</button>
-              </p>
-            </section>
+              <section class="panel" aria-labelledby="actions-heading" id="actions-panel">
+                <h2 id="actions-heading">Actions</h2>
+                <p id="collision-warning" class="alert alert-warning" hidden></p>
+                <p id="error-box" class="alert alert-error" role="alert" hidden></p>
+                <p id="success-box" class="alert alert-success" hidden></p>
+                <p id="warnings" class="warnings"></p>
+                <p id="generate-reason" class="reason-text"></p>
+                <div class="btn-row">
+                  <button type="button" class="btn btn-secondary" id="preview-jsonld">Preview JSON-LD</button>
+                  <button type="button" class="btn btn-primary" id="generate" aria-disabled="true">Add</button>
+                  <label class="check-row">
+                    <input type="checkbox" id="overwrite" />
+                    <span>Overwrite existing slug</span>
+                  </label>
+                </div>
+              </section>
 
-            <section class="panel" aria-labelledby="actions-heading" id="actions-panel">
-              <h2 id="actions-heading">Actions</h2>
-              <p id="collision-warning" class="alert alert-warning" hidden></p>
-              <p id="error-box" class="alert alert-error" role="alert" hidden></p>
-              <p id="success-box" class="alert alert-success" hidden></p>
-              <p id="warnings" class="warnings"></p>
-              <p id="generate-reason" class="reason-text"></p>
-              <div class="btn-row">
-                <button type="button" class="btn btn-secondary" id="preview-jsonld">Preview JSON-LD</button>
-                <button type="button" class="btn btn-primary" id="generate" aria-disabled="true">Add</button>
-                <label class="check-row">
-                  <input type="checkbox" id="overwrite" />
-                  <span>Overwrite existing slug</span>
-                </label>
-              </div>
-            </section>
-
-            <section class="panel" aria-labelledby="preview-heading" id="jsonld-preview-section" hidden>
-              <h2 id="preview-heading">JSON-LD preview</h2>
-              <pre id="jsonld-preview"></pre>
-            </section>
+              <section class="panel" aria-labelledby="preview-heading" id="jsonld-preview-section" hidden>
+                <h2 id="preview-heading">JSON-LD preview</h2>
+                <pre id="jsonld-preview"></pre>
+              </section>
+            </div>
           </div>
         </main>
       </div>
     </div>
 
     <div class="action-bar" aria-label="Add actions">
-      <div class="site-shell action-bar__inner">
+      <div class="site-shell action-bar__inner" data-tab="batch">
+        <div class="action-bar__status">
+          <p id="bulk-action-reason">Drop markdown and images, then Add.</p>
+        </div>
+        <div class="action-bar__controls">
+          <span class="status-pill is-blocked" id="bulk-action-pill">Not ready</span>
+          <button type="button" class="btn btn-primary" id="bulk-add" aria-disabled="true">Add</button>
+        </div>
+      </div>
+      <div class="site-shell action-bar__inner" data-tab="single" hidden>
         <div class="action-bar__status">
           <p id="action-bar-reason">Fill required fields to enable Add.</p>
         </div>

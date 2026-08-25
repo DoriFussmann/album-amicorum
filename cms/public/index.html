@@ -27,7 +27,6 @@
         <ul class="sidebar-nav">
           <li><a href="/" aria-current="page">Articles</a></li>
           <li><a href="/add-article.html">Add Article</a></li>
-          <li><a href="/bulk-add.html">Bulk Add</a></li>
           <li><a href="/articles-health.html">Articles Health</a></li>
           <li><a href="/team.html">Team</a></li>
           <li><a href="/dashboard.html">Dashboard</a></li>
@@ -44,9 +43,38 @@
           <div class="stack">
             <section class="panel" aria-labelledby="existing-heading">
               <h2 id="existing-heading">Existing articles</h2>
-              <ul class="plain-list" id="article-list">
-                <li>Loading…</li>
-              </ul>
+              <div class="filter-bar">
+                <label class="filter-bar__field">
+                  <span>Search by title</span>
+                  <input type="search" id="filter-title" placeholder="Type to filter…" />
+                </label>
+                <label class="filter-bar__field">
+                  <span>Pillar keyword</span>
+                  <select id="filter-pillar">
+                    <option value="">All pillars</option>
+                  </select>
+                </label>
+              </div>
+              <div class="table-wrap">
+                <table class="article-table">
+                  <thead>
+                    <tr>
+                      <th data-col="title">Title</th>
+                      <th data-col="draft">Draft status</th>
+                      <th data-col="date">Date</th>
+                      <th data-col="author">Author</th>
+                      <th data-col="internal">Internal links</th>
+                      <th data-col="external">External links</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="article-list">
+                    <tr>
+                      <td colspan="7">Loading…</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
             </section>
           </div>
         </main>

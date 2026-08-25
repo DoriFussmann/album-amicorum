@@ -8,89 +8,69 @@ interface Props {
 const { options } = Astro.props;
 ---
 
-<form id="articles-filters" class="mb-10 flex flex-col gap-6" role="search">
-  <div class="min-w-0 w-full max-w-xl">
-    <label for="articles-search" class="mb-2 block text-sm text-ink-muted">
-      Search by title
-    </label>
+<form id="articles-filters" class="articles-filter-bar mb-10" role="search">
+  <label class="articles-filter-bar__field" for="articles-search">
+    <span>Search by title</span>
     <input
       id="articles-search"
       name="q"
       type="search"
       autocomplete="off"
       placeholder="Search articles…"
-      class="min-h-11 w-full rounded-soft border border-border bg-canvas px-3 text-sm text-ink-heading placeholder:text-ink-muted"
     />
-  </div>
+  </label>
 
-  {
-    options.length > 0 && (
-      <div>
-        <p id="articles-filter-label" class="mb-3 text-sm text-ink-muted">
-          Filter by pillar
-        </p>
-        <div
-          id="articles-topic-group"
-          class="flex flex-wrap items-center gap-x-5 gap-y-3"
-          role="group"
-          aria-labelledby="articles-filter-label"
-        >
-          <button
-            type="button"
-            data-topic=""
-            aria-pressed="true"
-            class="article-filter-chip"
-          >
-            All
-          </button>
-          {options.map((option) => (
-            <button
-              type="button"
-              data-topic={option.value}
-              aria-pressed="false"
-              class="article-filter-chip"
-            >
-              {option.label}
-            </button>
-          ))}
-        </div>
-        <input id="articles-topic" name="topic" type="hidden" value="" />
-      </div>
-    )
-  }
+  <label class="articles-filter-bar__field" for="articles-topic">
+    <span>Pillar keyword</span>
+    <select id="articles-topic" name="topic">
+      <option value="">All pillars</option>
+      {options.map((option) => (
+        <option value={option.value}>{option.label}</option>
+      ))}
+    </select>
+  </label>
 </form>
 
 <style>
-  .article-filter-chip {
-    min-height: 2.75rem;
-    border: 0;
-    border-bottom: 2px solid transparent;
-    background: transparent;
-    padding: 0.25rem 0.15rem;
-    font-family: inherit;
-    font-size: 0.875rem;
+  .articles-filter-bar {
+    display: flex;
+    gap: 1rem;
+    width: 100%;
+  }
+
+  .articles-filter-bar__field {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.8rem;
     font-weight: 600;
-    letter-spacing: 0.01em;
-    color: #6b6358;
-    cursor: pointer;
-    transition:
-      color 280ms ease,
-      border-color 280ms ease;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-muted, #6b6358);
   }
 
-  .article-filter-chip:hover {
+  .articles-filter-bar__field input,
+  .articles-filter-bar__field select {
+    width: 100%;
+    min-height: 2.75rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--color-border, #ddd8ce);
+    border-radius: 8px;
+    background: #fff;
+    font: inherit;
+    font-size: 0.9rem;
+    font-weight: 400;
+    letter-spacing: 0;
+    text-transform: none;
     color: #3b3530;
   }
 
-  .article-filter-chip:focus-visible {
-    outline: 2px solid #4e684e;
-    outline-offset: 4px;
-    border-radius: 2px;
-  }
-
-  .article-filter-chip[aria-pressed='true'] {
-    border-bottom-color: #4e684e;
-    color: #3b3530;
+  @media (max-width: 639px) {
+    .articles-filter-bar {
+      flex-direction: column;
+    }
   }
 </style>
 
@@ -98,7 +78,6 @@ const { options } = Astro.props;
   const form = document.getElementById('articles-filters');
   const searchInput = document.getElementById('articles-search');
   const topicInput = document.getElementById('articles-topic');
-  const topicGroup = document.getElementById('articles-topic-group');
   const emptyMessage = document.getElementById('articles-empty');
   const grid = document.getElementById('articles-grid');
   const pagination = document.querySelector('[data-articles-pagination]');
@@ -106,30 +85,15 @@ const { options } = Astro.props;
   if (
     form instanceof HTMLFormElement &&
     searchInput instanceof HTMLInputElement &&
+    topicInput instanceof HTMLSelectElement &&
     emptyMessage instanceof HTMLElement &&
     grid instanceof HTMLElement
   ) {
     const items = [...grid.querySelectorAll<HTMLElement>(':scope > li')];
-    const chips =
-      topicGroup instanceof HTMLElement
-        ? [...topicGroup.querySelectorAll<HTMLButtonElement>('button[data-topic]')]
-        : [];
-
-    const getTopic = () =>
-      topicInput instanceof HTMLInputElement ? topicInput.value : '';
-
-    const setTopic = (topic: string) => {
-      if (topicInput instanceof HTMLInputElement) {
-        topicInput.value = topic;
-      }
-      for (const chip of chips) {
-        chip.setAttribute('aria-pressed', String(chip.dataset.topic === topic));
-      }
-    };
 
     const applyFilters = () => {
       const query = searchInput.value.trim().toLowerCase();
-      const topic = getTopic();
+      const topic = topicInput.value;
       let visibleCount = 0;
 
       for (const item of items) {
@@ -152,15 +116,15 @@ const { options } = Astro.props;
       const params = new URLSearchParams(window.location.search);
       searchInput.value = params.get('q') ?? '';
       const topic = params.get('topic') ?? '';
-      const valid = !topic || chips.some((chip) => chip.dataset.topic === topic);
-      setTopic(valid ? topic : '');
+      const valid = !topic || [...topicInput.options].some((opt) => opt.value === topic);
+      topicInput.value = valid ? topic : '';
       applyFilters();
     };
 
     const writeParams = () => {
       const params = new URLSearchParams();
       const query = searchInput.value.trim();
-      const topic = getTopic();
+      const topic = topicInput.value;
       if (query) params.set('q', query);
       if (topic) params.set('topic', topic);
       const next = params.toString();
@@ -173,13 +137,10 @@ const { options } = Astro.props;
       applyFilters();
     });
 
-    for (const chip of chips) {
-      chip.addEventListener('click', () => {
-        setTopic(chip.dataset.topic ?? '');
-        writeParams();
-        applyFilters();
-      });
-    }
+    topicInput.addEventListener('change', () => {
+      writeParams();
+      applyFilters();
+    });
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();

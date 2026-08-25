@@ -1,15 +1,21 @@
 :root {
-  --primary: #4e684e;
+  --color-accent: #1d4e89;
+  --color-accent-hover: #163a66;
+  --color-muted: #57534e;
+  --color-border: #e7e5e4;
+  --color-bg: #fafaf7;
+  --color-surface: #ffffff;
+  --primary: var(--color-accent);
   --primary-soft: #7a9e7e;
-  --canvas: #faf8f4;
-  --surface: #f3efe8;
+  --canvas: var(--color-bg);
+  --surface: var(--color-surface);
   --oatmeal: #ede6da;
-  --border: #ddd8ce;
+  --border: var(--color-border);
   --border-soft: #e8e2d6;
   --ink: #5a5248;
   --ink-heading: #3b3530;
-  --ink-muted: #6b6358;
-  --accent: #b8963e;
+  --ink-muted: var(--color-muted);
+  --accent: var(--color-accent);
   --success: #4e684e;
   --warning: #c4a35a;
   --error: #b97070;
@@ -78,7 +84,7 @@ p {
 }
 
 a {
-  color: var(--primary);
+  color: var(--color-accent);
   text-underline-offset: 4px;
   transition: color var(--ease);
 }
@@ -93,7 +99,7 @@ input:focus-visible,
 textarea:focus-visible,
 select:focus-visible,
 .dropzone:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -480,14 +486,14 @@ select:focus {
 }
 
 .btn-primary {
-  background: var(--primary);
-  color: var(--canvas);
+  background: var(--color-accent);
+  color: #fff;
   box-shadow: var(--shadow-soft);
 }
 
 .btn-primary:hover {
-  background: var(--ink-heading);
-  color: var(--canvas);
+  background: var(--color-accent-hover);
+  color: #fff;
 }
 
 .btn-secondary {
@@ -533,8 +539,8 @@ select:focus {
 .btn.is-disabled:hover,
 .btn[aria-disabled='true']:hover {
   transform: none;
-  background: var(--primary);
-  color: var(--canvas);
+  background: var(--color-accent);
+  color: #fff;
 }
 
 .btn-row {
@@ -684,7 +690,7 @@ button.status-pill {
 }
 
 .status-pill--toggle:focus-visible {
-  outline: 2px solid var(--primary);
+  outline: 2px solid var(--color-accent);
   outline-offset: 2px;
 }
 
@@ -1382,6 +1388,112 @@ pre {
 .health-confidence.is-high { box-shadow: inset 0 0 0 1px var(--success); }
 .health-confidence.is-borderline { box-shadow: inset 0 0 0 1px var(--warning); }
 
+.tab-bar {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--color-border, #e5e7eb);
+  margin-bottom: 1.5rem;
+}
+.tab-btn {
+  padding: 0.6rem 1.25rem;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 600;
+  color: var(--color-muted, #6b7280);
+  transition: color 0.15s, border-color 0.15s;
+}
+.tab-btn[aria-selected="true"] {
+  color: var(--color-accent, #1d4e89);
+  border-bottom-color: var(--color-accent, #1d4e89);
+}
+.tab-btn:hover {
+  color: var(--color-accent, #1d4e89);
+}
+
+.dropzone__sub {
+  font-size: 0.8rem;
+  opacity: 0.65;
+  margin-top: 0.25rem;
+}
+
+.filter-bar {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+.filter-bar__field {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-muted, #6b7280);
+}
+.filter-bar__field input,
+.filter-bar__field select {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--color-border, #e5e7eb);
+  font: inherit;
+  font-size: 0.9rem;
+  background: white;
+}
+
+.article-table tbody tr:hover td {
+  background: #f5f4f0;
+}
+
+.article-table .article-item__title,
+.article-table .article-item__slug {
+  display: block;
+}
+
+th[data-col] {
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+th[data-col]:hover {
+  color: var(--color-accent, #1d4e89);
+}
+th[data-col].sort-asc::after {
+  content: " ▲";
+  font-size: 0.7em;
+}
+th[data-col].sort-desc::after {
+  content: " ▼";
+  font-size: 0.7em;
+}
+
+.article-table .article-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.live-url-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.25rem;
+  min-height: 2.25rem;
+  text-decoration: none;
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.action-bar__inner[hidden] {
+  display: none !important;
+}
+
 .dropzone--tall {
   min-height: 10rem;
 }
@@ -1413,4 +1525,11 @@ pre {
 
 .bulk-table .bulk-error {
   color: var(--error);
+}
+
+.bulk-table tr.is-blocked td {
+  background: #fef2f2;
+}
+.bulk-table tr.is-ready td {
+  background: #f0fdf4;
 }
