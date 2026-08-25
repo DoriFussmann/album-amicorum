@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-25
 keywords:
   - smartphone free childhood alternatives
   - screen free childhood
@@ -33,6 +33,13 @@ faqs:
     answer: "Start by stocking your home with open-ended analog materials: art supplies, board games, building sets, journals, and illustrated books. Boredom itself is valuable — research consistently shows it drives creativity and problem-solving — but children need the raw materials to convert boredom into something satisfying. A weekly rhythm of anchor activities (a craft night, an outdoor ritual, a free-play afternoon) also helps so that screen-free time feels full rather than empty."
   - question: At what age should a child get a smartphone, according to current research?
     answer: Researcher Jonathan Haidt and organizations like Smartphone Free Childhood recommend delaying smartphone access until at least age 14 (high school), and social media until 16. These recommendations are based on research linking early smartphone and social media adoption with significantly higher rates of anxiety, depression, and disrupted development. Many families find that coordinating this delay with other parents in their community makes it far more manageable for their child socially.
+externalLinks:
+  - label: "Childhood Friendships: Impact and Role Across Life Stages"
+    url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+  - label: Children's friendship quality trajectories from middle childhood ...
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/
+  - label: Friendship Statistics
+    url: https://www.kutestkids.com/blog/friendship-statistics
 ---
 
 ## The First Question Isn't "What Do I Give Them?" — It's "What Did the Phone Actually Do?"
@@ -125,3 +132,5 @@ The organization now counts over 140,000 parents from 13,500 schools who have si
  As the movement has grown, so has parental demand for concrete alternatives — and recent reporting from mid-2026 confirms that the question of what children actually do instead has become the central practical challenge for families acting on these convictions, driving renewed interest in analog social tools, open-ended craft materials, and structured keepsake products that give children a tangible, screen-free social life. 
 Home phones are quietly making a comeback as families search for ways to give children independence without the downsides of a smartphone
  — a small but telling sign that the movement is moving beyond ideology and into the everyday logistics of a different kind of childhood.
+
+For further reading, see the Sources listed below.

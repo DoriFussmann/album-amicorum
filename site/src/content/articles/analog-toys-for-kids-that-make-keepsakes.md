@@ -36,6 +36,22 @@ faqs:
     answer: "Start with a ritual: introduce the toy at a meaningful moment (a birthday, the first day of summer, a new school year) so it carries context from the start. Keep it accessible — on a shelf at eye level, not buried in a toy box. For Friend Books and journals, let the child be the keeper with genuine ownership over who fills it and when. Children protect and return to things they feel are genuinely theirs."
   - question: Is a Friend Book appropriate as a classroom or party gift?
     answer: Absolutely — a Friend Book is one of the few gifts that genuinely improves with the social setting of a classroom or birthday party. Unlike a toy that one child takes home and uses alone, a Friend Book invites the whole group to contribute. It can be passed around at a party, filled by classmates over a school year, or sent home with a child at the end of a playdate. The more people contribute, the more irreplaceable it becomes.
+internalLinks:
+  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+    url: /articles/analog-toys-for-kids-questions-answered/
+  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+    url: /articles/analog-toys-for-kids/
+  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+    url: /articles/analog-toys-vs-digital-toys-for-kids/
+  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
+    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+externalLinks:
+  - label: Surveying Parents of Preschool Children about Digital and ...
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
+  - label: Intentional toys for kids of different ages?
+    url: https://www.facebook.com/groups/thehomeschoolmeltinghub/posts/878933694556888/
+  - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
+    url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
 ---
 
 Every parent has stood in a toy aisle — or scrolled through an endless online grid — and felt a creeping suspicion: most of this will be forgotten by February. Not broken, not outgrown, just quietly abandoned. The battery-operated gadget goes silent. The fad collectible loses its novelty. The digital game updates itself into something unrecognizable. What survives? The things that leave a mark. The sketchbook filled over a rainy summer. The weaving that hangs on a bedroom wall for years. The book passed around a classroom, slowly filling with a friend's handwriting, a cousin's terrible drawing of a dog, a best friend's secret favorite color.
@@ -155,3 +171,7 @@ The global wooden toy market was valued at roughly USD 33.9 billion this year an
 
 Industry observers at Toy Fair 2026 described a growing appetite for play that inspires creativity and self-expression, framing it as a "conscious reset" in which screen-free play serves as a dedicated space for emotional regulation and human connection rather than simply a rejection of technology — resulting in a surge in demand for toys that feel intentional, calming, and human-centered. Pinterest's 2026 Parenting Report reinforced this cultural direction, noting that parents are actively focused on creating an "analog, grounded childhood" centered on craft activities and meaningful hands-on experiences.
  No major disruptions or reversals of this trend have surfaced in recent weeks; market data and cultural signals continue to point in the same direction, suggesting that demand for intentional, keepsake-quality analog toys is a durable shift rather than a passing moment.
+
+See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

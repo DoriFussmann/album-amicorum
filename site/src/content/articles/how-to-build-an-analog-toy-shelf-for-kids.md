@@ -36,6 +36,22 @@ faqs:
     answer: You can start as early as age two with simple tactile materials, but the curated analog shelf approach described here is especially effective for ages 5–12, when children develop stronger independent play, social interests, and the capacity to invest in longer projects like cooperative games, craft kits, and social keepsake books.
   - question: How do I stop the shelf from getting cluttered again after I've organized it?
     answer: "Introduce a one-in, one-out rule: before any new toy joins the shelf, one existing item is donated, stored for rotation, or passed along to a friend. Seasonal audits — perhaps at the start of each school term — keep the collection intentional and help children appreciate what they have rather than accumulating out of habit."
+internalLinks:
+  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+    url: /articles/analog-toys-for-kids-questions-answered/
+  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
+    url: /articles/analog-toys-for-kids-that-make-keepsakes/
+  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+    url: /articles/analog-toys-for-kids/
+  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+    url: /articles/analog-toys-vs-digital-toys-for-kids/
+externalLinks:
+  - label: Why Aesthetic Playrooms Don't Work (and what to do instead)
+    url: https://www.youtube.com/watch?v=Tw9Hs1EoEc8
+  - label: Houseful of Handmade's post
+    url: https://www.facebook.com/housefulofhandmade/photos/d41d8cd9/1320012385617488/
+  - label: Kids Toy Storage Solutions Only Work When Kids Can Use ...
+    url: https://www.youtube.com/watch?v=NUSe8OLebFE
 ---
 
 ## Start With the Audit: Know What You Actually Have
@@ -121,3 +137,7 @@ In February 2026, the Toy Association unveiled its official 2026 Toy & Play Tren
 
 As digital life speeds up, the Cozy Culture trend reflects a growing fondness for low-tech and no-tech play experiences that help families counterbalance constant digital overstimulation, with consumers embracing toys that prioritize comfort and engage the senses through tactile materials, gentle interactivity, and natural design aesthetics.
  Separately, practical guidance on toy organization and decluttering has gained visibility in mainstream outlets this spring and summer, with recent reporting emphasising less-is-more frameworks and child-height, rotation-based shelf setups as the most accessible entry point for parents looking to shift away from cluttered, screen-heavy playrooms. The topic of analog toy curation remains stable and growing, with no sign of reversal.
+
+See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

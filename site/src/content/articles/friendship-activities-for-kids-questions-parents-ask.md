@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-19
+updatedDate: 2026-08-25
 keywords:
   - friendship activities for kids questions parents ask (no volume data)
   - friendship activities for kids
@@ -33,6 +33,13 @@ faqs:
     answer: Minor friction during shared creative activities is normal and actually useful — it gives children low-stakes practice in negotiation and repair. The most helpful parent response is to briefly acknowledge the disagreement and redirect to the physical material. Named sections or clearly divided materials make redirecting much easier, because there is always an obvious 'yours' and 'theirs' to return to.
   - question: Can friendship activities work for children who are in different school years or age groups?
     answer: Yes, and mixed-age pairings can work especially well when the activity is creative rather than competitive. A slightly older child naturally takes a guiding role — explaining, demonstrating — which builds confidence on their side, while the younger child benefits from a more patient collaborator than a same-age peer might be. The key is choosing an open-ended task with no 'right' answer, so neither child feels judged by the other's output.
+externalLinks:
+  - label: 5 Ways To Organize Keepsakes For Your Children
+    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: How to Create Meaningful Memory Boxes for Your Kids!
+    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
+  - label: What to keep in children's memory boxes?
+    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
 ---
 
 # Friendship Activities for Kids: Parent Questions Answered
@@ -116,3 +123,5 @@ some elementary-age children who appear unsociable actually prefer solitary time
  Meanwhile, 
 recent commentary has noted that summer can quietly become one of the loneliest times of year for children, precisely because the school year provides the structure — clear expectations, daily peer contact, sports and clubs — that organically sustains friendship.
  Taken together, these threads point in the same direction: children do not need more activities so much as they need more intentional, low-pressure opportunities to connect — and something tangible to show that the connection was real.
+
+For further reading, see the Sources listed below.

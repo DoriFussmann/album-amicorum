@@ -36,6 +36,22 @@ faqs:
     answer: "The best friendship-building toys share a few traits: they require two or more children to participate, they leave room for conversation and negotiation, they produce a shared outcome or experience, and ideally they create something physical or tangible that can be revisited. Toys that demand turn-taking, shared storytelling, or collaboration consistently outperform solo-use or screen-mediated toys for the depth of peer connection they generate."
   - question: Are Friend Books an appropriate activity for children who aren't strong writers yet?
     answer: Absolutely. Friend Books like Album Amicorum's are designed to capture more than words — children can draw, doodle, choose favorite colors, or simply leave a handprint alongside a short message. The tactile, personal nature of contributing to a friend's book is meaningful regardless of writing ability, making them wonderful for a wide range of ages across the 5–12 bracket.
+internalLinks:
+  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+    url: /articles/analog-toys-for-kids-questions-answered/
+  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
+    url: /articles/analog-toys-for-kids-that-make-keepsakes/
+  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+    url: /articles/analog-toys-for-kids/
+  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
+    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+externalLinks:
+  - label: Surveying Parents of Preschool Children about Digital and ...
+    url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
+  - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
+    url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+  - label: Towards a better protection of children's personal data ...
+    url: https://digitalfreedomfund.org/towards-a-better-protection-of-childrens-personal-data-collected-by-connected-toys-and-devices/
 ---
 
 When parents talk about the toy aisle — physical or virtual — the conversation almost always collapses into a familiar binary: screens are bad, wooden blocks are good. But that framing misses the more interesting and practically useful question, which is not about quality or safety or screen time in the abstract. It's about *connection*. Specifically: which type of toy actually builds the kind of deep, lasting friendship between children that parents hope their kids will carry into adulthood? The answer, when you look at the research, is more nuanced than the culture war suggests — but it does have a clear winner when friendship is the goal.
@@ -119,3 +135,7 @@ the viral #analogbag trend — originating with a creator sharing a bag of offli
  reflecting the same underlying appetite for screen-free, tangible experience. A 2026 systematic review published in a peer-reviewed education journal also reinforced the complementary value of both play types, finding that 
 integrating both physical and digital games into educational settings can boost engagement and motivation, and that games enhance problem-solving and promote collaborative learning
  — while separately confirming that the relational richness of face-to-face, analog interaction remains distinct and difficult to replicate digitally.
+
+See Related below for more on this topic.
+
+For further reading, see the Sources listed below.

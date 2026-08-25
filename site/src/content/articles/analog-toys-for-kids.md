@@ -35,6 +35,22 @@ faqs:
     answer: Research consistently shows that significantly more parent–child verbal interaction occurs during analog play than during digital play, and that children engage in richer back-and-forth communication when toys are physical and open-ended. Analog toys also invite cooperative and imaginative play with peers — building negotiation, empathy, and shared storytelling — in ways that pre-programmed digital experiences rarely can. A friendship keepsake book, for example, transforms the social act of making friends into a tangible, lasting record of those bonds.
   - question: How is a Friend Book different from an ordinary journal or diary?
     answer: "A Friend Book is not a private record kept by one child, but a collaborative keepsake that travels between friends. Each friend fills in their own pages: handwritten answers, drawings, favorite things, and personal messages. The result is a one-of-a-kind collection of handwritten voices that can never be recreated digitally. Unlike a diary, it is inherently social and grows more meaningful over time as the friendships it captures deepen — making it one of the rare analog toys that becomes more valuable with every passing year."
+internalLinks:
+  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+    url: /articles/analog-toys-for-kids-questions-answered/
+  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
+    url: /articles/analog-toys-for-kids-that-make-keepsakes/
+  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+    url: /articles/analog-toys-vs-digital-toys-for-kids/
+  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
+    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+externalLinks:
+  - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
+    url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+  - label: Buy Real Toys - by Katherine Martinko - The Analog Family
+    url: https://katherinemartinko.substack.com/p/buy-real-toys
+  - label: Best Open-Ended Toys According to a Pediatrician Mom
+    url: https://chalkacademy.com/10-best-toys-open-ended-learning/
 ---
 
 ## What Are Analog Toys — and Why Do They Still Matter?
@@ -168,3 +184,7 @@ play-based learning has a positive impact on children's cognitive, language, soc
  lending academic weight to what many parents already feel intuitively. 
 The broader trend — investing in fewer, better-designed products that support how children actually grow — shows no sign of slowing,
  and screen-free, analog gift guides from major consumer media outlets published through mid-2026 reflect sustained and growing demand for this category. No major regulatory or market disruptions to the analog toy space have emerged in the past 45 days; the story remains one of steady, values-driven growth.
+
+See Related below for more on this topic.
+
+For further reading, see the Sources listed below.
