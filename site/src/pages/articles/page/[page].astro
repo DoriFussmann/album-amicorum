@@ -4,34 +4,28 @@ import { getCollection } from 'astro:content';
 import ArticlesFilters from '../../../components/ArticlesFilters.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { SITE_NAME } from '../../../config/site';
-import { articlePillarKeyword, buildArticleFilterOptions } from '../../../lib/articleFilters';
+import {
+  articleLatestDate,
+  articlePillarKeyword,
+  buildArticleFilterOptions,
+} from '../../../lib/articleFilters';
 
 export async function getStaticPaths() {
-  const PAGE_SIZE = 9;
-  const all = (await getCollection('articles'))
-    .filter((a) => !a.data.draft)
-    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+  const all = (await getCollection('articles')).filter((a) => !a.data.draft);
+  // Keep legacy /articles/page/N/ URLs working; listing is now the full set.
+  if (all.length <= 9) return [];
 
-  const totalPages = Math.ceil(all.length / PAGE_SIZE);
-  // Pages 2..N only — page 1 lives at /articles/
-  if (totalPages <= 1) return [];
-
-  return Array.from({ length: totalPages - 1 }, (_, i) => {
-    const pageNum = i + 2;
-    const start = (pageNum - 1) * PAGE_SIZE;
-    return {
-      params: { page: String(pageNum) },
-      props: {
-        pageArticles: all.slice(start, start + PAGE_SIZE),
-        allArticles: all,
-        currentPage: pageNum,
-        totalPages,
-      },
-    };
-  });
+  const totalPages = Math.ceil(all.length / 9);
+  return Array.from({ length: totalPages - 1 }, (_, i) => ({
+    params: { page: String(i + 2) },
+  }));
 }
 
-const { pageArticles, allArticles, currentPage, totalPages } = Astro.props;
+const allArticles = (await getCollection('articles'))
+  .filter((a) => !a.data.draft)
+  .sort(
+    (a, b) => articleLatestDate(b.data).valueOf() - articleLatestDate(a.data).valueOf()
+  );
 
 const filterOptions = buildArticleFilterOptions(allArticles.map((a) => a.data));
 
@@ -40,9 +34,9 @@ const formatDate = (d: Date) =>
 ---
 
 <BaseLayout
-  title={`Articles — Page ${currentPage} — ${SITE_NAME}`}
+  title={`Articles — ${SITE_NAME}`}
   description={`Browse all published articles from ${SITE_NAME}.`}
-  canonicalPath={`/articles/page/${currentPage}/`}
+  canonicalPath="/articles/"
 >
   <section aria-labelledby="articles-heading" class="section-space">
     <div class="site-container">
@@ -59,9 +53,9 @@ const formatDate = (d: Date) =>
 
       <ul id="articles-grid" class="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3">
         {
-          pageArticles.map((article) => {
+          allArticles.map((article) => {
             const articleUrl = `/articles/${article.data.slug}/`;
-            const displayDate = article.data.updatedDate || article.data.date;
+            const displayDate = articleLatestDate(article.data);
             return (
               <li
                 class="article-card"
@@ -94,36 +88,6 @@ const formatDate = (d: Date) =>
           })
         }
       </ul>
-
-      <nav aria-label="Pagination" class="mt-16" data-articles-pagination>
-        <ul class="flex flex-wrap items-center justify-center gap-4">
-          <li>
-            <a
-              class="btn btn-secondary"
-              href={currentPage === 2 ? '/articles/' : `/articles/page/${currentPage - 1}/`}
-            >
-              Previous
-            </a>
-          </li>
-          <li>
-            <span
-              aria-current="page"
-              class="inline-flex min-h-11 items-center px-3 text-sm text-ink-muted"
-            >
-              Page {currentPage} of {totalPages}
-            </span>
-          </li>
-          {
-            currentPage < totalPages && (
-              <li>
-                <a class="btn btn-secondary" href={`/articles/page/${currentPage + 1}/`}>
-                  Next
-                </a>
-              </li>
-            )
-          }
-        </ul>
-      </nav>
     </div>
   </section>
 </BaseLayout>

@@ -20,6 +20,16 @@ type ArticleKeywordFields = {
   category?: string | undefined;
 };
 
+type ArticleDateFields = {
+  date: Date;
+  updatedDate?: Date | undefined;
+};
+
+/** Newest-first timestamp: updatedDate when present, otherwise date. */
+export function articleLatestDate(article: ArticleDateFields): Date {
+  return article.updatedDate ?? article.date;
+}
+
 /** Company pillar keyword for an article (frontmatter, with category fallback). */
 export function articlePillarKeyword(
   article: ArticleKeywordFields
