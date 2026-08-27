@@ -12,7 +12,7 @@ tags:
   - parenting
   - digital wellness
   - childhood
-image: ../../assets/articles/smartphone-free-childhood-pact/hero.png
+image: ../../assets/articles/smartphone-free-childhood-pact.png
 imageAlt: A parent and child sitting together at a wooden kitchen table, signing a piece of paper with a pen, surrounded by books and a simple brick phone, warm natural light
 robots: index, follow
 schemaType: BlogPosting

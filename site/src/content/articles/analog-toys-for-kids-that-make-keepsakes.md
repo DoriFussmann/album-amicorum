@@ -11,7 +11,7 @@ tags:
   - screen-free gifts
   - childhood memories
   - friendship gifts for kids
-image: ../../assets/articles/analog-toys-for-kids-that-make-keepsakes/hero.png
+image: ../../assets/articles/analog-toys-for-kids-that-make-keepsakes.png
 imageAlt: A flat-lay of analog toys for kids including a watercolor set, a weaving loom, a nature journal, and an illustrated Friend Book open to a handwritten page
 robots: index, follow
 schemaType: BlogPosting
@@ -37,14 +37,14 @@ faqs:
   - question: Is a Friend Book appropriate as a classroom or party gift?
     answer: Absolutely — a Friend Book is one of the few gifts that genuinely improves with the social setting of a classroom or birthday party. Unlike a toy that one child takes home and uses alone, a Friend Book invites the whole group to contribute. It can be passed around at a party, filled by classmates over a school year, or sent home with a child at the end of a playdate. The more people contribute, the more irreplaceable it becomes.
 internalLinks:
-  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
-    url: /articles/analog-toys-for-kids-questions-answered/
-  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
-    url: /articles/analog-toys-for-kids/
-  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
-    url: /articles/analog-toys-vs-digital-toys-for-kids/
-  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
-    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+  - slug: analog-toys-for-kids-questions-answered
+    anchor: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+  - slug: analog-toys-for-kids
+    anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+  - slug: analog-toys-vs-digital-toys-for-kids
+    anchor: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+  - slug: how-to-build-an-analog-toy-shelf-for-kids
+    anchor: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/

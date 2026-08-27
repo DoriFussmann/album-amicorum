@@ -12,7 +12,7 @@ tags:
   - children's development
   - slow childhood
   - childhood keepsakes
-image: ../../assets/articles/structured-friendship-activities-vs-free-play/hero.png
+image: ../../assets/articles/structured-friendship-activities-vs-free-play.png
 imageAlt: Two children sitting together at a wooden table, one drawing in a colorful book while the other laughs and points at the page
 robots: index, follow
 schemaType: BlogPosting

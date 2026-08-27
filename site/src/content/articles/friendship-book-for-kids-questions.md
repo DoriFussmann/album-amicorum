@@ -11,7 +11,7 @@ tags:
   - childhood keepsakes
   - kids gift ideas
   - keepsake gifts for children
-image: ../../assets/articles/friendship-book-for-kids-questions/hero.png
+image: ../../assets/articles/friendship-book-for-kids-questions.png
 imageAlt: A child handing an open illustrated friendship book to a smiling friend at a wooden table, surrounded by colored pencils and handwritten pages
 robots: index, follow
 schemaType: BlogPosting
@@ -37,16 +37,16 @@ faqs:
   - question: Is a friendship book a good idea for a child who is moving to a new school?
     answer: "It may be the single best time to have one. Giving a child a friendship book before a big transition lets current friends fill pages before the move — preserving those relationships in handwriting and drawings rather than letting them fade. It also gives the child a conversation starter with new friends: a visible record that says their friendships are worth keeping."
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
-  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-    url: /articles/friendship-book-for-kids/
-  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
-    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
-  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
-    url: /articles/how-to-start-a-friendship-book-for-kids/
-  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
-    url: /articles/when-to-give-a-friendship-book-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+  - slug: friendship-book-for-kids
+    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
+    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+  - slug: how-to-start-a-friendship-book-for-kids
+    anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+  - slug: when-to-give-a-friendship-book-for-kids
+    anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
 externalLinks:
   - label: Five Great Picture Books About Friendship for K-1!
     url: https://susanjonesteaching.com/picture-books-about-friendship-read-alouds-for-kindergarten-first-and-second-grade/

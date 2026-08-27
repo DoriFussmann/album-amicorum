@@ -12,7 +12,7 @@ tags:
   - kids activities at home
   - slow childhood
   - children's friendship keepsakes
-image: ../../assets/articles/how-to-do-friendship-activities-at-home-with-kids/hero.png
+image: ../../assets/articles/how-to-do-friendship-activities-at-home-with-kids.png
 imageAlt: Two children sitting at a wooden table covered with colored pencils, paper, and open illustrated books, drawing and writing together during a friendship activity afternoon at home
 robots: index, follow
 schemaType: BlogPosting

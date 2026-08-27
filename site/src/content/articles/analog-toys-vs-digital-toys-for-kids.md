@@ -11,7 +11,7 @@ tags:
   - childhood friendship
   - screen-free play
   - kids connection
-image: ../../assets/articles/analog-toys-vs-digital-toys-for-kids/hero.png
+image: ../../assets/articles/analog-toys-vs-digital-toys-for-kids.png
 imageAlt: Two children sitting together on a wooden floor, laughing and writing in a colorful illustrated book during a playdate, with no screens in sight
 robots: index, follow
 schemaType: BlogPosting
@@ -37,14 +37,14 @@ faqs:
   - question: Are Friend Books an appropriate activity for children who aren't strong writers yet?
     answer: Absolutely. Friend Books like Album Amicorum's are designed to capture more than words — children can draw, doodle, choose favorite colors, or simply leave a handprint alongside a short message. The tactile, personal nature of contributing to a friend's book is meaningful regardless of writing ability, making them wonderful for a wide range of ages across the 5–12 bracket.
 internalLinks:
-  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
-    url: /articles/analog-toys-for-kids-questions-answered/
-  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
-    url: /articles/analog-toys-for-kids-that-make-keepsakes/
-  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
-    url: /articles/analog-toys-for-kids/
-  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
-    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+  - slug: analog-toys-for-kids-questions-answered
+    anchor: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+  - slug: analog-toys-for-kids-that-make-keepsakes
+    anchor: 10 Analog Toys for Kids That Create Something Worth Keeping
+  - slug: analog-toys-for-kids
+    anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+  - slug: how-to-build-an-analog-toy-shelf-for-kids
+    anchor: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/

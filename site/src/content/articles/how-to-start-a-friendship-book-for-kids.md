@@ -11,7 +11,7 @@ tags:
   - childhood keepsakes
   - how to start a friendship book
   - kids activities
-image: ../../assets/articles/how-to-start-a-friendship-book-for-kids/hero.png
+image: ../../assets/articles/how-to-start-a-friendship-book-for-kids.png
 imageAlt: A child sitting at a wooden table opening a beautifully illustrated friendship book, colored pencils spread nearby, warm natural light filling the room
 robots: index, follow
 schemaType: BlogPosting
@@ -37,16 +37,16 @@ faqs:
   - question: Can a friendship book double as a birthday or going-away gift?
     answer: Absolutely — and it's one of the most thoughtful ways to give one. Presenting a friendship book at a birthday party gives the child an immediate reason to start passing it around, and friends who are present can fill a page that same day. For a child who is moving away, a book that friends fill at a farewell gathering becomes an instant, irreplaceable record of that chapter of life.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
-  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
-    url: /articles/friendship-book-for-kids-questions/
-  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-    url: /articles/friendship-book-for-kids/
-  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
-    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
-  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
-    url: /articles/when-to-give-a-friendship-book-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+  - slug: friendship-book-for-kids-questions
+    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+  - slug: friendship-book-for-kids
+    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
+    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+  - slug: when-to-give-a-friendship-book-for-kids
+    anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
 externalLinks:
   - label: How To Make Friends For Kids
     url: https://www.amazon.com/how-make-friends-kids/s?k=how+to+make+friends+for+kids

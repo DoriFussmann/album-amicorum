@@ -12,7 +12,7 @@ tags:
   - Friend Books & Friendship Keepsakes
   - album amicorum
   - childhood keepsakes
-image: ../../assets/articles/album-amicorum-history/hero.png
+image: ../../assets/articles/album-amicorum-history.png
 imageAlt: Open illustrated album amicorum from the early modern period showing handwritten entries, coats of arms, and decorative drawings on aged paper pages
 robots: index, follow
 schemaType: BlogPosting
@@ -34,8 +34,8 @@ faqs:
   - question: How is the album amicorum tradition connected to modern yearbooks?
     answer: Researchers have traced the modern school yearbook tradition in the United States directly back to the album amicorum, brought over by German immigrants in the 18th century. The impulse — collecting signatures, drawings, and messages from classmates and teachers at a meaningful moment in life — is the same one that produced the earliest Stammbücher at Wittenberg nearly 500 years ago.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 externalLinks:
   - label: "Helping Kids Make Friends: A Gift Guide"
     url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/

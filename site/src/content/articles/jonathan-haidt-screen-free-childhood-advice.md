@@ -12,7 +12,7 @@ tags:
   - childhood friendship & connection
   - phone free parenting
   - anxious generation
-image: ../../assets/articles/jonathan-haidt-screen-free-childhood-advice/hero.png
+image: ../../assets/articles/jonathan-haidt-screen-free-childhood-advice.png
 imageAlt: A child writing in a beautifully illustrated friend book at a wooden table, surrounded by colored pencils and paper, with no screens in sight
 robots: index, follow
 schemaType: BlogPosting

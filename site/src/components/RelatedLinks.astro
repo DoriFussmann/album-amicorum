@@ -1,11 +1,6 @@
 ---
-interface LinkItem {
-  label: string;
-  url: string;
-}
-
 interface Props {
-  links: LinkItem[];
+  links: { slug: string; anchor: string }[];
 }
 
 const { links } = Astro.props;
@@ -18,7 +13,7 @@ const { links } = Astro.props;
       links.map((link) => (
         <li>
           <a
-            href={link.url}
+            href={`/articles/${link.slug}/`}
             target="_blank"
             rel="noopener noreferrer"
             class="group inline-flex min-h-11 items-center gap-2 text-primary no-underline hover:underline"
@@ -37,7 +32,7 @@ const { links } = Astro.props;
                 stroke-linejoin="round"
               />
             </svg>
-            {link.label}
+            {link.anchor}
           </a>
         </li>
       ))

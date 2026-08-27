@@ -12,7 +12,7 @@ tags:
   - analog parenting
   - slow childhood
   - kids and screens
-image: ../../assets/articles/screen-free-childhood/hero.png
+image: ../../assets/articles/screen-free-childhood.png
 imageAlt: A child writing in a beautifully illustrated friend book at a wooden table surrounded by colored pencils, with sunlight streaming through a window
 robots: index, follow
 schemaType: BlogPosting

@@ -12,7 +12,7 @@ tags:
   - childhood memories
   - kids social skills
   - friend books for kids
-image: ../../assets/articles/friendship-activities-for-kids-questions-parents-ask/hero.png
+image: ../../assets/articles/friendship-activities-for-kids-questions-parents-ask.png
 imageAlt: Two children sitting side by side at a wooden table, writing and drawing in illustrated friendship books with colored pencils spread around them
 robots: index, follow
 schemaType: BlogPosting

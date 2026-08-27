@@ -11,7 +11,7 @@ tags:
   - child development
   - analog toys for kids
   - slow childhood
-image: ../../assets/articles/analog-toys-for-kids/hero.png
+image: ../../assets/articles/analog-toys-for-kids.png
 imageAlt: A wooden tabletop scattered with analog toys including building blocks, colored pencils, an open illustrated friendship book filled with handwritten notes, and a board game, with two children's hands reaching in to play
 robots: index, follow
 schemaType: BlogPosting
@@ -36,14 +36,14 @@ faqs:
   - question: How is a Friend Book different from an ordinary journal or diary?
     answer: "A Friend Book is not a private record kept by one child, but a collaborative keepsake that travels between friends. Each friend fills in their own pages: handwritten answers, drawings, favorite things, and personal messages. The result is a one-of-a-kind collection of handwritten voices that can never be recreated digitally. Unlike a diary, it is inherently social and grows more meaningful over time as the friendships it captures deepen — making it one of the rare analog toys that becomes more valuable with every passing year."
 internalLinks:
-  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
-    url: /articles/analog-toys-for-kids-questions-answered/
-  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
-    url: /articles/analog-toys-for-kids-that-make-keepsakes/
-  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
-    url: /articles/analog-toys-vs-digital-toys-for-kids/
-  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
-    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+  - slug: analog-toys-for-kids-questions-answered
+    anchor: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+  - slug: analog-toys-for-kids-that-make-keepsakes
+    anchor: 10 Analog Toys for Kids That Create Something Worth Keeping
+  - slug: analog-toys-vs-digital-toys-for-kids
+    anchor: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+  - slug: how-to-build-an-analog-toy-shelf-for-kids
+    anchor: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
 externalLinks:
   - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
     url: https://fairplayforkids.org/pf/safe-secure-smart-toys/

@@ -43,7 +43,9 @@ const articles = defineCollection({
       ogTitle: z.string().optional(),
       ogDescription: z.string().optional(),
       ogImage: z.string().optional(),
-      internalLinks: z.array(linkSchema).optional(),
+      internalLinks: z
+        .array(z.object({ slug: z.string(), anchor: z.string() }))
+        .optional(),
       externalLinks: z.array(linkSchema).optional(),
       faqs: z.array(faqSchema).optional(),
     }),

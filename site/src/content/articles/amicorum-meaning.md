@@ -13,7 +13,7 @@ tags:
   - friend books
   - childhood keepsakes
   - friendship tradition
-image: ../../assets/articles/amicorum-meaning/hero.png
+image: ../../assets/articles/amicorum-meaning.png
 imageAlt: Open illustrated friend book with handwritten messages and colorful drawings, surrounded by colored pencils on a wooden table
 robots: index, follow
 schemaType: BlogPosting
@@ -35,8 +35,8 @@ faqs:
   - question: How is 'album amicorum' different from a modern yearbook?
     answer: "A yearbook is produced institutionally — photographs and text are assembled by a school and given to every student. An album amicorum is the opposite: it is personal, handmade, and entirely unique to its owner. Each page is filled in by a different friend, in their own handwriting, with their own drawings and messages. No two albums are alike. Historians note that the album amicorum is actually considered a predecessor of the modern yearbook tradition, brought to wider culture as the custom spread from European universities."
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 externalLinks:
   - label: "Helping Kids Make Friends: A Gift Guide"
     url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/

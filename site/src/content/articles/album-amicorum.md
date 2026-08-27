@@ -12,7 +12,7 @@ tags:
   - friendship keepsakes
   - childhood memories
   - history of friendship books
-image: ../../assets/articles/album-amicorum/hero.png
+image: ../../assets/articles/album-amicorum.png
 imageAlt: Open illustrated album amicorum friendship book with handwritten entries, drawings, and pressed flowers on a wooden table
 robots: index, follow
 schemaType: BlogPosting
@@ -33,8 +33,8 @@ faqs:
   - question: What is the best modern version of an album amicorum for children?
     answer: For children ages 5–12, the ideal modern album amicorum is a beautifully illustrated Friend Book designed to be passed among classmates, neighbors, and family friends, each of whom fills in a dedicated page with their favorite things, handwritten messages, and drawings. Unlike a digital chat or social media profile, this kind of book creates a permanent, tangible record of childhood friendships that can be revisited for decades.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 externalLinks:
   - label: The most popular items ordered as gifts in Friendship
     url: https://www.amazon.com/gp/most-gifted/books/282914

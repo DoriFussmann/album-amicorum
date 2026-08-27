@@ -12,7 +12,7 @@ tags:
   - analog activities
   - screen-free kids activities
   - keepsakes for kids
-image: ../../assets/articles/analog-friendship-activities-for-kids-that-make-keepsakes/hero.png
+image: ../../assets/articles/analog-friendship-activities-for-kids-that-make-keepsakes.png
 imageAlt: Two children sitting cross-legged on a wooden floor, writing and drawing in open illustrated books with colored pencils and pens spread around them
 robots: index, follow
 schemaType: BlogPosting

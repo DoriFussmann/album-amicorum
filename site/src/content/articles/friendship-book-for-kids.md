@@ -11,7 +11,7 @@ tags:
   - friendship keepsakes
   - childhood keepsakes
   - kids memory books
-image: ../../assets/articles/friendship-book-for-kids/hero.png
+image: ../../assets/articles/friendship-book-for-kids.png
 imageAlt: A beautifully illustrated friendship book for kids open on a wooden table, showing colorful hand-drawn pages filled with handwritten messages and drawings from friends
 robots: index, follow
 schemaType: BlogPosting
@@ -36,16 +36,16 @@ supportingKeyword: friendship book for kids
 articleType: comprehensive
 targetKeyword: friendship book for kids
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
-  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
-    url: /articles/friendship-book-for-kids-questions/
-  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
-    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
-  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
-    url: /articles/how-to-start-a-friendship-book-for-kids/
-  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
-    url: /articles/when-to-give-a-friendship-book-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+  - slug: friendship-book-for-kids-questions
+    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
+    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+  - slug: how-to-start-a-friendship-book-for-kids
+    anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+  - slug: when-to-give-a-friendship-book-for-kids
+    anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children

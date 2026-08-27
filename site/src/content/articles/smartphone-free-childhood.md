@@ -12,7 +12,7 @@ tags:
   - digital parenting
   - childhood wellbeing
   - screen time kids
-image: ../../assets/articles/smartphone-free-childhood/hero.png
+image: ../../assets/articles/smartphone-free-childhood.png
 imageAlt: Two children playing a board game together outdoors at a wooden table, no screens in sight, laughing in warm afternoon sunlight
 robots: index, follow
 schemaType: BlogPosting

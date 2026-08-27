@@ -12,7 +12,7 @@ tags:
   - friendship keepsakes for kids
   - childhood traditions
   - slow childhood
-image: ../../assets/articles/how-to-start-an-album-amicorum-tradition-with-kids/hero.png
+image: ../../assets/articles/how-to-start-an-album-amicorum-tradition-with-kids.png
 imageAlt: A child sitting at a wooden table carefully opening a beautifully illustrated friend book, surrounded by coloured pencils and a small stack of letters from friends
 robots: index, follow
 schemaType: BlogPosting
@@ -34,8 +34,8 @@ faqs:
   - question: How do you preserve a finished album amicorum long-term?
     answer: Store the completed book away from direct sunlight and humidity, ideally in a cloth or linen bag rather than a plastic sleeve, which can trap moisture. Avoid handling it with wet or sticky hands — a habit worth teaching children early. If the cover is illustrated or painted, keep it flat rather than upright on a shelf. A well-made, quality-bound book kept with reasonable care should last for generations.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 externalLinks:
   - label: A Fun Friendship Journal for Kids – Fill In Book for School ...
     url: https://www.amazon.com/Friendship-book-Journal-Memories-Keepsakes/dp/B0H15S3C41

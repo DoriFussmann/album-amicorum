@@ -12,7 +12,7 @@ tags:
   - album amicorum
   - friendship book history
   - childhood keepsakes
-image: ../../assets/articles/liber-amicorum/hero.png
+image: ../../assets/articles/liber-amicorum.png
 imageAlt: Open illustrated friendship book lying flat on a wooden table, showing handwritten inscriptions and small drawings in rich ink colours, evoking a historical album amicorum
 robots: index, follow
 schemaType: BlogPosting
@@ -34,8 +34,8 @@ faqs:
   - question: Why does the terminology matter for parents choosing a Friend Book today?
     answer: Knowing the distinction helps parents choose and describe what they're looking for. If you search 'liber amicorum,' you may find mostly academic Festschrift publications rather than the personal, illustrated keepsakes intended for children. Searching 'album amicorum' or 'Friend Book' is more likely to lead you to the handcrafted, child-centred tradition — books designed to be filled by real friends, passed between children, and kept as lifelong keepsakes.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 externalLinks:
   - label: "Helping Kids Make Friends: A Gift Guide"
     url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/

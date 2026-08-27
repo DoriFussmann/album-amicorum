@@ -12,7 +12,7 @@ tags:
   - childhood friendship
   - analog childhood
   - kids activities
-image: ../../assets/articles/smartphone-free-childhood-alternatives/hero.png
+image: ../../assets/articles/smartphone-free-childhood-alternatives.png
 imageAlt: A child writing in a beautifully illustrated friend book at a wooden table surrounded by art supplies and open books
 robots: index, follow
 schemaType: BlogPosting

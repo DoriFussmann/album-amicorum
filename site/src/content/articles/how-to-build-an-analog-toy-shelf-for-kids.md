@@ -11,7 +11,7 @@ tags:
   - toy organization
   - slow childhood
   - childhood friendship and connection
-image: ../../assets/articles/how-to-build-an-analog-toy-shelf-for-kids/hero.png
+image: ../../assets/articles/how-to-build-an-analog-toy-shelf-for-kids.png
 imageAlt: A child-height wooden shelf neatly arranged with open-ended analog toys including building blocks, art supplies, a sketchbook, and a friend book, set in a cozy, light-filled playroom
 robots: index, follow
 schemaType: BlogPosting
@@ -37,14 +37,14 @@ faqs:
   - question: How do I stop the shelf from getting cluttered again after I've organized it?
     answer: "Introduce a one-in, one-out rule: before any new toy joins the shelf, one existing item is donated, stored for rotation, or passed along to a friend. Seasonal audits — perhaps at the start of each school term — keep the collection intentional and help children appreciate what they have rather than accumulating out of habit."
 internalLinks:
-  - label: "Analog Toys for Kids: Parent Questions, Honestly Answered"
-    url: /articles/analog-toys-for-kids-questions-answered/
-  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
-    url: /articles/analog-toys-for-kids-that-make-keepsakes/
-  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
-    url: /articles/analog-toys-for-kids/
-  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
-    url: /articles/analog-toys-vs-digital-toys-for-kids/
+  - slug: analog-toys-for-kids-questions-answered
+    anchor: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+  - slug: analog-toys-for-kids-that-make-keepsakes
+    anchor: 10 Analog Toys for Kids That Create Something Worth Keeping
+  - slug: analog-toys-for-kids
+    anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+  - slug: analog-toys-vs-digital-toys-for-kids
+    anchor: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
 externalLinks:
   - label: Why Aesthetic Playrooms Don't Work (and what to do instead)
     url: https://www.youtube.com/watch?v=Tw9Hs1EoEc8

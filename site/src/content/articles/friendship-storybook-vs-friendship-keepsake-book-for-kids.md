@@ -11,7 +11,7 @@ tags:
   - keepsake books for children
   - children's gifts
   - friendship storybook
-image: ../../assets/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/hero.png
+image: ../../assets/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids.png
 imageAlt: A child passing a beautifully illustrated keepsake friendship book to a friend at a wooden table, with colored pencils and handwritten pages visible
 robots: index, follow
 schemaType: BlogPosting
@@ -37,16 +37,16 @@ faqs:
   - question: What should I look for in a quality friendship keepsake book?
     answer: Look for thick, quality paper that holds colored pencil and ink without bleed-through, prompts that are genuinely fun and varied (not just name-and-favorite-color), and illustrations that are beautiful enough to make the book feel worth keeping. A hardcover or durable binding matters too — this is a book meant to sit on a shelf for decades, not weeks.
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
-  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
-    url: /articles/friendship-book-for-kids-questions/
-  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-    url: /articles/friendship-book-for-kids/
-  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
-    url: /articles/how-to-start-a-friendship-book-for-kids/
-  - label: 7 Occasions That Call for Giving a Friendship Book for Kids
-    url: /articles/when-to-give-a-friendship-book-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+  - slug: friendship-book-for-kids-questions
+    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+  - slug: friendship-book-for-kids
+    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+  - slug: how-to-start-a-friendship-book-for-kids
+    anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+  - slug: when-to-give-a-friendship-book-for-kids
+    anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children

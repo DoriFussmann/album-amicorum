@@ -11,7 +11,7 @@ tags:
   - childhood development
   - kids toys
   - friendship keepsakes
-image: ../../assets/articles/analog-toys-for-kids-questions-answered/hero.png
+image: ../../assets/articles/analog-toys-for-kids-questions-answered.png
 imageAlt: A group of children sitting together at a wooden table, laughing and writing in illustrated friend books surrounded by colored pencils and art supplies
 robots: index, follow
 schemaType: BlogPosting
@@ -37,14 +37,14 @@ faqs:
   - question: What should I look for when choosing an analog toy that genuinely lasts?
     answer: "Look for three qualities: open-endedness (the toy can be used in multiple ways as the child grows), durability of materials (wood, thick cardstock, fabric, or sturdy board rather than thin plastic), and meaning-making potential (does playing with it produce something the child actually wants to keep or return to?). A toy that creates a record of time — a filled sketchbook, a completed puzzle photographed and reassembled, or a friend book full of handwritten messages — outlasts any battery-powered alternative."
 internalLinks:
-  - label: 10 Analog Toys for Kids That Create Something Worth Keeping
-    url: /articles/analog-toys-for-kids-that-make-keepsakes/
-  - label: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
-    url: /articles/analog-toys-for-kids/
-  - label: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
-    url: /articles/analog-toys-vs-digital-toys-for-kids/
-  - label: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
-    url: /articles/how-to-build-an-analog-toy-shelf-for-kids/
+  - slug: analog-toys-for-kids-that-make-keepsakes
+    anchor: 10 Analog Toys for Kids That Create Something Worth Keeping
+  - slug: analog-toys-for-kids
+    anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
+  - slug: analog-toys-vs-digital-toys-for-kids
+    anchor: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+  - slug: how-to-build-an-analog-toy-shelf-for-kids
+    anchor: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/

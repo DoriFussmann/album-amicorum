@@ -11,7 +11,7 @@ tags:
   - childhood development
   - slow childhood
   - friendship keepsakes
-image: ../../assets/articles/childhood-friendship-and-connection/hero.png
+image: ../../assets/articles/childhood-friendship-and-connection.png
 imageAlt: Two young children sitting together on a wooden porch, laughing and writing in a beautifully illustrated book, warm afternoon light around them
 robots: index, follow
 schemaType: BlogPosting

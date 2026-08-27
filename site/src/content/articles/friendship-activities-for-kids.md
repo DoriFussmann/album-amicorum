@@ -12,7 +12,7 @@ tags:
   - social emotional learning
   - slow childhood
   - meaningful gifts for kids
-image: ../../assets/articles/friendship-activities-for-kids/hero.png
+image: ../../assets/articles/friendship-activities-for-kids.png
 imageAlt: Two children sitting cross-legged on a sunny porch, writing and drawing together in illustrated friend books surrounded by colored pencils and craft supplies
 robots: index, follow
 schemaType: BlogPosting

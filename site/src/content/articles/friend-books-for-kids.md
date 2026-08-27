@@ -12,7 +12,7 @@ tags:
   - friendship gifts for kids
   - slow childhood
   - analog gifts
-image: ../../assets/articles/friend-books-for-kids/hero.png
+image: ../../assets/articles/friend-books-for-kids.png
 imageAlt: A beautifully illustrated open Friend Book lying on a wooden table, with a child's handwritten entries, small drawings, and colorful pencils scattered nearby
 robots: index, follow
 schemaType: BlogPosting
@@ -36,8 +36,8 @@ pillarKeyword: Friend Books & Friendship Keepsakes
 articleType: comprehensive
 targetKeyword: friend books for kids
 internalLinks:
-  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-    url: /articles/friendship-book-for-kids/
+  - slug: friendship-book-for-kids
+    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children

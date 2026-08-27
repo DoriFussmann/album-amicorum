@@ -12,7 +12,7 @@ tags:
   - childhood memories
   - meaningful gifts for kids
   - when to give a friendship book
-image: ../../assets/articles/when-to-give-a-friendship-book-for-kids/hero.png
+image: ../../assets/articles/when-to-give-a-friendship-book-for-kids.png
 imageAlt: A beautifully illustrated friendship book open on a wooden table, surrounded by coloured pencils and children's handwritten notes and drawings
 robots: index, follow
 schemaType: BlogPosting
@@ -38,16 +38,16 @@ faqs:
   - question: Does giving a friendship book have to be tied to a specific occasion?
     answer: "Not at all. Some of the most treasured friendship books are started on completely ordinary days — a random Tuesday in October, or a quiet afternoon after school. The lack of occasion can actually add to the meaning: it tells a child that their friendships are worth celebrating even when nothing special is happening, which turns the gift itself into the event."
 internalLinks:
-  - label: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-    url: /articles/friend-books-for-kids/
-  - label: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
-    url: /articles/friendship-book-for-kids-questions/
-  - label: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-    url: /articles/friendship-book-for-kids/
-  - label: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
-    url: /articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/
-  - label: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
-    url: /articles/how-to-start-a-friendship-book-for-kids/
+  - slug: friend-books-for-kids
+    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
+  - slug: friendship-book-for-kids-questions
+    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+  - slug: friendship-book-for-kids
+    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
+  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
+    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+  - slug: how-to-start-a-friendship-book-for-kids
+    anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
 externalLinks:
   - label: That first “I'm not your friend anymore” It's one of those ...
     url: https://www.instagram.com/reel/DWZKb_QDwbg/?hl=en
