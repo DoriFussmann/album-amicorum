@@ -58,9 +58,9 @@ externalLinks:
 
 ## Why Starting a Friendship Book Is Worth Doing Right
 
-Some keepsakes you simply buy and put on a shelf. A friendship book is not one of them. It has to be started — introduced, explained, handed around, coaxed into life — and the way you begin it shapes everything that follows. A book passed to a friend with a casual "just write something" will return with a first name and a smiley face. A book introduced with a little intention and warmth will come back with a favorite color, a memory, a drawing that looks exactly like the child who made it. The difference between those two outcomes isn't the book. It's the setup.
+Some keepsakes you simply buy and put on a shelf. A friendship book is not one of them. It has to be started (introduced, explained, handed around, coaxed into life) and the way you begin it shapes everything that follows. A book passed to a friend with a casual "just write something" will return with a first name and a smiley face. A book introduced with a little intention and warmth will come back with a favorite color, a memory, a drawing that looks exactly like the child who made it. The difference between those two outcomes isn't the book. It's the setup.
 
-This guide walks through exactly that setup — from choosing the right moment to preserving what you've gathered — so that the friendship book you start becomes the kind of thing your child is still reaching for at thirty.
+This guide walks through exactly that setup (from choosing the right moment to preserving what you've gathered) so that the friendship book you start becomes the kind of thing your child is still reaching for at thirty.
 
 ---
 
@@ -70,7 +70,7 @@ Friendship books don't need a special occasion, but they thrive with one. The be
 
 ### The End of a School Year Is Particularly Powerful
 
-There's something about the last weeks of a grade that creates both urgency and sentimentality in children. They know their classroom is about to dissolve. Friendships that felt permanent suddenly feel precious. A friendship book introduced at this moment gives that feeling somewhere to go. Friends who might otherwise drift apart over a summer have the chance to leave something of themselves behind — a handwriting sample, a favorite food, a drawing — before they do.
+There's something about the last weeks of a grade that creates both urgency and sentimentality in children. They know their classroom is about to dissolve. Friendships that felt permanent suddenly feel precious. A friendship book introduced at this moment gives that feeling somewhere to go. Friends who might otherwise drift apart over a summer have the chance to leave something of themselves behind (a handwriting sample, a favorite food, a drawing) before they do.
 
 A move is similarly charged. If your family is relocating, or if a beloved classmate is leaving, a friendship book started in the weeks before departure becomes something closer to a time capsule than a keepsake. It captures a specific configuration of children that will never exist again in quite the same way.
 
@@ -80,11 +80,11 @@ The beginning of a school year also works well, particularly for children starti
 
 ## Step 2: Set It Up With Your Child First
 
-Before the book goes anywhere near another child, sit down with your child and fill in their own introductory page together. This step is easy to skip — it feels like housekeeping — but it matters enormously. A child who has filled in their own page understands what the book is asking. They can explain it to a friend confidently. They feel a sense of ownership over it rather than handing over an object they don't quite understand.
+Before the book goes anywhere near another child, sit down with your child and fill in their own introductory page together. This step is easy to skip (it feels like housekeeping) but it matters enormously. A child who has filled in their own page understands what the book is asking. They can explain it to a friend confidently. They feel a sense of ownership over it rather than handing over an object they don't quite understand.
 
 ### What the Introductory Page Should Include
 
-Most friendship books include a page at the front where the book's owner records their own name, age, favorite things, and a self-portrait. Walk through it with your child as you would any creative project: ask questions, let them take their time, resist the urge to correct or improve their handwriting. Their handwriting right now — wobbly, large, utterly their own — is exactly the point. It is the handwriting of a seven-year-old, and in fifteen years it will be one of the most remarkable things about the page.
+Most friendship books include a page at the front where the book's owner records their own name, age, favorite things, and a self-portrait. Walk through it with your child as you would any creative project: ask questions, let them take their time, resist the urge to correct or improve their handwriting. Their handwriting right now (wobbly, large, utterly their own) is exactly the point. It is the handwriting of a seven-year-old, and in fifteen years it will be one of the most remarkable things about the page.
 
 Once the introductory page is complete, take a moment to look through the rest of the book together. Show your child what the pages for their friends look like. Explain that each friend will fill in one, and that no two will be the same. When a child can visualize what the finished book might look like, they become genuinely excited to start collecting.
 
@@ -92,7 +92,7 @@ Once the introductory page is complete, take a moment to look through the rest o
 
 ## Step 3: Introduce It to Friends Intentionally
 
-Resist the urge to send the book to school in a backpack with a vague instruction to pass it around. The results will be unpredictable, and the book may return half-filled, scribbled over, or — worst of all — lost.
+Resist the urge to send the book to school in a backpack with a vague instruction to pass it around. The results will be unpredictable, and the book may return half-filled, scribbled over, or (worst of all) lost.
 
 ### A Playdate, Party, or Farewell Is the Ideal Setting
 

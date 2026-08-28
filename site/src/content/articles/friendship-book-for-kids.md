@@ -76,7 +76,7 @@ It is also worth distinguishing a well-made friendship book from the fill-in-the
 ## A Centuries-Old Tradition, Renewed
 
 The idea of gathering the words, drawings, and signatures of friends into a dedicated book is not a modern invention. 
-The album amicorum — literally "album of friends" — traces its origins to the 16th century, when it emerged as a way to collect autographs and inscriptions.
+The album amicorum (literally "album of friends") traces its origins to the 16th century, when it emerged as a way to collect autographs and inscriptions.
 
 Particularly among university students, these books were a living tradition well into the 19th century: friends would fill each other's pages with poems, citations, sketches, or paper cuts, and sign them.
 
@@ -98,7 +98,7 @@ It might seem strange, in a world of instant messaging and shared photo albums, 
 A screenshot of a conversation can be deleted. A social profile can be taken down. A photo album app can disappear with a subscription lapse. A handwritten page, on the other hand, cannot be revised after the fact. The handwriting is exactly as it was on the day a friend sat down and filled in their page. The hesitation marks, the doodles in the margins, the signature that trails off at the end — these things are uniquely, irreversibly real.
 
 There is something else at stake, too. 
-Families are increasingly aware that children today spend an average of five to seven hours per day using screens, and the growing shift towards a more balanced, low-screen lifestyle — part of what observers are calling the analog childhood trend — is reshaping what thoughtful parents are choosing to give their children.
+Families are increasingly aware that children today spend an average of five to seven hours per day using screens, and the growing shift towards a more balanced, low-screen lifestyle (part of what observers are calling the analog childhood trend) is reshaping what thoughtful parents are choosing to give their children.
 
 According to Google Trends, the term "analog hobbies" saw a significant spike in January 2026
 , reflecting an appetite that extends to the gifts and activities parents seek for their children. A friendship book sits naturally at the centre of this shift: it requires no device, no Wi-Fi, no charging. It asks only for a pencil and a friend.
