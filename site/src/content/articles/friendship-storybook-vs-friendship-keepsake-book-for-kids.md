@@ -58,15 +58,15 @@ externalLinks:
 
 # Friendship Storybooks vs. Keepsake Books: Which Is Right?
 
-You search "friendship book for kids" and the results pile up — beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction — because buying the right one for the right moment makes all the difference.
+You search "friendship book for kids" and the results pile up, beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction, because buying the right one for the right moment makes all the difference.
 
 ## The SERP Confusion Nobody Warns You About
 
-Type "friendship book for kids" into any search engine and you'll encounter two fundamentally different product types sharing the same shelf space. The first is the **friendship storybook**: a published picture book or chapter book written by an author, featuring fictional characters navigating the terrain of friendship — making it, losing it, repairing it. Your child receives this book and reads it. The experience flows one way, from the page to the child.
+Type "friendship book for kids" into any search engine and you'll encounter two fundamentally different product types sharing the same shelf space. The first is the **friendship storybook**: a published picture book or chapter book written by an author, featuring fictional characters navigating the terrain of friendship, making it, losing it, repairing it. Your child receives this book and reads it. The experience flows one way, from the page to the child.
 
 The second is the **friendship keepsake book**: an interactive, fill-in book that your child's actual friends write in. There is no author fiction here. The content is co-created by the child's real friend group — their handwriting, their drawings, their favourite things and silly answers. Your child doesn't consume this book. They collect it.
 
-Both are genuinely valuable. But they are not interchangeable, and understanding which one you're looking at — and which one the moment calls for — is the first step to buying something that will actually matter.
+Both are genuinely valuable. But they are not interchangeable, and understanding which one you're looking at (and which one the moment calls for) is the first step to buying something that will actually matter.
 
 ## What a Friendship Storybook Is For
 
@@ -74,7 +74,7 @@ Friendship storybooks have a long and well-earned role in childhood.
 The right picture books about friendship help kids understand kindness, empathy, and what it means to be a good friend in a way that feels relatable and engaging.
  These are books a parent reads aloud at bedtime, a teacher reaches for when classroom conflict flares, or a grandparent tucks into a birthday gift because the story feels timeless.
 
-The best friendship storybooks do something that conversation alone cannot always accomplish: they show children the full complexity of friendship — the loyalty and the disagreements, the showing up and the letting go — through characters they can safely observe from the outside. 
+The best friendship storybooks do something that conversation alone cannot always accomplish: they show children the full complexity of friendship (the loyalty and the disagreements, the showing up and the letting go) through characters they can safely observe from the outside. 
 Books can't solve everything, but they can show children what genuine friendship looks like — the loyalty, the conflict, the repair, the joy. They model human connection in a way that a screen simply cannot.
 
 This matters more than ever right now. 
@@ -89,20 +89,20 @@ Friendship storybooks are ideal for:
 
 - **Younger children (ages 3–7)** building their first understanding of social connection
 - **Teaching moments** — a new sibling, a conflict with a classmate, a first day at school
-- **Any gift occasion** — birthdays, holidays, library-building — they are universally appropriate
+- **Any gift occasion** (birthdays, holidays, library-building) they are universally appropriate
 - **Grandparents or extended family** who want to give something beautiful and enduring but don't have access to the child's friend group
 
 A storybook is a gift any caring adult can give, at any time, without needing to know who the child's best friends are. That is both its strength and its natural limit.
 
 ## What a Friendship Keepsake Book Is For
 
-A friendship keepsake book operates on an entirely different principle. It arrives essentially blank — or richly illustrated with prompts — and it is the child's friends who bring it to life. Each friend takes the book, finds their page, and fills it in: their favourite colour, what they want to be when they grow up, a drawing of the two of them, a private joke only they would understand. Then the book comes back. Page by page, friend by friend, it fills up.
+A friendship keepsake book operates on an entirely different principle. It arrives essentially blank (or richly illustrated with prompts) and it is the child's friends who bring it to life. Each friend takes the book, finds their page, and fills it in: their favourite colour, what they want to be when they grow up, a drawing of the two of them, a private joke only they would understand. Then the book comes back. Page by page, friend by friend, it fills up.
 
 A friendship keepsake gives children the opportunity to create a unique keepsake album with unforgettable memories of their childhood friendships. Children pass the book to their friends, who choose their favourite page and fill it in with facts, stories, and drawings about themselves and their friendship, before returning it to the owner — connecting children through a non-digital platform in a fun, interactive, and creative way.
 
 The value of this object grows over time in a way that no storybook can. When a child is twenty-five and opens the book they kept at age eight, they find something impossible to recreate: the actual handwriting of their best friend from third grade, the misspellings, the drawings, the favourite colour they've long since forgotten. Faces change, friends move away, whole eras of childhood close. The keepsake book holds them open.
 
-This is the logic behind the *Album Amicorum* tradition — the "book of friends" — which has roots stretching back to sixteenth-century Europe, when students and scholars circulated blank albums for friends and mentors to sign and illustrate. The impulse is ancient: to hold onto the people who mattered, in a form that time cannot easily erase.
+This is the logic behind the *Album Amicorum* tradition (the "book of friends") which has roots stretching back to sixteenth-century Europe, when students and scholars circulated blank albums for friends and mentors to sign and illustrate. The impulse is ancient: to hold onto the people who mattered, in a form that time cannot easily erase.
 
 ### Who Should Give a Friendship Keepsake Book
 
@@ -141,7 +141,7 @@ Research has linked strong childhood friendships with better mental health outco
 
 ## Choosing the Right Keepsake Book
 
-If the comparison above has helped clarify that a keepsake friendship book is what this moment calls for, the next question is which one. Not all friendship keepsake books are created equal. The paper quality matters — thin pages bleed through and make the book feel disposable. The prompts matter — a list of surface-level fill-in-the-blanks produces forgettable answers, while genuinely imaginative questions draw out real personality and specific memory. The illustrations matter — a beautifully designed book signals to the child and their friends that this is something worth filling in carefully, not dashing through in two minutes.
+If the comparison above has helped clarify that a keepsake friendship book is what this moment calls for, the next question is which one. Not all friendship keepsake books are created equal. The paper quality matters (thin pages bleed through and make the book feel disposable. The prompts matter) a list of surface-level fill-in-the-blanks produces forgettable answers, while genuinely imaginative questions draw out real personality and specific memory. The illustrations matter — a beautifully designed book signals to the child and their friends that this is something worth filling in carefully, not dashing through in two minutes.
 
 **Album Amicorum's *In My Friends Book*** is designed with all of this in mind. The illustrations, prompts, and paper quality are built for a lifetime, not a season — the kind of book that earns a permanent spot on the shelf and gets pulled out for decades. If you're ready to give a child something their future self will genuinely thank you for, it's worth exploring what makes it different.
 

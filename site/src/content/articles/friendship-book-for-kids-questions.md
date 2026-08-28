@@ -58,7 +58,7 @@ externalLinks:
 
 # Friendship Book for Kids: FAQ for Parents and Gift-Givers
 
-You've seen the phrase — *friendship book for kids* — and something about it stopped you. Maybe you picture a spiral notebook passed around a classroom, or a stack of pages your child might forget under the bed. Or maybe you picture something more: a real keepsake, filled with handwriting from the people your child loves most, sitting on a shelf years from now. Before you decide, you probably have a few practical questions. This article answers them directly.
+You've seen the phrase (*friendship book for kids*) and something about it stopped you. Maybe you picture a spiral notebook passed around a classroom, or a stack of pages your child might forget under the bed. Or maybe you picture something more: a real keepsake, filled with handwriting from the people your child loves most, sitting on a shelf years from now. Before you decide, you probably have a few practical questions. This article answers them directly.
 
 ---
 
@@ -88,7 +88,7 @@ Prompted pages remove all of that. When a friend opens a well-designed friendshi
 
 The practical genius of a prompted friendship book is that it removes the social burden from both the child asking and the child answering. Nobody has to figure out what to say. Nobody feels put on the spot. The structure is generous in a way that blank pages can never be.
 
-What emerges across those prompted pages — once several friends have each filled one — is something richer than any single entry: a portrait of a child's world, assembled from the people who actually inhabit it. The combined record of favorite colors, earnest drawings, inside jokes, and private messages becomes something no parent could have planned or assembled from the outside. It grows entirely from the children themselves, which is exactly what gives it lasting meaning.
+What emerges across those prompted pages (once several friends have each filled one) is something richer than any single entry: a portrait of a child's world, assembled from the people who actually inhabit it. The combined record of favorite colors, earnest drawings, inside jokes, and private messages becomes something no parent could have planned or assembled from the outside. It grows entirely from the children themselves, which is exactly what gives it lasting meaning.
 
 ---
 
@@ -110,7 +110,7 @@ One genuine caution: a book that looks too fragile or too elaborate can inadvert
 
 ## Is It a Good Gift Even If I Don't Know the Child's Friends?
 
-Yes — and this is one of the most freeing things about a friendship book as a gift category. A friendship book is not a book *about* specific friends. It is a book *for* gathering them. The gift-giver does not need to know anyone's name, grade, or favorite anything. The child brings the people. The book gives them a reason — and a beautiful, structured place — to sit together and share something real.
+Yes — and this is one of the most freeing things about a friendship book as a gift category. A friendship book is not a book *about* specific friends. It is a book *for* gathering them. The gift-giver does not need to know anyone's name, grade, or favorite anything. The child brings the people. The book gives them a reason (and a beautiful, structured place) to sit together and share something real.
 
 ### Giving the Gift of Possibility
 
@@ -122,7 +122,7 @@ For a birthday, it is particularly well-suited: birthdays are one of the natural
 
 ## How Is a Keepsake Friendship Book Different From a Regular Notebook?
 
-Parents sometimes wonder whether they could simply buy a nice blank journal and let their child take it from there. They could. But the result would be different — fundamentally different — in ways that matter.
+Parents sometimes wonder whether they could simply buy a nice blank journal and let their child take it from there. They could. But the result would be different (fundamentally different) in ways that matter.
 
 A blank notebook is a solo object. It asks one person to write in it, and the design assumes that. A friendship book is a collaborative object. It asks many people to each contribute their own dedicated page, and every element of the design communicates that: illustrated layouts, distinct sections for each contributor, prompts that speak directly to a visiting friend rather than to the owner alone. The physical design is a set of instructions, and those instructions change how people behave when they hold the book.
 

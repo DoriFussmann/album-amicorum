@@ -67,7 +67,7 @@ The question, then, isn't really *whether* to give a friendship book. It's *when
 
 ## 1. End of the School Year
 
-No moment in a child's social life is more poignant — or more overlooked — than the last few weeks of a school year. The class that spent nine months together is about to scatter: to new classrooms, new teachers, summer camps in different cities, and in some cases, different schools entirely. The exact configuration of friendships that exists in May will never exist again in quite the same way.
+No moment in a child's social life is more poignant (or more overlooked) than the last few weeks of a school year. The class that spent nine months together is about to scatter: to new classrooms, new teachers, summer camps in different cities, and in some cases, different schools entirely. The exact configuration of friendships that exists in May will never exist again in quite the same way.
 
 This is the single most powerful moment to start a friendship book. The urgency is real: give it too late, and the window closes. Give it with three or four weeks of school still remaining, and a child can work their way around the classroom, collecting pages from every friend they want to remember. By the last day, they'll have something irreplaceable — not a yearbook signed in haste, but a book of handwritten favorites, drawings, and private messages from the people who defined that particular year.
 
@@ -77,7 +77,7 @@ There's something worth saying about the handwritten quality here specifically. 
 
 ## 2. Before a Family Move
 
-When a family is relocating — whether across town or across the country — the child who is leaving often has the hardest time articulating what they're losing. It isn't just a house or a neighborhood. It's a whole social world that took years to build, full of people who know their middle name and remember the time they fell off the monkey bars.
+When a family is relocating (whether across town or across the country) the child who is leaving often has the hardest time articulating what they're losing. It isn't just a house or a neighborhood. It's a whole social world that took years to build, full of people who know their middle name and remember the time they fell off the monkey bars.
 
 A friendship book given before a move turns something abstract and painful into something tangible and actionable. Instead of a teary goodbye that everyone immediately tries to move past, friends now have a job: fill in a page. Write their favorite memory. Draw something. Leave a message the child can read on the drive to the new city. The result isn't just sentimental — it's genuinely portable. The book travels with the child, carrying proof that the friendships were real and that the people in them chose to leave something lasting behind.
 
@@ -120,7 +120,7 @@ A "just because" friendship book also arrives without the competition of other g
 
 Summer has a strange effect on childhood friendships. Long breaks from school mean that children who were inseparable in June may feel slightly shy with each other again come September — particularly if they spent the summer in different places or different social circles. The intimacy of the school year doesn't automatically carry over.
 
-A friendship book given at the start of autumn — right after summer ends — is a way of re-anchoring a child in their friendships before that subtle shyness calcifies into distance. It gives them a reason to reach out: *"I got this book over the summer. Can you fill in a page?"* The act of asking is itself a small act of social courage, and the response — a friend saying yes, sitting down, and writing something — is a reminder that the friendship survived the gap.
+A friendship book given at the start of autumn (right after summer ends) is a way of re-anchoring a child in their friendships before that subtle shyness calcifies into distance. It gives them a reason to reach out: *"I got this book over the summer. Can you fill in a page?"* The act of asking is itself a small act of social courage, and the response (a friend saying yes, sitting down, and writing something) is a reminder that the friendship survived the gap.
 
 It also begins building a record across time. A child who starts a friendship book in third grade and adds to it every September has something extraordinary by fifth grade: a layered portrait of the same friendships evolving year by year, the same people growing up on the page.
 
