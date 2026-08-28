@@ -23,8 +23,25 @@ keywords:
   - benefits of handwriting for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
-externalLinks: []
+internalLinks:
+  - slug: handwriting-activities-for-kids-at-home
+    anchor: handwriting activities for kids at home
+  - slug: handwriting-vs-typing-for-kids
+    anchor: handwriting vs typing for kids
+  - slug: how-to-encourage-handwriting-at-home-for-kids
+    anchor: how to encourage handwriting at home for kids
+  - slug: is-handwriting-important-for-kids
+    anchor: is handwriting important for kids
+externalLinks:
+  - label: The Importance of Cursive Handwriting Over Typewriting for ...
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7399101/"
+    addedAt: 2026-08-27
+  - label: 5 Cognitive Benefits of Writing by Hand
+    url: "https://www.lwtears.com/blog/5-cognitive-benefits-writing-hand?srsltid=AfmBOortjOVlu1tZ1DfSFUDprh_YhocC1DBsGjEUrY-3k0Yxpc8-eCWw"
+    addedAt: 2026-08-27
+  - label: Why writing by hand beats typing for thinking and learning
+    url: "https://www.npr.org/sections/health-shots/2024/05/11/1250529661/handwriting-cursive-typing-schools-learning-brain"
+    addedAt: 2026-08-27
 faqs:
   - question: "At what age should children start learning to write by hand?"
     answer: "Most children are developmentally ready to begin forming letters by hand around age 4–5, when fine motor skills and hand-eye coordination have matured enough to hold a pencil with a tripod grip. Pre-writing activities like drawing, tracing, and playing with playdough from age 2–3 build the foundational strength that makes formal handwriting instruction more successful and enjoyable."
@@ -166,3 +183,11 @@ a January 2026 survey of more than 1,100 early educators found that 70 percent r
  The scientific literature continues to build in parallel, with recent education commentary from August 2026 renewing calls for schools to maintain and expand explicit handwriting instruction across the primary grades, grounded in the consistent finding that 
 when children write by hand, they activate neural networks responsible for language, memory, attention, and learning in ways that typing simply does not replicate.
 <!-- WHERE-THINGS-STAND:END -->
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+<!-- CMS-INTERNAL:END -->
+
+<!-- CMS-EXTERNAL:START -->
+Sources: [The Importance of Cursive Handwriting Over Typewriting for ...](https://pmc.ncbi.nlm.nih.gov/articles/PMC7399101/) · [5 Cognitive Benefits of Writing by Hand](https://www.lwtears.com/blog/5-cognitive-benefits-writing-hand?srsltid=AfmBOortjOVlu1tZ1DfSFUDprh_YhocC1DBsGjEUrY-3k0Yxpc8-eCWw) · [Why writing by hand beats typing for thinking and learning](https://www.npr.org/sections/health-shots/2024/05/11/1250529661/handwriting-cursive-typing-schools-learning-brain).
+<!-- CMS-EXTERNAL:END -->

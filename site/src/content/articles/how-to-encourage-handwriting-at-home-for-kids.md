@@ -24,8 +24,25 @@ keywords:
   - benefits of handwriting for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
-externalLinks: []
+internalLinks:
+  - slug: benefits-of-handwriting-for-kids
+    anchor: benefits of handwriting for kids
+  - slug: handwriting-activities-for-kids-at-home
+    anchor: handwriting activities for kids at home
+  - slug: handwriting-vs-typing-for-kids
+    anchor: handwriting vs typing for kids
+  - slug: is-handwriting-important-for-kids
+    anchor: is handwriting important for kids
+externalLinks:
+  - label: Teaching and Rehabilitation of Handwriting for Children in the ...
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10378357/"
+    addedAt: 2026-08-27
+  - label: How to Improve Handwriting in Middle School - Part 1
+    url: "https://missjaimeot.com/middle-school-handwriting-part-1/"
+    addedAt: 2026-08-27
+  - label: Help for Parents
+    url: "https://nha-handwriting.org.uk/handwriting/help-for-parents/"
+    addedAt: 2026-08-27
 faqs:
   - question: "How long should a child practice handwriting each day at home?"
     answer: "For children in the early elementary years, five to ten minutes of focused handwriting each day is more effective than longer, infrequent sessions. Short, consistent windows — anchored to an existing routine like after breakfast or before screen time — build habit without creating resistance. As children grow more fluent and confident, sessions can extend naturally, but daily brevity beats weekly marathons at every stage."
@@ -115,3 +132,11 @@ Florida is among the most recent additions: starting in the 2026–27 school yea
 recent peer-reviewed findings confirm that substituting handwriting practice with typing may hinder the initial steps of reading development
  — giving parents who prioritise handwriting at home the reassurance that the science and the cultural moment are both pointing in the same direction.
 <!-- WHERE-THINGS-STAND:END -->
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+<!-- CMS-INTERNAL:END -->
+
+<!-- CMS-EXTERNAL:START -->
+Sources: [Teaching and Rehabilitation of Handwriting for Children in the ...](https://pmc.ncbi.nlm.nih.gov/articles/PMC10378357/) · [How to Improve Handwriting in Middle School - Part 1](https://missjaimeot.com/middle-school-handwriting-part-1/) · [Help for Parents](https://nha-handwriting.org.uk/handwriting/help-for-parents/).
+<!-- CMS-EXTERNAL:END -->
