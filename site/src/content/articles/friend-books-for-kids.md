@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-28
 keywords:
   - friend books for kids
   - Friend Books & Friendship Keepsakes
@@ -214,13 +214,7 @@ The *album amicorum* has been traveling between friends for five hundred years. 
 
 ## Where Things Stand
 <!-- WHERE-THINGS-STAND:START -->
-The cultural moment for Friend Books and analog childhood keepsakes is as strong as it has been in decades. 
-The "analog childhood" movement is being described as the biggest parenting shift of 2026, centered on letting kids be kids again through slower, screen-free experiences.
-
-Nostalgia is actively redefining what childhood looks and feels like in 2026, with parents filling playrooms with throwback toys and handmade patterns, signaling a desire for slower, more tactile experiences — using the past as a blueprint for a more analog, grounded childhood.
- This translates directly into growing demand for the kind of object a Friend Book represents: 
-consumers are increasingly curating their "personal lore" in physical form, turning personalized keepsakes into tangible archives of identity, with junk journaling searches up 63% year-over-year — signaling growing demand for hands-on memory keeping. As digital fatigue rises, creativity is moving offline, with searches for analog hobbies such as journaling surging 136% over the past six months.
- The category of beautifully made, illustrated children's keepsakes that require no screen and produce something genuinely irreplaceable sits squarely at the intersection of these converging trends — with no indication that the direction is changing.
+The cultural moment for Friend Books and analog childhood keepsakes is as strong as it has been in decades — and it is now being reinforced by law. The "analog childhood" movement entered a new phase in 2026: what began as a parenting preference has hardened into policy, with seven states passing classroom screen-time restrictions and Los Angeles Unified — the nation's second-largest school district — voting unanimously to ban screens for kindergarten and first-grade students starting this fall. A U.S. Department of Education guidance on responsible ed-tech use followed in August 2026. Nostalgia continues to redefine what childhood looks and feels like, with parents filling playrooms with throwback toys and handmade patterns. Consumer demand for tangible memory-keeping keeps climbing: junk journaling searches are up 63% year-over-year, and Google searches for "analog hobbies" have risen more than 1,300% over the past year — a shift the Global Wellness Summit has now formally named "analog-ing on." The category of beautifully made, illustrated children's keepsakes that require no screen and produce something genuinely irreplaceable sits squarely at the intersection of these converging trends — and the policy environment is now actively accelerating them.
 <!-- WHERE-THINGS-STAND:END -->
 
 See Related below for more on this topic.
