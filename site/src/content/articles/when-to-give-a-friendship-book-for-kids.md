@@ -19,7 +19,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-28
 pillarKeyword: Friend Books & Friendship Keepsakes
 supportingKeyword: friendship book for kids
 articleType: flex
@@ -126,6 +126,7 @@ It also begins building a record across time. A child who starts a friendship bo
 
 ---
 
+Summer has a strange effect on childhood friendships. Long breaks from school mean that children who were inseparable in June may feel slightly shy with each other again come September — particularly if they spent the summer in different places or different social circles. The intimacy of the school year doesn't automatically carry over. Think of it like a fire that's been left untended: the embers are still there, but they need a little oxygen to catch again. A friendship book given at the start of autumn (right after summer ends) is a way of re-anchoring a child in their friendships before that subtle shyness calcifies into distance. It gives them a reason to reach out: *"I got this book over the summer. Can you fill in a page?"* The act of asking is itself a small act of social courage, and the response (a friend saying yes, sitting down, and writing something) is a reminder that the friendship survived the gap. It also begins building a record across time. A child who starts a friendship book in third grade and adds to it every September has something extraordinary by fifth grade: a layered portrait of the same friendships evolving year by year, the same people growing up on the page.
 ## 7. When Nothing Special Is Happening at All
 
 There is an argument — and it's a serious one — that the very best time to give a friendship book is when there is no reason to give it at all. No move, no birthday, no new school. Just a child going about their ordinary life, surrounded by friends who matter.
