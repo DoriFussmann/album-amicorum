@@ -23,8 +23,25 @@ keywords:
   - benefits of handwriting for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
-externalLinks: []
+internalLinks:
+  - slug: benefits-of-handwriting-for-kids
+    anchor: benefits of handwriting for kids
+  - slug: handwriting-activities-for-kids-at-home
+    anchor: handwriting activities for kids at home
+  - slug: how-to-encourage-handwriting-at-home-for-kids
+    anchor: how to encourage handwriting at home for kids
+  - slug: is-handwriting-important-for-kids
+    anchor: is handwriting important for kids
+externalLinks:
+  - label: "Handwriting or Typewriting? The Influence of Pen - PMC - NIH"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4710970/"
+    addedAt: 2026-08-27
+  - label: Handwriting but not typewriting leads to widespread brain ...
+    url: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1219945/full"
+    addedAt: 2026-08-27
+  - label: "Handwriting vs. Typing: Brain Connectivity Findings and ..."
+    url: "https://realotsolutions.com/blogs/news/handwriting-but-not-typewriting-leads-to-widespread-brain-connectivity?srsltid=AfmBOooMFXT9ldjKURs_S4MxW4zVuzK8n76kUY-r_nRUzLLQx7gdEriL"
+    addedAt: 2026-08-27
 faqs:
   - question: "At what age should children start learning to type?"
     answer: "Most developmental experts and educators suggest introducing formal typing instruction around ages 7–9, once foundational handwriting skills — letter formation, spelling, and basic reading fluency — are already in place. Starting typing too early, before those foundations are set, can shortcut the neurological work that handwriting does in the early literacy window. Think of handwriting first, typing second: not because typing is less valuable, but because the window in which handwriting shapes brain development is narrower and harder to recover later."
@@ -126,3 +143,11 @@ New Jersey also recently became the latest US state to bring penmanship back int
 researchers are documenting the powerful effects of handwriting on thinking and memory even as schools increasingly prioritize digital literacy, meaning students are spending considerably less time writing by hand
  — a tension that the new wave of state mandates is beginning to directly address.
 <!-- WHERE-THINGS-STAND:END -->
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+<!-- CMS-INTERNAL:END -->
+
+<!-- CMS-EXTERNAL:START -->
+Sources: [Handwriting or Typewriting? The Influence of Pen - PMC - NIH](https://pmc.ncbi.nlm.nih.gov/articles/PMC4710970/) · [Handwriting but not typewriting leads to widespread brain ...](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1219945/full) · [Handwriting vs. Typing: Brain Connectivity Findings and ...](https://realotsolutions.com/blogs/news/handwriting-but-not-typewriting-leads-to-widespread-brain-connectivity?srsltid=AfmBOooMFXT9ldjKURs_S4MxW4zVuzK8n76kUY-r_nRUzLLQx7gdEriL).
+<!-- CMS-EXTERNAL:END -->

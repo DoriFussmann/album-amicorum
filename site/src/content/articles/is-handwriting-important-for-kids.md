@@ -23,8 +23,25 @@ keywords:
   - benefits of handwriting for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
-externalLinks: []
+internalLinks:
+  - slug: benefits-of-handwriting-for-kids
+    anchor: benefits of handwriting for kids
+  - slug: handwriting-activities-for-kids-at-home
+    anchor: handwriting activities for kids at home
+  - slug: handwriting-vs-typing-for-kids
+    anchor: handwriting vs typing for kids
+  - slug: how-to-encourage-handwriting-at-home-for-kids
+    anchor: how to encourage handwriting at home for kids
+externalLinks:
+  - label: The Importance of Cursive Handwriting Over Typewriting for ...
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7399101/"
+    addedAt: 2026-08-27
+  - label: "Handwriting? Worth the trouble these days?"
+    url: "https://www.nifdi.org/resources/hempenstall-blog/809-handwriting-worth-the-trouble-these-days.html"
+    addedAt: 2026-08-27
+  - label: The Importance of Teaching Handwriting
+    url: "https://www.readingrockets.org/topics/writing/articles/importance-teaching-handwriting"
+    addedAt: 2026-08-27
 faqs:
   - question: "At what age should children start learning to write by hand?"
     answer: "Most children develop the fine motor control needed for handwriting between ages 4 and 6, though readiness varies. Pre-writing skills — drawing lines, tracing shapes, using crayons — naturally lay the groundwork. Formal letter formation is typically introduced in kindergarten, but relaxed, play-based exposure to pencil and paper before that age is always beneficial."
@@ -148,3 +165,11 @@ As of March 2026, more than half of U.S. states now require or strongly encourag
 Schools in countries including Sweden, Norway, France, Finland, Italy, and Denmark have been cutting back on screen time and returning to paper-based learning and handwriting, with Sweden shifting back toward traditional learning methods in an effort to improve focus, strengthen memory, and elevate reading scores.
  Recent commentary from education researchers published in August 2026 continued to highlight the link between handwriting competency and more sophisticated letter knowledge, phonological awareness, and spelling — reinforcing the view that the scientific case for handwriting in early childhood has only grown stronger since the major EEG studies of the early 2020s. The overall picture is one of a field reaching broad consensus: for children in the foundational years, handwriting is not a relic of the past but an active developmental priority.
 <!-- WHERE-THINGS-STAND:END -->
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/).
+<!-- CMS-INTERNAL:END -->
+
+<!-- CMS-EXTERNAL:START -->
+Sources: [The Importance of Cursive Handwriting Over Typewriting for ...](https://pmc.ncbi.nlm.nih.gov/articles/PMC7399101/) · [Handwriting? Worth the trouble these days?](https://www.nifdi.org/resources/hempenstall-blog/809-handwriting-worth-the-trouble-these-days.html) · [The Importance of Teaching Handwriting](https://www.readingrockets.org/topics/writing/articles/importance-teaching-handwriting).
+<!-- CMS-EXTERNAL:END -->

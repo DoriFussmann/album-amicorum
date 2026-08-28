@@ -23,8 +23,25 @@ keywords:
   - benefits of handwriting for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
-externalLinks: []
+internalLinks:
+  - slug: benefits-of-handwriting-for-kids
+    anchor: benefits of handwriting for kids
+  - slug: handwriting-vs-typing-for-kids
+    anchor: handwriting vs typing for kids
+  - slug: how-to-encourage-handwriting-at-home-for-kids
+    anchor: how to encourage handwriting at home for kids
+  - slug: is-handwriting-important-for-kids
+    anchor: is handwriting important for kids
+externalLinks:
+  - label: Teaching and Rehabilitation of Handwriting for Children in the ...
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10378357/"
+    addedAt: 2026-08-27
+  - label: Activities to Improve Handwriting
+    url: "https://www.theottoolbox.com/handwriting/"
+    addedAt: 2026-08-27
+  - label: "How to Improve Handwriting for Kids: 15 Simple Activities"
+    url: "https://www.bachpanglobal.com/blog/how-to-improve-handwriting-for-kids/"
+    addedAt: 2026-08-27
 faqs:
   - question: "How much handwriting practice does a child actually need each day?"
     answer: "Most occupational therapists suggest that short, consistent sessions of 10–15 minutes of purposeful handwriting practice are more effective than longer, infrequent drills. The key word is purposeful: when a child is writing something they care about — a letter, a recipe, an entry in a friend book — they naturally practise for longer and with greater care than when completing a worksheet. Quality of engagement matters more than clock time."
@@ -162,3 +179,11 @@ As of 2026, 27 states have passed laws reinstating the requirement for cursive i
 a January 2026 survey of more than 1,100 early educators by a major education research centre found that seventy percent of respondents reported their students' fine motor skills had decreased in the past two years
  — a finding that has added urgency to the policy conversation around handwriting instruction. Meanwhile, recent educational commentary has emphasised that handwriting "remains one of the most proven and timeless methods for students," pointing to a broader cultural reckoning with what children lose when the pen is replaced by the keyboard too early and too completely.
 <!-- WHERE-THINGS-STAND:END -->
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+<!-- CMS-INTERNAL:END -->
+
+<!-- CMS-EXTERNAL:START -->
+Sources: [Teaching and Rehabilitation of Handwriting for Children in the ...](https://pmc.ncbi.nlm.nih.gov/articles/PMC10378357/) · [Activities to Improve Handwriting](https://www.theottoolbox.com/handwriting/) · [How to Improve Handwriting for Kids: 15 Simple Activities](https://www.bachpanglobal.com/blog/how-to-improve-handwriting-for-kids/).
+<!-- CMS-EXTERNAL:END -->
