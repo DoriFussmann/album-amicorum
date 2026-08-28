@@ -6,5 +6,6 @@ tagline: Among quiet trees and woodland friends.
 price: "$30"
 cover: /images/books/placeholder-cover.svg
 interior: /images/books/placeholder-interior.svg
+hidden: true
 order: 5
 ---

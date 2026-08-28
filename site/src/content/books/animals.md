@@ -4,7 +4,12 @@ title: Animals
 slug: animals
 tagline: Friendly companions from every corner of nature.
 price: "$30"
-cover: /images/books/placeholder-cover.svg
-interior: /images/books/placeholder-interior.svg
+cover: /images/books/animals-cover.jpg
+interior: /images/books/animals-interior.jpg
+gallery:
+  - /images/books/animals/01-front.jpg
+  - /images/books/animals/02-open-1.jpg
+  - /images/books/animals/03-use.jpg
+  - /images/books/animals/04-lifestyle.jpg
 order: 7
 ---

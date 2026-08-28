@@ -1,0 +1,54 @@
+---
+import { SOCIAL_LINKS } from '../config/site';
+
+interface Props {
+  class?: string;
+}
+
+const { class: className = '' } = Astro.props;
+---
+
+<nav aria-label="Social and shops" class={className}>
+  <ul class="flex items-center gap-1">
+    {
+      SOCIAL_LINKS.map((link) => (
+        <li>
+          <a
+            class="inline-flex min-h-11 min-w-11 items-center justify-center rounded-soft text-ink-heading no-underline transition-colors duration-gentle hover:text-primary hover:no-underline focus-ring"
+            href={link.href}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={`${link.label} (opens in a new tab)`}
+          >
+            {link.name === 'instagram' && (
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <rect
+                  x="3.5"
+                  y="3.5"
+                  width="17"
+                  height="17"
+                  rx="5"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                />
+                <circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.25" />
+                <circle cx="17.15" cy="6.85" r="0.95" fill="currentColor" />
+              </svg>
+            )}
+            {link.name === 'etsy' && (
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M16.75 6.75H8.25v10.5h8.5M8.25 12h6.25"
+                  stroke="currentColor"
+                  stroke-width="1.25"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            )}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+</nav>
