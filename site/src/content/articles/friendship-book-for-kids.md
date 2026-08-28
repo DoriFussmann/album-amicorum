@@ -18,7 +18,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-28
 keywords:
   - friendship book for kids
   - Friend Books & Friendship Keepsakes
@@ -125,6 +125,7 @@ In a friendship book, two or more people pledge their friendship through filling
 
 Avoid books where the prompts feel like data collection — tick-boxes, rankings, or multiple-choice answers. A friendship book should invite a drawing, a sentence written in a child's own words, a signature that belongs to no one else. The more the prompts leave room for genuine self-expression, the more the finished book will feel alive.
 
+The quality of the prompts determines the quality of what gets written. Prompts that ask for a favourite colour or a favourite food are a start, but the best friendship books invite something more: a favourite memory with the book's owner, a drawing of something they love, a message they want to leave behind. In a friendship book, two or more people pledge their friendship through filling out a page in the other person's album — and this has traditionally taken place during special occasions, like festivities or on the departure from one's place of study. The best prompts honour that spirit: they ask friends to be present, to think, to mean it. Think of it like the difference between signing a generic birthday card and writing a personal letter — the effort shapes how much the moment is remembered. Avoid books where the prompts feel like data collection — tick-boxes, rankings, or multiple-choice answers. A friendship book should invite a drawing, a sentence written in a child's own words, a signature that belongs to no one else. The more the prompts leave room for genuine self-expression, the more the finished book will feel alive.
 ### Paper Quality
 
 This is often overlooked, but it matters enormously. A child filling in a friendship book will most likely use coloured pencils, felt-tip pens, or ballpoint pens. Paper that is too thin will bleed through, destroying the page behind it and discouraging careful work. Look for paper with enough weight and tooth to take pencil and coloured pencil cleanly — this is the physical foundation of everything the book is meant to preserve.

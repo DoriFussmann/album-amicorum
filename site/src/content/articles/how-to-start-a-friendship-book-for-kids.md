@@ -18,7 +18,7 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-11
+updatedDate: 2026-08-28
 pillarKeyword: Friend Books & Friendship Keepsakes
 supportingKeyword: friendship book for kids
 articleType: howto
@@ -64,6 +64,7 @@ This guide walks through exactly that setup (from choosing the right moment to p
 
 ---
 
+Some keepsakes you simply buy and put on a shelf. A friendship book is not one of them. It has to be started (introduced, explained, handed around, coaxed into life) and the way you begin it shapes everything that follows. Think of it like planting a garden: the seeds you have matter far less than how carefully you prepare the soil before they go in. A book passed to a friend with a casual "just write something" will return with a first name and a smiley face. A book introduced with a little intention and warmth will come back with a favorite color, a memory, a drawing that looks exactly like the child who made it. The difference between those two outcomes isn't the book. It's the setup. This guide walks through exactly that setup (from choosing the right moment to preserving what you've gathered) so that the friendship book you start becomes the kind of thing your child is still reaching for at thirty.
 ## Step 1: Choose the Right Moment to Begin
 
 Friendship books don't need a special occasion, but they thrive with one. The best time to introduce a friendship book to your child is at a natural inflection point in their social life: the start of a new school year, the final weeks of a grade they're about to leave, or the weeks before a move. These are the moments when friendships feel vivid and a little bit fragile — when everyone can sense, even if they can't articulate it, that things are about to change.
