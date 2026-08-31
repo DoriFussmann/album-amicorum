@@ -6,17 +6,44 @@ import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 import { SITE_URL } from './src/config/site.ts';
 
-function draftThemePageUrls() {
+function loadBookFrontmatter() {
   const dir = fileURLToPath(new URL('./src/content/books', import.meta.url));
-  const urls = new Set();
+  const books = [];
   for (const file of readdirSync(dir)) {
     if (!file.endsWith('.md')) continue;
     const raw = readFileSync(`${dir}/${file}`, 'utf8');
-    if (!/^draft:\s*true\s*$/m.test(raw)) continue;
     const slug = raw.match(/^slug:\s*(\S+)/m)?.[1];
-    if (slug) urls.add(`${SITE_URL.replace(/\/+$/, '')}/friend-book/${slug}/`);
+    if (!slug) continue;
+    books.push({
+      slug,
+      draft: /^draft:\s*true\s*$/m.test(raw),
+      hidden: /^hidden:\s*true\s*$/m.test(raw),
+    });
+  }
+  return books;
+}
+
+const bookEntries = loadBookFrontmatter();
+
+function draftThemePageUrls() {
+  const urls = new Set();
+  for (const book of bookEntries) {
+    if (book.draft) {
+      urls.add(`${SITE_URL.replace(/\/+$/, '')}/friend-book/${book.slug}/`);
+    }
   }
   return urls;
+}
+
+function themeRedirects() {
+  /** @type {Record<string, string>} */
+  const redirects = { '/theme': '/friend-book/' };
+  for (const book of bookEntries) {
+    redirects[`/theme/${book.slug}`] = book.hidden
+      ? '/friend-book/'
+      : `/friend-book/${book.slug}/`;
+  }
+  return redirects;
 }
 
 const draftThemePages = draftThemePageUrls();
@@ -30,10 +57,7 @@ export default defineConfig({
     '/our-story': '/#story',
     '/pages': '/#story',
     '/preview': '/',
-    '/theme': '/#collection',
-    '/theme/forest': '/#collection',
-    // TODO(F-01): repoint per-edition /theme/* to /books/<edition>/
-    '/theme/space': '/#collection',
+    ...themeRedirects(),
     '/articles/page/2': '/articles/',
     '/articles/page/3': '/articles/',
     '/articles/page/4': '/articles/',
