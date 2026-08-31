@@ -86,6 +86,10 @@ const books = defineCollection({
     interior: z.string(),
     gallery: z.array(z.string()).optional(),
     hidden: z.boolean().default(false),
+    draft: z.boolean().default(false),
+    metaTitle: z.string().optional(),
+    metaDescription: z.string().optional(),
+    heroImage: z.string().optional(),
     order: z.number(),
   }),
 });

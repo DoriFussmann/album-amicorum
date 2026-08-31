@@ -13,3 +13,4 @@ gallery:
   - /images/books/animals/04-lifestyle.jpg
 order: 7
 ---
+<!-- TODO(Dori): theme sections -->

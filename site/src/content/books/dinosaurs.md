@@ -14,3 +14,4 @@ gallery:
   - /images/books/dinosaurs/05-lifestyle.jpg
 order: 6
 ---
+<!-- TODO(Dori): theme sections -->

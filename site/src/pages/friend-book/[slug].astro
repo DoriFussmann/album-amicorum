@@ -1,0 +1,164 @@
+---
+import { getCollection, render, type CollectionEntry } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/Breadcrumbs.astro';
+import BookGallery from '../../components/BookGallery.astro';
+import { bookGalleryAlt } from '../../lib/bookImageAlt';
+import { absoluteUrl } from '../../lib/url';
+import {
+  PRODUCT_LEAD_1,
+  PRODUCT_LEAD_2,
+  SHIPPING_NOTE,
+  hasVisibleMarkdown,
+  isListedTheme,
+  isSoldTheme,
+  productLd,
+  sortThemes,
+  themeMetaDescription,
+  themeMetaTitle,
+  themePageTitle,
+} from '../../lib/themes';
+
+export async function getStaticPaths() {
+  const books = sortThemes((await getCollection('books')).filter(isSoldTheme));
+  return books.map((book) => ({
+    params: { slug: book.data.slug },
+    props: { book },
+  }));
+}
+
+interface Props {
+  book: CollectionEntry<'books'>;
+}
+
+const { book } = Astro.props;
+const { data } = book;
+const listed = sortThemes((await getCollection('books')).filter(isListedTheme));
+const others = listed.filter((entry) => entry.data.slug !== data.slug);
+
+const sources = data.gallery?.length ? data.gallery : [data.cover, data.interior];
+const images = sources.map((src) => ({
+  src,
+  alt: bookGalleryAlt(data.title, src),
+}));
+
+const cartPayload = JSON.stringify({
+  slug: data.slug,
+  title: data.title,
+  price: data.price,
+  cover: data.cover,
+});
+
+const pageTitle = themePageTitle(data.title);
+const metaTitle = themeMetaTitle(data.title, data.metaTitle);
+const metaDescription = themeMetaDescription(
+  data.title,
+  data.tagline,
+  data.price,
+  data.metaDescription,
+);
+const canonicalPath = `/friend-book/${data.slug}/`;
+const robots = data.draft ? 'noindex, follow' : 'index, follow';
+const ogImage = absoluteUrl(data.cover);
+
+const showThemeSections = hasVisibleMarkdown(book.body);
+const { Content } = showThemeSections ? await render(book) : { Content: null };
+
+const productJsonLd = {
+  '@context': 'https://schema.org',
+  ...productLd(book),
+};
+// TODO(F-20): add AggregateRating once real reviews exist
+
+const breadcrumbLd = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: [
+    { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
+    { '@type': 'ListItem', position: 2, name: 'Friend Book', item: absoluteUrl('/friend-book/') },
+    { '@type': 'ListItem', position: 3, name: data.title, item: absoluteUrl(canonicalPath) },
+  ],
+};
+---
+
+<BaseLayout
+  title={metaTitle}
+  description={metaDescription}
+  canonicalPath={canonicalPath}
+  robots={robots}
+  ogImage={ogImage}
+  jsonLd={[productJsonLd, breadcrumbLd]}
+>
+  <section class="section-space" aria-labelledby="theme-heading">
+    <div class="site-container">
+      <Breadcrumbs
+        items={[
+          { label: 'Home', href: '/' },
+          { label: 'Friend Book', href: '/friend-book/' },
+          { label: data.title, href: canonicalPath },
+        ]}
+      />
+
+      <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+        <BookGallery
+          images={images}
+          class="aspect-[4/5] min-h-[22rem] overflow-hidden rounded-soft lg:min-h-[32rem]"
+        />
+
+        <div data-cart-scope>
+          <h1 id="theme-heading">{pageTitle}</h1>
+          <p class="mt-4 leading-[1.45]">{PRODUCT_LEAD_1}</p>
+          <p class="mt-2 leading-[1.45]">{PRODUCT_LEAD_2}</p>
+          <p class="mt-6 text-sm font-semibold tracking-wide text-ink-heading">{data.price}</p>
+          <p class="mt-1 text-sm text-ink-muted">{SHIPPING_NOTE}</p>
+          <div class="mt-6">
+            <button
+              type="button"
+              class="btn btn-primary"
+              data-add-to-cart
+              data-cart-item={cartPayload}
+            >
+              Add to Cart
+            </button>
+          </div>
+          <p class="mt-2 min-h-5 text-sm text-ink-muted" data-cart-feedback aria-live="polite"></p>
+        </div>
+      </div>
+
+      {
+        others.length > 0 && (
+          <nav class="mt-16" aria-labelledby="other-editions-heading">
+            <h2 id="other-editions-heading" class="text-xl">Other editions</h2>
+            <ul class="mt-4 flex flex-wrap gap-3">
+              {others.map((entry) => (
+                <li>
+                  <a
+                    href={`/friend-book/${entry.data.slug}/`}
+                    class="inline-flex min-h-11 items-center rounded-soft border border-border px-4 text-sm text-ink-heading no-underline hover:border-primary hover:text-primary"
+                  >
+                    {entry.data.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        )
+      }
+
+      {
+        showThemeSections && Content && (
+            <div class="mt-16 max-w-content">
+            <Content />
+          </div>
+        )
+      }
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { bindAddToCartButtons } from '../../lib/bindAddToCart';
+
+  bindAddToCartButtons();
+  document.addEventListener('astro:page-load', bindAddToCartButtons);
+</script>

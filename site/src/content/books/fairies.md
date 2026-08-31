@@ -16,3 +16,4 @@ gallery:
   - /images/books/fairies/07-lifestyle.jpg
 order: 4
 ---
+<!-- TODO(Dori): theme sections -->
