@@ -29,37 +29,42 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
 ---
 
 <article class:list={['book-card group', offsetClass]}>
-  <div class="media-warm aspect-square overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
-    <div class="relative h-full w-full">
-      <img
-        src={cover}
-        alt={coverAlt}
-        width="400"
-        height="400"
-        class="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
-        loading="lazy"
-        decoding="async"
-      />
-      <img
-        src={interior}
-        alt={interiorAlt}
-        width="400"
-        height="400"
-        class="absolute inset-0 h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-        loading="lazy"
-        decoding="async"
-      />
+  <a
+    href={`/friend-book/?edition=${slug}`}
+    class="block rounded-soft text-ink-heading no-underline hover:text-ink-heading hover:no-underline focus-ring"
+  >
+    <div class="media-warm aspect-square overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
+      <div class="relative h-full w-full">
+        <img
+          src={cover}
+          alt={coverAlt}
+          width="400"
+          height="400"
+          class="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
+          loading="lazy"
+          decoding="async"
+        />
+        <img
+          src={interior}
+          alt={interiorAlt}
+          width="400"
+          height="400"
+          class="absolute inset-0 h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+          loading="lazy"
+          decoding="async"
+        />
+      </div>
     </div>
-  </div>
-  <div class="mt-5">
-    <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
-    <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
-    <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
-    <div class="mt-4">
-      <button type="button" class="btn btn-secondary" data-preview-open={previewId}>
-        Preview
-      </button>
+    <div class="mt-5">
+      <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
+      <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
+      <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
     </div>
+  </a>
+  <div class="mt-4">
+    <button type="button" class="btn btn-secondary" data-preview-open={previewId}>
+      Preview
+    </button>
   </div>
 
   <dialog
