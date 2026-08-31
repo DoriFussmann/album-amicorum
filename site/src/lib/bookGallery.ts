@@ -1,47 +1,19 @@
-export type GalleryImage = { src: string; alt: string };
-
 type GalleryState = {
-  images: GalleryImage[];
+  slides: HTMLElement[];
   index: number;
-  imageEl: HTMLImageElement;
   statusEl: HTMLElement | null;
-  fadeTimer: number;
 };
 
-function parseImages(root: HTMLElement): GalleryImage[] {
-  const script = root.querySelector<HTMLScriptElement>('[data-gallery-images]');
-  if (!script?.textContent) return [];
-  try {
-    const parsed = JSON.parse(script.textContent) as unknown;
-    if (!Array.isArray(parsed)) return [];
-    return parsed
-      .map((item) => {
-        if (typeof item === 'string' && item) return { src: item, alt: '' };
-        if (item && typeof item === 'object' && 'src' in item) {
-          const src = String((item as { src: unknown }).src ?? '');
-          const alt = String((item as { alt?: unknown }).alt ?? '');
-          return src ? { src, alt } : null;
-        }
-        return null;
-      })
-      .filter((item): item is GalleryImage => Boolean(item));
-  } catch {
-    return [];
-  }
-}
-
 function showImage(state: GalleryState, nextIndex: number) {
-  if (!state.images.length) return;
-  const total = state.images.length;
+  if (!state.slides.length) return;
+  const total = state.slides.length;
   state.index = ((nextIndex % total) + total) % total;
-  const next = state.images[state.index];
-  window.clearTimeout(state.fadeTimer);
-  state.imageEl.style.opacity = '0';
-  state.fadeTimer = window.setTimeout(() => {
-    state.imageEl.src = next.src;
-    state.imageEl.alt = next.alt;
-    state.imageEl.style.opacity = '1';
-  }, 120);
+  state.slides.forEach((slide, i) => {
+    const active = i === state.index;
+    slide.classList.toggle('opacity-0', !active);
+    slide.classList.toggle('opacity-100', active);
+    slide.setAttribute('aria-hidden', active ? 'false' : 'true');
+  });
   if (state.statusEl) {
     state.statusEl.textContent = `${state.index + 1} / ${total}`;
   }
@@ -50,15 +22,13 @@ function showImage(state: GalleryState, nextIndex: number) {
 export function initBookGalleries(scope: ParentNode = document): void {
   scope.querySelectorAll<HTMLElement>('[data-book-gallery]').forEach((root) => {
     if (root.dataset.galleryReady === 'true') return;
-    const imageEl = root.querySelector<HTMLImageElement>('[data-gallery-image]');
-    if (!imageEl) return;
+    const slides = [...root.querySelectorAll<HTMLElement>('[data-gallery-slide]')];
+    if (!slides.length) return;
 
     const state: GalleryState = {
-      images: parseImages(root),
+      slides,
       index: 0,
-      imageEl,
       statusEl: root.querySelector('[data-gallery-status]'),
-      fadeTimer: 0,
     };
 
     root.querySelector('[data-gallery-prev]')?.addEventListener('click', (event) => {

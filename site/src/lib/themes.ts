@@ -1,5 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE_NAME, SITE_URL } from '../config/site';
+import { bookImageSrc } from './bookAssets';
 import { absoluteUrl } from './url';
 
 /** Verbatim from BookCard.astro — do not paraphrase. */
@@ -63,13 +64,13 @@ export function themeMetaDescription(
   return `${prefix}${clipped}${suffix}`;
 }
 
-export function productLd(book: CollectionEntry<'books'>): Record<string, unknown> {
+export async function productLd(book: CollectionEntry<'books'>): Promise<Record<string, unknown>> {
   const { title, slug, price, cover } = book.data;
   return {
     '@type': 'Product',
     name: `My Friends Book — ${title}`,
     sku: slug,
-    image: absoluteUrl(cover),
+    image: absoluteUrl(await bookImageSrc(cover)),
     description: PRODUCT_DESCRIPTION,
     brand: {
       '@type': 'Organization',
@@ -88,7 +89,7 @@ export function productLd(book: CollectionEntry<'books'>): Record<string, unknow
   };
 }
 
-export function productGroupLd(books: CollectionEntry<'books'>[]): Record<string, unknown> {
+export async function productGroupLd(books: CollectionEntry<'books'>[]): Promise<Record<string, unknown>> {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProductGroup',
@@ -103,6 +104,6 @@ export function productGroupLd(books: CollectionEntry<'books'>[]): Record<string
     url: absoluteUrl('/friend-book/'),
     productGroupID: 'my-friends-book',
     variesBy: ['https://schema.org/pattern'],
-    hasVariant: books.map((book) => productLd(book)),
+    hasVariant: await Promise.all(books.map((book) => productLd(book))),
   };
 }

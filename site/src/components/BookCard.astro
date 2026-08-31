@@ -1,5 +1,7 @@
 ---
+import { Picture } from 'astro:assets';
 import BookGallery from './BookGallery.astro';
+import { bookImage, bookImageSrc } from '../lib/bookAssets';
 import { bookCoverAlt, bookGalleryAlt, bookInteriorAlt } from '../lib/bookImageAlt';
 
 interface Props {
@@ -21,34 +23,39 @@ const offsetClass =
 const previewId = `preview-${slug}`;
 const coverAlt = bookCoverAlt(title);
 const interiorAlt = bookInteriorAlt(title);
+const coverAsset = bookImage(cover);
+const interiorAsset = bookImage(interior);
 const images = (gallery?.length ? gallery : [cover, interior]).map((src) => ({
-  src,
+  src: bookImage(src),
   alt: bookGalleryAlt(title, src),
 }));
-const cartPayload = JSON.stringify({ slug, title, price, cover });
+const coverSrc = await bookImageSrc(cover);
+const cartPayload = JSON.stringify({ slug, title, price, cover: coverSrc });
 ---
 
 <article class:list={['book-card group', offsetClass]}>
   <a href={`/friend-book/${slug}/`} class="block text-inherit no-underline">
     <div class="media-warm aspect-square overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
       <div class="relative h-full w-full">
-        <img
-          src={cover}
+        <Picture
+          src={coverAsset}
           alt={coverAlt}
-          width="400"
-          height="400"
-          class="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
+          widths={[400, 800]}
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+          formats={['avif', 'webp']}
+          pictureAttributes={{ class: 'absolute inset-0 h-full w-full' }}
+          class="h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
           loading="lazy"
-          decoding="async"
         />
-        <img
-          src={interior}
+        <Picture
+          src={interiorAsset}
           alt={interiorAlt}
-          width="400"
-          height="400"
-          class="absolute inset-0 h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+          widths={[400, 800]}
+          sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
+          formats={['avif', 'webp']}
+          pictureAttributes={{ class: 'absolute inset-0 h-full w-full' }}
+          class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
           loading="lazy"
-          decoding="async"
         />
       </div>
     </div>

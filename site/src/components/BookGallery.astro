@@ -1,8 +1,9 @@
 ---
-import type { GalleryImage } from '../lib/bookGallery';
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
 
 interface Props {
-  images: GalleryImage[];
+  images: { src: ImageMetadata; alt: string }[];
   class?: string;
 }
 
@@ -17,15 +18,28 @@ const { images, class: className = '' } = Astro.props;
   aria-label="Edition photos"
 >
   <div class="media-warm absolute inset-0 overflow-hidden bg-surface">
-    <img
-      data-gallery-image
-      src={images[0]?.src}
-      alt={images[0]?.alt ?? ''}
-      width="960"
-      height="540"
-      class="h-full w-full object-cover transition-opacity duration-300"
-      decoding="async"
-    />
+    {
+      images.map((image, i) => (
+        <div
+          class:list={[
+            'absolute inset-0 transition-opacity duration-300',
+            i === 0 ? 'opacity-100' : 'opacity-0',
+          ]}
+          data-gallery-slide
+          aria-hidden={i === 0 ? 'false' : 'true'}
+        >
+          <Picture
+            src={image.src}
+            alt={image.alt}
+            widths={[480, 800, 1200, 1600]}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            formats={['avif', 'webp']}
+            class="h-full w-full object-cover"
+            loading={i === 0 ? 'eager' : 'lazy'}
+          />
+        </div>
+      ))
+    }
   </div>
 
   <button
@@ -74,8 +88,6 @@ const { images, class: className = '' } = Astro.props;
   >
     1 / {images.length}
   </p>
-
-  <script type="application/json" class="hidden" data-gallery-images set:html={JSON.stringify(images)} />
 </div>
 
 <script>

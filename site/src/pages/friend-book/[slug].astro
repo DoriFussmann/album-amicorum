@@ -3,6 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BookGallery from '../../components/BookGallery.astro';
+import { bookImage, bookImageSrc } from '../../lib/bookAssets';
 import { bookGalleryAlt } from '../../lib/bookImageAlt';
 import { absoluteUrl } from '../../lib/url';
 import {
@@ -38,15 +39,16 @@ const others = listed.filter((entry) => entry.data.slug !== data.slug);
 
 const sources = data.gallery?.length ? data.gallery : [data.cover, data.interior];
 const images = sources.map((src) => ({
-  src,
+  src: bookImage(src),
   alt: bookGalleryAlt(data.title, src),
 }));
 
+const coverSrc = await bookImageSrc(data.cover);
 const cartPayload = JSON.stringify({
   slug: data.slug,
   title: data.title,
   price: data.price,
-  cover: data.cover,
+  cover: coverSrc,
 });
 
 const pageTitle = themePageTitle(data.title);
@@ -59,14 +61,14 @@ const metaDescription = themeMetaDescription(
 );
 const canonicalPath = `/friend-book/${data.slug}/`;
 const robots = data.draft ? 'noindex, follow' : 'index, follow';
-const ogImage = absoluteUrl(data.cover);
+const ogImage = absoluteUrl(coverSrc);
 
 const showThemeSections = hasVisibleMarkdown(book.body);
 const { Content } = showThemeSections ? await render(book) : { Content: null };
 
 const productJsonLd = {
   '@context': 'https://schema.org',
-  ...productLd(book),
+  ...(await productLd(book)),
 };
 // TODO(F-20): add AggregateRating once real reviews exist
 
