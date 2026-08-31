@@ -1,5 +1,4 @@
 ---
-import BookGallery from './BookGallery.astro';
 import { bookCoverAlt, bookGalleryAlt, bookInteriorAlt } from '../lib/bookImageAlt';
 
 interface Props {
@@ -29,42 +28,37 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
 ---
 
 <article class:list={['book-card group', offsetClass]}>
-  <a
-    href={`/friend-book/?edition=${slug}`}
-    class="block rounded-soft text-ink-heading no-underline hover:text-ink-heading hover:no-underline focus-ring"
-  >
-    <div class="media-warm aspect-square overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
-      <div class="relative h-full w-full">
-        <img
-          src={cover}
-          alt={coverAlt}
-          width="400"
-          height="400"
-          class="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
-          loading="lazy"
-          decoding="async"
-        />
-        <img
-          src={interior}
-          alt={interiorAlt}
-          width="400"
-          height="400"
-          class="absolute inset-0 h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
-          loading="lazy"
-          decoding="async"
-        />
-      </div>
+  <div class="media-warm aspect-square overflow-hidden bg-surface shadow-soft transition-shadow duration-gentle group-hover:shadow-lift">
+    <div class="relative h-full w-full">
+      <img
+        src={cover}
+        alt={coverAlt}
+        width="400"
+        height="400"
+        class="absolute inset-0 h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
+        loading="lazy"
+        decoding="async"
+      />
+      <img
+        src={interior}
+        alt={interiorAlt}
+        width="400"
+        height="400"
+        class="absolute inset-0 h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
+        loading="lazy"
+        decoding="async"
+      />
     </div>
-    <div class="mt-5">
-      <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
-      <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
-      <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
+  </div>
+  <div class="mt-5">
+    <h3 class="text-xl font-semibold md:text-xl">{title}</h3>
+    <p class="mt-1 font-display text-lg italic text-ink-muted">{tagline}</p>
+    <p class="mt-2 text-sm font-semibold tracking-wide text-ink-heading">{price}</p>
+    <div class="mt-4">
+      <button type="button" class="btn btn-secondary" data-preview-open={previewId}>
+        Preview
+      </button>
     </div>
-  </a>
-  <div class="mt-4">
-    <button type="button" class="btn btn-secondary" data-preview-open={previewId}>
-      Preview
-    </button>
   </div>
 
   <dialog
@@ -72,9 +66,69 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
     class="book-preview-dialog h-[min(90vh,52rem)] w-[min(calc(100%-1.5rem),44.88rem)] flex-col overflow-hidden rounded-soft border border-border bg-canvas p-0 shadow-lift backdrop:bg-ink/40"
     aria-labelledby={`${previewId}-title`}
     data-preview-gallery
-    data-cart-scope
   >
-    <BookGallery images={images} class="relative min-h-0 flex-[3]" />
+    <div class="relative min-h-0 flex-[3]" data-gallery>
+      <div class="media-warm absolute inset-0 overflow-hidden bg-surface">
+        <img
+          data-gallery-image
+          src={images[0].src}
+          alt={images[0].alt}
+          width="960"
+          height="540"
+          class="h-full w-full object-cover transition-opacity duration-300"
+          decoding="async"
+        />
+      </div>
+
+      {
+        images.length > 1 && (
+          <>
+            <button
+              type="button"
+              class="absolute left-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-canvas/90 text-ink-heading shadow-soft transition hover:bg-surface"
+              data-gallery-prev
+              aria-label="Previous image"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M14.5 6.5L9 12l5.5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+            <button
+              type="button"
+              class="absolute right-2 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-border bg-canvas/90 text-ink-heading shadow-soft transition hover:bg-surface"
+              data-gallery-next
+              aria-label="Next image"
+            >
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M9.5 6.5L15 12l-5.5 5.5"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </button>
+          </>
+        )
+      }
+
+      <p
+        class="absolute bottom-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-canvas/90 px-3 py-1 text-sm text-ink-muted shadow-soft"
+        data-gallery-status
+        aria-live="polite"
+      >
+        1 / {images.length}
+      </p>
+    </div>
+
+    <script type="application/json" class="hidden" data-gallery-images set:html={JSON.stringify(images)} />
 
     <div class="shrink-0 px-6 py-4 md:px-8">
       <h2 id={`${previewId}-title`} class="text-2xl">My Friends Book — {title}</h2>
@@ -108,7 +162,109 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
 </article>
 
 <script>
-  import { bindAddToCartButtons } from '../lib/bindAddToCart';
+  import { addToCart } from '../lib/cart';
+
+  type GalleryImage = { src: string; alt: string };
+
+  type GalleryState = {
+    images: GalleryImage[];
+    index: number;
+    imageEl: HTMLImageElement;
+    statusEl: HTMLElement | null;
+  };
+
+  function parseImages(dialog: HTMLElement): GalleryImage[] {
+    const script = dialog.querySelector<HTMLScriptElement>('[data-gallery-images]');
+    if (!script?.textContent) return [];
+    try {
+      const parsed = JSON.parse(script.textContent) as unknown;
+      if (!Array.isArray(parsed)) return [];
+      return parsed
+        .map((item) => {
+          if (typeof item === 'string' && item) return { src: item, alt: '' };
+          if (item && typeof item === 'object' && 'src' in item) {
+            const src = String((item as { src: unknown }).src ?? '');
+            const alt = String((item as { alt?: unknown }).alt ?? '');
+            return src ? { src, alt } : null;
+          }
+          return null;
+        })
+        .filter((item): item is GalleryImage => Boolean(item));
+    } catch {
+      return [];
+    }
+  }
+
+  function showImage(state: GalleryState, nextIndex: number) {
+    if (!state.images.length) return;
+    const total = state.images.length;
+    state.index = ((nextIndex % total) + total) % total;
+    const next = state.images[state.index];
+    state.imageEl.style.opacity = '0';
+    window.setTimeout(() => {
+      state.imageEl.src = next.src;
+      state.imageEl.alt = next.alt;
+      state.imageEl.style.opacity = '1';
+    }, 120);
+    if (state.statusEl) {
+      state.statusEl.textContent = `${state.index + 1} / ${total}`;
+    }
+  }
+
+  function initGallery(dialog: HTMLDialogElement) {
+    if (dialog.dataset.galleryReady === 'true') return;
+    const gallery = dialog.querySelector<HTMLElement>('[data-gallery]');
+    const imageEl = dialog.querySelector<HTMLImageElement>('[data-gallery-image]');
+    if (!gallery || !imageEl) return;
+
+    const state: GalleryState = {
+      images: parseImages(dialog),
+      index: 0,
+      imageEl,
+      statusEl: dialog.querySelector('[data-gallery-status]'),
+    };
+
+    dialog.querySelector('[data-gallery-prev]')?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showImage(state, state.index - 1);
+    });
+    dialog.querySelector('[data-gallery-next]')?.addEventListener('click', (event) => {
+      event.stopPropagation();
+      showImage(state, state.index + 1);
+    });
+
+    let touchStartX = 0;
+    gallery.addEventListener(
+      'touchstart',
+      (event) => {
+        touchStartX = event.changedTouches[0]?.clientX ?? 0;
+      },
+      { passive: true },
+    );
+    gallery.addEventListener(
+      'touchend',
+      (event) => {
+        const touchEndX = event.changedTouches[0]?.clientX ?? 0;
+        const delta = touchEndX - touchStartX;
+        if (Math.abs(delta) < 40) return;
+        showImage(state, delta > 0 ? state.index - 1 : state.index + 1);
+      },
+      { passive: true },
+    );
+
+    dialog.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        showImage(state, state.index - 1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        showImage(state, state.index + 1);
+      }
+    });
+
+    dialog.dataset.galleryReady = 'true';
+  }
 
   function initBookPreviews() {
     document.querySelectorAll<HTMLButtonElement>('[data-preview-open]').forEach((button) => {
@@ -117,6 +273,8 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
       if (!id) return;
       const dialog = document.getElementById(id);
       if (!(dialog instanceof HTMLDialogElement)) return;
+
+      initGallery(dialog);
 
       button.addEventListener('click', () => {
         dialog.showModal();
@@ -142,7 +300,36 @@ const cartPayload = JSON.stringify({ slug, title, price, cover });
       dialog.dataset.backdropBound = 'true';
     });
 
-    bindAddToCartButtons();
+    document.querySelectorAll<HTMLButtonElement>('[data-add-to-cart]').forEach((button) => {
+      if (button.dataset.cartBound === 'true') return;
+      button.addEventListener('click', () => {
+        const raw = button.getAttribute('data-cart-item');
+        if (!raw) return;
+        try {
+          const item = JSON.parse(raw) as {
+            slug: string;
+            title: string;
+            price: string;
+            cover: string;
+          };
+          addToCart(item);
+          const feedback = button
+            .closest('dialog')
+            ?.querySelector<HTMLElement>('[data-cart-feedback]');
+          if (feedback) {
+            feedback.textContent = `${item.title} added to your cart.`;
+            feedback.classList.remove('hidden');
+          }
+          button.textContent = 'Added';
+          window.setTimeout(() => {
+            button.textContent = 'Add to Cart';
+          }, 1600);
+        } catch {
+          // Ignore malformed cart payloads.
+        }
+      });
+      button.dataset.cartBound = 'true';
+    });
   }
 
   initBookPreviews();
