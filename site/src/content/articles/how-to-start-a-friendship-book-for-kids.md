@@ -3,7 +3,7 @@ title: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
 description: A parent's practical guide to starting a friendship book with kids — from setting up the very first page to building a keepsake that lasts for decades.
 slug: how-to-start-a-friendship-book-for-kids
 date: 2026-08-10
-author: alex-rivera
+author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
 tags:
   - Friend Books & Friendship Keepsakes

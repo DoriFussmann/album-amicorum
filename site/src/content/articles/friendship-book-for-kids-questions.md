@@ -3,7 +3,7 @@ title: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
 description: Still wondering if a friendship book is right for your child? Honest answers on age, what goes inside, how it works, and why kids keep using it.
 slug: friendship-book-for-kids-questions
 date: 2026-08-10
-author: alex-rivera
+author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
 tags:
   - friend books and friendship keepsakes

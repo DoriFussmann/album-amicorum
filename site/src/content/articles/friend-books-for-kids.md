@@ -3,7 +3,7 @@ title: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
 description: Discover what a Friend Book really is, why childhood friendships deserve one, and how to choose an illustrated keepsake kids will treasure for life.
 slug: friend-books-for-kids
 date: 2026-08-10
-author: alex-rivera
+author: dori-fussmann
 category: Friend Books & Friendship Keepsakes
 tags:
   - Friend Books & Friendship Keepsakes

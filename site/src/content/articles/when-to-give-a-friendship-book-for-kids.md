@@ -3,7 +3,7 @@ title: 7 Occasions That Call for Giving a Friendship Book for Kids
 description: From the last day of school to a family move, these 7 moments are when a friendship book for kids stops feeling like a gift and starts feeling like a must.
 slug: when-to-give-a-friendship-book-for-kids
 date: 2026-08-10
-author: alex-rivera
+author: dori-fussmann
 category: Meaningful & Screen-Free Gifts
 tags:
   - friendship book for kids
