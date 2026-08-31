@@ -1,7 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import SocialLinks from './SocialLinks.astro';
-import { SITE_NAME } from '../config/site';
+import { SITE_NAME, SOCIAL_LINKS } from '../config/site';
 
 const links = [
   { href: '/#what-is', label: 'My Friends Book' },
@@ -12,6 +12,8 @@ const links = [
   // Contact page is future work — interim mailto only
   { href: 'mailto:hello@albumamicorum.com', label: 'Contact' },
 ];
+
+const etsy = SOCIAL_LINKS.find((link) => link.name === 'etsy');
 ---
 
 <footer class="mt-auto bg-surface">
@@ -35,7 +37,21 @@ const links = [
         <p class="text-sm leading-[1.7] text-ink">
           Beautifully illustrated Friend Books that become one-of-a-kind keepsakes of childhood.
         </p>
-        <SocialLinks class="mt-1" />
+        <div class="mt-1 flex flex-wrap items-center gap-x-3 gap-y-1">
+          <SocialLinks />
+          {
+            etsy && (
+              <a
+                class="inline-flex min-h-11 items-center text-sm text-ink no-underline hover:underline focus-ring rounded-soft"
+                href={etsy.href}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Shop on Etsy
+              </a>
+            )
+          }
+        </div>
         <p class="mt-2 text-sm text-ink-muted">
           &copy; 2026 {SITE_NAME}
         </p>
