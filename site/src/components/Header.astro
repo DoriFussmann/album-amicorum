@@ -1,14 +1,19 @@
 ---
+import { getCollection } from 'astro:content';
 import Logo from './Logo.astro';
+import { isListedTheme, sortThemes } from '../lib/themes';
 
-const links = [
+const beforeThemes = [
   { href: '/#what-is', label: 'My Friends Book' },
   { href: '/#how-it-works', label: 'How It Works' },
-  { href: '/#collection', label: 'Collection' },
+];
+const afterThemes = [
   { href: '/#story', label: 'Our Story' },
   { href: '/#testimonials', label: 'Testimonials' },
   { href: '/articles/', label: 'Articles' },
 ];
+
+const themes = sortThemes((await getCollection('books')).filter(isListedTheme));
 ---
 
 <header class="sticky top-0 z-40">
@@ -23,7 +28,67 @@ const links = [
 
       <ul class="hidden items-center gap-1 md:flex">
         {
-          links.map((link) => (
+          beforeThemes.map((link) => (
+            <li>
+              <a class="nav-link" href={link.href}>
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
+        <li class="relative" data-themes-menu>
+          <button
+            type="button"
+            class="nav-link"
+            aria-haspopup="menu"
+            aria-expanded="false"
+            aria-controls="themes-menu"
+            data-themes-trigger
+          >
+            Themes
+            <svg class="ml-1 h-3.5 w-3.5" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path
+                d="M5 7.5L10 12.5L15 7.5"
+                stroke="currentColor"
+                stroke-width="1.25"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <ul
+            id="themes-menu"
+            role="menu"
+            hidden
+            class="absolute left-0 top-full z-50 mt-1 min-w-[12rem] rounded-soft border border-border bg-surface py-2 shadow-soft"
+            data-themes-panel
+          >
+            {
+              themes.map((theme) => (
+                <li role="none">
+                  <a
+                    role="menuitem"
+                    href={`/friend-book/${theme.data.slug}/`}
+                    class="flex min-h-11 items-center px-4 text-sm text-ink no-underline hover:bg-canvas hover:text-primary"
+                  >
+                    {theme.data.title}
+                  </a>
+                </li>
+              ))
+            }
+            <li role="none">
+              <a
+                role="menuitem"
+                href="/friend-book/"
+                class="flex min-h-11 items-center px-4 text-sm text-ink no-underline hover:bg-canvas hover:text-primary"
+              >
+                All themes
+              </a>
+            </li>
+          </ul>
+        </li>
+        {
+          afterThemes.map((link) => (
             <li>
               <a class="nav-link" href={link.href}>
                 {link.label}
@@ -84,7 +149,46 @@ const links = [
             class="fixed inset-x-0 top-28 z-40 max-h-[calc(100dvh-7rem)] overflow-y-auto border-b border-border bg-surface px-4 py-3 shadow-soft"
           >
             {
-              links.map((link) => (
+              beforeThemes.map((link) => (
+                <li>
+                  <a class="nav-link flex min-h-11 w-full items-center" href={link.href}>
+                    {link.label}
+                  </a>
+                </li>
+              ))
+            }
+            <li>
+              <button
+                type="button"
+                class="nav-link flex min-h-11 w-full items-center"
+                aria-expanded="false"
+                aria-controls="mobile-themes-panel"
+                data-themes-accordion
+              >
+                Themes
+              </button>
+              <ul id="mobile-themes-panel" class="pb-1 pl-3" hidden data-themes-accordion-panel>
+                {
+                  themes.map((theme) => (
+                    <li>
+                      <a
+                        class="nav-link flex min-h-11 w-full items-center"
+                        href={`/friend-book/${theme.data.slug}/`}
+                      >
+                        {theme.data.title}
+                      </a>
+                    </li>
+                  ))
+                }
+                <li>
+                  <a class="nav-link flex min-h-11 w-full items-center" href="/friend-book/">
+                    All themes
+                  </a>
+                </li>
+              </ul>
+            </li>
+            {
+              afterThemes.map((link) => (
                 <li>
                   <a class="nav-link flex min-h-11 w-full items-center" href={link.href}>
                     {link.label}
@@ -165,8 +269,91 @@ const links = [
     });
   }
 
+  function initThemesMenu() {
+    document.querySelectorAll<HTMLElement>('[data-themes-menu]').forEach((root) => {
+      if (root.dataset.themesBound === 'true') return;
+      const trigger = root.querySelector<HTMLButtonElement>('[data-themes-trigger]');
+      const panel = root.querySelector<HTMLElement>('[data-themes-panel]');
+      if (!trigger || !panel) return;
+      const items = [...panel.querySelectorAll<HTMLElement>('[role="menuitem"]')];
+
+      const setOpen = (open: boolean, restoreFocus = false) => {
+        panel.hidden = !open;
+        trigger.setAttribute('aria-expanded', open ? 'true' : 'false');
+        if (!open && restoreFocus) trigger.focus();
+      };
+
+      trigger.addEventListener('click', () => {
+        const open = trigger.getAttribute('aria-expanded') !== 'true';
+        setOpen(open);
+        if (open) items[0]?.focus();
+      });
+
+      trigger.addEventListener('keydown', (event) => {
+        if (event.key === 'ArrowDown' || event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          setOpen(true);
+          items[0]?.focus();
+        }
+        if (event.key === 'Escape') setOpen(false, true);
+      });
+
+      panel.addEventListener('keydown', (event) => {
+        const current = items.indexOf(document.activeElement as HTMLElement);
+        if (event.key === 'Escape') {
+          event.preventDefault();
+          setOpen(false, true);
+        }
+        if (event.key === 'ArrowDown') {
+          event.preventDefault();
+          items[(current + 1 + items.length) % items.length]?.focus();
+        }
+        if (event.key === 'ArrowUp') {
+          event.preventDefault();
+          items[(current - 1 + items.length) % items.length]?.focus();
+        }
+        if (event.key === 'Home') {
+          event.preventDefault();
+          items[0]?.focus();
+        }
+        if (event.key === 'End') {
+          event.preventDefault();
+          items[items.length - 1]?.focus();
+        }
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!root.contains(event.target as Node)) setOpen(false);
+      });
+
+      items.forEach((item) => {
+        item.addEventListener('click', () => setOpen(false));
+      });
+
+      root.dataset.themesBound = 'true';
+    });
+  }
+
+  function initThemesAccordion() {
+    document.querySelectorAll<HTMLButtonElement>('[data-themes-accordion]').forEach((button) => {
+      if (button.dataset.themesBound === 'true') return;
+      const panelId = button.getAttribute('aria-controls');
+      const panel = panelId ? document.getElementById(panelId) : null;
+      button.addEventListener('click', () => {
+        const open = button.getAttribute('aria-expanded') === 'true';
+        button.setAttribute('aria-expanded', open ? 'false' : 'true');
+        if (panel) panel.hidden = open;
+      });
+      button.dataset.themesBound = 'true';
+    });
+  }
+
   initCartBadge();
   initMobileNav();
+  initThemesMenu();
+  initThemesAccordion();
   document.addEventListener('astro:page-load', initCartBadge);
   document.addEventListener('astro:page-load', initMobileNav);
+  document.addEventListener('astro:page-load', initThemesMenu);
+  document.addEventListener('astro:page-load', initThemesAccordion);
 </script>
