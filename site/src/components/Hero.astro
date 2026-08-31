@@ -8,10 +8,10 @@ import heroImage from '../assets/images/hero.jpg';
   aria-labelledby="hero-heading"
   class="relative isolate min-h-[min(88vh,52rem)] overflow-hidden"
 >
-  <div class="pointer-events-none absolute inset-0" aria-hidden="true">
+  <div class="pointer-events-none absolute inset-0">
     <Picture
       src={heroImage}
-      alt=""
+      alt="Children sitting together in a meadow, looking at an open My Friends Book"
       widths={[640, 960, 1280, 1600, 1920]}
       sizes="100vw"
       formats={['avif', 'webp']}
@@ -21,8 +21,9 @@ import heroImage from '../assets/images/hero.jpg';
     />
     <div
       class="absolute inset-0 bg-gradient-to-b from-canvas/55 via-canvas/72 to-canvas/92"
+      aria-hidden="true"
     ></div>
-    <div class="absolute inset-0 bg-canvas/25"></div>
+    <div class="absolute inset-0 bg-canvas/25" aria-hidden="true"></div>
   </div>
 
   <div class="site-container hero-enter relative z-10 flex min-h-[min(88vh,52rem)] w-full flex-col justify-center py-20 md:py-28">
