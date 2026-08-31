@@ -326,10 +326,6 @@ const themes = sortThemes((await getCollection('books')).filter(isListedTheme));
         if (!root.contains(event.target as Node)) setOpen(false);
       });
 
-      items.forEach((item) => {
-        item.addEventListener('click', () => setOpen(false));
-      });
-
       root.dataset.themesBound = 'true';
     });
   }
