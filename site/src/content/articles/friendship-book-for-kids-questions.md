@@ -56,7 +56,7 @@ externalLinks:
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
 ---
 
-# Friendship Book for Kids: FAQ for Parents and Gift-Givers
+## Friendship Book for Kids: FAQ for Parents and Gift-Givers
 
 You've seen the phrase (*friendship book for kids*) and something about it stopped you. Maybe you picture a spiral notebook passed around a classroom, or a stack of pages your child might forget under the bed. Or maybe you picture something more: a real keepsake, filled with handwriting from the people your child loves most, sitting on a shelf years from now. Before you decide, you probably have a few practical questions. This article answers them directly.
 

@@ -42,7 +42,7 @@ externalLinks:
     url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
 ---
 
-# Friendship Activities for Kids: Parent Questions Answered
+## Friendship Activities for Kids: Parent Questions Answered
 
 You planned the playdate. You set out the supplies. You had a rough idea of what you wanted to happen. And then reality arrived — one child took over, another went quiet, nobody could agree on what to make, and by the time it was over you had a stack of drawings that ended up on top of the microwave for a week before disappearing entirely.
 

@@ -57,7 +57,7 @@ externalLinks:
     url: https://www.facebook.com/groups/mybookloversclub/posts/7714267648642144/
 ---
 
-# 7 Occasions That Call for Giving a Friendship Book for Kids
+## 7 Occasions That Call for Giving a Friendship Book for Kids
 
 Some gifts are well-chosen. Others are perfectly timed. A friendship book for kids belongs in that rarer second category — a gift whose value depends not just on what it is, but on the moment it arrives. Give it too randomly, and it may sit on a shelf. Give it at the right moment, and it becomes the first page of something a child will carry for decades.
 

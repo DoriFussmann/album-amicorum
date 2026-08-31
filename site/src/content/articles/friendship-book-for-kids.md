@@ -55,7 +55,7 @@ externalLinks:
     url: https://www.youtube.com/watch?v=4iLgR5vSBrg
 ---
 
-# Friendship Book for Kids: The Complete Guide to Keepsakes
+## Friendship Book for Kids: The Complete Guide to Keepsakes
 
 There is a moment most parents recognise, even if they cannot quite name it — the last week of term, a birthday party winding down, a child's class photo being signed in a rush. It is the moment when a whole world of friendship is about to scatter, and the only thing equal to it would be something that could hold it still. A friendship book for kids exists precisely for this moment. Not a storybook, not a diary, not a printed album: something richer, more alive, and more irreplaceable than any of those things.
 

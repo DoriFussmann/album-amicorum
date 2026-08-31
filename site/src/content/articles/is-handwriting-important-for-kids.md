@@ -53,7 +53,7 @@ faqs:
     answer: "The single most effective shift is giving the writing a real audience and purpose. Children who resist worksheets will often write willingly — even enthusiastically — when the words are going to someone they care about: a grandparent, a friend, a pen pal. The content becomes the motivator, and the handwriting follows naturally."
 ---
 
-# Is Handwriting Important for Kids? Top Questions Answered
+## Is Handwriting Important for Kids? Top Questions Answered
 
 Parents today face a genuinely confusing landscape. Schools are handing children tablets before they can reliably hold a pencil. Homework is submitted by email. Even kindergarten classrooms have keyboards. So when a child balks at writing by hand, it is tempting to wonder whether the battle is worth fighting. The research says it very much is — but the *how* matters at least as much as the *how much*. Below, we take the five questions parents ask most often and answer each one with what the science actually shows.
 

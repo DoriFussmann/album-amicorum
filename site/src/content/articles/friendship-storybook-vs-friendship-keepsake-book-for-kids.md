@@ -56,7 +56,7 @@ externalLinks:
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
 ---
 
-# Friendship Storybooks vs. Keepsake Books: Which Is Right?
+## Friendship Storybooks vs. Keepsake Books: Which Is Right?
 
 You search "friendship book for kids" and the results pile up, beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction, because buying the right one for the right moment makes all the difference.
 

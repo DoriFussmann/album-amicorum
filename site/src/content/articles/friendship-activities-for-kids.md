@@ -41,7 +41,7 @@ externalLinks:
     url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
 ---
 
-# Friendship Activities for Kids: A Thoughtful Parent's Guide
+## Friendship Activities for Kids: A Thoughtful Parent's Guide
 
 There is a version of a childhood afternoon that most parents can picture clearly: two children bent over a table, pencils moving, shoulders almost touching, occasionally dissolving into laughter over something only they understand. No screens. No schedule. Just the quiet, industrious pleasure of making something together. That image captures something essential about what friendship activities can be at their best — not entertainment to fill time, but experiences that build something real, between real people, at a particular and unrepeatable moment in a child's life.
 

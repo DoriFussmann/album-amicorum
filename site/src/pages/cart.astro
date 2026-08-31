@@ -10,8 +10,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 >
   <section class="section-space" aria-labelledby="cart-heading">
     <div class="site-container">
+      <h1 id="cart-heading" class="text-3xl md:text-4xl text-center">Your Friend Book is waiting.</h1>
+
       <div data-cart-empty class="text-center">
-        <h1 id="cart-heading-empty" class="text-3xl md:text-4xl">Your Friend Book is waiting.</h1>
         <p class="mx-auto mt-4 max-w-xl text-ink">
           Explore the collection and choose the world your child will love.
         </p>
@@ -21,7 +22,6 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       </div>
 
       <div data-cart-filled class="hidden">
-        <h1 id="cart-heading" class="text-3xl md:text-4xl">Your Friend Book</h1>
         <p class="mt-4 max-w-xl text-ink">
           You're just a few steps away from beginning a new collection of childhood memories.
         </p>
@@ -75,15 +75,20 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     const emptyEl = document.querySelector<HTMLElement>('[data-cart-empty]');
     const filledEl = document.querySelector<HTMLElement>('[data-cart-filled]');
     const listEl = document.querySelector<HTMLUListElement>('[data-cart-items]');
-    if (!emptyEl || !filledEl || !listEl) return;
+    const headingEl = document.querySelector<HTMLHeadingElement>('#cart-heading');
+    if (!emptyEl || !filledEl || !listEl || !headingEl) return;
 
     if (!items.length) {
+      headingEl.textContent = 'Your Friend Book is waiting.';
+      headingEl.classList.add('text-center');
       emptyEl.classList.remove('hidden');
       filledEl.classList.add('hidden');
       listEl.innerHTML = '';
       return;
     }
 
+    headingEl.textContent = 'Your Friend Book';
+    headingEl.classList.remove('text-center');
     emptyEl.classList.add('hidden');
     filledEl.classList.remove('hidden');
 

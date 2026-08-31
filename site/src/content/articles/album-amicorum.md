@@ -44,7 +44,7 @@ externalLinks:
     url: https://www.amightygirl.com/blog/?p=10315
 ---
 
-# Album Amicorum: The 500-Year-Old Friendship Book Tradition
+## Album Amicorum: The 500-Year-Old Friendship Book Tradition
 
 There is something quietly radical about a blank book passed from hand to hand, filled page by page with the words and drawings of the people who matter most. It requires no battery, no password, no algorithm. It asks only that someone sit down, think carefully about another person, and write something true. This is the album amicorum — Latin for *album of friends* — and it has been doing exactly that for nearly five hundred years.
 
