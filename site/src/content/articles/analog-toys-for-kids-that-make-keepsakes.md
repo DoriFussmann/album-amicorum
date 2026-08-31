@@ -4,7 +4,7 @@ description: Ten screen-free, analog toys for kids ages 5–12 that produce some
 slug: analog-toys-for-kids-that-make-keepsakes
 date: 2026-08-25
 author: dori-fussmann
-category: Childhood Friendship & Connection
+category: Children's Keepsakes & Memory
 tags:
   - analog toys for kids
   - keepsakes for children
@@ -23,7 +23,7 @@ keywords:
   - analog toys for kids that make keepsakes (no volume data)
   - analog toys for kids
   - Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+pillarKeyword: Children's Keepsakes & Memory
 supportingKeyword: analog toys for kids
 articleType: flex
 targetKeyword: analog toys for kids that make keepsakes (no volume data)

@@ -51,6 +51,6 @@ export function buildArticleFilterOptions(
 
   return pillars.map((pillar) => ({
     value: pillar,
-    label: titleCaseKeyword(pillar),
+    label: pillar,
   }));
 }

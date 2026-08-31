@@ -4,8 +4,8 @@ description: "Plan a friendship activity afternoon at home: warm-up, creative ma
 slug: how-to-do-friendship-activities-at-home-with-kids
 date: 2026-08-18
 author: dori-fussmann
-category: Children's Keepsakes & Memory
-pillarKeyword: Children's Keepsakes & Memory
+category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - friendship activities for kids
   - Children's Keepsakes & Memory

@@ -4,8 +4,8 @@ description: What does a screen-free childhood really mean? This guide covers th
 slug: screen-free-childhood
 date: 2026-08-11
 author: dori-fussmann
-category: Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
+pillarKeyword: Slow Childhood & Analog Play
 tags:
   - screen free childhood
   - childhood development

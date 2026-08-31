@@ -4,8 +4,8 @@ description: What does Jonathan Haidt actually recommend for a screen-free child
 slug: jonathan-haidt-screen-free-childhood-advice
 date: 2026-08-11
 author: dori-fussmann
-category: Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
+pillarKeyword: Slow Childhood & Analog Play
 tags:
   - screen free childhood
   - jonathan haidt screen free childhood advice

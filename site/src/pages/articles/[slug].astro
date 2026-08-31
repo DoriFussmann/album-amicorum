@@ -1,19 +1,33 @@
 ---
-import { getCollection, render } from 'astro:content';
-import ArticleLayout from '../../layouts/ArticleLayout.astro';
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ArticleEntry from '../../components/ArticleEntry.astro';
+import PillarHub from '../../components/PillarHub.astro';
+import { ARTICLE_PILLARS, type ArticlePillar } from '../../lib/pillars';
+
+type Props =
+  | { kind: 'article'; article: CollectionEntry<'articles'> }
+  | { kind: 'pillar'; pillar: ArticlePillar };
 
 export async function getStaticPaths() {
   const articles = await getCollection('articles', ({ data }) => !data.draft);
-  return articles.map((article) => ({
+  const articlePaths = articles.map((article) => ({
     params: { slug: article.data.slug },
-    props: { article },
+    props: { kind: 'article' as const, article },
   }));
+  const pillarPaths = ARTICLE_PILLARS.map((pillar) => ({
+    params: { slug: pillar.slug },
+    props: { kind: 'pillar' as const, pillar },
+  }));
+  return [...articlePaths, ...pillarPaths];
 }
 
-const { article } = Astro.props;
-const { Content, headings } = await render(article);
+const props = Astro.props as Props;
 ---
 
-<ArticleLayout article={article} headings={headings}>
-  <Content />
-</ArticleLayout>
+{
+  props.kind === 'pillar' ? (
+    <PillarHub pillar={props.pillar} />
+  ) : (
+    <ArticleEntry article={props.article} />
+  )
+}

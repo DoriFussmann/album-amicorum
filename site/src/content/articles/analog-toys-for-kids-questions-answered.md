@@ -4,7 +4,7 @@ description: What counts as an analog toy? When do they matter most? And will a 
 slug: analog-toys-for-kids-questions-answered
 date: 2026-08-25
 author: dori-fussmann
-category: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
 tags:
   - analog toys for kids
   - screen-free play
@@ -23,7 +23,7 @@ keywords:
   - analog toys for kids questions parents ask (no volume data)
   - analog toys for kids
   - Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+pillarKeyword: Slow Childhood & Analog Play
 supportingKeyword: analog toys for kids
 articleType: faq
 targetKeyword: analog toys for kids questions parents ask (no volume data)

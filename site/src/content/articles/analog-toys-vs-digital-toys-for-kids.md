@@ -4,7 +4,7 @@ description: Do analog toys build deeper friendships than digital ones? Research
 slug: analog-toys-vs-digital-toys-for-kids
 date: 2026-08-25
 author: dori-fussmann
-category: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
 tags:
   - analog toys for kids
   - analog vs digital toys
@@ -23,7 +23,7 @@ keywords:
   - analog toys vs digital toys for kids (no volume data)
   - analog toys for kids
   - Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+pillarKeyword: Slow Childhood & Analog Play
 supportingKeyword: analog toys for kids
 articleType: comparison
 targetKeyword: analog toys vs digital toys for kids (no volume data)

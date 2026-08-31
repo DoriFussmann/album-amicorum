@@ -4,8 +4,8 @@ description: Practical answers to the real questions parents ask about friendshi
 slug: friendship-activities-for-kids-questions-parents-ask
 date: 2026-08-19
 author: dori-fussmann
-category: Children's Keepsakes & Memory
-pillarKeyword: Children's Keepsakes & Memory
+category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - friendship activities for kids
   - children's keepsakes

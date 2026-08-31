@@ -4,8 +4,8 @@ description: "Step-by-step guide for parents choosing a smartphone-free childhoo
 slug: smartphone-free-childhood-alternatives
 date: 2026-08-11
 author: dori-fussmann
-category: Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
+pillarKeyword: Slow Childhood & Analog Play
 tags:
   - screen free childhood
   - smartphone free childhood alternatives

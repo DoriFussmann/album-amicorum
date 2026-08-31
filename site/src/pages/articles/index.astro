@@ -1,12 +1,12 @@
 ---
-import { Image } from 'astro:assets';
 import { getCollection } from 'astro:content';
 import ArticlesFilters from '../../components/ArticlesFilters.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_NAME } from '../../config/site';
+import { ARTICLE_PILLARS } from '../../lib/pillars';
 import {
   articleLatestDate,
-  articlePillarKeyword,
   buildArticleFilterOptions,
 } from '../../lib/articleFilters';
 
@@ -17,9 +17,6 @@ const allArticles = (await getCollection('articles'))
   );
 
 const filterOptions = buildArticleFilterOptions(allArticles.map((a) => a.data));
-
-const formatDate = (d: Date) =>
-  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
 ---
 
 <BaseLayout
@@ -39,6 +36,19 @@ const formatDate = (d: Date) =>
           <p class="text-center text-ink-muted">No articles published yet.</p>
         ) : (
           <>
+            <nav aria-label="Browse by topic" class="mb-10">
+              <p class="text-sm font-semibold tracking-wide text-ink-muted">Browse by topic</p>
+              <ul class="mt-3 flex list-none flex-col gap-1 p-0 sm:flex-row sm:flex-wrap sm:gap-x-1 sm:gap-y-1">
+                {ARTICLE_PILLARS.map((pillar) => (
+                  <li>
+                    <a class="nav-link" href={`/articles/${pillar.slug}/`}>
+                      {pillar.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <ArticlesFilters options={filterOptions} />
 
             <p id="articles-empty" class="mb-0 text-center text-sm text-ink-muted" hidden>
@@ -46,39 +56,9 @@ const formatDate = (d: Date) =>
             </p>
 
             <ul id="articles-grid" class="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3">
-              {allArticles.map((article) => {
-                const articleUrl = `/articles/${article.data.slug}/`;
-                const displayDate = articleLatestDate(article.data);
-                return (
-                  <li
-                    class="article-card"
-                    data-title={article.data.title?.toLowerCase() ?? ''}
-                    data-pillar={articlePillarKeyword(article.data) ?? ''}
-                  >
-                    <a class="article-card__link focus-ring" href={articleUrl}>
-                      {article.data.pillarKeyword && (
-                        <p class="article-card__pillar">{article.data.pillarKeyword}</p>
-                      )}
-                      <div class="article-card__hero">
-                        <Image
-                          src={article.data.image}
-                          width={600}
-                          height={338}
-                          alt={article.data.imageAlt}
-                          loading="lazy"
-                          widths={[320, 480, 600]}
-                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                        />
-                      </div>
-                      <div class="article-card__body">
-                        <h2 class="article-card__title">{article.data.title}</h2>
-                        <p class="article-card__date">{formatDate(displayDate)}</p>
-                        <span class="article-card__cta">To Article →</span>
-                      </div>
-                    </a>
-                  </li>
-                );
-              })}
+              {allArticles.map((article) => (
+                <ArticleCard article={article} />
+              ))}
             </ul>
           </>
         )

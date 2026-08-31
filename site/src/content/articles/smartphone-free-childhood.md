@@ -4,8 +4,8 @@ description: Smartphone delay or screen balance? An honest, evidence-based compa
 slug: smartphone-free-childhood
 date: 2026-08-11
 author: dori-fussmann
-category: Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
+pillarKeyword: Slow Childhood & Analog Play
 tags:
   - smartphone free childhood
   - screen free childhood

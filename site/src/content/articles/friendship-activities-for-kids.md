@@ -4,8 +4,8 @@ description: "Discover the best friendship activities for kids ages 5–12: why 
 slug: friendship-activities-for-kids
 date: 2026-08-18
 author: dori-fussmann
-category: Children's Keepsakes & Memory
-pillarKeyword: Children's Keepsakes & Memory
+category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - friendship activities for kids
   - children's keepsakes

@@ -14,6 +14,8 @@ import { Image } from 'astro:assets';
 import { absoluteUrl } from '../lib/url';
 import { SITE_NAME, SITE_URL } from '../config/site';
 import { getLogoAbsoluteUrl } from '../lib/logo';
+import { articlePillarKeyword } from '../lib/articleFilters';
+import { pillarHref } from '../lib/pillars';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -33,6 +35,8 @@ if (!author) {
 const updatedDate = data.updatedDate ?? data.date;
 const defaultCanonicalPath = `/articles/${data.slug}/`;
 const hasAbsoluteCanonical = Boolean(data.canonical && /^https?:\/\//i.test(data.canonical));
+const pillarName = articlePillarKeyword(data);
+const pillarPath = pillarHref(pillarName);
 
 const heroProcessed = await getImage({ src: data.image });
 const ogImageAbsolute = new URL(heroProcessed.src, SITE_URL).href;
@@ -84,12 +88,29 @@ const breadcrumbLd = {
   itemListElement: [
     { '@type': 'ListItem', position: 1, name: 'Home', item: absoluteUrl('/') },
     { '@type': 'ListItem', position: 2, name: 'Articles', item: absoluteUrl('/articles/') },
-    {
-      '@type': 'ListItem',
-      position: 3,
-      name: data.title,
-      item: absoluteUrl(`/articles/${data.slug}/`),
-    },
+    ...(pillarName && pillarPath
+      ? [
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: pillarName,
+            item: absoluteUrl(pillarPath),
+          },
+          {
+            '@type': 'ListItem',
+            position: 4,
+            name: data.title,
+            item: absoluteUrl(`/articles/${data.slug}/`),
+          },
+        ]
+      : [
+          {
+            '@type': 'ListItem',
+            position: 3,
+            name: data.title,
+            item: absoluteUrl(`/articles/${data.slug}/`),
+          },
+        ]),
   ],
 };
 
@@ -136,6 +157,9 @@ const formatDate = (d: Date) =>
       items={[
         { label: 'Home', href: '/' },
         { label: 'Articles', href: '/articles/' },
+        ...(pillarName && pillarPath
+          ? [{ label: pillarName, href: pillarPath }]
+          : []),
         { label: data.title, href: `/articles/${data.slug}/` },
       ]}
     />
@@ -150,7 +174,19 @@ const formatDate = (d: Date) =>
         }
       </p>
       <p class="mt-2 text-sm text-ink-muted">
-        <span>Category: {data.category}</span>
+        <span>
+          Category:{' '}
+          {pillarPath ? (
+            <a
+              href={pillarPath}
+              class="text-ink-muted no-underline hover:text-primary hover:underline focus-ring rounded-sm"
+            >
+              {data.category}
+            </a>
+          ) : (
+            data.category
+          )}
+        </span>
         {
           data.tags?.length > 0 && (
             <span>

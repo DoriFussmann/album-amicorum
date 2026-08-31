@@ -4,7 +4,7 @@ description: Explore what analog toys are, why they matter for development, and 
 slug: analog-toys-for-kids
 date: 2026-08-25
 author: dori-fussmann
-category: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
 tags:
   - analog toys
   - screen-free play
@@ -22,7 +22,7 @@ updatedDate: 2026-08-25
 keywords:
   - analog toys for kids
   - Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+pillarKeyword: Slow Childhood & Analog Play
 supportingKeyword: analog toys for kids
 articleType: comprehensive
 targetKeyword: analog toys for kids

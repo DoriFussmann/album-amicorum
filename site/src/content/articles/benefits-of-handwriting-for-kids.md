@@ -5,8 +5,8 @@ slug: benefits-of-handwriting-for-kids
 date: 2026-08-27
 updatedDate: 2026-08-27
 author: dori-fussmann
-category: "Childhood Friendship & Connection"
-pillarKeyword: "Childhood Friendship & Connection"
+category: Slow Childhood & Analog Play
+pillarKeyword: Slow Childhood & Analog Play
 supportingKeyword: benefits of handwriting for kids
 articleType: comprehensive
 targetKeyword: benefits of handwriting for kids

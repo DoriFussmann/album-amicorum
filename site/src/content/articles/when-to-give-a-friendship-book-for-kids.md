@@ -4,7 +4,7 @@ description: From the last day of school to a family move, these 7 moments are w
 slug: when-to-give-a-friendship-book-for-kids
 date: 2026-08-10
 author: alex-rivera
-category: Friend Books & Friendship Keepsakes
+category: Meaningful & Screen-Free Gifts
 tags:
   - friendship book for kids
   - Friend Books & Friendship Keepsakes
@@ -20,7 +20,7 @@ locale: en-US
 twitterCard: summary_large_image
 draft: false
 updatedDate: 2026-08-28
-pillarKeyword: Friend Books & Friendship Keepsakes
+pillarKeyword: Meaningful & Screen-Free Gifts
 supportingKeyword: friendship book for kids
 articleType: flex
 targetKeyword: when to give a friendship book for kids

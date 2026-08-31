@@ -4,7 +4,7 @@ description: A step-by-step guide to auditing, curating, and arranging a screen-
 slug: how-to-build-an-analog-toy-shelf-for-kids
 date: 2026-08-25
 author: dori-fussmann
-category: Childhood Friendship & Connection
+category: Slow Childhood & Analog Play
 tags:
   - analog toys for kids
   - screen-free play
@@ -23,7 +23,7 @@ keywords:
   - how to build an analog toy shelf for kids (no volume data)
   - analog toys for kids
   - Childhood Friendship & Connection
-pillarKeyword: Childhood Friendship & Connection
+pillarKeyword: Slow Childhood & Analog Play
 supportingKeyword: analog toys for kids
 articleType: howto
 targetKeyword: how to build an analog toy shelf for kids (no volume data)

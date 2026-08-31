@@ -1,0 +1,47 @@
+---
+import { Image } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import { articleLatestDate, articlePillarKeyword } from '../lib/articleFilters';
+
+interface Props {
+  article: CollectionEntry<'articles'>;
+}
+
+const { article } = Astro.props;
+const articleUrl = `/articles/${article.data.slug}/`;
+const displayDate = articleLatestDate(article.data);
+const pillar = articlePillarKeyword(article.data);
+
+const formatDate = (d: Date) =>
+  d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' });
+---
+
+<li
+  class="article-card"
+  data-title={article.data.title?.toLowerCase() ?? ''}
+  data-pillar={pillar ?? ''}
+>
+  <a class="article-card__link focus-ring" href={articleUrl}>
+    {
+      pillar && (
+        <p class="article-card__pillar">{pillar}</p>
+      )
+    }
+    <div class="article-card__hero">
+      <Image
+        src={article.data.image}
+        width={600}
+        height={338}
+        alt={article.data.imageAlt}
+        loading="lazy"
+        widths={[320, 480, 600]}
+        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+      />
+    </div>
+    <div class="article-card__body">
+      <h2 class="article-card__title">{article.data.title}</h2>
+      <p class="article-card__date">{formatDate(displayDate)}</p>
+      <span class="article-card__cta">To Article →</span>
+    </div>
+  </a>
+</li>

@@ -4,8 +4,8 @@ description: Should you plan friendship activities or let kids play freely? An h
 slug: structured-friendship-activities-vs-free-play
 date: 2026-08-18
 author: dori-fussmann
-category: Children's Keepsakes & Memory
-pillarKeyword: Children's Keepsakes & Memory
+category: Childhood Friendship & Connection
+pillarKeyword: Childhood Friendship & Connection
 tags:
   - friendship activities for kids
   - free play
