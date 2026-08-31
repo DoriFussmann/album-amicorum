@@ -13,16 +13,14 @@ const offsets = ['none', 'up', 'down', 'up', 'none', 'down', 'up'] as const;
 
 <section id="collection" aria-labelledby="collection-heading" class="section-space">
   <div class="site-container">
-    <Reveal>
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <p class="text-sm font-semibold tracking-wide text-ink-muted">Choose a world.</p>
-        <h2 id="collection-heading" class="mt-3">My Friends Book</h2>
-        <p class="mt-4 text-ink">Every edition tells the same story.</p>
-        <p class="mt-2 text-ink">
-          Choose the world your child will be excited to share with friends.
-        </p>
-      </div>
-    </Reveal>
+    <div class="mx-auto mb-14 max-w-2xl text-center">
+      <p class="text-sm font-semibold tracking-wide text-ink-muted">Choose a world.</p>
+      <h2 id="collection-heading" class="mt-3">My Friends Book</h2>
+      <p class="mt-4 text-ink">Every edition tells the same story.</p>
+      <p class="mt-2 text-ink">
+        Choose the world your child will be excited to share with friends.
+      </p>
+    </div>
 
     {
       books.length === 0 ? (
@@ -34,7 +32,7 @@ const offsets = ['none', 'up', 'down', 'up', 'none', 'down', 'up'] as const;
         <ul class="grid gap-12 overflow-visible sm:grid-cols-2 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-14">
           {books.map((book, i) => (
             <li>
-              <Reveal delay={i * 90}>
+              <Reveal delay={Math.min(i, 3) * 33}>
                 <BookCard
                   title={book.data.title}
                   slug={book.data.slug}

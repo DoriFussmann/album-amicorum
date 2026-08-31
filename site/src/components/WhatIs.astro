@@ -1,5 +1,4 @@
 ---
-import Reveal from './Reveal.astro';
 import SiteImage from './SiteImage.astro';
 import whatIsImage from '../assets/images/what-is.jpg';
 // Image brief / prompt: imageBriefs.whatIs in src/data/imageBriefs.ts
@@ -23,44 +22,36 @@ const features = [
 <section id="what-is" aria-labelledby="what-is-heading" class="section-space">
   <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <div>
-      <Reveal>
-        <p class="text-sm font-semibold tracking-wide text-ink-muted">What is My Friends Book?</p>
-        <h2 id="what-is-heading" class="mt-3">
-          A book that becomes the story of childhood friendships.
-        </h2>
-      </Reveal>
-      <Reveal delay={80}>
-        <p class="mt-6 max-w-content leading-[1.7]">
-          My Friends Book is a beautifully illustrated Friend Book where friends leave behind
-          handwritten memories, drawings, favorite things, and little pieces of themselves.
-        </p>
-      </Reveal>
-      <Reveal delay={140}>
-        <p class="mt-4 max-w-content leading-[1.7]">
-          As each page is filled, the book becomes something no one else will ever own—a one-of-a-kind
-          keepsake created by the people who matter most.
-        </p>
-      </Reveal>
+      <p class="text-sm font-semibold tracking-wide text-ink-muted">What is My Friends Book?</p>
+      <h2 id="what-is-heading" class="mt-3">
+        A book that becomes the story of childhood friendships.
+      </h2>
+      <p class="mt-6 max-w-content leading-[1.7]">
+        My Friends Book is a beautifully illustrated Friend Book where friends leave behind
+        handwritten memories, drawings, favorite things, and little pieces of themselves.
+      </p>
+      <p class="mt-4 max-w-content leading-[1.7]">
+        As each page is filled, the book becomes something no one else will ever own—a one-of-a-kind
+        keepsake created by the people who matter most.
+      </p>
       <ul class="mt-10 space-y-6">
         {
-          features.map((feature, i) => (
-            <Reveal delay={180 + i * 70}>
-              <li class="border-t border-border pt-5">
-                <h3 class="text-lg md:text-xl">{feature.title}</h3>
-                <p class="mt-2 leading-[1.7] text-ink">{feature.body}</p>
-              </li>
-            </Reveal>
+          features.map((feature) => (
+            <li class="border-t border-border pt-5">
+              <h3 class="text-lg md:text-xl">{feature.title}</h3>
+              <p class="mt-2 leading-[1.7] text-ink">{feature.body}</p>
+            </li>
           ))
         }
       </ul>
     </div>
-    <Reveal delay={120} class="w-full max-w-md justify-self-center lg:max-w-lg lg:justify-self-end">
+    <div class="w-full max-w-md justify-self-center lg:max-w-lg lg:justify-self-end">
       <SiteImage
         src={whatIsImage}
         alt="Two children on the beach sharing a Mermaids edition of My Friends Book"
         caption="Friends sharing My Friends Book"
         aspectClass="aspect-square w-full"
       />
-    </Reveal>
+    </div>
   </div>
 </section>

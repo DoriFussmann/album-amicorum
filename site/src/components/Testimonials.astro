@@ -1,6 +1,4 @@
 ---
-import Reveal from './Reveal.astro';
-
 /**
  * TEMPORARY PLACEHOLDER TESTIMONIALS
  * Replace with authentic customer stories before launch.
@@ -30,32 +28,28 @@ const quotes = [
 
 <section id="testimonials" aria-labelledby="testimonials-heading" class="section-space">
   <div class="site-container">
-    <Reveal>
-      <div class="mx-auto mb-14 max-w-2xl text-center">
-        <h2 id="testimonials-heading">A keepsake for years to come.</h2>
-      </div>
-    </Reveal>
+    <div class="mx-auto mb-14 max-w-2xl text-center">
+      <h2 id="testimonials-heading">A keepsake for years to come.</h2>
+    </div>
 
     <!-- TEMPORARY: placeholder testimonials — replace before launch -->
     <ul class="grid gap-8 md:grid-cols-3" data-testimonials="placeholder">
       {
-        quotes.map((item, i) => (
+        quotes.map((item) => (
           <li>
-            <Reveal delay={i * 100}>
-              <blockquote
-                class:list={[
-                  'flex h-full flex-col justify-between rounded-soft px-7 py-8',
-                  item.tone,
-                ]}
-              >
-                <p class="font-display text-xl leading-[1.4] text-ink-heading md:text-2xl">
-                  “{item.quote}”
-                </p>
-                <footer class="mt-8 text-sm font-semibold tracking-wide text-ink">
-                  — {item.author}
-                </footer>
-              </blockquote>
-            </Reveal>
+            <blockquote
+              class:list={[
+                'flex h-full flex-col justify-between rounded-soft px-7 py-8',
+                item.tone,
+              ]}
+            >
+              <p class="font-display text-xl leading-[1.4] text-ink-heading md:text-2xl">
+                “{item.quote}”
+              </p>
+              <footer class="mt-8 text-sm font-semibold tracking-wide text-ink">
+                — {item.author}
+              </footer>
+            </blockquote>
           </li>
         ))
       }
