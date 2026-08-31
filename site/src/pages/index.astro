@@ -10,10 +10,9 @@ import Story from '../components/Story.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ClosingCta from '../components/ClosingCta.astro';
 import { SITE_NAME } from '../config/site';
+import { isListedTheme, sortThemes } from '../lib/themes';
 
-const books = (await getCollection('books'))
-  .filter((book) => !book.data.hidden)
-  .sort((a, b) => a.data.order - b.data.order);
+const books = sortThemes((await getCollection('books')).filter(isListedTheme));
 ---
 
 <BaseLayout
