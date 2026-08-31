@@ -54,28 +54,28 @@ const formatDate = (d: Date) =>
                     class="article-card"
                     data-title={article.data.title?.toLowerCase() ?? ''}
                     data-pillar={articlePillarKeyword(article.data) ?? ''}
-                    onclick={`window.location='${articleUrl}'`}
-                    style="cursor:pointer;"
                   >
-                    {article.data.pillarKeyword && (
-                      <p class="article-card__pillar">{article.data.pillarKeyword}</p>
-                    )}
-                    <div class="article-card__hero">
-                      <Image
-                        src={article.data.image}
-                        width={600}
-                        height={338}
-                        alt={article.data.imageAlt}
-                        loading="lazy"
-                        widths={[320, 480, 600]}
-                        sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
-                      />
-                    </div>
-                    <div class="article-card__body">
-                      <h2 class="article-card__title">{article.data.title}</h2>
-                      <p class="article-card__date">{formatDate(displayDate)}</p>
-                      <span class="article-card__cta">To Article →</span>
-                    </div>
+                    <a class="article-card__link focus-ring" href={articleUrl}>
+                      {article.data.pillarKeyword && (
+                        <p class="article-card__pillar">{article.data.pillarKeyword}</p>
+                      )}
+                      <div class="article-card__hero">
+                        <Image
+                          src={article.data.image}
+                          width={600}
+                          height={338}
+                          alt={article.data.imageAlt}
+                          loading="lazy"
+                          widths={[320, 480, 600]}
+                          sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                        />
+                      </div>
+                      <div class="article-card__body">
+                        <h2 class="article-card__title">{article.data.title}</h2>
+                        <p class="article-card__date">{formatDate(displayDate)}</p>
+                        <span class="article-card__cta">To Article →</span>
+                      </div>
+                    </a>
                   </li>
                 );
               })}
