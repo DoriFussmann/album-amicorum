@@ -11,8 +11,13 @@ const links = [
 ];
 ---
 
-<header class="sticky top-0 z-40 border-b border-border/40 bg-canvas/80 backdrop-blur-md">
-  <div class="site-container">
+<header class="sticky top-0 z-40">
+  <!-- Keep blur off <header> so position:fixed nav overlays use the viewport. -->
+  <div
+    class="pointer-events-none absolute inset-0 border-b border-border/40 bg-canvas/80 backdrop-blur-md"
+    aria-hidden="true"
+  ></div>
+  <div class="site-container relative">
     <nav class="flex min-h-28 items-center justify-between gap-6 py-2" aria-label="Primary">
       <Logo size="sm" withWordmark={true} />
 
