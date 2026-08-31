@@ -9,6 +9,15 @@ export default defineConfig({
   // Static by default; API routes opt into SSR with `export const prerender = false`
   adapter: vercel(),
   trailingSlash: 'always',
+  redirects: {
+    '/our-story': '/#story',
+    '/pages': '/#story',
+    '/preview': '/',
+    '/theme': '/#collection',
+    '/theme/forest': '/#collection',
+    // TODO(F-01): repoint per-edition /theme/* to /books/<edition>/
+    '/theme/space': '/#collection',
+  },
   integrations: [
     tailwind({
       applyBaseStyles: false,
