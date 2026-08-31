@@ -17,13 +17,20 @@ export default defineConfig({
     '/theme/forest': '/#collection',
     // TODO(F-01): repoint per-edition /theme/* to /books/<edition>/
     '/theme/space': '/#collection',
+    '/articles/page/2': '/articles/',
+    '/articles/page/3': '/articles/',
+    '/articles/page/4': '/articles/',
   },
   integrations: [
     tailwind({
       applyBaseStyles: false,
     }),
     sitemap({
-      filter: (page) => !page.includes('/404'),
+      filter: (page) =>
+        !page.includes('/404') &&
+        !page.includes('/cart/') &&
+        !page.includes('/order-confirmation/') &&
+        !page.includes('/articles/page/'),
     }),
   ],
 });

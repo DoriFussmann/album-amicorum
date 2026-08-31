@@ -80,7 +80,6 @@ const { options } = Astro.props;
   const topicInput = document.getElementById('articles-topic');
   const emptyMessage = document.getElementById('articles-empty');
   const grid = document.getElementById('articles-grid');
-  const pagination = document.querySelector('[data-articles-pagination]');
 
   if (
     form instanceof HTMLFormElement &&
@@ -107,9 +106,6 @@ const { options } = Astro.props;
       }
 
       emptyMessage.hidden = visibleCount > 0;
-      if (pagination instanceof HTMLElement) {
-        pagination.hidden = Boolean(query || topic);
-      }
     };
 
     const syncFromParams = () => {
