@@ -12,7 +12,8 @@ import ArticleToc from '../components/ArticleToc.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
 import { Image } from 'astro:assets';
 import { absoluteUrl } from '../lib/url';
-import { SITE_NAME, SITE_URL, SITE_LOGO_PATH } from '../config/site';
+import { SITE_NAME, SITE_URL } from '../config/site';
+import { getLogoAbsoluteUrl } from '../lib/logo';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -35,6 +36,7 @@ const hasAbsoluteCanonical = Boolean(data.canonical && /^https?:\/\//i.test(data
 
 const heroProcessed = await getImage({ src: data.image });
 const ogImageAbsolute = new URL(heroProcessed.src, SITE_URL).href;
+const logoAbsolute = await getLogoAbsoluteUrl();
 const resolvedOgImage = data.ogImage
   ? /^https?:\/\//i.test(data.ogImage)
     ? data.ogImage
@@ -71,7 +73,7 @@ const articleLd = {
     url: SITE_URL,
     logo: {
       '@type': 'ImageObject',
-      url: absoluteUrl(SITE_LOGO_PATH),
+      url: logoAbsolute,
     },
   },
 };

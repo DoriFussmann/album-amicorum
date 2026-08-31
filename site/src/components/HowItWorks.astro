@@ -1,5 +1,9 @@
 ---
+import { Picture } from 'astro:assets';
 import Reveal from './Reveal.astro';
+import whyParentsImage from '../assets/images/why-parents.jpg';
+import passItOnImage from '../assets/images/pass-it-on.jpg';
+import watchItGrowImage from '../assets/images/watch-it-grow.jpg';
 
 const steps = [
   {
@@ -7,7 +11,7 @@ const steps = [
     title: 'Make it yours',
     body: 'Write your name on the first page and fill out two pages about you: favorites, dreams, what makes you <em>you</em> right now. Then slide the bookmark to the next empty page so friends know exactly where to write.',
     label: 'Step 1',
-    image: '/images/why-parents.jpg',
+    image: whyParentsImage,
     imageAlt: 'A child writing by hand in an open My Friends Book',
   },
   {
@@ -15,7 +19,7 @@ const steps = [
     title: 'Pass it on',
     body: 'Hand it to friends, cousins, teammates, teachers, coaches — anyone who\u2019s made life a little brighter.',
     label: 'Step 2',
-    image: '/images/pass-it-on.jpg',
+    image: passItOnImage,
     imageAlt: 'A child walking through a meadow, carrying a My Friends Book',
   },
   {
@@ -23,7 +27,7 @@ const steps = [
     title: 'Watch it grow',
     body: 'Each person fills a page, adds a photo, leaves a piece of themselves. Years from now, you\u2019ll have a book full of people who loved you.',
     label: 'Step 3',
-    image: '/images/watch-it-grow.jpg',
+    image: watchItGrowImage,
     imageAlt: 'A family gathered around a picnic table in a garden, looking together at an open My Friends Book',
   },
 ] as const;
@@ -87,14 +91,14 @@ const steps = [
                 inert={i !== 0}
               >
                 <div class="hiw-photo media-warm">
-                  <img
+                  <Picture
                     src={step.image}
                     alt={step.imageAlt}
-                    width="1400"
-                    height="1400"
+                    widths={[480, 800, 1200, 1400]}
+                    sizes="(min-width: 768px) 66vw, 100vw"
+                    formats={['avif', 'webp']}
                     class="h-full w-full object-cover"
                     loading={i === 0 ? 'eager' : 'lazy'}
-                    decoding="async"
                   />
                 </div>
                 <div class="hiw-pane-copy">

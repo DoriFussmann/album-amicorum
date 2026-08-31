@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+import logoMark from '../assets/images/logo.png';
 import { SITE_NAME } from '../config/site';
 
 interface Props {
@@ -43,13 +45,13 @@ const shellClass = [
 {
   link ? (
     <a href="/" class={shellClass} aria-label={SITE_NAME}>
-      <img
-        src="/images/logo.png"
+      <Picture
+        src={logoMark}
         alt=""
-        width="745"
-        height="768"
+        width={72}
+        densities={[1, 2]}
+        formats={['avif', 'webp']}
         class={`shrink-0 object-contain ${markClass}`}
-        decoding="async"
       />
       {withWordmark && (
         <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>
@@ -59,13 +61,13 @@ const shellClass = [
     </a>
   ) : (
     <span class={shellClass} role="img" aria-label={SITE_NAME}>
-      <img
-        src="/images/logo.png"
+      <Picture
+        src={logoMark}
         alt=""
-        width="745"
-        height="768"
+        width={72}
+        densities={[1, 2]}
+        formats={['avif', 'webp']}
         class={`shrink-0 object-contain ${markClass}`}
-        decoding="async"
       />
       {withWordmark && (
         <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>

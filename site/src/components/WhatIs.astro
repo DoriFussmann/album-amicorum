@@ -1,6 +1,7 @@
 ---
 import Reveal from './Reveal.astro';
 import SiteImage from './SiteImage.astro';
+import whatIsImage from '../assets/images/what-is.jpg';
 // Image brief / prompt: imageBriefs.whatIs in src/data/imageBriefs.ts
 
 const features = [
@@ -55,12 +56,10 @@ const features = [
     </div>
     <Reveal delay={120} class="w-full max-w-md justify-self-center lg:max-w-lg lg:justify-self-end">
       <SiteImage
-        src="/images/what-is.jpg"
+        src={whatIsImage}
         alt="Two children on the beach sharing a Mermaids edition of My Friends Book"
         caption="Friends sharing My Friends Book"
         aspectClass="aspect-square w-full"
-        width={1400}
-        height={1400}
       />
     </Reveal>
   </div>

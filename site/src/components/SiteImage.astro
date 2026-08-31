@@ -1,13 +1,16 @@
 ---
+import { Picture } from 'astro:assets';
+import type { ImageMetadata } from 'astro';
+
 interface Props {
-  src: string;
+  src: ImageMetadata;
   alt: string;
   caption?: string;
   aspectClass?: string;
   class?: string;
   loading?: 'eager' | 'lazy';
-  width?: number;
-  height?: number;
+  widths?: number[];
+  sizes?: string;
 }
 
 const {
@@ -17,20 +20,20 @@ const {
   aspectClass = 'aspect-video',
   class: className = '',
   loading = 'lazy',
-  width = 1600,
-  height = 900,
+  widths = [480, 800, 1200, 1600],
+  sizes = '(min-width: 1024px) 40vw, 100vw',
 } = Astro.props;
 ---
 
 <figure class:list={['media-warm overflow-hidden bg-surface', aspectClass, className]}>
-  <img
+  <Picture
     src={src}
     alt={alt}
-    width={width}
-    height={height}
+    widths={widths}
+    sizes={sizes}
+    formats={['avif', 'webp']}
     class="h-full w-full object-cover"
     loading={loading}
-    decoding="async"
   />
   {
     caption && (

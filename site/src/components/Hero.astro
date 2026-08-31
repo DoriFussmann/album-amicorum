@@ -1,4 +1,6 @@
 ---
+import { Picture } from 'astro:assets';
+import heroImage from '../assets/images/hero.jpg';
 // Image brief / prompt: imageBriefs.hero in src/data/imageBriefs.ts
 ---
 
@@ -7,14 +9,14 @@
   class="relative isolate min-h-[min(88vh,52rem)] overflow-hidden"
 >
   <div class="pointer-events-none absolute inset-0" aria-hidden="true">
-    <img
-      src="/images/hero.jpg"
+    <Picture
+      src={heroImage}
       alt=""
-      width="1800"
-      height="1800"
+      widths={[640, 960, 1280, 1600, 1920]}
+      sizes="100vw"
+      formats={['avif', 'webp']}
       class="h-full w-full object-cover object-center"
       loading="eager"
-      decoding="async"
       fetchpriority="high"
     />
     <div

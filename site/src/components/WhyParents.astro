@@ -1,6 +1,7 @@
 ---
 import Reveal from './Reveal.astro';
 import SiteImage from './SiteImage.astro';
+import whyParentsImage from '../assets/images/why-parents.jpg';
 // No approved image brief in Website Specification v1.0 for this section.
 // See imageBriefs.whyParents in src/data/imageBriefs.ts
 
@@ -45,11 +46,9 @@ const reasons = [
     </div>
     <Reveal delay={120}>
       <SiteImage
-        src="/images/why-parents.jpg"
+        src={whyParentsImage}
         alt="A child writing by hand in an open My Friends Book"
         aspectClass="aspect-[4/5]"
-        width={1400}
-        height={1400}
       />
     </Reveal>
   </div>

@@ -1,6 +1,5 @@
 export const SITE_URL = "https://www.albumamicorum.com";
 export const SITE_NAME = "Album Amicorum";
-export const SITE_LOGO_PATH = "/images/logo.png";
 
 /** Public profiles only. Add Pinterest / Amazon / Facebook when their public URLs are confirmed. */
 export const SOCIAL_LINKS = [
