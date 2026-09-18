@@ -1,7 +1,7 @@
 ---
 import { getEntry, type CollectionEntry } from 'astro:content';
 import type { MarkdownHeading } from 'astro';
-import { getImage } from 'astro:assets';
+import { getImage, Picture } from 'astro:assets';
 import BaseLayout from './BaseLayout.astro';
 import Breadcrumbs from '../components/Breadcrumbs.astro';
 import AuthorBio from '../components/AuthorBio.astro';
@@ -10,12 +10,12 @@ import Sources from '../components/Sources.astro';
 import FaqBlock from '../components/FaqBlock.astro';
 import ArticleToc from '../components/ArticleToc.astro';
 import ScrollToTop from '../components/ScrollToTop.astro';
-import { Image } from 'astro:assets';
 import { absoluteUrl } from '../lib/url';
 import { SITE_NAME, SITE_URL } from '../config/site';
 import { getLogoAbsoluteUrl } from '../lib/logo';
 import { articlePillarKeyword } from '../lib/articleFilters';
 import { pillarHref } from '../lib/pillars';
+import { getLcpPreload } from '../lib/imagePreload';
 
 interface Props {
   article: CollectionEntry<'articles'>;
@@ -38,8 +38,14 @@ const hasAbsoluteCanonical = Boolean(data.canonical && /^https?:\/\//i.test(data
 const pillarName = articlePillarKeyword(data);
 const pillarPath = pillarHref(pillarName);
 
-const heroProcessed = await getImage({ src: data.image });
+const ARTICLE_HERO_WIDTHS = [480, 768, 1200] as const;
+const ARTICLE_HERO_SIZES = '(min-width: 1200px) 1200px, 100vw';
+const ARTICLE_INLINE_WIDTHS = [480, 800, 1200] as const;
+const ARTICLE_INLINE_SIZES = '(min-width: 768px) 680px, 100vw';
+
+const heroProcessed = await getImage({ src: data.image, width: 1200, format: 'jpg' });
 const ogImageAbsolute = new URL(heroProcessed.src, SITE_URL).href;
+const lcpImage = await getLcpPreload(data.image, ARTICLE_HERO_WIDTHS, ARTICLE_HERO_SIZES);
 const logoAbsolute = await getLogoAbsoluteUrl();
 const resolvedOgImage = data.ogImage
   ? /^https?:\/\//i.test(data.ogImage)
@@ -151,6 +157,7 @@ const formatDate = (d: Date) =>
   twitterCard={data.twitterCard}
   locale={data.locale}
   jsonLd={jsonLd}
+  lcpImage={lcpImage}
 >
   <article class="site-container section-space">
     <Breadcrumbs
@@ -199,12 +206,20 @@ const formatDate = (d: Date) =>
     </header>
 
     <figure class="media-warm article-hero-frame mx-auto mb-12 max-w-page overflow-hidden rounded-soft">
-      <Image
+      <Picture
         src={data.image}
         alt={data.imageAlt}
+        widths={[...ARTICLE_HERO_WIDTHS]}
+        sizes={ARTICLE_HERO_SIZES}
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
         width={1200}
         height={675}
+        pictureAttributes={{ class: 'absolute inset-0 h-full w-full' }}
+        class="h-full w-full object-cover object-center"
         loading="eager"
+        fetchpriority="high"
+        decoding="async"
       />
     </figure>
 
@@ -217,13 +232,18 @@ const formatDate = (d: Date) =>
     {
       data.image2 && data.image2Alt && (
         <figure class="media-warm mx-auto mt-12 max-w-content overflow-hidden rounded-soft">
-          <Image
+          <Picture
             src={data.image2}
             alt={data.image2Alt}
+            widths={[...ARTICLE_INLINE_WIDTHS]}
+            sizes={ARTICLE_INLINE_SIZES}
+            formats={['avif', 'webp']}
+            fallbackFormat="webp"
             width={1200}
             height={800}
-            loading="lazy"
             class="h-auto w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
       )
@@ -232,13 +252,18 @@ const formatDate = (d: Date) =>
     {
       data.image3 && data.image3Alt && (
         <figure class="media-warm mx-auto mt-8 max-w-content overflow-hidden rounded-soft">
-          <Image
+          <Picture
             src={data.image3}
             alt={data.image3Alt}
+            widths={[...ARTICLE_INLINE_WIDTHS]}
+            sizes={ARTICLE_INLINE_SIZES}
+            formats={['avif', 'webp']}
+            fallbackFormat="webp"
             width={1200}
             height={800}
-            loading="lazy"
             class="h-auto w-full object-cover"
+            loading="lazy"
+            decoding="async"
           />
         </figure>
       )

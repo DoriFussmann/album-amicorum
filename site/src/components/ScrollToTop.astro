@@ -42,11 +42,7 @@
 </style>
 
 <script>
-  let scrollTopCleanup: (() => void) | undefined;
-
   function initScrollToTop() {
-    scrollTopCleanup?.();
-
     const button = document.querySelector<HTMLButtonElement>('[data-scroll-top]');
     if (!button) return;
 
@@ -72,13 +68,7 @@
     update();
     window.addEventListener('scroll', onScroll, { passive: true });
     button.addEventListener('click', onClick);
-
-    scrollTopCleanup = () => {
-      window.removeEventListener('scroll', onScroll);
-      button.removeEventListener('click', onClick);
-    };
   }
 
   initScrollToTop();
-  document.addEventListener('astro:page-load', initScrollToTop);
 </script>

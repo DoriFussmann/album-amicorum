@@ -40,7 +40,7 @@ const steps = [
   data-hiw
 >
   <div class="hiw-wash" aria-hidden="true">
-    <img src="/images/hero-wash.svg" alt="" width="1440" height="900" decoding="async" />
+    <img src="/images/hero-wash.svg" alt="" width="1440" height="900" loading="lazy" decoding="async" />
   </div>
   <div class="hiw-torn hiw-torn--top" aria-hidden="true"></div>
 
@@ -92,11 +92,14 @@ const steps = [
                   <Picture
                     src={step.image}
                     alt={step.imageAlt}
-                    widths={[480, 800, 1200, 1400]}
+                    widths={[480, 800, 1200]}
                     sizes="(min-width: 768px) 66vw, 100vw"
                     formats={['avif', 'webp']}
+                    fallbackFormat="webp"
+                    pictureAttributes={{ class: 'h-full w-full' }}
                     class="h-full w-full object-cover"
-                    loading={i === 0 ? 'eager' : 'lazy'}
+                    loading="lazy"
+                    decoding="async"
                   />
                 </div>
                 <div class="hiw-pane-copy">
@@ -164,11 +167,6 @@ const steps = [
     }
 
     initHowItWorks();
-    document.addEventListener('astro:page-load', () => {
-      const root = document.querySelector('[data-hiw]');
-      if (root instanceof HTMLElement) delete root.dataset.hiwReady;
-      initHowItWorks();
-    });
   </script>
 </section>
 

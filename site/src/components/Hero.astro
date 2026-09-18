@@ -1,6 +1,6 @@
 ---
 import { Picture } from 'astro:assets';
-import heroImage from '../assets/images/hero.jpg';
+import { heroImage, HERO_WIDTHS, HERO_SIZES } from '../lib/heroImage';
 // Image brief / prompt: imageBriefs.hero in src/data/imageBriefs.ts
 ---
 
@@ -12,12 +12,15 @@ import heroImage from '../assets/images/hero.jpg';
     <Picture
       src={heroImage}
       alt="Children sitting together in a meadow, looking at an open My Friends Book"
-      widths={[640, 960, 1280, 1600, 1920]}
-      sizes="100vw"
+      widths={[...HERO_WIDTHS]}
+      sizes={HERO_SIZES}
       formats={['avif', 'webp']}
+      fallbackFormat="webp"
+      pictureAttributes={{ class: 'h-full w-full' }}
       class="h-full w-full object-cover object-center"
       loading="eager"
       fetchpriority="high"
+      decoding="async"
     />
     <div
       class="absolute inset-0 bg-gradient-to-b from-canvas/55 via-canvas/72 to-canvas/92"

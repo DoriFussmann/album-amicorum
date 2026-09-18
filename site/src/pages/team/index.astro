@@ -1,6 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE_NAME } from '../../config/site';
 
@@ -40,12 +40,17 @@ const team = await getCollection('team');
               >
                 <div class="flex flex-col gap-8 sm:flex-row sm:items-start">
                   <figure class="media-warm shrink-0">
-                    <Image
+                    <Picture
                       src={member.data.photo}
                       alt={`Photo of ${member.data.name}`}
                       width={240}
                       height={240}
+                      widths={[240, 480]}
+                      sizes="240px"
+                      formats={['avif', 'webp']}
+                      fallbackFormat="webp"
                       loading="lazy"
+                      decoding="async"
                       class="h-60 w-60 rounded-soft object-cover"
                     />
                   </figure>

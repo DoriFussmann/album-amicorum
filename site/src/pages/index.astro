@@ -11,14 +11,17 @@ import Testimonials from '../components/Testimonials.astro';
 import ClosingCta from '../components/ClosingCta.astro';
 import { SITE_NAME } from '../config/site';
 import { isListedTheme, sortThemes } from '../lib/themes';
+import { getHeroLcpPreload } from '../lib/heroImage';
 
 const books = sortThemes((await getCollection('books')).filter(isListedTheme));
+const lcpImage = await getHeroLcpPreload();
 ---
 
 <BaseLayout
   title={`${SITE_NAME} — Friend Books for Childhood`}
   description="Beautiful Friend Books inspired by a centuries-old tradition of preserving friendships, memories, and childhood by hand."
   canonicalPath="/"
+  lcpImage={lcpImage}
 >
   <Hero />
   <WhatIs />

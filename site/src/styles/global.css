@@ -110,8 +110,13 @@
     @apply relative aspect-[16/9] w-full overflow-hidden;
   }
 
+  .article-hero-frame > picture,
   .article-hero-frame > img {
-    @apply absolute inset-0 h-full w-full object-cover object-center;
+    @apply absolute inset-0 h-full w-full;
+  }
+
+  .article-hero-frame img {
+    @apply h-full w-full object-cover object-center;
   }
 
   .prose-article {

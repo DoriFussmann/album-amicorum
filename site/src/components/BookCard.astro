@@ -43,9 +43,11 @@ const cartPayload = JSON.stringify({ slug, title, price, cover: coverSrc });
           widths={[400, 800]}
           sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
           formats={['avif', 'webp']}
+          fallbackFormat="webp"
           pictureAttributes={{ class: 'absolute inset-0 h-full w-full' }}
           class="h-full w-full object-contain object-center transition-opacity duration-500 ease-out group-hover:opacity-0"
           loading="lazy"
+          decoding="async"
         />
         <Picture
           src={interiorAsset}
@@ -53,9 +55,11 @@ const cartPayload = JSON.stringify({ slug, title, price, cover: coverSrc });
           widths={[400, 800]}
           sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 90vw"
           formats={['avif', 'webp']}
+          fallbackFormat="webp"
           pictureAttributes={{ class: 'absolute inset-0 h-full w-full' }}
           class="h-full w-full object-contain object-center opacity-0 transition-opacity duration-500 ease-out group-hover:opacity-100"
           loading="lazy"
+          decoding="async"
         />
       </div>
     </div>
@@ -150,5 +154,4 @@ const cartPayload = JSON.stringify({ slug, title, price, cover: coverSrc });
   }
 
   initBookPreviews();
-  document.addEventListener('astro:page-load', initBookPreviews);
 </script>

@@ -24,7 +24,7 @@ const themes = sortThemes((await getCollection('books')).filter(isListedTheme));
   ></div>
   <div class="site-container relative">
     <nav class="flex min-h-28 items-center justify-between gap-6 py-2" aria-label="Primary">
-      <Logo size="sm" withWordmark={true} />
+      <Logo size="sm" withWordmark={true} loading="eager" />
 
       <ul class="hidden items-center gap-1 md:flex">
         {
@@ -348,8 +348,4 @@ const themes = sortThemes((await getCollection('books')).filter(isListedTheme));
   initMobileNav();
   initThemesMenu();
   initThemesAccordion();
-  document.addEventListener('astro:page-load', initCartBadge);
-  document.addEventListener('astro:page-load', initMobileNav);
-  document.addEventListener('astro:page-load', initThemesMenu);
-  document.addEventListener('astro:page-load', initThemesAccordion);
 </script>

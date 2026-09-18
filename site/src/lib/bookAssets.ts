@@ -20,7 +20,22 @@ export function bookImage(publicPath: string): ImageMetadata {
   return asset;
 }
 
+/** Small WebP for cart thumbnails (rendered at 96×128). */
 export async function bookImageSrc(publicPath: string): Promise<string> {
-  const img = await getImage({ src: bookImage(publicPath) });
+  const img = await getImage({
+    src: bookImage(publicPath),
+    width: 192,
+    format: 'webp',
+  });
+  return img.src;
+}
+
+/** JPEG for Open Graph / JSON-LD product images. */
+export async function bookOgImageSrc(publicPath: string): Promise<string> {
+  const img = await getImage({
+    src: bookImage(publicPath),
+    width: 1200,
+    format: 'jpg',
+  });
   return img.src;
 }

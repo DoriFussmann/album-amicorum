@@ -1,13 +1,15 @@
 ---
-import { Image } from 'astro:assets';
+import { Picture } from 'astro:assets';
 import type { CollectionEntry } from 'astro:content';
 import { articleLatestDate, articlePillarKeyword } from '../lib/articleFilters';
 
 interface Props {
   article: CollectionEntry<'articles'>;
+  loading?: 'eager' | 'lazy';
+  fetchpriority?: 'high' | 'low' | 'auto';
 }
 
-const { article } = Astro.props;
+const { article, loading = 'lazy', fetchpriority } = Astro.props;
 const articleUrl = `/articles/${article.data.slug}/`;
 const displayDate = articleLatestDate(article.data);
 const pillar = articlePillarKeyword(article.data);
@@ -28,14 +30,20 @@ const formatDate = (d: Date) =>
       )
     }
     <div class="article-card__hero">
-      <Image
+      <Picture
         src={article.data.image}
         width={600}
         height={338}
         alt={article.data.imageAlt}
-        loading="lazy"
         widths={[320, 480, 600]}
         sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+        formats={['avif', 'webp']}
+        fallbackFormat="webp"
+        loading={loading}
+        fetchpriority={fetchpriority}
+        decoding="async"
+        pictureAttributes={{ class: 'h-full w-full' }}
+        class="h-full w-full object-cover"
       />
     </div>
     <div class="article-card__body">

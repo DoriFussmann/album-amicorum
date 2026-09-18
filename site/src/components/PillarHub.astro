@@ -65,8 +65,12 @@ const jsonLd = {
           <p class="text-center text-ink-muted">No articles in this topic yet.</p>
         ) : (
           <ul class="grid list-none gap-8 p-0 sm:grid-cols-2 lg:grid-cols-3">
-            {articles.map((article) => (
-              <ArticleCard article={article} />
+            {articles.map((article, i) => (
+              <ArticleCard
+                article={article}
+                loading={i < 2 ? 'eager' : 'lazy'}
+                fetchpriority={i === 0 ? 'high' : undefined}
+              />
             ))}
           </ul>
         )

@@ -12,6 +12,7 @@ interface Props {
   stacked?: boolean;
   /** Link to home (default true) */
   link?: boolean;
+  loading?: 'eager' | 'lazy';
   class?: string;
 }
 
@@ -20,6 +21,7 @@ const {
   withWordmark = true,
   stacked = false,
   link = true,
+  loading = 'lazy',
   class: className = '',
 } = Astro.props;
 
@@ -49,9 +51,13 @@ const shellClass = [
         src={logoMark}
         alt=""
         width={72}
+        height={74}
         densities={[1, 2]}
         formats={['avif', 'webp']}
+        fallbackFormat="webp"
         class={`shrink-0 object-contain ${markClass}`}
+        loading={loading}
+        decoding="async"
       />
       {withWordmark && (
         <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>
@@ -65,9 +71,13 @@ const shellClass = [
         src={logoMark}
         alt=""
         width={72}
+        height={74}
         densities={[1, 2]}
         formats={['avif', 'webp']}
+        fallbackFormat="webp"
         class={`shrink-0 object-contain ${markClass}`}
+        loading={loading}
+        decoding="async"
       />
       {withWordmark && (
         <span class={`font-display font-semibold tracking-wide text-ink-heading ${wordmarkClass}`}>

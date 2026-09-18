@@ -1,6 +1,6 @@
 import type { CollectionEntry } from 'astro:content';
 import { SITE_NAME, SITE_URL } from '../config/site';
-import { bookImageSrc } from './bookAssets';
+import { bookOgImageSrc } from './bookAssets';
 import { absoluteUrl } from './url';
 
 /** Verbatim from BookCard.astro — do not paraphrase. */
@@ -70,7 +70,7 @@ export async function productLd(book: CollectionEntry<'books'>): Promise<Record<
     '@type': 'Product',
     name: `My Friends Book — ${title}`,
     sku: slug,
-    image: absoluteUrl(await bookImageSrc(cover)),
+    image: absoluteUrl(await bookOgImageSrc(cover)),
     description: PRODUCT_DESCRIPTION,
     brand: {
       '@type': 'Organization',

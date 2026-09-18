@@ -5,9 +5,11 @@ import type { ImageMetadata } from 'astro';
 interface Props {
   images: { src: ImageMetadata; alt: string }[];
   class?: string;
+  /** Eager-load the first slide (theme PDP). Preview dialogs should leave this off. */
+  priority?: boolean;
 }
 
-const { images, class: className = '' } = Astro.props;
+const { images, class: className = '', priority = false } = Astro.props;
 ---
 
 <div
@@ -34,8 +36,12 @@ const { images, class: className = '' } = Astro.props;
             widths={[480, 800, 1200, 1600]}
             sizes="(min-width: 1024px) 50vw, 100vw"
             formats={['avif', 'webp']}
+            fallbackFormat="webp"
+            pictureAttributes={{ class: 'h-full w-full' }}
             class="h-full w-full object-cover"
-            loading={i === 0 ? 'eager' : 'lazy'}
+            loading={priority && i === 0 ? 'eager' : 'lazy'}
+            fetchpriority={priority && i === 0 ? 'high' : undefined}
+            decoding="async"
           />
         </div>
       ))
@@ -94,5 +100,4 @@ const { images, class: className = '' } = Astro.props;
   import { initBookGalleries } from '../lib/bookGallery';
 
   initBookGalleries();
-  document.addEventListener('astro:page-load', () => initBookGalleries());
 </script>

@@ -3,7 +3,7 @@ import { getCollection, render, type CollectionEntry } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import BookGallery from '../../components/BookGallery.astro';
-import { bookImage, bookImageSrc } from '../../lib/bookAssets';
+import { bookImage, bookImageSrc, bookOgImageSrc } from '../../lib/bookAssets';
 import { bookGalleryAlt } from '../../lib/bookImageAlt';
 import { absoluteUrl } from '../../lib/url';
 import {
@@ -61,7 +61,7 @@ const metaDescription = themeMetaDescription(
 );
 const canonicalPath = `/friend-book/${data.slug}/`;
 const robots = data.draft ? 'noindex, follow' : 'index, follow';
-const ogImage = absoluteUrl(coverSrc);
+const ogImage = absoluteUrl(await bookOgImageSrc(data.cover));
 
 const showThemeSections = hasVisibleMarkdown(book.body);
 const { Content } = showThemeSections ? await render(book) : { Content: null };
@@ -105,6 +105,7 @@ const breadcrumbLd = {
         <BookGallery
           images={images}
           class="aspect-[4/5] min-h-[22rem] overflow-hidden rounded-soft lg:min-h-[32rem]"
+          priority
         />
 
         <div data-cart-scope>
@@ -162,5 +163,4 @@ const breadcrumbLd = {
   import { bindAddToCartButtons } from '../../lib/bindAddToCart';
 
   bindAddToCartButtons();
-  document.addEventListener('astro:page-load', bindAddToCartButtons);
 </script>

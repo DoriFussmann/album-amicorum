@@ -20,7 +20,7 @@ const {
   aspectClass = 'aspect-video',
   class: className = '',
   loading = 'lazy',
-  widths = [480, 800, 1200, 1600],
+  widths = [400, 800, 1200],
   sizes = '(min-width: 1024px) 40vw, 100vw',
 } = Astro.props;
 ---
@@ -32,8 +32,11 @@ const {
     widths={widths}
     sizes={sizes}
     formats={['avif', 'webp']}
+    fallbackFormat="webp"
+    pictureAttributes={{ class: 'h-full w-full' }}
     class="h-full w-full object-cover"
     loading={loading}
+    decoding="async"
   />
   {
     caption && (
