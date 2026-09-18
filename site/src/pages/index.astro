@@ -9,7 +9,6 @@ import WhyParents from '../components/WhyParents.astro';
 import Story from '../components/Story.astro';
 import Testimonials from '../components/Testimonials.astro';
 import ClosingCta from '../components/ClosingCta.astro';
-import { SITE_NAME } from '../config/site';
 import { isListedTheme, sortThemes } from '../lib/themes';
 import { getHeroLcpPreload } from '../lib/heroImage';
 
@@ -18,8 +17,8 @@ const lcpImage = await getHeroLcpPreload();
 ---
 
 <BaseLayout
-  title={`${SITE_NAME} — Friend Books for Childhood`}
-  description="Beautiful Friend Books inspired by a centuries-old tradition of preserving friendships, memories, and childhood by hand."
+  title="Friend Books & Memory Books for Kids | Album Amicorum"
+  description="Beautifully illustrated friend books for kids — a place to keep handwritten memories, drawings, and friendships, inspired by a 450-year-old tradition."
   canonicalPath="/"
   lcpImage={lcpImage}
 >

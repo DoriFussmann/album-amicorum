@@ -11,6 +11,8 @@ gallery:
   - /images/books/animals/02-open-1.jpg
   - /images/books/animals/03-use.jpg
   - /images/books/animals/04-lifestyle.jpg
+metaTitle: "Animal Friend Book for Kids | Album Amicorum"
+metaDescription: "A friend book for children who love animals — fill it with handwritten memories, drawings, and messages from friends. A keepsake to treasure."
 order: 7
 ---
 ## Friends from every corner of nature

@@ -1,9 +1,6 @@
-import { getImage } from 'astro:assets';
-import logoMark from '../assets/images/logo.png';
-import { SITE_URL } from '../config/site';
+import { absoluteUrl } from './url';
 
-/** Optimized logo URL for JSON-LD (replaces the old public /images/logo.png). */
+/** Stable public logo URL for JSON-LD (must not change across rebuilds). */
 export async function getLogoAbsoluteUrl(): Promise<string> {
-  const img = await getImage({ src: logoMark, width: 192, format: 'png' });
-  return new URL(img.src, SITE_URL).href;
+  return absoluteUrl('/images/logo.png');
 }

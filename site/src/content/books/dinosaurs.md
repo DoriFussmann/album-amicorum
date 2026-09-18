@@ -12,6 +12,8 @@ gallery:
   - /images/books/dinosaurs/03-open-2.jpg
   - /images/books/dinosaurs/04-use.jpg
   - /images/books/dinosaurs/05-lifestyle.jpg
+metaTitle: "Dinosaur Friend Book for Kids | Album Amicorum"
+metaDescription: "A friend book for little dinosaur lovers — a place to keep handwritten memories, drawings, and messages from friends. Made to be treasured."
 order: 6
 ---
 ## A world long forgotten
