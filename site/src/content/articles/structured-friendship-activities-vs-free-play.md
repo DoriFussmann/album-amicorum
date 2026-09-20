@@ -36,10 +36,13 @@ faqs:
 externalLinks:
   - label: 5 Ways To Organize Keepsakes For Your Children
     url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+    addedAt: 2026-08-18
   - label: What to keep in children's memory boxes?
     url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+    addedAt: 2026-08-18
   - label: How to Create Meaningful Memory Boxes for Your Kids!
     url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
+    addedAt: 2026-08-18
 ---
 
 When a playdate is coming up, most parents face a quiet version of the same question: should I plan something, or should I just let them figure it out? It feels small, but it points to one of the more genuinely interesting debates in child development — whether structured friendship activities or open-ended free play does more to build the close, lasting friendships children need. The honest answer is that both camps are right, and for most families the real work is not choosing between them but understanding what each one actually does.

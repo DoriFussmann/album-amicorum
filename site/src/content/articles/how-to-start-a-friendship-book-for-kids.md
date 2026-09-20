@@ -50,10 +50,13 @@ internalLinks:
 externalLinks:
   - label: How To Make Friends For Kids
     url: https://www.amazon.com/how-make-friends-kids/s?k=how+to+make+friends+for+kids
+    addedAt: 2026-08-10
   - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
     url: https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/
+    addedAt: 2026-08-10
   - label: Books To Show Kids How To Be a Friend
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    addedAt: 2026-08-10
 ---
 
 ## Why Starting a Friendship Book Is Worth Doing Right

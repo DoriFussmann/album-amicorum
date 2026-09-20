@@ -40,10 +40,13 @@ internalLinks:
 externalLinks:
   - label: "Helping Kids Make Friends: A Gift Guide"
     url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/
+    addedAt: 2026-08-21
   - label: My Friendship Books
     url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+    addedAt: 2026-08-21
   - label: The most popular items ordered as gifts in Friendship
     url: https://www.amazon.com/gp/most-gifted/books/282914
+    addedAt: 2026-08-21
 ---
 
 ## What Does "Amicorum" Mean in Latin?

@@ -50,10 +50,13 @@ internalLinks:
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+    addedAt: 2026-08-11
   - label: What books show it's normal to share friends and help shy ...
     url: https://www.facebook.com/groups/mybookloversclub/posts/7714267648642144/
+    addedAt: 2026-08-11
   - label: Books To Show Kids How To Be a Friend
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    addedAt: 2026-08-11
 ---
 
 ## Friendship Storybooks vs. Keepsake Books: Which Is Right?

@@ -1,6 +1,7 @@
 ---
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import { websiteNode } from 'seo-core';
 import { SITE_NAME, SITE_URL, SAME_AS } from '../config/site';
 import { absoluteUrl } from '../lib/url';
 import { getLogoAbsoluteUrl } from '../lib/logo';
@@ -61,14 +62,20 @@ const logoAbsolute = await getLogoAbsoluteUrl();
 const organizationLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
+  '@id': `${SITE_URL}#org`,
   name: SITE_NAME,
   url: SITE_URL,
   logo: logoAbsolute,
   sameAs: SAME_AS,
 };
 
+const websiteLd = {
+  '@context': 'https://schema.org',
+  ...websiteNode({ siteUrl: SITE_URL, siteName: SITE_NAME, sameAs: SAME_AS }),
+};
+
 const jsonLdBlocks = Array.isArray(jsonLd) ? jsonLd : [jsonLd];
-const allLd = [organizationLd, ...jsonLdBlocks.filter(Boolean)];
+const allLd = [organizationLd, websiteLd, ...jsonLdBlocks.filter(Boolean)];
 ---
 
 <!doctype html>

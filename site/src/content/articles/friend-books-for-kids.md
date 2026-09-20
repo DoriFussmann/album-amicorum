@@ -59,10 +59,13 @@ internalLinks:
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+    addedAt: 2026-08-10
   - label: Books To Show Kids How To Be a Friend
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    addedAt: 2026-08-10
   - label: "My Friends: Books for Young Children"
     url: https://www.colorincolorado.org/booklist/my-friends-books-young-children
+    addedAt: 2026-08-10
 ---
 
 ## What Is a Friend Book — and Why Does It Deserve Its Own Category?

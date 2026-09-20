@@ -50,10 +50,13 @@ internalLinks:
 externalLinks:
   - label: Five Great Picture Books About Friendship for K-1!
     url: https://susanjonesteaching.com/picture-books-about-friendship-read-alouds-for-kindergarten-first-and-second-grade/
+    addedAt: 2026-08-10
   - label: How to Talk to Kids About Making Friends
     url: https://www.scholastic.com/parents/books-and-reading/raise-a-reader-blog/books-about-friendship-kids.html
+    addedAt: 2026-08-10
   - label: Books To Show Kids How To Be a Friend
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    addedAt: 2026-08-10
 ---
 
 ## Friendship Book for Kids: FAQ for Parents and Gift-Givers

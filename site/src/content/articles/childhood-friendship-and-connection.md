@@ -34,10 +34,13 @@ faqs:
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+    addedAt: 2026-08-11
   - label: "Friendships in middle childhood: Links to peer and school ..."
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+    addedAt: 2026-08-11
   - label: Tips to Build Strong Childhood Friendships
     url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOor4281AkAbmaM4orlyRKVOzXKHQt3QIXn2gAI2td7-eUUjFTX-X
+    addedAt: 2026-08-11
 ---
 
 ## Friendship Is Not a Luxury — It Is a Developmental Necessity

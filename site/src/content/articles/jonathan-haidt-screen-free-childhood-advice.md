@@ -36,10 +36,13 @@ faqs:
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+    addedAt: 2026-08-11
   - label: "Friendships in middle childhood: Links to peer and school ..."
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+    addedAt: 2026-08-11
   - label: Tips to Build Strong Childhood Friendships
     url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOor_JP-HsnDdXpIlAhlyIl_NsmNr_EqYKKCFMz71xaB2GosYMhqE
+    addedAt: 2026-08-11
 ---
 
 If you've picked up Jonathan Haidt's *The Anxious Generation* — or heard his name in a school WhatsApp group, a podcast, or a worried conversation with another parent — you probably left with a feeling more than a plan. The alarm bells rang clearly. But the specific, practical answers? Those were harder to find. This article works through the questions parents ask most often about Haidt's screen-free childhood advice, in plain language, so you can move from concern to action.

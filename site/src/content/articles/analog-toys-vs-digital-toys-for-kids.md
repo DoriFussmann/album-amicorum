@@ -48,10 +48,13 @@ internalLinks:
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
+    addedAt: 2026-08-25
   - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
     url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+    addedAt: 2026-08-25
   - label: Towards a better protection of children's personal data ...
     url: https://digitalfreedomfund.org/towards-a-better-protection-of-childrens-personal-data-collected-by-connected-toys-and-devices/
+    addedAt: 2026-08-25
 ---
 
 When parents talk about the toy aisle — physical or virtual — the conversation almost always collapses into a familiar binary: screens are bad, wooden blocks are good. But that framing misses the more interesting and practically useful question, which is not about quality or safety or screen time in the abstract. It's about *connection*. Specifically: which type of toy actually builds the kind of deep, lasting friendship between children that parents hope their kids will carry into adulthood? The answer, when you look at the research, is more nuanced than the culture war suggests — but it does have a clear winner when friendship is the goal.

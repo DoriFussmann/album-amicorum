@@ -48,10 +48,13 @@ internalLinks:
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
+    addedAt: 2026-08-25
   - label: Toys That Listen A Study of Parents Children and Internet ...
     url: https://www.youtube.com/watch?v=CldhxCzQ8P8
+    addedAt: 2026-08-25
   - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
     url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+    addedAt: 2026-08-25
 ---
 
 ## What Exactly Counts as an Analog Toy?

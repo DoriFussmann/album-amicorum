@@ -36,10 +36,13 @@ faqs:
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+    addedAt: 2026-08-11
   - label: Children's friendship quality trajectories from middle childhood ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/
+    addedAt: 2026-08-11
   - label: Friendship Statistics
     url: https://www.kutestkids.com/blog/friendship-statistics
+    addedAt: 2026-08-11
 ---
 
 ## What Is the Smartphone Free Childhood Pact? 8 Things Every Parent Should Know Before Signing

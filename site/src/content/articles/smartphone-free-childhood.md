@@ -36,10 +36,13 @@ faqs:
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
+    addedAt: 2026-08-11
   - label: "Friendships in middle childhood: Links to peer and school ..."
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC6587842/
+    addedAt: 2026-08-11
   - label: Tips to Build Strong Childhood Friendships
     url: https://thinkpsych.com/blogs/posts/tips-to-build-strong-childhood-friendships?srsltid=AfmBOorfjcLlrVtfd_Uv1JgoUBYqHHGI-YrXiXnezdCm3pDh_PWzSNir
+    addedAt: 2026-08-11
 ---
 
 Two families. Same school. Same values. One has decided: no smartphone until age fourteen, full stop. The other has a different plan: a basic device at eleven, parental controls, agreed limits, and a gradual loosening of the guardrails as trust is earned. Both sets of parents have read the research. Both are worried. Both are trying to do right by their children. And at the school gate, they cannot quite agree.

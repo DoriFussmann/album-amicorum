@@ -48,10 +48,13 @@ internalLinks:
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
+    addedAt: 2026-08-25
   - label: Intentional toys for kids of different ages?
     url: https://www.facebook.com/groups/thehomeschoolmeltinghub/posts/878933694556888/
+    addedAt: 2026-08-25
   - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
     url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+    addedAt: 2026-08-25
 ---
 
 Every parent has stood in a toy aisle — or scrolled through an endless online grid — and felt a creeping suspicion: most of this will be forgotten by February. Not broken, not outgrown, just quietly abandoned. The battery-operated gadget goes silent. The fad collectible loses its novelty. The digital game updates itself into something unrecognizable. What survives? The things that leave a mark. The sketchbook filled over a rainy summer. The weaving that hangs on a bedroom wall for years. The book passed around a classroom, slowly filling with a friend's handwriting, a cousin's terrible drawing of a dog, a best friend's secret favorite color.

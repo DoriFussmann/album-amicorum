@@ -47,10 +47,13 @@ internalLinks:
 externalLinks:
   - label: Safe, Secure, & Smart- Connected Toys & Devices - Fairplay
     url: https://fairplayforkids.org/pf/safe-secure-smart-toys/
+    addedAt: 2026-08-25
   - label: Buy Real Toys - by Katherine Martinko - The Analog Family
     url: https://katherinemartinko.substack.com/p/buy-real-toys
+    addedAt: 2026-08-25
   - label: Best Open-Ended Toys According to a Pediatrician Mom
     url: https://chalkacademy.com/10-best-toys-open-ended-learning/
+    addedAt: 2026-08-25
 ---
 
 ## What Are Analog Toys — and Why Do They Still Matter?

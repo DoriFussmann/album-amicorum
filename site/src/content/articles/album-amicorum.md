@@ -38,10 +38,13 @@ internalLinks:
 externalLinks:
   - label: The most popular items ordered as gifts in Friendship
     url: https://www.amazon.com/gp/most-gifted/books/282914
+    addedAt: 2026-08-21
   - label: My Friendship Books
     url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+    addedAt: 2026-08-21
   - label: 60 Mighty Girl Books About Friendship
     url: https://www.amightygirl.com/blog/?p=10315
+    addedAt: 2026-08-21
 ---
 
 ## Album Amicorum: The 500-Year-Old Friendship Book Tradition

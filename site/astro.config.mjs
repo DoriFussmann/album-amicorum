@@ -4,6 +4,7 @@ import tailwind from '@astrojs/tailwind';
 import vercel from '@astrojs/vercel';
 import { readdirSync, readFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
+import { rehypeEmitWtsComments, rehypeKeyTakeaways, remarkPreserveWts } from 'seo-core';
 import { SITE_URL } from './src/config/site.ts';
 
 function loadBookFrontmatter() {
@@ -53,6 +54,10 @@ export default defineConfig({
   // Static by default; API routes opt into SSR with `export const prerender = false`
   adapter: vercel(),
   trailingSlash: 'always',
+  markdown: {
+    remarkPlugins: [remarkPreserveWts],
+    rehypePlugins: [rehypeKeyTakeaways, rehypeEmitWtsComments],
+  },
   redirects: {
     '/our-story': '/#story',
     '/pages': '/#story',

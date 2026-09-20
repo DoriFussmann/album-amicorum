@@ -36,10 +36,13 @@ faqs:
 externalLinks:
   - label: 5 Ways To Organize Keepsakes For Your Children
     url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+    addedAt: 2026-08-18
   - label: What to keep in children's memory boxes?
     url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+    addedAt: 2026-08-18
   - label: How to Create Meaningful Memory Boxes for Your Kids!
     url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
+    addedAt: 2026-08-18
 ---
 
 Not every afternoon of play becomes a memory. Most dissolve into the general warmth of childhood — felt but not held, real in the moment and blurry by Tuesday. What separates the afternoons children remember at thirty from the ones they forget by dinner is rarely the activity itself. It is whether something was made, and whether that something was kept. This list exists for parents who already understand that distinction and are looking for activities that honor it: twelve analog friendship activities for children ages 5–12, each evaluated against two criteria before earning its place here. Does it deepen connection between children in the moment? And does it leave a physical object behind that can be kept, revisited, and treasured? Activities that pass only one test were left off. Every activity on this list passes both.

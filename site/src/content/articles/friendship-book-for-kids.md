@@ -49,10 +49,13 @@ internalLinks:
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
+    addedAt: 2026-08-11
   - label: Books To Show Kids How To Be a Friend
     url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    addedAt: 2026-08-11
   - label: All About Friends - A colourful guide for children on making ...
     url: https://www.youtube.com/watch?v=4iLgR5vSBrg
+    addedAt: 2026-08-11
 ---
 
 ## Friendship Book for Kids: The Complete Guide to Keepsakes

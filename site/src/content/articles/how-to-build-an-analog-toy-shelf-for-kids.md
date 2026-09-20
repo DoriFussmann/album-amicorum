@@ -48,10 +48,13 @@ internalLinks:
 externalLinks:
   - label: Why Aesthetic Playrooms Don't Work (and what to do instead)
     url: https://www.youtube.com/watch?v=Tw9Hs1EoEc8
+    addedAt: 2026-08-25
   - label: Houseful of Handmade's post
     url: https://www.facebook.com/housefulofhandmade/photos/d41d8cd9/1320012385617488/
+    addedAt: 2026-08-25
   - label: Kids Toy Storage Solutions Only Work When Kids Can Use ...
     url: https://www.youtube.com/watch?v=NUSe8OLebFE
+    addedAt: 2026-08-25
 ---
 
 ## Start With the Audit: Know What You Actually Have

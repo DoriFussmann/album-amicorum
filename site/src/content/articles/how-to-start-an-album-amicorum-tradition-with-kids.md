@@ -39,10 +39,13 @@ internalLinks:
 externalLinks:
   - label: A Fun Friendship Journal for Kids – Fill In Book for School ...
     url: https://www.amazon.com/Friendship-book-Journal-Memories-Keepsakes/dp/B0H15S3C41
+    addedAt: 2026-08-21
   - label: My Friendship Books
     url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+    addedAt: 2026-08-21
   - label: 9 Favorite Children's Books About Friendship
     url: https://www.doinggoodtogether.org/bhf-book-lists/childrens-books-about-friendship
+    addedAt: 2026-08-21
 ---
 
 ## Why This Tradition Begins with a Moment, Not a Method

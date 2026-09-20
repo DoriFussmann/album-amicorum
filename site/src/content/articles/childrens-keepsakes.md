@@ -35,10 +35,13 @@ faqs:
 externalLinks:
   - label: 5 Ways To Organize Keepsakes For Your Children
     url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+    addedAt: 2026-08-18
   - label: What to keep in children's memory boxes?
     url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+    addedAt: 2026-08-18
   - label: How to Create Meaningful Memory Boxes for Your Kids!
     url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
+    addedAt: 2026-08-18
 ---
 
 ## Why Children's Keepsakes Are About So Much More Than Nostalgia

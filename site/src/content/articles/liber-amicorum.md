@@ -39,10 +39,13 @@ internalLinks:
 externalLinks:
   - label: "Helping Kids Make Friends: A Gift Guide"
     url: https://happystronghome.com/helping-kids-make-friends-a-gift-guide/
+    addedAt: 2026-08-21
   - label: My Friendship Books
     url: https://www.facebook.com/myfriendshipbooks/posts/what-is-a-friendship-book-a-friendship-book-serves-as-a-treasured-memory-book-fo/337210645739373/
+    addedAt: 2026-08-21
   - label: The most popular items ordered as gifts in Friendship
     url: https://www.amazon.com/gp/most-gifted/books/282914
+    addedAt: 2026-08-21
 ---
 
 If you have ever typed either "album amicorum" or "liber amicorum" into a search bar, you may have found yourself staring at two different worlds. One returns beautifully illustrated historical friendship books, pages filled with ink drawings and handwritten mottoes passed between students centuries ago. The other returns dense academic volumes published in honour of retiring law professors. Both carry a Latin label that translates, word for word, as "book of friends." So what is actually going on — and does the distinction matter for a parent looking for a meaningful keepsake for their child?
