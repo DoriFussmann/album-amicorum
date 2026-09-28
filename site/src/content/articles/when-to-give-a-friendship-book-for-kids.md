@@ -168,3 +168,7 @@ National Friendship Day 2026 fell on Sunday, August 2
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: FAQ for Parents and Gift-Givers](/articles/friendship-book-for-kids-questions/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [How to Start a Kids' Friendship Book: A Step-by-Step Guide](/articles/how-to-start-a-friendship-book-for-kids/).
+<!-- CMS-INTERNAL:END -->
