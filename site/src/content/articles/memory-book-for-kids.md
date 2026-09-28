@@ -23,7 +23,17 @@ keywords:
   - friendship book for kids
   - "Friend Books & Friendship Keepsakes"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: friend-books-for-kids
+    anchor: friend books for kids
+  - slug: friendship-book-for-kids-questions
+    anchor: friendship book for kids questions
+  - slug: friendship-book-for-kids
+    anchor: friendship book for kids
+  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
+    anchor: friendship storybook vs friendship keepsake book for kids
+  - slug: how-to-start-a-friendship-book-for-kids
+    anchor: how to start a friendship book for kids
 externalLinks:
   - label: Used for Toy Association 'Cozy Culture' trend data and parent screen-free gift shift statistics
     url: "https://www.peopleofplay.com/blog/the-quiet-revolution-why-american-parents-are-choosing-screen-free-toys-in-2026"
@@ -143,3 +153,7 @@ handmade patterns and vintage experiences are reflecting a desire for slower, mo
 - Handwriting and drawing together capture personality in ways that typed text and photographs cannot; imperfections are a feature, not a flaw.
 - Simple, gentle prompts lower the barrier to entry for children who feel stuck, while still leaving room for genuine creative expression.
 - Choosing an illustrated theme the child genuinely loves increases the chance they will actually carry the book, share it, and treasure it for years to come.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [friend books for kids](/articles/friend-books-for-kids/) · [friendship book for kids questions](/articles/friendship-book-for-kids-questions/) · [friendship book for kids](/articles/friendship-book-for-kids/) · [friendship storybook vs friendship keepsake book for kids](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [how to start a friendship book for kids](/articles/how-to-start-a-friendship-book-for-kids/).
+<!-- CMS-INTERNAL:END -->

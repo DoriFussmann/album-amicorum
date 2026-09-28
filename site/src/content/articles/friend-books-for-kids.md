@@ -56,6 +56,8 @@ internalLinks:
     anchor: "Album Amicorum vs. Liber Amicorum: What's the Difference?"
   - slug: when-to-give-a-friendship-book-for-kids
     anchor: when to give a friendship book for kids
+  - slug: memory-book-for-kids
+    anchor: Memory Book for Kids
 externalLinks:
   - label: Books About Friendship for Young Children
     url: https://www.learningherenthere.com/kid-lit/books-friendship-young-children
@@ -225,5 +227,5 @@ See Related below for more on this topic.
 For further reading, see the Sources listed below.
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [8 Fascinating Historical Facts About the Album Amicorum](/articles/album-amicorum-history/) · [Album Amicorum: The 500-Year-Old Friendship Book Tradition](/articles/album-amicorum/) · [Amicorum Meaning: Your Top Album Amicorum Questions Answered](/articles/amicorum-meaning/) · [friendship book for kids questions](/articles/friendship-book-for-kids-questions/) · [friendship storybook vs friendship keepsake book for kids](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [how to start a friendship book for kids](/articles/how-to-start-a-friendship-book-for-kids/) · [How to Start an Album Amicorum Tradition with Your Child](/articles/how-to-start-an-album-amicorum-tradition-with-kids/) · [Album Amicorum vs. Liber Amicorum: What's the Difference?](/articles/liber-amicorum/) · [when to give a friendship book for kids](/articles/when-to-give-a-friendship-book-for-kids/).
+Further reading: [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [8 Fascinating Historical Facts About the Album Amicorum](/articles/album-amicorum-history/) · [Album Amicorum: The 500-Year-Old Friendship Book Tradition](/articles/album-amicorum/) · [Amicorum Meaning: Your Top Album Amicorum Questions Answered](/articles/amicorum-meaning/) · [friendship book for kids questions](/articles/friendship-book-for-kids-questions/) · [friendship storybook vs friendship keepsake book for kids](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [how to start a friendship book for kids](/articles/how-to-start-a-friendship-book-for-kids/) · [How to Start an Album Amicorum Tradition with Your Child](/articles/how-to-start-an-album-amicorum-tradition-with-kids/) · [Album Amicorum vs. Liber Amicorum: What's the Difference?](/articles/liber-amicorum/) · [when to give a friendship book for kids](/articles/when-to-give-a-friendship-book-for-kids/) · [Memory Book for Kids](/articles/memory-book-for-kids/).
 <!-- CMS-INTERNAL:END -->

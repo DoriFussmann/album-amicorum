@@ -47,6 +47,8 @@ internalLinks:
     anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
   - slug: when-to-give-a-friendship-book-for-kids
     anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
+  - slug: memory-book-for-kids
+    anchor: Memory Book for Kids
 externalLinks:
   - label: Five Great Picture Books About Friendship for K-1!
     url: https://susanjonesteaching.com/picture-books-about-friendship-read-alouds-for-kindergarten-first-and-second-grade/
@@ -156,3 +158,7 @@ The broader context for friendship books and childhood keepsakes continues to st
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [How to Start a Kids' Friendship Book: A Step-by-Step Guide](/articles/how-to-start-a-friendship-book-for-kids/) · [7 Occasions That Call for Giving a Friendship Book for Kids](/articles/when-to-give-a-friendship-book-for-kids/) · [Memory Book for Kids](/articles/memory-book-for-kids/).
+<!-- CMS-INTERNAL:END -->

@@ -191,3 +191,7 @@ The broader trend — investing in fewer, better-designed products that support 
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Analog Toys for Kids: Parent Questions, Honestly Answered](/articles/analog-toys-for-kids-questions-answered/) · [10 Analog Toys for Kids That Create Something Worth Keeping](/articles/analog-toys-for-kids-that-make-keepsakes/) · [Analog vs. Digital Toys: Which Builds Deeper Connection?](/articles/analog-toys-vs-digital-toys-for-kids/) · [How to Build an Analog Toy Shelf for Kids: A Room Guide](/articles/how-to-build-an-analog-toy-shelf-for-kids/).
+<!-- CMS-INTERNAL:END -->
