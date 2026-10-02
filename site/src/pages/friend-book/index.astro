@@ -3,6 +3,8 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import Breadcrumbs from '../../components/Breadcrumbs.astro';
 import Collection from '../../components/Collection.astro';
+import CollectionShelf from '../../components/CollectionShelf.astro';
+import { PRODUCT_SECTION_VARIANT } from '../../components/collectionVariant';
 import { SITE_NAME } from '../../config/site';
 import { absoluteUrl } from '../../lib/url';
 import { isListedTheme, productGroupLd, sortThemes } from '../../lib/themes';
@@ -37,5 +39,5 @@ const productGroupJsonLd = await productGroupLd(books);
       ]}
     />
   </div>
-  <Collection books={books} />
+  {PRODUCT_SECTION_VARIANT === 'A' ? <Collection books={books} /> : <CollectionShelf books={books} />}
 </BaseLayout>

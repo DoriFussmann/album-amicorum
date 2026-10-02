@@ -1,521 +1,201 @@
 ---
 import { Picture } from 'astro:assets';
-import Reveal from './Reveal.astro';
 import whyParentsImage from '../assets/images/why-parents.jpg';
 import passItOnImage from '../assets/images/pass-it-on.jpg';
 import watchItGrowImage from '../assets/images/watch-it-grow.jpg';
 
-const steps = [
+const moments = [
   {
-    id: 'make-it-yours',
-    title: 'Make it yours',
-    body: 'Write your name on the first page and fill out two pages about you: favorites, dreams, what makes you <em>you</em> right now. Then slide the bookmark to the next empty page so friends know exactly where to write.',
-    label: 'Step 1',
+    title: 'A page gets filled',
+    body: 'It starts with a name, a few favorites, and whatever makes you you right now. Then the bookmark slides forward, leaving the next page open for someone else.',
     image: whyParentsImage,
     imageAlt: 'A child writing by hand in an open My Friends Book',
+    tilt: '-2.2deg',
   },
   {
-    id: 'pass-it-on',
-    title: 'Pass it on',
-    body: 'Hand it to friends, cousins, teammates, teachers, coaches — anyone who\u2019s made life a little brighter.',
-    label: 'Step 2',
+    title: 'Passed to a friend',
+    body: 'The book goes wherever the people are — a friend, a cousin, a teacher, a coach — anyone who has made life a little brighter.',
     image: passItOnImage,
     imageAlt: 'A child walking through a meadow, carrying a My Friends Book',
+    tilt: '1.8deg',
   },
   {
-    id: 'watch-it-grow',
-    title: 'Watch it grow',
-    body: 'Each person fills a page, adds a photo, leaves a piece of themselves. Years from now, you\u2019ll have a book full of people who loved you.',
-    label: 'Step 3',
+    title: 'Kept for years',
+    body: 'Each person leaves a page, a drawing, a bit of themselves. Long after, it is still a book full of people who loved you.',
     image: watchItGrowImage,
     imageAlt: 'A family gathered around a picnic table in a garden, looking together at an open My Friends Book',
+    tilt: '-1.5deg',
   },
 ] as const;
 ---
 
-<section
-  id="how-it-works"
-  class="hiw section-space"
-  aria-labelledby="how-it-works-heading"
-  data-hiw
->
-  <div class="hiw-wash" aria-hidden="true">
-    <img src="/images/hero-wash.svg" alt="" width="1440" height="900" loading="lazy" decoding="async" />
-  </div>
-  <div class="hiw-torn hiw-torn--top" aria-hidden="true"></div>
-
-  <div class="site-container relative z-[1]">
+<section id="how-it-works" class="journey section-space" aria-labelledby="how-it-works-heading">
+  <div class="site-container">
     <div class="mx-auto max-w-2xl text-center">
-      <p class="text-sm font-semibold tracking-wide text-ink-muted">How It Works</p>
-      <h2 id="how-it-works-heading" class="mt-3">Three steps to a lifetime of memories</h2>
+      <p class="text-sm font-semibold tracking-wide text-ink-muted">The journey</p>
+      <h2 id="how-it-works-heading" class="mt-3">A page, a friend, a lifetime</h2>
     </div>
 
-    <Reveal delay={80}>
-      <div class="hiw-layout mt-12 md:mt-16" data-hiw-layout>
-        <div class="hiw-cards" role="tablist" aria-label="How it works steps" data-hiw-cards>
-          {
-            steps.map((step, i) => (
-              <button
-                type="button"
-                class:list={['hiw-card', i === 0 && 'is-active']}
-                role="tab"
-                id={`hiw-tab-${step.id}`}
-                aria-controls={`hiw-panel-${step.id}`}
-                aria-selected={i === 0 ? 'true' : 'false'}
-                data-hiw-card={i}
-                tabindex={i === 0 ? 0 : -1}
-              >
-                <span class="hiw-card-num">{String(i + 1).padStart(2, '0')}</span>
-                <span class="hiw-card-copy">
-                  <span class="hiw-card-label">{step.label}</span>
-                  <span class="hiw-card-title">{step.title}</span>
-                </span>
-                <span class="hiw-card-progress" aria-hidden="true" />
-              </button>
-            ))
-          }
-        </div>
+    <div class="journey-track">
+      <svg
+        class="journey-curve"
+        viewBox="0 0 100 100"
+        preserveAspectRatio="none"
+        aria-hidden="true"
+        focusable="false"
+      >
+        <path
+          d="M16 2
+             C 24 9, 8 15, 18 23
+             C 34 35, 62 27, 76 39
+             C 90 51, 68 59, 48 65
+             C 26 72, 10 69, 15 81
+             C 21 92, 42 87, 30 98"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2.25"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          vector-effect="non-scaling-stroke"
+        />
+      </svg>
 
-        <div class="hiw-detail" data-hiw-detail>
-          {
-            steps.map((step, i) => (
-              <div
-                class:list={['hiw-pane', 'hiw-pane--photo', i === 0 && 'is-active']}
-                id={`hiw-panel-${step.id}`}
-                role="tabpanel"
-                aria-labelledby={`hiw-tab-${step.id}`}
-                data-hiw-pane={i}
-                aria-hidden={i === 0 ? 'false' : 'true'}
-                inert={i !== 0}
-              >
-                <div class="hiw-photo media-warm">
-                  <Picture
-                    src={step.image}
-                    alt={step.imageAlt}
-                    widths={[480, 800, 1200]}
-                    sizes="(min-width: 768px) 66vw, 100vw"
-                    formats={['avif', 'webp']}
-                    fallbackFormat="webp"
-                    pictureAttributes={{ class: 'h-full w-full' }}
-                    class="h-full w-full object-cover"
-                    loading="lazy"
-                    decoding="async"
-                  />
-                </div>
-                <div class="hiw-pane-copy">
-                  <p class="hiw-step-label">{step.label}</p>
-                  <h3 class="hiw-step-title">{step.title}</h3>
-                  <p class="hiw-step-body" set:html={step.body} />
-                </div>
-              </div>
-            ))
-          }
-        </div>
-      </div>
-    </Reveal>
-  </div>
-
-  <div class="hiw-torn hiw-torn--bottom" aria-hidden="true"></div>
-
-  <script>
-    function initHowItWorks() {
-      const root = document.querySelector('[data-hiw]');
-      if (!(root instanceof HTMLElement) || root.dataset.hiwReady === '1') return;
-      root.dataset.hiwReady = '1';
-
-      const cards = Array.from(root.querySelectorAll('[data-hiw-card]'));
-      const panes = Array.from(root.querySelectorAll('[data-hiw-pane]'));
-      const cardsEl = root.querySelector('[data-hiw-cards]');
-      let index = 0;
-
-      function goTo(i) {
-        index = ((i % cards.length) + cards.length) % cards.length;
-        cards.forEach((card, di) => {
-          const selected = di === index;
-          card.classList.toggle('is-active', selected);
-          card.setAttribute('aria-selected', selected ? 'true' : 'false');
-          card.tabIndex = selected ? 0 : -1;
-        });
-        panes.forEach((pane, di) => {
-          const selected = di === index;
-          pane.classList.toggle('is-active', selected);
-          pane.setAttribute('aria-hidden', selected ? 'false' : 'true');
-          pane.toggleAttribute('inert', !selected);
-        });
+      {
+        moments.map((moment) => (
+          <article class="journey-moment" style={`--tilt: ${moment.tilt}`}>
+            <div class="journey-photo">
+              <Picture
+                src={moment.image}
+                alt={moment.imageAlt}
+                widths={[480, 800]}
+                sizes="(min-width: 768px) 220px, 70vw"
+                formats={['avif', 'webp']}
+                fallbackFormat="webp"
+                pictureAttributes={{ class: 'journey-photo__frame' }}
+                class="journey-photo__img"
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+            <div class="journey-copy">
+              <h3>{moment.title}</h3>
+              <p>{moment.body}</p>
+            </div>
+          </article>
+        ))
       }
-
-      cards.forEach((card) => {
-        card.addEventListener('click', () => {
-          const i = Number(card.dataset.hiwCard);
-          if (Number.isNaN(i)) return;
-          goTo(i);
-        });
-      });
-
-      cardsEl?.addEventListener('keydown', (e) => {
-        if (!(e instanceof KeyboardEvent)) return;
-        let next = index;
-        if (e.key === 'ArrowRight' || e.key === 'ArrowDown') next = index + 1;
-        else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') next = index - 1;
-        else if (e.key === 'Home') next = 0;
-        else if (e.key === 'End') next = cards.length - 1;
-        else return;
-        e.preventDefault();
-        goTo(next);
-        cards[index]?.focus();
-      });
-    }
-
-    initHowItWorks();
-  </script>
+    </div>
+  </div>
 </section>
 
 <style>
-  .hiw {
+  .journey-track {
     position: relative;
-    overflow: hidden;
-    background-color: #faf8f4;
-  }
-
-  .hiw-wash {
-    pointer-events: none;
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-  }
-
-  .hiw-wash img {
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-    opacity: 0.95;
-  }
-
-  .hiw-torn {
-    pointer-events: none;
-    position: absolute;
-    left: 0;
-    right: 0;
-    z-index: 2;
-    height: 28px;
-    background-color: #faf8f4;
-  }
-
-  .hiw-torn--top {
-    top: 0;
-    clip-path: polygon(
-      0 0,
-      100% 0,
-      100% 55%,
-      96% 100%,
-      92% 60%,
-      87% 95%,
-      82% 55%,
-      76% 100%,
-      70% 50%,
-      64% 90%,
-      58% 45%,
-      52% 100%,
-      46% 55%,
-      40% 95%,
-      34% 50%,
-      28% 100%,
-      22% 60%,
-      16% 95%,
-      10% 55%,
-      5% 100%,
-      0 50%
-    );
-  }
-
-  .hiw-torn--bottom {
-    bottom: 0;
-    clip-path: polygon(
-      0 45%,
-      4% 0,
-      9% 50%,
-      14% 5%,
-      20% 55%,
-      26% 0,
-      32% 50%,
-      38% 10%,
-      44% 55%,
-      50% 0,
-      56% 50%,
-      62% 8%,
-      68% 55%,
-      74% 0,
-      80% 50%,
-      86% 10%,
-      92% 55%,
-      97% 0,
-      100% 45%,
-      100% 100%,
-      0 100%
-    );
-  }
-
-  .hiw-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 1.25rem;
-    align-items: stretch;
-  }
-
-  @media (min-width: 768px) {
-    .hiw-layout {
-      grid-template-columns: 1fr 2fr;
-      gap: 1.75rem;
-    }
-
-    .hiw-detail {
-      min-height: 28rem;
-    }
-  }
-
-  .hiw-cards {
+    margin-top: 3.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
-    min-width: 0;
+    gap: 3.25rem;
   }
 
-  .hiw-card {
-    position: relative;
-    display: flex;
-    flex: 1;
-    min-height: 4.5rem;
-    align-items: center;
-    gap: 1rem;
-    overflow: hidden;
-    border: 1px solid #ddd8ce;
-    border-radius: 12px;
-    background: rgba(250, 248, 244, 0.82);
-    padding: 1rem 1.15rem 1.15rem;
-    text-align: left;
-    color: #5a5248;
-    cursor: pointer;
-    transition:
-      background-color 280ms ease,
-      border-color 280ms ease,
-      box-shadow 280ms ease,
-      transform 280ms ease;
-  }
-
-  .hiw-card:hover {
-    border-color: #8fa8a0;
-    background: #faf8f4;
-    transform: translateY(-1px);
-    box-shadow: 0 8px 24px -12px rgba(59, 53, 48, 0.18);
-  }
-
-  .hiw-card:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px #faf8f4, 0 0 0 4px #4e684e;
-  }
-
-  .hiw-card.is-active {
-    border-color: #4e684e;
-    background: #f3efe8;
-    box-shadow: 0 8px 24px -12px rgba(59, 53, 48, 0.18);
-    transform: none;
-  }
-
-  .hiw-card-num {
-    flex-shrink: 0;
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.75rem;
-    font-weight: 700;
-    line-height: 1;
-    color: #7a9e7e;
-  }
-
-  .hiw-card.is-active .hiw-card-num {
-    color: #4e684e;
-  }
-
-  .hiw-card-copy {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 0.15rem;
-  }
-
-  .hiw-card-label {
-    font-size: 0.7rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #6b6358;
-  }
-
-  .hiw-card-title {
-    font-family: 'Cormorant Garamond', Georgia, serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    line-height: 1.2;
-    color: #3b3530;
-  }
-
-  .hiw-card-progress {
+  .journey-curve {
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    height: 3px;
-    transform: scaleX(0);
-    transform-origin: left center;
-    background: #4e684e;
-    transition: transform 280ms ease;
-  }
-
-  .hiw-card.is-active .hiw-card-progress {
-    transform: scaleX(1);
-  }
-
-  .hiw-detail {
-    position: relative;
-    min-height: 26rem;
-    overflow: hidden;
-    border: 1px solid rgba(221, 216, 206, 0.9);
-    border-radius: 12px;
-    background:
-      radial-gradient(120% 80% at 90% 0%, rgba(143, 168, 160, 0.18), transparent 50%),
-      radial-gradient(100% 70% at 20% 100%, rgba(232, 213, 208, 0.22), transparent 45%),
-      #f7f3ec;
-    box-shadow: 0 20px 48px -24px rgba(59, 53, 48, 0.22);
-  }
-
-  .hiw-pane {
-    position: absolute;
-    inset: 0;
+    inset: -0.5rem 4% -0.5rem;
     z-index: 0;
+    width: auto;
+    height: auto;
+    color: #8fa8a0;
+    opacity: 0.72;
+    pointer-events: none;
+  }
+
+  .journey-moment {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    justify-content: center;
-    gap: 0.75rem;
-    padding: clamp(1.5rem, 4vw, 2.75rem);
-    opacity: 0;
-    visibility: hidden;
-    pointer-events: none;
-    transform: translateY(0.5rem);
-    transition:
-      opacity 420ms ease,
-      transform 420ms ease,
-      visibility 0s linear 420ms;
+    gap: 1.1rem;
   }
 
-  .hiw-pane.is-active {
-    z-index: 1;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: auto;
-    transform: none;
-    transition:
-      opacity 420ms ease,
-      transform 420ms ease,
-      visibility 0s linear 0s;
+  .journey-moment:nth-of-type(odd) {
+    margin-right: 1.35rem;
   }
 
-  .hiw-pane-copy {
-    display: flex;
-    min-width: 0;
-    flex-direction: column;
-    gap: 0.75rem;
+  .journey-moment:nth-of-type(even) {
+    align-items: flex-end;
+    margin-left: 1.35rem;
+    text-align: right;
   }
 
-  .hiw-photo {
-    position: absolute;
-    inset: 0;
-    border-radius: 0;
+  .journey-photo {
+    width: 70vw;
+    max-width: 16.5rem;
+    transform: rotate(var(--tilt));
+    filter: drop-shadow(0 12px 16px rgba(59, 53, 48, 0.14));
   }
 
-  .hiw-photo::after {
-    border-radius: 0;
+  .journey-photo :global(.journey-photo__frame) {
+    display: block;
   }
 
-  .hiw-pane--photo {
-    padding: 0;
-    justify-content: flex-end;
-  }
-
-  .hiw-pane--photo .hiw-pane-copy {
-    position: relative;
-    z-index: 1;
+  .journey-photo :global(.journey-photo__img) {
+    display: block;
     width: 100%;
-    padding: clamp(1.25rem, 3.5vw, 1.85rem);
-    background: linear-gradient(
-      to top,
-      rgba(247, 243, 236, 0.97) 0%,
-      rgba(247, 243, 236, 0.9) 58%,
-      rgba(247, 243, 236, 0) 100%
-    );
+    height: auto;
   }
 
-  .hiw-step-label {
-    margin: 0;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: #6b6358;
+  .journey-copy {
+    max-width: 36rem;
   }
 
-  .hiw-step-title {
+  .journey-copy h3 {
     margin: 0;
-    font-size: clamp(1.5rem, 2.6vw, 2rem);
-    line-height: 1.2;
+    font-size: clamp(1.55rem, 2.4vw, 2rem);
+    line-height: 1.15;
   }
 
-  .hiw-step-body {
-    margin: 0;
-    max-width: 42ch;
-    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  .journey-copy p {
+    margin: 0.65rem 0 0;
+    max-width: 38ch;
     line-height: 1.7;
-    color: #5a5248;
   }
 
-  @media (max-width: 767px) {
-    .hiw-card {
-      min-height: 4rem;
-      padding: 0.9rem 1rem 1.05rem;
+  .journey-moment:nth-of-type(even) .journey-copy p {
+    margin-left: auto;
+  }
+
+  @media (min-width: 768px) {
+    .journey-track {
+      gap: 4.5rem;
+      margin-top: 4.25rem;
     }
 
-    .hiw-card-title {
-      font-size: 1.15rem;
-    }
-
-    .hiw-detail,
-    .hiw-pane {
-      min-height: 22rem;
-    }
-
-    .hiw-pane {
+    .journey-moment,
+    .journey-moment:nth-of-type(odd),
+    .journey-moment:nth-of-type(even) {
+      flex-direction: row;
       align-items: center;
-      text-align: center;
-    }
-
-    .hiw-pane--photo {
-      align-items: stretch;
+      justify-content: flex-start;
+      gap: 2.75rem;
+      width: min(100%, 44rem);
+      margin-right: 0;
+      margin-left: 0;
       text-align: left;
     }
 
-    .hiw-step-body {
-      max-width: 34ch;
-    }
-  }
-
-  @media (prefers-reduced-motion: reduce) {
-    .hiw-card,
-    .hiw-pane,
-    .hiw-card-progress {
-      transition: none !important;
-      animation: none !important;
+    .journey-moment:nth-of-type(even) {
+      flex-direction: row-reverse;
+      margin-left: auto;
     }
 
-    .hiw-card:hover {
-      transform: none;
+    .journey-moment:nth-of-type(even) .journey-copy p {
+      margin-left: 0;
+    }
+
+    .journey-photo {
+      width: 220px;
+      max-width: none;
+      flex: 0 0 220px;
     }
   }
 </style>

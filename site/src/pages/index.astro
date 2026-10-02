@@ -5,6 +5,8 @@ import Hero from '../components/Hero.astro';
 import WhatIs from '../components/WhatIs.astro';
 import HowItWorks from '../components/HowItWorks.astro';
 import Collection from '../components/Collection.astro';
+import CollectionShelf from '../components/CollectionShelf.astro';
+import { PRODUCT_SECTION_VARIANT } from '../components/collectionVariant';
 import WhyParents from '../components/WhyParents.astro';
 import Story from '../components/Story.astro';
 import Testimonials from '../components/Testimonials.astro';
@@ -24,7 +26,7 @@ const lcpImage = await getHeroLcpPreload();
 >
   <Hero />
   <WhatIs />
-  <Collection books={books} />
+  {PRODUCT_SECTION_VARIANT === 'A' ? <Collection books={books} /> : <CollectionShelf books={books} />}
   <HowItWorks />
   <WhyParents />
   <Story />

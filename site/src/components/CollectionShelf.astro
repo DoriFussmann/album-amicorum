@@ -1,0 +1,283 @@
+---
+import { Picture } from 'astro:assets';
+import type { CollectionEntry } from 'astro:content';
+import BookGallery from './BookGallery.astro';
+import { bookImage, bookImageSrc } from '../lib/bookAssets';
+import { bookCoverAlt, bookGalleryAlt } from '../lib/bookImageAlt';
+
+interface Props {
+  books: CollectionEntry<'books'>[];
+}
+
+const { books } = Astro.props;
+
+const rotations = [-2, 1.5, -1, 2.5, -1.5, 2, -2.5];
+const shifts = ['1.15rem', '0rem', '1.55rem', '0.3rem', '1.35rem', '0.1rem', '1.7rem'];
+
+const items = await Promise.all(
+  books.map(async (book, i) => {
+    const { title, slug, tagline, price, cover, interior, gallery } = book.data;
+    const coverSrc = await bookImageSrc(cover);
+    const images = (gallery?.length ? gallery : [cover, interior]).map((src) => ({
+      src: bookImage(src),
+      alt: bookGalleryAlt(title, src),
+    }));
+    return {
+      title,
+      slug,
+      tagline,
+      price,
+      coverAlt: bookCoverAlt(title),
+      coverAsset: bookImage(cover),
+      images,
+      cartPayload: JSON.stringify({ slug, title, price, cover: coverSrc }),
+      previewId: `preview-${slug}`,
+      rot: rotations[i % rotations.length],
+      shift: shifts[i % shifts.length],
+      z: i + 1,
+    };
+  }),
+);
+---
+
+<section id="collection" aria-labelledby="collection-heading" class="section-space">
+  <div class="site-container">
+    <div class="mx-auto mb-14 max-w-2xl text-center">
+      <p class="text-sm font-semibold tracking-wide text-ink-muted">Choose a world.</p>
+      <h2 id="collection-heading" class="mt-3">My Friends Book</h2>
+      <p class="mt-4 text-ink">Every edition tells the same story.</p>
+      <p class="mt-2 text-ink">
+        Choose the world your child will be excited to share with friends.
+      </p>
+    </div>
+
+    {
+      items.length === 0 ? (
+        <div class="mx-auto max-w-md text-center">
+          <p class="text-ink">No editions available right now.</p>
+          <p class="mt-2 text-ink-muted">Please check back soon.</p>
+        </div>
+      ) : (
+        <ul class="book-shelf">
+          {items.map((item) => (
+            <li
+              class="book-shelf__item"
+              style={`--rot: ${item.rot}deg; --shift: ${item.shift}; --z: ${item.z}`}
+            >
+              <article>
+                <a
+                  href={`/friend-book/${item.slug}/`}
+                  class="book-shelf__link text-inherit no-underline hover:no-underline focus-ring rounded-sm"
+                >
+                  <Picture
+                    src={item.coverAsset}
+                    alt={item.coverAlt}
+                    widths={[400, 800]}
+                    sizes="(min-width: 768px) 260px, 80vw"
+                    formats={['avif', 'webp']}
+                    fallbackFormat="webp"
+                    pictureAttributes={{ class: 'block' }}
+                    class="book-shelf__photo"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                  <h3 class="book-shelf__title font-display">{item.title}</h3>
+                  <p class="book-shelf__desc">{item.tagline}</p>
+                  <p class="book-shelf__price">{item.price}</p>
+                </a>
+                <div class="mt-4">
+                  <button type="button" class="btn btn-secondary" data-preview-open={item.previewId}>
+                    Preview
+                  </button>
+                </div>
+
+                <dialog
+                  id={item.previewId}
+                  class="book-preview-dialog h-[min(90vh,52rem)] w-[min(calc(100%-1.5rem),44.88rem)] flex-col overflow-hidden rounded-soft border border-border bg-canvas p-0 shadow-lift backdrop:bg-ink/40"
+                  aria-labelledby={`${item.previewId}-title`}
+                  data-preview-gallery
+                  data-cart-scope
+                >
+                  <BookGallery images={item.images} class="relative min-h-0 flex-[3]" />
+
+                  <div class="shrink-0 px-6 py-4 md:px-8">
+                    <h2 id={`${item.previewId}-title`} class="text-2xl">My Friends Book — {item.title}</h2>
+
+                    <p class="mt-2 leading-[1.45]">
+                      My Friends Book invites friends to leave handwritten memories, drawings, favorite things, and
+                      messages that together become a keepsake unlike any other.
+                    </p>
+                    <p class="mt-2 leading-[1.45]">
+                      Every completed book tells a different story because every friendship is different.
+                    </p>
+                    <p class="mt-3 text-sm font-semibold tracking-wide text-ink-heading">{item.price}</p>
+                    <p class="mt-1 text-sm text-ink-muted">Shipping calculated separately at checkout.</p>
+
+                    <div class="mt-4 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-add-to-cart
+                        data-cart-item={item.cartPayload}
+                      >
+                        Add to Cart
+                      </button>
+                      <button type="button" class="btn btn-secondary" data-preview-close>
+                        Continue Browsing
+                      </button>
+                    </div>
+                    <p class="mt-2 min-h-5 text-sm text-ink-muted" data-cart-feedback aria-live="polite"></p>
+                  </div>
+                </dialog>
+              </article>
+            </li>
+          ))}
+        </ul>
+      )
+    }
+  </div>
+</section>
+
+<style>
+  .book-shelf {
+    display: flex;
+    gap: 1.75rem;
+    margin: 0 -1.5rem;
+    padding: 0.5rem 1.5rem 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 1.5rem;
+    list-style: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .book-shelf__item {
+    position: relative;
+    z-index: var(--z);
+    flex: 0 0 min(78vw, 16.5rem);
+    scroll-snap-align: center;
+    scroll-margin-inline: 1.5rem;
+    transform: rotate(var(--rot));
+    transition: transform 280ms ease;
+  }
+
+  .book-shelf__link {
+    display: block;
+  }
+
+  .book-shelf__link :global(img) {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 14px 18px rgba(59, 53, 48, 0.18));
+  }
+
+  .book-shelf__title {
+    margin-top: 0.9rem;
+    font-size: 1.85rem;
+    font-weight: 600;
+    line-height: 1.1;
+  }
+
+  .book-shelf__desc {
+    margin-top: 0.35rem;
+    line-height: 1.55;
+    color: #6b6358;
+  }
+
+  .book-shelf__price {
+    margin-top: 0.45rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    color: #3b3530;
+  }
+
+  .book-shelf__item:hover,
+  .book-shelf__item:focus-within {
+    z-index: 8;
+    transform: rotate(0deg) translateY(-0.45rem);
+  }
+
+  @media (min-width: 768px) {
+    .book-shelf {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3.5rem 1rem;
+      margin: 0;
+      padding: 1.25rem 0 0.25rem;
+      overflow: visible;
+      scroll-snap-type: none;
+    }
+
+    .book-shelf__item {
+      flex: 0 0 15.5rem;
+      width: 15.5rem;
+      margin: 0;
+      transform: rotate(var(--rot)) translateY(var(--shift));
+    }
+
+    .book-shelf__item:hover,
+    .book-shelf__item:focus-within {
+      transform: rotate(0deg) translateY(calc(var(--shift) - 0.7rem));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .book-shelf__item {
+      transition: none;
+    }
+
+    .book-shelf__item:hover,
+    .book-shelf__item:focus-within {
+      transform: rotate(var(--rot));
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) and (min-width: 768px) {
+    .book-shelf__item:hover,
+    .book-shelf__item:focus-within {
+      transform: rotate(var(--rot)) translateY(var(--shift));
+    }
+  }
+</style>
+
+<script>
+  import { bindAddToCartButtons } from '../lib/bindAddToCart';
+
+  function initBookPreviews() {
+    document.querySelectorAll<HTMLButtonElement>('[data-preview-open]').forEach((button) => {
+      if (button.dataset.previewBound === 'true') return;
+      const id = button.getAttribute('data-preview-open');
+      if (!id) return;
+      const dialog = document.getElementById(id);
+      if (!(dialog instanceof HTMLDialogElement)) return;
+
+      button.addEventListener('click', () => {
+        dialog.showModal();
+      });
+      button.dataset.previewBound = 'true';
+    });
+
+    document.querySelectorAll<HTMLButtonElement>('[data-preview-close]').forEach((button) => {
+      if (button.dataset.previewBound === 'true') return;
+      button.addEventListener('click', () => {
+        const dialog = button.closest('dialog');
+        if (dialog instanceof HTMLDialogElement) dialog.close();
+      });
+      button.dataset.previewBound = 'true';
+    });
+
+    document.querySelectorAll('dialog.book-preview-dialog').forEach((dialog) => {
+      if (!(dialog instanceof HTMLDialogElement)) return;
+      if (dialog.dataset.backdropBound === 'true') return;
+      dialog.addEventListener('click', (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+      dialog.dataset.backdropBound = 'true';
+    });
+
+    bindAddToCartButtons();
+  }
+
+  initBookPreviews();
+</script>

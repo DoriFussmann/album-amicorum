@@ -8,32 +8,56 @@ const reasons = [
   {
     title: 'Screen-free connection',
     body: 'A quiet alternative to digital keepsakes — something children can hold, turn, and return to.',
+    tilt: '-1.6deg',
+    titleSize: '1.3rem',
   },
   {
     title: 'Made for little hands',
     body: 'Thoughtful paper, gentle prompts, and space to draw so every age can leave a mark.',
+    tilt: '1.4deg',
+    titleSize: '1.85rem',
   },
   {
     title: 'Gifts that grow meaning',
     body: 'Perfect for birthdays, school years, and farewells — a keepsake for years to come.',
+    tilt: '-1deg',
+    titleSize: '1.5rem',
   },
   {
     title: 'Beautiful on the shelf',
     body: 'Soft covers and natural tones that feel at home in a Waldorf-inspired room.',
+    tilt: '2deg',
+    titleSize: '2.05rem',
   },
 ];
 ---
 
-<section id="why-parents" aria-labelledby="why-parents-heading" class="section-space bg-surface/40">
+<section id="why-parents" aria-labelledby="why-parents-heading" class="why-parents section-space bg-surface/40">
   <div class="site-container grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
     <div>
       <h2 id="why-parents-heading">Why Parents Love It</h2>
-      <ul class="mt-10">
+      <ul class="why-notes">
         {
-          reasons.map((reason) => (
-            <li class="pencil-rule py-6 first:pt-2">
-              <h3 class="text-lg md:text-xl">{reason.title}</h3>
-              <p class="mt-2 leading-[1.7]">{reason.body}</p>
+          reasons.map((reason, index) => (
+            <li class="why-note" style={`--tilt: ${reason.tilt}; --title-size: ${reason.titleSize}`}>
+              {index === reasons.length - 1 && (
+                <svg class="why-sprig" viewBox="0 0 72 72" aria-hidden="true" focusable="false">
+                  <path
+                    d="M12 60c16-18 26-30 46-46"
+                    fill="none"
+                    stroke="#4e684e"
+                    stroke-width="1.35"
+                    stroke-linecap="round"
+                  />
+                  <ellipse cx="30" cy="38" rx="8" ry="3.4" transform="rotate(-42 30 38)" fill="#7a9e7e" />
+                  <ellipse cx="44" cy="26" rx="7" ry="3" transform="rotate(28 44 26)" fill="#8fa8a0" />
+                  <ellipse cx="22" cy="50" rx="6.2" ry="2.6" transform="rotate(-18 22 50)" fill="#4e684e" opacity="0.72" />
+                  <ellipse cx="52" cy="40" rx="5.6" ry="2.4" transform="rotate(52 52 40)" fill="#7a9e7e" opacity="0.8" />
+                  <ellipse cx="38" cy="46" rx="5.2" ry="2.2" transform="rotate(8 38 46)" fill="#8fa8a0" opacity="0.9" />
+                </svg>
+              )}
+              <h3 class="why-note__title">{reason.title}</h3>
+              <p class="why-note__body">{reason.body}</p>
             </li>
           ))
         }
@@ -46,3 +70,69 @@ const reasons = [
     />
   </div>
 </section>
+
+<style>
+  .why-notes {
+    display: flex;
+    flex-direction: column;
+    gap: 1.85rem;
+    margin: 2.25rem 0 0;
+    padding: 0.85rem 0.35rem 0.5rem;
+    list-style: none;
+  }
+
+  .why-note {
+    position: relative;
+    max-width: 34rem;
+    transform: rotate(var(--tilt));
+  }
+
+  .why-note:nth-child(2) {
+    margin-left: 1.15rem;
+  }
+
+  .why-note:nth-child(3) {
+    margin-left: 0.2rem;
+  }
+
+  .why-note:nth-child(4) {
+    margin-left: 1.35rem;
+    padding-right: 3.4rem;
+  }
+
+  .why-note:nth-child(odd)::before {
+    content: '';
+    position: absolute;
+    top: -0.55rem;
+    left: 0.45rem;
+    width: 2.7rem;
+    height: 0.92rem;
+    background:
+      linear-gradient(180deg, rgba(255, 255, 255, 0.38), transparent 46%),
+      rgba(232, 213, 208, 0.86);
+    box-shadow: 0 1px 1px rgba(59, 53, 48, 0.08);
+    transform: rotate(-12deg);
+  }
+
+  .why-note__title {
+    margin: 0;
+    font-size: var(--title-size);
+    font-weight: 600;
+    line-height: 1.15;
+  }
+
+  .why-note__body {
+    margin: 0.4rem 0 0;
+    max-width: 38ch;
+    line-height: 1.7;
+  }
+
+  .why-sprig {
+    position: absolute;
+    top: -1rem;
+    right: 0;
+    width: 3.6rem;
+    height: 3.6rem;
+    pointer-events: none;
+  }
+</style>
