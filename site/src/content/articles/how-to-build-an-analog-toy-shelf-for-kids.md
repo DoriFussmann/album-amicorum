@@ -45,6 +45,8 @@ internalLinks:
     anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
   - slug: analog-toys-vs-digital-toys-for-kids
     anchor: "Analog vs. Digital Toys: Which Builds Deeper Connection?"
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: Why Aesthetic Playrooms Don't Work (and what to do instead)
     url: https://www.youtube.com/watch?v=Tw9Hs1EoEc8
@@ -146,5 +148,5 @@ See Related below for more on this topic.
 For further reading, see the Sources listed below.
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [Analog Toys for Kids: Parent Questions, Honestly Answered](/articles/analog-toys-for-kids-questions-answered/) · [10 Analog Toys for Kids That Create Something Worth Keeping](/articles/analog-toys-for-kids-that-make-keepsakes/) · [Analog Toys for Kids: A Thoughtful Parent's Complete Guide](/articles/analog-toys-for-kids/) · [Analog vs. Digital Toys: Which Builds Deeper Connection?](/articles/analog-toys-vs-digital-toys-for-kids/).
+Further reading: [Analog Toys for Kids: Parent Questions, Honestly Answered](/articles/analog-toys-for-kids-questions-answered/) · [10 Analog Toys for Kids That Create Something Worth Keeping](/articles/analog-toys-for-kids-that-make-keepsakes/) · [Analog Toys for Kids: A Thoughtful Parent's Complete Guide](/articles/analog-toys-for-kids/) · [Analog vs. Digital Toys: Which Builds Deeper Connection?](/articles/analog-toys-vs-digital-toys-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->

@@ -32,6 +32,8 @@ internalLinks:
     anchor: how to encourage handwriting at home for kids
   - slug: is-handwriting-important-for-kids
     anchor: is handwriting important for kids
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: The Importance of Cursive Handwriting Over Typewriting for ...
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC7399101/"
@@ -185,7 +187,7 @@ when children write by hand, they activate neural networks responsible for langu
 <!-- WHERE-THINGS-STAND:END -->
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+Further reading: [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->
 
 <!-- CMS-EXTERNAL:START -->

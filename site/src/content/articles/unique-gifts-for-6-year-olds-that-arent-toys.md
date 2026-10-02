@@ -24,7 +24,17 @@ keywords:
   - unique gifts for 6 year olds
   - "Meaningful & Screen-Free Gifts"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: meaningful-screen-free-gifts
+    anchor: "Meaningful & Screen-Free Gifts"
+  - slug: how-to-choose-a-unique-gift-for-a-6-year-old
+    anchor: how to choose a unique gift for a 6 year old
+  - slug: unique-gift-vs-toy-for-6-year-old
+    anchor: unique gift vs toy for 6 year old
+  - slug: unique-gifts-for-6-year-olds-questions-answered
+    anchor: unique gifts for 6 year olds questions answered
+  - slug: unique-gifts-for-6-year-olds
+    anchor: unique gifts for 6 year olds
 externalLinks: []
 faqs:
   - question: "What counts as a non-toy gift for a 6-year-old?"
@@ -206,3 +216,7 @@ parents across the United States and abroad are joining a fast-growing screen-fr
 - Across five categories — keepsake and memory gifts, creative maker gifts, experience gifts, nature and outdoor gifts, and literary gifts — every entry on this list is explicitly screen-free and chosen for developmental as well as emotional reasons.
 - Practical details matter for rushed gift-givers: most entries fall in the £15–£60 range, suit both girls and boys, and work for birthdays, end-of-school-year moments, farewells, or any occasion.
 - The underlying principle is simple: gifts that help a six-year-old make something — a friendship record, a pot, a butterfly, a swimming stroke — outlast anything that merely entertains them.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/) · [how to choose a unique gift for a 6 year old](/articles/how-to-choose-a-unique-gift-for-a-6-year-old/) · [unique gift vs toy for 6 year old](/articles/unique-gift-vs-toy-for-6-year-old/) · [unique gifts for 6 year olds questions answered](/articles/unique-gifts-for-6-year-olds-questions-answered/) · [unique gifts for 6 year olds](/articles/unique-gifts-for-6-year-olds/).
+<!-- CMS-INTERNAL:END -->

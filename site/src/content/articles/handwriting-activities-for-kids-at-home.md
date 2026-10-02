@@ -32,6 +32,8 @@ internalLinks:
     anchor: how to encourage handwriting at home for kids
   - slug: is-handwriting-important-for-kids
     anchor: is handwriting important for kids
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: Teaching and Rehabilitation of Handwriting for Children in the ...
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10378357/"
@@ -181,7 +183,7 @@ a January 2026 survey of more than 1,100 early educators by a major education re
 <!-- WHERE-THINGS-STAND:END -->
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/).
+Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->
 
 <!-- CMS-EXTERNAL:START -->

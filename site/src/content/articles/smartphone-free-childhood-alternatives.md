@@ -33,6 +33,9 @@ faqs:
     answer: "Start by stocking your home with open-ended analog materials: art supplies, board games, building sets, journals, and illustrated books. Boredom itself is valuable — research consistently shows it drives creativity and problem-solving — but children need the raw materials to convert boredom into something satisfying. A weekly rhythm of anchor activities (a craft night, an outdoor ritual, a free-play afternoon) also helps so that screen-free time feels full rather than empty."
   - question: At what age should a child get a smartphone, according to current research?
     answer: Researcher Jonathan Haidt and organizations like Smartphone Free Childhood recommend delaying smartphone access until at least age 14 (high school), and social media until 16. These recommendations are based on research linking early smartphone and social media adoption with significantly higher rates of anxiety, depression, and disrupted development. Many families find that coordinating this delay with other parents in their community makes it far more manageable for their child socially.
+internalLinks:
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
@@ -137,3 +140,7 @@ Home phones are quietly making a comeback as families search for ways to give ch
  — a small but telling sign that the movement is moving beyond ideology and into the everyday logistics of a different kind of childhood.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
+<!-- CMS-INTERNAL:END -->

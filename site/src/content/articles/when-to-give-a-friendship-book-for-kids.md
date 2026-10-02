@@ -48,6 +48,8 @@ internalLinks:
     anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
   - slug: how-to-start-a-friendship-book-for-kids
     anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
+  - slug: meaningful-screen-free-gifts
+    anchor: "Meaningful & Screen-Free Gifts"
 externalLinks:
   - label: That first “I'm not your friend anymore” It's one of those ...
     url: https://www.instagram.com/reel/DWZKb_QDwbg/?hl=en
@@ -170,5 +172,5 @@ See Related below for more on this topic.
 For further reading, see the Sources listed below.
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: FAQ for Parents and Gift-Givers](/articles/friendship-book-for-kids-questions/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [How to Start a Kids' Friendship Book: A Step-by-Step Guide](/articles/how-to-start-a-friendship-book-for-kids/).
+Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: FAQ for Parents and Gift-Givers](/articles/friendship-book-for-kids-questions/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [How to Start a Kids' Friendship Book: A Step-by-Step Guide](/articles/how-to-start-a-friendship-book-for-kids/) · [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/).
 <!-- CMS-INTERNAL:END -->

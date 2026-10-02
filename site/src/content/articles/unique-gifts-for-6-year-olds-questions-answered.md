@@ -23,7 +23,17 @@ keywords:
   - unique gifts for 6 year olds
   - "Meaningful & Screen-Free Gifts"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: meaningful-screen-free-gifts
+    anchor: "Meaningful & Screen-Free Gifts"
+  - slug: how-to-choose-a-unique-gift-for-a-6-year-old
+    anchor: how to choose a unique gift for a 6 year old
+  - slug: unique-gift-vs-toy-for-6-year-old
+    anchor: unique gift vs toy for 6 year old
+  - slug: unique-gifts-for-6-year-olds-that-arent-toys
+    anchor: unique gifts for 6 year olds that aren't toys
+  - slug: unique-gifts-for-6-year-olds
+    anchor: unique gifts for 6 year olds
 externalLinks: []
 faqs:
   - question: "Is a friend book too advanced for a 6-year-old to use independently?"
@@ -126,3 +136,7 @@ many families now prefer long-lasting gifts because they provide better value an
 - How you introduce a non-toy gift shapes the child's entire response to it — frame it as a social mission, not a sentimental object, and curiosity will do the rest.
 - A well-chosen friend book travels across relationship distances and occasion types: it works at class parties, best-friend birthdays, and grandparent gifts alike, because it builds connection rather than requiring it.
 - The most remembered childhood gifts are rarely the most expensive; emotional weight comes from meaning, personal framing, and the specific moment a gift captures — not from its retail price.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/) · [how to choose a unique gift for a 6 year old](/articles/how-to-choose-a-unique-gift-for-a-6-year-old/) · [unique gift vs toy for 6 year old](/articles/unique-gift-vs-toy-for-6-year-old/) · [unique gifts for 6 year olds that aren't toys](/articles/unique-gifts-for-6-year-olds-that-arent-toys/) · [unique gifts for 6 year olds](/articles/unique-gifts-for-6-year-olds/).
+<!-- CMS-INTERNAL:END -->

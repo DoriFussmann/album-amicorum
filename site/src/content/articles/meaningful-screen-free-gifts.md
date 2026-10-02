@@ -20,7 +20,23 @@ imageAlt: "A child sitting at a wooden table surrounded by illustrated books, co
 keywords:
   - "Meaningful & Screen-Free Gifts"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: how-to-choose-a-unique-gift-for-a-6-year-old
+    anchor: how to choose a unique gift for a 6 year old
+  - slug: unique-gift-vs-toy-for-6-year-old
+    anchor: unique gift vs toy for 6 year old
+  - slug: unique-gifts-for-6-year-olds-questions-answered
+    anchor: unique gifts for 6 year olds questions answered
+  - slug: unique-gifts-for-6-year-olds-that-arent-toys
+    anchor: unique gifts for 6 year olds that aren't toys
+  - slug: unique-gifts-for-6-year-olds
+    anchor: unique gifts for 6 year olds
+  - slug: when-to-give-a-friendship-book-for-kids
+    anchor: when to give a friendship book for kids
+  - slug: friend-books-for-kids
+    anchor: friend books for kids
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks: []
 faqs:
   - question: "What makes a gift truly 'meaningful' for a child, not just screen-free?"
@@ -144,3 +160,7 @@ Eco-friendly and sustainable toys — a natural companion category to the screen
 - Organizing screen-free gifts by the value they deliver — lasting memory, creative agency, nature connection, or friendship — is more useful than shopping by product category, and helps ensure the gift matches both the child's developmental stage and the giver's intentions.
 - Age-band matching matters: children ages 5–7 thrive with tactile, open-ended play; ages 8–10 respond to making and preserving; and ages 10–12 are increasingly drawn to gifts that feel personal, social, and identity-affirming.
 - A beautifully illustrated Friend Book — one that children take to school and fill with their friends' handwriting and drawings over months or years — is the rare screen-free gift that simultaneously serves every value category: creative, social, lasting, and entirely irreplaceable.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [how to choose a unique gift for a 6 year old](/articles/how-to-choose-a-unique-gift-for-a-6-year-old/) · [unique gift vs toy for 6 year old](/articles/unique-gift-vs-toy-for-6-year-old/) · [unique gifts for 6 year olds questions answered](/articles/unique-gifts-for-6-year-olds-questions-answered/) · [unique gifts for 6 year olds that aren't toys](/articles/unique-gifts-for-6-year-olds-that-arent-toys/) · [unique gifts for 6 year olds](/articles/unique-gifts-for-6-year-olds/) · [when to give a friendship book for kids](/articles/when-to-give-a-friendship-book-for-kids/) · [friend books for kids](/articles/friend-books-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
+<!-- CMS-INTERNAL:END -->

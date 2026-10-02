@@ -33,6 +33,9 @@ faqs:
     answer: "Peer pressure. When most of a child's friend group has a smartphone, being the lone holdout can feel socially isolating — and that isolation is real, not imagined. This is why the movement's most effective strategy is collective action: school-level or friend-group pacts where multiple families commit together, making the decision socially normal rather than an individual sacrifice."
   - question: Do both camps agree on anything?
     answer: Yes — more than the debate's polarised headlines suggest. Both the smartphone-free and screen-balanced camps broadly agree that primary-school-aged children (ages 5–11) have little developmental need for a personal smartphone or social media account, that phone-free school days are beneficial, and that real-world play, physical activity, and face-to-face friendship are irreplaceable foundations of healthy childhood.
+internalLinks:
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
@@ -143,3 +146,7 @@ LSE's Professor Sonia Livingstone has argued that caution and more evidence are 
  The debate between principled delay and managed integration is, in other words, not resolved — it has simply moved from school gates to parliaments.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
+<!-- CMS-INTERNAL:END -->
