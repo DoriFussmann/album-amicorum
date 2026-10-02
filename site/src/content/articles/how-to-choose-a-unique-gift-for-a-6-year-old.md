@@ -23,7 +23,17 @@ keywords:
   - unique gifts for 6 year olds
   - "Meaningful & Screen-Free Gifts"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: meaningful-screen-free-gifts
+    anchor: "Meaningful & Screen-Free Gifts"
+  - slug: unique-gift-vs-toy-for-6-year-old
+    anchor: unique gift vs toy for 6 year old
+  - slug: unique-gifts-for-6-year-olds-questions-answered
+    anchor: unique gifts for 6 year olds questions answered
+  - slug: unique-gifts-for-6-year-olds-that-arent-toys
+    anchor: unique gifts for 6 year olds that aren't toys
+  - slug: unique-gifts-for-6-year-olds
+    anchor: unique gifts for 6 year olds
 externalLinks: []
 faqs:
   - question: "What makes a gift 'unique' for a 6-year-old versus just unusual?"
@@ -127,3 +137,7 @@ industry data notes that gifts helping parents and grandparents capture memories
 - Occasion matters: birthday gifts should feel celebratory and personal, while end-of-year and farewell gifts call for something that preserves friendships and captures the moment itself.
 - The still-treasured test is the most reliable filter available — if you can't imagine the gift meaning something in five years, it's a toy, and you should make that choice consciously.
 - A handwritten note explaining why you chose this gift turns the presentation into part of the keepsake, and is often the detail a child remembers longest.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/) · [unique gift vs toy for 6 year old](/articles/unique-gift-vs-toy-for-6-year-old/) · [unique gifts for 6 year olds questions answered](/articles/unique-gifts-for-6-year-olds-questions-answered/) · [unique gifts for 6 year olds that aren't toys](/articles/unique-gifts-for-6-year-olds-that-arent-toys/) · [unique gifts for 6 year olds](/articles/unique-gifts-for-6-year-olds/).
+<!-- CMS-INTERNAL:END -->

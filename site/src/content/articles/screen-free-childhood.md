@@ -32,6 +32,9 @@ faqs:
     answer: This is exactly the pressure that makes individual limits so hard to sustain — and why collective action matters. The most effective strategy is to connect with other parents in your child's class or school community and agree together on a shared timeline for delaying smartphones. When your child knows that several friends are in the same situation, the peer-pressure argument dissolves. Movements like Smartphone Free Childhood have built structured tools — including school-based parent pacts — specifically to make this coordination easy.
   - question: What do screen-free children actually do with their time?
     answer: "The honest answer is: they play, they create, they read, they argue, they get bored and invent something new. Free outdoor play, hands-on creative projects, face-to-face games, handwriting, drawing, and analog keepsake rituals like friend books all fill the time that screens would otherwise consume — and research consistently shows these activities produce measurably stronger outcomes in focus, creativity, resilience, and social intelligence than equivalent hours spent on passive screen consumption."
+internalLinks:
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: "Childhood Friendships: Impact and Role Across Life Stages"
     url: https://www.reachlink.com/advice/friendship/childhood-friendships/
@@ -172,3 +175,7 @@ Recent commentary describes a defining "digital detox parenting" trend taking sh
  The overall landscape is one of rapid institutional and cultural convergence: what was a fringe parenting preference five years ago is now being codified into law on multiple continents.
 
 For further reading, see the Sources listed below.
+
+<!-- CMS-INTERNAL:START -->
+Further reading: [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
+<!-- CMS-INTERNAL:END -->

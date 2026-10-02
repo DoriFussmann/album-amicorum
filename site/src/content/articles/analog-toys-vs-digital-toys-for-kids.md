@@ -45,6 +45,8 @@ internalLinks:
     anchor: "Analog Toys for Kids: A Thoughtful Parent's Complete Guide"
   - slug: how-to-build-an-analog-toy-shelf-for-kids
     anchor: "How to Build an Analog Toy Shelf for Kids: A Room Guide"
+  - slug: slow-childhood-analog-play
+    anchor: "Slow Childhood & Analog Play"
 externalLinks:
   - label: Surveying Parents of Preschool Children about Digital and ...
     url: https://pmc.ncbi.nlm.nih.gov/articles/PMC9954845/
@@ -144,5 +146,5 @@ See Related below for more on this topic.
 For further reading, see the Sources listed below.
 
 <!-- CMS-INTERNAL:START -->
-Further reading: [Analog Toys for Kids: Parent Questions, Honestly Answered](/articles/analog-toys-for-kids-questions-answered/) · [10 Analog Toys for Kids That Create Something Worth Keeping](/articles/analog-toys-for-kids-that-make-keepsakes/) · [Analog Toys for Kids: A Thoughtful Parent's Complete Guide](/articles/analog-toys-for-kids/) · [How to Build an Analog Toy Shelf for Kids: A Room Guide](/articles/how-to-build-an-analog-toy-shelf-for-kids/).
+Further reading: [Analog Toys for Kids: Parent Questions, Honestly Answered](/articles/analog-toys-for-kids-questions-answered/) · [10 Analog Toys for Kids That Create Something Worth Keeping](/articles/analog-toys-for-kids-that-make-keepsakes/) · [Analog Toys for Kids: A Thoughtful Parent's Complete Guide](/articles/analog-toys-for-kids/) · [How to Build an Analog Toy Shelf for Kids: A Room Guide](/articles/how-to-build-an-analog-toy-shelf-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->
