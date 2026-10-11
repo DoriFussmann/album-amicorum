@@ -1,5 +1,6 @@
 ---
 title: 9 Handwriting Activities for Kids That Create a Keepsake
+h1: "Handwriting Activities for Kids at Home"
 description: "Screen-free handwriting activities for kids that feel like creating, not drilling — and leave behind something beautiful to treasure for years to come."
 slug: handwriting-activities-for-kids-at-home
 date: 2026-08-27

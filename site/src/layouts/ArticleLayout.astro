@@ -172,7 +172,7 @@ const formatDate = (d: Date) =>
     />
 
     <header class="mb-10 w-full text-center md:text-left">
-      <h1 class="mb-4">{data.title}</h1>
+      <h1 class="mb-4">{data.h1 || data.title}</h1>
       <p class="text-sm font-light text-ink-muted">
         {
           formatDate(data.date) === formatDate(updatedDate)

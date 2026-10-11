@@ -1,5 +1,6 @@
 ---
 title: "Amicorum Meaning: Your Top Album Amicorum Questions Answered"
+h1: "What Amicorum Means, and Other Album Amicorum Questions"
 description: "'Amicorum' means 'of friends' in Latin. Here's everything you need to know: what album amicorum means, how to say it, and why the name matters."
 slug: amicorum-meaning
 date: 2026-08-21

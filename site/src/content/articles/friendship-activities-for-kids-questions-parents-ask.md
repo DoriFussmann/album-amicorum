@@ -1,5 +1,6 @@
 ---
 title: "Friendship Activities for Kids: Parent Questions Answered"
+h1: "Friendship Activities for Kids: Common Parent Questions"
 description: Practical answers to the real questions parents ask about friendship activities for kids — from shy children and age ranges to keeping memories.
 slug: friendship-activities-for-kids-questions-parents-ask
 date: 2026-08-19

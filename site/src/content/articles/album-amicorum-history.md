@@ -1,5 +1,6 @@
 ---
 title: 8 Fascinating Historical Facts About the Album Amicorum
+h1: "The History of the Album Amicorum in 8 Facts"
 description: Eight surprising facts about the album amicorum — a 500-year-old friendship book tradition that began with Reformation autographs and lives on today.
 slug: album-amicorum-history
 date: 2026-08-21

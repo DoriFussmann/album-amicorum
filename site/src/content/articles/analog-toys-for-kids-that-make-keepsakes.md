@@ -1,5 +1,6 @@
 ---
 title: 10 Analog Toys for Kids That Create Something Worth Keeping
+h1: "Analog Toys That Make Keepsakes Kids Will Keep"
 description: Ten screen-free, analog toys for kids ages 5–12 that produce something worth keeping — from sketchbooks and looms to a Friend Book only friendships can fill.
 slug: analog-toys-for-kids-that-make-keepsakes
 date: 2026-08-25

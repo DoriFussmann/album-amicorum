@@ -1,5 +1,6 @@
 ---
 title: Host a Friendship Activity Afternoon Kids Will Treasure
+h1: "How to Do Friendship Activities at Home with Kids"
 description: "Plan a friendship activity afternoon at home: warm-up, creative main activity, and a capture moment that creates a lasting keepsake kids will treasure."
 slug: how-to-do-friendship-activities-at-home-with-kids
 date: 2026-08-18

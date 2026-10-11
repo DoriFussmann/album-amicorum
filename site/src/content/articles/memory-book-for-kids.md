@@ -1,5 +1,6 @@
 ---
 title: How Kids Can Fill a Memory Book With Friends and Stories
+h1: "A Memory Book for Kids, Filled by Friends"
 description: "A memory book for kids captures friendships in their own handwriting. Learn how to fill each page with drawings, prompts, and messages worth keeping."
 slug: memory-book-for-kids
 date: "2026-09-28"

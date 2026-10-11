@@ -1,5 +1,6 @@
 ---
 title: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
+h1: "Friendship Book for Kids: Questions from Parents"
 description: Still wondering if a friendship book is right for your child? Honest answers on age, what goes inside, how it works, and why kids keep using it.
 slug: friendship-book-for-kids-questions
 date: 2026-08-10

@@ -1,5 +1,6 @@
 ---
 title: "Album Amicorum: The 500-Year-Old Friendship Book Tradition"
+h1: "What Is an Album Amicorum? The Friendship Book Tradition"
 description: Discover the album amicorum — a 500-year-old friendship book tradition, its history, and why it still matters for children and families today.
 slug: album-amicorum
 date: 2026-08-21

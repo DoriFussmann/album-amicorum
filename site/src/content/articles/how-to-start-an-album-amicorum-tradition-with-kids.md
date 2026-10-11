@@ -1,5 +1,6 @@
 ---
 title: How to Start an Album Amicorum Tradition with Your Child
+h1: "Starting an Album Amicorum Tradition with Kids"
 description: "A step-by-step guide for parents: choose the right book, invite friends to contribute, and start an album amicorum tradition your child will treasure."
 slug: how-to-start-an-album-amicorum-tradition-with-kids
 date: 2026-08-21

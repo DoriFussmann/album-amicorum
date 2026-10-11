@@ -1,5 +1,6 @@
 ---
 title: Smartphone-Free Childhood Alternatives Kids Actually Love
+h1: "Alternatives to a Smartphone That Kids Enjoy"
 description: "Step-by-step guide for parents choosing a smartphone-free childhood: audit the void, replace real connection, and build routines kids genuinely love."
 slug: smartphone-free-childhood-alternatives
 date: 2026-08-11

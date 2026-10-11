@@ -1,5 +1,6 @@
 ---
 title: 10 Unique Gifts for 6 Year Olds That Aren't Toys—And Last
+h1: "Unique Gifts for 6-Year-Olds That Aren't Toys"
 description: "Ten screen-free, non-toy gifts for 6-year-olds that create memories, real friendships, and keepsakes — each chosen to last far beyond the first week."
 slug: unique-gifts-for-6-year-olds-that-arent-toys
 date: "2026-10-02"

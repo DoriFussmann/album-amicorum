@@ -1,5 +1,6 @@
 ---
 title: 12 Analog Friendship Activities That Make Real Keepsakes
+h1: "Analog Friendship Activities That Leave a Keepsake"
 description: Twelve screen-free friendship activities for kids ages 5–12, each chosen because it deepens real connection and leaves something physical worth keeping.
 slug: analog-friendship-activities-for-kids-that-make-keepsakes
 date: 2026-08-18

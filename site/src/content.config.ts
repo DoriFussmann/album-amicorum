@@ -1,6 +1,6 @@
 import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
-import { articleSchema, teamSchema } from 'seo-core/schemas';
+import { articleBaseSchema, teamSchema, withResolvedH1 } from 'seo-core/schemas';
 
 /** Core stores YYYY-MM-DD strings; Album's frozen cards/filters still expect Date. */
 function isoToUtcNoon(iso: string): Date {
@@ -10,16 +10,16 @@ function isoToUtcNoon(iso: string): Date {
 const articles = defineCollection({
   loader: glob({ pattern: '**/*.md', base: './src/content/articles' }),
   schema: ({ image }) =>
-    articleSchema(image)
-      .extend({
+    withResolvedH1(
+      articleBaseSchema(image).extend({
         canonical: z.string().optional(),
         image2Alt: z.string().min(10).optional(),
         image3Alt: z.string().min(10).optional(),
         ogTitle: z.string().optional(),
         ogDescription: z.string().optional(),
         ogImage: z.string().optional(),
-      })
-      .transform((data) => ({
+      }),
+    ).transform((data) => ({
         ...data,
         date: isoToUtcNoon(data.date),
         updatedDate: data.updatedDate ? isoToUtcNoon(data.updatedDate) : undefined,

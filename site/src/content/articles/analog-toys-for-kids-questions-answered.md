@@ -1,5 +1,6 @@
 ---
 title: "Analog Toys for Kids: Parent Questions, Honestly Answered"
+h1: "Analog Toys for Kids: Your Questions Answered"
 description: What counts as an analog toy? When do they matter most? And will a screen-addicted child actually play with them? Real answers for thoughtful parents.
 slug: analog-toys-for-kids-questions-answered
 date: 2026-08-25
