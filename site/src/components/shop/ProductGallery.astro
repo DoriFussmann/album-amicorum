@@ -1,0 +1,88 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  images: { src: ImageMetadata; alt: string }[];
+}
+const { images } = Astro.props;
+---
+
+<div class="product-gallery" data-product-gallery>
+  <div class="product-stage">
+    {images.map((image, index) => (
+      <div class:list={["product-slide", index === 0 && "is-active"]} data-slide aria-hidden={index === 0 ? "false" : "true"}>
+        <div class="media-frame">
+          <Image
+            src={image.src}
+            alt={image.alt}
+            widths={[480, 768, 1080, 1440]}
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : undefined}
+          />
+        </div>
+      </div>
+    ))}
+    {images.length > 1 && (
+      <>
+        <button type="button" class="product-nav product-prev" data-prev aria-label="Previous photo">‹</button>
+        <button type="button" class="product-nav product-next" data-next aria-label="Next photo">›</button>
+      </>
+    )}
+  </div>
+  {images.length > 1 && (
+    <ul class="product-thumbs" aria-label="Photos">
+      {images.map((image, index) => (
+        <li>
+          <button
+            type="button"
+            class="product-thumb"
+            data-thumb={index}
+            aria-label={`Show photo ${index + 1} of ${images.length}`}
+            aria-current={index === 0 ? "true" : "false"}
+          >
+            <Image src={image.src} alt="" width={160} loading="lazy" />
+          </button>
+        </li>
+      ))}
+    </ul>
+  )}
+</div>
+
+<script is:inline>
+  (function () {
+    document.querySelectorAll("[data-product-gallery]").forEach(function (root) {
+      var slides = Array.prototype.slice.call(root.querySelectorAll("[data-slide]"));
+      var thumbs = Array.prototype.slice.call(root.querySelectorAll("[data-thumb]"));
+      var index = 0;
+      function go(next) {
+        index = (next + slides.length) % slides.length;
+        slides.forEach(function (slide, i) {
+          slide.classList.toggle("is-active", i === index);
+          slide.setAttribute("aria-hidden", i === index ? "false" : "true");
+        });
+        thumbs.forEach(function (thumb, i) {
+          thumb.setAttribute("aria-current", i === index ? "true" : "false");
+        });
+      }
+      var prev = root.querySelector("[data-prev]");
+      var next = root.querySelector("[data-next]");
+      if (prev) prev.addEventListener("click", function () { go(index - 1); });
+      if (next) next.addEventListener("click", function () { go(index + 1); });
+      thumbs.forEach(function (thumb, i) {
+        thumb.addEventListener("click", function () { go(i); });
+      });
+      var startX = 0;
+      root.addEventListener("touchstart", function (e) { startX = e.changedTouches[0].clientX; }, { passive: true });
+      root.addEventListener("touchend", function (e) {
+        var dx = e.changedTouches[0].clientX - startX;
+        if (Math.abs(dx) > 40) go(dx > 0 ? index - 1 : index + 1);
+      }, { passive: true });
+      root.addEventListener("keydown", function (e) {
+        if (e.key === "ArrowLeft") go(index - 1);
+        if (e.key === "ArrowRight") go(index + 1);
+      });
+    });
+  })();
+</script>

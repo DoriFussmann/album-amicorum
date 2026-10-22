@@ -14,6 +14,7 @@ import RichText from "./RichText.astro";
 import Contact from "./Contact.astro";
 import TeamTeaser from "./TeamTeaser.astro";
 import ArticlesTeaser from "./ArticlesTeaser.astro";
+import Collection from "./Collection.astro";
 
 interface Crumb {
   name: string;
@@ -41,6 +42,7 @@ const known = new Set([
   "contact",
   "team-teaser",
   "articles-teaser",
+  "collection",
 ]);
 for (const section of sections) {
   if (!known.has(section.type)) {
@@ -88,6 +90,7 @@ const items = sections.map((section, index) => {
       {item.section.type === "contact" && <Contact section={item.section as never} alt={item.alt} />}
       {item.section.type === "team-teaser" && <TeamTeaser section={item.section as never} alt={item.alt} />}
       {item.section.type === "articles-teaser" && <ArticlesTeaser section={item.section as never} alt={item.alt} />}
+      {item.section.type === "collection" && <Collection section={item.section as never} alt={item.alt} />}
     </>
   ))
 }

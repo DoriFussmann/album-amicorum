@@ -1,10 +1,11 @@
 ---
-import { LEGAL_LINKS, NAV, SITE_NAME, SITE_TAGLINE } from "../config/site";
+import { LEGAL_LINKS, NAV, SITE_NAME, SOCIAL_LINKS } from "../config/site";
 import Wordmark from "./Wordmark.astro";
 
 const extras = [
+  { label: "Cart", href: "/cart/" },
   { label: "Team", href: "/team/" },
-  { label: "FAQ", href: "/faq/" },
+  { label: "Contact", href: "/contact/" },
 ];
 const footerLinks = [...NAV];
 for (const item of extras) {
@@ -15,11 +16,18 @@ for (const item of extras) {
 <footer class="site-footer">
   <div class="container-page footer-grid">
     <Wordmark />
-    <p>{SITE_TAGLINE}</p>
+    <p>Beautifully illustrated Friend Books that become one-of-a-kind keepsakes of childhood.</p>
     <nav aria-label="Footer">
       <ul class="flex flex-wrap">
         {footerLinks.map((item) => (
           <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <nav aria-label="Follow us">
+      <ul class="flex flex-wrap">
+        {SOCIAL_LINKS.map((item) => (
+          <li><a class="nav-link" href={item.href} rel="noopener me" target="_blank">{item.label}</a></li>
         ))}
       </ul>
     </nav>
@@ -31,7 +39,7 @@ for (const item of extras) {
           ))}
         </ul>
       </nav>
-      <p>© {new Date().getUTCFullYear()} {SITE_NAME}</p>
+      <p>© {new Date().getUTCFullYear()} {SITE_NAME}. Made to be treasured.</p>
     </div>
   </div>
 </footer>

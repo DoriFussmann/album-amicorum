@@ -7,7 +7,8 @@ const accent = tokens.brand.wordmarkAccent;
 const fallback = !primary && !accent;
 ---
 
-<a href="/" class="wordmark">
+<a href="/" class="wordmark" aria-label={SITE_NAME}>
+  <img class="wordmark-logo" src="/logo.png" alt="" width="36" height="37" />
   {fallback ? (
     <span class="wordmark-primary">{SITE_NAME}</span>
   ) : (

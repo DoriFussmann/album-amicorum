@@ -1,0 +1,158 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { orgNode, websiteNode } from "seo-core";
+import { SITE_IDENTITY } from "../config/site";
+
+const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENTITY), websiteNode(SITE_IDENTITY)] };
+---
+
+<BaseLayout
+  title="Your Cart | Album Amicorum"
+  description="Review the My Friends Book editions in your cart, adjust quantities, and continue to secure checkout with Stripe."
+  canonicalPath="/cart/"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+>
+  <section class="section">
+    <div class="container-page flex flex-col gap-8">
+      <h1 class="h1" data-cart-heading>Your cart</h1>
+
+      <div class="cart-empty hidden flex flex-col items-start gap-4" data-cart-empty>
+        <p class="lead">Your cart is empty.</p>
+        <a class="btn btn-primary" href="/friend-book/">Explore the Collection</a>
+      </div>
+
+      <div class="cart-layout hidden" data-cart-filled>
+        <ul class="cart-list" data-cart-list aria-label="Items in your cart"></ul>
+        <aside class="cart-summary card" aria-labelledby="summary-heading">
+          <h2 id="summary-heading" class="h3">Order summary</h2>
+          <dl class="cart-totals">
+            <div><dt>Subtotal</dt><dd data-cart-subtotal></dd></div>
+            <div><dt>Shipping (flat rate)</dt><dd data-cart-shipping></dd></div>
+            <div class="cart-total-row"><dt>Total</dt><dd data-cart-total></dd></div>
+          </dl>
+          <button type="button" class="btn btn-primary w-full" data-checkout>Continue to Checkout</button>
+          <p class="muted text-sm" data-checkout-note aria-live="polite"></p>
+          <p class="muted text-sm">Payments are processed securely by Stripe. <a href="/shipping-returns/">Shipping details</a>.</p>
+        </aside>
+      </div>
+
+      <template data-cart-row-template>
+        <li class="cart-row">
+          <img class="cart-thumb" width="96" height="120" loading="lazy" decoding="async" alt="" data-field="img" />
+          <div class="cart-row-body">
+            <h2 class="h3"><a data-field="link"></a></h2>
+            <p class="muted" data-field="unit"></p>
+            <div class="cart-row-controls">
+              <div class="qty-stepper" role="group" data-field="qty-group">
+                <button type="button" class="qty-btn" data-action="dec">−</button>
+                <span class="qty-value" aria-live="polite" data-field="qty"></span>
+                <button type="button" class="qty-btn" data-action="inc">+</button>
+              </div>
+              <button type="button" class="link-button" data-action="remove">Remove</button>
+            </div>
+          </div>
+          <p class="cart-line-total" data-field="line"></p>
+        </li>
+      </template>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import {
+    SHIPPING_FLAT_RATE,
+    cartSubtotal,
+    formatMoney,
+    getCart,
+    parsePrice,
+    removeFromCart,
+    setCartQuantity,
+  } from "../lib/shop/cart";
+
+  const listEl = document.querySelector<HTMLElement>("[data-cart-list]");
+  const emptyEl = document.querySelector<HTMLElement>("[data-cart-empty]");
+  const filledEl = document.querySelector<HTMLElement>("[data-cart-filled]");
+  const template = document.querySelector<HTMLTemplateElement>("[data-cart-row-template]");
+
+  function field<T extends HTMLElement>(row: Element, name: string): T {
+    return row.querySelector<T>(`[data-field="${name}"]`)!;
+  }
+
+  function render() {
+    if (!listEl || !emptyEl || !filledEl || !template) return;
+    const items = getCart();
+    emptyEl.classList.toggle("hidden", items.length > 0);
+    filledEl.classList.toggle("hidden", items.length === 0);
+    listEl.replaceChildren();
+
+    for (const item of items) {
+      const row = template.content.firstElementChild!.cloneNode(true) as HTMLElement;
+      const img = field<HTMLImageElement>(row, "img");
+      img.src = item.cover;
+      img.alt = `My Friends Book, ${item.title} edition — illustrated cover`;
+      const link = field<HTMLAnchorElement>(row, "link");
+      link.href = `/friend-book/${encodeURIComponent(item.slug)}/`;
+      link.textContent = `My Friends Book — ${item.title}`;
+      field(row, "unit").textContent = item.price;
+      field(row, "qty").textContent = String(item.quantity);
+      field(row, "qty-group").setAttribute("aria-label", `Quantity of ${item.title}`);
+      field(row, "line").textContent = formatMoney(parsePrice(item.price) * item.quantity);
+
+      const dec = row.querySelector<HTMLButtonElement>('[data-action="dec"]')!;
+      const inc = row.querySelector<HTMLButtonElement>('[data-action="inc"]')!;
+      dec.setAttribute("aria-label", `Decrease quantity of ${item.title}`);
+      inc.setAttribute("aria-label", `Increase quantity of ${item.title}`);
+      inc.disabled = item.quantity >= 20;
+      dec.addEventListener("click", () => {
+        if (item.quantity <= 1) removeFromCart(item.slug);
+        else setCartQuantity(item.slug, item.quantity - 1);
+        render();
+      });
+      inc.addEventListener("click", () => {
+        setCartQuantity(item.slug, Math.min(20, item.quantity + 1));
+        render();
+      });
+      row.querySelector('[data-action="remove"]')!.addEventListener("click", () => {
+        removeFromCart(item.slug);
+        render();
+      });
+      listEl.append(row);
+    }
+
+    const subtotal = cartSubtotal(items);
+    document.querySelector("[data-cart-subtotal]")!.textContent = formatMoney(subtotal);
+    document.querySelector("[data-cart-shipping]")!.textContent = formatMoney(SHIPPING_FLAT_RATE);
+    document.querySelector("[data-cart-total]")!.textContent = formatMoney(subtotal + SHIPPING_FLAT_RATE);
+  }
+
+  async function checkout(button: HTMLButtonElement, note: HTMLElement | null) {
+    const items = getCart().map((item) => ({ slug: item.slug, quantity: item.quantity }));
+    if (!items.length) return;
+    const label = button.textContent;
+    button.disabled = true;
+    button.textContent = "Preparing your order…";
+    if (note) note.textContent = "";
+    try {
+      const response = await fetch("/api/checkout/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ items }),
+      });
+      const data = (await response.json()) as { url?: string; error?: string };
+      if (response.ok && data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      if (note) note.textContent = data.error || "Something went wrong. Please try again.";
+    } catch {
+      if (note) note.textContent = "Something went wrong. Please try again.";
+    }
+    button.disabled = false;
+    button.textContent = label;
+  }
+
+  render();
+  const button = document.querySelector<HTMLButtonElement>("[data-checkout]");
+  button?.addEventListener("click", () => void checkout(button, document.querySelector("[data-checkout-note]")));
+</script>

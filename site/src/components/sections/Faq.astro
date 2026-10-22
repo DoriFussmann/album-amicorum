@@ -1,5 +1,6 @@
 ---
 interface Section {
+  id?: string;
   eyebrow?: string;
   heading: string;
   intro?: string;
@@ -13,7 +14,7 @@ interface Props {
 const { section, alt = false } = Astro.props;
 ---
 
-<section class:list={["section", alt && "section-alt"]}>
+<section id={section.id} class:list={["section", alt && "section-alt"]}>
   <div class="container-page flex flex-col gap-6 measure">
     <div class="flex flex-col gap-3">
       {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}

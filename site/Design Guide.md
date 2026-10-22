@@ -1,4 +1,4 @@
-# Design Guide — Site Name
+# Design Guide — Album Amicorum
 
 Template: Slate — Structured · optimistic (light)
 
@@ -72,7 +72,7 @@ Never use a font other than Inter. Never hardcode a color outside the token bloc
   "templateName": "Slate",
   "tagline": "Structured · optimistic",
   "mode": "light",
-  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "brand": { "wordmarkPrimary": "Album", "wordmarkAccent": "Amicorum" },
   "colors": {
     "bg": "#F3F1EA",
     "surface": "#FFFFFF",

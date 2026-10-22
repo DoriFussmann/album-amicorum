@@ -1,13 +1,12 @@
 route: /contact/
-meta_title: Contact — Site Name
-meta_description: Placeholder contact page. Replace the address and the response note before sending readers here.
+meta_title: Contact Album Amicorum | Questions about My Friends Book
+meta_description: Questions about an order, an edition, or gifting My Friends Book? Write to Album Amicorum and we will get back to you by email.
 sections:
   - type: page-header
     eyebrow: Contact
-    h1: Contact
-    intro: Placeholder introduction. Say what a useful message includes and who will read it.
+    h1: Get in touch
+    intro: Questions about an order, an edition, or a gift? We read every message.
   - type: contact
-    heading: Email the desk
-    body: Use this address for questions about the publication. Replace it with the working inbox at activation.
-    email: hello@example.com
-    response_note: Placeholder note. Expect a reply within two working days.
+    heading: Write to us
+    body: For order questions, include the email address you used at checkout so we can find your order quickly.
+    email: hello@albumamicorum.com

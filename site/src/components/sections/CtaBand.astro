@@ -4,6 +4,7 @@ interface Cta {
   href: string;
 }
 interface Section {
+  id?: string;
   heading: string;
   sub?: string;
   cta_primary: Cta;
@@ -16,7 +17,7 @@ interface Props {
 const { section, alt = false } = Astro.props;
 ---
 
-<section class:list={["section", "section-band", "cta-band", alt && "section-alt"]}>
+<section id={section.id} class:list={["section", "section-band", "cta-band", alt && "section-alt"]}>
   <div class="texture-grid" aria-hidden="true"></div>
   <div class="texture-dots" aria-hidden="true"></div>
   <div class="container-page flex flex-col gap-4">

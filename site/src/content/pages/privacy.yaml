@@ -1,19 +1,39 @@
 route: /privacy/
-meta_title: Privacy — Site Name
-meta_description: Placeholder privacy policy. Replace this page with a reviewed policy before the site collects or describes any personal data.
+meta_title: Privacy Policy | Album Amicorum
+meta_description: How Album Amicorum collects, uses, and protects personal information when you browse the site or order My Friends Book, and the choices you have.
 sections:
   - type: page-header
     eyebrow: Legal
-    h1: Privacy
-    intro: This page is a placeholder. It is not a privacy policy and should not be treated as one.
+    h1: Privacy Policy
+    intro: "What we collect when you visit or order from albumamicorum.com, why, and what you can ask us to do with it. Last updated: October 2026."
   - type: rich-text
     body: |
-      [PLACEHOLDER: replace with reviewed policy]
+      ## What we collect
 
-      ## What this page will cover
+      - **When you order.** Checkout runs on Stripe. Stripe collects your name, email, shipping address, and payment details. We receive your name, email, shipping address, and what you ordered so we can ship it and send confirmations. We never see or store your full card number.
+      - **When you email us.** Your email address and whatever you choose to write.
+      - **When you browse.** Basic analytics — pages viewed, approximate location, device and browser type — through Google Analytics, if enabled. Your cart is kept in your own browser (local storage) and is not sent to us until you check out.
 
-      A reviewed policy should say what the site collects, why, how long it is kept, and how a person can ask about it.
+      ## How we use it
 
-      ### Until then
+      To process and ship orders, send order confirmations and receipts, answer your messages, and understand which pages are useful so we can improve the site. We do not sell your personal information.
 
-      Do not add forms, tracking, or claims about data handling on top of this placeholder.
+      ## Who we share it with
+
+      Only the services that help us run the shop: Stripe (payments), our email provider Resend (order emails), Vercel (website hosting), Google Analytics (site statistics), and the carrier that delivers your order. Each processes data under its own privacy terms.
+
+      ## How long we keep it
+
+      Order records are kept for as long as we need them for accounting, tax, and customer service. You can ask us to delete other information at any time.
+
+      ## Your choices
+
+      You can ask to see, correct, or delete the personal information we hold about you by emailing [hello@albumamicorum.com](mailto:hello@albumamicorum.com). You can block analytics cookies in your browser settings.
+
+      ## Children
+
+      My Friends Book is made for children, but this website is meant for parents and other adults. We do not knowingly collect personal information from children.
+
+      ## Changes
+
+      If we change this policy, we will update the date at the top of this page.

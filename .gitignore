@@ -4,3 +4,7 @@ site/.astro
 .env
 .DS_Store
 Thumbs.db
+site/.vercel
+.vercel
+.env.local
+site/.env.local

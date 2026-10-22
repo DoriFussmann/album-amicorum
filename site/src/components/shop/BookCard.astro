@@ -1,0 +1,41 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import { bookImage, bookImageSrc } from "../../lib/shop/bookAssets";
+import { bookCoverAlt } from "../../lib/shop/bookImageAlt";
+
+interface Props {
+  book: CollectionEntry<"books">;
+  index?: number;
+  /** Heading level for the edition name: h3 inside a section, h2 on a listing page. */
+  headingLevel?: 2 | 3;
+}
+const { book, index = 0, headingLevel = 3 } = Astro.props;
+const { title, slug, tagline, price, cover } = book.data;
+const href = `/friend-book/${slug}/`;
+const cartItem = JSON.stringify({ slug, title, price, cover: await bookImageSrc(cover) });
+const Heading = headingLevel === 2 ? "h2" : "h3";
+---
+
+<li class="book-card reveal" data-index={index % 4} data-cart-scope>
+  <a class="book-card-link" href={href}>
+    <div class="media-frame book-cover">
+      <Image
+        src={bookImage(cover)}
+        alt={bookCoverAlt(title)}
+        widths={[320, 480, 640]}
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+        loading="lazy"
+      />
+    </div>
+    <Heading class="h3 book-card-title">{title}</Heading>
+  </a>
+  <p class="muted">{tagline}</p>
+  <div class="book-card-buy">
+    <span class="price">{price}</span>
+    <button type="button" class="btn btn-secondary btn-sm" data-add-to-cart data-cart-item={cartItem}>
+      Add to Cart
+    </button>
+  </div>
+  <p class="cart-feedback muted" data-cart-feedback aria-live="polite"></p>
+</li>

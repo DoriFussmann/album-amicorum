@@ -1,6 +1,4 @@
 ---
-import { getCollection } from "astro:content";
-
 interface Item {
   title: string;
   text: string;
@@ -10,7 +8,7 @@ interface Section {
   eyebrow?: string;
   heading: string;
   intro?: string;
-  source: "services" | "items";
+  source: "items";
   items?: Item[];
 }
 interface Props {
@@ -19,16 +17,7 @@ interface Props {
 }
 const { section, alt = false } = Astro.props;
 
-const cards: Item[] =
-  section.source === "services"
-    ? (await getCollection("services"))
-        .sort((a, b) => a.data.order - b.data.order)
-        .map((service) => ({
-          title: service.data.title,
-          text: service.data.description,
-          cta: { label: "View service", href: `/services/${service.id}/` },
-        }))
-    : section.items ?? [];
+const cards: Item[] = section.items ?? [];
 ---
 
 <section class:list={["section", alt && "section-alt"]}>

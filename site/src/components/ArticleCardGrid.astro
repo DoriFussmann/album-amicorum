@@ -1,0 +1,35 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+import { formatDate } from "seo-core";
+import { ARTICLES_BASE } from "../config/site";
+
+interface Props {
+  articles: CollectionEntry<"articles">[];
+  headingLevel?: 2 | 3;
+}
+const { articles, headingLevel = 2 } = Astro.props;
+const Heading = headingLevel === 2 ? "h2" : "h3";
+---
+
+<ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+  {articles.map((article) => (
+    <li class="card article-card">
+      <a class="article-card-link" href={`/${ARTICLES_BASE}/${article.id}/`}>
+        <div class="media-frame mb-3">
+          <Image
+            src={article.data.image}
+            alt={article.data.imageAlt}
+            width={600}
+            height={338}
+            widths={[320, 480, 600]}
+            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+            loading="lazy"
+          />
+        </div>
+        <Heading class="card-title">{article.data.h1}</Heading>
+      </a>
+      <p class="muted text-sm">{formatDate(article.data.updatedDate || article.data.date)}</p>
+    </li>
+  ))}
+</ul>

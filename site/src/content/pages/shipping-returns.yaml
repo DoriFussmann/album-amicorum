@@ -1,0 +1,23 @@
+route: /shipping-returns/
+meta_title: Shipping & Returns | Album Amicorum
+meta_description: Shipping costs, delivery destinations, and returns for My Friends Book. One flat shipping rate at checkout, delivered to more than 40 countries.
+sections:
+  - type: page-header
+    eyebrow: Help
+    h1: Shipping & Returns
+    intro: One flat shipping rate, shown at checkout before you pay.
+  - type: rich-text
+    body: |
+      ## Shipping
+
+      - **Cost.** A flat $7 per order, added at checkout.
+      - **Where we ship.** More than 40 countries across North America, Europe, Asia-Pacific, the Middle East, Africa, and Latin America. If your country is not listed at checkout, [email us](mailto:hello@albumamicorum.com) and we will see what we can do.
+      - **Order updates.** You will receive a confirmation email when your order is placed.
+
+      ## Returns
+
+      [GAP: returns window, condition requirements, who pays return shipping, and refund timing — owner to confirm.]
+
+      ## Damaged or wrong item
+
+      If your book arrives damaged or you received the wrong edition, email [hello@albumamicorum.com](mailto:hello@albumamicorum.com) with your order email and a photo, and we will make it right.

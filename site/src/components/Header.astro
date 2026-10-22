@@ -6,6 +6,10 @@ import Wordmark from "./Wordmark.astro";
 <header class="site-header">
   <div class="container-page header-bar">
     <Wordmark />
+    <a class="cart-link" href="/cart/" aria-label="Cart" data-cart-link>
+      <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 7h12l-1 13H7L6 7Z"/><path d="M9 7a3 3 0 0 1 6 0"/></svg>
+      <span class="cart-count hidden" data-cart-count></span>
+    </a>
     <button
       type="button"
       id="nav-toggle"
@@ -26,6 +30,22 @@ import Wordmark from "./Wordmark.astro";
     </nav>
   </div>
 </header>
+<script>
+  import { CART_UPDATED_EVENT, cartCount } from "../lib/shop/cart";
+  function paintCount() {
+    const count = cartCount();
+    document.querySelectorAll<HTMLElement>("[data-cart-count]").forEach((el) => {
+      el.textContent = String(count);
+      el.classList.toggle("hidden", count === 0);
+    });
+    document.querySelectorAll("[data-cart-link]").forEach((el) => {
+      el.setAttribute("aria-label", count ? `Cart, ${count} item${count === 1 ? "" : "s"}` : "Cart");
+    });
+  }
+  paintCount();
+  window.addEventListener(CART_UPDATED_EVENT, paintCount);
+  window.addEventListener("storage", paintCount);
+</script>
 <script is:inline>
   (function () {
     var toggle = document.getElementById("nav-toggle");

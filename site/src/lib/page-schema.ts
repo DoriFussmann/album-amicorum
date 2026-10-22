@@ -39,6 +39,7 @@ const trust = z.object({
 
 const featureSplit = z.object({
   type: z.literal("feature-split"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   eyebrow: z.string().min(1).optional(),
   heading: z.string().min(1),
   body: z.string().min(1),
@@ -53,6 +54,7 @@ const featureSplit = z.object({
 
 const featureGrid = z.object({
   type: z.literal("feature-grid"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   eyebrow: z.string().min(1).optional(),
   heading: z.string().min(1),
   intro: z.string().min(1).optional(),
@@ -73,6 +75,7 @@ const stats = z.object({
 
 const process = z.object({
   type: z.literal("process"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   eyebrow: z.string().min(1).optional(),
   heading: z.string().min(1),
   intro: z.string().min(1).optional(),
@@ -93,18 +96,20 @@ const offerings = z.object({
   eyebrow: z.string().min(1).optional(),
   heading: z.string().min(1),
   intro: z.string().min(1).optional(),
-  source: z.enum(["services", "items"]),
+  source: z.enum(["items"]),
   items: z.array(offeringItem).optional(),
 });
 
 const testimonials = z.object({
   type: z.literal("testimonials"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   heading: z.string().min(1),
   items: z.array(z.object({ quote: z.string().min(1), name: z.string().min(1), role: z.string().min(1) })).min(1),
 });
 
 const faq = z.object({
   type: z.literal("faq"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   eyebrow: z.string().min(1).optional(),
   heading: z.string().min(1),
   intro: z.string().min(1).optional(),
@@ -114,6 +119,7 @@ const faq = z.object({
 
 const ctaBand = z.object({
   type: z.literal("cta-band"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
   heading: z.string().min(1),
   sub: z.string().min(1).optional(),
   cta_primary: cta,
@@ -142,6 +148,15 @@ const teamTeaser = z.object({
   intro: z.string().min(1).optional(),
 });
 
+/** The book editions grid, read from the books collection. */
+const collection = z.object({
+  type: z.literal("collection"),
+  id: z.string().regex(/^[a-z0-9-]+$/).optional(),
+  eyebrow: z.string().min(1).optional(),
+  heading: z.string().min(1),
+  intro: z.string().min(1).optional(),
+});
+
 const articlesTeaser = z.object({
   type: z.literal("articles-teaser"),
   heading: z.string().min(1),
@@ -164,6 +179,7 @@ export const sectionSchema = z.discriminatedUnion("type", [
   contact,
   teamTeaser,
   articlesTeaser,
+  collection,
 ]);
 
 export const pageSchema = z

@@ -1,0 +1,66 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import BookCard from "../../components/shop/BookCard.astro";
+import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+import { SITE_IDENTITY, SITE_URL } from "../../config/site";
+import { isListedTheme, productGroupLd, sortThemes } from "../../lib/shop/themes";
+
+const books = sortThemes((await getCollection("books")).filter(isListedTheme));
+const crumbs = [
+  { name: "Home", href: abs("/", SITE_URL) },
+  { name: "The Books", href: abs("/friend-book/", SITE_URL) },
+];
+const group = await productGroupLd(books);
+delete (group as Record<string, unknown>)["@context"];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [orgNode(SITE_IDENTITY), websiteNode(SITE_IDENTITY), breadcrumbNode(crumbs, SITE_URL), group],
+};
+---
+
+<BaseLayout
+  title="My Friends Book — Seven Illustrated Friend Books for Kids | Album Amicorum"
+  description="Seven illustrated editions of My Friends Book, the friend book children fill by hand with memories, drawings, and messages from friends. $30 each."
+  canonicalPath="/friend-book/"
+  jsonLd={jsonLd}
+>
+  <section class="section">
+    <div class="container-page flex flex-col gap-8">
+      <Breadcrumbs crumbs={crumbs} />
+      <div class="flex flex-col gap-3 measure">
+        <p class="eyebrow">The collection</p>
+        <h1 class="h1">My Friends Book</h1>
+        <p class="lead">
+          Seven illustrated worlds, one idea: a book that friends fill by hand. Choose the edition your child will be
+          excited to pass around.
+        </p>
+      </div>
+      <ul class="book-grid">
+        {books.map((book, index) => <BookCard book={book} index={index} headingLevel={2} />)}
+      </ul>
+    </div>
+  </section>
+  <section class="section section-alt">
+    <div class="container-page grid gap-8 md:grid-cols-3">
+      <div class="flex flex-col gap-2">
+        <h2 class="h3">Every friend leaves a page</h2>
+        <p class="muted">Memories, favorite things, drawings, and a message — each page as unique as the person who filled it.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h2 class="h3">Made for ages 5–12</h2>
+        <p class="muted">Gentle prompts and room to draw, so every age can leave a mark.</p>
+      </div>
+      <div class="flex flex-col gap-2">
+        <h2 class="h3">$30 per edition</h2>
+        <p class="muted">Flat-rate shipping added at checkout. <a href="/shipping-returns/">Shipping details</a>.</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { bindAddToCartButtons } from "../../lib/shop/bindAddToCart";
+  bindAddToCartButtons();
+</script>

@@ -5,7 +5,7 @@ import ContentPage from "../components/ContentPage.astro";
 export async function getStaticPaths() {
   const pages = await getCollection("pages");
   return pages
-    .filter((page) => page.id !== "home" && page.id !== "services")
+    .filter((page) => page.id !== "home")
     .map((page) => {
       const expected = `/${page.id}/`;
       if (page.data.route !== expected) {

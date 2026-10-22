@@ -1,0 +1,40 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { orgNode, websiteNode } from "seo-core";
+import { SITE_IDENTITY } from "../config/site";
+
+const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENTITY), websiteNode(SITE_IDENTITY)] };
+---
+
+<BaseLayout
+  title="Thank You for Your Order | Album Amicorum"
+  description="Your My Friends Book order is confirmed. A receipt is on its way to your inbox, and your Friend Book will soon begin collecting memories."
+  canonicalPath="/order-confirmation/"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+>
+  <section class="section">
+    <div class="container-page flex flex-col items-center gap-4 text-center">
+      <p class="eyebrow">Order confirmed</p>
+      <h1 class="h1">Thank you.</h1>
+      <p class="lead measure">Your Friend Book is on its way.</p>
+      <p class="measure">
+        Before long, it will begin collecting the handwritten memories, drawings, and friendships that make childhood
+        unforgettable. We can't wait for its story to begin.
+      </p>
+      <p class="muted text-sm measure">
+        Payments are processed securely by Stripe. Your receipt will arrive by email. Questions? Write to
+        <a href="mailto:hello@albumamicorum.com">hello@albumamicorum.com</a>.
+      </p>
+      <div class="flex flex-wrap justify-center gap-3">
+        <a class="btn btn-primary" href="/">Return Home</a>
+        <a class="btn btn-secondary" href="/articles/">Read the Journal</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  import { clearCart } from "../lib/shop/cart";
+  if (new URLSearchParams(window.location.search).get("session_id")) clearCart();
+</script>

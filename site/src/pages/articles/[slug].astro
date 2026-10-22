@@ -6,6 +6,8 @@ import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
 import ArticleListing from "seo-core/components/ArticleListing.astro";
 import { ARTICLES_BASE, LOGO_PATH, SAME_AS, SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
 import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+import ArticleCardGrid from "../../components/ArticleCardGrid.astro";
+import { ARTICLE_PILLARS, type ArticlePillar } from "../../lib/articles/pillars";
 
 export async function getStaticPaths() {
   const PAGE_SIZE = 12;
@@ -32,12 +34,24 @@ export async function getStaticPaths() {
       props: { kind: "article" as const, article },
     }));
 
-  return [...pagePaths, ...articlePaths];
+  // Topic hubs: one page per pillar, unless an article already owns that slug.
+  const articleIds = new Set(articleEntries.map((article) => article.id));
+  const pillarPaths = ARTICLE_PILLARS.filter((pillar) => !articleIds.has(pillar.slug)).map((pillar) => ({
+    params: { slug: pillar.slug },
+    props: {
+      kind: "pillar" as const,
+      pillar,
+      articles: published.filter((article) => article.data.pillarKeyword === pillar.name),
+    },
+  }));
+
+  return [...pagePaths, ...articlePaths, ...pillarPaths];
 }
 
 type Props =
   | { kind: "article"; article: CollectionEntry<"articles"> }
-  | { kind: "page"; page: number; articles: CollectionEntry<"articles">[]; pages: number };
+  | { kind: "page"; page: number; articles: CollectionEntry<"articles">[]; pages: number }
+  | { kind: "pillar"; pillar: ArticlePillar; articles: CollectionEntry<"articles">[] };
 
 const props = Astro.props as Props;
 
@@ -65,6 +79,18 @@ const listing =
         ],
       }
     : null;
+
+const hub =
+  props.kind === "pillar"
+    ? {
+        path: `/${ARTICLES_BASE}/${props.pillar.slug}/`,
+        crumbs: [
+          { name: "Home", href: abs("/", SITE_URL) },
+          { name: "Articles", href: abs(`/${ARTICLES_BASE}/`, SITE_URL) },
+          { name: props.pillar.name, href: abs(`/${ARTICLES_BASE}/${props.pillar.slug}/`, SITE_URL) },
+        ],
+      }
+    : null;
 ---
 
 {props.kind === "article" && author && (
@@ -83,7 +109,7 @@ const listing =
 {props.kind === "page" && listing && (
   <BaseLayout
     title={`${SITE_NAME} articles — Page ${listing.page}`}
-    description="Browse published articles covering technical SEO, content strategy, and the operational systems behind them."
+    description={`Page ${listing.page} of the Album Amicorum journal: articles on friend books, childhood friendship, handwriting, keepsakes, and screen-free gifts.`}
     canonicalPath={listing.canonicalPath}
     jsonLd={{
       "@context": "https://schema.org",
@@ -94,6 +120,44 @@ const listing =
       <Breadcrumbs crumbs={listing.crumbs} />
       <h1 class="h1">Articles</h1>
       <ArticleListing articles={listing.slice} pillars={listing.pillars} page={listing.page} pages={listing.pages} articlesBase={ARTICLES_BASE} />
+    </div>
+  </BaseLayout>
+)}
+
+{props.kind === "pillar" && hub && (
+  <BaseLayout
+    title={`${props.pillar.name} — ${SITE_NAME}`}
+    description={props.pillar.description}
+    canonicalPath={hub.path}
+    jsonLd={{
+      "@context": "https://schema.org",
+      "@graph": [
+        orgNode(SITE_IDENTITY),
+        websiteNode(SITE_IDENTITY),
+        breadcrumbNode(hub.crumbs, SITE_URL),
+        {
+          "@type": "CollectionPage",
+          "@id": `${abs(hub.path, SITE_URL)}#page`,
+          name: props.pillar.name,
+          description: props.pillar.description,
+          url: abs(hub.path, SITE_URL),
+          hasPart: props.articles.map((article) => ({
+            "@type": "BlogPosting",
+            headline: article.data.title,
+            url: abs(`/${ARTICLES_BASE}/${article.id}/`, SITE_URL),
+          })),
+        },
+      ],
+    }}
+  >
+    <div class="container-page section flex flex-col gap-8">
+      <Breadcrumbs crumbs={hub.crumbs} />
+      <div class="flex flex-col gap-3 measure">
+        <p class="eyebrow">Topic</p>
+        <h1 class="h1">{props.pillar.name}</h1>
+        <p class="lead">{props.pillar.description}</p>
+      </div>
+      <ArticleCardGrid articles={props.articles} />
     </div>
   </BaseLayout>
 )}

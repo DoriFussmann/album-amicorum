@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BookCard from "../shop/BookCard.astro";
+import { isListedTheme, sortThemes } from "../../lib/shop/themes";
+
+interface Section {
+  id?: string;
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+const books = sortThemes((await getCollection("books")).filter(isListedTheme));
+---
+
+<section id={section.id} class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-8">
+    <div class="flex flex-col gap-3 measure">
+      {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
+      <h2 class="h2 reveal" data-index="1">{section.heading}</h2>
+      {section.intro && <p class="lead reveal" data-index="2">{section.intro}</p>}
+    </div>
+    <ul class="book-grid">
+      {books.map((book, index) => <BookCard book={book} index={index} />)}
+    </ul>
+  </div>
+</section>
+<script>
+  import { bindAddToCartButtons } from "../../lib/shop/bindAddToCart";
+  bindAddToCartButtons();
+</script>

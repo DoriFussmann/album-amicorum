@@ -1,0 +1,59 @@
+route: /our-story/
+meta_title: Our Story — the Album Amicorum tradition | Album Amicorum
+meta_description: How a 450-year-old tradition of friendship books inspired My Friends Book — illustrated keepsakes children fill with handwritten memories from friends.
+sections:
+  - type: page-header
+    eyebrow: Our story
+    h1: Some memories deserve to be written by hand.
+    intro: Album Amicorum makes illustrated Friend Books that help children keep the friendships, stories, drawings, and handwritten messages of the people who shape their childhood.
+  - type: feature-split
+    eyebrow: Where it began
+    heading: A "Book of Friends," carried across Renaissance Europe.
+    body: More than four centuries ago, students traveling across Renaissance Europe carried small books from place to place, inviting friends and teachers to leave handwritten messages, poems, drawings, and signatures along the way. These books became known as Album Amicorum — Latin for "Book of Friends." That timeless tradition inspired our own.
+    highlights:
+      - title: More than 450 years old
+        text: The habit of collecting friends' entries in a small book began in sixteenth-century Europe and lasted for generations.
+      - title: Kept by hand
+        text: Every entry was written by the person who left it — which is exactly what made each album irreplaceable.
+    image: Watercolor of a young traveler carrying a book along a forest path, with a castle in the distance.
+    alt: Watercolor of a young traveler carrying a book along a forest path, with a castle in the distance
+    src: src/assets/images/story.jpg
+  - type: feature-split
+    eyebrow: What we make
+    heading: My Friends Book, for a new generation.
+    body: Our signature product, My Friends Book, gives friends a place to leave a handwritten piece of themselves — a favorite memory, a drawing, a few fun facts, or a heartfelt note. As each page is filled, the book becomes something no one else will ever own, a collection of childhood friendships created by the people who mattered most.
+    highlights:
+      - title: Seven illustrated editions
+        text: Forest, Dinosaurs, Mermaids, Animals, Flowers, Space, and Fairies — one for every kind of imagination.
+      - title: Made for ages 5–12
+        text: Gentle prompts and room to draw, so children of every age can leave their mark.
+      - title: Slow by design
+        text: A book that invites children to slow down, connect with one another, and make something to keep.
+    image: A child writing by hand in an open My Friends Book.
+    alt: A child writing by hand in an open My Friends Book
+    src: src/assets/images/why-parents.jpg
+  - type: rich-text
+    heading: What we believe
+    body: |
+      In a world where so much is typed, shared, and forgotten, we believe some memories deserve to be written by hand, held onto, and revisited for years to come.
+
+      We make books for thoughtful parents, grandparents, and gift-givers who value creativity, real connection, and lasting memories over screens and disposable entertainment — families who would rather give a keepsake than another toy.
+
+      ## Read more about the tradition
+
+      - [Album Amicorum: the friendship book tradition](/articles/album-amicorum/)
+      - [8 historical facts about the album amicorum](/articles/album-amicorum-history/)
+      - [What "amicorum" means](/articles/amicorum-meaning/)
+      - [Liber amicorum and its history](/articles/liber-amicorum/)
+  - type: team-teaser
+    heading: Who writes here
+    intro: Our articles on friendship, handwriting, and slow childhood are written and reviewed by our team.
+  - type: cta-band
+    heading: Begin your child's Friend Book.
+    sub: Choose the illustrated world your child will be excited to share with friends.
+    cta_primary:
+      label: Explore the Collection
+      href: /friend-book/
+    cta_secondary:
+      label: Read the Journal
+      href: /articles/
