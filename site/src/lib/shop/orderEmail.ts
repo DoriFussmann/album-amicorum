@@ -149,7 +149,7 @@ export async function sendCustomerConfirmationEmail(params: {
     const result = await resend.emails.send({
       from: `Album Amicorum <${from}>`,
       to: [to],
-      subject: 'Your Friend Book is on its way.',
+      subject: 'Thank you for your Friend Book order',
       text,
     });
 
