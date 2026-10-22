@@ -28,6 +28,9 @@ function legacyRedirects() {
     "/pages": "/our-story/",
     "/preview": "/",
     "/theme": "/friend-book/",
+    // The previous site published @astrojs/sitemap files; Search Console may still request them.
+    "/sitemap-index.xml": "/sitemap.xml",
+    "/sitemap-0.xml": "/sitemap.xml",
     "/articles/page/2": "/articles/2/",
     "/articles/page/3": "/articles/3/",
     "/articles/page/4": "/articles/4/",
