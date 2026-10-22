@@ -1,0 +1,10 @@
+---
+import { getEntry } from "astro:content";
+import ContentPage from "../../components/ContentPage.astro";
+
+const page = await getEntry("pages", "services");
+if (!page) throw new Error('Missing pages collection entry "services".');
+if (page.data.route !== "/services/") throw new Error('Page "services" route must be /services/.');
+---
+
+<ContentPage page={page} />

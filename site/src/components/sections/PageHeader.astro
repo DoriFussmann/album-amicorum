@@ -1,0 +1,30 @@
+---
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+
+interface Crumb {
+  name: string;
+  href: string;
+}
+interface Section {
+  eyebrow?: string;
+  h1: string;
+  intro: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+  primary?: boolean;
+  crumbs?: Crumb[];
+}
+const { section, alt = false, primary = true, crumbs } = Astro.props;
+const Tag = primary ? "h1" : "h2";
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-4">
+    {crumbs && crumbs.length > 0 && <Breadcrumbs crumbs={crumbs} />}
+    {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
+    <Tag class="h1 reveal" data-index="1">{section.h1}</Tag>
+    <p class="lead reveal" data-index="2">{section.intro}</p>
+  </div>
+</section>

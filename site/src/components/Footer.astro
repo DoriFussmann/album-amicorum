@@ -1,0 +1,37 @@
+---
+import { LEGAL_LINKS, NAV, SITE_NAME, SITE_TAGLINE } from "../config/site";
+import Wordmark from "./Wordmark.astro";
+
+const extras = [
+  { label: "Team", href: "/team/" },
+  { label: "FAQ", href: "/faq/" },
+];
+const footerLinks = [...NAV];
+for (const item of extras) {
+  if (!footerLinks.some((link) => link.href === item.href)) footerLinks.push(item);
+}
+---
+
+<footer class="site-footer">
+  <div class="container-page footer-grid">
+    <Wordmark />
+    <p>{SITE_TAGLINE}</p>
+    <nav aria-label="Footer">
+      <ul class="flex flex-wrap">
+        {footerLinks.map((item) => (
+          <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+    </nav>
+    <div class="legal-row">
+      <nav aria-label="Legal">
+        <ul class="flex flex-wrap">
+          {LEGAL_LINKS.map((item) => (
+            <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+          ))}
+        </ul>
+      </nav>
+      <p>© {new Date().getUTCFullYear()} {SITE_NAME}</p>
+    </div>
+  </div>
+</footer>

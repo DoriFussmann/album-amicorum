@@ -1,0 +1,40 @@
+---
+import MediaFrame from "../MediaFrame.astro";
+
+interface Section {
+  eyebrow?: string;
+  heading: string;
+  body: string;
+  highlights: { title: string; text: string }[];
+  image: string;
+  alt: string;
+  src?: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+  imageSide?: "left" | "right";
+}
+const { section, alt = false, imageSide = "right" } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page grid items-center gap-8 lg:grid-cols-2">
+    <div class="flex flex-col gap-4">
+      {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
+      <h2 class="h2 reveal" data-index="1">{section.heading}</h2>
+      <p class="measure reveal" data-index="2">{section.body}</p>
+      <ul class="grid gap-4">
+        {section.highlights.map((item, index) => (
+          <li class="reveal" data-index={index + 3}>
+            <h3 class="h3">{item.title}</h3>
+            <p class="muted">{item.text}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+    <div class:list={["reveal", imageSide === "left" && "lg:order-first"]} data-index="2">
+      <MediaFrame image={section.image} alt={section.alt} src={section.src} />
+    </div>
+  </div>
+</section>

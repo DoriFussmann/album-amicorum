@@ -1,0 +1,21 @@
+---
+interface Props {
+  image: string;
+  alt: string;
+  src?: string;
+  eager?: boolean;
+}
+const { image, alt, src, eager = false } = Astro.props;
+const hasSrc = typeof src === "string" && src.length > 0;
+---
+
+<div class="media-frame">
+  {hasSrc ? (
+    <img src={src} alt={alt} loading={eager ? "eager" : "lazy"} />
+  ) : (
+    <div class="placeholder-frame">
+      <p>{image}</p>
+      <p class="placeholder-label">Image placeholder</p>
+    </div>
+  )}
+</div>

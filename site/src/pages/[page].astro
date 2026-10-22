@@ -1,0 +1,24 @@
+---
+import { getCollection, getEntry } from "astro:content";
+import ContentPage from "../components/ContentPage.astro";
+
+export async function getStaticPaths() {
+  const pages = await getCollection("pages");
+  return pages
+    .filter((page) => page.id !== "home" && page.id !== "services")
+    .map((page) => {
+      const expected = `/${page.id}/`;
+      if (page.data.route !== expected) {
+        throw new Error(`Page "${page.id}" route must be ${expected}.`);
+      }
+      return { params: { page: page.id } };
+    });
+}
+
+const id = Astro.params.page;
+if (!id) throw new Error("Missing page id.");
+const page = await getEntry("pages", id);
+if (!page) throw new Error(`Missing pages collection entry "${id}".`);
+---
+
+<ContentPage page={page} />

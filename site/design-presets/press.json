@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "template": "press",
+  "templateName": "Press",
+  "tagline": "Direct · accountable · modern",
+  "mode": "light",
+  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "colors": {
+    "bg": "#F7F7F3",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#ECEBE5",
+    "fg": "#171719",
+    "muted": "#55555C",
+    "border": "#D9D8D2",
+    "accent": "#1463F0",
+    "accentHover": "#0F52CC",
+    "accentFg": "#FFFFFF",
+    "highlight": "#FF4F35",
+    "band": "#151517",
+    "bandFg": "#FFFFFF",
+    "bandMuted": "#B8B8BE",
+    "headerBg": "#F7F7F3",
+    "headerFg": "#171719",
+    "footerBg": "#111113",
+    "footerFg": "#FFFFFF",
+    "focus": "#1463F0"
+  },
+  "type": {
+    "family": "Inter Variable",
+    "base": "17px",
+    "scale": 1.333,
+    "headingWeight": 700,
+    "bodyWeight": 400,
+    "headingTracking": "-0.035em",
+    "headingLeading": 1.0,
+    "eyebrow": "uppercase"
+  },
+  "shape": { "radius": "0px", "radiusLg": "0px", "button": "solid" },
+  "layout": { "density": "compact", "container": "76rem", "measure": "42rem" },
+  "variants": { "header": "solid", "hero": "plain", "card": "line", "rhythm": "bands", "texture": "none" },
+  "motion": {
+    "style": "fade",
+    "duration": 300,
+    "easing": "ease-out",
+    "stagger": 40,
+    "carouselInterval": 5000
+  },
+  "imagery": {
+    "treatment": "editorial-mono",
+    "cssFilter": "grayscale(0.15) contrast(1.12)",
+    "radius": "0px",
+    "aspect": "4:5",
+    "direction": "Editorial, newsroom-style photography: direct, high-contrast, tightly cropped subjects on clean backgrounds with a single red or blue element. Accountable, modern, unposed.",
+    "avoid": "Stock-photo clichés (handshakes, pointing at screens), text or logos baked into the image, heavy gradients, neon, AI-looking gloss."
+  },
+  "breakpoints": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px" }
+}

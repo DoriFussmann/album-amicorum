@@ -1,0 +1,20 @@
+route: /faq/
+meta_title: FAQ — Site Name
+meta_description: Placeholder answers about this publication template. Replace each one with a reviewed answer before launch.
+sections:
+  - type: page-header
+    eyebrow: FAQ
+    h1: Frequently asked questions
+    intro: Placeholder answers. Keep each one short enough to stand on its own, and specific enough to be useful.
+  - type: faq
+    heading: Common questions
+    items:
+      - q: Who writes the articles?
+        a: Named authors in the team collection. Each article links to the person who wrote it.
+      - q: Can a page use any layout?
+        a: Pages are built from the section library. The theme comes from the design guide, not from one-off styles.
+      - q: Where are the legal pages?
+        a: Privacy and terms are linked from the footer. Both are placeholders until they are reviewed.
+    cta:
+      label: Contact
+      href: /contact/

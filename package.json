@@ -1,0 +1,16 @@
+{
+  "name": "blueprint-seo-template",
+  "private": true,
+  "type": "module",
+  "workspaces": ["site"],
+  "engines": {
+    "node": ">=24"
+  },
+  "scripts": {
+    "dev": "npm run dev --workspace=site",
+    "build": "npm run build --workspace=site && npm run audit",
+    "audit": "npm run audit --workspace=site",
+    "check": "npm run check --workspace=site",
+    "theme:test": "npm run theme:test --workspace=site"
+  }
+}

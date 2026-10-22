@@ -1,0 +1,22 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { SITE_IDENTITY, SITE_NAME } from "../config/site";
+import { orgNode, websiteNode } from "seo-core";
+
+const site = SITE_IDENTITY;
+const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(site), websiteNode(site)] };
+---
+
+<BaseLayout
+  title={`Page not found — ${SITE_NAME}`}
+  description="The page you requested is not in this publication. Use the navigation to return home or browse articles."
+  canonicalPath="/404/"
+  robots="noindex, follow"
+  jsonLd={jsonLd}
+>
+  <div class="container-page section flex flex-col gap-4">
+    <h1 class="h1">Page not found</h1>
+    <p>That URL is not part of this site.</p>
+    <p><a href="/">Return home</a></p>
+  </div>
+</BaseLayout>

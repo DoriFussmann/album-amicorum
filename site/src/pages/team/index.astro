@@ -1,0 +1,51 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import { SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
+import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+
+const team = await getCollection("team");
+const site = SITE_IDENTITY;
+const crumbs = [
+  { name: "Home", href: abs("/", SITE_URL) },
+  { name: "Team", href: abs("/team/", SITE_URL) },
+];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [orgNode(site), websiteNode(site), breadcrumbNode(crumbs, SITE_URL)],
+};
+---
+
+<BaseLayout
+  title={`${SITE_NAME} team`}
+  description="People behind the publication — operators and editors who write, review, and maintain the guides on this site."
+  canonicalPath="/team/"
+  jsonLd={jsonLd}
+>
+  <div class="container-page section flex flex-col gap-8">
+    <Breadcrumbs crumbs={crumbs} />
+    <h1 class="h1">Team</h1>
+    <ul class="grid gap-8 md:grid-cols-2">
+      {team.map((member) => (
+        <li class="flex gap-4">
+          <Image
+            src={member.data.photo}
+            width={120}
+            height={120}
+            alt={`${member.data.name} headshot`}
+            loading="lazy"
+            class="avatar"
+          />
+          <div>
+            <h2 class="h3">
+              <a href={`/team/${member.id}/`}>{member.data.name}</a>
+            </h2>
+            <p class="muted">{member.data.role}</p>
+          </div>
+        </li>
+      ))}
+    </ul>
+  </div>
+</BaseLayout>

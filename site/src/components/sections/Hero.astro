@@ -1,0 +1,178 @@
+---
+import MediaFrame from "../MediaFrame.astro";
+
+interface Slide {
+  image: string;
+  alt: string;
+  src?: string;
+}
+interface Cta {
+  label: string;
+  href: string;
+}
+interface Section {
+  eyebrow: string;
+  h1: string;
+  sub: string;
+  cta_primary: Cta;
+  cta_secondary?: Cta;
+  slides: Slide[];
+}
+interface Props {
+  section: Section;
+}
+const { section } = Astro.props;
+---
+
+<section class="hero">
+  <div class="texture-grid" aria-hidden="true"></div>
+  <div class="texture-dots" aria-hidden="true"></div>
+  <div class="container-page grid items-center gap-8 lg:grid-cols-2">
+    <div class="flex flex-col gap-4">
+      <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>
+      <h1 class="h1 reveal" data-index="1">{section.h1}</h1>
+      <p class="lead reveal" data-index="2">{section.sub}</p>
+      <div class="flex flex-wrap gap-3 reveal" data-index="3">
+        <a class="btn btn-primary" href={section.cta_primary.href}>{section.cta_primary.label}</a>
+        {section.cta_secondary && (
+          <a class="btn btn-secondary" href={section.cta_secondary.href}>{section.cta_secondary.label}</a>
+        )}
+      </div>
+    </div>
+    <div class="carousel reveal" data-index="1" aria-roledescription="carousel" aria-label="Featured images" tabindex="0">
+      <div class="carousel-viewport">
+        {section.slides.map((slide, index) => (
+          <div
+            class:list={["carousel-slide", index === 0 && "is-active"]}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`${index + 1} of ${section.slides.length}`}
+            aria-hidden={index === 0 ? "false" : "true"}
+          >
+            <MediaFrame image={slide.image} alt={slide.alt} src={slide.src} eager={index === 0} />
+          </div>
+        ))}
+      </div>
+      <div class="carousel-controls">
+        <button type="button" class="carousel-prev" aria-label="Previous slide">Prev</button>
+        <div class="carousel-dots">
+          {section.slides.map((_, index) => (
+            <button
+              type="button"
+              class="carousel-dot"
+              aria-label={`Show slide ${index + 1}`}
+              aria-current={index === 0 ? "true" : "false"}
+            />
+          ))}
+        </div>
+        <button type="button" class="carousel-next" aria-label="Next slide">Next</button>
+        <button type="button" class="carousel-toggle" aria-pressed="true">Pause</button>
+      </div>
+    </div>
+  </div>
+</section>
+<script is:inline>
+  (function () {
+    var roots = document.querySelectorAll(".carousel");
+    var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var raw = getComputedStyle(document.documentElement).getPropertyValue("--carousel-interval").trim();
+    var interval = parseFloat(raw) || 5000;
+
+    roots.forEach(function (root) {
+      var slides = Array.prototype.slice.call(root.querySelectorAll(".carousel-slide"));
+      var dots = Array.prototype.slice.call(root.querySelectorAll(".carousel-dot"));
+      var prev = root.querySelector(".carousel-prev");
+      var next = root.querySelector(".carousel-next");
+      var toggle = root.querySelector(".carousel-toggle");
+      if (!slides.length || !prev || !next || !toggle) return;
+      var index = 0;
+      var timer = null;
+      var userPaused = reduced;
+      var hoverPaused = false;
+
+      function render() {
+        slides.forEach(function (slide, i) {
+          var active = i === index;
+          slide.classList.toggle("is-active", active);
+          slide.setAttribute("aria-hidden", active ? "false" : "true");
+        });
+        dots.forEach(function (dot, i) {
+          dot.setAttribute("aria-current", i === index ? "true" : "false");
+        });
+      }
+      function go(nextIndex) {
+        index = (nextIndex + slides.length) % slides.length;
+        render();
+      }
+      function playing() {
+        return !userPaused && !hoverPaused && !reduced;
+      }
+      function stop() {
+        if (timer) clearInterval(timer);
+        timer = null;
+      }
+      function start() {
+        stop();
+        if (!playing()) return;
+        timer = setInterval(function () {
+          go(index + 1);
+        }, interval);
+      }
+      function setToggle() {
+        var paused = userPaused || reduced;
+        toggle.textContent = paused ? "Play" : "Pause";
+        toggle.setAttribute("aria-label", paused ? "Play carousel" : "Pause carousel");
+        toggle.setAttribute("aria-pressed", paused ? "false" : "true");
+      }
+
+      prev.addEventListener("click", function () {
+        go(index - 1);
+        start();
+      });
+      next.addEventListener("click", function () {
+        go(index + 1);
+        start();
+      });
+      dots.forEach(function (dot, i) {
+        dot.addEventListener("click", function () {
+          go(i);
+          start();
+        });
+      });
+      toggle.addEventListener("click", function () {
+        userPaused = !userPaused;
+        setToggle();
+        start();
+      });
+      root.addEventListener("mouseenter", function () {
+        hoverPaused = true;
+        stop();
+      });
+      root.addEventListener("mouseleave", function () {
+        hoverPaused = false;
+        start();
+      });
+      root.addEventListener("focusin", function () {
+        hoverPaused = true;
+        stop();
+      });
+      root.addEventListener("focusout", function (event) {
+        if (root.contains(event.relatedTarget)) return;
+        hoverPaused = false;
+        start();
+      });
+      root.addEventListener("keydown", function (event) {
+        if (event.key === "ArrowLeft") {
+          event.preventDefault();
+          go(index - 1);
+        } else if (event.key === "ArrowRight") {
+          event.preventDefault();
+          go(index + 1);
+        }
+      });
+      setToggle();
+      render();
+      start();
+    });
+  })();
+</script>

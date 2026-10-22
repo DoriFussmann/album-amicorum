@@ -1,0 +1,93 @@
+---
+import Hero from "./Hero.astro";
+import PageHeader from "./PageHeader.astro";
+import Trust from "./Trust.astro";
+import FeatureSplit from "./FeatureSplit.astro";
+import FeatureGrid from "./FeatureGrid.astro";
+import Stats from "./Stats.astro";
+import Process from "./Process.astro";
+import Offerings from "./Offerings.astro";
+import Testimonials from "./Testimonials.astro";
+import Faq from "./Faq.astro";
+import CtaBand from "./CtaBand.astro";
+import RichText from "./RichText.astro";
+import Contact from "./Contact.astro";
+import TeamTeaser from "./TeamTeaser.astro";
+import ArticlesTeaser from "./ArticlesTeaser.astro";
+
+interface Crumb {
+  name: string;
+  href: string;
+}
+interface Props {
+  sections: { type: string; [key: string]: unknown }[];
+  crumbs?: Crumb[];
+}
+const { sections, crumbs } = Astro.props;
+
+const known = new Set([
+  "hero",
+  "page-header",
+  "trust",
+  "feature-split",
+  "feature-grid",
+  "stats",
+  "process",
+  "offerings",
+  "testimonials",
+  "faq",
+  "cta-band",
+  "rich-text",
+  "contact",
+  "team-teaser",
+  "articles-teaser",
+]);
+for (const section of sections) {
+  if (!known.has(section.type)) {
+    throw new Error(`Unknown section type "${section.type}".`);
+  }
+}
+
+let contentOrdinal = 0;
+let splitOrdinal = 0;
+const items = sections.map((section, index) => {
+  const alt = section.type !== "hero" && contentOrdinal++ % 2 === 1;
+  let imageSide: "left" | "right" | undefined;
+  if (section.type === "feature-split") {
+    splitOrdinal += 1;
+    imageSide = splitOrdinal % 2 === 1 ? "right" : "left";
+  }
+  return { section, alt, imageSide, isFirst: index === 0 };
+});
+---
+
+{
+  items.map((item) => (
+    <>
+      {item.section.type === "hero" && <Hero section={item.section as never} />}
+      {item.section.type === "page-header" && (
+        <PageHeader
+          section={item.section as never}
+          alt={item.alt}
+          primary={item.isFirst}
+          crumbs={item.isFirst ? crumbs : undefined}
+        />
+      )}
+      {item.section.type === "trust" && <Trust section={item.section as never} alt={item.alt} />}
+      {item.section.type === "feature-split" && (
+        <FeatureSplit section={item.section as never} alt={item.alt} imageSide={item.imageSide} />
+      )}
+      {item.section.type === "feature-grid" && <FeatureGrid section={item.section as never} alt={item.alt} />}
+      {item.section.type === "stats" && <Stats section={item.section as never} alt={item.alt} />}
+      {item.section.type === "process" && <Process section={item.section as never} alt={item.alt} />}
+      {item.section.type === "offerings" && <Offerings section={item.section as never} alt={item.alt} />}
+      {item.section.type === "testimonials" && <Testimonials section={item.section as never} alt={item.alt} />}
+      {item.section.type === "faq" && <Faq section={item.section as never} alt={item.alt} />}
+      {item.section.type === "cta-band" && <CtaBand section={item.section as never} alt={item.alt} />}
+      {item.section.type === "rich-text" && <RichText section={item.section as never} alt={item.alt} />}
+      {item.section.type === "contact" && <Contact section={item.section as never} alt={item.alt} />}
+      {item.section.type === "team-teaser" && <TeamTeaser section={item.section as never} alt={item.alt} />}
+      {item.section.type === "articles-teaser" && <ArticlesTeaser section={item.section as never} alt={item.alt} />}
+    </>
+  ))
+}

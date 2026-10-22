@@ -1,0 +1,39 @@
+---
+import { HEADER_CTA, NAV } from "../config/site";
+import Wordmark from "./Wordmark.astro";
+---
+
+<header class="site-header">
+  <div class="container-page header-bar">
+    <Wordmark />
+    <button
+      type="button"
+      id="nav-toggle"
+      class="nav-toggle"
+      aria-expanded="false"
+      aria-controls="site-nav"
+    >
+      <span class="sr-only">Menu</span>
+      <span aria-hidden="true">☰</span>
+    </button>
+    <nav id="site-nav" class="site-nav hidden md:flex">
+      <ul class="flex flex-col md:flex-row md:items-center">
+        {NAV.map((item) => (
+          <li><a class="nav-link" href={item.href}>{item.label}</a></li>
+        ))}
+      </ul>
+      <a class="btn btn-primary" href={HEADER_CTA.href}>{HEADER_CTA.label}</a>
+    </nav>
+  </div>
+</header>
+<script is:inline>
+  (function () {
+    var toggle = document.getElementById("nav-toggle");
+    var nav = document.getElementById("site-nav");
+    if (!toggle || !nav) return;
+    toggle.addEventListener("click", function () {
+      var open = nav.classList.toggle("hidden") === false;
+      toggle.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+  })();
+</script>

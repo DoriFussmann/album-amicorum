@@ -1,0 +1,19 @@
+route: /privacy/
+meta_title: Privacy — Site Name
+meta_description: Placeholder privacy policy. Replace this page with a reviewed policy before the site collects or describes any personal data.
+sections:
+  - type: page-header
+    eyebrow: Legal
+    h1: Privacy
+    intro: This page is a placeholder. It is not a privacy policy and should not be treated as one.
+  - type: rich-text
+    body: |
+      [PLACEHOLDER: replace with reviewed policy]
+
+      ## What this page will cover
+
+      A reviewed policy should say what the site collects, why, how long it is kept, and how a person can ask about it.
+
+      ### Until then
+
+      Do not add forms, tracking, or claims about data handling on top of this placeholder.

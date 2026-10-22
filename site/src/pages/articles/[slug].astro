@@ -1,0 +1,99 @@
+---
+import { getCollection, getEntry, type CollectionEntry } from "astro:content";
+import ArticleLayout from "seo-core/layouts/ArticleLayout.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import ArticleListing from "seo-core/components/ArticleListing.astro";
+import { ARTICLES_BASE, LOGO_PATH, SAME_AS, SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
+import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+
+export async function getStaticPaths() {
+  const PAGE_SIZE = 12;
+  const published = (await getCollection("articles", ({ data }) => data.draft !== true)).sort(
+    (a, b) => (b.data.updatedDate || b.data.date).localeCompare(a.data.updatedDate || a.data.date),
+  );
+  const pageCount = Math.max(1, Math.ceil(published.length / PAGE_SIZE));
+  const pagePaths = [];
+  for (let page = 2; page <= pageCount; page++) {
+    pagePaths.push({
+      params: { slug: String(page) },
+      props: { kind: "page" as const, page, articles: published, pages: pageCount },
+    });
+  }
+
+  const articleEntries = await getCollection("articles", ({ data }) => {
+    if (import.meta.env.DEV) return true;
+    return data.draft !== true;
+  });
+  const articlePaths = articleEntries
+    .filter((article) => !/^\d+$/.test(article.id))
+    .map((article) => ({
+      params: { slug: article.id },
+      props: { kind: "article" as const, article },
+    }));
+
+  return [...pagePaths, ...articlePaths];
+}
+
+type Props =
+  | { kind: "article"; article: CollectionEntry<"articles"> }
+  | { kind: "page"; page: number; articles: CollectionEntry<"articles">[]; pages: number };
+
+const props = Astro.props as Props;
+
+let author: CollectionEntry<"team"> | undefined;
+if (props.kind === "article") {
+  author = await getEntry("team", props.article.data.author);
+  if (!author) {
+    throw new Error(`Missing team member "${props.article.data.author}" for article "${props.article.id}"`);
+  }
+}
+
+const PAGE_SIZE = 12;
+const listing =
+  props.kind === "page"
+    ? {
+        page: props.page,
+        pages: props.pages,
+        slice: props.articles.slice((props.page - 1) * PAGE_SIZE, props.page * PAGE_SIZE),
+        pillars: [...new Set(props.articles.map((a) => a.data.pillarKeyword).filter(Boolean))] as string[],
+        canonicalPath: `/${ARTICLES_BASE}/${props.page}/`,
+        crumbs: [
+          { name: "Home", href: abs("/", SITE_URL) },
+          { name: "Articles", href: abs(`/${ARTICLES_BASE}/`, SITE_URL) },
+          { name: `Page ${props.page}`, href: abs(`/${ARTICLES_BASE}/${props.page}/`, SITE_URL) },
+        ],
+      }
+    : null;
+---
+
+{props.kind === "article" && author && (
+  <ArticleLayout
+    article={props.article}
+    author={author}
+    Layout={BaseLayout}
+    siteUrl={SITE_URL}
+    siteName={SITE_NAME}
+    articlesBase={ARTICLES_BASE}
+    logo={LOGO_PATH}
+    sameAs={SAME_AS}
+  />
+)}
+
+{props.kind === "page" && listing && (
+  <BaseLayout
+    title={`${SITE_NAME} articles — Page ${listing.page}`}
+    description="Browse published articles covering technical SEO, content strategy, and the operational systems behind them."
+    canonicalPath={listing.canonicalPath}
+    jsonLd={{
+      "@context": "https://schema.org",
+      "@graph": [orgNode(SITE_IDENTITY), websiteNode(SITE_IDENTITY), breadcrumbNode(listing.crumbs, SITE_URL)],
+    }}
+  >
+    <div class="container-page section flex flex-col gap-6">
+      <Breadcrumbs crumbs={listing.crumbs} />
+      <h1 class="h1">Articles</h1>
+      <ArticleListing articles={listing.slice} pillars={listing.pillars} page={listing.page} pages={listing.pages} articlesBase={ARTICLES_BASE} />
+    </div>
+  </BaseLayout>
+)}

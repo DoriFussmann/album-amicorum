@@ -1,0 +1,36 @@
+route: /services/
+meta_title: Services — Site Name
+meta_description: Placeholder services page. The cards below are the services collection, each linking to its own page.
+sections:
+  - type: page-header
+    eyebrow: Services
+    h1: Services
+    intro: Placeholder introduction for the services index. Replace it with who the work is for and how an engagement starts.
+  - type: offerings
+    heading: Current offers
+    intro: Each card is a service entry and links to that service page.
+    source: services
+  - type: process
+    eyebrow: A typical engagement
+    heading: How the work proceeds
+    intro: Replace these steps with the real sequence a client can expect.
+    steps:
+      - title: Scope
+        text: Agree on the pages, the sources, and the date the first draft is due.
+      - title: Draft
+        text: Write against the brief. Keep headings, links, and claims easy to check.
+      - title: Maintain
+        text: Return to the page when the facts change and record the update.
+  - type: faq
+    heading: Questions about the work
+    items:
+      - q: Is this a live service offer?
+        a: No. This is placeholder copy for the template. Replace it before the site is presented as a business.
+      - q: Where is the detail for one service?
+        a: Open a card. Each service has its own page with the longer description.
+  - type: cta-band
+    heading: Ask about a page
+    sub: The contact page is the placeholder inbox until a real address is set.
+    cta_primary:
+      label: Contact
+      href: /contact/

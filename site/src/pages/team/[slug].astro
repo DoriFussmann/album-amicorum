@@ -1,0 +1,102 @@
+---
+import { getCollection } from "astro:content";
+import { Image, getImage } from "astro:assets";
+import MarkdownIt from "markdown-it";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import { ARTICLES_BASE, SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
+import { abs, breadcrumbNode, formatDate, orgNode, personNode, websiteNode } from "seo-core";
+
+export async function getStaticPaths() {
+  const team = await getCollection("team");
+  return team.map((member) => ({ params: { slug: member.id }, props: { member } }));
+}
+
+const { member } = Astro.props;
+const articles = (
+  await getCollection("articles", ({ data }) => data.draft !== true && data.author === member.id)
+).sort((a, b) => (b.data.updatedDate || b.data.date).localeCompare(a.data.updatedDate || a.data.date));
+const photo = await getImage({ src: member.data.photo, width: 400, height: 400 });
+const md = new MarkdownIt();
+const bioHtml = md.render(member.data.bio);
+const bioPlain = bioHtml.replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+const site = SITE_IDENTITY;
+const crumbs = [
+  { name: "Home", href: abs("/", SITE_URL) },
+  { name: "Team", href: abs("/team/", SITE_URL) },
+  { name: member.data.name, href: abs(`/team/${member.id}/`, SITE_URL) },
+];
+const person = personNode({
+  slug: member.id,
+  name: member.data.name,
+  role: member.data.role,
+  description: bioPlain.slice(0, 300),
+  image: abs(photo.src, SITE_URL),
+  sameAs: member.data.sameAs,
+  knowsAbout: member.data.knowsAbout,
+  siteUrl: SITE_URL,
+});
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [orgNode(site), websiteNode(site), person, breadcrumbNode(crumbs, SITE_URL)],
+};
+const description =
+  bioPlain.length >= 140 && bioPlain.length <= 160
+    ? bioPlain
+    : `${member.data.name} is ${member.data.role}. Read credentials, focus areas, and published articles.`;
+---
+
+<BaseLayout
+  title={`${member.data.name} — ${SITE_NAME}`}
+  description={description.slice(0, 160)}
+  canonicalPath={`/team/${member.id}/`}
+  jsonLd={jsonLd}
+>
+  <div class="container-page section flex flex-col gap-8">
+    <Breadcrumbs crumbs={crumbs} />
+    <div class="flex flex-col md:flex-row gap-8 mb-10">
+      <Image
+        src={member.data.photo}
+        width={320}
+        height={320}
+        alt={`${member.data.name} headshot`}
+        loading="eager"
+        fetchpriority="high"
+        class="avatar avatar-lg"
+      />
+      <div class="flex flex-col gap-4">
+        <h1 class="h1">{member.data.name}</h1>
+        <p class="muted">{member.data.role}</p>
+        <div class="prose-article" set:html={bioHtml} />
+        {member.data.credentials.length > 0 && (
+          <section aria-labelledby="creds-heading">
+            <h2 id="creds-heading" class="h2">Credentials</h2>
+            <ul class="link-list">
+              {member.data.credentials.map((item) => <li>{item}</li>)}
+            </ul>
+          </section>
+        )}
+        {member.data.sameAs.length > 0 && (
+          <p class="flex flex-col gap-2">
+            {member.data.sameAs.map((url) => (
+              <a href={url} rel="noopener" target="_blank">{url}</a>
+            ))}
+          </p>
+        )}
+      </div>
+    </div>
+    {articles.length > 0 && (
+      <section aria-labelledby="authored-heading">
+        <h2 id="authored-heading" class="h2">Articles</h2>
+        <ul class="flex flex-col gap-3">
+          {articles.map((article) => (
+            <li>
+              <a href={`/${ARTICLES_BASE}/${article.id}/`}>{article.data.title}</a>
+              <span class="muted"> · {formatDate(article.data.updatedDate || article.data.date)}</span>
+            </li>
+          ))}
+        </ul>
+      </section>
+    )}
+  </div>
+</BaseLayout>

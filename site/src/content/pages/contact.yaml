@@ -1,0 +1,13 @@
+route: /contact/
+meta_title: Contact — Site Name
+meta_description: Placeholder contact page. Replace the address and the response note before sending readers here.
+sections:
+  - type: page-header
+    eyebrow: Contact
+    h1: Contact
+    intro: Placeholder introduction. Say what a useful message includes and who will read it.
+  - type: contact
+    heading: Email the desk
+    body: Use this address for questions about the publication. Replace it with the working inbox at activation.
+    email: hello@example.com
+    response_note: Placeholder note. Expect a reply within two working days.

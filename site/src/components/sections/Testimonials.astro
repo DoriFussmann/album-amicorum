@@ -1,0 +1,28 @@
+---
+interface Section {
+  heading: string;
+  items: { quote: string; name: string; role: string }[];
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-8">
+    <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
+    <ul class="grid gap-6 md:grid-cols-2">
+      {section.items.map((item, index) => (
+        <li class="card flex flex-col gap-4 reveal" data-index={index + 1}>
+          <blockquote>{item.quote}</blockquote>
+          <p>
+            <span>{item.name}</span>
+            <span class="muted"> · {item.role}</span>
+          </p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

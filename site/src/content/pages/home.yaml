@@ -1,0 +1,144 @@
+route: /
+meta_title: Site Name — Primary positioning phrase
+meta_description: Placeholder homepage for this publication template. It previews every section in the library so a new theme can be checked before real copy replaces it.
+sections:
+  - type: hero
+    eyebrow: Publication
+    h1: A calm place for work that stays current
+    sub: Placeholder homepage copy. Replace it at site activation with the real positioning line, offer, and proof.
+    cta_primary:
+      label: Contact
+      href: /contact/
+    cta_secondary:
+      label: Services
+      href: /services/
+    slides:
+      - image: A quiet desk beside a window, papers stacked, one teal notebook on the corner.
+        alt: Desk by a window with a teal notebook
+      - image: Two people reviewing a printed page in natural daylight, no screens pointed at.
+        alt: Two people reviewing a printed page
+      - image: A stone corridor with a single coral chair and open floor around it.
+        alt: Stone corridor with a coral chair
+  - type: trust
+    heading: What this template holds
+    items:
+      - label: Original articles
+      - label: Named authors
+      - label: Source notes
+      - label: Maintained pages
+  - type: feature-split
+    eyebrow: How a page is built
+    heading: Sections come from the library
+    body: Each block on this page is a section type. Swap the design guide and the same content takes the next theme. The image on this first split sits on the right.
+    highlights:
+      - title: One H1
+        text: The hero carries the only top-level heading on the homepage.
+      - title: Placeholder media
+        text: Until a real file is added, the frame shows the image brief.
+    image: Overhead view of a printed outline on warm paper, with a teal pen beside it.
+    alt: Printed outline and a teal pen
+  - type: feature-split
+    heading: The next split flips the image
+    body: Feature splits alternate image side on their own. This second one places the image on the left at large screens and keeps the text first on small screens.
+    highlights:
+      - title: Odd splits
+        text: The first, third, and later odd splits put the image on the right.
+      - title: Even splits
+        text: The second and later even splits put the image on the left.
+    image: A person walking a sunlit hallway, photographed from the side, with empty wall beside them.
+    alt: Person walking a sunlit hallway
+  - type: feature-grid
+    eyebrow: Included on every build
+    heading: What stays in place
+    intro: These are the parts of the template that do not move when the theme changes.
+    items:
+      - title: Articles
+        text: Published guides stay at their current paths, with the same heading order.
+      - title: Team
+        text: Author pages keep their bios, credentials, and article lists.
+      - title: Services
+        text: Each service still has its own page under the services path.
+  - type: stats
+    heading: Placeholder figures
+    items:
+      - value: "8"
+        label: Page templates in this seed
+      - value: "15"
+        label: Section types in the library
+      - value: "6"
+        label: Design presets to check
+      - value: "1"
+        label: File that sets the theme
+  - type: process
+    eyebrow: From brief to page
+    heading: A simple publishing path
+    intro: Replace these steps with the real operating cadence at activation.
+    steps:
+      - title: Collect the brief
+        text: Write the page as YAML. The first block is a hero or a page header.
+      - title: Choose the theme
+        text: Drop a design guide in place. Colors, type, and layout come from that file.
+      - title: Review the build
+        text: Contrast, headings, and the articles link are checked before the site ships.
+  - type: offerings
+    eyebrow: Services
+    heading: Offers from the services collection
+    intro: This block reads the services collection and links each card to its page.
+    source: services
+  - type: testimonials
+    heading: Placeholder notes
+    items:
+      - quote: Placeholder quote for layout preview. Replace with a reviewed testimonial before publication.
+        name: Placeholder name
+        role: Role to be confirmed
+      - quote: Second placeholder quote. Do not present this sentence as a real customer statement.
+        name: Placeholder name
+        role: Role to be confirmed
+  - type: faq
+    eyebrow: Questions
+    heading: Frequently asked questions
+    intro: Short answers used for the FAQ section and its structured data.
+    cta:
+      label: Read the FAQ page
+      href: /faq/
+    items:
+      - q: What is this site for?
+        a: It is a placeholder publication template. Replace the copy when the site is activated.
+      - q: Where do articles live?
+        a: Each article is a markdown file. The public list is linked from the header.
+  - type: cta-band
+    heading: Ready for a real brief
+    sub: Use the contact page to replace this prompt with the working address and response time.
+    cta_primary:
+      label: Contact
+      href: /contact/
+    cta_secondary:
+      label: About
+      href: /about/
+  - type: rich-text
+    heading: Notes for the next edit
+    body: |
+      This block is the rich-text section. It accepts markdown headings at the second and third level only.
+
+      ## What to replace
+
+      Swap this copy for the real story of the publication. Keep claims specific and sourced.
+
+      ### Where to look next
+
+      The [about page](/about/), [testimonials](/testimonials/), [privacy](/privacy/), and [terms](/terms/) are placeholder pages in the same system.
+  - type: contact
+    heading: Write to the desk
+    body: This contact block is a preview. Point it at the real inbox at activation.
+    email: hello@example.com
+    response_note: Placeholder note. A reply usually follows within two working days.
+  - type: team-teaser
+    heading: People behind the pages
+    intro: Names and roles come from the team collection.
+  - type: articles-teaser
+    heading: Latest articles
+    intro: The three most recently updated published articles.
+  - type: page-header
+    eyebrow: Section sample
+    h1: Page header
+    intro: Inner pages open with this block instead of a hero. On the homepage it is only here so the layout can be reviewed. It is not a second page title.

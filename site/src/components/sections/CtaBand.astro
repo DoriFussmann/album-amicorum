@@ -1,0 +1,32 @@
+---
+interface Cta {
+  label: string;
+  href: string;
+}
+interface Section {
+  heading: string;
+  sub?: string;
+  cta_primary: Cta;
+  cta_secondary?: Cta;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", "section-band", "cta-band", alt && "section-alt"]}>
+  <div class="texture-grid" aria-hidden="true"></div>
+  <div class="texture-dots" aria-hidden="true"></div>
+  <div class="container-page flex flex-col gap-4">
+    <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
+    {section.sub && <p class="lead reveal" data-index="1">{section.sub}</p>}
+    <div class="flex flex-wrap gap-3 reveal" data-index="2">
+      <a class="btn btn-primary" href={section.cta_primary.href}>{section.cta_primary.label}</a>
+      {section.cta_secondary && (
+        <a class="btn btn-secondary" href={section.cta_secondary.href}>{section.cta_secondary.label}</a>
+      )}
+    </div>
+  </div>
+</section>

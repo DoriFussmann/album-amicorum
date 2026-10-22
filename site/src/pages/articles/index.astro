@@ -1,0 +1,39 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import ArticleListing from "seo-core/components/ArticleListing.astro";
+import { ARTICLES_BASE, SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
+import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+
+const PAGE_SIZE = 12;
+const all = (await getCollection("articles", ({ data }) => data.draft !== true)).sort(
+  (a, b) => (b.data.updatedDate || b.data.date).localeCompare(a.data.updatedDate || a.data.date),
+);
+const pages = Math.max(1, Math.ceil(all.length / PAGE_SIZE));
+const slice = all.slice(0, PAGE_SIZE);
+const pillars = [...new Set(all.map((a) => a.data.pillarKeyword).filter(Boolean))] as string[];
+const canonicalPath = `/${ARTICLES_BASE}/`;
+const site = SITE_IDENTITY;
+const crumbs = [
+  { name: "Home", href: abs("/", SITE_URL) },
+  { name: "Articles", href: abs(canonicalPath, SITE_URL) },
+];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [orgNode(site), websiteNode(site), breadcrumbNode(crumbs, SITE_URL)],
+};
+---
+
+<BaseLayout
+  title={`${SITE_NAME} articles`}
+  description="Browse published articles covering technical SEO, content strategy, and the operational systems behind them."
+  canonicalPath={canonicalPath}
+  jsonLd={jsonLd}
+>
+  <div class="container-page section flex flex-col gap-6">
+    <Breadcrumbs crumbs={crumbs} />
+    <h1 class="h1">Articles</h1>
+      <ArticleListing articles={slice} pillars={pillars} page={1} pages={pages} articlesBase={ARTICLES_BASE} />
+  </div>
+</BaseLayout>

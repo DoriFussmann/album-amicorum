@@ -1,0 +1,33 @@
+---
+import { getCollection } from "astro:content";
+
+interface Section {
+  heading: string;
+  intro?: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+const team = await getCollection("team");
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-8">
+    <div class="flex flex-col gap-3">
+      <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
+      {section.intro && <p class="lead reveal" data-index="1">{section.intro}</p>}
+    </div>
+    <ul class="grid gap-6 sm:grid-cols-2">
+      {team.map((member, index) => (
+        <li class="card flex flex-col gap-2 reveal" data-index={index}>
+          <h3 class="h3">
+            <a href={`/team/${member.id}/`}>{member.data.name}</a>
+          </h3>
+          <p class="muted">{member.data.role}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

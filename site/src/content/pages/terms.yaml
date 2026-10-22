@@ -1,0 +1,19 @@
+route: /terms/
+meta_title: Terms — Site Name
+meta_description: Placeholder terms of use. Replace this page with reviewed terms before the site is offered to the public.
+sections:
+  - type: page-header
+    eyebrow: Legal
+    h1: Terms
+    intro: This page is a placeholder. It is not a terms of use agreement and should not be treated as one.
+  - type: rich-text
+    body: |
+      [PLACEHOLDER: replace with reviewed policy]
+
+      ## What this page will cover
+
+      Reviewed terms should say how the pages may be used, what the publication is responsible for, and how to raise a correction.
+
+      ### Until then
+
+      Do not describe rights, licenses, or liability on top of this placeholder.

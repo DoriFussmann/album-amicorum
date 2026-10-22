@@ -1,0 +1,19 @@
+---
+import { tokens } from "../../design-tokens.mjs";
+import { SITE_NAME } from "../config/site";
+
+const primary = tokens.brand.wordmarkPrimary;
+const accent = tokens.brand.wordmarkAccent;
+const fallback = !primary && !accent;
+---
+
+<a href="/" class="wordmark">
+  {fallback ? (
+    <span class="wordmark-primary">{SITE_NAME}</span>
+  ) : (
+    <>
+      {primary && <span class="wordmark-primary">{primary}</span>}
+      {accent && <span class="wordmark-accent">{accent}</span>}
+    </>
+  )}
+</a>

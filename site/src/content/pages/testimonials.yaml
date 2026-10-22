@@ -1,0 +1,26 @@
+route: /testimonials/
+meta_title: Testimonials — Site Name
+meta_description: Placeholder testimonials page. Do not publish these notes as real statements. Replace them with reviewed quotes.
+sections:
+  - type: page-header
+    eyebrow: Testimonials
+    h1: Notes from readers
+    intro: These entries are layout placeholders. Replace every quote with a reviewed statement, or remove the page.
+  - type: testimonials
+    heading: Placeholder quotes
+    items:
+      - quote: Placeholder quote for layout preview. Replace with a reviewed testimonial before publication.
+        name: Placeholder name
+        role: Role to be confirmed
+      - quote: Second placeholder quote. Do not present this sentence as a real customer statement.
+        name: Placeholder name
+        role: Role to be confirmed
+      - quote: Third placeholder quote, kept so the grid can be checked with an odd number of cards.
+        name: Placeholder name
+        role: Role to be confirmed
+  - type: cta-band
+    heading: Read the work itself
+    sub: Articles are the public record until real testimonials are cleared.
+    cta_primary:
+      label: Articles
+      href: /articles/

@@ -1,0 +1,22 @@
+---
+import MarkdownIt from "markdown-it";
+
+interface Section {
+  heading?: string;
+  body: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+const md = new MarkdownIt({ html: false, linkify: true });
+const html = md.render(section.body);
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-4">
+    {section.heading && <h2 class="h2 reveal" data-index="0">{section.heading}</h2>}
+    <div class="prose-article reveal" data-index="1" set:html={html} />
+  </div>
+</section>

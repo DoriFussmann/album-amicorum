@@ -1,0 +1,24 @@
+---
+interface Section {
+  heading: string;
+  body: string;
+  email: string;
+  response_note?: string;
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-4 measure">
+    <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
+    <p class="reveal" data-index="1">{section.body}</p>
+    <p class="reveal" data-index="2">
+      <a href={`mailto:${section.email}`}>{section.email}</a>
+    </p>
+    {section.response_note && <p class="muted reveal" data-index="3">{section.response_note}</p>}
+  </div>
+</section>

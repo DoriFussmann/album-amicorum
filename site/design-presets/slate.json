@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "template": "slate",
+  "templateName": "Slate",
+  "tagline": "Structured · optimistic",
+  "mode": "light",
+  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "colors": {
+    "bg": "#F3F1EA",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#E6EAE7",
+    "fg": "#26313A",
+    "muted": "#56626A",
+    "border": "#D6DBD8",
+    "accent": "#0B7560",
+    "accentHover": "#085C4B",
+    "accentFg": "#FFFFFF",
+    "highlight": "#E8603F",
+    "band": "#5E6B72",
+    "bandFg": "#FFFFFF",
+    "bandMuted": "#EEF1F2",
+    "headerBg": "#4A565D",
+    "headerFg": "#FFFFFF",
+    "footerBg": "#46535A",
+    "footerFg": "#FFFFFF",
+    "focus": "#0B7560"
+  },
+  "type": {
+    "family": "Inter Variable",
+    "base": "17px",
+    "scale": 1.25,
+    "headingWeight": 600,
+    "bodyWeight": 400,
+    "headingTracking": "-0.02em",
+    "headingLeading": 1.1,
+    "eyebrow": "uppercase"
+  },
+  "shape": { "radius": "8px", "radiusLg": "16px", "button": "solid" },
+  "layout": { "density": "regular", "container": "76rem", "measure": "42rem" },
+  "variants": { "header": "band", "hero": "band", "card": "line", "rhythm": "alternate", "texture": "grid" },
+  "motion": {
+    "style": "rise",
+    "duration": 600,
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "stagger": 80,
+    "carouselInterval": 5500
+  },
+  "imagery": {
+    "treatment": "natural-crisp",
+    "cssFilter": "saturate(0.98) contrast(1.06)",
+    "radius": "12px",
+    "aspect": "4:5",
+    "direction": "Documentary photography of real work settings in natural daylight. Cool neutral greys and stone tones with one teal or coral detail. Calm, optimistic, structured compositions with clear negative space.",
+    "avoid": "Stock-photo clichés (handshakes, pointing at screens), text or logos baked into the image, heavy gradients, neon, AI-looking gloss."
+  },
+  "breakpoints": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px" }
+}

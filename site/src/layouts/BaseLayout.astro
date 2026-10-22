@@ -1,0 +1,190 @@
+---
+import "../styles/global.css";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import BackToTop from "seo-core/components/BackToTop.astro";
+import { DEFAULT_OG_IMAGE, SITE_NAME, SITE_URL } from "../config/site";
+import { ANALYTICS_ID, SEARCH_CONSOLE_VERIFICATION } from "../config/publicEnv";
+import { abs } from "seo-core";
+import interLatin from "@fontsource-variable/inter/files/inter-latin-wght-normal.woff2?url";
+import { themeCss, tokens } from "../../design-tokens.mjs";
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  ogType?: string;
+  ogImage?: string;
+  ogDescription?: string;
+  robots?: string;
+  locale?: string;
+  twitterCard?: "summary" | "summary_large_image";
+  alternateMarkdown?: string;
+  jsonLd: Record<string, unknown>;
+  articleMeta?: {
+    publishedTime: string;
+    modifiedTime: string;
+    author: string;
+    tags: string[];
+    section?: string;
+  };
+}
+
+const {
+  title,
+  description,
+  canonicalPath,
+  ogType = "website",
+  ogImage,
+  ogDescription,
+  robots = "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1",
+  locale = "en_US",
+  twitterCard = "summary_large_image",
+  alternateMarkdown,
+  jsonLd,
+  articleMeta,
+} = Astro.props;
+
+if (!title) throw new Error("BaseLayout requires a title");
+if (!description) throw new Error("BaseLayout requires a description");
+
+const canonical = abs(canonicalPath, SITE_URL);
+const metaDescription = description;
+const ogDesc = ogDescription || metaDescription;
+const rssHref = abs("/rss.xml", SITE_URL);
+const ogImageUrl = abs(ogImage || DEFAULT_OG_IMAGE, SITE_URL);
+---
+
+<!doctype html>
+<html
+  lang="en"
+  data-template={tokens.template}
+  data-mode={tokens.mode}
+  data-header={tokens.variants.header}
+  data-hero={tokens.variants.hero}
+  data-card={tokens.variants.card}
+  data-rhythm={tokens.variants.rhythm}
+  data-button={tokens.shape.button}
+  data-density={tokens.layout.density}
+  data-motion={tokens.motion.style}
+  data-texture={tokens.variants.texture}
+  style={`color-scheme: ${tokens.mode}`}
+>
+  <head>
+    <meta charset="utf-8" />
+    {ANALYTICS_ID && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ANALYTICS_ID}`}></script>
+        <script
+          is:inline
+          set:html={`window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','${ANALYTICS_ID}');`}
+        />
+      </>
+    )}
+    <style is:inline set:html={themeCss()}></style>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={metaDescription} />
+    <meta name="robots" content={robots} />
+    <link rel="canonical" href={canonical} />
+    {alternateMarkdown && (
+      <link rel="alternate" type="text/markdown" href={abs(alternateMarkdown, SITE_URL)} />
+    )}
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="alternate" type="application/rss+xml" title={SITE_NAME} href={rssHref} />
+    {SEARCH_CONSOLE_VERIFICATION && (
+      <meta name="google-site-verification" content={SEARCH_CONSOLE_VERIFICATION} />
+    )}
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={ogDesc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:locale" content={locale} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="675" />
+    {articleMeta && (
+      <>
+        <meta property="article:published_time" content={articleMeta.publishedTime} />
+        <meta property="article:modified_time" content={articleMeta.modifiedTime} />
+        <meta property="article:author" content={articleMeta.author} />
+        {articleMeta.section && <meta property="article:section" content={articleMeta.section} />}
+        {articleMeta.tags.map((tag) => <meta property="article:tag" content={tag} />)}
+      </>
+    )}
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={ogDesc} />
+    <meta name="twitter:image" content={ogImageUrl} />
+    <link rel="preload" href={interLatin} as="font" type="font/woff2" crossorigin />
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+    <BackToTop />
+    <noscript>
+      <style>
+        .reveal {
+          opacity: 1 !important;
+          transform: none !important;
+        }
+      </style>
+    </noscript>
+    <script is:inline>
+      (function () {
+        var root = document.documentElement;
+        var motion = root.getAttribute("data-motion");
+        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+        var nodes = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
+        function show(el) {
+          el.classList.add("is-in");
+        }
+        if (reduced || motion === "none" || nodes.length === 0) {
+          nodes.forEach(show);
+          return;
+        }
+        var raw = getComputedStyle(root).getPropertyValue("--motion-stagger").trim();
+        var stagger = parseFloat(raw) || 0;
+        nodes.forEach(function (el) {
+          var index = parseInt(el.getAttribute("data-index") || "0", 10);
+          if (!isFinite(index)) index = 0;
+          el.style.transitionDelay = index * stagger + "ms";
+        });
+        var hero = nodes.filter(function (el) {
+          return el.closest(".hero");
+        });
+        var rest = nodes.filter(function (el) {
+          return !el.closest(".hero");
+        });
+        requestAnimationFrame(function () {
+          requestAnimationFrame(function () {
+            hero.forEach(show);
+          });
+        });
+        if (!("IntersectionObserver" in window)) {
+          rest.forEach(show);
+          return;
+        }
+        var io = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              if (!entry.isIntersecting) return;
+              entry.target.classList.add("is-in");
+              io.unobserve(entry.target);
+            });
+          },
+          { root: null, rootMargin: "0px 0px -80px 0px", threshold: 0.01 },
+        );
+        rest.forEach(function (el) {
+          io.observe(el);
+        });
+      })();
+    </script>
+  </body>
+</html>

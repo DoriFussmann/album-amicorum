@@ -1,0 +1,37 @@
+---
+interface Section {
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  cta?: { label: string; href: string };
+  items: { q: string; a: string }[];
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-6 measure">
+    <div class="flex flex-col gap-3">
+      {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
+      <h2 class="h2 reveal" data-index="1">{section.heading}</h2>
+      {section.intro && <p class="reveal" data-index="2">{section.intro}</p>}
+    </div>
+    <div>
+      {section.items.map((item) => (
+        <details class="faq-item">
+          <summary>{item.q}</summary>
+          <p class="muted">{item.a}</p>
+        </details>
+      ))}
+    </div>
+    {section.cta && (
+      <p>
+        <a class="btn btn-primary" href={section.cta.href}>{section.cta.label}</a>
+      </p>
+    )}
+  </div>
+</section>

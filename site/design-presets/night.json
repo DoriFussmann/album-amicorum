@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "template": "night",
+  "templateName": "Night",
+  "tagline": "Technical · premium · focused",
+  "mode": "dark",
+  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "colors": {
+    "bg": "#050D19",
+    "surface": "#091527",
+    "surfaceAlt": "#0D1C33",
+    "fg": "#F4F1E9",
+    "muted": "#9AA6B8",
+    "border": "#1A2940",
+    "accent": "#FFB43B",
+    "accentHover": "#FFC869",
+    "accentFg": "#050D19",
+    "highlight": "#57A6FF",
+    "band": "#0D1C33",
+    "bandFg": "#F4F1E9",
+    "bandMuted": "#9AA6B8",
+    "headerBg": "#050D19",
+    "headerFg": "#F4F1E9",
+    "footerBg": "#040B15",
+    "footerFg": "#F4F1E9",
+    "focus": "#FFB43B"
+  },
+  "type": {
+    "family": "Inter Variable",
+    "base": "16px",
+    "scale": 1.3,
+    "headingWeight": 500,
+    "bodyWeight": 400,
+    "headingTracking": "-0.03em",
+    "headingLeading": 1.05,
+    "eyebrow": "uppercase"
+  },
+  "shape": { "radius": "12px", "radiusLg": "20px", "button": "outline" },
+  "layout": { "density": "regular", "container": "76rem", "measure": "42rem" },
+  "variants": { "header": "blur", "hero": "glow", "card": "filled", "rhythm": "flat", "texture": "grid" },
+  "motion": {
+    "style": "rise",
+    "duration": 800,
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "stagger": 100,
+    "carouselInterval": 6500
+  },
+  "imagery": {
+    "treatment": "technical-dark",
+    "cssFilter": "saturate(0.85) contrast(1.1) brightness(0.9)",
+    "radius": "14px",
+    "aspect": "4:5",
+    "direction": "Technical, premium imagery on dark: precise product, workspace or data-adjacent scenes, low-key lighting, deep navy with amber highlights, crisp detail and a single clear focal point.",
+    "avoid": "Stock-photo clichés (handshakes, pointing at screens), text or logos baked into the image, heavy gradients, neon, AI-looking gloss."
+  },
+  "breakpoints": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px" }
+}

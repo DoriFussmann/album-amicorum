@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "template": "daylight",
+  "templateName": "Daylight",
+  "tagline": "Bright · clear · optimistic",
+  "mode": "light",
+  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "colors": {
+    "bg": "#F8FBF6",
+    "surface": "#FFFFFF",
+    "surfaceAlt": "#EEF3ED",
+    "fg": "#111C35",
+    "muted": "#4A5670",
+    "border": "#DDE5DC",
+    "accent": "#155EEF",
+    "accentHover": "#0F4BC4",
+    "accentFg": "#FFFFFF",
+    "highlight": "#FF6638",
+    "band": "#EAF1FF",
+    "bandFg": "#111C35",
+    "bandMuted": "#3E4A63",
+    "headerBg": "#F8FBF6",
+    "headerFg": "#111C35",
+    "footerBg": "#E5EDFC",
+    "footerFg": "#111C35",
+    "focus": "#155EEF"
+  },
+  "type": {
+    "family": "Inter Variable",
+    "base": "17px",
+    "scale": 1.25,
+    "headingWeight": 600,
+    "bodyWeight": 400,
+    "headingTracking": "-0.02em",
+    "headingLeading": 1.1,
+    "eyebrow": "sentence"
+  },
+  "shape": { "radius": "14px", "radiusLg": "24px", "button": "pill" },
+  "layout": { "density": "airy", "container": "76rem", "measure": "42rem" },
+  "variants": { "header": "blur", "hero": "band", "card": "elevated", "rhythm": "alternate", "texture": "dots" },
+  "motion": {
+    "style": "rise",
+    "duration": 700,
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "stagger": 80,
+    "carouselInterval": 5500
+  },
+  "imagery": {
+    "treatment": "bright-natural",
+    "cssFilter": "saturate(1.05) brightness(1.03)",
+    "radius": "20px",
+    "aspect": "4:5",
+    "direction": "Bright, airy daylight photography: open spaces, soft shadows, fresh greens and clean whites with a blue or orange accent. Clear, optimistic, human, uncluttered.",
+    "avoid": "Stock-photo clichés (handshakes, pointing at screens), text or logos baked into the image, heavy gradients, neon, AI-looking gloss."
+  },
+  "breakpoints": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px" }
+}

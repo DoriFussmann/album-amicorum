@@ -1,0 +1,31 @@
+---
+interface Section {
+  eyebrow?: string;
+  heading: string;
+  intro?: string;
+  items: { title: string; text: string }[];
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-8">
+    <div class="flex flex-col gap-3">
+      {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
+      <h2 class="h2 reveal" data-index="1">{section.heading}</h2>
+      {section.intro && <p class="lead reveal" data-index="2">{section.intro}</p>}
+    </div>
+    <ul class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {section.items.map((item, index) => (
+        <li class="card flex flex-col gap-2 reveal" data-index={index}>
+          <h3 class="h3">{item.title}</h3>
+          <p class="muted">{item.text}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

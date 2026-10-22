@@ -1,0 +1,57 @@
+{
+  "version": 2,
+  "template": "field",
+  "templateName": "Field",
+  "tagline": "Human · bold · distinctive",
+  "mode": "dark",
+  "brand": { "wordmarkPrimary": "Site", "wordmarkAccent": "Name" },
+  "colors": {
+    "bg": "#10231C",
+    "surface": "#143027",
+    "surfaceAlt": "#1A3A2F",
+    "fg": "#F5F0E2",
+    "muted": "#BDB6A2",
+    "border": "#27493D",
+    "accent": "#B9ED3A",
+    "accentHover": "#CDF36A",
+    "accentFg": "#10231C",
+    "highlight": "#EF6155",
+    "band": "#B9ED3A",
+    "bandFg": "#10231C",
+    "bandMuted": "#2F4A1E",
+    "headerBg": "#0B1B15",
+    "headerFg": "#F5F0E2",
+    "footerBg": "#081711",
+    "footerFg": "#F5F0E2",
+    "focus": "#B9ED3A"
+  },
+  "type": {
+    "family": "Inter Variable",
+    "base": "17px",
+    "scale": 1.333,
+    "headingWeight": 700,
+    "bodyWeight": 400,
+    "headingTracking": "-0.03em",
+    "headingLeading": 1.0,
+    "eyebrow": "sentence"
+  },
+  "shape": { "radius": "18px", "radiusLg": "32px", "button": "pill" },
+  "layout": { "density": "airy", "container": "76rem", "measure": "42rem" },
+  "variants": { "header": "solid", "hero": "framed", "card": "filled", "rhythm": "bands", "texture": "none" },
+  "motion": {
+    "style": "rise",
+    "duration": 650,
+    "easing": "cubic-bezier(0.16, 1, 0.3, 1)",
+    "stagger": 70,
+    "carouselInterval": 5500
+  },
+  "imagery": {
+    "treatment": "warm-matte",
+    "cssFilter": "saturate(0.85) contrast(0.95) sepia(0.08)",
+    "radius": "28px",
+    "aspect": "4:5",
+    "direction": "Warm, grounded photography of real people outdoors or in real workspaces, with texture and character. Forest greens, cream and sand tones, an occasional lime or coral detail. Bold, distinctive, human.",
+    "avoid": "Stock-photo clichés (handshakes, pointing at screens), text or logos baked into the image, heavy gradients, neon, AI-looking gloss."
+  },
+  "breakpoints": { "sm": "640px", "md": "768px", "lg": "1024px", "xl": "1280px" }
+}

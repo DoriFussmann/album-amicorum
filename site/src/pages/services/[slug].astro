@@ -1,0 +1,52 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import Breadcrumbs from "seo-core/components/Breadcrumbs.astro";
+import { SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
+import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
+
+export async function getStaticPaths() {
+  const services = await getCollection("services");
+  return services.map((service) => ({ params: { slug: service.id }, props: { service } }));
+}
+
+const { service } = Astro.props;
+const { Content } = await render(service);
+const site = SITE_IDENTITY;
+const pageUrl = abs(`/services/${service.id}/`, SITE_URL);
+const crumbs = [
+  { name: "Home", href: abs("/", SITE_URL) },
+  { name: service.data.title, href: pageUrl },
+];
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@graph": [
+    orgNode(site),
+    websiteNode(site),
+    breadcrumbNode(crumbs, SITE_URL),
+    {
+      "@type": "Service",
+      "@id": `${pageUrl}#service`,
+      name: service.data.title,
+      description: service.data.description,
+      provider: { "@id": `${SITE_URL}#org` },
+      url: pageUrl,
+    },
+  ],
+};
+---
+
+<BaseLayout
+  title={`${service.data.title} — ${SITE_NAME}`}
+  description={service.data.description}
+  canonicalPath={`/services/${service.id}/`}
+  jsonLd={jsonLd}
+>
+  <div class="container-page section flex flex-col gap-6">
+    <Breadcrumbs crumbs={crumbs} />
+    <h1 class="h1">{service.data.title}</h1>
+    <div class="prose-article">
+      <Content />
+    </div>
+  </div>
+</BaseLayout>

@@ -1,0 +1,30 @@
+route: /about/
+meta_title: About — Site Name
+meta_description: Placeholder about page for this publication template. Replace it with the real story of the desk, the people, and the work.
+sections:
+  - type: page-header
+    eyebrow: About
+    h1: About this publication
+    intro: Placeholder introduction. Say who the publication is for, what it covers, and how the work is maintained.
+  - type: rich-text
+    heading: What belongs here
+    body: |
+      ## The desk
+
+      Describe the practice in plain sentences. Name the subjects you actually cover and the standard you hold a page to.
+
+      ## How pages stay current
+
+      Explain the review cycle. A reader should be able to tell who updates a guide and what “current” means.
+  - type: team-teaser
+    heading: The people who sign the work
+    intro: Author pages list credentials and the articles each person has published.
+  - type: cta-band
+    heading: Start with the work
+    sub: The article list is the public record. Services describe how a team can use the same system.
+    cta_primary:
+      label: Articles
+      href: /articles/
+    cta_secondary:
+      label: Services
+      href: /services/

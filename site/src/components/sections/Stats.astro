@@ -1,0 +1,26 @@
+---
+interface Section {
+  heading?: string;
+  items: { value: string; label: string }[];
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+const cols = section.items.length >= 4 ? "lg:grid-cols-4" : "lg:grid-cols-3";
+---
+
+<section class:list={["section", "section-band", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-8">
+    {section.heading && <h2 class="h2 reveal" data-index="0">{section.heading}</h2>}
+    <ul class:list={["grid gap-6 sm:grid-cols-2", cols]}>
+      {section.items.map((item, index) => (
+        <li class="reveal" data-index={index + 1}>
+          <p class="stat-value">{item.value}</p>
+          <p class="muted">{item.label}</p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

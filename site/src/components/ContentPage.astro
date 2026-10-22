@@ -1,0 +1,22 @@
+---
+import type { CollectionEntry } from "astro:content";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import SectionRenderer from "./sections/SectionRenderer.astro";
+import { pageCrumbs, pageJsonLd } from "../lib/page-jsonld";
+
+interface Props {
+  page: CollectionEntry<"pages">;
+}
+const { page } = Astro.props;
+const jsonLd = pageJsonLd(page.data);
+const crumbs = pageCrumbs(page.data);
+---
+
+<BaseLayout
+  title={page.data.meta_title}
+  description={page.data.meta_description}
+  canonicalPath={page.data.route}
+  jsonLd={jsonLd}
+>
+  <SectionRenderer sections={page.data.sections} crumbs={crumbs} />
+</BaseLayout>

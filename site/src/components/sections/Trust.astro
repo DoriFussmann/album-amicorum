@@ -1,0 +1,22 @@
+---
+interface Section {
+  heading: string;
+  items: { label: string }[];
+}
+interface Props {
+  section: Section;
+  alt?: boolean;
+}
+const { section, alt = false } = Astro.props;
+---
+
+<section class:list={["section", alt && "section-alt"]} aria-labelledby="trust-heading">
+  <div class="container-page flex flex-col gap-6">
+    <h2 id="trust-heading" class="h2 reveal" data-index="0">{section.heading}</h2>
+    <ul class="flex flex-wrap gap-3">
+      {section.items.map((item, index) => (
+        <li class="card reveal" data-index={index + 1}>{item.label}</li>
+      ))}
+    </ul>
+  </div>
+</section>
