@@ -120,9 +120,21 @@ The Album Amicorum Friend Book honours exactly this tradition. It is beautifully
 Whatever name you give it, the act is the same one students practised in sixteenth-century Heidelberg and Padua: passing a book to someone you care about and asking them to leave something of themselves inside. Five hundred years on, that gesture has lost none of its power.
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The topic of album amicorum and liber amicorum terminology is stable within academic circles, with no major definitional shifts reported in recent weeks. What is notable in the broader cultural context, however, is the strong momentum behind the values these traditions represent. Parenting commentary in 2026 has broadly identified the "analog childhood" movement as one of the year's defining trends, with recent reporting describing families actively limiting screen time and seeking offline, tactile experiences — boredom, backyard play, crafts, and real-world connection — as a deliberate counter to digital overload. Pinterest's 2026 Parenting Trend Report similarly noted that 
 "handmade patterns and vintage bedroom ideas suggest a desire for slower, more tactile experiences," and that these trends point to parents using the past as a blueprint for a more analog, grounded childhood.
  A centuries-old friendship book tradition, whatever it is called, sits squarely within that impulse — and the renewed cultural appetite for handmade, meaningful keepsakes suggests the album amicorum's moment of rediscovery is very much ongoing.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Liber amicorum means "book of friends"; album amicorum swaps liber for album, from the Latin albus, "white."
+- For most of their history the two terms described the same tradition of friendship albums that began in sixteenth-century Germany.
+- Today liber amicorum usually refers to an academic tribute volume, while album amicorum still means a personal friendship book.
+- Using the terms interchangeably is not wrong; the difference is a modern convention, not an ancient rule.
+- For families, search for "album amicorum" to find the illustrated, handmade friendship-book tradition rather than academic tributes.
+
+
 
 See Related below for more on this topic.
 

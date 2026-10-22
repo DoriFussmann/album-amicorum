@@ -170,11 +170,23 @@ That is precisely what makes it worth giving. Unlike any other toy on this list,
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The broader trend toward analog, keepsake-quality play for children is gaining measurable momentum heading into the second half of 2026. 
 The global wooden toy market was valued at roughly USD 33.9 billion this year and is projected to expand at approximately 6% annually through 2035, with analysts crediting environmental consciousness, educational value, and rising interest in alternative learning philosophies — Montessori, Waldorf, and Reggio Emilia — as key drivers alongside straightforward demand for screen-free alternatives to electronic entertainment.
 
 Industry observers at Toy Fair 2026 described a growing appetite for play that inspires creativity and self-expression, framing it as a "conscious reset" in which screen-free play serves as a dedicated space for emotional regulation and human connection rather than simply a rejection of technology — resulting in a surge in demand for toys that feel intentional, calming, and human-centered. Pinterest's 2026 Parenting Report reinforced this cultural direction, noting that parents are actively focused on creating an "analog, grounded childhood" centered on craft activities and meaningful hands-on experiences.
  No major disruptions or reversals of this trend have surfaced in recent weeks; market data and cultural signals continue to point in the same direction, suggesting that demand for intentional, keepsake-quality analog toys is a durable shift rather than a passing moment.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Keepsake-quality analog toys produce a finished thing a child owns, can show others and will recognize years later.
+- A Friend Book stands apart on the list because what it creates is made by a child's friendships, not by the child alone.
+- Toys that become keepsakes are usually made from natural or durable materials such as wood, cotton, real paper and ceramic.
+- The wooden toy market's growth reflects parents' preference for durable, heirloom-quality toys over disposable ones.
+- A thoughtful shelf mixes toys that record what a child made with at least one that records who they made it with.
+
+
 
 See Related below for more on this topic.
 

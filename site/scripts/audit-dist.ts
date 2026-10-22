@@ -20,10 +20,6 @@ runAudit({
   pillarHubs: ARTICLE_PILLARS.map((pillar) => `/${ARTICLES_BASE}/${pillar.slug}/`).filter(
     (path) => !existsSync(join(siteRoot, "src", "content", "articles", `${path.split("/")[2]}.md`)),
   ),
-  // Migrated articles predate the WTS / Key Takeaways standard (28 and 37 of 42 lack them).
-  // Turn these back on once the backfill is done.
-  requireWts: false,
-  requireKeyTakeaways: false,
 });
 
 function walkHtml(dir: string, acc: string[] = []): string[] {

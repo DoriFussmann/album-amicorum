@@ -159,6 +159,15 @@ More families are intentionally slowing down, limiting screen time, and reclaimi
  For friendship books specifically, no major product or category disruptions have emerged in the past 45 days; the space remains stable, with steady parent interest that mirrors the broader analog parenting movement gaining momentum this year.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- Start the book at a natural turning point: a new school year, the last weeks of a grade or the weeks before a move.
+- Fill in your child's own page together first, so they understand what the book asks of friends.
+- Introduce it to friends somewhere calm with time to spare — a playdate, a party or a farewell — not loose in a backpack.
+- Clear prompts and good tools help shy or uncertain children past the blank page.
+- Once pages fill, store the book somewhere safe but reachable and revisit it as a keepsake.
+
+
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.

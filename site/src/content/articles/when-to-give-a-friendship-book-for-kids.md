@@ -168,6 +168,15 @@ National Friendship Day 2026 fell on Sunday, August 2
 , just days before this article's publication — a reminder that the cultural appetite for honouring children's friendships with something real and lasting is as present as ever.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- A friendship book's value depends on timing as much as on the gift itself.
+- The end of the school year, a family move and starting a new school are the strongest moments, when a child's social world is changing.
+- At birthdays for ages 6–10, the book can become the party activity itself.
+- Named days such as National Friendship Day (August 2, 2026) and Valentine's Day, or a summer apart, are natural occasions too.
+- Giving one for no reason at all, when friendships are simply at their fullest, can be the best time of all.
+
+
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.

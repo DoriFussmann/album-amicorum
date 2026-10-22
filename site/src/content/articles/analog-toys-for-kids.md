@@ -180,6 +180,7 @@ A beautifully illustrated Friend Book — crafted to be filled over years rather
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The analog toy category is gaining real commercial and cultural momentum as the 2026 back-to-school and holiday seasons approach. 
 Industry reporting from Toy Fair 2026 noted that the toy sector is in a consolidation phase, with classic analogue play taking centre stage again after years of emphasis on digital and hybrid concepts.
 
@@ -189,6 +190,17 @@ play-based learning has a positive impact on children's cognitive, language, soc
  lending academic weight to what many parents already feel intuitively. 
 The broader trend — investing in fewer, better-designed products that support how children actually grow — shows no sign of slowing,
  and screen-free, analog gift guides from major consumer media outlets published through mid-2026 reflect sustained and growing demand for this category. No major regulatory or market disruptions to the analog toy space have emerged in the past 45 days; the story remains one of steady, values-driven growth.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Analog toys work without screens or power; their quietness invites children to lead the play rather than respond to it.
+- Research links traditional toys with more parent–child interaction and more language from both parents and toddlers than electronic toys.
+- The category spans ages 5–12, from construction and art materials to cooperative games, crafts and keepsake projects.
+- The best analog toys grow with the child: their value rises as skills develop, while pre-programmed toys hit a ceiling.
+- Build the shelf on "fewer, better," and include something that captures friendship, which becomes central around ages 7–8.
+
+
 
 See Related below for more on this topic.
 

@@ -146,6 +146,7 @@ Album Amicorum's illustrated friend book is designed precisely for this purpose.
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The broader cultural moment is unusually well-aligned with the value of analog friendship activities for children. In 2026, the retreat from screens toward hands-on, tangible making has become one of the most clearly documented parenting and lifestyle trends of the year. 
 Michaels declared 2026 the Year of Creative Living in the analog era, identifying a cultural shift in which consumers are using tactile, analog activities to reclaim their time and identity in an automated world.
 
@@ -155,5 +156,16 @@ in early 2026, the American Academy of Pediatrics reaffirmed its clinical report
  As the new school year begins in August 2026, there is renewed focus on helping children build and sustain friendships, with recent commentary noting that 
 while organized activities offer valuable experiences, much of childhood friendship develops during playdates, neighborhood gatherings, and spontaneous hangouts
  — exactly the settings where a friend book or a shared creative project can leave the most lasting impression.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Research ties strong childhood friendships to greater belonging, better emotional intelligence and lower risk of anxiety and depression.
+- Most online friendship activities are designed for classrooms; activities at home with one or two friends work differently.
+- The deepest connection comes from activities that make children engage with each other and make something tangible together.
+- Analog, hands-on activities are generative and collaborative, while screen-based play is often parallel.
+- A Friend Book gives every activity's output a permanent home, turning a passing drawing or answer into a keepsake.
+
+
 
 For further reading, see the Sources listed below.

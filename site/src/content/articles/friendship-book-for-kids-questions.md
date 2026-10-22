@@ -156,6 +156,15 @@ Album Amicorum's *In My Friends Book* was built around every one of these questi
 The broader context for friendship books and childhood keepsakes continues to strengthen heading into the second half of 2026. Pinterest's 2026 Parenting Trend Report identified a clear parent-driven shift toward what it called an "analog, grounded childhood," with searches for tactile, handmade, and vintage-style children's experiences rising sharply — a movement that fits naturally with the appeal of a handwritten, illustrated keepsake. Etsy's Spring and Summer 2026 Seller Trend Report echoed this directly, noting that "personal keepsakes, handwritten notes, journal accessories" are surging as shoppers reclaim rituals that cannot be swiped away, describing the analog revival as intentional nostalgia and a deliberate way to slow the scroll. Multiple parenting commentators have identified the slow analog childhood as one of the defining parenting orientations of 2026, with families prioritizing unstructured time, real-world connection, and offline rituals — precisely the conditions under which a friendship book thrives and gets used. There are no major product disruptions or format controversies to report in this corner of the keepsake market; it remains stable, well-regarded, and quietly growing in cultural relevance as the screen-free childhood impulse continues to build momentum among parents of elementary-aged children.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- The sweet spot for a friendship book is roughly ages 5 to 12, matching the elementary school years.
+- Prompts decide whether the book gets used: a blank page paralyzes children, while good prompts make filling it in easy.
+- Whether a child keeps using the book depends mostly on its design, not on the child's willpower.
+- It is a good gift even if you don't know the child's friends, because it is a book for gathering them, not about specific people.
+- A keepsake friendship book differs from a blank notebook in its structure, prompts and durability, which help it survive to become a keepsake.
+
+
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.

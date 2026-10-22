@@ -132,6 +132,7 @@ For parents who want a ready-made structure for that practice, Album Amicorum's 
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The conversation around children's offline connection and analog creative activities has gained noticeable momentum through mid-2026, driven largely by a growing policy response to children's screen use. 
 Australia became the first country to ban social media for users under 16 in December 2025, and by mid-2026 more than 30 U.S. states had passed laws banning or restricting cellphones in K–12 classrooms
  — a legislative shift that is pushing parents and educators alike to think more deliberately about what structured, face-to-face time between children looks like. 
@@ -139,5 +140,16 @@ A systematic review tracking trends across pre- and post-pandemic periods found 
 , reinforcing the urgency many parents already feel. Against that backdrop, interest in purposeful analog activities — including friendship-focused crafts, handwritten keepsakes, and memory-making rituals for children — remains steady and culturally resonant, with no signs of major disruption or shifting consensus in recent weeks. 
 International Day of Friendship fell on July 30, 2026
 , generating renewed seasonal interest in structured friendship activities for children, a pattern likely to continue into the back-to-school period through August and September.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- A friendship afternoon works best in three phases: a short warm-up, a main activity that makes something, and a capture step.
+- Keep the warm-up under five minutes, low-stakes and screen-free so the children settle into a creative mood.
+- The main activity takes twenty to forty-five minutes and should produce something each child takes home or adds to a shared object.
+- The capture step is the most skipped and the most important; without it, the afternoon leaves no lasting record.
+- Repeated monthly or seasonally, the afternoons build an accumulating record of a friendship growing up.
+
+
 
 For further reading, see the Sources listed below.

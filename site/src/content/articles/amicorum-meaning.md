@@ -157,11 +157,23 @@ That is why the Album Amicorum Friend Book is named exactly as it is. Every chil
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The broader cultural context for friendship keepsakes and analog childhood objects is actively growing in 2026, lending particular relevance to the album amicorum tradition. Pinterest's first-ever Parenting Trend Report, released in early 2026, found that parents are not simply trying to limit screen time — they are 
 "actively designing screen-smart, experience-rich childhoods," with handmade patterns and vintage ideas pointing to a clear desire for slower, more tactile experiences, as parents use the past as a blueprint for a more analog, grounded childhood.
  Separately, parenting communities have widely identified a 
 slow, "analog" childhood — boredom, crafts, backyard play, and more unstructured time, with fewer pricey classes
  — as one of the defining parenting intentions of 2026. No major academic discoveries or product-category disruptions relating specifically to the history of the album amicorum have emerged in the past 45 days; the topic remains historically stable, with cultural interest in its modern applications continuing to build steadily alongside broader analog and slow-childhood movements.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Amicorum is the genitive plural of the Latin amicus, so it means "of friends"; album amicorum means "album of friends."
+- Album comes from the Latin for "white" and came to mean a book of blank pages for collecting verses, autographs and sketches.
+- In classical Latin pronunciation, amicorum is said ah-mee-KOR-oom, with the stress on the third syllable.
+- Album amicorum and liber amicorum were historically interchangeable names for the same kind of friendship album.
+- The album amicorum is the common ancestor of the autograph book, the poetry album, the yearbook and the modern friendship book.
+
+
 
 See Related below for more on this topic.
 

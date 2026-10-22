@@ -136,6 +136,7 @@ The best analog starting point for a socially-oriented child is the one that mak
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The momentum behind screen-free, analog play shows no signs of slowing as the 2026–2027 school year begins. 
 In February 2026, The Toy Association unveiled its official 2026 Toy & Play Trends at Toy Fair, and one of the headline themes — "Cozy Culture" — describes exactly what Montessori-minded parents have valued all along: low-tech, sensory, natural-material toys that help children slow down, focus, and connect.
 
@@ -145,6 +146,17 @@ a major trend in 2026 is the rise of screen-free toys, with parents actively loo
  Most recently, just one day before this article was published, 
 a toy industry editorial team joined a national television broadcast to highlight the best screen-free educational toys for kids ahead of the new school year
  — a sign that the conversation around analog play has moved firmly from niche parenting philosophy into mainstream back-to-school guidance. The scientific foundation underpinning these trends remains stable, with no major new findings that contradict the established picture of analog play's developmental benefits.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- An analog toy is any toy that works without a screen, app or internet connection, from blocks and board games to art supplies and keepsake books.
+- Analog play matters throughout childhood, but the 5–12 window, when peer relationships deepen, gives the most concentrated return.
+- Expect resistance from a child used to screens: analog toys don't offer the instant tap-and-react loop, so interest builds over time.
+- The research behind screen-free, traditional play has been accumulating for decades across several disciplines; it is not a passing trend.
+- For a child who loves friends, start with toys that need two or more people and produce something shared and tangible.
+
+
 
 See Related below for more on this topic.
 

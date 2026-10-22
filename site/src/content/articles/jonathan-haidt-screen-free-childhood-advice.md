@@ -157,6 +157,7 @@ Haidt's vision of what a healthy childhood looks like is not complicated. It is 
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The conversation around Haidt's screen-free childhood advice continues to accelerate in 2026. 
 In April 2026, Haidt delivered what he described as his "most urgent" TED Talk, focused on stopping the takeover of childhood by technologies not designed with children's welfare in mind, and arguing that changing course will require a major shift in public opinion as a signal to political leaders.
  His three principles of technoskepticism — protect brain development through puberty, prioritize people and books over screens in education, and beware of artificial relationships for minors — represent an evolution and sharpening of the arguments in *The Anxious Generation*. On the policy front, 
@@ -164,6 +165,17 @@ In April 2026, Haidt delivered what he described as his "most urgent" TED Talk, 
  Meanwhile, 
 a May 2026 warning from the Department of Health and Human Services noted that children spend about eight hours daily on screens — nearly as much time as they spend sleeping or in school — with growing evidence linking excessive screen use to anxiety, depression, and developmental challenges.
  The debate around Haidt's evidence base continues among researchers, but the policy and cultural momentum behind his four core norms shows no sign of slowing.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- In The Anxious Generation, Haidt argues that prolonged smartphone and social media exposure raises children's risk of anxiety and depression.
+- His four norms: no smartphones before high school, no social media before 16, phone-free schools, and more independence and free play.
+- Haidt frames the problem as collective action: single families struggle alone, so parents need to coordinate.
+- Common objections, such as fear of a child being left out, are exactly why he says the solution must be collective.
+- Removing screens only works if real-world experiences with friends and independent activity fill the space they leave.
+
+
 
 For further reading, see the Sources listed below.
 

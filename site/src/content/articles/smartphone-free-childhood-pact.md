@@ -164,6 +164,7 @@ Signing the pact is the easy part. Giving your child a childhood that feels genu
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The Smartphone Free Childhood movement has reached a significant policy inflection point in 2026. 
 On 15 June 2026, the UK government announced a ban on social media use by children under the age of 16, following a consultation on improving children's relationship with mobile phones and social media.
 
@@ -173,6 +174,17 @@ on 15 July 2026, the government announced that default overnight curfews from mi
  and 
 Wikipedia's entry on the organisation lists 350,000 self-reported members as of 2026.
  The broader legislative momentum — with the UK joining Australia and several European nations in pursuing age-based restrictions — means the values underpinning the pact are increasingly being written into law, even as the parent-led movement continues to operate as a community tool distinct from and ahead of formal regulation.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- The Parent Pact is an agreement among local parents to delay smartphones until at least 14 and social media until 16.
+- Smartphone Free Childhood began in early 2024 as a WhatsApp group started by two parents in Suffolk and grew into a national movement.
+- The pact is voluntary and not legally binding; families can adjust if their circumstances change.
+- It works best at the level of a school year group, where peer pressure actually lives.
+- Signing removes a pressure but does not fill the time; pair it with outdoor play, creative projects and handwritten correspondence.
+
+
 
 For further reading, see the Sources listed below.
 

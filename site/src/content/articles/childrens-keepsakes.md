@@ -173,6 +173,7 @@ This is precisely what Album Amicorum's illustrated Friend Book was designed for
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The appetite for meaningful, physical children's keepsakes continues to grow in 2026, shaped by two converging forces: a broadening counter-movement toward analog, tactile childhood experiences and an increasingly felt disillusionment with purely digital memory-keeping. 
 Trends data from Pinterest's 2026 Parenting Trend Report points to handmade patterns and vintage childhood aesthetics as signals of a desire for slower, more tactile experiences, with parents using the past as a blueprint for a more analog, grounded childhood.
  In parallel, 
@@ -182,5 +183,16 @@ the digital age has moved families from finite physical albums to enormous digit
  — a dynamic that is quietly driving renewed interest in physical, handwritten keepsakes that can be held, revisited, and passed on. Meanwhile, 
 observations from August 2026 note that some childhood memories are easy to photograph, but others live in the tiny things children leave behind — a handwritten note, a favourite ribbon — that can feel far more meaningful years later, as those small pieces often tell the clearest story of what childhood actually felt like.
  No major market disruption or regulatory development has altered this space recently; the conversation is quietly intensifying rather than shifting direction.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Keepsakes matter because they hold relationships and identity, not only nostalgia.
+- A keepsake a parent keeps about a child is different from one a child creates with their own community; the second is rarer.
+- Ages 5–12 are the golden window for social keepsakes, when friendships form without agenda.
+- Photos and apps don't fully solve memory-keeping: they capture what happened, but not friends' own words and handwriting.
+- The moments that most call for a keepsake — a friend moving away, the end of a school year — are often missed because no one prepared for them.
+
+
 
 For further reading, see the Sources listed below.

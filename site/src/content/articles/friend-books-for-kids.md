@@ -226,6 +226,15 @@ The *album amicorum* has been traveling between friends for five hundred years. 
 The cultural moment for Friend Books and analog childhood keepsakes is as strong as it has been in decades — and it is now being reinforced by law. The "analog childhood" movement entered a new phase in 2026: what began as a parenting preference has hardened into policy, with seven states passing classroom screen-time restrictions and Los Angeles Unified — the nation's second-largest school district — voting unanimously to ban screens for kindergarten and first-grade students starting this fall. A U.S. Department of Education guidance on responsible ed-tech use followed in August 2026. Nostalgia continues to redefine what childhood looks and feels like, with parents filling playrooms with throwback toys and handmade patterns. Consumer demand for tangible memory-keeping keeps climbing: junk journaling searches are up 63% year-over-year, and Google searches for "analog hobbies" have risen more than 1,300% over the past year — a shift the Global Wellness Summit has now formally named "analog-ing on." The category of beautifully made, illustrated children's keepsakes that require no screen and produce something genuinely irreplaceable sits squarely at the intersection of these converging trends — and the policy environment is now actively accelerating them.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- A Friend Book is filled in by a child's friends, which sets it apart from personalized storybooks and parent-kept memory journals.
+- It continues the five-hundred-year album amicorum tradition, first kept by Northern European students in the sixteenth century.
+- Friendships between ages 5 and 12 shape later social-emotional and academic outcomes, which makes them worth preserving.
+- Quality depends mostly on the prompts, the illustration and how well the book is made.
+- A Friend Book becomes an heirloom because of what fills it: real friends' handwriting from a moment that will not come again.
+
+
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.

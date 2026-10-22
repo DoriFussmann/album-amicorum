@@ -146,11 +146,23 @@ The album amicorum tradition started because human beings have always understood
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The album amicorum tradition itself is stable and well-documented, with no major recent academic or cultural developments in the past 45 days specifically. What is notably active, however, is the broader cultural moment in which the tradition sits. 
 Nostalgia is redefining what childhood looks and feels like in 2026, with handmade patterns and vintage ideas suggesting a desire for slower, more tactile experiences — and parents increasingly using the past as a blueprint for a more analog, grounded childhood.
 
 As screens grow more powerful and ever-present, more families are intentionally slowing down, limiting digital overload, and reclaiming the kinds of offline experiences that once defined growing up — free play, imagination, and real connection. The phrase "analog childhood" is being heard widely in 2026, as families trade packed schedules and glowing screens for backyard play, board games, and long, unstructured afternoons.
  Within that context, handwritten, illustrated keepsakes like the album amicorum are finding a natural and enthusiastic audience among parents who are actively looking for meaningful alternatives to digital memory-keeping.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Begin at a moment of real emotional weight, such as the end of a school year, a birthday or a move.
+- Choose a well-made book, since a flimsy notebook signals that the entries inside are temporary.
+- Write an opening page that explains the tradition and warmly invites friends to contribute.
+- Plan how entries will be collected, such as one friend at a time at playdates.
+- Let the book grow slowly over years, then preserve it as the family heirloom it becomes.
+
+
 
 See Related below for more on this topic.
 

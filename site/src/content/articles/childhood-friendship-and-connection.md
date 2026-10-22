@@ -188,6 +188,18 @@ Choosing a gift or keepsake that slows things down, that invites real interactio
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 As the 2026–27 school year gets under way, childhood friendship is attracting fresh attention from researchers, parents, and practitioners alike. New findings published this week suggest that some elementary school children who appear unsociable actually simply prefer solo time as long as they feel they belong to a broader peer group — a nuance that underscores how deeply individual children's social needs are, and how much quality of connection matters over sheer quantity. Simultaneously, back-to-school reporting from school psychologists this week emphasised that early friendships are where children practise communicating, handling disagreements, and regulating their emotions — skills that carry far into adult life. Recent reporting also highlights that nine in ten parents believe their children want more friends, yet many children are struggling with the face-to-face social skills that screen time displaces. Against this backdrop, the analog childhood and digital-detox parenting movements — which prioritise outdoor play, boredom, and real-world social experiences over passive screen consumption — continue to gather momentum as one of the defining parenting trends of 2026, with families increasingly treating slow, unstructured time not as a luxury but as a developmental necessity.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Childhood friendship is a developmental necessity that shapes emotional growth, social skills and long-term mental health.
+- Genuine friendships usually form from around age four or five, and ages 5–12 are when friendship shapes the most.
+- One close friend may protect a child against emotional problems more than a large social circle does.
+- Screens, over-scheduling and the lingering effects of school closures have made it harder for children to connect in person.
+- Parents can nurture friendship through unstructured play, one-on-one playdates and handwritten messages that make connections lasting.
+
+
 
 For further reading, see the Sources listed below.

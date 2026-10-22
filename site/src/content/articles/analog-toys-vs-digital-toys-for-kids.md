@@ -131,6 +131,7 @@ That's the idea at the heart of the Friend Book. Rather than a toy that children
 Album Amicorum's Friend Books are designed precisely around this idea: that the friendship itself is worth commemorating, that handwritten memories are irreplaceable in a way no screenshot or saved game file can be, and that the most lasting gift you can give a child is not a toy they will outgrow but a record of the relationships that shaped them. In a household that values both connection and intentionality, a Friend Book isn't just an analog toy. It's the analog toy whose purpose is the bond between children — the one output that no digital experience can ever produce.
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The analog play movement has continued to gain cultural momentum through mid-2026, moving well beyond niche parenting circles into mainstream consumer behavior. 
 As digital life speeds up, families are increasingly choosing tech-free toys that help them power down and reset, with the "Cozy Culture" trend reflecting a growing fondness for low-tech and no-tech play experiences that counterbalance constant digital stimulation.
  This shift is showing up in market data as well: 
@@ -140,6 +141,17 @@ the viral #analogbag trend — originating with a creator sharing a bag of offli
  reflecting the same underlying appetite for screen-free, tangible experience. A 2026 systematic review published in a peer-reviewed education journal also reinforced the complementary value of both play types, finding that 
 integrating both physical and digital games into educational settings can boost engagement and motivation, and that games enhance problem-solving and promote collaborative learning
  — while separately confirming that the relational richness of face-to-face, analog interaction remains distinct and difficult to replicate digitally.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- The useful question is not which toy is safer but which builds deeper connection between children.
+- In a peer-reviewed study of the same game in two formats, children playing the analog version talked to each other more and responded more to each other.
+- Digital and coding toys do deliver real benefits, including engagement, computational thinking and problem-solving.
+- The decisive difference is what play leaves behind: analog play can produce a shared, physical record of the time together.
+- For building friendships specifically, analog play wins because it creates face-to-face contact, turn-taking and shared physical space.
+
+
 
 See Related below for more on this topic.
 

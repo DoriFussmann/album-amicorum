@@ -175,6 +175,7 @@ If you are looking for a friendship book that honours the full weight of that id
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The broader cultural context for friendship books for kids has grown noticeably stronger through the first half of 2026. 
 One of the biggest parenting trends of 2026 is the rise of what commentators are calling the analog childhood
 , with families actively seeking screen-free, tactile experiences for their children in response to growing awareness of screen time's effects. 
@@ -182,6 +183,17 @@ Retail data described in industry trend reports characterises 2026 consumers as 
  This appetite extends directly to the gifts and keepsakes parents choose for children: handmade, handwritten, and beautifully designed objects are finding a larger and more receptive audience than they have in years. 
 In the children's product space specifically, content that helps children understand relationships and emotional connection continues to outperform across categories
 , reinforcing the cultural appetite for meaningful, friendship-centred keepsakes. No major product launches or news events specific to the friendship book niche have been reported in the past 45 days, making this a stable and steadily growing territory rather than one shaped by sudden developments.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- A friendship book is passed around so that each friend fills in their own page, leaving a one-of-a-kind record of real friendships.
+- It continues the album amicorum, a sixteenth-century tradition of collecting friends' inscriptions that lasted into the nineteenth century.
+- A handwritten record keeps personality and presence in a way digital messages and photo albums cannot.
+- When choosing one, look at the design, the prompts, the paper quality and how well it suits a range of ages.
+- The best moments to give one are school transitions and other thresholds when a circle of friends is about to change.
+
+
 
 See Related below for more on this topic.
 

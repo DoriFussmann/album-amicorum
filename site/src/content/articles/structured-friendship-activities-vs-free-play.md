@@ -112,6 +112,7 @@ This is where a friend book — a beautifully designed book that children fill i
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The structured-versus-free-play debate is seeing a meaningful surge in new research and public conversation as of mid-2026. A study published earlier this year in *Infant and Child Development*, conducted by researchers at the University of Cambridge, found that non-friend pairs of children ages six to eight showed a roughly 25% increase in cooperative, coordinated communication when given a shared goal rather than open-ended free play — while established friend pairs showed almost no difference between conditions, suggesting structure matters most at the beginning of a relationship. Simultaneously, 
 a 2026 clinical report reaffirmed by the American Academy of Pediatrics emphasizes that play strengthens brain structure and function, particularly executive skills such as impulse control, emotional regulation, and goal-setting,
  reinforcing the case for protecting unstructured time. 
@@ -119,5 +120,16 @@ Recent expert commentary notes that children with four or more extracurricular a
  and 
 a Harris Poll found that 45% of children ages 8–12 say they would rather play with friends in activities not organized by adults.
  Taken together, the current evidence points strongly toward a both/and model: structure to initiate connection, free play to deepen it.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Structured activities and free play both build friendships; the real work is knowing when each fits.
+- Structured, goal-directed tasks help most when children don't know each other well, according to a 2026 study of 148 children aged six to eight.
+- Free play lets children choose their own activity, and that self-direction is itself where social learning happens.
+- Established friends reach their deepest connection in free, unstructured time.
+- Structure has one uncontested edge: it can produce a record of the friendship, while free play leaves nothing behind.
+
+
 
 For further reading, see the Sources listed below.

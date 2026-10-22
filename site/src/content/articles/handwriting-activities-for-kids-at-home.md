@@ -183,6 +183,15 @@ a January 2026 survey of more than 1,100 early educators by a major education re
  — a finding that has added urgency to the policy conversation around handwriting instruction. Meanwhile, recent educational commentary has emphasised that handwriting "remains one of the most proven and timeless methods for students," pointing to a broader cultural reckoning with what children lose when the pen is replaced by the keyboard too early and too completely.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- Handwriting practice works best when it doesn't feel like practice: writing about something real deepens motor and cognitive pathways.
+- A Friend Book is the most complete activity on the list, combining a real audience, personal expression and a lasting keepsake.
+- Letters, cards, recipes and stories give children a reason to write carefully because someone will read what they wrote.
+- Every activity on the list produces something to keep, unlike drills.
+- Purposeful, varied writing builds motivation that worksheets alone rarely create.
+
+
 <!-- CMS-INTERNAL:START -->
 Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->

@@ -133,12 +133,24 @@ As you build your toolkit of smartphone-free alternatives, this is the piece tha
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 Parents across the US and abroad are increasingly joining efforts to delay smartphone use and reduce children's screen time, with concerns about smartphones' effects on children fueling broader efforts around offline socialization and screen-free childhood initiatives. Smartphone Free Childhood, a nonprofit launched after a viral 2024 Instagram post, has expanded into an international movement encouraging parents to delay giving smartphones to children.
 
 The organization now counts over 140,000 parents from 13,500 schools who have signed its pact, with members in over 60 countries and affiliations with similar movements in more than 40 countries.
  As the movement has grown, so has parental demand for concrete alternatives — and recent reporting from mid-2026 confirms that the question of what children actually do instead has become the central practical challenge for families acting on these convictions, driving renewed interest in analog social tools, open-ended craft materials, and structured keepsake products that give children a tangible, screen-free social life. 
 Home phones are quietly making a comeback as families search for ways to give children independence without the downsides of a smartphone
  — a small but telling sign that the movement is moving beyond ideology and into the everyday logistics of a different kind of childhood.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Start by auditing what the phone actually did for your child: communication, entertainment, creativity, information and social visibility.
+- Replace connection, not only entertainment, because fear of being left out drives most of a child's resistance.
+- Build a weekly rhythm of anchor activities to fill the gaps a phone used to occupy.
+- Equip your home so analog options are easier to reach than screens.
+- Coordinating with other families is the most important step, as Haidt advises.
+
+
 
 For further reading, see the Sources listed below.
 

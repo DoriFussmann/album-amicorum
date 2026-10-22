@@ -120,6 +120,7 @@ That is the real answer to "how do we not lose it?" — not a vague suggestion t
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The conversation around children's friendships and social connection has sharpened considerably in recent weeks. 
 A report published in late July 2026 concluded that friendship is effectively "in recession" among young people, with children spending less time with friends and losing access to the places where connection once happened naturally.
  This comes alongside research published in August 2026 that adds important nuance for parents: 
@@ -127,5 +128,16 @@ some elementary-age children who appear unsociable actually prefer solitary time
  Meanwhile, 
 recent commentary has noted that summer can quietly become one of the loneliest times of year for children, precisely because the school year provides the structure — clear expectations, daily peer contact, sports and clubs — that organically sustains friendship.
  Taken together, these threads point in the same direction: children do not need more activities so much as they need more intentional, low-pressure opportunities to connect — and something tangible to show that the connection was real.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- For shy or anxious children, a structured activity usually makes social time easier because it supplies the script.
+- Ages 5–6 play best alongside a friend; collaborative activities work better as children get older.
+- When one child dominates, named sections or separate pages give each child territory of their own.
+- A short handover moment at the end, where each child gives or reads what they made, keeps the afternoon from fizzling out.
+- Collect friendship artifacts in one dedicated place, or they get shuffled, lost or thrown away within months.
+
+
 
 For further reading, see the Sources listed below.

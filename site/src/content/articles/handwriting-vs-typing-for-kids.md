@@ -146,6 +146,15 @@ researchers are documenting the powerful effects of handwriting on thinking and 
  — a tension that the new wave of state mandates is beginning to directly address.
 <!-- WHERE-THINGS-STAND:END -->
 
+## Key Takeaways
+
+- Neuroscience, not nostalgia, is behind the renewed case for handwriting.
+- A 2024 study found that handwriting produced more widespread brain connectivity in areas tied to learning and memory than typing.
+- Forming letters by hand strengthens alphabetic and spelling knowledge while children are learning to read and write.
+- Typing has real value, especially once literacy foundations are in place; it serves a different function.
+- The window when handwriting most shapes literacy is early childhood, and those skills are hard to retrofit later.
+
+
 <!-- CMS-INTERNAL:START -->
 Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
 <!-- CMS-INTERNAL:END -->

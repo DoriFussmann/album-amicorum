@@ -137,11 +137,23 @@ Album Amicorum's *In My Friends Book* is designed for exactly this space on the 
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The analog toy and screen-free play space is seeing sustained, broad-based momentum heading into late 2026 rather than any single dramatic news event. 
 In February 2026, the Toy Association unveiled its official 2026 Toy & Play Trends, and one of the headline themes — "Cozy Culture" — describes exactly what Montessori-minded parents have valued all along: low-tech, sensory, natural-material toys that help children slow down, focus, and connect.
 
 As digital life speeds up, the Cozy Culture trend reflects a growing fondness for low-tech and no-tech play experiences that help families counterbalance constant digital overstimulation, with consumers embracing toys that prioritize comfort and engage the senses through tactile materials, gentle interactivity, and natural design aesthetics.
  Separately, practical guidance on toy organization and decluttering has gained visibility in mainstream outlets this spring and summer, with recent reporting emphasising less-is-more frameworks and child-height, rotation-based shelf setups as the most accessible entry point for parents looking to shift away from cluttered, screen-heavy playrooms. The topic of analog toy curation remains stable and growing, with no sign of reversal.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- Start with an audit: pull every toy out and be honest about what each one actually does for your child.
+- Choose toys by the developmental zone your child is in rather than by the age label on the box.
+- Fewer toys lead to deeper play: a University of Toledo study found that an abundance of toys reduced the quality of toddlers' play.
+- Arrange the shelf for independence, so your child can choose and start playing without help.
+- Leave one deliberate gap for something that grows over time, such as a blank sketchbook or a Friend Book.
+
+
 
 See Related below for more on this topic.
 

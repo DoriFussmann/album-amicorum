@@ -137,6 +137,7 @@ This is exactly what a Friend Book does. When a child asks their friends to fill
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The policy landscape around children and smartphones has moved quickly in recent weeks. 
 On 15 June 2026, the UK government announced a ban on social media use by children under the age of 16, following a consultation earlier in the year on improving children's relationship with mobile phones and social media.
 
@@ -144,6 +145,17 @@ The government intends to follow the same model as Australia, though the UK ban 
  These legislative developments represent a significant shift toward the delay-and-restrict position at a government level, though researchers continue to call for caution: 
 LSE's Professor Sonia Livingstone has argued that caution and more evidence are needed before implementing a social media ban, not least giving children who would be affected a voice on the matter.
  The debate between principled delay and managed integration is, in other words, not resolved — it has simply moved from school gates to parliaments.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- The smartphone-free approach delays a smartphone until 14 and social media until 16, framed as pro-childhood rather than anti-technology.
+- The screen-balance approach, associated with Professor Sonia Livingstone, favors digital literacy over outright bans.
+- Both camps agree that children aged five to eleven have no developmental need for a personal smartphone or social media account.
+- The right choice depends on your child's age, temperament and social context, and on whether other families will join you.
+- Both approaches aim to protect the same thing: real friendships, unmediated play and a sense of self that doesn't depend on an algorithm.
+
+
 
 For further reading, see the Sources listed below.
 

@@ -137,6 +137,7 @@ Album Amicorum's friend books are built for exactly this purpose. They carry the
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The broader cultural moment in 2026 strongly favors the kind of analog, hands-on friendship making this list describes. 
 Michaels declared 2026 "the Year of Creative Living in the analog era," identifying a cultural shift in which consumers are using tactile, analog activities to reclaim their time and identity in an increasingly automated world.
  The data behind that declaration is substantial: 
@@ -148,5 +149,16 @@ Pinterest's 2026 Parenting Trend Report found that searches are climbing for vin
  — a signal that parents are actively seeking the tactile, social experiences of earlier childhood eras for their own children. 
 Interest in analog activities has really taken off in the past few months, with activities that draw people away from screens and toward crafting, reading, and puzzle-solving increasing in popularity.
  For friendship keepsakes specifically, this convergence of analog revival and intentional parenting creates an unusually receptive moment: parents looking for meaningful, screen-free activities are finding that the supply of genuinely well-crafted options is finally catching up to the demand.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- The best friendship activities pass two tests: they deepen connection in the moment, and they leave behind something worth keeping.
+- For ages 5–7, side-by-side making works best — such as embroidery-thread bracelets paired with a small handwritten gift tag.
+- Ages 8–10 can handle richer prompts and neater handwriting, producing records that will still be interesting to read years later.
+- From about age 10, children start to sense their own history, so activities that capture a moment on purpose make the most meaningful keepsakes.
+- Once children make friendship artifacts regularly, a single place to keep them — such as a Friend Book — stops them scattering and getting lost.
+
+
 
 For further reading, see the Sources listed below.

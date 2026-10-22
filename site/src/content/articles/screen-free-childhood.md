@@ -162,6 +162,7 @@ If you are building a screen-free childhood for your child, give those years som
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 Legislative momentum around children and screens is accelerating at both the school and national levels as of mid-2026. In late July 2026, the Los Angeles Unified School District — 
 the first major US school district to restrict screen time across all grades
  — began rolling out a new policy prohibiting its youngest students from using digital devices during the school day, 
@@ -173,6 +174,17 @@ parents across the United States and abroad continue joining a fast-growing scre
 , with grassroots groups coordinating through parent pacts and school-based WhatsApp communities. 
 Recent commentary describes a defining "digital detox parenting" trend taking shape in 2026 — one focused on restoring balance, protecting attention spans, and giving children the space to develop creativity, resilience, and real-world social skills.
  The overall landscape is one of rapid institutional and cultural convergence: what was a fringe parenting preference five years ago is now being codified into law on multiple continents.
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- A screen-free childhood means protecting childhood from early smartphone and social media immersion, not banning technology for good.
+- Jonathan Haidt's The Anxious Generation gave parents research and language for concerns many already had.
+- Governments in the UK, US and Australia began turning that concern into policy, with momentum building in 2025 and 2026.
+- The practical pillars are the experiences that defined childhood before smartphones: free play, independence, outdoor time and real friendship.
+- Individual family rules are not enough on their own; coordinating with other families removes the "only one without a phone" problem.
+
+
 
 For further reading, see the Sources listed below.
 

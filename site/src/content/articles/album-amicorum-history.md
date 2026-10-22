@@ -170,7 +170,19 @@ That is precisely the impulse behind the Album Amicorum Friend Book. Not a novel
 ---
 
 ## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
 The album amicorum tradition itself has seen no dramatic recent developments in the past 45 days, remaining a stable subject of historical scholarship and cultural interest. What has shifted meaningfully around it, however, is the broader cultural moment into which it fits. Data from early 2026 shows a striking surge in parental interest in analog, screen-free childhood experiences: recent reporting indicates that searches for "screen-free activities" have risen 200% year over year on major platforms, alongside sharp increases in searches for "family traditions" and related terms, pointing to a strong cultural appetite for exactly the kind of slow, handwritten, handmade connection the album amicorum tradition has always embodied. Parenting commentators have identified "analog childhood" as one of the defining movements of 2026, with families actively trading overscheduled, screen-saturated routines for crafts, unstructured play, and tangible keepsakes. This is the cultural water in which the album amicorum tradition swims today — not as nostalgia for its own sake, but as a live answer to a question many parents are urgently asking: how do we help our children hold on to what matters?
+<!-- WHERE-THINGS-STAND:END -->
+
+## Key Takeaways
+
+- The album amicorum likely began in the 1540s at the University of Wittenberg, where students collected autographs from reformers such as Martin Luther and Philip Melanchthon.
+- Early entries were brief — a name, a date and a Latin or Greek maxim — before albums grew into richly illustrated volumes.
+- The custom spread quickly through the German states and, by the end of the sixteenth century, to England and the Netherlands.
+- Albums worked like an early modern social network, recording who an owner knew across Europe; Philipp Hainhofer's Große Stammbuch gathered signatures from 1596 to 1647.
+- The tradition never died: it reached the middle class in the eighteenth and nineteenth centuries and lives on in poetry albums, autograph books and today's friendship books.
+
+
 
 See Related below for more on this topic.
 
