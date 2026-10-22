@@ -39,9 +39,23 @@ export const POST: APIRoute = async ({ request }) => {
         expand: ['line_items.data.price.product'],
       });
       const lineItems = fullSession.line_items?.data ?? [];
-      await attachStripeReceiptEmail({ session: fullSession });
-      await sendOrderOpsEmail({ session: fullSession, lineItems });
-      await sendCustomerConfirmationEmail({ session: fullSession });
+      // Stripe can deliver the same event more than once (retries, manual "Resend").
+      // The order's payment intent carries a marker once its emails have gone out.
+      const paymentIntentId =
+        typeof fullSession.payment_intent === 'string' ? fullSession.payment_intent : fullSession.payment_intent?.id;
+      const paymentIntent = paymentIntentId ? await stripe.paymentIntents.retrieve(paymentIntentId) : null;
+      if (paymentIntent?.metadata?.order_emails_sent) {
+        console.info('[stripe-webhook] Emails already sent for', fullSession.id, '- skipping duplicate delivery');
+      } else {
+        await attachStripeReceiptEmail({ session: fullSession });
+        await sendOrderOpsEmail({ session: fullSession, lineItems });
+        const customer = await sendCustomerConfirmationEmail({ session: fullSession });
+        if (paymentIntent && customer === 'sent') {
+          await stripe.paymentIntents.update(paymentIntent.id, {
+            metadata: { order_emails_sent: new Date().toISOString() },
+          });
+        }
+      }
     } catch (error) {
       // Return 200 so Stripe does not retry forever on email failures during early setup.
       console.error('[stripe-webhook] Order processing error:', error);
