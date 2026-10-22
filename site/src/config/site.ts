@@ -16,6 +16,8 @@ export const LOGO_PATH = "/logo.png";
 export const DEFAULT_OG_IMAGE = "/og-default.jpg";
 export const ARTICLES_BASE = "articles";          // URL segment; changing later requires redirects
 export const DEFAULT_AUTHOR = "dori-fussmann";
+/** Hosts that must never appear in externalLinks (used by the local CMS checks). */
+export const FORBIDDEN_EXTERNAL_HOSTS = ["example.com", "www.example.com"] as const;
 export const CONTACT_EMAIL = "hello@albumamicorum.com";
 /** seo-core's default list (CCBot allowed on purpose). Override single entries here if a site must differ. */
 export const AI_CRAWLERS: Record<string, CrawlerPolicy> = { ...DEFAULT_AI_CRAWLERS };

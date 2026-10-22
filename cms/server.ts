@@ -1,0 +1,781 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import express from 'express';
+import multer from 'multer';
+import matter from 'gray-matter';
+import { loadEnvLocal } from './lib/loadEnv.ts';
+import {
+  ARTICLES_DIR,
+  TEAM_DIR,
+  SERVICES_DIR,
+  STAGING_DIR,
+} from './lib/paths.ts';
+import { DEFAULT_AUTHOR_SLUG, IMAGE_MAX_BYTES } from './lib/schema.ts';
+import { validateFrontmatter, type SessionImages } from './lib/validateFrontmatter.ts';
+import { normalizeParsedArticle } from './lib/normalizeParsedArticle.ts';
+import {
+  writeArticle,
+  setArticleDraft,
+  deleteArticle,
+  readArticleFile,
+  patchArticleContent,
+} from './lib/writeArticle.ts';
+import { writeTeamMember, deleteTeamMember } from './lib/writeTeamMember.ts';
+import { generateLlmsTxt } from './lib/generateLlmsTxt.ts';
+import {
+  defaultImageAlt,
+  isImageName,
+  isMarkdownName,
+  matchBulkUploads,
+  type BulkMarkdownHint,
+} from './lib/matchBulkUploads.ts';
+import type { ArticleFrontmatter } from './lib/schema.ts';
+import {
+  buildArticlesHealthReport,
+  proposeExternalLinks,
+  proposeAllExternalLinks,
+  addExternalLinksSelected,
+  connectInternalLinkWrite,
+  mergeExternalLinks,
+  ensureSignpost,
+  EXTERNAL_SIGNPOST,
+  runArticleSpeedScan,
+  listSpeedScanTargets,
+} from './lib/articlesHealth.ts';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+loadEnvLocal(__dirname);
+const PORT = Number(process.env.CMS_PORT) || 4322;
+
+fs.mkdirSync(STAGING_DIR, { recursive: true });
+fs.mkdirSync(ARTICLES_DIR, { recursive: true });
+fs.mkdirSync(TEAM_DIR, { recursive: true });
+fs.mkdirSync(SERVICES_DIR, { recursive: true });
+
+const app = express();
+app.use(express.json({ limit: '2mb' }));
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static(path.join(__dirname, 'public')));
+
+const upload = multer({
+  dest: STAGING_DIR,
+  limits: { fileSize: IMAGE_MAX_BYTES },
+});
+
+function jsonError(res: express.Response, status: number, message: string, extra?: Record<string, unknown>) {
+  res.status(status).json({ ok: false, error: message, ...extra });
+}
+
+function cleanupStaged(files: Express.Multer.File[] | undefined) {
+  for (const file of files || []) {
+    try {
+      if (file?.path && fs.existsSync(file.path)) fs.unlinkSync(file.path);
+    } catch {
+      /* ignore */
+    }
+  }
+}
+
+function todayIsoDate(): string {
+  return new Date().toISOString().slice(0, 10);
+}
+
+function fileByName(files: Express.Multer.File[], name: string | undefined) {
+  if (!name) return undefined;
+  const wanted = name.replace(/\\/g, '/');
+  return files.find((f) => {
+    const original = String(f.originalname || '').replace(/\\/g, '/');
+    return original === wanted || original.endsWith(`/${wanted}`) || original === name;
+  });
+}
+
+type BulkPayload = {
+  author?: string;
+  overwrite?: boolean;
+  items?: Array<{
+    markdown: string;
+    image?: string;
+    image2?: string;
+    image3?: string;
+  }>;
+};
+
+function resolveBulkAuthor(requested: string | undefined, teamSlugs: string[]): string {
+  if (requested && teamSlugs.includes(requested)) return requested;
+  if (teamSlugs.includes(DEFAULT_AUTHOR_SLUG)) return DEFAULT_AUTHOR_SLUG;
+  return teamSlugs[0] || '';
+}
+
+function planBulkFromFiles(files: Express.Multer.File[], payload: BulkPayload) {
+  const team = readEntries(TEAM_DIR);
+  const teamSlugs = team.map((t) => t.slug);
+  const author = resolveBulkAuthor(payload.author, teamSlugs);
+  const markdownFiles = files.filter((f) => isMarkdownName(f.originalname));
+  const imageFiles = files.filter((f) => isImageName(f.originalname));
+
+  const parsedMarkdown = markdownFiles.map((file) => {
+    const raw = fs.readFileSync(file.path, 'utf8');
+    const parsed = matter(raw);
+    const normalized = normalizeParsedArticle({
+      data: (parsed.data ?? {}) as Record<string, unknown>,
+      body: parsed.content.trim(),
+    });
+    return { file, data: normalized.data, body: normalized.body };
+  });
+
+  const mdHints: BulkMarkdownHint[] = parsedMarkdown.map((item) => ({
+    originalName: item.file.originalname,
+    slug: String(item.data.slug || '').trim(),
+    title: String(item.data.title || '').trim(),
+  }));
+  const autoMatch = matchBulkUploads(
+    mdHints,
+    imageFiles.map((f) => ({ originalName: f.originalname }))
+  );
+
+  const requestedItems =
+    Array.isArray(payload.items) && payload.items.length
+      ? payload.items
+      : autoMatch.matches.map((m) => ({
+          markdown: m.markdown,
+          image: m.image,
+          image2: m.image2,
+          image3: m.image3,
+        }));
+
+  const items = requestedItems.map((item) => {
+    const match = autoMatch.matches.find((m) => m.markdown === item.markdown);
+    const mdFile = fileByName(markdownFiles, item.markdown);
+    const parsed = parsedMarkdown.find(
+      (p) => p.file === mdFile || p.file.originalname === item.markdown
+    );
+    if (!mdFile || !parsed) {
+      return {
+        markdown: item.markdown,
+        slug: '',
+        title: '',
+        image: item.image,
+        image2: item.image2,
+        image3: item.image3,
+        matchReason: match?.matchReason || '',
+        ready: false,
+        error: 'Markdown file not found in upload',
+        collision: false,
+        data: {} as Record<string, unknown>,
+        body: '',
+        sessionImages: {} as SessionImages,
+      };
+    }
+
+    const imageFile = fileByName(imageFiles, item.image || match?.image);
+    const image2File = fileByName(imageFiles, item.image2 || match?.image2);
+    const image3File = fileByName(imageFiles, item.image3 || match?.image3);
+
+    const data = { ...parsed.data } as Record<string, unknown>;
+    const slug =
+      String(data.slug || '').trim() ||
+      mdFile.originalname.replace(/\.(md|markdown)$/i, '');
+    data.slug = slug;
+    data.author = author;
+    if (!data.date) data.date = todayIsoDate();
+    if (!data.updatedDate) data.updatedDate = data.date;
+    const alt = typeof data.imageAlt === 'string' ? data.imageAlt.trim() : '';
+    if (!alt || alt.length < 10) {
+      data.imageAlt = defaultImageAlt(String(data.title || ''), slug);
+    }
+
+    const sessionImages: SessionImages = {};
+    if (imageFile) {
+      sessionImages.image = {
+        stagedPath: imageFile.path,
+        originalName: imageFile.originalname,
+      };
+    }
+    if (image2File) {
+      sessionImages.image2 = {
+        stagedPath: image2File.path,
+        originalName: image2File.originalname,
+      };
+    }
+    if (image3File) {
+      sessionImages.image3 = {
+        stagedPath: image3File.path,
+        originalName: image3File.originalname,
+      };
+    }
+
+    const collision = fs.existsSync(path.join(ARTICLES_DIR, `${slug}.md`));
+    const validation = author
+      ? validateFrontmatter({
+          data,
+          sessionImages,
+          teamSlugs,
+          knownSlugs: knownSlugs(),
+        })
+      : {
+          ok: false,
+          summary: 'No team members found — add an author in Team first.',
+        };
+
+    let error = '';
+    if (!author) error = 'No team members found — add an author in Team first.';
+    else if (!validation.ok) error = validation.summary;
+    else if (collision && !payload.overwrite) {
+      error = `Slug already exists (${slug}.md). Enable overwrite to replace.`;
+    }
+
+    return {
+      markdown: item.markdown,
+      slug,
+      title: String(data.title || slug),
+      image: imageFile?.originalname,
+      image2: image2File?.originalname,
+      image3: image3File?.originalname,
+      matchReason: match?.matchReason || '',
+      ready: !error,
+      error: error || undefined,
+      collision,
+      data: validation && 'data' in validation ? { ...data, ...validation.data } : data,
+      body: parsed.body,
+      sessionImages,
+    };
+  });
+
+  return {
+    author,
+    unmatchedImages: autoMatch.unmatchedImages,
+    items,
+  };
+}
+
+function listMarkdown(dir: string): string[] {
+  if (!fs.existsSync(dir)) return [];
+  return fs.readdirSync(dir).filter((f) => f.endsWith('.md'));
+}
+
+function readEntries(dir: string) {
+  return listMarkdown(dir).map((file) => {
+    const raw = fs.readFileSync(path.join(dir, file), 'utf8');
+    const parsed = matter(raw);
+    return {
+      file,
+      slug: String(parsed.data.slug ?? file.replace(/\.md$/, '')),
+      data: parsed.data,
+      body: parsed.content.trim(),
+    };
+  });
+}
+
+function knownSlugs() {
+  return {
+    articles: readEntries(ARTICLES_DIR).map((e) => e.slug),
+    team: readEntries(TEAM_DIR).map((e) => e.slug),
+    services: readEntries(SERVICES_DIR).map((e) => e.slug),
+  };
+}
+
+/** GET /articles — list all articles for edit UI + dashboard */
+app.get('/articles', (_req, res) => {
+  try {
+    const articles = readEntries(ARTICLES_DIR).map((e) => ({
+      slug: e.slug,
+      title: e.data.title ?? e.slug,
+      draft: Boolean(e.data.draft),
+      date: e.data.date ?? null,
+      updatedDate: e.data.updatedDate ?? e.data.date ?? null,
+      internalLinks: e.data.internalLinks ?? [],
+      externalLinks: e.data.externalLinks ?? [],
+      faqs: e.data.faqs ?? [],
+      data: e.data,
+      body: e.body,
+    }));
+    res.json({ ok: true, articles });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Failed to list articles');
+  }
+});
+
+app.get('/api/team', (_req, res) => {
+  try {
+    const team = readEntries(TEAM_DIR).map((e) => ({
+      slug: e.slug,
+      name: e.data.name,
+      role: e.data.role,
+      bio: e.data.bio,
+      credentials: e.data.credentials,
+      photo: e.data.photo,
+      sameAs: e.data.sameAs ?? [],
+      data: e.data,
+    }));
+    res.json({ ok: true, team });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Failed to list team');
+  }
+});
+
+app.get('/api/services', (_req, res) => {
+  try {
+    const services = readEntries(SERVICES_DIR).map((e) => ({
+      slug: e.slug,
+      title: e.data.title,
+      summary: e.data.summary,
+      order: e.data.order,
+    }));
+    res.json({ ok: true, services });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Failed to list services');
+  }
+});
+
+app.get('/api/known-routes', (_req, res) => {
+  try {
+    res.json({ ok: true, ...knownSlugs() });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Failed to load routes');
+  }
+});
+
+app.post('/parse', upload.single('markdown'), (req, res) => {
+  try {
+    if (!req.file) return jsonError(res, 400, 'No markdown file uploaded');
+    const raw = fs.readFileSync(req.file.path, 'utf8');
+    fs.unlinkSync(req.file.path);
+    const parsed = matter(raw);
+    const normalized = normalizeParsedArticle({
+      data: (parsed.data ?? {}) as Record<string, unknown>,
+      body: parsed.content.trim(),
+    });
+    res.json({
+      ok: true,
+      data: normalized.data,
+      body: normalized.body,
+    });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Failed to parse markdown');
+  }
+});
+
+app.post('/validate', (req, res) => {
+  try {
+    const { data, sessionImages = {} } = req.body as {
+      data: Partial<ArticleFrontmatter>;
+      sessionImages: SessionImages;
+    };
+    const team = readEntries(TEAM_DIR);
+    const result = validateFrontmatter({
+      data: data ?? {},
+      sessionImages: sessionImages ?? {},
+      teamSlugs: team.map((t) => t.slug),
+      knownSlugs: knownSlugs(),
+    });
+    const slug = String(data?.slug ?? '');
+    const collision =
+      slug && fs.existsSync(path.join(ARTICLES_DIR, `${slug}.md`))
+        ? { exists: true, file: `${slug}.md` }
+        : { exists: false };
+    res.json({ ok: true, validation: result, collision });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Validation failed');
+  }
+});
+
+app.post(
+  '/generate',
+  upload.fields([
+    { name: 'image', maxCount: 1 },
+    { name: 'image2', maxCount: 1 },
+    { name: 'image3', maxCount: 1 },
+  ]),
+  (req, res) => {
+    try {
+      const payloadRaw = req.body.payload;
+      if (!payloadRaw) return jsonError(res, 400, 'Missing payload');
+      const payload = JSON.parse(payloadRaw) as {
+        data: ArticleFrontmatter;
+        body: string;
+        overwrite?: boolean;
+        clearImage2?: boolean;
+        clearImage3?: boolean;
+      };
+
+      const files = req.files as Record<string, Express.Multer.File[]> | undefined;
+      const sessionImages: SessionImages = {};
+      if (files?.image?.[0]) {
+        sessionImages.image = {
+          stagedPath: files.image[0].path,
+          originalName: files.image[0].originalname,
+        };
+      }
+      if (files?.image2?.[0]) {
+        sessionImages.image2 = {
+          stagedPath: files.image2[0].path,
+          originalName: files.image2[0].originalname,
+        };
+      }
+      if (files?.image3?.[0]) {
+        sessionImages.image3 = {
+          stagedPath: files.image3[0].path,
+          originalName: files.image3[0].originalname,
+        };
+      }
+
+      // Cleared optional slots should not keep prior paths through validation
+      const dataForValidate = { ...payload.data };
+      if (payload.clearImage2 && !sessionImages.image2) {
+        delete dataForValidate.image2;
+        delete dataForValidate.image2Alt;
+      }
+      if (payload.clearImage3 && !sessionImages.image3) {
+        delete dataForValidate.image3;
+        delete dataForValidate.image3Alt;
+      }
+
+      const team = readEntries(TEAM_DIR);
+      const validation = validateFrontmatter({
+        data: dataForValidate,
+        sessionImages,
+        teamSlugs: team.map((t) => t.slug),
+        knownSlugs: knownSlugs(),
+      });
+
+      if (!validation.ok) {
+        return jsonError(res, 400, validation.summary, { validation });
+      }
+
+      const result = writeArticle({
+        data: { ...dataForValidate, ...validation.data } as ArticleFrontmatter,
+        body: payload.body ?? '',
+        sessionImages,
+        clearImage2: Boolean(payload.clearImage2),
+        clearImage3: Boolean(payload.clearImage3),
+        overwrite: Boolean(payload.overwrite),
+      });
+
+      res.json({ ok: true, ...result });
+    } catch (err) {
+      const message = err instanceof Error ? err.message : 'Generate failed';
+      const code = err && typeof err === 'object' && 'code' in err ? String((err as { code: string }).code) : undefined;
+      jsonError(res, code === 'SLUG_COLLISION' ? 409 : 500, message, { code });
+    }
+  }
+);
+
+app.post('/bulk-preview', upload.array('files', 80), (req, res) => {
+  const files = (req.files as Express.Multer.File[] | undefined) || [];
+  try {
+    if (!files.length) return jsonError(res, 400, 'No files uploaded');
+    const payloadRaw = req.body.payload;
+    const payload = (payloadRaw ? JSON.parse(payloadRaw) : {}) as BulkPayload;
+    const plan = planBulkFromFiles(files, payload);
+    res.json({
+      ok: true,
+      author: plan.author,
+      unmatchedImages: plan.unmatchedImages,
+      items: plan.items.map((item) => ({
+        markdown: item.markdown,
+        slug: item.slug,
+        title: item.title,
+        image: item.image,
+        image2: item.image2,
+        image3: item.image3,
+        matchReason: item.matchReason,
+        ready: item.ready,
+        error: item.error,
+        collision: item.collision,
+      })),
+    });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Bulk preview failed');
+  } finally {
+    cleanupStaged(files);
+  }
+});
+
+app.post('/bulk-generate', upload.array('files', 80), (req, res) => {
+  const files = (req.files as Express.Multer.File[] | undefined) || [];
+  try {
+    if (!files.length) return jsonError(res, 400, 'No files uploaded');
+    const payloadRaw = req.body.payload;
+    const payload = (payloadRaw ? JSON.parse(payloadRaw) : {}) as BulkPayload;
+    const plan = planBulkFromFiles(files, payload);
+
+    if (!plan.author) {
+      return jsonError(res, 400, 'No team members found — add an author in Team first.');
+    }
+
+    const results: Array<{
+      markdown: string;
+      slug?: string;
+      title?: string;
+      ok: boolean;
+      error?: string;
+    }> = [];
+    let written = 0;
+
+    for (const item of plan.items) {
+      if (!item.ready) {
+        results.push({
+          markdown: item.markdown,
+          slug: item.slug,
+          title: item.title,
+          ok: false,
+          error: item.error,
+        });
+        continue;
+      }
+
+      try {
+        const result = writeArticle({
+          data: item.data as unknown as ArticleFrontmatter,
+          body: item.body,
+          sessionImages: item.sessionImages,
+          overwrite: Boolean(payload.overwrite),
+          skipLlmsTxt: true,
+        });
+        written += 1;
+        results.push({
+          markdown: item.markdown,
+          slug: result.slug,
+          title: item.title,
+          ok: true,
+        });
+      } catch (err) {
+        results.push({
+          markdown: item.markdown,
+          slug: item.slug,
+          title: item.title,
+          ok: false,
+          error: err instanceof Error ? err.message : 'Write failed',
+        });
+      }
+    }
+
+    if (written > 0) generateLlmsTxt();
+
+    res.json({
+      ok: written > 0,
+      author: plan.author,
+      written,
+      total: results.length,
+      unmatchedImages: plan.unmatchedImages,
+      results,
+    });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Bulk generate failed');
+  } finally {
+    cleanupStaged(files);
+  }
+});
+
+app.post('/articles/:slug/unpublish', (req, res) => {
+  try {
+    setArticleDraft(req.params.slug, true);
+    res.json({ ok: true });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Unpublish failed');
+  }
+});
+
+app.post('/articles/:slug/publish', (req, res) => {
+  try {
+    setArticleDraft(req.params.slug, false);
+    res.json({ ok: true });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Publish failed');
+  }
+});
+
+app.delete('/articles/:slug', (req, res) => {
+  try {
+    deleteArticle(req.params.slug);
+    res.json({ ok: true });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Delete failed');
+  }
+});
+
+app.post('/api/team', upload.single('photo'), (req, res) => {
+  try {
+    const body = req.body;
+    const sameAs = body.sameAs
+      ? (typeof body.sameAs === 'string' ? JSON.parse(body.sameAs) : body.sameAs)
+      : [];
+    const result = writeTeamMember({
+      name: body.name,
+      slug: body.slug,
+      role: body.role,
+      bio: body.bio,
+      credentials: body.credentials,
+      sameAs,
+      photoStagedPath: req.file?.path,
+      photoOriginalName: req.file?.originalname,
+      existingPhoto: body.existingPhoto,
+      overwrite: body.overwrite === 'true' || body.overwrite === true,
+    });
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Failed to save team member';
+    const code = err && typeof err === 'object' && 'code' in err ? String((err as { code: string }).code) : undefined;
+    jsonError(res, code === 'SLUG_COLLISION' ? 409 : 400, message, { code });
+  }
+});
+
+app.delete('/api/team/:slug', (req, res) => {
+  try {
+    deleteTeamMember(req.params.slug);
+    res.json({ ok: true });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Delete failed');
+  }
+});
+
+app.post('/api/rebuild-llms', (_req, res) => {
+  try {
+    const content = generateLlmsTxt();
+    res.json({ ok: true, content });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Rebuild failed');
+  }
+});
+
+app.get('/api/articles-health', (_req, res) => {
+  try {
+    res.json({ ok: true, ...buildArticlesHealthReport() });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Health scan failed');
+  }
+});
+
+app.get('/api/articles-health/speed-targets', (_req, res) => {
+  try {
+    res.json({ ok: true, targets: listSpeedScanTargets() });
+  } catch (err) {
+    jsonError(res, 500, err instanceof Error ? err.message : 'Speed targets failed');
+  }
+});
+
+app.post('/api/articles/:slug/speed-scan', async (req, res) => {
+  try {
+    const result = await runArticleSpeedScan(req.params.slug);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Speed scan failed';
+    const status =
+      message.includes('not found') ? 404 : message.includes('Not configured') ? 503 : 400;
+    jsonError(res, status, message);
+  }
+});
+
+app.get('/api/articles/:slug/propose-external', async (req, res) => {
+  try {
+    const result = await proposeExternalLinks(req.params.slug);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 404, err instanceof Error ? err.message : 'Propose failed');
+  }
+});
+
+app.post('/api/articles-health/propose-external', async (req, res) => {
+  try {
+    const slug = req.body?.slug ? String(req.body.slug).trim() : undefined;
+    const result = await proposeAllExternalLinks(slug ? { slug } : undefined);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Propose all failed');
+  }
+});
+
+app.post('/api/articles-health/add-external-selected', (req, res) => {
+  try {
+    const items = Array.isArray(req.body?.items) ? req.body.items : null;
+    if (!items) return jsonError(res, 400, 'items array is required');
+    const normalized = items.map(
+      (item: { slug?: string; label?: string; url?: string }) => ({
+        slug: String(item?.slug || '').trim(),
+        label: String(item?.label || '').trim(),
+        url: String(item?.url || '').trim(),
+      })
+    );
+    const result = addExternalLinksSelected(normalized);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'Add selected failed');
+  }
+});
+
+app.post('/api/articles/:slug/links/external', (req, res) => {
+  try {
+    const label = String(req.body?.label || '').trim();
+    const url = String(req.body?.url || '').trim();
+    if (!label || !url) return jsonError(res, 400, 'label and url are required');
+    const existing = readArticleFile(req.params.slug);
+    if (!existing) return jsonError(res, 404, 'Article not found');
+    const existingLinks = Array.isArray(existing.frontmatter.externalLinks)
+      ? [...(existing.frontmatter.externalLinks as Array<{ label: string; url: string }>)]
+      : [];
+    const merged = mergeExternalLinks(existingLinks, [{ label, url }]);
+    if (!merged.written.length) {
+      return jsonError(res, 400, merged.skipped[0]?.reason || 'Nothing written');
+    }
+    const body = ensureSignpost(existing.body, EXTERNAL_SIGNPOST);
+    const result = patchArticleContent(req.params.slug, {
+      frontmatterPatch: { externalLinks: merged.links },
+      body,
+      bumpUpdatedDate: true,
+    });
+    res.json({
+      ok: true,
+      ...result,
+      externalLinks: merged.links,
+      trimmed: merged.trimmed,
+    });
+  } catch (err) {
+    jsonError(res, 400, err instanceof Error ? err.message : 'External link write failed');
+  }
+});
+
+app.post('/api/articles/:slug/links/internal', (req, res) => {
+  try {
+    const targetSlug = String(req.body?.targetSlug || '').trim();
+    if (!targetSlug) return jsonError(res, 400, 'targetSlug is required');
+    const label = req.body?.label ? String(req.body.label).trim() : undefined;
+    const result = connectInternalLinkWrite(req.params.slug, targetSlug, label);
+    res.json({ ok: true, ...result });
+  } catch (err) {
+    const message = err instanceof Error ? err.message : 'Internal link write failed';
+    const status = message.includes('not found')
+      ? 404
+      : message.toLowerCase().includes('already present')
+        ? 409
+        : 400;
+    jsonError(res, status, message);
+  }
+});
+
+// Multer / generic error handler — always JSON
+app.use(
+  (
+    err: unknown,
+    _req: express.Request,
+    res: express.Response,
+    _next: express.NextFunction
+  ) => {
+    if (err instanceof multer.MulterError) {
+      if (err.code === 'LIMIT_FILE_SIZE') {
+        return jsonError(res, 400, `File too large. Maximum size is ${IMAGE_MAX_BYTES / (1024 * 1024)}MB per file.`);
+      }
+      return jsonError(res, 400, err.message);
+    }
+    const message = err instanceof Error ? err.message : 'Server error';
+    return jsonError(res, 500, message);
+  }
+);
+
+app.use((_req, res) => {
+  jsonError(res, 404, 'Not found');
+});
+
+app.listen(PORT, () => {
+  console.log(`CMS listening at http://localhost:${PORT}`);
+});

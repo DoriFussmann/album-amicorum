@@ -8,3 +8,5 @@ site/.vercel
 .vercel
 .env.local
 site/.env.local
+cms/staging
+cms/.env.local

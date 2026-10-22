@@ -2,7 +2,10 @@
   "name": "blueprint-seo-template",
   "private": true,
   "type": "module",
-  "workspaces": ["site"],
+  "workspaces": [
+    "site",
+    "cms"
+  ],
   "engines": {
     "node": ">=24"
   },
@@ -11,6 +14,7 @@
     "build": "npm run build --workspace=site && npm run audit",
     "audit": "npm run audit --workspace=site",
     "check": "npm run check --workspace=site",
-    "theme:test": "npm run theme:test --workspace=site"
+    "theme:test": "npm run theme:test --workspace=site",
+    "cms": "npm run start -w cms"
   }
 }

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CMS — Articles · Album Amicorum</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Nunito:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/cms.css" />
+  </head>
+  <body>
+    <header class="cms-header">
+      <div class="site-shell cms-header__inner">
+        <a class="brand" href="/">
+          <span class="brand__name">Album Amicorum</span>
+          <span class="brand__meta">Local CMS</span>
+        </a>
+      </div>
+    </header>
+
+    <div class="cms-shell">
+      <aside class="cms-sidebar" aria-label="CMS navigation">
+        <ul class="sidebar-nav">
+          <li><a href="/" aria-current="page">Articles</a></li>
+          <li><a href="/add-article.html">Add Article</a></li>
+          <li><a href="/articles-health.html">Articles Health</a></li>
+          <li><a href="/team.html">Team</a></li>
+          <li><a href="/dashboard.html">Dashboard</a></li>
+        </ul>
+      </aside>
+
+      <div class="cms-main">
+        <main class="site-shell">
+          <div class="page-intro">
+            <h1>Articles</h1>
+            <p>Browse existing articles. Edit opens the Add Article form. Click the status ribbon to toggle Published / Draft.</p>
+          </div>
+
+          <div class="stack">
+            <section class="panel" aria-labelledby="existing-heading">
+              <h2 id="existing-heading">Existing articles</h2>
+              <div class="filter-bar">
+                <label class="filter-bar__field">
+                  <span>Search by title</span>
+                  <input type="search" id="filter-title" placeholder="Type to filter…" />
+                </label>
+                <label class="filter-bar__field">
+                  <span>Pillar keyword</span>
+                  <select id="filter-pillar">
+                    <option value="">All pillars</option>
+                  </select>
+                </label>
+              </div>
+              <div class="table-wrap">
+                <table class="article-table">
+                  <thead>
+                    <tr>
+                      <th data-col="title">Title</th>
+                      <th data-col="draft">Draft status</th>
+                      <th data-col="date">Date</th>
+                      <th data-col="author">Author</th>
+                      <th data-col="internal">Internal links</th>
+                      <th data-col="external">External links</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="article-list">
+                    <tr>
+                      <td colspan="7">Loading…</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <div id="toast-host" class="toast-host" aria-live="polite" aria-relevant="additions"></div>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
