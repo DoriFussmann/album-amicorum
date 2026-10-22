@@ -19,12 +19,13 @@ interface Props {
 const { section, alt = false, primary = true, crumbs } = Astro.props;
 const Tag = primary ? "h1" : "h2";
 ---
-
-<section class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-4">
+<section class:list={["section", "page-header", alt && "section-alt"]}>
+  <div class="container-page flex flex-col gap-5">
     {crumbs && crumbs.length > 0 && <Breadcrumbs crumbs={crumbs} />}
-    {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
-    <Tag class="h1 reveal" data-index="1">{section.h1}</Tag>
-    <p class="lead reveal" data-index="2">{section.intro}</p>
+    <div class="section-head">
+      {section.eyebrow && <p class="eyebrow reveal">{section.eyebrow}</p>}
+      <Tag class="h1 reveal">{section.h1}</Tag>
+      <p class="lead reveal">{section.intro}</p>
+    </div>
   </div>
 </section>

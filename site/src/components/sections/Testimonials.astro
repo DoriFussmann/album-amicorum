@@ -10,18 +10,18 @@ interface Props {
 }
 const { section, alt = false } = Astro.props;
 ---
-
 <section id={section.id} class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-8">
-    <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
-    <ul class="grid gap-6 md:grid-cols-2">
-      {section.items.map((item, index) => (
-        <li class="card flex flex-col gap-4 reveal" data-index={index + 1}>
-          <blockquote>{item.quote}</blockquote>
-          <p>
-            <span>{item.name}</span>
-            <span class="muted"> · {item.role}</span>
-          </p>
+  <div class="container-page stack-lg">
+    <div class="section-head">
+      <h2 class="h2 reveal">{section.heading}</h2>
+    </div>
+    <ul class="quote-grid">
+      {section.items.map((item) => (
+        <li class="card reveal">
+          <figure class="quote-card">
+            <blockquote><p>“{item.quote}”</p></blockquote>
+            <figcaption>{item.name} · {item.role}</figcaption>
+          </figure>
         </li>
       ))}
     </ul>

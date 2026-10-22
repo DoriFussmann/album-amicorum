@@ -1,5 +1,6 @@
 ---
 import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
 
 interface Section {
   heading: string;
@@ -12,20 +13,22 @@ interface Props {
 const { section, alt = false } = Astro.props;
 const team = await getCollection("team");
 ---
-
 <section class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-8">
-    <div class="flex flex-col gap-3">
-      <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
-      {section.intro && <p class="lead reveal" data-index="1">{section.intro}</p>}
+  <div class="container-page stack-lg">
+    <div class="section-head">
+      <h2 class="h2 reveal">{section.heading}</h2>
+      {section.intro && <p class="lead reveal">{section.intro}</p>}
     </div>
-    <ul class="grid gap-6 sm:grid-cols-2">
-      {team.map((member, index) => (
-        <li class="card flex flex-col gap-2 reveal" data-index={index}>
-          <h3 class="h3">
-            <a href={`/team/${member.id}/`}>{member.data.name}</a>
-          </h3>
-          <p class="muted">{member.data.role}</p>
+    <ul class="team-grid">
+      {team.map((member) => (
+        <li class="card team-card reveal">
+          <Image class="avatar" src={member.data.photo} alt={`${member.data.name} headshot`} width={144} height={144} />
+          <div class="flex flex-col gap-1">
+            <h3 class="h3">
+              <a href={`/team/${member.id}/`}>{member.data.name}</a>
+            </h3>
+            <p class="muted m-0">{member.data.role}</p>
+          </div>
         </li>
       ))}
     </ul>

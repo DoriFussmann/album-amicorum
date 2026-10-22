@@ -10,14 +10,14 @@ interface Props {
   /** Heading level for the edition name: h3 inside a section, h2 on a listing page. */
   headingLevel?: 2 | 3;
 }
-const { book, index = 0, headingLevel = 3 } = Astro.props;
+const { book, headingLevel = 3 } = Astro.props;
 const { title, slug, tagline, price, cover } = book.data;
 const href = `/friend-book/${slug}/`;
 const cartItem = JSON.stringify({ slug, title, price, cover: await bookImageSrc(cover) });
 const Heading = headingLevel === 2 ? "h2" : "h3";
 ---
 
-<li class="book-card reveal" data-index={index % 4} data-cart-scope>
+<li class="card book-card hoverable reveal" data-cart-scope>
   <a class="book-card-link" href={href}>
     <div class="media-frame book-cover">
       <Image

@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { ARTICLES_BASE } from "../../config/site";
-import { formatDate } from "seo-core";
+import ArticleCardGrid from "../ArticleCardGrid.astro";
 
 interface Section {
   heading: string;
@@ -16,26 +16,15 @@ const articles = (await getCollection("articles", ({ data }) => data.draft !== t
   .sort((a, b) => (b.data.updatedDate || b.data.date).localeCompare(a.data.updatedDate || a.data.date))
   .slice(0, 3);
 ---
-
 <section class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-8">
-    <div class="flex flex-col gap-3">
-      <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
-      {section.intro && <p class="lead reveal" data-index="1">{section.intro}</p>}
+  <div class="container-page stack-lg">
+    <div class="section-head-row">
+      <div class="section-head">
+        <h2 class="h2 reveal">{section.heading}</h2>
+        {section.intro && <p class="lead reveal">{section.intro}</p>}
+      </div>
+      <a class="btn btn-secondary reveal" href={`/${ARTICLES_BASE}/`}>All articles</a>
     </div>
-    <ul class="grid gap-6 md:grid-cols-3">
-      {articles.map((article, index) => (
-        <li class="card flex flex-col gap-2 reveal" data-index={index}>
-          <p class="muted">{formatDate(article.data.updatedDate || article.data.date)}</p>
-          <h3 class="h3">
-            <a href={`/${ARTICLES_BASE}/${article.id}/`}>{article.data.title}</a>
-          </h3>
-          <p>{article.data.description}</p>
-        </li>
-      ))}
-    </ul>
-    <p>
-      <a class="btn btn-secondary" href={`/${ARTICLES_BASE}/`}>All articles</a>
-    </p>
+    <ArticleCardGrid articles={articles} headingLevel={3} summary />
   </div>
 </section>

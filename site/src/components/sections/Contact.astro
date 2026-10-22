@@ -11,14 +11,15 @@ interface Props {
 }
 const { section, alt = false } = Astro.props;
 ---
-
 <section class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-4 measure">
-    <h2 class="h2 reveal" data-index="0">{section.heading}</h2>
-    <p class="reveal" data-index="1">{section.body}</p>
-    <p class="reveal" data-index="2">
-      <a href={`mailto:${section.email}`}>{section.email}</a>
-    </p>
-    {section.response_note && <p class="muted reveal" data-index="3">{section.response_note}</p>}
+  <div class="container-page">
+    <div class="card contact-card measure flex flex-col gap-4 reveal">
+      <h2 class="h2">{section.heading}</h2>
+      <p class="m-0">{section.body}</p>
+      <p class="m-0 contact-email">
+        <a href={`mailto:${section.email}`}>{section.email}</a>
+      </p>
+      {section.response_note && <p class="muted m-0">{section.response_note}</p>}
+    </div>
   </div>
 </section>

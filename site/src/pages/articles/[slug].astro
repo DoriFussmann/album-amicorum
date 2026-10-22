@@ -7,6 +7,14 @@ import ArticleListing from "seo-core/components/ArticleListing.astro";
 import { ARTICLES_BASE, LOGO_PATH, SAME_AS, SITE_IDENTITY, SITE_NAME, SITE_URL } from "../../config/site";
 import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
 import ArticleCardGrid from "../../components/ArticleCardGrid.astro";
+import { getImage, Image } from "astro:assets";
+import { render } from "astro:content";
+import TableOfContents from "seo-core/components/TableOfContents.astro";
+import FaqBlock from "seo-core/components/FaqBlock.astro";
+import RelatedLinks from "seo-core/components/RelatedLinks.astro";
+import Sources from "seo-core/components/Sources.astro";
+import AuthorBio from "seo-core/components/AuthorBio.astro";
+import { formatDate } from "seo-core";
 import { ARTICLE_PILLARS, type ArticlePillar } from "../../lib/articles/pillars";
 
 export async function getStaticPaths() {
@@ -80,6 +88,32 @@ const listing =
       }
     : null;
 
+// Article page extras: rail (table of contents + tags), author photo, keep reading.
+const view =
+  props.kind === "article" && author
+    ? await (async () => {
+        const { data } = props.article;
+        const { headings } = await render(props.article);
+        const photo = await getImage({ src: author!.data.photo, width: 160, height: 160, format: "webp" });
+        const published = (await getCollection("articles", ({ data: d }) => d.draft !== true)).filter(
+          (a) => a.id !== props.article.id,
+        );
+        const byDate = (a: CollectionEntry<"articles">, b: CollectionEntry<"articles">) =>
+          (b.data.updatedDate || b.data.date).localeCompare(a.data.updatedDate || a.data.date);
+        const samePillar = published.filter((a) => a.data.pillarKeyword && a.data.pillarKeyword === data.pillarKeyword).sort(byDate);
+        const rest = published.filter((a) => !samePillar.includes(a)).sort(byDate);
+        const pillar = ARTICLE_PILLARS.find((p) => p.name === data.pillarKeyword);
+        return {
+          headings,
+          photo: photo.src,
+          profileHref: `/team/${author!.id}/`,
+          keepReading: [...samePillar, ...rest].slice(0, 3),
+          topicHref: pillar ? `/${ARTICLES_BASE}/${pillar.slug}/` : undefined,
+          showUpdated: Boolean(data.updatedDate) && data.updatedDate! > data.date,
+        };
+      })()
+    : null;
+
 const hub =
   props.kind === "pillar"
     ? {
@@ -93,7 +127,7 @@ const hub =
     : null;
 ---
 
-{props.kind === "article" && author && (
+{props.kind === "article" && author && view && (
   <ArticleLayout
     article={props.article}
     author={author}
@@ -103,7 +137,75 @@ const hub =
     articlesBase={ARTICLES_BASE}
     logo={LOGO_PATH}
     sameAs={SAME_AS}
-  />
+    articleClass="article-column article-page container-page container-wide"
+    defaultStyles={false}
+  >
+    <header slot="header" class="article-head">
+      <a class="back-link" href={`/${ARTICLES_BASE}/`}>
+        <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6" /></svg>
+        All articles
+      </a>
+      {props.article.data.pillarKeyword && (
+        view.topicHref ? (
+          <a class="chip topic-pill" href={view.topicHref}>{props.article.data.pillarKeyword}</a>
+        ) : (
+          <span class="chip topic-pill">{props.article.data.pillarKeyword}</span>
+        )
+      )}
+      <h1 class="h1 article-title">{props.article.data.h1}</h1>
+      <p class="standfirst">{props.article.data.description}</p>
+      <div class="author-row">
+        <img class="avatar avatar-sm" src={view.photo} alt="" width="40" height="40" />
+        <span>By <a href={view.profileHref}>{author.data.name}</a></span>
+        <span aria-hidden="true">·</span>
+        <time datetime={props.article.data.date}>{formatDate(props.article.data.date)}</time>
+        {view.showUpdated && (
+          <>
+            <span aria-hidden="true">·</span>
+            <span>Updated <time datetime={props.article.data.updatedDate}>{formatDate(props.article.data.updatedDate!)}</time></span>
+          </>
+        )}
+      </div>
+      <div class="media-frame article-cover">
+        <Image
+          src={props.article.data.image}
+          alt={props.article.data.imageAlt}
+          widths={[640, 1024, 1440, 1920]}
+          sizes="(min-width: 1440px) 1440px, 100vw"
+          loading="eager"
+          fetchpriority="high"
+        />
+      </div>
+    </header>
+    <aside slot="toc" class="article-rail" aria-label="In this article">
+      <TableOfContents headings={view.headings} />
+      {props.article.data.tags.length > 0 && (
+        <div class="rail-tags">
+          <p class="eyebrow">Tags</p>
+          <ul>
+            {props.article.data.tags.map((tag) => <li class="tag">{tag}</li>)}
+          </ul>
+        </div>
+      )}
+    </aside>
+    <Fragment slot="footer">
+      <FaqBlock faqs={props.article.data.faqs} />
+      <RelatedLinks links={props.article.data.internalLinks} articlesBase={ARTICLES_BASE} />
+      <Sources sources={props.article.data.externalLinks} />
+      <AuthorBio
+        name={author.data.name}
+        role={author.data.role}
+        bio={author.data.bio}
+        href={view.profileHref}
+        photoSrc={view.photo}
+        photoAlt={`${author.data.name} headshot`}
+      />
+      <section class="keep-reading" aria-labelledby="keep-reading-heading">
+        <h2 id="keep-reading-heading" class="h2">Keep reading</h2>
+        <ArticleCardGrid articles={view.keepReading} headingLevel={3} />
+      </section>
+    </Fragment>
+  </ArticleLayout>
 )}
 
 {props.kind === "page" && listing && (
@@ -116,7 +218,7 @@ const hub =
       "@graph": [orgNode(SITE_IDENTITY), websiteNode(SITE_IDENTITY), breadcrumbNode(listing.crumbs, SITE_URL)],
     }}
   >
-    <div class="container-page section flex flex-col gap-6">
+    <div class="container-page container-wide section stack-lg">
       <Breadcrumbs crumbs={listing.crumbs} />
       <h1 class="h1">Articles</h1>
       <ArticleListing articles={listing.slice} pillars={listing.pillars} page={listing.page} pages={listing.pages} articlesBase={ARTICLES_BASE} />
@@ -150,9 +252,9 @@ const hub =
       ],
     }}
   >
-    <div class="container-page section flex flex-col gap-8">
+    <div class="container-page container-wide section stack-lg">
       <Breadcrumbs crumbs={hub.crumbs} />
-      <div class="flex flex-col gap-3 measure">
+      <div class="section-head">
         <p class="eyebrow">Topic</p>
         <h1 class="h1">{props.pillar.name}</h1>
         <p class="lead">{props.pillar.description}</p>

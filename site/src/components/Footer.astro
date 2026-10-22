@@ -1,45 +1,43 @@
 ---
-import { LEGAL_LINKS, NAV, SITE_NAME, SOCIAL_LINKS } from "../config/site";
+import { LEGAL_LINKS, NAV, SOCIAL_LINKS, SITE_NAME } from "../config/site";
 import Wordmark from "./Wordmark.astro";
 
-const extras = [
-  { label: "Cart", href: "/cart/" },
-  { label: "Team", href: "/team/" },
-  { label: "Contact", href: "/contact/" },
+const columns = [
+  { heading: "Shop", links: [{ label: "The Books", href: "/friend-book/" }, { label: "Cart", href: "/cart/" }, { label: "Shipping & Returns", href: "/shipping-returns/" }] },
+  { heading: "About", links: [...NAV.filter((item) => item.href !== "/friend-book/"), { label: "Team", href: "/team/" }, { label: "Contact", href: "/contact/" }] },
+  { heading: "Follow", links: SOCIAL_LINKS.map((item) => ({ label: item.label, href: item.href, external: true })) },
 ];
-const footerLinks = [...NAV];
-for (const item of extras) {
-  if (!footerLinks.some((link) => link.href === item.href)) footerLinks.push(item);
-}
 ---
 
 <footer class="site-footer">
-  <div class="container-page footer-grid">
-    <Wordmark />
-    <p>Beautifully illustrated Friend Books that become one-of-a-kind keepsakes of childhood.</p>
-    <nav aria-label="Footer">
-      <ul class="flex flex-wrap">
-        {footerLinks.map((item) => (
-          <li><a class="nav-link" href={item.href}>{item.label}</a></li>
-        ))}
-      </ul>
-    </nav>
-    <nav aria-label="Follow us">
-      <ul class="flex flex-wrap">
-        {SOCIAL_LINKS.map((item) => (
-          <li><a class="nav-link" href={item.href} rel="noopener me" target="_blank">{item.label}</a></li>
-        ))}
-      </ul>
-    </nav>
+  <div class="container-page">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <Wordmark />
+        <p>Beautifully illustrated Friend Books that become one-of-a-kind keepsakes of childhood.</p>
+      </div>
+      {columns.map((column) => (
+        <nav class="footer-col" aria-label={column.heading}>
+          <h2>{column.heading}</h2>
+          <ul>
+            {column.links.map((item) => (
+              <li>
+                <a class="nav-link" href={item.href} {...("external" in item ? { rel: "noopener me", target: "_blank" } : {})}>{item.label}</a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      ))}
+    </div>
     <div class="legal-row">
+      <p>© {new Date().getUTCFullYear()} {SITE_NAME}. Made to be treasured.</p>
       <nav aria-label="Legal">
-        <ul class="flex flex-wrap">
+        <ul>
           {LEGAL_LINKS.map((item) => (
             <li><a class="nav-link" href={item.href}>{item.label}</a></li>
           ))}
         </ul>
       </nav>
-      <p>© {new Date().getUTCFullYear()} {SITE_NAME}. Made to be treasured.</p>
     </div>
   </div>
 </footer>

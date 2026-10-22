@@ -22,24 +22,43 @@ interface Props {
   section: Section;
 }
 const { section } = Astro.props;
+
+// Two-line headline: line two holds the last two words, with the final word typed in.
+const words = section.h1.trim().split(/\s+/);
+const lastWord = words.length > 1 ? words[words.length - 1] : "";
+const lineTwoLead = words.length > 2 ? words[words.length - 2] : "";
+const lineOne = words.slice(0, Math.max(0, words.length - (lineTwoLead ? 2 : 1))).join(" ");
+const icon = {
+  prev: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>',
+  next: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>',
+};
 ---
 
 <section class="hero">
   <div class="texture-grid" aria-hidden="true"></div>
   <div class="texture-dots" aria-hidden="true"></div>
-  <div class="container-page grid items-center gap-8 lg:grid-cols-2">
-    <div class="flex flex-col gap-4">
-      <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>
-      <h1 class="h1 reveal" data-index="1">{section.h1}</h1>
-      <p class="lead reveal" data-index="2">{section.sub}</p>
-      <div class="flex flex-wrap gap-3 reveal" data-index="3">
+  <div class="container-page hero-grid">
+    <div class="hero-copy">
+      <p class="eyebrow eyebrow-pill rise">{section.eyebrow}</p>
+      <h1 class="h1 hero-title rise">
+        {lastWord ? (
+          <>
+            {lineOne}{lineOne && <br />}
+            <span class="line-2">{lineTwoLead && <>{lineTwoLead}{" "}</>}<span class="tw-slot"><span class="tw-ghost" aria-hidden="true">{lastWord}</span><span class="tw-word" data-typewriter>{lastWord}</span></span></span>
+          </>
+        ) : (
+          section.h1
+        )}
+      </h1>
+      <p class="lead rise">{section.sub}</p>
+      <div class="hero-actions rise">
         <a class="btn btn-primary" href={section.cta_primary.href}>{section.cta_primary.label}</a>
         {section.cta_secondary && (
           <a class="btn btn-secondary" href={section.cta_secondary.href}>{section.cta_secondary.label}</a>
         )}
       </div>
     </div>
-    <div class="carousel reveal" data-index="1" aria-roledescription="carousel" aria-label="Featured images" tabindex="0">
+    <div class="carousel rise" aria-roledescription="carousel" aria-label="Featured images" tabindex="0">
       <div class="carousel-viewport">
         {section.slides.map((slide, index) => (
           <div
@@ -53,21 +72,23 @@ const { section } = Astro.props;
           </div>
         ))}
       </div>
-      <div class="carousel-controls">
-        <button type="button" class="carousel-prev" aria-label="Previous slide">Prev</button>
-        <div class="carousel-dots">
-          {section.slides.map((_, index) => (
-            <button
-              type="button"
-              class="carousel-dot"
-              aria-label={`Show slide ${index + 1}`}
-              aria-current={index === 0 ? "true" : "false"}
-            />
-          ))}
+      {section.slides.length > 1 && (
+        <div class="carousel-controls">
+          <button type="button" class="carousel-prev" aria-label="Previous slide" set:html={icon.prev} />
+          <button type="button" class="carousel-next" aria-label="Next slide" set:html={icon.next} />
+          <div class="carousel-dots">
+            {section.slides.map((_, index) => (
+              <button
+                type="button"
+                class="carousel-dot"
+                aria-label={`Show slide ${index + 1}`}
+                aria-current={index === 0 ? "true" : "false"}
+              />
+            ))}
+          </div>
+          <button type="button" class="carousel-toggle" aria-pressed="true">Pause</button>
         </div>
-        <button type="button" class="carousel-next" aria-label="Next slide">Next</button>
-        <button type="button" class="carousel-toggle" aria-pressed="true">Pause</button>
-      </div>
+      )}
     </div>
   </div>
 </section>
@@ -84,7 +105,7 @@ const { section } = Astro.props;
       var prev = root.querySelector(".carousel-prev");
       var next = root.querySelector(".carousel-next");
       var toggle = root.querySelector(".carousel-toggle");
-      if (!slides.length || !prev || !next || !toggle) return;
+      if (slides.length < 2 || !prev || !next || !toggle) return;
       var index = 0;
       var timer = null;
       var userPaused = reduced;
@@ -120,7 +141,9 @@ const { section } = Astro.props;
       }
       function setToggle() {
         var paused = userPaused || reduced;
-        toggle.textContent = paused ? "Play" : "Pause";
+        toggle.innerHTML = paused
+          ? '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13l10-6.5z"/></svg>'
+          : '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><rect x="7" y="5.5" width="3.5" height="13" rx="1"/><rect x="13.5" y="5.5" width="3.5" height="13" rx="1"/></svg>';
         toggle.setAttribute("aria-label", paused ? "Play carousel" : "Pause carousel");
         toggle.setAttribute("aria-pressed", paused ? "false" : "true");
       }
@@ -174,5 +197,29 @@ const { section } = Astro.props;
       render();
       start();
     });
+  })();
+</script>
+
+<script is:inline>
+  (function () {
+    // Typewriter: type the real final word in once, letter by letter; the text stays in the DOM throughout.
+    var el = document.querySelector("[data-typewriter]");
+    if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var word = el.textContent || "";
+    el.textContent = "";
+    var letters = word.split("").map(function (ch) {
+      var span = document.createElement("span");
+      span.textContent = ch;
+      span.className = "tw-letter";
+      el.appendChild(span);
+      return span;
+    });
+    var i = 0;
+    setTimeout(function step() {
+      if (i >= letters.length) return;
+      letters[i].classList.add("is-typed");
+      i += 1;
+      setTimeout(step, 95);
+    }, 700);
   })();
 </script>

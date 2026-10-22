@@ -14,7 +14,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENT
   jsonLd={jsonLd}
 >
   <section class="section">
-    <div class="container-page flex flex-col gap-8">
+    <div class="container-page stack-lg">
       <h1 class="h1" data-cart-heading>Your cart</h1>
 
       <div class="cart-empty hidden flex flex-col items-start gap-4" data-cart-empty>
@@ -31,7 +31,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENT
             <div><dt>Shipping (flat rate)</dt><dd data-cart-shipping></dd></div>
             <div class="cart-total-row"><dt>Total</dt><dd data-cart-total></dd></div>
           </dl>
-          <button type="button" class="btn btn-primary w-full" data-checkout>Continue to Checkout</button>
+          <button type="button" class="btn btn-primary btn-convert" data-checkout>Continue to Checkout</button>
           <p class="muted text-sm" data-checkout-note aria-live="polite"></p>
           <p class="muted text-sm">Payments are processed securely by Stripe. <a href="/shipping-returns/">Shipping details</a>.</p>
         </aside>

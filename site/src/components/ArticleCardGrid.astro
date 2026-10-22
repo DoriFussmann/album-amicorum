@@ -7,29 +7,33 @@ import { ARTICLES_BASE } from "../config/site";
 interface Props {
   articles: CollectionEntry<"articles">[];
   headingLevel?: 2 | 3;
+  /** Show the article's meta description under the title. */
+  summary?: boolean;
 }
-const { articles, headingLevel = 2 } = Astro.props;
+const { articles, headingLevel = 2, summary = false } = Astro.props;
 const Heading = headingLevel === 2 ? "h2" : "h3";
 ---
 
-<ul class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+<ul class="article-grid">
   {articles.map((article) => (
-    <li class="card article-card">
+    <li class="card article-card hoverable reveal">
       <a class="article-card-link" href={`/${ARTICLES_BASE}/${article.id}/`}>
-        <div class="media-frame mb-3">
+        <div class="media-frame">
           <Image
             src={article.data.image}
             alt={article.data.imageAlt}
-            width={600}
-            height={338}
-            widths={[320, 480, 600]}
+            width={640}
+            height={400}
+            widths={[320, 480, 640]}
             sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
             loading="lazy"
           />
         </div>
+        {article.data.pillarKeyword && <p class="eyebrow">{article.data.pillarKeyword}</p>}
         <Heading class="card-title">{article.data.h1}</Heading>
       </a>
-      <p class="muted text-sm">{formatDate(article.data.updatedDate || article.data.date)}</p>
+      {summary && <p class="muted m-0 text-sm">{article.data.description}</p>}
+      <p class="card-meta">{formatDate(article.data.updatedDate || article.data.date)}</p>
     </li>
   ))}
 </ul>

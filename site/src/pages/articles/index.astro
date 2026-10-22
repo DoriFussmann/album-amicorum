@@ -33,14 +33,16 @@ const jsonLd = {
   canonicalPath={canonicalPath}
   jsonLd={jsonLd}
 >
-  <div class="container-page section flex flex-col gap-6">
+  <div class="container-page container-wide section stack-lg">
     <Breadcrumbs crumbs={crumbs} />
-    <div class="flex flex-col gap-3 measure">
+    <div class="section-head articles-head">
+      <p class="eyebrow">Journal</p>
       <h1 class="h1">The Journal</h1>
       <p class="lead">Ideas for slower, more connected childhoods — friendship, handwriting, keepsakes, and screen-free gifts.</p>
     </div>
     <nav aria-label="Topics">
       <ul class="topic-chips">
+        <li><a class="chip" href={canonicalPath} aria-current="page">All</a></li>
         {topics.map((topic) => <li><a class="chip" href={topic.href}>{topic.name}</a></li>)}
       </ul>
     </nav>

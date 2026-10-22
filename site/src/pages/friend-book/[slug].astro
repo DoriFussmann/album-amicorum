@@ -70,26 +70,28 @@ const { Content } = showStory ? await render(book) : { Content: null };
   ogImage={await bookOgImageSrc(data.cover)}
   jsonLd={jsonLd}
 >
-  <section class="section">
-    <div class="container-page flex flex-col gap-6">
+  <section class="section product-section">
+    <div class="container-page flex flex-col gap-8">
       <Breadcrumbs crumbs={crumbs} />
-      <div class="grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
+      <div class="product-layout">
         <ProductGallery images={images} />
-        <div class="product-info flex flex-col gap-4" data-cart-scope>
+        <div class="product-info" data-cart-scope>
           <p class="eyebrow">My Friends Book</p>
           <h1 class="h1">{themePageTitle(data.title)}</h1>
           <p class="lead">{data.tagline}</p>
           <p>{PRODUCT_LEAD_1}</p>
           <p class="muted">{PRODUCT_LEAD_2}</p>
           <div class="product-buy">
-            <p class="price price-lg">{data.price}</p>
-            <p class="muted text-sm">{SHIPPING_NOTE}</p>
+            <div class="price-row">
+              <p class="price price-lg">{data.price}</p>
+              <p class="muted text-sm">{SHIPPING_NOTE}</p>
+            </div>
+            <div class="hero-actions">
+              <button type="button" class="btn btn-primary btn-convert" data-add-to-cart data-cart-item={cartItem}>Add to Cart</button>
+              <a class="btn btn-secondary" href="/cart/">View Cart</a>
+            </div>
+            <p class="cart-feedback muted" data-cart-feedback aria-live="polite"></p>
           </div>
-          <div class="flex flex-wrap gap-3">
-            <button type="button" class="btn btn-primary" data-add-to-cart data-cart-item={cartItem}>Add to Cart</button>
-            <a class="btn btn-secondary" href="/cart/">View Cart</a>
-          </div>
-          <p class="cart-feedback muted" data-cart-feedback aria-live="polite"></p>
           <ul class="product-facts">
             <li>Made for ages 5–12</li>
             <li>Filled in by hand by friends, family, and teachers</li>
@@ -103,7 +105,7 @@ const { Content } = showStory ? await render(book) : { Content: null };
   {showStory && Content && (
     <section class="section section-alt">
       <div class="container-page">
-        <div class="prose-article measure mx-auto">
+        <div class="prose-article mx-auto">
           <Content />
         </div>
       </div>
@@ -112,10 +114,10 @@ const { Content } = showStory ? await render(book) : { Content: null };
 
   {others.length > 0 && (
     <section class="section">
-      <div class="container-page flex flex-col gap-8">
-        <h2 class="h2">Other editions</h2>
-        <ul class="book-grid">
-          {others.map((entry, index) => <BookCard book={entry} index={index} />)}
+      <div class="container-page stack-lg">
+        <h2 class="h2 reveal">Other editions</h2>
+        <ul class="book-grid" data-count={others.length}>
+          {others.map((entry) => <BookCard book={entry} />)}
         </ul>
       </div>
     </section>

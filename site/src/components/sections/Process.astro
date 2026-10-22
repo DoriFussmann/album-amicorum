@@ -12,18 +12,17 @@ interface Props {
 }
 const { section, alt = false } = Astro.props;
 ---
-
-<section id={section.id} class:list={["section", alt && "section-alt"]}>
-  <div class="container-page flex flex-col gap-8">
-    <div class="flex flex-col gap-3">
-      {section.eyebrow && <p class="eyebrow reveal" data-index="0">{section.eyebrow}</p>}
-      <h2 class="h2 reveal" data-index="1">{section.heading}</h2>
-      {section.intro && <p class="lead reveal" data-index="2">{section.intro}</p>}
+<section id={section.id} class:list={["section", "section-process", alt && "section-alt"]}>
+  <div class="container-page stack-lg">
+    <div class="section-head">
+      {section.eyebrow && <p class="eyebrow reveal">{section.eyebrow}</p>}
+      <h2 class="h2 reveal">{section.heading}</h2>
+      {section.intro && <p class="lead reveal">{section.intro}</p>}
     </div>
-    <ol class="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+    <ol class="steps" data-count={section.steps.length}>
       {section.steps.map((step, index) => (
-        <li class="card flex flex-col gap-2 reveal" data-index={index}>
-          <p class="eyebrow">{String(index + 1).padStart(2, "0")}</p>
+        <li class="card step reveal">
+          <span class="step-index" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>
           <h3 class="h3">{step.title}</h3>
           <p class="muted">{step.text}</p>
         </li>

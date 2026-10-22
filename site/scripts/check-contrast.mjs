@@ -1,18 +1,20 @@
 import { tokens } from "../design-tokens.mjs";
 
+/** Exactly the "Contrast pairs" list in DESIGN_GUIDE.md: [foreground, background], 4.5:1 each. */
 const pairs = [
   ["fg", "bg"],
-  ["muted", "bg"],
   ["fg", "surface"],
+  ["fg", "surfaceAlt"],
+  ["muted", "bg"],
   ["muted", "surface"],
   ["muted", "surfaceAlt"],
+  ["accentInk", "bg"],
+  ["accentInk", "surface"],
   ["accentFg", "accent"],
   ["bandFg", "band"],
   ["bandMuted", "band"],
   ["headerFg", "headerBg"],
   ["footerFg", "footerBg"],
-  ["accent", "bg"],
-  ["accent", "surface"],
 ];
 
 function channel(hex, index) {
@@ -46,4 +48,4 @@ if (errors.length) {
   process.exit(1);
 }
 
-console.log(`check-contrast: ok — ${tokens.template}`);
+console.log(`check-contrast: ok — ${tokens.templateName} (${pairs.length} pairs)`);

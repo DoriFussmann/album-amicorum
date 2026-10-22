@@ -5,7 +5,6 @@
   "scripts": {
     "dev": "astro dev",
     "build": "node scripts/check-contrast.mjs && astro build && npm run audit",
-    "theme:test": "node scripts/theme-test.mjs",
     "preview": "astro preview",
     "audit": "tsx scripts/audit-dist.ts",
     "check": "astro check"

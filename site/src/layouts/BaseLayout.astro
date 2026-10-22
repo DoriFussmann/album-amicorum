@@ -1,4 +1,5 @@
 ---
+import "@fontsource-variable/inter";
 import "../styles/global.css";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
@@ -58,16 +59,20 @@ const ogImageUrl = abs(ogImage || DEFAULT_OG_IMAGE, SITE_URL);
 <!doctype html>
 <html
   lang="en"
-  data-template={tokens.template}
+  data-direction={tokens.template}
   data-mode={tokens.mode}
   data-header={tokens.variants.header}
   data-hero={tokens.variants.hero}
+  data-hero-overlay={tokens.variants.heroOverlay}
   data-card={tokens.variants.card}
   data-rhythm={tokens.variants.rhythm}
+  data-texture={tokens.variants.texture}
+  data-hover={tokens.variants.hover}
+  data-portrait={tokens.variants.portrait}
+  data-eyebrow-mark={tokens.variants.eyebrowMark}
   data-button={tokens.shape.button}
   data-density={tokens.layout.density}
   data-motion={tokens.motion.style}
-  data-texture={tokens.variants.texture}
   style={`color-scheme: ${tokens.mode}`}
 >
   <head>
@@ -128,61 +133,20 @@ const ogImageUrl = abs(ogImage || DEFAULT_OG_IMAGE, SITE_URL);
     </main>
     <Footer />
     <BackToTop />
-    <noscript>
-      <style>
-        .reveal {
-          opacity: 1 !important;
-          transform: none !important;
-        }
-      </style>
-    </noscript>
     <script is:inline>
       (function () {
-        var root = document.documentElement;
-        var motion = root.getAttribute("data-motion");
-        var reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-        var nodes = Array.prototype.slice.call(document.querySelectorAll(".reveal"));
-        function show(el) {
-          el.classList.add("is-in");
+        // Sticky header: mark it once the page scrolls (photo hero turns the header opaque).
+        var header = document.querySelector(".site-header");
+        function onScroll() {
+          if (header) header.classList.toggle("is-scrolled", window.scrollY > 16);
         }
-        if (reduced || motion === "none" || nodes.length === 0) {
-          nodes.forEach(show);
-          return;
-        }
-        var raw = getComputedStyle(root).getPropertyValue("--motion-stagger").trim();
-        var stagger = parseFloat(raw) || 0;
-        nodes.forEach(function (el) {
-          var index = parseInt(el.getAttribute("data-index") || "0", 10);
-          if (!isFinite(index)) index = 0;
-          el.style.transitionDelay = index * stagger + "ms";
-        });
-        var hero = nodes.filter(function (el) {
-          return el.closest(".hero");
-        });
-        var rest = nodes.filter(function (el) {
-          return !el.closest(".hero");
-        });
-        requestAnimationFrame(function () {
-          requestAnimationFrame(function () {
-            hero.forEach(show);
+        onScroll();
+        window.addEventListener("scroll", onScroll, { passive: true });
+        // One FAQ row open at a time in each list.
+        document.querySelectorAll("section").forEach(function (section, n) {
+          section.querySelectorAll("details.faq-item:not([name])").forEach(function (d) {
+            d.setAttribute("name", "faq-" + n);
           });
-        });
-        if (!("IntersectionObserver" in window)) {
-          rest.forEach(show);
-          return;
-        }
-        var io = new IntersectionObserver(
-          function (entries) {
-            entries.forEach(function (entry) {
-              if (!entry.isIntersecting) return;
-              entry.target.classList.add("is-in");
-              io.unobserve(entry.target);
-            });
-          },
-          { root: null, rootMargin: "0px 0px -80px 0px", threshold: 0.01 },
-        );
-        rest.forEach(function (el) {
-          io.observe(el);
         });
       })();
     </script>
