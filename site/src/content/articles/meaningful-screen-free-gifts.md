@@ -94,7 +94,7 @@ This is the most underrepresented category in most gift guides, and arguably the
 
 ## Age-Band Guidance: Matching Gift Type to Developmental Stage
 
-Screen-free gifting is most effective when it's age-appropriate — not in the sense of toy-box safety ratings, but in the sense of matching a gift to where a child actually is developmentally.
+Screen-free gifting is most effective when it's age-appropriate — not in the sense of toy-box safety ratings, but in the sense of matching a gift to where a child actually is developmentally. For one age in detail, see our guide to [unique gifts for 6-year-olds](/articles/unique-gifts-for-6-year-olds/).
 
 ### Ages 5–7: Hands-On, Open-Ended, and Tactile
 

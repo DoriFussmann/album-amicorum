@@ -51,7 +51,7 @@ externalLinks:
     addedAt: 2026-08-11
 ---
 
-You search "friendship book for kids" and the results pile up, beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction, because buying the right one for the right moment makes all the difference.
+You search "friendship book for kids" and the results pile up, beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction, because buying the right one for the right moment makes all the difference. For the keepsake side in full, see our [complete guide to friendship books](/articles/friendship-book-for-kids/).
 
 ## The Search Confusion Nobody Warns You About
 

@@ -162,7 +162,7 @@ There are thoughtful options across a range of makers in this space. Some focus 
 
 ## From Tradition to Treasure: Bringing It Home
 
-The album amicorum tradition survived for centuries not because anyone legislated it, but because human beings recognised something true in it: that the people who know us at a particular moment in time are irreplaceable, and that having a record of them — in their own words, in their own hand — is worth more than any photograph.
+The album amicorum tradition survived for centuries not because anyone legislated it, but because human beings recognised something true in it: that the people who know us at a particular moment in time are irreplaceable, and that having a record of them — in their own words, in their own hand — is worth more than any photograph. When you are ready to begin, here is [how to start a friendship book](/articles/how-to-start-a-friendship-book-for-kids/) step by step.
 
 A friendship book for kids carries that same recognition forward into childhood, at the exact age when friendships are being formed for the first time, when the world is widening, and when the people a child knows at school genuinely matter in ways they will not always be able to articulate until years later. The child who receives a beautifully illustrated friend book and fills it with real contributions from real friends is not just doing a fun activity. They are building something that will outlast the school year, the primary years, and possibly every other object from this period of their life.
 
