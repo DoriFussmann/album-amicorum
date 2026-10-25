@@ -14,7 +14,7 @@ gallery:
   - /images/books/fairies/06-kids.jpg
   - /images/books/fairies/07-lifestyle.jpg
   - /images/books/fairies/02-back.jpg
-metaTitle: "Fairy Friend Book for Kids | Album Amicorum"
+metaTitle: "Fairy-Themed Friend Book for Kids | Album Amicorum"
 metaDescription: "A friend book for children who love fairies — fill it with handwritten memories, drawings, and messages from friends. A keepsake made to last."
 order: 4
 ---

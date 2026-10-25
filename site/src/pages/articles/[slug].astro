@@ -228,7 +228,7 @@ const hub =
 
 {props.kind === "pillar" && hub && (
   <BaseLayout
-    title={`${props.pillar.name} — ${SITE_NAME}`}
+    title={`${props.pillar.name} — ${SITE_NAME}`.length < 50 ? `${props.pillar.name} — Guides | ${SITE_NAME}` : `${props.pillar.name} — ${SITE_NAME}`}
     description={props.pillar.description}
     canonicalPath={hub.path}
     jsonLd={{

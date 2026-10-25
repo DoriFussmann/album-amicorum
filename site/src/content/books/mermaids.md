@@ -18,7 +18,7 @@ gallery:
   - /images/books/mermaids/10-postcard-1.jpg
   - /images/books/mermaids/11-postcard-2.jpg
   - /images/books/mermaids/02-back.jpg
-metaTitle: "Mermaid Friend Book for Kids | Album Amicorum"
+metaTitle: "Mermaid-Themed Friend Book for Kids | Album Amicorum"
 metaDescription: "A friend book for children who love the sea — a place to keep handwritten memories, drawings, and messages from friends. Made to be treasured."
 order: 1
 ---

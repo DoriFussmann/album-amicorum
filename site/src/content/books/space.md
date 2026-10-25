@@ -15,8 +15,8 @@ gallery:
   - /images/books/space/07-kids-2.jpg
   - /images/books/space/08-front-alt.jpg
   - /images/books/space/02-back.jpg
-metaTitle: "Space Friend Book for Kids | Album Amicorum"
-metaDescription: "A friend book for little dreamers and stargazers — keep handwritten memories, drawings, and messages from friends. A keepsake to treasure."
+metaTitle: "Space-Themed Friend Book for Kids | Album Amicorum"
+metaDescription: "A friend book for little dreamers and stargazers — keep handwritten memories, drawings, and messages from friends. A keepsake to treasure always."
 order: 3
 ---
 ## An endless sky to dream under
