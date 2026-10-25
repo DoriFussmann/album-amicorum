@@ -196,6 +196,11 @@ Choosing a gift or keepsake that slows things down, that invites real interactio
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+As the 2026–27 school year began, childhood friendship drew fresh attention from researchers and school psychologists, who stress that early friendships are where children practice communicating, handling disagreements and regulating emotions. At the same time, the analog-childhood movement keeps growing, with more families treating unstructured, in-person time as a developmental need rather than a luxury.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Childhood friendship is a developmental necessity that shapes emotional growth, social skills and long-term mental health.

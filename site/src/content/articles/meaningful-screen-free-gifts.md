@@ -133,6 +133,11 @@ For gift-givers who want one beautifully crafted, screen-free choice that checks
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The shift toward screen-free, meaningful gifts has moved beyond a passing trend in 2026. Research on screen exposure in school-aged children continues to link heavy or poorly structured screen time with attention difficulties, and tweens already average more than four and a half hours of screen media a day, according to [Common Sense Media](https://www.commonsensemedia.org/articles/tweens-teens-and-screens-what-our-new-research-uncovers). That keeps analog, creative and social gifts firmly in demand.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - "Screen-free" and "meaningful" are not the same thing — the best gifts for children ages 5–12 combine both by inviting children to make, share, or preserve something real, not simply by removing a screen from the equation.

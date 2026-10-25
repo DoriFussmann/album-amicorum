@@ -206,6 +206,11 @@ What emerges across those prompted pages (once several friends have each filled 
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The cultural backdrop for friendship books has grown stronger in 2026. The 'analog childhood' trend has families seeking screen-free, tactile experiences for their children, and that appetite extends to the keepsakes and gifts they choose. Handwritten, beautifully made objects are finding a larger audience than they have in years.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - A friendship book is passed around so that each friend fills in their own page, leaving a one-of-a-kind record of real friendships.

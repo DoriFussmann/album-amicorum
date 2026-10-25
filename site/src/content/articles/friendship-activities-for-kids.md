@@ -202,6 +202,11 @@ The most friendship-deepening environments combine both: a light structure that 
 Guided play in early childhood education is defined as a playful learning approach in which children retain control over their activities, while adults intentionally scaffold the environment, pose open-ended questions, or subtly guide interactions toward specific learning goals.
  The practical version of this for parents is simpler than it sounds: set up a starting point, then leave the room.
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Hands-on, screen-free activities are one of the clearest family trends of 2026. With a new school year under way, there is renewed focus on helping children build friendships, and much of that happens in playdates and unstructured time at home, exactly where a shared creative project can leave a lasting memory.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Research ties strong childhood friendships to greater belonging, better emotional intelligence and lower risk of anxiety and depression.

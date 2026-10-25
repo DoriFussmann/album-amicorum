@@ -203,6 +203,11 @@ For students with learning differences such as dyslexia or dysgraphia, handwriti
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Handwriting is getting renewed attention in schools, with a growing number of US states moving to require cursive instruction again. Research continues to find that writing by hand engages memory, attention and language in ways typing does not, and educators are increasingly calling for explicit handwriting instruction in the primary grades.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Writing by hand activates brain networks for language, memory, attention and learning in ways typing does not replicate.

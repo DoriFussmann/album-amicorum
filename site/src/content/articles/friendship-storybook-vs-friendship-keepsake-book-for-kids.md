@@ -141,6 +141,12 @@ If the comparison above has helped clarify that a keepsake friendship book is wh
 ---
 
 If the comparison above has helped clarify that a keepsake friendship book is what this moment calls for, the next question is which one. Not all friendship keepsake books are created equal. The paper quality matters (thin pages bleed through and make the book feel disposable. The prompts matter) a list of surface-level fill-in-the-blanks produces forgettable answers, while genuinely imaginative questions draw out real personality and specific memory. Think of it like the difference between a plastic trophy and a hand-engraved one — both mark the moment, but only one feels worth keeping. The illustrations matter — a beautifully designed book signals to the child and their friends that this is something worth filling in carefully, not dashing through in two minutes. **Album Amicorum's *My Friends Book*** is designed with all of this in mind. The illustrations, prompts, and paper quality are built for a lifetime, not a season — the kind of book that earns a permanent spot on the shelf and gets pulled out for decades. If you're ready to give a child something their future self will genuinely thank you for, it's worth exploring what makes it different.
+
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Two trends favor friendship keepsake books in 2026: families looking for screen-free, tactile objects, and growing attention to how children build real friendships. A keepsake book sits at that intersection, a physical, screen-free record that treats children's relationships as worth preserving.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - "Friendship book for kids" covers two different products: storybooks children read, and keepsake books their friends fill in.

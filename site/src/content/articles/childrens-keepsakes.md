@@ -179,6 +179,11 @@ This is precisely what Album Amicorum's illustrated [Friend Book](/friend-book/)
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Interest in physical children's keepsakes continues to grow in 2026, driven by a wider move toward analog, tactile experiences and a sense that huge digital photo archives preserve less than they capture. Families are rediscovering small handwritten things, a note or a drawing, as the keepsakes that tell the clearest story of a childhood.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Keepsakes matter because they hold relationships and identity, not only nostalgia.

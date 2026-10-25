@@ -237,6 +237,11 @@ Everything else — tablets at home, gaming consoles, shared family screen time,
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Policy around children and smartphones is moving quickly. Governments in several countries are restricting social media for younger teens, and parent-led campaigns to delay smartphones keep spreading, as [Axios reported](https://www.axios.com/2026/05/15/screen-free-childhood-parents-ditch-kids-phones) in May 2026. Researchers still urge caution and more evidence, so the debate between delaying phones and managed use is far from settled.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - The smartphone-free approach delays a smartphone until 14 and social media until 16, framed as pro-childhood rather than anti-technology.

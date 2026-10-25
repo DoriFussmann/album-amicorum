@@ -155,6 +155,11 @@ That is what makes the Album Amicorum [Friend Book](/friend-book/) by Album Amic
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The analog childhood movement has moved beyond niche parenting circles in 2026. Families are embracing board games, puzzles and hands-on making to reduce overstimulation, school phone restrictions have spread, and many commentators now treat 'going analog' as a lasting shift rather than a short-term fad.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Slow childhood and analog play are two overlapping philosophies with one shared core: children thrive with unhurried time, open-ended materials, and real-world experience free from digital overstimulation.
