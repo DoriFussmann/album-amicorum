@@ -308,6 +308,11 @@ When you look at a gift you're considering and you genuinely can't imagine it pa
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The 2026 holiday season shows a clear split: trend-driven toys on one side and a steady move toward intentional, meaningful gifts on the other. For parents who want a gift that will still matter in a few years, beautifully made, handmade and personal gifts are increasingly easy to justify.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Age six is a developmental sweet spot for meaningful gifts: children are newly attuned to friendship, capable of cherishing something "just theirs," and old enough to understand that some things are worth keeping.

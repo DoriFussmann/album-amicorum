@@ -128,6 +128,11 @@ This is why, in an era when so much of childhood communication is typed, texted,
 
 The research gives parents permission to protect handwriting time without apology. It is not a nostalgic indulgence. It is, quite literally, how children build their reading brains, encode their memories, and leave a mark on the world that is entirely their own.
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The handwriting-versus-typing debate has moved from research journals into education policy in 2026, with more US states reinstating handwriting and cursive requirements. Researchers keep documenting the effects of handwriting on thinking and memory, even as schools prioritize digital literacy, and the new mandates are starting to address that tension directly.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Neuroscience, not nostalgia, is behind the renewed case for handwriting.

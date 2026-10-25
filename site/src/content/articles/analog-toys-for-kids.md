@@ -239,6 +239,11 @@ In 2026, there is a growing interest in play that inspires creativity and celebr
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Analog toys are having a moment as families look for screen-free play in 2026. Parents are putting more weight on quality, materials and toys that last, and the research case for open-ended, play-based learning continues to build. The broader trend toward fewer, better toys shows no sign of slowing.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Analog toys work without screens or power; their quietness invites children to lead the play rather than respond to it.

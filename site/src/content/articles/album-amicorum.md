@@ -229,6 +229,11 @@ A richly illustrated album amicorum — a kind of friendship book for preserving
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+The album amicorum has no breaking news, but the culture around it is shifting. Interest in an 'analog childhood' has grown into one of the clearer parenting trends of 2026, with families looking for handmade, tactile objects and fewer screens. A centuries-old tradition built on handwriting and personal contribution fits that moment as a considered alternative, not a relic.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Album amicorum is Latin for "book of friends": a book passed between friends and teachers to collect poems, sketches, mottoes and signatures.

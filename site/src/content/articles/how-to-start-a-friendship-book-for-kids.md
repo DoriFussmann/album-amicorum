@@ -168,6 +168,11 @@ The pages in My Friends Book use thoughtful prompts and provide generous room fo
 
 The goal is not to produce a finished product that looks a particular way. It is to give the child enough direction to find their own voice on the page — and then get out of the way and let them use it.
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+More families are slowing childhood down in 2026: limiting screens, building quieter routines and reclaiming offline experiences like free play and real connection. Friendship books fit that shift naturally, and interest in them has stayed steady alongside the wider analog parenting movement.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Start the book at a natural turning point: a new school year, the last weeks of a grade or the weeks before a move.

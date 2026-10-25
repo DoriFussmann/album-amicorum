@@ -16,8 +16,6 @@ runAudit({
   articlesBase: ARTICLES_BASE,
   distDir,
   articlesDir: join(siteRoot, "src", "content", "articles"),
-  // "Where Things Stand" news blocks were removed: they carried unsourced, fast-dating figures.
-  requireWts: false,
   // Topic hub listing pages live under /articles/ but are not articles.
   pillarHubs: ARTICLE_PILLARS.map((pillar) => `/${ARTICLES_BASE}/${pillar.slug}/`).filter(
     (path) => !existsSync(join(siteRoot, "src", "content", "articles", `${path.split("/")[2]}.md`)),

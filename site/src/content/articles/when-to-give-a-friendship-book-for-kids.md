@@ -135,6 +135,11 @@ Album Amicorum's [*My Friends Book*](/friend-book/) is designed to be ready for 
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Gifting in 2026 continues to lean toward fewer, better, more personal gifts, alongside a broader shift to a slower, analog childhood. Handmade and personalized gifts remain among the most popular choices, which suits a book that friends fill in by hand.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - A friendship book's value depends on timing as much as on the gift itself.

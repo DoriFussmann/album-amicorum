@@ -131,6 +131,11 @@ As you build your toolkit of smartphone-free alternatives, this is the piece tha
 
 ---
 
+## Where Things Stand
+<!-- WHERE-THINGS-STAND:START -->
+Parents in the US and abroad are increasingly joining efforts to delay smartphones, and the Smartphone Free Childhood movement has grown into an international campaign. As it grows, the practical question of what children do instead has become central, driving interest in analog social tools, craft materials and even a return of the home phone.
+<!-- WHERE-THINGS-STAND:END -->
+
 ## Key Takeaways
 
 - Start by auditing what the phone actually did for your child: communication, entertainment, creativity, information and social visibility.
