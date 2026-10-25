@@ -241,18 +241,6 @@ Children learn to write naturally and with enthusiasm when they develop fine mot
 
 For older children who are already writing but whose hands tire quickly or whose grip is tense, short warm-up exercises — squeezing a stress ball, shaking out the hands, drawing large spirals on paper before beginning — can reduce fatigue and improve the overall quality and enjoyment of the session.
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-Handwriting's place in childhood education is attracting renewed attention heading into the 2026–27 school year. 
-A New Jersey school district made headlines in late September 2026 when it announced students are putting down laptops and picking up pencils more often, with the district deliberately cutting screen time and expanding handwritten work across English, math, and science.
- This reflects a broader national momentum: 
-Pennsylvania passed legislation earlier in 2026 requiring cursive handwriting to be taught in all public and private schools, adding it formally to the state's curriculum.
-
-Pennsylvania now joins 19 other states with a cursive requirement in place.
- Meanwhile, the fine motor skills picture gives educators cause for concern: 
-a January 2026 survey of more than 1,100 early educators found that 70 percent reported a decrease in the percentage of students with age-appropriate fine motor skills over the preceding two years. With screens having squeezed time for handwriting instruction out of many classrooms, educators increasingly debate whether the trade-off has been worth it — while research continues to affirm that children still benefit from learning to write by hand.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 - Handwriting practice for kids is most effective when children have a genuine reason to write — a real audience, a personal memory, or a subject they actually care about.
 - Creative activities like favorites pages, drawing-and-story exercises, and friendship memories all build handwriting skills while keeping children engaged.

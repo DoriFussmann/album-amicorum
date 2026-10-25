@@ -155,19 +155,6 @@ That is what makes the Album Amicorum [Friend Book](/friend-book/) by Album Amic
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The analog childhood movement has moved well beyond parenting niche circles in 2026. 
-Going analog has emerged as a major 2026 lifestyle trend, with families embracing board games, puzzles, and analog tools to create boundaries, reduce overstimulation, and support healthier childhood development.
-
-Across the country, school phone bans moved quickly in many states with the start of the 2025–2026 school year
-, accelerating the broader cultural shift. Industry data reinforces the picture: 
-games and puzzles led toy industry growth in early 2026 with 39% year-over-year gains
-, pointing to sustained consumer appetite for hands-on, low-tech play. Trend research published in mid-2026 found that a majority of Gen Z and Millennial respondents now actively seek out offline, hands-on activities specifically to counter screen time — not as a temporary detox but as a deliberate lifestyle choice they are building around. 
-Researchers see the going-analog movement as more structural than seasonal, tied to broader concerns about attention and AI saturation rather than a passing aesthetic, with multiple 2026 reports treating it as an ongoing shift rather than a short-term fad.
- For families already oriented toward slow childhood and analog play, the cultural moment has never been more supportive.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Slow childhood and analog play are two overlapping philosophies with one shared core: children thrive with unhurried time, open-ended materials, and real-world experience free from digital overstimulation.

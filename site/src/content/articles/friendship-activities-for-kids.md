@@ -120,7 +120,6 @@ Handwritten letter writing has seen renewed interest as an intentional, slower a
 
 There is a qualitative difference between the connection children build through hands-on, analog activities and the kind that forms around shared screen time. Screen-based activities are often parallel rather than collaborative — each child is consuming, responding to, or competing within a system designed by someone else, with no room to leave their own mark. Analog activities are generative. Children are the authors. What they produce did not exist before they made it together.
 
-In early 2026, the American Academy of Pediatrics reaffirmed its clinical report on play, naming unstructured play as essential for the executive-function skills parents most want their kids to develop, and a Harris Poll found that 45% of kids ages 8–12 would rather play with friends in activities not organized by adults.
  The evidence points in a clear direction: children know, intuitively, what serves them. When given permission to do less and do it with a friend, they tend to choose the activities — making things, exploring together, telling stories — that create the richest memories.
 
 The things children make together in an analog afternoon also have a different relationship to time. A drawing completed on a rainy Saturday, a recipe written out in wobbly handwriting, a letter decorated with stickers: these objects hold the afternoon inside them. Twenty years later, they don't just remind a person that the friendship existed — they show exactly what it looked like, sounded like, cared about. That is something no algorithm preserves.
@@ -203,19 +202,6 @@ The most friendship-deepening environments combine both: a light structure that 
 Guided play in early childhood education is defined as a playful learning approach in which children retain control over their activities, while adults intentionally scaffold the environment, pose open-ended questions, or subtly guide interactions toward specific learning goals.
  The practical version of this for parents is simpler than it sounds: set up a starting point, then leave the room.
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The broader cultural moment is unusually well-aligned with the value of analog friendship activities for children. In 2026, the retreat from screens toward hands-on, tangible making has become one of the most clearly documented parenting and lifestyle trends of the year. 
-Michaels declared 2026 the Year of Creative Living in the analog era, identifying a cultural shift in which consumers are using tactile, analog activities to reclaim their time and identity in an automated world.
-
-Searches for analog hobbies such as knitting, crocheting, embroidery, journaling, and painting have surged 136% over the past six months.
- The trend extends clearly into childhood: 
-in early 2026, the American Academy of Pediatrics reaffirmed its clinical report on play, naming unstructured play as essential for the executive-function skills parents most want their kids to develop.
- As the new school year begins in August 2026, there is renewed focus on helping children build and sustain friendships, with recent commentary noting that 
-while organized activities offer valuable experiences, much of childhood friendship develops during playdates, neighborhood gatherings, and spontaneous hangouts
- — exactly the settings where a friend book or a shared creative project can leave the most lasting impression.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Research ties strong childhood friendships to greater belonging, better emotional intelligence and lower risk of anxiety and depression.
@@ -223,7 +209,5 @@ while organized activities offer valuable experiences, much of childhood friends
 - The deepest connection comes from activities that make children engage with each other and make something tangible together.
 - Analog, hands-on activities are generative and collaborative, while screen-based play is often parallel.
 - A Friend Book gives every activity's output a permanent home, turning a passing drawing or answer into a keepsake.
-
-
 
 For further reading, see the Sources listed below.

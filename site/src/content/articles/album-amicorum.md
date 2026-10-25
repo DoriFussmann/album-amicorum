@@ -229,15 +229,6 @@ A richly illustrated album amicorum — a kind of friendship book for preserving
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The album amicorum as a historical subject sees no major breaking news in mid-2026, but the cultural conditions that make it relevant are very much in motion. 
-The analog childhood movement has emerged as one of 2026's biggest parenting trends, with "screen-free childhood" shifting from a fringe position to an aspirational one.
-
-Efforts to delay smartphones and restrict social media for children are accelerating, and "going analog" is gaining broad momentum — from board games and puzzles to a renewed appetite for handmade, tactile objects that create boundaries, reduce overstimulation, and support healthier childhood development. In the children's creative and publishing realm, observers note a marked shift toward nostalgia, tradition, comfort, and the analogue, with an increasing desire for products that feel safe, familiar, and full of deeper meaning.
- Taken together, these signals suggest that a centuries-old tradition built on handwriting, personal contribution, and tangible memory is arriving at a moment of renewed cultural appetite — not as a relic, but as a considered alternative.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Album amicorum is Latin for "book of friends": a book passed between friends and teachers to collect poems, sketches, mottoes and signatures.
@@ -245,8 +236,6 @@ Efforts to delay smartphones and restrict social media for children are accelera
 - It fell out of academic fashion in the late seventeenth century, then returned among fraternity students and the growing middle class.
 - Its power lay in what it asked of contributors: time, thought and a handwritten entry, not a quick reaction.
 - A modern illustrated Friend Book for children ages 5–12 continues the same lineage, giving today's friendships a handwritten record.
-
-
 
 See Related below for more on this topic.
 

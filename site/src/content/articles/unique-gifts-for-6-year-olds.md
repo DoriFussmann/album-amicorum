@@ -61,7 +61,7 @@ At age six, children go through big changes — socially, emotionally, physicall
 Six- to eight-year-olds begin to pay more attention to friendships and teamwork, and genuinely want to be liked and accepted by their friends.
  This is not just a phase — it is a developmental turning point that reshapes what children care about and, by extension, what resonates with them as a gift.
 
-According to the American Academy of Pediatrics, friendships allow children to "broaden their horizons beyond the family unit, begin to experience the outside world, form a self-image, and develop a social support system."
+Friendships let children broaden their horizons beyond the family, start to experience the outside world, form a self-image and build a social support system.
  In other words, the friendships a 6-year-old is forming right now are not trivial. They are formative. A gift that honours those friendships — that makes them visible, tangible, and preservable — is a gift that lands at exactly the right developmental moment.
 
 At this age, children may start to show empathy, understand others' perspectives, and manage their emotions better. They might also begin to form deeper friendships and resolve minor conflicts independently.
@@ -305,19 +305,6 @@ Most toys fail this test, not because they're bad toys but because their meaning
 A gift passes the still-treasured test when it carries something that doesn't evaporate: a story, a relationship, a record of who the child was and who loved them. A keepsake that holds handwritten notes from a child's closest friends at age six will mean something profound at sixteen, and probably again at thirty-six. The handwriting belongs to real people at a specific, unrepeatable moment. That's not something time can diminish — it's something time can only make more precious.
 
 When you look at a gift you're considering and you genuinely can't imagine it passing this test, that's useful information. It doesn't mean the gift is wrong — it means it's a toy, and you should decide consciously whether a toy is what you want to give.
-
----
-
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-As the 2026 holiday gifting season moves into full swing, the toy and gift market is showing a clear split between mass-market trends and a quieter but persistent counter-movement. 
-The holiday toy race is officially underway, with major retailers already previewing what could top kids' wish lists in 2026.
-
-The social media effect continues to have an outsized influence on what children are asking for, particularly when it comes to small, collectible, and sensory toys — with squishy toys having an especially big moment.
- At the same time, the screen-free and meaningful gifting movement shows no signs of slowing: 
-the toy industry has officially named intentional, human-centred play one of the defining trends of 2026, with The Toy Association identifying "Cozy Culture" as a headline theme. Industry voices in the gift stationery sector are calling 2026 "the year of meaningful stationery," with paper products increasingly positioned as tools for connection and wellbeing rather than purely functional objects.
- For parents who feel the tension between what their child is asking for and what they believe will actually matter, that tension is reflected in the market itself — and the gifts that sit at the intersection of beauty, meaning, and handmade human connection are increasingly easy to justify, and increasingly hard to find at scale.
-<!-- WHERE-THINGS-STAND:END -->
 
 ---
 

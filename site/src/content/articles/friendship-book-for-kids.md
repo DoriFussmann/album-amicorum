@@ -100,10 +100,9 @@ It might seem strange, in a world of instant messaging and shared photo albums, 
 A screenshot of a conversation can be deleted. A social profile can be taken down. A photo album app can disappear with a subscription lapse. A handwritten page, on the other hand, cannot be revised after the fact. The handwriting is exactly as it was on the day a friend sat down and filled in their page. The hesitation marks, the doodles in the margins, the signature that trails off at the end — these things are uniquely, irreversibly real.
 
 There is something else at stake, too. 
-Families are increasingly aware that children today spend an average of five to seven hours per day using screens, and the growing shift towards a more balanced, low-screen lifestyle (part of what observers are calling the analog childhood trend) is reshaping what thoughtful parents are choosing to give their children.
+Families are increasingly aware of how much of childhood now happens on screens, and the growing shift towards a more balanced, low-screen lifestyle (part of what observers are calling the analog childhood trend) is reshaping what thoughtful parents are choosing to give their children.
 
-According to Google Trends, the term "analog hobbies" saw a significant spike in January 2026
-, reflecting an appetite that extends to the gifts and activities parents seek for their children. A friendship book sits naturally at the centre of this shift: it requires no device, no Wi-Fi, no charging. It asks only for a pencil and a friend.
+A friendship book sits naturally at the centre of this shift: it requires no device, no Wi-Fi, no charging. It asks only for a pencil and a friend.
 
 Unlike digital alternatives or mass-produced fill-in journals, a beautifully illustrated friendship book becomes a one-of-a-kind artifact. No two copies are ever the same, because the people who write in them are irreplaceable — and that fact alone gives the book a significance that no digital equivalent can match.
 
@@ -167,7 +166,7 @@ The album amicorum tradition survived for centuries not because anyone legislate
 
 A friendship book for kids carries that same recognition forward into childhood, at the exact age when friendships are being formed for the first time, when the world is widening, and when the people a child knows at school genuinely matter in ways they will not always be able to articulate until years later. The child who receives a beautifully illustrated friend book and fills it with real contributions from real friends is not just doing a fun activity. They are building something that will outlast the school year, the primary years, and possibly every other object from this period of their life.
 
-If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's In My Friends Book is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
+If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's My Friends Book is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
 
 ---
 
@@ -207,17 +206,6 @@ What emerges across those prompted pages (once several friends have each filled 
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The broader cultural context for friendship books for kids has grown noticeably stronger through the first half of 2026. 
-One of the biggest parenting trends of 2026 is the rise of what commentators are calling the analog childhood
-, with families actively seeking screen-free, tactile experiences for their children in response to growing awareness of screen time's effects. 
-Retail data described in industry trend reports characterises 2026 consumers as being "deep in an offline era," seeking out "tactile, analog activities to reclaim time and identity in an automated world."
- This appetite extends directly to the gifts and keepsakes parents choose for children: handmade, handwritten, and beautifully designed objects are finding a larger and more receptive audience than they have in years. 
-In the children's product space specifically, content that helps children understand relationships and emotional connection continues to outperform across categories
-, reinforcing the cultural appetite for meaningful, friendship-centred keepsakes. No major product launches or news events specific to the friendship book niche have been reported in the past 45 days, making this a stable and steadily growing territory rather than one shaped by sudden developments.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - A friendship book is passed around so that each friend fills in their own page, leaving a one-of-a-kind record of real friendships.
@@ -225,8 +213,6 @@ In the children's product space specifically, content that helps children unders
 - A handwritten record keeps personality and presence in a way digital messages and photo albums cannot.
 - When choosing one, look at the design, the prompts, the paper quality and how well it suits a range of ages.
 - The best moments to give one are school transitions and other thresholds when a circle of friends is about to change.
-
-
 
 See Related below for more on this topic.
 

@@ -111,7 +111,6 @@ The over-scheduling crisis compounds the screen problem.
 Increasingly busy lifestyles make it hard to carve out playtime for children. While trying to boost academic performance, schools may limit or eliminate recess. Parents juggle work and the demands of home and family. Children are often involved in structured sports, classes, and activities that leave little free time for open-ended play.
  When every hour of a child's afternoon is assigned to an organised activity with a coach, a curriculum, and a measurable outcome, friendship is quietly crowded out — not through neglect, but through an excess of good intentions.
 
-A recent report found that one in five parents of Generation Alpha stated that their children have few or no friends.
  That statistic deserves to be read slowly. One in five. It is not a fringe concern; it is a pattern — and the conditions that produce it are not mysterious. They are the predictable result of childhoods restructured around productivity, screens, and adult supervision, with the unstructured, free-roaming, face-to-face time that genuine friendship needs squeezed to the margins.
 
 ---
@@ -197,11 +196,6 @@ Choosing a gift or keepsake that slows things down, that invites real interactio
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-As the 2026–27 school year gets under way, childhood friendship is attracting fresh attention from researchers, parents, and practitioners alike. New findings published this week suggest that some elementary school children who appear unsociable actually simply prefer solo time as long as they feel they belong to a broader peer group — a nuance that underscores how deeply individual children's social needs are, and how much quality of connection matters over sheer quantity. Simultaneously, back-to-school reporting from school psychologists this week emphasised that early friendships are where children practise communicating, handling disagreements, and regulating their emotions — skills that carry far into adult life. Recent reporting also highlights that nine in ten parents believe their children want more friends, yet many children are struggling with the face-to-face social skills that screen time displaces. Against this backdrop, the analog childhood and digital-detox parenting movements — which prioritise outdoor play, boredom, and real-world social experiences over passive screen consumption — continue to gather momentum as one of the defining parenting trends of 2026, with families increasingly treating slow, unstructured time not as a luxury but as a developmental necessity.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Childhood friendship is a developmental necessity that shapes emotional growth, social skills and long-term mental health.
@@ -209,7 +203,5 @@ As the 2026–27 school year gets under way, childhood friendship is attracting 
 - One close friend may protect a child against emotional problems more than a large social circle does.
 - Screens, over-scheduling and the lingering effects of school closures have made it harder for children to connect in person.
 - Parents can nurture friendship through unstructured play, one-on-one playdates and handwritten messages that make connections lasting.
-
-
 
 For further reading, see the Sources listed below.

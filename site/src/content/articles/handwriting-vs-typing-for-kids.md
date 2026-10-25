@@ -128,19 +128,6 @@ This is why, in an era when so much of childhood communication is typed, texted,
 
 The research gives parents permission to protect handwriting time without apology. It is not a nostalgic indulgence. It is, quite literally, how children build their reading brains, encode their memories, and leave a mark on the world that is entirely their own.
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The handwriting-versus-typing debate has moved from academic journals into education policy with notable speed in 2026. 
-Starting in 2026, Florida students are required to learn cursive handwriting, with 38 of 67 districts beginning classes on August 10, 2026 — the earliest date allowed — and a new state law now requiring all third, fourth, and fifth graders to learn cursive writing and demonstrate proficiency by the end of fifth grade.
- This follows a broader legislative trend: 
-as of 2026, 27 states have passed laws reinstating handwriting requirements
- in their school curricula, a sharp reversal from the decade following the 2010 Common Core standards, which had removed cursive from most state requirements. 
-New Jersey also recently became the latest US state to bring penmanship back into the classroom, requiring schools to teach cursive to children in grades 3 to 5.
- Meanwhile, the academic conversation continues: 
-researchers are documenting the powerful effects of handwriting on thinking and memory even as schools increasingly prioritize digital literacy, meaning students are spending considerably less time writing by hand
- — a tension that the new wave of state mandates is beginning to directly address.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Neuroscience, not nostalgia, is behind the renewed case for handwriting.

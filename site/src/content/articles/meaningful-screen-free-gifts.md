@@ -60,7 +60,7 @@ Experiential and participatory gifts tend to elicit greater gratitude than purel
 There is a growing awareness among parents and caregivers that children face unprecedented levels of stimulation in their daily lives. Screens, notifications, algorithmic content feeds, and fast-paced digital media create a constant state of sensory input that many children struggle to self-regulate around.
  The response from families has been measurable and consistent.
 
-The Toy Association has identified "Cozy Culture" as one of the defining play trends of 2026, reflecting a growing fondness for low-tech and no-tech play experiences that help families counterbalance constant digital stimulation and overstimulation. The Toy Association's research found that more than half — 53 percent — of parents want more toys that promote comfort and stress relief. Meanwhile, "screen-free" has become one of the most searched gifting phrases, overtaking "educational toys" for the first time in 2025 Christmas searches according to Google Trends data.
+The Toy Association has identified "Cozy Culture" as one of the defining play trends of 2026, reflecting a growing fondness for low-tech and no-tech play experiences that help families counterbalance constant digital stimulation and overstimulation.
 
 This is not a moral panic, and it doesn't require parents to become absolutists about screens. 
 Higher or poorly structured screen exposure has generally been associated with attention difficulties and weaker executive function, though interactive and purposeful digital activities are sometimes associated with neutral or beneficial outcomes.
@@ -77,7 +77,7 @@ These are gifts that capture a moment, a feeling, or a relationship in physical 
 ### Creative Agency: Gifts That Let Children Make Something Real
 
 Art supplies, craft kits, watercolor sets, clay, embroidery hoops, and bookmaking materials all give children the experience of genuine authorship. The finished product — however imperfect — is entirely theirs. 
-The Toy Association's 2026 research found that 78% of parents want more toys that help their kids develop skills like creativity and problem-solving.
+
  Gifts that build toward a real, holdable result tend to engage children longer and more deeply than single-activity kits with a defined endpoint.
 
 ### Nature and Body: Gifts That Draw Children Outward
@@ -132,17 +132,6 @@ Apply three tests before finalizing any gift: Is it open-ended, meaning the chil
 For gift-givers who want one beautifully crafted, screen-free choice that checks every box — meaningful, lasting, creative, and social — a beautifully illustrated Friend Book is the place to start. It is not a toy that will be outgrown, a kit that will be completed, or a game that will collect dust. It is a growing keepsake that children and their friends fill together over time, creating something that no screen can replicate and no algorithm can produce: a genuine record of childhood friendship, made by hand.
 
 ---
-
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The shift toward screen-free, meaningful gifts for children has moved well beyond trend status in 2026. 
-The toy industry has officially named screen-free play one of the defining trends of the year: the Toy Association, which runs the country's largest toy trade show, Toy Fair, introduced 2026's headline theme under the name "Cozy Culture," and according to their data, demand is rising for toys that feel intentional, calming, and human-centered.
-
-The Toy Association's own research found that more than half of parents — 53 percent — now want more toys that promote comfort and stress relief
-, a figure that reflects just how broadly the conversation has shifted from "what's fun" to "what's genuinely good for them." 
-Eco-friendly and sustainable toys — a natural companion category to the screen-free movement — are growing 18% year-on-year
-, suggesting that the values driving screen-free gift choices are part of a larger shift toward intentional, quality-over-quantity purchasing. A recently published narrative review of over a decade of studies on screen exposure and cognitive outcomes in school-aged children confirmed that higher or poorly structured screen exposure is generally associated with attention difficulties and weaker executive function, adding continued research weight to the case for analog, creative, and social alternatives.
-<!-- WHERE-THINGS-STAND:END -->
 
 ## Key Takeaways
 

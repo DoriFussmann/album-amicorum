@@ -131,24 +131,9 @@ Looking at these seven moments together, a pattern emerges. The occasions that m
 
 You don't need all seven. You need one. The end-of-year moment happening right now, or the new school starting next month, or the move that's been planned for this fall. Whichever moment resonates is the right one to act on — and the window for any of them is shorter than it feels.
 
-Album Amicorum's [*In My Friends Book*](/friend-book/) is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
+Album Amicorum's [*My Friends Book*](/friend-book/) is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
 
 ---
-
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The broader gifting and parenting landscape in mid-2026 continues to move in a direction that makes friendship books feel particularly timely. Parenting trend reporting from earlier this year has widely noted a clear shift toward what commentators are calling a slow, "analog" childhood — favouring unstructured time, tactile creative activities, and fewer but more meaningful possessions over the overscheduled, screen-heavy alternatives that dominated recent years. 
-Many families are becoming more intentional about gift choices, opting for fewer but better gifts rather than multiple low-value items
- — a shift that plays directly into the logic of a keepsake built to last decades. 
-In 2026, children are gravitating toward purposeful creative projects that tell a story or make meaningful gifts
-, while 
-steadier, focus-based crafts and slow drawing are on the rise as families balance screen time with calm, tactile activities
-. 
-Personalized and handmade gifts continue to be among the most popular gifting trends in 2026
-, reinforcing the appeal of a book that friends fill in by hand. On the calendar front, 
-National Friendship Day 2026 fell on Sunday, August 2
-, just days before this article's publication — a reminder that the cultural appetite for honouring children's friendships with something real and lasting is as present as ever.
-<!-- WHERE-THINGS-STAND:END -->
 
 ## Key Takeaways
 
@@ -157,7 +142,6 @@ National Friendship Day 2026 fell on Sunday, August 2
 - At birthdays for ages 6–10, the book can become the party activity itself.
 - Named days such as National Friendship Day (August 2, 2026) and Valentine's Day, or a summer apart, are natural occasions too.
 - Giving one for no reason at all, when friendships are simply at their fullest, can be the best time of all.
-
 
 See Related below for more on this topic.
 

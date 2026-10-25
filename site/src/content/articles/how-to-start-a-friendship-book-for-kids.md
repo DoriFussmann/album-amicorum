@@ -133,7 +133,7 @@ This is the fact that most parents only understand in retrospect, and it's worth
 
 The steps above aren't complicated, but they do require a book designed with all of them in mind. The prompts need to be calibrated for the right age range. The pages need to be beautiful enough to encourage care and participation. There should be a natural place for a self-portrait, for a favorite color, for a message that can't be condensed to a checkbox.
 
-Album Amicorum's [*In My Friends Book*](/friend-book/) was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
+Album Amicorum's [*My Friends Book*](/friend-book/) was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
 
 Starting a friendship book with intention is what transforms it from a nice idea into an actual keepsake. And the best keepsakes don't require you to figure everything out yourself — they come with the structure already in place, waiting for your child's particular, irreplaceable handwriting to make them real.
 
@@ -168,15 +168,6 @@ The pages in My Friends Book use thoughtful prompts and provide generous room fo
 
 The goal is not to produce a finished product that looks a particular way. It is to give the child enough direction to find their own voice on the page — and then get out of the way and let them use it.
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The cultural backdrop for friendship books and analog childhood keepsakes has grown notably stronger in 2026. 
-Across households, parents are rediscovering the value of analog childhood through reading together, building quieter routines, and, in a world where screens are everywhere, looking for ways to slow childhood down — not to eliminate technology, but to rebalance it.
-
-More families are intentionally slowing down, limiting screen time, and reclaiming the kinds of offline experiences that once defined growing up — free play, imagination, and real connection — making analog living one of the biggest parenting trends of 2026. Nostalgia is redefining what childhood looks and feels like this year, with parents filling playrooms with throwback toys and gravitating toward handmade patterns and tactile experiences, using the past as a blueprint for a more grounded childhood. The so-called "analog bag" trend — screen-free activity kits built around offline materials — became one of the most searched and shared trends of 2026, spreading from social media into the daily routines of families everywhere.
- For friendship books specifically, no major product or category disruptions have emerged in the past 45 days; the space remains stable, with steady parent interest that mirrors the broader analog parenting movement gaining momentum this year.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Start the book at a natural turning point: a new school year, the last weeks of a grade or the weeks before a move.
@@ -184,7 +175,6 @@ More families are intentionally slowing down, limiting screen time, and reclaimi
 - Introduce it to friends somewhere calm with time to spare — a playdate, a party or a farewell — not loose in a backpack.
 - Clear prompts and good tools help shy or uncertain children past the blank page.
 - Once pages fill, store the book somewhere safe but reachable and revisit it as a keepsake.
-
 
 See Related below for more on this topic.
 

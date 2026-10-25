@@ -123,7 +123,7 @@ Mastery of fine motor skills is one of the most significant contributors to hand
  The relationship runs in both directions: stronger fine motor skills support better handwriting, and consistent [handwriting practice](/articles/handwriting-practice-for-kids/) builds stronger fine motor skills in return.
 
 This matters more than many parents realise, because fine motor development is not guaranteed. 
-In a January 2026 survey of more than 1,100 early educators, 70 percent of respondents said their students' fine motor skills had decreased in the past two years.
+
  The decline is real, measurable, and directly connected to how much time children spend on screens rather than on hands-on, grip-intensive activities. 
 Research indicates that approximately one in four children may struggle with fine motor skills when entering kindergarten, which can impact both academic performance and self-care.
 
@@ -202,20 +202,6 @@ For students with learning differences such as dyslexia or dysgraphia, handwriti
  build the kind of automaticity that frees cognitive resources for comprehension and expression. That said, every child is different, and for some children with significant motor challenges, assistive tools may be a necessary complement — not a replacement — to handwriting practice.
 
 ---
-
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The momentum behind handwriting instruction has accelerated notably in mid-2026, with legislative and educational changes reinforcing what researchers have been showing for years. 
-Florida public school students in grades 3 through 5 are now required to learn cursive writing and demonstrate proficiency under a new state law that took effect July 1, part of a broader education bill passed during the 2026 legislative session.
-
-Pennsylvania's Act 2 of 2026 similarly requires cursive handwriting to be taught at public and private schools, bringing the state in line with 18 others that carry equivalent mandates.
- The policy movement is backed by urgent classroom data: 
-a January 2026 survey of more than 1,100 early educators found that 70 percent reported their students' fine motor skills had decreased over the past two years,
- a finding that has sharpened urgency among teachers and policymakers alike. 
-2026 has also seen continued news internationally, with countries including Sweden, Norway, France, Finland, Italy, and Denmark cutting back on screen time by returning to paper-based learning and handwriting.
- The scientific literature continues to build in parallel, with recent education commentary from August 2026 renewing calls for schools to maintain and expand explicit handwriting instruction across the primary grades, grounded in the consistent finding that 
-when children write by hand, they activate neural networks responsible for language, memory, attention, and learning in ways that typing simply does not replicate.
-<!-- WHERE-THINGS-STAND:END -->
 
 ## Key Takeaways
 

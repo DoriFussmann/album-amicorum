@@ -63,7 +63,7 @@ Before you can replace a smartphone, you have to understand what function it was
 
 Sit down with a piece of paper and map out how your child actually used their device. Break it into categories: communication, entertainment, creative output, information, and social visibility (seeing what peers are doing). Be specific. Did they spend most of their time in group chats? Watching short-form video? Playing multiplayer games with friends? Each category has a better analog equivalent — but you need to know which ones matter most in your family.
 
-According to Common Sense Media, 8- to 12-year-olds spend an average of five and a half hours on their screens every day.
+According to [Common Sense Media](https://www.commonsensemedia.org/articles/tweens-teens-and-screens-what-our-new-research-uncovers), 8- to 12-year-olds average more than four and a half hours of screen media a day.
  That's not idle time — it's time that was filling something. When it disappears overnight, you're not left with five free hours of creative possibility. You're left with five hours of unmet need. The audit is how you identify which of those needs is loudest for your particular child, so you can address it directly rather than offering a scattergun of activities that don't quite hit the mark.
 
 For many children, especially those in the 8–12 age range, the loudest need is social: the feeling of being connected, of knowing what's happening with their friends in real time. That's the one to tackle first.
@@ -131,16 +131,6 @@ As you build your toolkit of smartphone-free alternatives, this is the piece tha
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-Parents across the US and abroad are increasingly joining efforts to delay smartphone use and reduce children's screen time, with concerns about smartphones' effects on children fueling broader efforts around offline socialization and screen-free childhood initiatives. Smartphone Free Childhood, a nonprofit launched after a viral 2024 Instagram post, has expanded into an international movement encouraging parents to delay giving smartphones to children.
-
-The organization now counts over 140,000 parents from 13,500 schools who have signed its pact, with members in over 60 countries and affiliations with similar movements in more than 40 countries.
- As the movement has grown, so has parental demand for concrete alternatives — and recent reporting from mid-2026 confirms that the question of what children actually do instead has become the central practical challenge for families acting on these convictions, driving renewed interest in analog social tools, open-ended craft materials, and structured keepsake products that give children a tangible, screen-free social life. 
-Home phones are quietly making a comeback as families search for ways to give children independence without the downsides of a smartphone
- — a small but telling sign that the movement is moving beyond ideology and into the everyday logistics of a different kind of childhood.
-<!-- WHERE-THINGS-STAND:END -->
-
 ## Key Takeaways
 
 - Start by auditing what the phone actually did for your child: communication, entertainment, creativity, information and social visibility.
@@ -148,7 +138,5 @@ Home phones are quietly making a comeback as families search for ways to give ch
 - Build a weekly rhythm of anchor activities to fill the gaps a phone used to occupy.
 - Equip your home so analog options are easier to reach than screens.
 - Coordinating with other families is the most important step, as Haidt advises.
-
-
 
 For further reading, see the Sources listed below.
