@@ -199,7 +199,7 @@ Handwriting can have a range of benefits for the brain, including a calming effe
  The slow, deliberate pace of handwriting — the need to form each letter intentionally — can function as a grounding activity for children who find fast-paced digital environments overstimulating. There is something inherently rhythmic and regulating about the physical act of putting pencil to paper, tracing the familiar shapes of letters one by one.
 
 For students with learning differences such as dyslexia or dysgraphia, handwriting can be particularly helpful. Cursive, with its fluid, connected strokes, can help reduce letter reversals and provides a rhythmic pattern that helps children
- build the kind of automaticity that frees cognitive resources for comprehension and expression. That said, every child is different, and for some children with significant motor challenges, assistive tools may be a necessary complement — not a replacement — to handwriting practice.
+ build the kind of automaticity that frees cognitive resources for comprehension and expression. That said, every child is different, and for some children with significant motor challenges, assistive tools may be a necessary complement — not a replacement — to handwriting practice. A [My Friends Book](/friend-book/) is one simple way to give that handwriting a reason to happen, page by page, with friends.
 
 ---
 

@@ -46,7 +46,7 @@ faqs:
 
 ## What Slow Childhood and Analog Play Actually Mean
 
-There is a growing feeling among many parents that childhood is moving too fast — that between packed schedules, glowing screens, and the constant hum of notifications, something essential is slipping away. Slow childhood and analog play are two philosophies that name that feeling and offer a coherent response to it. Understanding what each term actually means — and how they work together — is the starting point for everything that follows.
+There is a growing feeling among many parents that childhood is moving too fast — that between packed schedules, glowing screens, and the constant hum of notifications, something essential is slipping away. Slow childhood and analog play are two philosophies that name that feeling and offer a coherent response to it. Understanding what each term actually means — and how they work together — is the starting point for everything that follows. For many families, the biggest decision here is when to give a phone; see [what a smartphone-free childhood means](/articles/smartphone-free-childhood/).
 
 **Slow childhood** is a broad orientation toward how a child's early years are experienced. 
 It is a parenting approach in which fewer activities are organized for children, and they are instead allowed to explore the world at their own pace — a response to the widespread trend for parents to schedule activities and classes, to solve problems on behalf of children, and to buy services from commercial suppliers rather than letting nature take its course.
@@ -112,7 +112,7 @@ Parents who are drawn to slow childhood and analog play are not adopting a fring
 
 One of the most common misunderstandings about slow childhood and analog play is that they require a total lifestyle transformation — a ban on all screens, a move to the countryside, a pedagogical certification. They do not. 
 This isn't about rejecting technology or chasing nostalgia; it's about supporting a play-based, developmentally healthy childhood while screens and AI become more influential.
- The most sustainable changes are incremental and family-specific. Here are the most accessible entry points:
+ The most sustainable changes are incremental and family-specific. A good first step is the toy shelf (see our guide to [analog toys for kids](/articles/analog-toys-for-kids/)), and if screens are going, plan [what children can do instead of a smartphone](/articles/smartphone-free-childhood-alternatives/). Here are the most accessible entry points:
 
 **Screen-free zones and times.** Designating certain rooms or hours as screen-free creates structure without confrontation. 
 Parents are setting a few tech-free family rhythms — deciding where phones go when they walk in the door, making the first few minutes after school phone-free, and building in analog rituals like board games on weekends, walks, and cooking together.

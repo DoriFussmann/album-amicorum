@@ -52,7 +52,7 @@ targetKeyword: smartphone free childhood
 supportingKeyword: smartphone free childhood
 ---
 
-Two families. Same school. Same values. One has decided: no smartphone until age fourteen, full stop. The other has a different plan: a basic device at eleven, parental controls, agreed limits, and a gradual loosening of the guardrails as trust is earned. Both sets of parents have read the research. Both are worried. Both are trying to do right by their children. And at the school gate, they cannot quite agree.
+Two families. Same school. Same values. One has decided: no smartphone until age fourteen, full stop. The other has a different plan: a basic device at eleven, parental controls, agreed limits, and a gradual loosening of the guardrails as trust is earned. Both sets of parents have read the research. Both are worried. Both are trying to do right by their children. And at the school gate, they cannot quite agree. It is one part of a wider move toward [slow childhood and analog play](/articles/slow-childhood-analog-play/).
 
 This is the central tension of digital parenting in the 2020s — not screens versus no screens, but *when*, *which device*, and *under what conditions*. The debate has a name now. One side rallies under the banner of the smartphone-free childhood. The other argues for something more nuanced: intentional, age-appropriate digital integration. Neither camp is wrong about what childhood should feel like. They just disagree, sometimes fiercely, about how to protect it. This article maps both positions honestly — the evidence each rests on, the real-world challenges each faces, and the surprising amount of common ground hiding underneath the argument.
 

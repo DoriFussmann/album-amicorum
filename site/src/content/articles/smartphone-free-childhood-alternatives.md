@@ -50,7 +50,7 @@ supportingKeyword: smartphone-free childhood alternatives
 
 ## The First Question Isn't "What Do I Give Them?" — It's "What Did the Phone Actually Do?"
 
-Most parents who decide to delay or limit their child's smartphone arrive at the same uncomfortable moment: the phone is gone, and the silence that follows feels enormous. Children slump. They complain. They insist there is nothing to do. It's tempting to read this as proof that the experiment has failed — but it's actually proof that it was necessary.
+Most parents who decide to delay or limit their child's smartphone arrive at the same uncomfortable moment: the phone is gone, and the silence that follows feels enormous. Children slump. They complain. They insist there is nothing to do. It's tempting to read this as proof that the experiment has failed — but it's actually proof that it was necessary. The answer usually lies in [slow childhood and analog play](/articles/slow-childhood-analog-play/), not another device.
 
 Researcher Jonathan Haidt describes today's dominant model of childhood as "phone-based" and argues that the shift away from play has been damaging. The transition from a play-based to a phone-based childhood, in his words, "has been a catastrophic failure."
  Walking that back is not a punishment. It's a recalibration. But recalibration requires a plan, and a good plan starts not with a shopping list of alternatives, but with an honest audit.
