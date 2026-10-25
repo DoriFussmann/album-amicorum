@@ -4,8 +4,8 @@ description: What makes a children's keepsake truly last? Discover which memorie
 slug: childrens-keepsakes
 date: 2026-08-18
 author: dori-fussmann
-category: Children's Keepsakes & Memory
-pillarKeyword: Children's Keepsakes & Memory
+category: "Children's Keepsakes & Memory"
+pillarKeyword: "Children's Keepsakes & Memory"
 tags:
   - children's keepsakes
   - childhood memory
@@ -21,8 +21,7 @@ twitterCard: summary_large_image
 draft: false
 updatedDate: 2026-08-22
 keywords:
-  - children's keepsakes
-  - Children's Keepsakes & Memory
+  - "Children's Keepsakes & Memory"
 faqs:
   - question: At what age should I start creating keepsakes for my child?
     answer: While many parents start at birth, the ages 5–12 are a particularly rich and often underserved window for meaningful keepsake creation. Children in this range are old enough to write, draw, and express themselves clearly, yet their friendships are still formed with a joyful, unself-conscious openness that tends to diminish as they enter secondary school. Keepsakes created during these years capture something distinct — not just milestones, but the actual social texture of a child's daily life.
@@ -33,15 +32,23 @@ faqs:
   - question: When is the best moment to give a child a friend book or social keepsake?
     answer: "The moments that most call for a social keepsake are often transitions: a best friend moving away, the last week of elementary school, a milestone birthday, or the final summer before secondary school. These are the times when children are most aware that something irreplaceable is about to change — and when the act of collecting handwritten messages and drawings from friends creates a tangible record of connection that can be returned to for a lifetime. A friend book given a few weeks before a transition gives children time to fill it before saying goodbye."
 externalLinks:
-  - label: 5 Ways To Organize Keepsakes For Your Children
-    url: https://columbiamom.com/5-ways-organize-keepsakes-children/
+  - label: "5 Ways To Organize Keepsakes For Your Children"
+    url: "https://columbiamom.com/5-ways-organize-keepsakes-children/"
     addedAt: 2026-08-18
-  - label: What to keep in children's memory boxes?
-    url: https://www.facebook.com/groups/declutteringandorganizingtipsandtricks/posts/2269763163543311/
+  - label: "How to Create Meaningful Memory Boxes for Your Kids!"
+    url: "https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/"
     addedAt: 2026-08-18
-  - label: How to Create Meaningful Memory Boxes for Your Kids!
-    url: https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/
-    addedAt: 2026-08-18
+targetKeyword: children's keepsakes
+articleType: comprehensive
+internalLinks:
+  - slug: friendship-book-for-kids
+    anchor: "The complete guide to friendship books"
+  - slug: friendship-activities-for-kids
+    anchor: "Friendship activities for kids"
+  - slug: album-amicorum
+    anchor: "The album amicorum tradition"
+  - slug: slow-childhood-analog-play
+    anchor: "Slow childhood and analog play"
 ---
 
 ## Why Children's Keepsakes Are About So Much More Than Nostalgia
@@ -162,13 +169,13 @@ The gift that meets this moment is one that can be given *in advance* of the tra
 
 ## The Illustrated Friend Book: A Centuries-Old Idea Whose Moment Has Come Again
 
-There is a tradition, centuries old, that understood all of this long before developmental psychology gave it a name. The *Album Amicorum* — literally, "book of friends" — originated in sixteenth-century Europe as a practice among scholars and students who knew that the communities they had formed would soon scatter. Before parting, a student would pass their album to each friend, who would contribute a drawing, a poem, a motto, a wish. The resulting object was not merely decorative. It was a record of a community at a specific moment in time: proof that these friendships had existed, that this person had been known and valued by these particular people, that something real had passed between them.
+There is a tradition, centuries old, that understood all of this long before developmental psychology gave it a name. The *[Album Amicorum](/articles/album-amicorum/)* — literally, "book of friends" — originated in sixteenth-century Europe as a practice among scholars and students who knew that the communities they had formed would soon scatter. Before parting, a student would pass their album to each friend, who would contribute a drawing, a poem, a motto, a wish. The resulting object was not merely decorative. It was a record of a community at a specific moment in time: proof that these friendships had existed, that this person had been known and valued by these particular people, that something real had passed between them.
 
 The instinct behind that tradition has never gone away. It is the same instinct that drives children today to pass notebooks around the classroom on the last day of term, or to crowd around a leaving card trying to find space for one more message. The desire to be recorded in the handwriting of a friend is deep and universal — and it is met, in the modern market, almost not at all.
 
 What has changed is the opportunity to do it beautifully, intentionally, and with illustrations and prompts designed specifically to draw out the kind of contributions that grow richer with time: a friend's favourite things, their most embarrassing memory, a drawing of the two of you together, a private message sealed just for later. The categories of contribution matter enormously. A blank page invites a signature; a thoughtfully prompted page invites a portrait of a personality.
 
-This is precisely what Album Amicorum's illustrated Friend Book was designed for. Not as a passive record kept by a parent, but as an active community artefact: a book that travels between friends during the golden window of primary-school years, collecting handwriting and drawings and declarations that become more irreplaceable with every year that passes. There is no second edition of a filled friend book. There is no reprinting. The friends who wrote in it were that age, in that classroom, on that particular afternoon — and when the book is full, that moment is sealed inside it forever. If you are looking for a children's keepsake that a child will still be reaching for at forty, this is where to start.
+This is precisely what Album Amicorum's illustrated [Friend Book](/friend-book/) was designed for. Not as a passive record kept by a parent, but as an active community artefact: a book that travels between friends during the golden window of primary-school years, collecting handwriting and drawings and declarations that become more irreplaceable with every year that passes. There is no second edition of a filled friend book. There is no reprinting. The friends who wrote in it were that age, in that classroom, on that particular afternoon — and when the book is full, that moment is sealed inside it forever. If you are looking for a children's keepsake that a child will still be reaching for at forty, this is where to start.
 
 ---
 

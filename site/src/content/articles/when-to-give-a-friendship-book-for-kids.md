@@ -5,7 +5,7 @@ description: From the last day of school to a family move, these 7 moments are w
 slug: when-to-give-a-friendship-book-for-kids
 date: 2026-08-10
 author: dori-fussmann
-category: Meaningful & Screen-Free Gifts
+category: "Friend Books & Friendship Keepsakes"
 tags:
   - friendship book for kids
   - Friend Books & Friendship Keepsakes
@@ -21,14 +21,13 @@ locale: en-US
 twitterCard: summary_large_image
 draft: false
 updatedDate: 2026-08-28
-pillarKeyword: Meaningful & Screen-Free Gifts
-supportingKeyword: friendship book for kids
+pillarKeyword: "Friend Books & Friendship Keepsakes"
+supportingKeyword: when to give a friendship book for kids
 articleType: flex
 targetKeyword: when to give a friendship book for kids
 keywords:
-  - when to give a friendship book for kids (no volume data)
-  - friendship book for kids
-  - Friend Books & Friendship Keepsakes
+  - "when to give a friendship book for kids"
+  - "Friend Books & Friendship Keepsakes"
 faqs:
   - question: What is the single best time of year to start a friendship book for a child?
     answer: The end of the school year is widely considered the ideal moment — class rosters are about to change, and the friendships of this specific year are fresh and emotionally present. Giving the book in the final weeks of school means friends can fill it in before summer scatters everyone, making it a true snapshot of that year.
@@ -39,33 +38,16 @@ faqs:
   - question: Does giving a friendship book have to be tied to a specific occasion?
     answer: "Not at all. Some of the most treasured friendship books are started on completely ordinary days — a random Tuesday in October, or a quiet afternoon after school. The lack of occasion can actually add to the meaning: it tells a child that their friendships are worth celebrating even when nothing special is happening, which turns the gift itself into the event."
 internalLinks:
-  - slug: friend-books-for-kids
-    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-  - slug: friendship-book-for-kids-questions
-    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
   - slug: friendship-book-for-kids
-    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
-    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    anchor: "The complete guide to friendship books"
   - slug: how-to-start-a-friendship-book-for-kids
-    anchor: "How to Start a Kids' Friendship Book: A Step-by-Step Guide"
-  - slug: meaningful-screen-free-gifts
-    anchor: "Meaningful & Screen-Free Gifts"
-externalLinks:
-  - label: That first “I'm not your friend anymore” It's one of those ...
-    url: https://www.instagram.com/reel/DWZKb_QDwbg/?hl=en
-    addedAt: 2026-08-10
-  - label: Books To Show Kids How To Be a Friend
-    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
-    addedAt: 2026-08-10
-  - label: What books show it's normal to share friends and help shy ...
-    url: https://www.facebook.com/groups/mybookloversclub/posts/7714267648642144/
-    addedAt: 2026-08-10
+    anchor: "How to start a friendship book"
+  - slug: unique-gifts-for-6-year-olds
+    anchor: "Unique gifts for 6-year-olds"
+externalLinks: []
 ---
 
-## 7 Occasions That Call for Giving a Friendship Book for Kids
-
-Some gifts are well-chosen. Others are perfectly timed. A friendship book for kids belongs in that rarer second category — a gift whose value depends not just on what it is, but on the moment it arrives. Give it too randomly, and it may sit on a shelf. Give it at the right moment, and it becomes the first page of something a child will carry for decades.
+Some gifts are well-chosen. Others are perfectly timed. A [friendship book](/articles/friendship-book-for-kids/) for kids belongs in that rarer second category — a gift whose value depends not just on what it is, but on the moment it arrives. Give it too randomly, and it may sit on a shelf. Give it at the right moment, and it becomes the first page of something a child will carry for decades.
 
 The question, then, isn't really *whether* to give a friendship book. It's *when*. The good news is that childhood is full of moments that are quietly begging for one.
 
@@ -75,7 +57,7 @@ The question, then, isn't really *whether* to give a friendship book. It's *when
 
 No moment in a child's social life is more poignant (or more overlooked) than the last few weeks of a school year. The class that spent nine months together is about to scatter: to new classrooms, new teachers, summer camps in different cities, and in some cases, different schools entirely. The exact configuration of friendships that exists in May will never exist again in quite the same way.
 
-This is the single most powerful moment to start a friendship book. The urgency is real: give it too late, and the window closes. Give it with three or four weeks of school still remaining, and a child can work their way around the classroom, collecting pages from every friend they want to remember. By the last day, they'll have something irreplaceable — not a yearbook signed in haste, but a book of handwritten favorites, drawings, and private messages from the people who defined that particular year.
+This is the single most powerful moment to [start a friendship book](/articles/how-to-start-a-friendship-book-for-kids/). The urgency is real: give it too late, and the window closes. Give it with three or four weeks of school still remaining, and a child can work their way around the classroom, collecting pages from every friend they want to remember. By the last day, they'll have something irreplaceable — not a yearbook signed in haste, but a book of handwritten favorites, drawings, and private messages from the people who defined that particular year.
 
 There's something worth saying about the handwritten quality here specifically. A text message or a tagged photo disappears into a feed. A friend's handwriting, pressed into a page with their favorite color in the margins and a little drawing of their dog, is permanent in a way that no digital record can replicate. End of year is when children feel this instinctively, even if they don't have words for it yet.
 
@@ -149,7 +131,7 @@ Looking at these seven moments together, a pattern emerges. The occasions that m
 
 You don't need all seven. You need one. The end-of-year moment happening right now, or the new school starting next month, or the move that's been planned for this fall. Whichever moment resonates is the right one to act on — and the window for any of them is shorter than it feels.
 
-Album Amicorum's *In My Friends Book* is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
+Album Amicorum's [*In My Friends Book*](/friend-book/) is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
 
 ---
 
@@ -180,7 +162,3 @@ National Friendship Day 2026 fell on Sunday, August 2
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.
-
-<!-- CMS-INTERNAL:START -->
-Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: FAQ for Parents and Gift-Givers](/articles/friendship-book-for-kids-questions/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [How to Start a Kids' Friendship Book: A Step-by-Step Guide](/articles/how-to-start-a-friendship-book-for-kids/) · [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/).
-<!-- CMS-INTERNAL:END -->

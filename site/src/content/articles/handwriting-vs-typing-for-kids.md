@@ -5,11 +5,11 @@ slug: handwriting-vs-typing-for-kids
 date: 2026-08-27
 updatedDate: 2026-08-27
 author: dori-fussmann
-category: Slow Childhood & Analog Play
-pillarKeyword: Slow Childhood & Analog Play
-supportingKeyword: benefits of handwriting for kids
+category: "Slow Childhood & Analog Play"
+pillarKeyword: "Slow Childhood & Analog Play"
+supportingKeyword: handwriting vs typing
 articleType: comparison
-targetKeyword: handwriting vs typing for kids (no volume data)
+targetKeyword: handwriting vs typing
 tags:
   - handwriting for kids
   - handwriting vs typing for kids
@@ -19,26 +19,21 @@ tags:
 image: ../../assets/articles/handwriting-vs-typing-for-kids.png
 imageAlt: "A young child writing in a colorful illustrated book with a pencil, focused and smiling, at a wooden desk"
 keywords:
-  - handwriting vs typing for kids (no volume data)
-  - benefits of handwriting for kids
-  - "Childhood Friendship & Connection"
+  - "handwriting vs typing"
+  - "Slow Childhood & Analog Play"
 draft: false
 internalLinks:
   - slug: benefits-of-handwriting-for-kids
-    anchor: benefits of handwriting for kids
-  - slug: handwriting-activities-for-kids-at-home
-    anchor: handwriting activities for kids at home
-  - slug: how-to-encourage-handwriting-at-home-for-kids
-    anchor: how to encourage handwriting at home for kids
-  - slug: is-handwriting-important-for-kids
-    anchor: is handwriting important for kids
-  - slug: slow-childhood-analog-play
-    anchor: "Slow Childhood & Analog Play"
+    anchor: "The benefits of handwriting for kids"
+  - slug: handwriting-practice-for-kids
+    anchor: "Handwriting practice ideas"
+  - slug: smartphone-free-childhood
+    anchor: "Smartphone-free childhood"
 externalLinks:
   - label: "Handwriting or Typewriting? The Influence of Pen - PMC - NIH"
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC4710970/"
     addedAt: 2026-08-27
-  - label: Handwriting but not typewriting leads to widespread brain ...
+  - label: "Handwriting but not typewriting leads to widespread brain ..."
     url: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1219945/full"
     addedAt: 2026-08-27
   - label: "Handwriting vs. Typing: Brain Connectivity Findings and ..."
@@ -67,7 +62,7 @@ A 2024 study published in *Frontiers in Psychology* found that, compared to type
 Handwriting promotes better learning of new words and concepts, as it combines cognitive, sensory, and motor elements in a way that typing does not.
 
 Typing, by contrast, involves a largely uniform physical act — the same press of a key, regardless of which letter is being produced. 
-The handwriting advantage in memory retention is largely due to the fact that writing by hand is a more cognitively demanding process, requiring the brain to engage in deep encoding of information, while typing tends to involve a more passive transcription, often without engaging deeply with the material.
+The handwriting advantage in memory retention is largely due to the fact that [writing by hand](/articles/benefits-of-handwriting-for-kids/) is a more cognitively demanding process, requiring the brain to engage in deep encoding of information, while typing tends to involve a more passive transcription, often without engaging deeply with the material.
  The brain has to work harder when writing by hand, and that productive difficulty is precisely what makes the learning stick.
 
 There is also something to be said for pace. 
@@ -78,7 +73,7 @@ Handwriting slows down the writing process, prompting the writer to actively par
 
 The research becomes especially compelling when the focus narrows to early childhood, specifically the window when children are first learning to read and write. Here, handwriting does not just offer a general learning advantage — it shapes the neurological foundations of literacy itself.
 
-Grapho-motor action — the physical movement of forming letters — is a key mechanism for boosting alphabetic and orthographic knowledge in early childhood, and recent research has revealed that substituting handwriting practice with typing may hinder the initial steps of reading development.
+Grapho-motor action — the physical movement of forming letters — is a key mechanism for boosting alphabetic and orthographic knowledge in early childhood, and recent research has revealed that substituting [handwriting practice](/articles/handwriting-practice-for-kids/) with typing may hinder the initial steps of reading development.
  That finding should give parents and educators pause. It suggests the question is not just "which is faster?" but "which builds the reading brain?"
 
 French children aged three to five years old, for example, were taught to copy letters of the alphabet either by hand or by typing; after three weeks, the handwriting group could recognize more letters than the typing group.
@@ -129,7 +124,7 @@ There is one dimension of handwriting that neuroscience can document but cannot 
 
 Typed text is uniform. It carries no trace of the hand that produced it, no memory of the moment in which it was made. A child's handwritten message — to a friend, in a birthday card, on a page of a book she will keep for years — is something else entirely. It is a fingerprint in ink, irretrievably tied to the age at which it was made.
 
-This is why, in an era when so much of childhood communication is typed, texted, or auto-corrected into sameness, a handwritten message carries a weight that a digital one simply cannot. A handwritten message in a Friend Book does something a typed one never can: it preserves a child's exact hand, their pressure on the page, their particular loops and flourishes, at this one irretrievable moment in childhood. Years from now, that page will show not just what was written, but who wrote it — and how old she was when she did.
+This is why, in an era when so much of childhood communication is typed, texted, or auto-corrected into sameness, a handwritten message carries a weight that a digital one simply cannot. A handwritten message in a [Friend Book](/friend-book/) does something a typed one never can: it preserves a child's exact hand, their pressure on the page, their particular loops and flourishes, at this one irretrievable moment in childhood. Years from now, that page will show not just what was written, but who wrote it — and how old she was when she did.
 
 The research gives parents permission to protect handwriting time without apology. It is not a nostalgic indulgence. It is, quite literally, how children build their reading brains, encode their memories, and leave a mark on the world that is entirely their own.
 
@@ -153,12 +148,3 @@ researchers are documenting the powerful effects of handwriting on thinking and 
 - Forming letters by hand strengthens alphabetic and spelling knowledge while children are learning to read and write.
 - Typing has real value, especially once literacy foundations are in place; it serves a different function.
 - The window when handwriting most shapes literacy is early childhood, and those skills are hard to retrofit later.
-
-
-<!-- CMS-INTERNAL:START -->
-Further reading: [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
-<!-- CMS-INTERNAL:END -->
-
-<!-- CMS-EXTERNAL:START -->
-Sources: [Handwriting or Typewriting? The Influence of Pen - PMC - NIH](https://pmc.ncbi.nlm.nih.gov/articles/PMC4710970/) · [Handwriting but not typewriting leads to widespread brain ...](https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2023.1219945/full) · [Handwriting vs. Typing: Brain Connectivity Findings and ...](https://realotsolutions.com/blogs/news/handwriting-but-not-typewriting-leads-to-widespread-brain-connectivity?srsltid=AfmBOooMFXT9ldjKURs_S4MxW4zVuzK8n76kUY-r_nRUzLLQx7gdEriL).
-<!-- CMS-EXTERNAL:END -->

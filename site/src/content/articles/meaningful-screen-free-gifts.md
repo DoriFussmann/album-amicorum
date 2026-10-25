@@ -8,7 +8,7 @@ author: dori-fussmann
 category: "Meaningful & Screen-Free Gifts"
 pillarKeyword: "Meaningful & Screen-Free Gifts"
 articleType: comprehensive
-targetKeyword: "Meaningful & Screen-Free Gifts"
+targetKeyword: screen-free gifts for kids
 tags:
   - "meaningful & screen-free gifts"
   - gifts for kids
@@ -18,25 +18,18 @@ tags:
 image: ../../assets/articles/meaningful-screen-free-gifts.png
 imageAlt: "A child sitting at a wooden table surrounded by illustrated books, colored pencils, and a beautifully designed friend book open to pages filled with handwritten notes and small drawings"
 keywords:
+  - "screen-free gifts for kids"
   - "Meaningful & Screen-Free Gifts"
 draft: false
 internalLinks:
-  - slug: how-to-choose-a-unique-gift-for-a-6-year-old
-    anchor: how to choose a unique gift for a 6 year old
-  - slug: unique-gift-vs-toy-for-6-year-old
-    anchor: unique gift vs toy for 6 year old
-  - slug: unique-gifts-for-6-year-olds-questions-answered
-    anchor: unique gifts for 6 year olds questions answered
-  - slug: unique-gifts-for-6-year-olds-that-arent-toys
-    anchor: unique gifts for 6 year olds that aren't toys
   - slug: unique-gifts-for-6-year-olds
-    anchor: unique gifts for 6 year olds
-  - slug: when-to-give-a-friendship-book-for-kids
-    anchor: when to give a friendship book for kids
-  - slug: friend-books-for-kids
-    anchor: friend books for kids
+    anchor: "Unique gifts for 6-year-olds"
+  - slug: analog-toys-for-kids
+    anchor: "Analog toys for kids"
+  - slug: friendship-book-for-kids
+    anchor: "The complete guide to friendship books"
   - slug: slow-childhood-analog-play
-    anchor: "Slow Childhood & Analog Play"
+    anchor: "Slow childhood and analog play"
 externalLinks: []
 faqs:
   - question: "What makes a gift truly 'meaningful' for a child, not just screen-free?"
@@ -48,8 +41,6 @@ faqs:
   - question: "Are Friend Books suitable for children who aren't big readers or writers?"
     answer: "Yes — a well-designed Friend Book isn't primarily a reading or writing activity. It's a drawing, doodling, filling-in, and decorating activity that uses short prompts (favorite color, best day ever, draw your pet) to lower the barrier for children at any literacy stage. The handwritten and hand-drawn nature of the pages is actually part of what makes them precious: imperfect, personal, and entirely the child's own. Children as young as 5 can participate meaningfully with minimal adult guidance."
 ---
-
-## Meaningful, Screen-Free Gifts for Kids: A Parent's Guide
 
 There is a particular frustration that settles in when you are trying to buy a thoughtful gift for a child. The toy aisles are full of things that beep, flash, or require a companion app to function, and the alternatives often feel either too generic (another art kit) or too precious for daily use. Meanwhile, the phrase "screen-free" has become so popular it now appears on packaging for items that, one way or another, still route a child toward a device. So before choosing a gift, it helps to get clear on what "screen-free" and "meaningful" actually mean — because the two words do not automatically come together, and understanding how they intersect is where thoughtful gift-giving really begins.
 
@@ -81,7 +72,7 @@ Instead of thinking by product category (art supplies, board games, outdoor gear
 
 ### Lasting Memory: Gifts That Preserve Something
 
-These are gifts that capture a moment, a feeling, or a relationship in physical form. Illustrated journals, handmade keepsake books, and memory-making stationery fall into this category. They are meaningful because they are unrepeatable — the words and drawings inside cannot be re-created, reprinted, or scrolled past. A heirloom-quality journal or a beautifully designed friendship book belongs here, and it tends to be most meaningful at ages 8 and up, when children have developed the autobiographical memory to understand why preserving something matters.
+These are gifts that capture a moment, a feeling, or a relationship in physical form. Illustrated journals, handmade keepsake books, and memory-making stationery fall into this category. They are meaningful because they are unrepeatable — the words and drawings inside cannot be re-created, reprinted, or scrolled past. A heirloom-quality journal or a beautifully designed [friendship book](/articles/friendship-book-for-kids/) belongs here, and it tends to be most meaningful at ages 8 and up, when children have developed the autobiographical memory to understand why preserving something matters.
 
 ### Creative Agency: Gifts That Let Children Make Something Real
 
@@ -123,7 +114,7 @@ Research finds that people derive more enduring satisfaction from experiences th
 
 ## The Friend Book: Where Every Category Comes Together
 
-Most screen-free gifts occupy one category of value well. A nature kit builds curiosity and outdoor connection. An art set supports creative agency. A quality book builds imagination and literacy. Each is worthwhile. But there is a specific type of gift — one with deep historical roots and a very modern relevance — that manages to occupy every category at once: the illustrated Friend Book.
+Most screen-free gifts occupy one category of value well. A nature kit builds curiosity and outdoor connection. An art set supports creative agency. A quality book builds imagination and literacy. Each is worthwhile. But there is a specific type of gift — one with deep historical roots and a very modern relevance — that manages to occupy every category at once: the illustrated [Friend Book](/friend-book/).
 
 The tradition of the friendship album, or "Book of Friends," dates back centuries to a European practice where students and scholars collected the signatures, mottoes, and small drawings of their companions in an illustrated book. The practice was a way of preserving social ties across distance, across time, and across the transience of childhood itself. What made the album precious was not the book — it was what people put in it: the handwriting, the small drawings, the inside jokes, the declarations of "best friend forever" made by a nine-year-old who meant it completely.
 
@@ -160,7 +151,3 @@ Eco-friendly and sustainable toys — a natural companion category to the screen
 - Organizing screen-free gifts by the value they deliver — lasting memory, creative agency, nature connection, or friendship — is more useful than shopping by product category, and helps ensure the gift matches both the child's developmental stage and the giver's intentions.
 - Age-band matching matters: children ages 5–7 thrive with tactile, open-ended play; ages 8–10 respond to making and preserving; and ages 10–12 are increasingly drawn to gifts that feel personal, social, and identity-affirming.
 - A beautifully illustrated Friend Book — one that children take to school and fill with their friends' handwriting and drawings over months or years — is the rare screen-free gift that simultaneously serves every value category: creative, social, lasting, and entirely irreplaceable.
-
-<!-- CMS-INTERNAL:START -->
-Further reading: [how to choose a unique gift for a 6 year old](/articles/how-to-choose-a-unique-gift-for-a-6-year-old/) · [unique gift vs toy for 6 year old](/articles/unique-gift-vs-toy-for-6-year-old/) · [unique gifts for 6 year olds questions answered](/articles/unique-gifts-for-6-year-olds-questions-answered/) · [unique gifts for 6 year olds that aren't toys](/articles/unique-gifts-for-6-year-olds-that-arent-toys/) · [unique gifts for 6 year olds](/articles/unique-gifts-for-6-year-olds/) · [when to give a friendship book for kids](/articles/when-to-give-a-friendship-book-for-kids/) · [friend books for kids](/articles/friend-books-for-kids/) · [Slow Childhood & Analog Play](/articles/slow-childhood-analog-play/).
-<!-- CMS-INTERNAL:END -->
