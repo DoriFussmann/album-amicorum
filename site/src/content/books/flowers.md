@@ -15,7 +15,7 @@ gallery:
   - /images/books/flowers/07-bookmark-1.jpg
   - /images/books/flowers/08-bookmark-2.jpg
   - /images/books/flowers/02-back.jpg
-metaTitle: "Flower Friend Book for Kids | Album Amicorum"
+metaTitle: "Flower-Themed Friend Book for Kids | Album Amicorum"
 metaDescription: "A friend book for children who love flowers — fill it with handwritten memories, drawings, and messages from friends. A keepsake to treasure."
 order: 2
 ---

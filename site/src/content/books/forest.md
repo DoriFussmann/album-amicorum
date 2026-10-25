@@ -12,7 +12,7 @@ gallery:
   - /images/books/forest/03-open-2.jpg
   - /images/books/forest/04-use.jpg
   - /images/books/forest/05-lifestyle.jpg
-metaTitle: "Forest Friend Book for Kids | Album Amicorum"
+metaTitle: "Forest-Themed Friend Book for Kids | Album Amicorum"
 metaDescription: "A friend book for children who love the woods — fill it with handwritten memories, drawings, and messages from friends. A keepsake to treasure."
 order: 5
 ---
