@@ -8,7 +8,7 @@ author: dori-fussmann
 category: "Slow Childhood & Analog Play"
 pillarKeyword: "Slow Childhood & Analog Play"
 articleType: comprehensive
-targetKeyword: "Slow Childhood & Analog Play"
+targetKeyword: slow childhood
 tags:
   - slow childhood
   - analog play
@@ -18,41 +18,20 @@ tags:
 image: ../../assets/articles/slow-childhood-analog-play.png
 imageAlt: "A child sitting at a wooden table writing by hand in an illustrated friend book, surrounded by colored pencils and natural light"
 keywords:
+  - "slow childhood"
   - "Slow Childhood & Analog Play"
 draft: false
 internalLinks:
-  - slug: analog-toys-for-kids-questions-answered
-    anchor: analog toys for kids questions parents ask
   - slug: analog-toys-for-kids
-    anchor: analog toys for kids
-  - slug: analog-toys-vs-digital-toys-for-kids
-    anchor: analog toys vs digital toys for kids
-  - slug: benefits-of-handwriting-for-kids
-    anchor: benefits of handwriting for kids
-  - slug: handwriting-activities-for-kids-at-home
-    anchor: handwriting activities for kids at home
-  - slug: handwriting-vs-typing-for-kids
-    anchor: handwriting vs typing for kids
-  - slug: how-to-build-an-analog-toy-shelf-for-kids
-    anchor: how to build an analog toy shelf for kids
-  - slug: how-to-encourage-handwriting-at-home-for-kids
-    anchor: how to encourage handwriting at home for kids
-  - slug: is-handwriting-important-for-kids
-    anchor: is handwriting important for kids
-  - slug: jonathan-haidt-screen-free-childhood-advice
-    anchor: "Jonathan Haidt's Screen-Free Childhood Advice: Top FAQs"
-  - slug: screen-free-childhood
-    anchor: "Screen-Free Childhood: What It Means and Why It Matters Now"
-  - slug: smartphone-free-childhood-alternatives
-    anchor: Smartphone-Free Childhood Alternatives Kids Actually Love
-  - slug: smartphone-free-childhood-pact
-    anchor: "The Smartphone Free Childhood Pact: 8 Things to Know Now"
+    anchor: "Analog toys for kids"
   - slug: smartphone-free-childhood
-    anchor: "Smartphone-Free vs. Screen Balance: Which Fits Your Family?"
-  - slug: friend-books-for-kids
-    anchor: friend books for kids
+    anchor: "Smartphone-free childhood"
+  - slug: smartphone-free-childhood-alternatives
+    anchor: "What to do instead of a smartphone"
+  - slug: benefits-of-handwriting-for-kids
+    anchor: "The benefits of handwriting for kids"
   - slug: meaningful-screen-free-gifts
-    anchor: "Meaningful & Screen-Free Gifts"
+    anchor: "Meaningful screen-free gifts"
 externalLinks: []
 faqs:
   - question: "What is the difference between slow childhood and analog play?"
@@ -170,24 +149,11 @@ In a friendship book, two or more people vowed each other their friendship throu
  The earliest friendship books, 
 first used by students from Northern Europe in the early sixteenth century, were prepared entirely by hand; a small illustration would be commissioned from a local artist and inserted into the book alongside a friend's signature and a passage of text.
 
-What these historical objects understood — and what modern parents are rediscovering — is that the act of filling in a book together, by hand, is itself a slow, analog, relational practice. It is the opposite of a screenshot. It requires presence, intention, and time. And it produces something that cannot be deleted, auto-archived, or replaced: a one-of-a-kind record of who these children were to each other, at this exact moment in childhood, written in their own handwriting, decorated with their own drawings.
+What these historical objects understood — and what modern parents are rediscovering — is that the act of filling in a book together, by hand, is itself a slow, analog, relational practice. It is the opposite of a screenshot. It requires presence, intention, and time. And it produces something that cannot be deleted, auto-archived, or replaced: a one-of-a-kind record of who these children were to each other, at this exact moment in childhood, written in their own [handwriting](/articles/benefits-of-handwriting-for-kids/), decorated with their own drawings.
 
-That is what makes the Album Amicorum Friend Book by Album Amicorum such a natural fit for families already living by slow childhood values. Beautifully illustrated and thoughtfully designed for children ages 5–12, it invites each friend to fill in their own pages — sharing favorite things, handwritten messages, drawings, and memories — creating a collection of friendship that can never be recreated. It is not a product layered onto a slow childhood philosophy; it is an expression of it: a tangible artifact of childhood, filled together by hand, and treasured for a lifetime. If you have already begun the work of slowing down — creating boredom windows, setting up an analog toy shelf, protecting time for real-world play — adding a Friend Book to your child's life is the most natural next step.
+That is what makes the Album Amicorum [Friend Book](/friend-book/) by Album Amicorum such a natural fit for families already living by slow childhood values. Beautifully illustrated and thoughtfully designed for children ages 5–12, it invites each friend to fill in their own pages — sharing favorite things, handwritten messages, drawings, and memories — creating a collection of friendship that can never be recreated. It is not a product layered onto a slow childhood philosophy; it is an expression of it: a tangible artifact of childhood, filled together by hand, and treasured for a lifetime. If you have already begun the work of slowing down — creating boredom windows, setting up an analog toy shelf, protecting time for real-world play — adding a Friend Book to your child's life is the most natural next step.
 
 ---
-
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The analog childhood movement has moved well beyond parenting niche circles in 2026. 
-Going analog has emerged as a major 2026 lifestyle trend, with families embracing board games, puzzles, and analog tools to create boundaries, reduce overstimulation, and support healthier childhood development.
-
-Across the country, school phone bans moved quickly in many states with the start of the 2025–2026 school year
-, accelerating the broader cultural shift. Industry data reinforces the picture: 
-games and puzzles led toy industry growth in early 2026 with 39% year-over-year gains
-, pointing to sustained consumer appetite for hands-on, low-tech play. Trend research published in mid-2026 found that a majority of Gen Z and Millennial respondents now actively seek out offline, hands-on activities specifically to counter screen time — not as a temporary detox but as a deliberate lifestyle choice they are building around. 
-Researchers see the going-analog movement as more structural than seasonal, tied to broader concerns about attention and AI saturation rather than a passing aesthetic, with multiple 2026 reports treating it as an ongoing shift rather than a short-term fad.
- For families already oriented toward slow childhood and analog play, the cultural moment has never been more supportive.
-<!-- WHERE-THINGS-STAND:END -->
 
 ## Key Takeaways
 
@@ -196,7 +162,3 @@ Researchers see the going-analog movement as more structural than seasonal, tied
 - Waldorf, Montessori, Forest School, and the Slow Parenting movement all independently arrived at the same conclusion: children need more time, more autonomy, and more contact with the physical world — giving parents a rich philosophical lineage to draw from.
 - Embracing slow childhood does not require a wholesale lifestyle overhaul; screen-free zones, deliberate boredom windows, open-ended toy shelves, and handwritten correspondence between children are accessible entry points for any family.
 - The fullest expression of an analog childhood is not only what children do in the moment but what they keep — physical, handwritten objects that preserve the texture of childhood friendships in ways no digital file can replicate.
-
-<!-- CMS-INTERNAL:START -->
-Further reading: [analog toys for kids questions parents ask](/articles/analog-toys-for-kids-questions-answered/) · [analog toys for kids](/articles/analog-toys-for-kids/) · [analog toys vs digital toys for kids](/articles/analog-toys-vs-digital-toys-for-kids/) · [benefits of handwriting for kids](/articles/benefits-of-handwriting-for-kids/) · [handwriting activities for kids at home](/articles/handwriting-activities-for-kids-at-home/) · [handwriting vs typing for kids](/articles/handwriting-vs-typing-for-kids/) · [how to build an analog toy shelf for kids](/articles/how-to-build-an-analog-toy-shelf-for-kids/) · [how to encourage handwriting at home for kids](/articles/how-to-encourage-handwriting-at-home-for-kids/) · [is handwriting important for kids](/articles/is-handwriting-important-for-kids/) · [Jonathan Haidt's Screen-Free Childhood Advice: Top FAQs](/articles/jonathan-haidt-screen-free-childhood-advice/) · [Screen-Free Childhood: What It Means and Why It Matters Now](/articles/screen-free-childhood/) · [Smartphone-Free Childhood Alternatives Kids Actually Love](/articles/smartphone-free-childhood-alternatives/) · [The Smartphone Free Childhood Pact: 8 Things to Know Now](/articles/smartphone-free-childhood-pact/) · [Smartphone-Free vs. Screen Balance: Which Fits Your Family?](/articles/smartphone-free-childhood/) · [friend books for kids](/articles/friend-books-for-kids/) · [Meaningful & Screen-Free Gifts](/articles/meaningful-screen-free-gifts/).
-<!-- CMS-INTERNAL:END -->

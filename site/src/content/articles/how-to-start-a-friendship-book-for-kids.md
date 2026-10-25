@@ -4,7 +4,7 @@ description: A parent's practical guide to starting a friendship book with kids 
 slug: how-to-start-a-friendship-book-for-kids
 date: 2026-08-10
 author: dori-fussmann
-category: Friend Books & Friendship Keepsakes
+category: "Friend Books & Friendship Keepsakes"
 tags:
   - Friend Books & Friendship Keepsakes
   - friendship book for kids
@@ -18,52 +18,41 @@ schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
 draft: false
-updatedDate: 2026-08-28
-pillarKeyword: Friend Books & Friendship Keepsakes
-supportingKeyword: friendship book for kids
+updatedDate: "2026-10-25"
+pillarKeyword: "Friend Books & Friendship Keepsakes"
+supportingKeyword: how to start a friendship book for kids
 articleType: howto
 targetKeyword: how to start a friendship book for kids
 keywords:
-  - how to start a friendship book for kids (no volume data)
-  - friendship book for kids
-  - Friend Books & Friendship Keepsakes
+  - "how to start a friendship book for kids"
+  - "Friend Books & Friendship Keepsakes"
 faqs:
-  - question: When is the best age to start a friendship book for a child?
-    answer: Most children are ready to start a friendship book between ages 5 and 7, when they can recognize their friends' names and appreciate receiving written messages — even simple ones. That said, a friendship book can be started at any age through childhood. The most meaningful pages often come from wherever the child is right now, whether that's a kindergarten classroom or a fifth-grade farewell.
-  - question: What if my child's friends are too young to write on their own?
-    answer: That's completely fine — and part of the charm. Younger friends can draw a picture, add a handprint, or dictate a message to a parent who writes it for them. The page becomes a record of exactly where that friend was developmentally, which makes it even more precious to look back on.
-  - question: How many friends should fill the book before we consider it complete?
-    answer: There's no magic number. Some families keep a single book across several years, adding pages from different grades and seasons of friendship. Others start a new book for a specific chapter — a school year, a move, a summer. The book is complete when it feels complete to your child, not when a certain quota is reached.
-  - question: Can a friendship book double as a birthday or going-away gift?
-    answer: Absolutely — and it's one of the most thoughtful ways to give one. Presenting a friendship book at a birthday party gives the child an immediate reason to start passing it around, and friends who are present can fill a page that same day. For a child who is moving away, a book that friends fill at a farewell gathering becomes an instant, irreplaceable record of that chapter of life.
+  - question: "When is the best age to start a friendship book for a child?"
+    answer: "Most children are ready to start a friendship book between ages 5 and 7, when they can recognize their friends' names and appreciate receiving written messages — even simple ones. That said, a friendship book can be started at any age through childhood. The most meaningful pages often come from wherever the child is right now, whether that's a kindergarten classroom or a fifth-grade farewell."
+  - question: "What if my child's friends are too young to write on their own?"
+    answer: "That's completely fine — and part of the charm. Younger friends can draw a picture, add a handprint, or dictate a message to a parent who writes it for them. The page becomes a record of exactly where that friend was developmentally, which makes it even more precious to look back on."
+  - question: "How many friends should fill the book before we consider it complete?"
+    answer: "There's no magic number. Some families keep a single book across several years, adding pages from different grades and seasons of friendship. Others start a new book for a specific chapter — a school year, a move, a summer. The book is complete when it feels complete to your child, not when a certain quota is reached."
+  - question: "Can a friendship book double as a birthday or going-away gift?"
+    answer: "Absolutely — and it's one of the most thoughtful ways to give one. Presenting a friendship book at a birthday party gives the child an immediate reason to start passing it around, and friends who are present can fill a page that same day. For a child who is moving away, a book that friends fill at a farewell gathering becomes an instant, irreplaceable record of that chapter of life."
+  - question: "Can family members — like grandparents or cousins — add pages too?"
+    answer: "Absolutely. A Friend Book is not limited to school friends. Grandparents, cousins, neighbours, teammates, and teachers can all contribute a page. Each person brings a different perspective, and a grandparent's handwriting or a cousin's drawing can become one of the most treasured pages in the finished book."
 internalLinks:
-  - slug: friend-books-for-kids
-    anchor: "Friend Books for Kids: The Ultimate Childhood Keepsake Guide"
-  - slug: friendship-book-for-kids-questions
-    anchor: "Friendship Book for Kids: FAQ for Parents and Gift-Givers"
   - slug: friendship-book-for-kids
-    anchor: "Friendship Book for Kids: The Complete Guide to Keepsakes"
-  - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
-    anchor: "Friendship Storybooks vs. Keepsake Books: Which Is Right?"
+    anchor: "The complete guide to friendship books"
   - slug: when-to-give-a-friendship-book-for-kids
-    anchor: 7 Occasions That Call for Giving a Friendship Book for Kids
-  - slug: memory-book-for-kids
-    anchor: Memory Book for Kids
+    anchor: "When to give a friendship book"
+  - slug: handwriting-practice-for-kids
+    anchor: "Handwriting practice ideas"
 externalLinks:
-  - label: How To Make Friends For Kids
-    url: https://www.amazon.com/how-make-friends-kids/s?k=how+to+make+friends+for+kids
-    addedAt: 2026-08-10
   - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
-    url: https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/
-    addedAt: 2026-08-10
-  - label: Books To Show Kids How To Be a Friend
-    url: https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/
+    url: "https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/"
     addedAt: 2026-08-10
 ---
 
 ## Why Starting a Friendship Book Is Worth Doing Right
 
-Some keepsakes you simply buy and put on a shelf. A friendship book is not one of them. It has to be started (introduced, explained, handed around, coaxed into life) and the way you begin it shapes everything that follows. A book passed to a friend with a casual "just write something" will return with a first name and a smiley face. A book introduced with a little intention and warmth will come back with a favorite color, a memory, a drawing that looks exactly like the child who made it. The difference between those two outcomes isn't the book. It's the setup.
+Some keepsakes you simply buy and put on a shelf. A [friendship book](/articles/friendship-book-for-kids/) is not one of them. It has to be started (introduced, explained, handed around, coaxed into life) and the way you begin it shapes everything that follows. A book passed to a friend with a casual "just write something" will return with a first name and a smiley face. A book introduced with a little intention and warmth will come back with a favorite color, a memory, a drawing that looks exactly like the child who made it. The difference between those two outcomes isn't the book. It's the setup.
 
 This guide walks through exactly that setup (from choosing the right moment to preserving what you've gathered) so that the friendship book you start becomes the kind of thing your child is still reaching for at thirty.
 
@@ -102,7 +91,7 @@ Resist the urge to send the book to school in a backpack with a vague instructio
 
 ### A Playdate, Party, or Farewell Is the Ideal Setting
 
-The best environment for introducing a friendship book is one where children have time, space, and a low level of ambient distraction — a playdate at home, a birthday party, or a class farewell gathering. In these settings, sitting down to fill in a page feels like participation in the event rather than homework. There's no bell about to ring. Friends can take ten minutes to think about their favorite things, draw a picture, and write a message without rushing.
+The best environment for introducing a friendship book is one where children have time, space, and a low level of ambient distraction — a playdate at home, a [birthday](/articles/when-to-give-a-friendship-book-for-kids/) party, or a class farewell gathering. In these settings, sitting down to fill in a page feels like participation in the event rather than homework. There's no bell about to ring. Friends can take ten minutes to think about their favorite things, draw a picture, and write a message without rushing.
 
 Birthday parties are particularly well-suited to this: the guest of honor has a natural reason to hand the book to each friend, and completing a page can become part of the party itself, the way signing a card might be at an adult gathering — but slower, more personal, and far more likely to be remembered. Similarly, a class farewell or end-of-year celebration gives everyone a meaningful activity and gives the departing child something tangible to carry away from that gathering.
 
@@ -144,20 +133,40 @@ This is the fact that most parents only understand in retrospect, and it's worth
 
 The steps above aren't complicated, but they do require a book designed with all of them in mind. The prompts need to be calibrated for the right age range. The pages need to be beautiful enough to encourage care and participation. There should be a natural place for a self-portrait, for a favorite color, for a message that can't be condensed to a checkbox.
 
-Album Amicorum's *In My Friends Book* was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
+Album Amicorum's [*My Friends Book*](/friend-book/) was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
 
 Starting a friendship book with intention is what transforms it from a nice idea into an actual keepsake. And the best keepsakes don't require you to figure everything out yourself — they come with the structure already in place, waiting for your child's particular, irreplaceable handwriting to make them real.
 
 ---
 
-## Where Things Stand
-<!-- WHERE-THINGS-STAND:START -->
-The cultural backdrop for friendship books and analog childhood keepsakes has grown notably stronger in 2026. 
-Across households, parents are rediscovering the value of analog childhood through reading together, building quieter routines, and, in a world where screens are everywhere, looking for ways to slow childhood down — not to eliminate technology, but to rebalance it.
+## Write the Opening Page Yourself
 
-More families are intentionally slowing down, limiting screen time, and reclaiming the kinds of offline experiences that once defined growing up — free play, imagination, and real connection — making analog living one of the biggest parenting trends of 2026. Nostalgia is redefining what childhood looks and feels like this year, with parents filling playrooms with throwback toys and gravitating toward handmade patterns and tactile experiences, using the past as a blueprint for a more grounded childhood. The so-called "analog bag" trend — screen-free activity kits built around offline materials — became one of the most searched and shared trends of 2026, spreading from social media into the daily routines of families everywhere.
- For friendship books specifically, no major product or category disruptions have emerged in the past 45 days; the space remains stable, with steady parent interest that mirrors the broader analog parenting movement gaining momentum this year.
-<!-- WHERE-THINGS-STAND:END -->
+Before a single friend contributes, the parent — or the child, with help — should write the opening page. This page does two things: it explains what the album amicorum is, and it invites friends into the tradition with warmth and intention.
+
+A good opening page might include:
+- The child's name and the date the book began
+- A simple explanation of what an album amicorum is and why this one is being started
+- An invitation to contributors: what they might write, draw, or share
+- A short note about what friendship means to the child
+
+This does not need to be elaborate. Two or three sentences written by hand, in the child's own words (or dictated by a younger child to a parent), are enough. What matters is that the book has an origin — a moment it came from — and that contributors feel welcomed rather than handed a blank obligation.
+
+---
+
+## Simple Prompts That Help Friends Fill Their Pages
+
+Children sometimes need just a little direction before they can begin. When a blank page feels overwhelming, a gentle prompt can unlock everything. The key is giving enough structure to get started while leaving the creative space wide open — so the result still feels genuinely theirs, not like an assignment they completed.
+
+The pages in My Friends Book use thoughtful prompts and provide generous room for both writing and drawing. These prompts are designed to feel inviting rather than prescriptive, nudging children toward their own ideas rather than steering them toward a predetermined answer. Parents and caregivers can also encourage children to think through questions like these before they begin:
+
+| Memory idea | What children can add |
+|---|---|
+| A favorite shared moment | A short story about something the two of them enjoyed together |
+| What makes this friendship special | A message in their own words about why this person matters |
+| Favorite things right now | A few things they love at this exact stage of childhood |
+| A creative memory | A drawing connected to an experience, a joke, or a feeling |
+
+The goal is not to produce a finished product that looks a particular way. It is to give the child enough direction to find their own voice on the page — and then get out of the way and let them use it.
 
 ## Key Takeaways
 
@@ -167,11 +176,6 @@ More families are intentionally slowing down, limiting screen time, and reclaimi
 - Clear prompts and good tools help shy or uncertain children past the blank page.
 - Once pages fill, store the book somewhere safe but reachable and revisit it as a keepsake.
 
-
 See Related below for more on this topic.
 
 For further reading, see the Sources listed below.
-
-<!-- CMS-INTERNAL:START -->
-Further reading: [Friend Books for Kids: The Ultimate Childhood Keepsake Guide](/articles/friend-books-for-kids/) · [Friendship Book for Kids: FAQ for Parents and Gift-Givers](/articles/friendship-book-for-kids-questions/) · [Friendship Book for Kids: The Complete Guide to Keepsakes](/articles/friendship-book-for-kids/) · [Friendship Storybooks vs. Keepsake Books: Which Is Right?](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/) · [7 Occasions That Call for Giving a Friendship Book for Kids](/articles/when-to-give-a-friendship-book-for-kids/) · [Memory Book for Kids](/articles/memory-book-for-kids/).
-<!-- CMS-INTERNAL:END -->
