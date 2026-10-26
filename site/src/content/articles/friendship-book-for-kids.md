@@ -53,8 +53,6 @@ internalLinks:
     anchor: Children's keepsakes worth preserving
   - slug: childhood-friendship-and-connection
     anchor: Why childhood friendship matters
-  - slug: animal-themed-friend-book
-    anchor: album amicorum
 externalLinks:
   - label: "Wikipedia: Friendship book"
     url: "https://en.wikipedia.org/wiki/Friendship_book"
@@ -88,7 +86,7 @@ Friendship books were first used by students from Northern Europe in the early s
  The results were objects of genuine beauty, and their owners treated them accordingly.
 
 The primary function of a friendship book was, at its core, to record and confirm relationships across time and distance for posterity.
- That purpose has not changed. What has changed is the scale of the audience: where the [album amicorum](/articles/animal-themed-friend-book/) once circulated among scholars and nobles, the friendship book for kids today belongs to every child who has ever wanted to hold onto something real before the school year ends and the world moves on.
+ That purpose has not changed. What has changed is the scale of the audience: where the album amicorum once circulated among scholars and nobles, the friendship book for kids today belongs to every child who has ever wanted to hold onto something real before the school year ends and the world moves on.
 
 These books often marked the beginning of a new stage in the bearer's life — even, for one documented example, an impending emigration from one country to another, during which a young woman circulated her album among family and friends who would stay behind, their entries expressing hope that love and friendship would prevail across great distances.
  The emotional weight carried by these objects has always been out of proportion to their physical size. A well-made friendship book does not just record — it preserves.

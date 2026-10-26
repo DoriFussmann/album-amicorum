@@ -46,8 +46,6 @@ internalLinks:
     anchor: Handwriting practice ideas
   - slug: album-amicorum
     anchor: Album Amicorum
-  - slug: animal-themed-friend-book
-    anchor: album amicorum
 externalLinks:
   - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
     url: "https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/"
@@ -145,7 +143,7 @@ Starting a friendship book with intention is what transforms it from a nice idea
 
 ## Write the Opening Page Yourself
 
-Before a single friend contributes, the parent — or the child, with help — should write the opening page. This page does two things: it explains what the [album amicorum](/articles/animal-themed-friend-book/) is, and it invites friends into the tradition with warmth and intention.
+Before a single friend contributes, the parent — or the child, with help — should write the opening page. This page does two things: it explains what the album amicorum is, and it invites friends into the tradition with warmth and intention.
 
 A good opening page might include:
 - The child's name and the date the book began

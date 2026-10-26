@@ -39,6 +39,9 @@ function legacyRedirects() {
     "/articles/friendship-book-for-kids-questions": "/articles/friendship-book-for-kids/",
     "/articles/how-to-start-an-album-amicorum-tradition-with-kids": "/articles/how-to-start-a-friendship-book-for-kids/",
     "/articles/memory-book-for-kids": "/articles/how-to-start-a-friendship-book-for-kids/",
+    // Retargeted the day they went live (Oct 2026): off a merged keyword and a product page's keyword.
+    "/articles/memory-book-for-kids-2": "/articles/memory-book-gift/",
+    "/articles/animal-themed-friend-book": "/articles/friend-book-ideas/",
     "/articles/album-amicorum-history": "/articles/album-amicorum/",
     "/articles/amicorum-meaning": "/articles/album-amicorum/",
     "/articles/liber-amicorum": "/articles/album-amicorum/",
