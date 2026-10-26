@@ -24,7 +24,9 @@ keywords:
   - album amicorum
   - "Friend Books & Friendship Keepsakes"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: album-amicorum
+    anchor: Album Amicorum
 externalLinks: []
 faqs:
   - question: "What age is an animal-themed friend book best suited for?"
@@ -41,7 +43,7 @@ Most gifts are forgotten by next week. This one fills up with the handwriting of
 
 Childhood friendships are full of small moments that fade faster than anyone expects. An animal-themed friend book gives those moments a home. Friends write a memory, sketch a favorite creature, and leave a message in their own handwriting — and together those pages become something no toy can replicate.
 
-The Animals edition of My Friends Book, made by Album Amicorum, is painted in soft, earthy watercolors and keeps its cream pages blank for friends to complete. Below is how the book works, what to put on the pages, and who it suits best. It is priced at $30, with shipping calculated separately.
+The Animals edition of My Friends Book, made by [Album Amicorum](/articles/album-amicorum/), is painted in soft, earthy watercolors and keeps its cream pages blank for friends to complete. Below is how the book works, what to put on the pages, and who it suits best. It is priced at $30, with shipping calculated separately.
 
 ## Why an Animal-Themed Friend Book Is Easy for Kids to Love
 
@@ -92,7 +94,7 @@ Families have a few options for collecting friendship memories, and each works a
 
 ### When Something Else May Be the Better Pick
 
-Not every child is wild about animals. If space, dinosaurs, or fairies are bigger favorites, the same book also comes in Space, Dinosaurs, Fairies, Mermaids, Flowers, and Forest editions. You can browse them all in the Friend Book collection on the Album Amicorum website.
+Not every child is wild about animals. If space, dinosaurs, or fairies are bigger favorites, the same book also comes in Space, Dinosaurs, Fairies, Mermaids, Flowers, and Forest editions. You can browse them all in the Friend Book collection on the [Album Amicorum](/friend-book/) website.
 
 A plain notebook is flexible and works for anything from school notes to a private diary. A digital collection can suit friends who live far apart, since nobody has to mail a book across the country. A friend book is slower by design and works best when friends can meet in person.
 

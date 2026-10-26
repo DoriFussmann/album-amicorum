@@ -44,6 +44,8 @@ internalLinks:
     anchor: How to start a friendship book
   - slug: childrens-keepsakes
     anchor: Children's keepsakes worth preserving
+  - slug: animal-themed-friend-book
+    anchor: album amicorum
 externalLinks:
   - label: "Wikipedia: Album amicorum"
     url: "https://en.wikipedia.org/wiki/Album_amicorum"
@@ -55,7 +57,7 @@ targetKeyword: album amicorum
 supportingKeyword: album amicorum
 ---
 
-There is something quietly radical about a blank book passed from hand to hand, filled page by page with the words and drawings of the people who matter most. It requires no battery, no password, no algorithm. It asks only that someone sit down, think carefully about another person, and write something true. This is the album amicorum — Latin for *album of friends* — and it has been doing exactly that for nearly five hundred years.
+There is something quietly radical about a blank book passed from hand to hand, filled page by page with the words and drawings of the people who matter most. It requires no battery, no password, no algorithm. It asks only that someone sit down, think carefully about another person, and write something true. This is the [album amicorum](/articles/animal-themed-friend-book/) — Latin for *album of friends* — and it has been doing exactly that for nearly five hundred years.
 
 The album amicorum was an early form of the poetry book, the autograph book, and the modern [friendship book](/articles/friendship-book-for-kids/).
  Long before yearbooks, before social media, before the very concept of a digital profile, people were solving the same human problem: how do you hold onto the friendships that have shaped you? How do you carry the people you love into the future? The album amicorum was their answer — and it turns out, it is still ours.
