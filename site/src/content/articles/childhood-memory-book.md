@@ -30,6 +30,8 @@ internalLinks:
     anchor: friendship book
   - slug: album-amicorum
     anchor: album amicorum
+  - slug: memory-book-for-kids-2
+    anchor: childhood memory book
 externalLinks:
   - label: "Common Sense Media: Tweens, Teens, and Screens: What Our New Research Uncovers"
     url: "https://www.commonsensemedia.org/articles/tweens-teens-and-screens-what-our-new-research-uncovers"
@@ -47,7 +49,7 @@ faqs:
 
 ## What a Childhood Memory Book Is Really Keeping
 
-There is a version of a childhood memory book that most parents know well: the hardback journal waiting on the shelf, full of prompts for first words, first steps, and favorite foods at age three. The parent fills it in. The parent keeps it. The parent is, in effect, the author. That is a beautiful thing — a record of how a child looked and moved and surprised the adults around them — but it is worth being clear about what kind of memory it holds. It holds the parent's memory of the child, written in the parent's hand.
+There is a version of a [childhood memory book](/articles/memory-book-for-kids-2/) that most parents know well: the hardback journal waiting on the shelf, full of prompts for first words, first steps, and favorite foods at age three. The parent fills it in. The parent keeps it. The parent is, in effect, the author. That is a beautiful thing — a record of how a child looked and moved and surprised the adults around them — but it is worth being clear about what kind of memory it holds. It holds the parent's memory of the child, written in the parent's hand.
 
 That distinction matters more than it seems. As children move through the primary-school years, between five and twelve, a different set of memories begins to accumulate: the friends they make, the jokes only their classmates understand, the little rituals of the playground that no parent ever quite sees. These are the childhood memories that rarely make it into any book at all — not because they are unimportant, but because no adult is the right person to write them down.
 

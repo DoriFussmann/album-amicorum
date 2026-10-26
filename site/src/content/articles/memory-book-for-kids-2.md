@@ -53,7 +53,7 @@ Some gifts are forgotten by the end of the week. Others slowly fill up with the 
 
 A memory book for kids works best when the memories come from other people. Instead of a parent filling in every page, friends, cousins, and teachers each add their own handwriting, drawings, and favorites. Over time, those pages add up to a keepsake no shop shelf could ever stock.
 
-Album Amicorum makes one called My Friends Book, and it carries a long history behind it. Here is what it is, how it works, and who might enjoy giving one — along with an honest look at where screen-based keepsakes win.
+Album Amicorum makes one called [My Friends Book](/friend-book/), and it carries a long history behind it. Here is what it is, how it works, and who might enjoy giving one — along with an honest look at where screen-based keepsakes win.
 
 ## What Makes a Friend Book Different From a Regular Memory Book for Kids
 
