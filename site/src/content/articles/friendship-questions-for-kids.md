@@ -23,7 +23,9 @@ keywords:
   - friendship questions for kids
   - "Childhood Friendship & Connection"
 draft: false
-internalLinks: []
+internalLinks:
+  - slug: childhood-friendship-and-connection
+    anchor: childhood friendship
 externalLinks:
   - label: "26 top trending toys of 2026, according to Amazon, Walmart and social media - ABC News"
     url: "https://abcnews.com/GMA/Shop/top-trending-toys-2026/story?id=136566666"
@@ -119,7 +121,7 @@ Plenty of children already know this instinctively. They keep notes passed in cl
 
 ## When the Answers Live Somewhere Beautiful: My Friends Book
 
-A loose piece of paper gets lost. A notebook without structure can feel a little shapeless. This is exactly the problem that My Friends Book, from Album Amicorum, was designed to solve.
+A loose piece of paper gets lost. A notebook without structure can feel a little shapeless. This is exactly the problem that [My Friends Book](/friend-book/), from Album Amicorum, was designed to solve.
 
 My Friends Book gives each friend their own illustrated pages — a dedicated space to write their name, draw a picture, answer questions about their favorite things, share a memory, and add whatever personal touch they want. The book itself is beautifully illustrated with contemporary watercolor artwork in a nature-inspired aesthetic, so it feels like something worth keeping from the moment a child first opens it. Album Amicorum offers seven themed editions, which means the child receiving it can choose the one that most feels like theirs.
 
@@ -127,7 +129,7 @@ The prompts inside the book function as friendship questions for kids in a ready
 
 ## A Snapshot of Friendship at This Exact Age
 
-One of the most overlooked aspects of childhood friendship is how fast it moves. The child who is your son's best friend in second grade might be at a different school by fourth grade. The girl who fills every Friday afternoon might become a distant memory by middle school, not because the friendship ended badly, but simply because life moved. The things that made that friend funny, kind, or memorable — their favorite color, the joke they always told, the face they drew when they were trying to be an artist — are the things most likely to be forgotten.
+One of the most overlooked aspects of [childhood friendship](/articles/childhood-friendship-and-connection/) is how fast it moves. The child who is your son's best friend in second grade might be at a different school by fourth grade. The girl who fills every Friday afternoon might become a distant memory by middle school, not because the friendship ended badly, but simply because life moved. The things that made that friend funny, kind, or memorable — their favorite color, the joke they always told, the face they drew when they were trying to be an artist — are the things most likely to be forgotten.
 
 Written answers to friendship questions freeze a moment in a way that memory alone cannot. When a child looks back at a friend's handwritten response to "what is your happiest memory from this year?" they are looking at that friend as they actually were — at that age, in that school year, with that handwriting and that specific sense of humor. The question is the key, but the written answer is what gets kept.
 
