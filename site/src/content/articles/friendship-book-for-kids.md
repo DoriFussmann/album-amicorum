@@ -166,7 +166,7 @@ The album amicorum tradition survived for centuries not because anyone legislate
 
 A friendship book for kids carries that same recognition forward into childhood, at the exact age when friendships are being formed for the first time, when the world is widening, and when the people a child knows at school genuinely matter in ways they will not always be able to articulate until years later. The child who receives a beautifully illustrated friend book and fills it with real contributions from real friends is not just doing a fun activity. They are building something that will outlast the school year, the primary years, and possibly every other object from this period of their life.
 
-If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's [My Friends Book](/) is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
+If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's My Friends Book is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
 
 ---
 

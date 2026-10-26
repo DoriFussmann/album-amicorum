@@ -162,7 +162,7 @@ Pretend-play and social toys promote vocabulary growth, narrative skills, emotio
  — and a friendship book, at its best, does all of these things at once while also producing a record of those bonds that the child will carry into adulthood.
 
 This kind of book has deep historical roots. 
-The [album amicorum](/) — Latin for "book of friends" — is a predecessor of the modern autograph book; the tradition dates back to the sixteenth century, and particularly among students, these books were filled with poems, citations, sketches, or paper cuts as a token of friendship.
+The album amicorum — Latin for "book of friends" — is a predecessor of the modern autograph book; the tradition dates back to the sixteenth century, and particularly among students, these books were filled with poems, citations, sketches, or paper cuts as a token of friendship.
 
 In a friendship book, two or more people vowed each other their friendship through filling out a page in the other person's album, often during special occasions or on departure from a place of study, with the entry renewed during reunions — and therefore the friendship book created the opportunity to have a lifelong memory of the book-owner's childhood friends.
  The modern illustrated [Friend Book](/friend-book/) inherits that spirit entirely: not a diary kept in private, but a collaborative keepsake assembled by the whole circle of friendship, one handwritten page at a time.

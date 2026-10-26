@@ -100,7 +100,7 @@ Children can practice writing by describing a memory involving a friend, cousin,
 
 The answers can become a short handwritten paragraph. Children can also add a drawing or small decoration to the page to make it feel personal. Because the subject is something they genuinely experienced, they are more likely to take care with their words — and with the way those words look on the page.
 
-This type of activity fits naturally with the thinking behind Album Amicorum. Its [My Friends Book](/) is designed for friends to leave handwritten memories, drawings, favorite things, and messages, with every person contributing their own page. The act of writing for a real friend, rather than for a worksheet or a teacher, gives children a sense of purpose that straightforward drills rarely provide.
+This type of activity fits naturally with the thinking behind Album Amicorum. Its My Friends Book is designed for friends to leave handwritten memories, drawings, favorite things, and messages, with every person contributing their own page. The act of writing for a real friend, rather than for a worksheet or a teacher, gives children a sense of purpose that straightforward drills rarely provide.
 
 ## Use a Friendship Book for Regular Writing
 
