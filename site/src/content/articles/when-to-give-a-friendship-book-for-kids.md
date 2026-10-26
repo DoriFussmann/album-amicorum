@@ -39,11 +39,13 @@ faqs:
     answer: "Not at all. Some of the most treasured friendship books are started on completely ordinary days — a random Tuesday in October, or a quiet afternoon after school. The lack of occasion can actually add to the meaning: it tells a child that their friendships are worth celebrating even when nothing special is happening, which turns the gift itself into the event."
 internalLinks:
   - slug: friendship-book-for-kids
-    anchor: "The complete guide to friendship books"
+    anchor: The complete guide to friendship books
   - slug: how-to-start-a-friendship-book-for-kids
-    anchor: "How to start a friendship book"
+    anchor: How to start a friendship book
   - slug: unique-gifts-for-6-year-olds
-    anchor: "Unique gifts for 6-year-olds"
+    anchor: Unique gifts for 6-year-olds
+  - slug: album-amicorum
+    anchor: Album Amicorum
 externalLinks: []
 ---
 
@@ -131,7 +133,7 @@ Looking at these seven moments together, a pattern emerges. The occasions that m
 
 You don't need all seven. You need one. The end-of-year moment happening right now, or the new school starting next month, or the move that's been planned for this fall. Whichever moment resonates is the right one to act on — and the window for any of them is shorter than it feels.
 
-Album Amicorum's [*My Friends Book*](/friend-book/) is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
+[Album Amicorum](/articles/album-amicorum/)'s [*My Friends Book*](/friend-book/) is designed to be ready for exactly these moments: beautifully illustrated, filled with thoughtful prompts that children genuinely want to answer, and built to become the kind of keepsake that outlasts the occasion that started it. Whether you're giving it at a birthday party where friends can fill it in on the spot, or tucking it into a moving box so a child has something real to carry into their next chapter, the book is already doing what it was made to do — making the friendships of this exact moment permanent. If one of these seven moments is on the horizon, the time to find the book is before it passes.
 
 ---
 

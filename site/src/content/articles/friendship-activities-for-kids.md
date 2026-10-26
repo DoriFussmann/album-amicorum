@@ -41,11 +41,11 @@ targetKeyword: friendship activities for kids
 supportingKeyword: friendship activities for kids
 internalLinks:
   - slug: childhood-friendship-and-connection
-    anchor: "Why childhood friendship matters"
+    anchor: Why childhood friendship matters
   - slug: friendship-book-for-kids
-    anchor: "The complete guide to friendship books"
+    anchor: The complete guide to friendship books
   - slug: childrens-keepsakes
-    anchor: "Children's keepsakes worth preserving"
+    anchor: Children's keepsakes worth preserving
 ---
 
 There is a version of a childhood afternoon that most parents can picture clearly: two children bent over a table, pencils moving, shoulders almost touching, occasionally dissolving into laughter over something only they understand. No screens. No schedule. Just the quiet, industrious pleasure of making something together. That image captures something essential about what friendship activities can be at their best — not entertainment to fill time, but experiences that build something real, between real people, at a particular and unrepeatable moment in a child's life.
@@ -130,7 +130,7 @@ The things children make together in an analog afternoon also have a different r
 
 The gap most families encounter is not a shortage of good friendship activities — it is a shortage of ways to gather and keep what those activities produce. An afternoon of beautiful moments disappears when the friend goes home. A drawing gets folded into a pocket, and eventually lost. A shared joke fades. This is the natural attrition of childhood, and for most of human history it was simply accepted as the price of growing up.
 
-But there has always been another way. The *album amicorum* — literally "book of friends" — originated in 16th-century Europe, when university students carried blank books and asked friends, teachers, and mentors to write or draw on their pages as they traveled. The tradition eventually gave rise to the [friendship books](/articles/friendship-book-for-kids/) and autograph albums that were popular through much of the 19th and early 20th centuries: a child's book passed among friends, each one contributing a page of their handwriting, their favorite things, a small drawing or poem. These books survived. They are the reason we know what a child in 1887 loved, who they counted as their dearest friends, and what they thought the future held.
+But there has always been another way. The *[album amicorum](/)* — literally "book of friends" — originated in 16th-century Europe, when university students carried blank books and asked friends, teachers, and mentors to write or draw on their pages as they traveled. The tradition eventually gave rise to the [friendship books](/articles/friendship-book-for-kids/) and autograph albums that were popular through much of the 19th and early 20th centuries: a child's book passed among friends, each one contributing a page of their handwriting, their favorite things, a small drawing or poem. These books survived. They are the reason we know what a child in 1887 loved, who they counted as their dearest friends, and what they thought the future held.
 
 The instinct behind that tradition — to gather, in one place, the handwritten traces of the friendships that define a childhood — is as sound today as it was centuries ago. When children have a dedicated space to collect what their friends create for them, those individual moments of connection accumulate into something far greater: a complete portrait of a friendship, and of the child who held it.
 

@@ -114,7 +114,7 @@ That quality — proof, in the people's own words — is something no amount of 
 
 ## Seven Editions, One Purpose
 
-My Friends Book comes in seven illustrated editions, each built around a different watercolour nature theme: from woodland creatures to garden flowers, from birds and botanicals to something wilder. The illustrations are contemporary rather than generic — the kind of artwork a child might actually want to look at — and the nature-inspired aesthetic runs through every page, giving the book a coherence that makes it feel like a considered object rather than a fill-in-the-blank workbook.
+[My Friends Book](/) comes in seven illustrated editions, each built around a different watercolour nature theme: from woodland creatures to garden flowers, from birds and botanicals to something wilder. The illustrations are contemporary rather than generic — the kind of artwork a child might actually want to look at — and the nature-inspired aesthetic runs through every page, giving the book a coherence that makes it feel like a considered object rather than a fill-in-the-blank workbook.
 
 Inside, each edition is structured the same way: a page for the friend to write their name, their favourite things, a memory they share with the child, a drawing, and a message. The prompts are light enough to leave room for personality, and specific enough to produce something more interesting than a signature and a "have a great summer." What a friend writes in response to "what do you think we'll both be doing in ten years?" is, almost by definition, something worth keeping.
 

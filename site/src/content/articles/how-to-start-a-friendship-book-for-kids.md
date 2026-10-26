@@ -39,11 +39,13 @@ faqs:
     answer: "Absolutely. A Friend Book is not limited to school friends. Grandparents, cousins, neighbours, teammates, and teachers can all contribute a page. Each person brings a different perspective, and a grandparent's handwriting or a cousin's drawing can become one of the most treasured pages in the finished book."
 internalLinks:
   - slug: friendship-book-for-kids
-    anchor: "The complete guide to friendship books"
+    anchor: The complete guide to friendship books
   - slug: when-to-give-a-friendship-book-for-kids
-    anchor: "When to give a friendship book"
+    anchor: When to give a friendship book
   - slug: handwriting-practice-for-kids
-    anchor: "Handwriting practice ideas"
+    anchor: Handwriting practice ideas
+  - slug: album-amicorum
+    anchor: Album Amicorum
 externalLinks:
   - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
     url: "https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/"
@@ -133,7 +135,7 @@ This is the fact that most parents only understand in retrospect, and it's worth
 
 The steps above aren't complicated, but they do require a book designed with all of them in mind. The prompts need to be calibrated for the right age range. The pages need to be beautiful enough to encourage care and participation. There should be a natural place for a self-portrait, for a favorite color, for a message that can't be condensed to a checkbox.
 
-Album Amicorum's [*My Friends Book*](/friend-book/) was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
+[Album Amicorum](/articles/album-amicorum/)'s [*My Friends Book*](/friend-book/) was designed to make each of these steps feel effortless rather than improvised. The book opens with the owner's introductory page — so Step 2 is built right in. The friend pages carry thoughtful illustrated prompts — so Step 4 is already handled. The quality of the book itself signals to every child who holds it that what they're about to add matters. You don't need to supplement it with a separate instruction sheet, or explain the concept from scratch. The book does that work for you, in the most graceful way possible.
 
 Starting a friendship book with intention is what transforms it from a nice idea into an actual keepsake. And the best keepsakes don't require you to figure everything out yourself — they come with the structure already in place, waiting for your child's particular, irreplaceable handwriting to make them real.
 

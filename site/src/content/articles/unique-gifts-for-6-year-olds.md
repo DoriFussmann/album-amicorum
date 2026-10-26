@@ -25,11 +25,11 @@ keywords:
 draft: false
 internalLinks:
   - slug: meaningful-screen-free-gifts
-    anchor: "Meaningful screen-free gifts"
+    anchor: Meaningful screen-free gifts
   - slug: when-to-give-a-friendship-book-for-kids
-    anchor: "When to give a friendship book"
+    anchor: When to give a friendship book
   - slug: analog-toys-for-kids
-    anchor: "Analog toys for kids"
+    anchor: Analog toys for kids
 externalLinks: []
 faqs:
   - question: "What makes a gift truly unique for a 6-year-old, beyond just being unusual?"
@@ -170,7 +170,7 @@ What to avoid: licensed merchandise tied to a media property the child currently
 
 There is a particular category of gift that doesn't just delight in the moment but compounds in value over time. A friend book given at six is charming in the year it was filled in. At ten, it is a window into a world the child can barely remember. At sixteen, it is a piece of their history — proof that they were loved by specific people at a specific, irretrievable time.
 
-This is the logic behind Album Amicorum's illustrated Friend Book. 
+This is the logic behind [Album Amicorum](/)'s illustrated Friend Book. 
 The album amicorum — "album of friends," or friendship book — was an early form of the autograph book and the modern friendship book.
  It is a centuries-old form that survived because it does something no other object can do: it gives friendship a body. Album Amicorum's version of this tradition is designed specifically for children — beautifully illustrated, with prompts that draw out handwritten memories, favourite things, drawings, and messages from the people who matter most.
 

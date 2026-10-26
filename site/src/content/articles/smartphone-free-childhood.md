@@ -38,11 +38,11 @@ faqs:
     answer: "The 'Wait Until 8th' campaign encourages parents to delay giving children a smartphone until at least the end of 8th grade, which aligns closely with Haidt's first core norm of no smartphones before high school (around age 14). Both approaches are rooted in collective action: the more families that commit together, the easier it becomes for any individual child to avoid social pressure. Haidt has endorsed the spirit of this campaign as one practical way parents can coordinate at the school or neighborhood level."
 internalLinks:
   - slug: slow-childhood-analog-play
-    anchor: "Slow childhood and analog play"
+    anchor: Slow childhood and analog play
   - slug: smartphone-free-childhood-alternatives
-    anchor: "What to do instead of a smartphone"
+    anchor: What to do instead of a smartphone
   - slug: analog-toys-for-kids
-    anchor: "Analog toys for kids"
+    anchor: Analog toys for kids
 externalLinks:
   - label: "Axios: Parents ditch kids' phones for a screen-free childhood (May 2026)"
     url: "https://www.axios.com/2026/05/15/screen-free-childhood-parents-ditch-kids-phones"
@@ -136,7 +136,7 @@ Here is the thing about this debate: when you strip away the policy arguments an
 
 That shared goal has a physical expression, too. Real childhood — the kind both camps are working to preserve — leaves traces. It leaves memories of best friends and favourite things and handwritten notes passed in the back of class. It leaves the kind of connections that cannot be recreated once they have passed. And one of the most quietly powerful things a parent can do, whatever their position on smartphones, is create spaces and objects that make those connections visible and lasting.
 
-This is exactly what a [Friend Book](/friend-book/) does. When a child asks their friends to fill a page — to write their favourite colour, draw something silly, sign their name — they are doing something the algorithm cannot do for them. They are making a record of an unrepeatable moment in their own hand, on paper, to be kept. Album Amicorum's illustrated Friend Books were designed precisely for this: to give children a beautiful, tangible place to collect the real friendships of childhood, page by page, in their own words and drawings. Whether a family delays smartphones until fourteen or manages digital access carefully from eleven, the Friend Book belongs in both households — because the analog foundations of childhood are not a consolation prize for going screen-free. They are the point.
+This is exactly what a [Friend Book](/friend-book/) does. When a child asks their friends to fill a page — to write their favourite colour, draw something silly, sign their name — they are doing something the algorithm cannot do for them. They are making a record of an unrepeatable moment in their own hand, on paper, to be kept. [Album Amicorum](/)'s illustrated Friend Books were designed precisely for this: to give children a beautiful, tangible place to collect the real friendships of childhood, page by page, in their own words and drawings. Whether a family delays smartphones until fourteen or manages digital access carefully from eleven, the Friend Book belongs in both households — because the analog foundations of childhood are not a consolation prize for going screen-free. They are the point.
 
 ---
 
