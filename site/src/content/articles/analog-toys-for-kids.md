@@ -41,11 +41,11 @@ faqs:
     answer: "Open-ended toys — like building blocks, art materials, and blank sketchbooks — have no single 'correct' outcome, so children direct the play themselves. Closed-ended toys have a fixed goal (a puzzle with one solution, for example). A good analog shelf includes mostly open-ended items, with a few closed-ended ones to build focus and problem-solving."
 internalLinks:
   - slug: slow-childhood-analog-play
-    anchor: "Slow childhood and analog play"
+    anchor: Slow childhood and analog play
   - slug: smartphone-free-childhood-alternatives
-    anchor: "What to do instead of a smartphone"
+    anchor: What to do instead of a smartphone
   - slug: meaningful-screen-free-gifts
-    anchor: "Meaningful screen-free gifts"
+    anchor: Meaningful screen-free gifts
 externalLinks:
   - label: "Safe, Secure, & Smart- Connected Toys & Devices - Fairplay"
     url: "https://fairplayforkids.org/pf/safe-secure-smart-toys/"
@@ -162,7 +162,7 @@ Pretend-play and social toys promote vocabulary growth, narrative skills, emotio
  — and a friendship book, at its best, does all of these things at once while also producing a record of those bonds that the child will carry into adulthood.
 
 This kind of book has deep historical roots. 
-The album amicorum — Latin for "book of friends" — is a predecessor of the modern autograph book; the tradition dates back to the sixteenth century, and particularly among students, these books were filled with poems, citations, sketches, or paper cuts as a token of friendship.
+The [album amicorum](/) — Latin for "book of friends" — is a predecessor of the modern autograph book; the tradition dates back to the sixteenth century, and particularly among students, these books were filled with poems, citations, sketches, or paper cuts as a token of friendship.
 
 In a friendship book, two or more people vowed each other their friendship through filling out a page in the other person's album, often during special occasions or on departure from a place of study, with the entry renewed during reunions — and therefore the friendship book created the opportunity to have a lifelong memory of the book-owner's childhood friends.
  The modern illustrated [Friend Book](/friend-book/) inherits that spirit entirely: not a diary kept in private, but a collaborative keepsake assembled by the whole circle of friendship, one handwritten page at a time.

@@ -42,17 +42,17 @@ articleType: comprehensive
 targetKeyword: friendship book
 internalLinks:
   - slug: how-to-start-a-friendship-book-for-kids
-    anchor: "How to start a friendship book"
+    anchor: How to start a friendship book
   - slug: when-to-give-a-friendship-book-for-kids
-    anchor: "When to give a friendship book"
+    anchor: When to give a friendship book
   - slug: friendship-storybook-vs-friendship-keepsake-book-for-kids
-    anchor: "Friendship storybooks vs. keepsake books"
+    anchor: Friendship storybooks vs. keepsake books
   - slug: album-amicorum
-    anchor: "The album amicorum tradition"
+    anchor: The album amicorum tradition
   - slug: childrens-keepsakes
-    anchor: "Children's keepsakes worth preserving"
+    anchor: Children's keepsakes worth preserving
   - slug: childhood-friendship-and-connection
-    anchor: "Why childhood friendship matters"
+    anchor: Why childhood friendship matters
 externalLinks:
   - label: "Wikipedia: Friendship book"
     url: "https://en.wikipedia.org/wiki/Friendship_book"
@@ -166,7 +166,7 @@ The album amicorum tradition survived for centuries not because anyone legislate
 
 A friendship book for kids carries that same recognition forward into childhood, at the exact age when friendships are being formed for the first time, when the world is widening, and when the people a child knows at school genuinely matter in ways they will not always be able to articulate until years later. The child who receives a beautifully illustrated friend book and fills it with real contributions from real friends is not just doing a fun activity. They are building something that will outlast the school year, the primary years, and possibly every other object from this period of their life.
 
-If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's My Friends Book is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
+If you are looking for a friendship book that honours the full weight of that idea — one that is beautifully illustrated, thoughtfully prompted, and made to be treasured for decades — Album Amicorum's [My Friends Book](/) is worth exploring. It was designed with precisely this moment in mind: the moment when a child's circle of friends deserves to be captured, preserved, and handed down. Discovering a book that is equal to that moment makes all the difference.
 
 ---
 

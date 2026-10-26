@@ -23,15 +23,15 @@ keywords:
 draft: false
 internalLinks:
   - slug: analog-toys-for-kids
-    anchor: "Analog toys for kids"
+    anchor: Analog toys for kids
   - slug: smartphone-free-childhood
-    anchor: "Smartphone-free childhood"
+    anchor: Smartphone-free childhood
   - slug: smartphone-free-childhood-alternatives
-    anchor: "What to do instead of a smartphone"
+    anchor: What to do instead of a smartphone
   - slug: benefits-of-handwriting-for-kids
-    anchor: "The benefits of handwriting for kids"
+    anchor: The benefits of handwriting for kids
   - slug: meaningful-screen-free-gifts
-    anchor: "Meaningful screen-free gifts"
+    anchor: Meaningful screen-free gifts
 externalLinks: []
 faqs:
   - question: "What is the difference between slow childhood and analog play?"
@@ -142,7 +142,7 @@ Physical, handmade, handwritten objects carry the texture of childhood in a way 
 A childhood object that captures a specific request or moment can prove that a friendship still matters decades later; pen pals and their correspondence preserve memory in a tangible form and make room for relationships that do not depend on speed.
  This is why intentional keepsake-creation — making things by hand that are meant to be kept — is not a separate hobby but the natural culmination of an analog approach to childhood.
 
-The tradition of the friendship book, or *Album Amicorum*, captures this idea in its most beautiful form. 
+The tradition of the friendship book, or *[Album Amicorum](/)*, captures this idea in its most beautiful form. 
 For centuries, people carried an Album Amicorum — otherwise known as a friendship book — in which memories of dear ones and special moments were collected, taking it with them on their travels.
 
 In a friendship book, two or more people vowed each other their friendship through filling out a page in the other person's album; this usually took place during special occasions, and the entry could be renewed during reunions — giving the friendship book the opportunity to hold a lifelong memory of childhood friends.
