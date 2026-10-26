@@ -42,8 +42,6 @@ internalLinks:
     anchor: How to start a friendship book
   - slug: album-amicorum
     anchor: The album amicorum tradition
-  - slug: animal-themed-friend-book
-    anchor: Album Amicorum
 externalLinks:
   - label: "Books About Friendship for Young Children"
     url: "https://www.learningherenthere.com/kid-lit/books-friendship-young-children"
@@ -138,7 +136,7 @@ Research has linked strong childhood friendships with better mental health outco
 
 If the comparison above has helped clarify that a keepsake friendship book is what this moment calls for, the next question is which one. Not all friendship keepsake books are created equal. The paper quality matters (thin pages bleed through and make the book feel disposable. The prompts matter) a list of surface-level fill-in-the-blanks produces forgettable answers, while genuinely imaginative questions draw out real personality and specific memory. The illustrations matter — a beautifully designed book signals to the child and their friends that this is something worth filling in carefully, not dashing through in two minutes.
 
-**[Album Amicorum](/articles/animal-themed-friend-book/)'s [*My Friends Book*](/friend-book/)** is designed with all of this in mind. The illustrations, prompts, and paper quality are built for a lifetime, not a season — the kind of book that earns a permanent spot on the shelf and gets pulled out for decades. If you're ready to give a child something their future self will genuinely thank you for, it's worth exploring what makes it different.
+**Album Amicorum's [*My Friends Book*](/friend-book/)** is designed with all of this in mind. The illustrations, prompts, and paper quality are built for a lifetime, not a season — the kind of book that earns a permanent spot on the shelf and gets pulled out for decades. If you're ready to give a child something their future self will genuinely thank you for, it's worth exploring what makes it different.
 
 ---
 
