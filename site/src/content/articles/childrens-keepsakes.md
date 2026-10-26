@@ -41,6 +41,8 @@ externalLinks:
 targetKeyword: children's keepsakes
 articleType: comprehensive
 internalLinks:
+  - slug: childhood-memory-book
+    anchor: "What a childhood memory book holds and misses"
   - slug: friendship-book-for-kids
     anchor: The complete guide to friendship books
   - slug: friendship-activities-for-kids
@@ -111,7 +113,7 @@ Childhood friends who remain connected through adulthood share memories of forma
 
 And yet, of all the layers of childhood that parents work to preserve, the social and relational layer is almost always the most neglected. Photos capture a child's face. School reports capture their grades. But who wrote "I'm glad you're my friend" in wobbly handwriting on a birthday card? Who drew the little cartoon of the two of them together at the bottom of a note? Where did that go? The answer, for almost every family: it went in the recycling.
 
-This is the keepsake gap that matters most — not the lack of baby photos or milestone journals, but the complete absence of any deliberate, physical record of the friendships that shaped who a child became. 
+This is the keepsake gap that matters most — not the lack of baby photos or [milestone journals](/articles/childhood-memory-book/), but the complete absence of any deliberate, physical record of the friendships that shaped who a child became. 
 Memories of different periods of childhood and adolescence can serve as a reflective mirror for developmental changes in friendship relationships
  — and those mirrors are most vivid when they have a physical object to crystallise around.
 
