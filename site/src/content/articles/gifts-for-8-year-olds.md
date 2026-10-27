@@ -80,7 +80,7 @@ At eight, girls are often intensely aware of their social bonds. They have best 
 
 ## A Book Filled In by the Child's Own Friends
 
-My Friends Book, created by Album Amicorum, is built around exactly this idea. It is a children's friendship book — illustrated, structured, and designed to be filled in by the people a child knows. Each friend who picks it up has space to leave a handwritten message, a small drawing, their favorite things, and whatever personal details they choose to share. The result is not a journal the child keeps privately; it is a collaborative record, built one friend at a time.
+[My Friends Book](/friend-book/), created by Album Amicorum, is built around exactly this idea. It is a children's friendship book — illustrated, structured, and designed to be filled in by the people a child knows. Each friend who picks it up has space to leave a handwritten message, a small drawing, their favorite things, and whatever personal details they choose to share. The result is not a journal the child keeps privately; it is a collaborative record, built one friend at a time.
 
 What makes it feel different from an autograph book or a simple address book is the detail it invites. The pages are designed to draw out the small specifics that make a particular friendship memorable: the things that make a friend laugh, what they want to be when they grow up, a drawing of something they love. Those specifics are what children come back to years later. They are also what gets lost most easily if no one thinks to write them down.
 
