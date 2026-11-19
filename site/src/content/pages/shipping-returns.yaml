@@ -1,6 +1,6 @@
 route: /shipping-returns/
 meta_title: Shipping & Returns for My Friends Book | Album Amicorum
-meta_description: Shipping costs, delivery destinations, and returns for My Friends Book. One flat shipping rate at checkout, delivered to more than 40 countries.
+meta_description: Shipping costs, delivery times and returns for My Friends Book. One flat $7 rate per order, delivery in up to 7 days, to more than 40 countries.
 sections:
   - type: page-header
     eyebrow: Help
@@ -11,6 +11,7 @@ sections:
       ## Shipping
 
       - **Cost.** A flat $7 per order, added at checkout.
+      - **Delivery time.** Up to 7 days, depending on where you are. If the book is for a date, like a birthday or the last day of school, order at least a week ahead and leave time for friends to fill their pages.
       - **Where we ship.** More than 40 countries across North America, Europe, Asia-Pacific, the Middle East, Africa, and Latin America. If your country is not listed at checkout, [email us](mailto:hello@albumamicorum.com) and we will see what we can do.
       - **Order updates.** You will receive a confirmation email when your order is placed.
 
