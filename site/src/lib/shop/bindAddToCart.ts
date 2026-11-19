@@ -1,4 +1,5 @@
 import { addToCart } from './cart';
+import { trackShopEvent } from './track';
 
 /** Bind existing `[data-add-to-cart]` buttons. Feedback lives in `[data-cart-scope]`. */
 export function bindAddToCartButtons(): void {
@@ -15,6 +16,7 @@ export function bindAddToCartButtons(): void {
           cover: string;
         };
         addToCart(item);
+        trackShopEvent('add_to_cart', [{ ...item, quantity: 1 }]);
         const scope = button.closest('[data-cart-scope]') ?? button.closest('dialog');
         const feedback = scope?.querySelector<HTMLElement>('[data-cart-feedback]');
         if (feedback) {

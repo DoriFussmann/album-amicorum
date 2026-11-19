@@ -60,6 +60,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENT
 </BaseLayout>
 
 <script>
+  import { trackShopEvent } from "../lib/shop/track";
   import {
     SHIPPING_FLAT_RATE,
     cartSubtotal,
@@ -141,6 +142,7 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENT
       });
       const data = (await response.json()) as { url?: string; error?: string };
       if (response.ok && data.url) {
+        trackShopEvent("begin_checkout", getCart());
         window.location.href = data.url;
         return;
       }

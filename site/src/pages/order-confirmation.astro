@@ -35,6 +35,11 @@ const jsonLd = { "@context": "https://schema.org", "@graph": [orgNode(SITE_IDENT
 </BaseLayout>
 
 <script>
-  import { clearCart } from "../lib/shop/cart";
-  if (new URLSearchParams(window.location.search).get("session_id")) clearCart();
+  import { clearCart, getCart } from "../lib/shop/cart";
+  import { trackPurchaseOnce } from "../lib/shop/track";
+  const sessionId = new URLSearchParams(window.location.search).get("session_id");
+  if (sessionId) {
+    trackPurchaseOnce(sessionId, getCart());
+    clearCart();
+  }
 </script>
