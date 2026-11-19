@@ -13,7 +13,6 @@ tags:
   - kids memory books
 image: ../../assets/articles/friendship-book-for-kids.png
 imageAlt: A beautifully illustrated friendship book for kids open on a wooden table, showing colorful hand-drawn pages filled with handwritten messages and drawings from friends
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

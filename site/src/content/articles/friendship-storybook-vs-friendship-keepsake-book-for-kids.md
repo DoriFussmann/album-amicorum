@@ -13,7 +13,6 @@ tags:
   - friendship storybook
 image: ../../assets/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids.png
 imageAlt: A child passing a beautifully illustrated keepsake friendship book to a friend at a wooden table, with colored pencils and handwritten pages visible
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

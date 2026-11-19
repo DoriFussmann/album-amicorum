@@ -13,7 +13,6 @@ tags:
   - kids activities
 image: ../../assets/articles/how-to-start-a-friendship-book-for-kids.png
 imageAlt: A child sitting at a wooden table opening a beautifully illustrated friendship book, colored pencils spread nearby, warm natural light filling the room
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

@@ -14,7 +14,6 @@ tags:
   - keepsakes for kids
 image: ../../assets/articles/childrens-keepsakes.png
 imageAlt: A beautifully illustrated open friend book resting on a wooden table beside colored pencils, dried flowers, and handwritten notes from children
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

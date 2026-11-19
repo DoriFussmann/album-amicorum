@@ -13,7 +13,6 @@ tags:
   - slow childhood
 image: ../../assets/articles/analog-toys-for-kids.png
 imageAlt: A wooden tabletop scattered with analog toys including building blocks, colored pencils, an open illustrated friendship book filled with handwritten notes, and a board game, with two children's hands reaching in to play
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
