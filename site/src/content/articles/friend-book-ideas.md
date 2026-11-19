@@ -47,7 +47,7 @@ faqs:
   - question: "What are good friend book ideas for kids who can't write yet?"
     answer: "Let them draw. A favorite animal, a self-portrait, or the two friends playing together all work well. An adult can write a one-line caption the child dictates, so the page still carries their words."
   - question: "How many friends can write in one book?"
-    answer: "That depends on how much space each friend uses. Because the pages are open, some friends fill a full spread while others leave a quick drawing and a line. Most books fill gradually over months as they move from friend to friend."
+    answer: "Each book has 40 pages, with room for 20 friends. For a bigger class or group, get a second book. Most books fill gradually over weeks or months as they move from friend to friend."
   - question: "Do the ideas only work with the Animals edition?"
     answer: "No. Every My Friends Book edition — Space, Dinosaurs, Fairies, Mermaids, Flowers, Forest and Animals — has the same open pages, so the same ideas work. Only the illustrated world around them changes."
 ---
