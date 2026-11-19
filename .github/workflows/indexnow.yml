@@ -1,10 +1,13 @@
 name: IndexNow
 
-# After each successful production deploy of the marketing site, tell IndexNow
-# (Bing and partners) which pages changed since the previous production deploy.
+# After each successful production deploy, tell IndexNow (Bing and partners)
+# which pages changed since the previous production deploy.
+# This Vercel project reports deploys to GitHub as a commit status named
+# "Vercel" (it does not create GitHub deployments), so the trigger is the
+# status event, limited to commits on main.
 # Run by hand with a list of URLs to submit specific pages.
 on:
-  deployment_status:
+  status:
   workflow_dispatch:
     inputs:
       urls:
@@ -13,18 +16,20 @@ on:
 
 permissions:
   contents: read
-  deployments: read
+  statuses: read
 
 jobs:
   submit:
     if: >-
       github.event_name == 'workflow_dispatch' ||
-      (github.event.deployment_status.state == 'success' &&
-       github.event.deployment.environment == 'Production – album-amicorum')
+      (github.event.context == 'Vercel' &&
+       github.event.state == 'success' &&
+       contains(github.event.branches.*.name, 'main'))
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
         with:
+          ref: main
           fetch-depth: 0
 
       - uses: actions/setup-node@v4
@@ -38,16 +43,24 @@ jobs:
         run: node site/scripts/indexnow.mjs $URLS
 
       - name: Submit pages changed since the previous production deploy
-        if: github.event_name == 'deployment_status'
+        if: github.event_name == 'status'
         env:
           GH_TOKEN: ${{ github.token }}
-          HEAD_SHA: ${{ github.event.deployment.sha }}
-          ENVIRONMENT: ${{ github.event.deployment.environment }}
+          HEAD_SHA: ${{ github.event.sha }}
         run: |
-          BASE_SHA=$(gh api -X GET "repos/${{ github.repository }}/deployments" \
-            -f environment="$ENVIRONMENT" -f per_page=20 \
-            --jq "[.[] | select(.sha != \"$HEAD_SHA\")][0].sha")
-          if [ -z "$BASE_SHA" ] || [ "$BASE_SHA" = "null" ]; then
+          if ! git merge-base --is-ancestor "$HEAD_SHA" HEAD; then
+            echo "$HEAD_SHA is not on main; skipping."
+            exit 0
+          fi
+          # Previous production deploy = the nearest earlier commit on main
+          # that Vercel reported as successfully deployed.
+          BASE_SHA=""
+          for sha in $(git rev-list --first-parent -n 30 "$HEAD_SHA~1"); do
+            state=$(gh api "repos/${{ github.repository }}/commits/$sha/statuses" \
+              --jq '[.[] | select(.context == "Vercel" and .state == "success")] | length')
+            if [ "$state" -gt 0 ]; then BASE_SHA="$sha"; break; fi
+          done
+          if [ -z "$BASE_SHA" ]; then
             echo "No previous production deploy found; nothing to compare."
             exit 0
           fi

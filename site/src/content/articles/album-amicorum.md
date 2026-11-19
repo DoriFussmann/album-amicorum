@@ -50,6 +50,9 @@ externalLinks:
   - label: "Leiden University: Friendship albums as pictorial networks in early modern Europe, 1550–1700"
     url: "https://www.universiteitleiden.nl/en/research/research-projects/humanities/images-on-the-move.-friendship-albums-as-pictorial-networks-in-early-modern-europe-1550-1700"
     addedAt: 2026-10-25
+  - label: "Wikipedia: Friendship book"
+    url: "https://en.wikipedia.org/wiki/Friendship_book"
+    addedAt: 2026-11-19
 targetKeyword: album amicorum
 supportingKeyword: album amicorum
 ---

@@ -54,6 +54,16 @@ If you asked most parents five years ago whether their child needed to learn han
 
 This is not an argument against typing. Children need digital fluency, and keyboards are not going away. But the two skills are not interchangeable — and for children between the ages of roughly five and ten, the research case for prioritizing handwriting is now unusually strong.
 
+Here is how the two compare, based on the research covered below.
+
+| | Handwriting | Typing |
+| --- | --- | --- |
+| What the brain does | Vision, fine motor control and touch work together, with more widespread connectivity in areas tied to learning and memory | The same key press for every letter; closer to passive transcription |
+| Early literacy (ages 5–6) | Faster gains in decoding and spelling; 92 percent letter-naming accuracy in a 2025 study | 76 percent letter-naming accuracy in the same study |
+| Pace | Slower, which pushes a child to process and paraphrase | Faster, which helps with longer drafts once a child reads and writes fluently |
+| Main strength | Makes early learning stick | Speed, less physical fatigue, and access for children with motor or learning challenges |
+| Best fit | The foundational years, roughly ages five to ten | Older children whose literacy foundations are already in place |
+
 ## What Happens in the Brain When a Child Writes by Hand
 
 The most striking finding from recent neuroscience is how many brain regions handwriting activates simultaneously. 

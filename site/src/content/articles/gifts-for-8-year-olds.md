@@ -33,6 +33,9 @@ externalLinks:
     url: "https://www.tosy.com/blogs/tosy-ideas-inspiration/christmas-gifts-kids-can-use-all-year-in-2026"
     addedAt: 2026-10-27
     kind: where-things-stand
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
 faqs:
   - question: "What makes a gift idea for an 8-year-old stand out from a standard toy?"
     answer: "The most memorable gifts for 8-year-olds tend to be open-ended, personal, or creative — something a child can come back to over time rather than something that entertains for a single afternoon. Keepsakes, craft kits, and activity books that involve friends or family tend to hold meaning far longer than trend-driven toys."

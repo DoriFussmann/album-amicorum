@@ -30,7 +30,13 @@ internalLinks:
     anchor: "The complete guide to friendship books"
   - slug: slow-childhood-analog-play
     anchor: "Slow childhood and analog play"
-externalLinks: []
+externalLinks:
+  - label: "University of Toledo: Fewer toys lead to richer play experiences"
+    url: "https://news.utoledo.edu/index.php/12_18_2017/fewer-toys-lead-to-richer-play-experiences-ut-researchers-find"
+    addedAt: 2026-11-19
+  - label: "University of Toronto: The science of gift giving, experiences versus material gifts"
+    url: "https://www.utoronto.ca/news/science-gift-giving-u-t-research-best-kind-present-receive"
+    addedAt: 2026-11-19
 faqs:
   - question: "What makes a gift truly 'meaningful' for a child, not just screen-free?"
     answer: "A truly meaningful gift does more than avoid a screen — it invites the child to make something, share something, or remember something. Gifts that are participatory (a journal filled with a friend's handwriting, an art kit that produces original work, a craft that becomes a keepsake) tend to generate stronger emotional responses and longer-lasting gratitude than passive entertainment items, screen-based or not. The 'meaningful' test is simple: will this gift still matter in ten years? If the answer is yes, you're on the right track."

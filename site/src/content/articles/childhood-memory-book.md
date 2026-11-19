@@ -34,6 +34,12 @@ externalLinks:
   - label: "Common Sense Media: Tweens, Teens, and Screens: What Our New Research Uncovers"
     url: "https://www.commonsensemedia.org/articles/tweens-teens-and-screens-what-our-new-research-uncovers"
     addedAt: 2026-10-26
+  - label: "Frontiers in Psychology: Handwriting but not typewriting leads to widespread brain connectivity (2024)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10853352/"
+    addedAt: 2026-11-19
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
 faqs:
   - question: "What is the difference between a childhood memory book and a friends' book?"
     answer: "A childhood memory book is usually written by a parent or caregiver and records milestones, photos, and family moments from the child's perspective over time. A friends' book—like My Friends Book—is written and illustrated by the child's own friends, so every page holds someone else's handwriting, drawings, and personality. The two formats preserve entirely different things: one keeps the story of childhood as the parent observed it; the other keeps the voices of the people who shared it."

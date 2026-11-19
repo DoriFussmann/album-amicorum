@@ -32,7 +32,16 @@ internalLinks:
     anchor: The benefits of handwriting for kids
   - slug: meaningful-screen-free-gifts
     anchor: Meaningful screen-free gifts
-externalLinks: []
+externalLinks:
+  - label: "American Academy of Pediatrics: The Power of Play"
+    url: "https://www.healthychildren.org/English/family-life/power-of-play/Pages/The-Power-of-Play-How-Fun-and-Games-Help-Children-Thrive.aspx"
+    addedAt: 2026-11-19
+  - label: "Frontiers in Psychology: Handwriting but not typewriting leads to widespread brain connectivity (2024)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10853352/"
+    addedAt: 2026-11-19
+  - label: "Common Sense Media: Tweens, Teens, and Screens: What Our New Research Uncovers"
+    url: "https://www.commonsensemedia.org/articles/tweens-teens-and-screens-what-our-new-research-uncovers"
+    addedAt: 2026-11-19
 faqs:
   - question: "What is the difference between slow childhood and analog play?"
     answer: "Slow childhood is a broad philosophy about how a child's entire upbringing is paced — prioritizing unhurried time, deep play, real-world experience, and meaningful relationships over busyness and digital stimulation. Analog play is one of its most important practices: child-led, hands-on activity using physical materials rather than screens. Think of slow childhood as the vision and analog play as the daily habit that makes it real."

@@ -30,7 +30,16 @@ internalLinks:
     anchor: When to give a friendship book
   - slug: analog-toys-for-kids
     anchor: Analog toys for kids
-externalLinks: []
+externalLinks:
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
+  - label: "University of Toronto: The science of gift giving, experiences versus material gifts"
+    url: "https://www.utoronto.ca/news/science-gift-giving-u-t-research-best-kind-present-receive"
+    addedAt: 2026-11-19
+  - label: "Frontiers in Psychology: Handwriting but not typewriting leads to widespread brain connectivity (2024)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10853352/"
+    addedAt: 2026-11-19
 faqs:
   - question: "What makes a gift truly unique for a 6-year-old, beyond just being unusual?"
     answer: "A truly unique gift at this age is one that can't be given to anyone else unchanged — it's personalised to that specific child's friendships, memories, or imagination. Generic toys, however clever, can always be re-gifted or replaced. A gift that captures something real — a handwritten message from a best friend, a drawing by a classmate, a collection of 'favourite things' filled in by the people who know them best — is unrepeatable. That irreplaceability is what turns a gift into a keepsake."

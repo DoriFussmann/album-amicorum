@@ -43,6 +43,9 @@ externalLinks:
   - label: "Children's friendship quality trajectories from middle childhood ..."
     url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/"
     addedAt: 2026-08-11
+  - label: "American Academy of Pediatrics: The Power of Play"
+    url: "https://www.healthychildren.org/English/family-life/power-of-play/Pages/The-Power-of-Play-How-Fun-and-Games-Help-Children-Thrive.aspx"
+    addedAt: 2026-11-19
 targetKeyword: smartphone-free childhood alternatives
 supportingKeyword: smartphone-free childhood alternatives
 ---
@@ -57,6 +60,15 @@ Researcher Jonathan Haidt describes today's dominant model of childhood as "phon
 Before you can replace a smartphone, you have to understand what function it was serving. Was your child using it primarily to communicate with friends? To fill unstructured time? To watch videos? To play games? To feel part of something? Each of these is a different need, and each requires a different response. A child seeking connection needs something different from a child seeking entertainment. Conflating them leads to replacement strategies that feel hollow — the child knows what's missing, even if they can't articulate it. Do the audit honestly, and you'll find you don't need a hundred new activities. You need the right three or four.
 
 ---
+
+As a starting map, here is what each job the phone was doing can be replaced with. The steps below take them one at a time.
+
+| What the phone was doing | Smartphone-free alternative | Covered in |
+| --- | --- | --- |
+| Keeping your child connected to friends | Regular playdates, letters and postcards, a Friend Book | Step 2 |
+| Filling every gap in the day | Weekly anchors: a free-play Friday, a craft night, a Saturday outdoor ritual, a game night | Step 3 |
+| Entertainment and something to make | Open-ended materials left within reach: watercolors, building blocks, modeling clay, prompted journals | Step 4 |
+| Protecting against being left out | An agreement with a few families in your child's own friend group | Step 5 |
 
 ## Step 1: Audit the Void — Know Exactly What You're Replacing
 

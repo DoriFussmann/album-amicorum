@@ -37,6 +37,9 @@ externalLinks:
   - label: "How to Create Meaningful Memory Boxes for Your Kids!"
     url: "https://thedanaivy.com/2023/08/step-by-step-guide-how-to-create-meaningful-memory-boxes-for-your-kids/"
     addedAt: 2026-08-18
+  - label: "Research on children's friendship quality from middle childhood onward (PMC)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/"
+    addedAt: 2026-11-19
 targetKeyword: children's keepsakes
 articleType: comprehensive
 internalLinks:

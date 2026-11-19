@@ -56,6 +56,12 @@ externalLinks:
   - label: "Wikipedia: Friendship book"
     url: "https://en.wikipedia.org/wiki/Friendship_book"
     addedAt: 2026-10-25
+  - label: "Wikipedia: Album amicorum"
+    url: "https://en.wikipedia.org/wiki/Album_amicorum"
+    addedAt: 2026-11-19
+  - label: "Frontiers in Psychology: Handwriting but not typewriting leads to widespread brain connectivity (2024)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10853352/"
+    addedAt: 2026-11-19
 ---
 
 There is a moment most parents recognise, even if they cannot quite name it — the last week of term, a [birthday](/articles/when-to-give-a-friendship-book-for-kids/) party winding down, a child's class photo being signed in a rush. It is the moment when a whole world of friendship is about to scatter, and the only thing equal to it would be something that could hold it still. A friendship book for kids exists precisely for this moment. Not a [storybook](/articles/friendship-storybook-vs-friendship-keepsake-book-for-kids/), not a diary, not a printed album: something richer, more alive, and more irreplaceable than any of those things.

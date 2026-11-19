@@ -45,7 +45,16 @@ internalLinks:
     anchor: Unique gifts for 6-year-olds
   - slug: album-amicorum
     anchor: Album Amicorum
-externalLinks: []
+externalLinks:
+  - label: "United Nations: International Day of Friendship, 30 July"
+    url: "https://www.un.org/en/observances/friendship-day"
+    addedAt: 2026-11-19
+  - label: "American Academy of Child and Adolescent Psychiatry: Moving, Helping Children Cope"
+    url: "https://www.aacap.org/AACAP/Families_and_Youth/Facts_for_Families/FFF-Guide/Children-And-Family-Moves-014.aspx"
+    addedAt: 2026-11-19
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
 ---
 
 Some gifts are well-chosen. Others are perfectly timed. A [friendship book](/articles/friendship-book-for-kids/) for kids belongs in that rarer second category — a gift whose value depends not just on what it is, but on the moment it arrives. Give it too randomly, and it may sit on a shelf. Give it at the right moment, and it becomes the first page of something a child will carry for decades.
