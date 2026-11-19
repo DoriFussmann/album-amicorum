@@ -15,7 +15,6 @@ tags:
   - kids activities
 image: ../../assets/articles/smartphone-free-childhood-alternatives.png
 imageAlt: A child writing in a beautifully illustrated friend book at a wooden table surrounded by art supplies and open books
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

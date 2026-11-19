@@ -78,7 +78,7 @@ export const ALT_MIN = 10;
 export const IMAGE_MAX_BYTES = 10 * 1024 * 1024; // 10MB
 
 export const DEFAULTS = {
-  robots: 'index, follow',
+  robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
   schemaType: 'BlogPosting',
   locale: 'en-US',
   twitterCard: 'summary_large_image',

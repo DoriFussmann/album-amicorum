@@ -29,7 +29,7 @@ const result = writeArticle({
     image: '', // overwritten by write path
     imageAlt: 'Diagram of crawl, index, and structured data signals for answer engines',
     image2Alt: 'Example breadcrumb and FAQ schema blocks on an article page',
-    robots: 'index, follow',
+    robots: 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     schemaType: 'BlogPosting',
     locale: 'en-US',
     twitterCard: 'summary_large_image',

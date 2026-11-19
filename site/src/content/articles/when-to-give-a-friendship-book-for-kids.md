@@ -15,7 +15,6 @@ tags:
   - when to give a friendship book
 image: ../../assets/articles/when-to-give-a-friendship-book-for-kids.png
 imageAlt: A beautifully illustrated friendship book open on a wooden table, surrounded by coloured pencils and children's handwritten notes and drawings
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image

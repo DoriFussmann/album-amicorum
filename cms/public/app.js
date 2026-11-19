@@ -153,7 +153,7 @@ function collectFormData() {
     tags: csvToArray($('tags').value),
     keywords: csvToArray($('keywords').value),
     canonical: $('canonical').value.trim(),
-    robots: $('robots').value.trim() || 'index, follow',
+    robots: $('robots').value.trim() || 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     schemaType: $('schemaType').value.trim() || 'BlogPosting',
     locale: $('locale').value.trim() || 'en-US',
     twitterCard: $('twitterCard').value.trim() || 'summary_large_image',
@@ -425,7 +425,7 @@ function fillFormFromData(data, body) {
   $('tags').value = Array.isArray(data.tags) ? data.tags.join(', ') : '';
   $('keywords').value = Array.isArray(data.keywords) ? data.keywords.join(', ') : '';
   $('canonical').value = data.canonical || '';
-  $('robots').value = data.robots || 'index, follow';
+  $('robots').value = data.robots || 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1';
   $('schemaType').value = data.schemaType || 'BlogPosting';
   $('locale').value = data.locale || 'en-US';
   $('twitterCard').value = data.twitterCard || 'summary_large_image';

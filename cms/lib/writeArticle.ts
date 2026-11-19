@@ -25,7 +25,7 @@ function buildFrontmatter(
     tags: data.tags,
     image: imagePaths.image,
     imageAlt: data.imageAlt,
-    robots: data.robots ?? 'index, follow',
+    robots: data.robots ?? 'index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1',
     schemaType: data.schemaType ?? 'BlogPosting',
     locale: data.locale ?? 'en-US',
     twitterCard: data.twitterCard ?? 'summary_large_image',

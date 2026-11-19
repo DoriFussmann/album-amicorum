@@ -15,7 +15,6 @@ tags:
   - history of friendship books
 image: ../../assets/articles/album-amicorum.png
 imageAlt: Open illustrated album amicorum friendship book with handwritten entries, drawings, and pressed flowers on a wooden table
-robots: index, follow
 schemaType: BlogPosting
 locale: en-US
 twitterCard: summary_large_image
