@@ -56,11 +56,11 @@ Most gifts are forgotten by next week. A friend book fills up with the handwriti
 
 Childhood friendships are full of small moments that fade faster than anyone expects. A friend book gives those moments a home, and a few good friend book ideas turn a blank page into a memory, a sketch, or a message in a friend's own handwriting.
 
-The examples below use the [animal-themed friend book](/friend-book/animals/) from Album Amicorum's My Friends Book collection: soft, earthy watercolors around cream pages that stay blank for friends to complete. The ideas work just as well in any edition.
+The examples below use the [animal-themed friend book](/friend-book/animals/) from Album Amicorum's My Friends Book collection: soft, earthy watercolors around cream pages with gentle prompts and open space for friends to complete. The ideas work just as well in any edition.
 
 ## Why Open Pages Need a Few Ideas
 
-Between the illustrations, the pages stay blank on purpose. Nothing is filled in ahead of time. Each friend gets a page of their own to write a memory, add a drawing, name a favorite thing, or leave a message meant for just one person.
+Between the illustrations, each page pairs a few gentle prompts with open space. No answer is filled in ahead of time. Each friend gets a page of their own to write a memory, add a drawing, name a favorite thing, or leave a message meant for just one person.
 
 That freedom keeps every book different. Two children can own the same edition and end up with completely different stories, because every friendship has its own details. It also means a friend holding the pen for the first time may freeze. A short list of ideas fixes that.
 

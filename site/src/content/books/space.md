@@ -28,9 +28,9 @@ the world they'll want to hand to their friends.
 
 ## Made to be written in
 
-Inside, the same gentle illustrations frame open, cream-paper pages with room for friends to leave
+Inside, the same gentle illustrations frame cream-paper pages with gentle prompts and room for friends to leave
 what matters: a handwritten memory, a drawing, a favorite thing, a message meant just for them.
-Nothing is filled in ahead of time. Every page waits for a real person to complete it, which is why
+No answer is filled in ahead of time. Every page waits for a real person to complete it, which is why
 no two finished books are ever alike.
 
 ## A keepsake, not a notebook

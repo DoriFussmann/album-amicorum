@@ -18,7 +18,7 @@ export const GET: APIRoute = async () => {
       path: `/friend-book/${book.data.slug}/`,
       description: `${book.data.tagline} ${book.data.price}.`,
     })),
-    { title: "Our Story", path: "/our-story/", description: "The 450-year-old album amicorum tradition behind My Friends Book." },
+    { title: "Our Story", path: "/our-story/", description: "The 500-year-old album amicorum tradition behind My Friends Book." },
   ];
 
   const body = generateLlmsTxt({

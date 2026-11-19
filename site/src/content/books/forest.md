@@ -24,8 +24,8 @@ who loves the woods and the animals that live there, it's a world worth sharing 
 
 ## Pages left open on purpose
 
-Between the trees, the cream pages are left blank — room for a friend to write a memory, add a drawing,
-name a favorite thing, or leave a few words of their own. Nothing is filled in ahead of time. Each
+Between the trees, the cream pages hold gentle prompts and open space — room for a friend to write a memory, add a drawing,
+name a favorite thing, or leave a few words of their own. No answer is filled in ahead of time. Each
 friend completes their own page, so no two books ever grow the same way.
 
 ## A keepsake, not a notebook

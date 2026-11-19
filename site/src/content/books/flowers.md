@@ -27,8 +27,8 @@ who notices small things, it's a fitting world to share with friends.
 
 ## Space to fill by hand
 
-Between the flowers, the pages are left open on cream paper — room for a friend to write a note, add
-a drawing, list a favorite thing, or say something in their own words. None of it is done in advance.
+Between the flowers, gentle prompts sit on cream paper with space left open — room for a friend to write a note, add
+a drawing, list a favorite thing, or say something in their own words. The prompts only start things off.
 Each friend plants their own page, and no two books ever bloom the same way.
 
 ## More than a notebook
