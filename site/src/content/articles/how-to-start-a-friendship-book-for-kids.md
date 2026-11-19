@@ -49,6 +49,12 @@ externalLinks:
   - label: "Growing Friendships: A Kids' Guide to Making and Keeping ..."
     url: "https://sunshine-parenting.com/growing-friendships-a-kids-guide-to-making-and-keeping-friends/"
     addedAt: 2026-08-10
+  - label: "Frontiers in Psychology: Handwriting but not typewriting leads to widespread brain connectivity (2024)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10853352/"
+    addedAt: 2026-11-19
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
 ---
 
 ## Why Starting a Friendship Book Is Worth Doing Right

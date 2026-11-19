@@ -35,7 +35,16 @@ faqs:
     answer: "For ages 5–7, 20 to 30 minutes is typically the sweet spot — long enough to produce something tangible, short enough to end before energy flags. For ages 8–12, sessions of 40 to 60 minutes allow for more depth, especially if the activity has a creative output such as a drawing, a written page, or a shared book. The single most important thing is to end while enthusiasm is still high, so the memory attached to the activity stays positive."
   - question: "What if my child and their friend disagree or fall out during the activity?"
     answer: "Minor friction during shared creative activities is normal and actually useful — it gives children low-stakes practice in negotiation and repair. The most helpful parent response is to briefly acknowledge the disagreement and redirect to the physical material. Named sections or clearly divided materials make redirecting much easier, because there is always an obvious 'yours' and 'theirs' to return to."
-externalLinks: []
+externalLinks:
+  - label: "Research on children's friendship quality from middle childhood onward (PMC)"
+    url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC11259248/"
+    addedAt: 2026-11-19
+  - label: "American Academy of Pediatrics: The Power of Play"
+    url: "https://www.healthychildren.org/English/family-life/power-of-play/Pages/The-Power-of-Play-How-Fun-and-Games-Help-Children-Thrive.aspx"
+    addedAt: 2026-11-19
+  - label: "CDC: Positive Parenting Tips for Middle Childhood (6–8 years old)"
+    url: "https://www.cdc.gov/child-development/positive-parenting-tips/middle-childhood-6-8-years.html"
+    addedAt: 2026-11-19
 targetKeyword: friendship activities for kids
 supportingKeyword: friendship activities for kids
 internalLinks:

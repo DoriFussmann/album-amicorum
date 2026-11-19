@@ -48,6 +48,9 @@ externalLinks:
   - label: "Books To Show Kids How To Be a Friend"
     url: "https://www.readbrightly.com/books-to-show-kids-how-to-be-a-friend/"
     addedAt: 2026-08-11
+  - label: "U.S. Surgeon General: Social Media and Youth Mental Health advisory"
+    url: "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html"
+    addedAt: 2026-11-19
 ---
 
 You search "friendship book for kids" and the results pile up, beautiful illustrated covers, colorful spines, books featuring animal duos and schoolyard adventures alongside fill-in pages and prompted journaling. It looks like one category. It is actually two, and they serve completely different purposes. Before you add anything to your cart, it's worth understanding the distinction, because buying the right one for the right moment makes all the difference. For the keepsake side in full, see our [complete guide to friendship books](/articles/friendship-book-for-kids/).

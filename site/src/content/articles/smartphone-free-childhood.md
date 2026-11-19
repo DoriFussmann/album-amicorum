@@ -46,6 +46,12 @@ externalLinks:
   - label: "Axios: Parents ditch kids' phones for a screen-free childhood (May 2026)"
     url: "https://www.axios.com/2026/05/15/screen-free-childhood-parents-ditch-kids-phones"
     addedAt: 2026-10-25
+  - label: "U.S. Surgeon General: Social Media and Youth Mental Health advisory"
+    url: "https://www.hhs.gov/surgeongeneral/reports-and-publications/youth-mental-health/social-media/index.html"
+    addedAt: 2026-11-19
+  - label: "American Academy of Pediatrics: The Power of Play"
+    url: "https://www.healthychildren.org/English/family-life/power-of-play/Pages/The-Power-of-Play-How-Fun-and-Games-Help-Children-Thrive.aspx"
+    addedAt: 2026-11-19
 h1: "What a Smartphone-Free Childhood Means for Your Family"
 targetKeyword: smartphone free childhood
 supportingKeyword: smartphone free childhood

@@ -43,11 +43,11 @@ const jsonLd = {
 const description =
   bioPlain.length >= 140 && bioPlain.length <= 160
     ? bioPlain
-    : `${member.data.name} is ${member.data.role}. Read credentials, focus areas, and published articles.`;
+    : `${member.data.name} is ${member.data.role} at ${SITE_NAME}. Read their background and browse every guide they have written on friendship, handwriting, and slow childhood.`;
 ---
 
 <BaseLayout
-  title={`${member.data.name} — ${SITE_NAME}`}
+  title={`${member.data.name}, ${member.data.role} and Guide Author — ${SITE_NAME}`}
   description={description.slice(0, 160)}
   canonicalPath={`/team/${member.id}/`}
   jsonLd={jsonLd}
