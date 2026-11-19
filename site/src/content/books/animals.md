@@ -24,9 +24,9 @@ with friends.
 
 ## Open pages to complete
 
-Between the animals, the cream pages are left blank on purpose — room for a friend to write a memory,
-add a drawing, name a favorite thing, or leave a message just for one person. Nothing is filled in for
-them. Each friend completes their own page, so no two books ever end up alike.
+Between the animals, the cream pages carry a few gentle prompts and plenty of open space — room for a friend to write a memory,
+add a drawing, name a favorite thing, or leave a message just for one person. The answers are
+all theirs. Each friend completes their own page, so no two books ever end up alike.
 
 ## Kept, not used up
 

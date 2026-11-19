@@ -31,9 +31,9 @@ book they'll want to pass to their friends.
 
 ## Room for real handwriting
 
-The ocean illustrations frame cream pages left deliberately open — space for a friend to write a
-memory, draw something, name a favorite thing, or leave a few words only they would say. Nothing is
-printed in for them. What the book becomes depends entirely on who picks up the pen.
+The ocean illustrations frame cream pages with gentle prompts and space left deliberately open — room for a friend to write a
+memory, draw something, name a favorite thing, or leave a few words only they would say. The prompts
+only begin it. What the book becomes depends entirely on who picks up the pen.
 
 ## It outlasts the notebook drawer
 

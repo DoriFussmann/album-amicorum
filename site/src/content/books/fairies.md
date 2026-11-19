@@ -27,8 +27,8 @@ with friends.
 
 ## Pages waiting to be filled
 
-Among the fairy illustrations, the cream pages are left open on purpose — room for a friend to write a
-memory, draw a picture, name a favorite thing, or leave a message meant only for one person. Nothing
+Among the fairy illustrations, the cream pages hold a few gentle prompts and space left open on purpose — room for a friend to write a
+memory, draw a picture, name a favorite thing, or leave a message meant only for one person. No answer
 is filled in ahead of time. The book becomes whatever the friends who hold it decide to make it.
 
 ## Meant to be kept

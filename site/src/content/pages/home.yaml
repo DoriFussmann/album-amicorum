@@ -1,6 +1,6 @@
 route: /
 meta_title: Friend Books & Memory Books for Kids | Album Amicorum
-meta_description: Beautifully illustrated friend books for kids — a place to keep handwritten memories, drawings, and friendships, inspired by a 450-year-old tradition.
+meta_description: Beautifully illustrated friend books for kids — a place to keep handwritten memories, drawings, and friendships, inspired by a 500-year-old tradition.
 sections:
   - type: hero
     eyebrow: My Friends Book
@@ -72,8 +72,8 @@ sections:
   - type: feature-split
     id: story
     eyebrow: Our story
-    heading: Inspired by a tradition that began more than 450 years ago.
-    body: More than four centuries ago, students traveling across Renaissance Europe carried small books from place to place, inviting friends and teachers to leave handwritten messages, poems, drawings, and signatures along the way. These books became known as Album Amicorum — Latin for "Book of Friends." Today, My Friends Book carries the same spirit into childhood, one handwritten page at a time.
+    heading: Inspired by a tradition that began 500 years ago.
+    body: Some 500 years ago, students traveling across Renaissance Europe carried small books from place to place, inviting friends and teachers to leave handwritten messages, poems, drawings, and signatures along the way. These books became known as Album Amicorum — Latin for "Book of Friends." Today, My Friends Book carries the same spirit into childhood, one handwritten page at a time.
     highlights:
       - title: Book of Friends
         text: Album amicorum is Latin for "Book of Friends" — a name for a habit people kept for centuries.

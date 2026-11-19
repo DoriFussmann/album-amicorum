@@ -25,8 +25,8 @@ worth handing to friends.
 
 ## Built to be written in
 
-Across the illustrations, the cream pages are left open — space for a friend to write a memory, draw
-something, name a favorite thing, or leave a few words of their own. None of it is pre-printed. What
+Across the illustrations, the cream pages offer gentle prompts and open space — room for a friend to write a memory, draw
+something, name a favorite thing, or leave a few words of their own. The answers are never pre-printed. What
 ends up inside is entirely up to the friends who fill it, which is why every finished book is
 different.
 

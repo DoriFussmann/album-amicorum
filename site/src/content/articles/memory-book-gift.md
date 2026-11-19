@@ -120,9 +120,9 @@ A few simple questions can point you toward the right fit.
 
 Album Amicorum offers seven illustrated worlds, each $30, so there is a theme for most interests.
 
-## The 450-Year Tradition Behind the Book
+## The 500-Year Tradition Behind the Book
 
-The idea is more than 450 years old. Students traveling across Renaissance Europe carried small books from town to town, asking friends and teachers to leave messages, poems, drawings, and signatures. Those books became known as Album Amicorum — Latin for "Book of Friends." That spirit lives on in every edition Album Amicorum makes today, now written for childhood and filled one handwritten page at a time.
+The idea is 500 years old. Students traveling across Renaissance Europe carried small books from town to town, asking friends and teachers to leave messages, poems, drawings, and signatures. Those books became known as Album Amicorum — Latin for "Book of Friends." That spirit lives on in every edition Album Amicorum makes today, now written for childhood and filled one handwritten page at a time.
 
 ## Where Things Stand
 <!-- WHERE-THINGS-STAND:START -->
