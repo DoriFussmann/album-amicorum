@@ -9,7 +9,11 @@ const hero = z.object({
   type: z.literal("hero"),
   eyebrow: z.string().min(1),
   h1: z.string().min(1),
+  /** Optional endings typed one after another after h1 (h1 is then the fixed start). */
+  h1_rotate: z.array(z.string().min(1)).min(1).max(8).optional(),
   sub: z.string().min(1),
+  /** Short product facts shown under the sub, e.g. "$30", "Hardcover". */
+  facts: z.array(z.string().min(1)).max(6).optional(),
   cta_primary: cta,
   cta_secondary: cta.optional(),
   slides: z

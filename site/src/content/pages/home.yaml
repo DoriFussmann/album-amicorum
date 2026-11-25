@@ -1,100 +1,95 @@
 route: /
 meta_title: Friend Books & Memory Books for Kids | Album Amicorum
-meta_description: Beautifully illustrated friend books for kids — a place to keep handwritten memories, drawings, and friendships, inspired by a 500-year-old tradition.
+meta_description: A $30 hardcover friend book for kids ages 5–12. Up to 20 friends each fill in a page with favorites, drawings and a handwritten note. Seven illustrated designs.
 sections:
   - type: hero
     eyebrow: My Friends Book
-    h1: Friendships, kept by hand.
-    sub: My Friends Book invites children to collect the stories, drawings, and handwritten memories of the friends who shape their childhood — a keepsake that becomes more precious with every page.
+    h1: Friendships, kept
+    h1_rotate:
+      - by hand.
+      - by heart.
+      - in crayon.
+      - for keeps.
+    sub: A hardcover fill-in book your child passes around. Each friend gets a page for their favorites, a drawing and a note in their own handwriting.
+    facts:
+      - $30
+      - Hardcover, 40 pages
+      - Room for 20 friends
+      - Ages 5–12
+      - 7 designs
     cta_primary:
-      label: Explore the Collection
+      label: Choose a design
       href: /friend-book/
     cta_secondary:
-      label: How It Works
+      label: How it works
       href: "#how-it-works"
     slides:
       - image: Seven My Friends Book editions laid side by side on linen, with daisies and greenery around them.
         alt: Seven My Friends Book editions laid side by side on linen, with daisies and greenery around them
         src: src/assets/images/hero.jpg
-      - image: A child walking through a meadow, carrying a My Friends Book.
-        alt: A child walking through a meadow, carrying a My Friends Book
-        src: src/assets/images/pass-it-on.jpg
-      - image: A family gathered around a picnic table in a garden, looking together at an open My Friends Book.
-        alt: A family gathered around a picnic table in a garden, looking together at an open My Friends Book
-        src: src/assets/images/watch-it-grow.jpg
-      - image: An open My Friends Book filled with handwriting and drawings from friends.
-        alt: An open My Friends Book filled with handwriting and drawings from friends
+      - image: The Mermaids edition of My Friends Book on a wooden table with shells.
+        alt: The Mermaids edition of My Friends Book on a wooden table with shells
+        src: src/assets/images/books/mermaids/08-staged-1.jpg
+      - image: An open My Friends Book showing the fill-in prompts on a page.
+        alt: An open My Friends Book showing the fill-in prompts on a page
         src: src/assets/images/one-of-a-kind.jpg
   - type: feature-split
     id: what-is
-    eyebrow: What is My Friends Book?
-    heading: A book that becomes the story of childhood friendships.
-    body: My Friends Book is a beautifully illustrated Friend Book where friends leave behind handwritten memories, drawings, favorite things, and little pieces of themselves. As each page is filled, the book becomes something no one else will ever own — a one-of-a-kind keepsake created by the people who matter most.
+    eyebrow: What is it?
+    heading: A book your child's friends fill in.
+    body: Your child hands the book to a friend, a cousin or a teacher. They fill in a page with their name, favorite things, a memory, a drawing and a message, then it goes to the next friend. Twenty pages later, it is a record of the people in your child's life, in their own handwriting.
     highlights:
-      - title: Every friend leaves a page
-        text: Each friend adds their own memories, drawings, and handwriting, making every page as unique as the person who created it.
+      - title: Every friend gets a page
+        text: Name, favorites, a memory and a drawing, in their own words.
       - title: Written by hand
-        text: Some memories deserve more than a screen. Handwriting captures personality in a way nothing else can.
-      - title: Made to be treasured
-        text: Long after childhood has passed, My Friends Book becomes a keepsake filled with the voices, creativity, and friendships that shaped those years.
-    image: Two children on the beach sharing a Mermaids edition of My Friends Book.
-    alt: Two children on the beach sharing a Mermaids edition of My Friends Book
-    src: src/assets/images/what-is.jpg
+        text: No screens, no typing. Just pencils, crayons and real handwriting.
+      - title: Made to keep
+        text: A sturdy square hardcover, built to be passed around and kept for years.
+    image: The Space edition of My Friends Book on a table with wooden toys.
+    alt: The Space edition of My Friends Book on a table with wooden toys
+    src: src/assets/images/books/space/08-front-alt.jpg
   - type: collection
     id: collection
-    eyebrow: Choose a world
-    heading: Seven editions, one story.
-    intro: Every edition tells the same story. Choose the world your child will be excited to share with friends.
+    eyebrow: Choose a design
+    heading: Seven designs, same book.
+    intro: Every edition has the same pages. Only the illustrations change, so pick the one your child will love showing off.
   - type: process
     id: how-it-works
-    eyebrow: The journey
-    heading: A page, a friend, a lifetime.
+    eyebrow: How it works
+    heading: Three steps, twenty friends.
     steps:
-      - title: A page gets filled
-        text: It starts with a name, a few favorites, and whatever makes you you right now. Then the bookmark slides forward, leaving the next page open for someone else.
-      - title: Passed to a friend
-        text: The book goes wherever the people are — a friend, a cousin, a teacher, a coach — anyone who has made life a little brighter.
-      - title: Kept for years
-        text: Each person leaves a page, a drawing, a bit of themselves. Long after, it is still a book full of people who loved you.
+      - title: Your child starts it
+        text: They fill in the first page with their name, favorites and a drawing. The bookmark marks the next empty page.
+      - title: Friends take a turn
+        text: Pass it to classmates, cousins, a teacher or a coach. Each one fills in a page.
+      - title: You keep it
+        text: When the pages are full, it is a book of the people who mattered at that age.
   - type: feature-grid
     id: why-parents
-    eyebrow: Why parents love it
-    heading: Something real to hold on to.
+    eyebrow: Why parents buy it
+    heading: A gift that isn't another toy.
     items:
-      - title: Screen-free connection
-        text: A quiet alternative to digital keepsakes — something children can hold, turn, and return to.
-      - title: Made for little hands
-        text: Thoughtful paper, gentle prompts, and space to draw so every age can leave a mark.
-      - title: Gifts that grow meaning
-        text: Perfect for birthdays, school years, and farewells — a keepsake for years to come.
-      - title: Beautiful on the shelf
-        text: Soft covers and natural tones that feel at home in a Waldorf-inspired room.
+      - title: Screen-free
+        text: Something kids hold, pass around and come back to.
+      - title: Easy for little hands
+        text: Simple prompts and room to draw, so younger friends can join in.
+      - title: For any occasion
+        text: Birthdays, the last day of school, summer camp or moving away.
+      - title: Looks good on a shelf
+        text: Soft colors and illustrations that fit a calm, natural room.
   - type: feature-split
     id: story
     eyebrow: Our story
     heading: Inspired by a tradition that began 500 years ago.
-    body: Some 500 years ago, students traveling across Renaissance Europe carried small books from place to place, inviting friends and teachers to leave handwritten messages, poems, drawings, and signatures along the way. These books became known as Album Amicorum — Latin for "Book of Friends." Today, My Friends Book carries the same spirit into childhood, one handwritten page at a time.
+    body: Some 500 years ago, students traveling across Renaissance Europe carried small books from place to place, inviting friends and teachers to leave handwritten messages, poems, drawings, and signatures along the way. These books became known as Album Amicorum, Latin for "Book of Friends." My Friends Book brings the same idea to childhood.
     highlights:
       - title: Book of Friends
-        text: Album amicorum is Latin for "Book of Friends" — a name for a habit people kept for centuries.
+        text: Album amicorum is Latin for "Book of Friends", a habit people kept for centuries.
       - title: Carried into childhood
         text: The same idea, made for children ages 5–12 and the friends who fill their pages.
     image: Watercolor of a young traveler carrying a book along a forest path, with a castle in the distance.
     alt: Watercolor of a young traveler carrying a book along a forest path, with a castle in the distance
     src: src/assets/images/story.jpg
-  - type: testimonials
-    id: testimonials
-    heading: A keepsake for years to come.
-    items:
-      - quote: My daughter carried her Friend Book everywhere that summer. Looking through it now feels like opening a little time capsule.
-        name: Parent
-        role: My Friends Book family
-      - quote: The illustrations are beautiful, but it's the handwriting that makes it so special. Every page feels like a memory.
-        name: Parent
-        role: My Friends Book family
-      - quote: It has become one of the books we reach for most often — not to read, but to remember.
-        name: Parent
-        role: My Friends Book family
   - type: faq
     id: faq
     eyebrow: Questions
@@ -105,7 +100,7 @@ sections:
       - q: What ages is My Friends Book for?
         a: My Friends Book is made for children ages 5–12, from the first school years through the end of elementary school.
       - q: How many editions are there?
-        a: There are seven illustrated editions — Mermaids, Flowers, Space, Fairies, Forest, Dinosaurs, and Animals. Every edition works the same way; only the illustrated world changes.
+        a: There are seven illustrated editions (Mermaids, Flowers, Space, Fairies, Forest, Dinosaurs and Animals). Every edition works the same way; only the illustrated world changes.
       - q: How much does it cost and where do you ship?
         a: Each edition is $30. Shipping is a flat $7 per order, and we ship to more than 40 countries.
       - q: How long does delivery take?
@@ -115,14 +110,14 @@ sections:
       - q: Where does the name Album Amicorum come from?
         a: Album amicorum is Latin for "Book of Friends." Students in Renaissance Europe carried these books on their travels and collected handwritten entries from the friends and teachers they met.
   - type: cta-band
-    heading: Begin your child's Friend Book.
-    sub: Some memories grow more meaningful with time. Start collecting them today.
+    heading: Pick a design for your child.
+    sub: $30, hardcover, delivered in up to 7 days.
     cta_primary:
-      label: Explore the Collection
+      label: Choose a design
       href: /friend-book/
     cta_secondary:
       label: Read Our Story
       href: /our-story/
   - type: articles-teaser
     heading: From the journal
-    intro: Ideas for slower, more connected childhoods — friendship, handwriting, keepsakes, and screen-free gifts.
+    intro: "Ideas for slower, more connected childhoods: friendship, handwriting, keepsakes and screen-free gifts."

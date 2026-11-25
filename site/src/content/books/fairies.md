@@ -11,7 +11,6 @@ gallery:
   - /images/books/fairies/03-open-1.jpg
   - /images/books/fairies/04-open-2.jpg
   - /images/books/fairies/05-use.jpg
-  - /images/books/fairies/06-kids.jpg
   - /images/books/fairies/07-lifestyle.jpg
   - /images/books/fairies/02-back.jpg
 metaTitle: "Fairy-Themed Friend Book for Kids | Album Amicorum"

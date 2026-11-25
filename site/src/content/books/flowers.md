@@ -11,7 +11,6 @@ gallery:
   - /images/books/flowers/03-open-1.jpg
   - /images/books/flowers/04-open-2.jpg
   - /images/books/flowers/05-kid.jpg
-  - /images/books/flowers/06-kids.jpg
   - /images/books/flowers/07-bookmark-1.jpg
   - /images/books/flowers/08-bookmark-2.jpg
   - /images/books/flowers/02-back.jpg

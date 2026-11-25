@@ -11,8 +11,6 @@ gallery:
   - /images/books/space/03-open-1.jpg
   - /images/books/space/04-open-2.jpg
   - /images/books/space/05-use.jpg
-  - /images/books/space/06-kids-1.jpg
-  - /images/books/space/07-kids-2.jpg
   - /images/books/space/08-front-alt.jpg
   - /images/books/space/02-back.jpg
 metaTitle: "Space-Themed Friend Book for Kids | Album Amicorum"

@@ -13,7 +13,9 @@ interface Cta {
 interface Section {
   eyebrow: string;
   h1: string;
+  h1_rotate?: string[];
   sub: string;
+  facts?: string[];
   cta_primary: Cta;
   cta_secondary?: Cta;
   slides: Slide[];
@@ -22,6 +24,10 @@ interface Props {
   section: Section;
 }
 const { section } = Astro.props;
+
+// Rotating headline: h1 is the fixed first line; line two types each h1_rotate ending in turn.
+const rotate = section.h1_rotate ?? [];
+const longest = rotate.reduce((a, b) => (b.length > a.length ? b : a), "");
 
 // Two-line headline: line two holds the last two words, with the final word typed in.
 const words = section.h1.trim().split(/\s+/);
@@ -41,7 +47,15 @@ const icon = {
     <div class="hero-copy">
       <p class="eyebrow eyebrow-pill rise">{section.eyebrow}</p>
       <h1 class="h1 hero-title rise">
-        {lastWord ? (
+        {rotate.length > 0 ? (
+          <>
+            <span class="sr-only">{`${section.h1} ${rotate[0]}`}</span>
+            <span aria-hidden="true">
+              {section.h1}<br />
+              <span class="line-2"><span class="tw-slot"><span class="tw-ghost">{longest}</span><span class="tw-word" data-typewriter data-rotate={JSON.stringify(rotate)}>{rotate[0]}</span></span></span>
+            </span>
+          </>
+        ) : lastWord ? (
           <>
             {lineOne}{lineOne && <br />}
             <span class="line-2">{lineTwoLead && <>{lineTwoLead}{" "}</>}<span class="tw-slot"><span class="tw-ghost" aria-hidden="true">{lastWord}</span><span class="tw-word" data-typewriter>{lastWord}</span></span></span>
@@ -51,6 +65,11 @@ const icon = {
         )}
       </h1>
       <p class="lead rise">{section.sub}</p>
+      {section.facts && section.facts.length > 0 && (
+        <ul class="hero-facts rise" aria-label="At a glance">
+          {section.facts.map((fact) => <li>{fact}</li>)}
+        </ul>
+      )}
       <div class="hero-actions rise">
         <a class="btn btn-primary" href={section.cta_primary.href}>{section.cta_primary.label}</a>
         {section.cta_secondary && (
@@ -202,9 +221,31 @@ const icon = {
 
 <script is:inline>
   (function () {
-    // Typewriter: type the real final word in once, letter by letter; the text stays in the DOM throughout.
+    // Typewriter. With data-rotate: type each ending letter by letter, hold, delete, then the next.
+    // Without it: type the final word in once. Reduced motion leaves the text as rendered.
     var el = document.querySelector("[data-typewriter]");
     if (!el || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var list = [];
+    try { list = JSON.parse(el.getAttribute("data-rotate") || "[]"); } catch (e) { list = []; }
+    if (list.length > 0) {
+      var TYPE = 95, ERASE = 45, HOLD = 2400, GAP = 350;
+      var idx = 0;
+      el.textContent = "";
+      var typeWord = function (word, n) {
+        el.textContent = word.slice(0, n);
+        if (n < word.length) { setTimeout(function () { typeWord(word, n + 1); }, TYPE); return; }
+        if (list.length < 2) return;
+        setTimeout(function () { eraseWord(word, word.length); }, HOLD);
+      };
+      var eraseWord = function (word, n) {
+        el.textContent = word.slice(0, n);
+        if (n > 0) { setTimeout(function () { eraseWord(word, n - 1); }, ERASE); return; }
+        idx = (idx + 1) % list.length;
+        setTimeout(function () { typeWord(list[idx], 1); }, GAP);
+      };
+      setTimeout(function () { typeWord(list[0], 1); }, 700);
+      return;
+    }
     var word = el.textContent || "";
     el.textContent = "";
     var letters = word.split("").map(function (ch) {
