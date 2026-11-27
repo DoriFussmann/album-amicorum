@@ -3,23 +3,13 @@ import { SITE_URL } from "../config/site";
 import { bookOgImageSrc } from "../lib/shop/bookAssets";
 import { isListedTheme, offerPrice, sortThemes } from "../lib/shop/themes";
 import { SHIPPING_FLAT_RATE } from "../lib/shop/cart";
+import { ISBN } from "../lib/shop/retail";
 
 /**
  * Google Merchant Center product feed (RSS 2.0 + g: namespace).
  * Fetched by Merchant Center on a schedule; built from the books collection.
  */
 export const prerender = true;
-
-/** ISBN-13 per edition (registered to Album Amicorum, First Edition 2026). */
-const ISBN: Record<string, string> = {
-  flowers: "9798997498702",
-  animals: "9798997498719",
-  mermaids: "9798997498726",
-  dinosaurs: "9798997498733",
-  space: "9798997498740",
-  fairies: "9798997498757",
-  forest: "9798997498764",
-};
 
 /** Singular edition names used in product titles. */
 const EDITION: Record<string, string> = {

@@ -2,6 +2,7 @@ import type { APIRoute } from "astro";
 import { getCollection } from "astro:content";
 import { generateLlmsTxt } from "seo-core";
 import { ARTICLES_BASE, SITE_NAME, SITE_TAGLINE, SITE_URL } from "../config/site";
+import { amazonUrl } from "../lib/shop/retail";
 
 export const GET: APIRoute = async () => {
   const articles = (await getCollection("articles", ({ data }) => data.draft !== true)).sort(
@@ -16,7 +17,7 @@ export const GET: APIRoute = async () => {
     ...books.map((book) => ({
       title: `My Friends Book — ${book.data.title} edition`,
       path: `/friend-book/${book.data.slug}/`,
-      description: `${book.data.tagline} ${book.data.price}.`,
+      description: `${book.data.tagline} ${book.data.price}.${amazonUrl(book.data.slug) ? ` Also on Amazon (US): ${amazonUrl(book.data.slug)}` : ""}`,
     })),
     { title: "Our Story", path: "/our-story/", description: "The 500-year-old album amicorum tradition behind My Friends Book." },
   ];

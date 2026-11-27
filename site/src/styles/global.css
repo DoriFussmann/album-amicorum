@@ -1936,6 +1936,21 @@
   .product-buy .price-row p {
     margin: 0;
   }
+  .amazon-alt {
+    margin: 0;
+    font-size: 14px;
+  }
+  .book-card-amazon {
+    align-self: flex-start;
+    padding-inline: 4px;
+    color: var(--c-muted);
+    font-size: 13px;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  .book-card-amazon:hover {
+    color: var(--c-fg);
+  }
   .product-facts {
     display: grid;
     gap: 8px;
