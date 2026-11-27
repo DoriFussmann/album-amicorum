@@ -2,6 +2,7 @@ import type { CollectionEntry } from 'astro:content';
 import { abs } from 'seo-core';
 import { SITE_NAME, SITE_URL } from '../../config/site';
 import { bookOgImageSrc } from './bookAssets';
+import { ISBN, amazonUrl } from './retail';
 const absoluteUrl = (path: string) => abs(path, SITE_URL);
 
 /** Verbatim from BookCard.astro — do not paraphrase. */
@@ -67,10 +68,13 @@ export function themeMetaDescription(
 
 export async function productLd(book: CollectionEntry<'books'>): Promise<Record<string, unknown>> {
   const { title, slug, price, cover } = book.data;
+  const amazon = amazonUrl(slug);
   return {
     '@type': 'Product',
     name: `My Friends Book — ${title}`,
     sku: slug,
+    ...(ISBN[slug] ? { gtin13: ISBN[slug] } : {}),
+    ...(amazon ? { sameAs: amazon } : {}),
     image: absoluteUrl(await bookOgImageSrc(cover)),
     description: PRODUCT_DESCRIPTION,
     brand: {

@@ -125,7 +125,7 @@ A loose piece of paper gets lost. A notebook without structure can feel a little
 
 My Friends Book gives each friend their own illustrated pages — a dedicated space to write their name, draw a picture, answer questions about their favorite things, share a memory, and add whatever personal touch they want. The book itself is beautifully illustrated with contemporary watercolor artwork in a nature-inspired aesthetic, so it feels like something worth keeping from the moment a child first opens it. Album Amicorum offers seven themed editions, which means the child receiving it can choose the one that most feels like theirs.
 
-The prompts inside the book function as friendship questions for kids in a ready-made form. A friend doesn't need to think of what to write — the pages guide them gently. What they produce is a hand-filled portrait of themselves: their handwriting, their drawings, their answers to the specific prompts. When twenty friends have filled pages in the same book, the result is something that no photograph or digital file can replicate. It is a physical record of who those friends were, exactly as they were.
+The prompts inside the book function as friendship questions for kids in a ready-made form. A friend doesn't need to think of what to write — the pages guide them gently. What they produce is a hand-filled portrait of themselves: their handwriting, their drawings, their answers to the specific prompts. When thirty friends have filled pages in the same book, the result is something that no photograph or digital file can replicate. It is a physical record of who those friends were, exactly as they were.
 
 ## A Snapshot of Friendship at This Exact Age
 

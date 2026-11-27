@@ -3,23 +3,13 @@ import { SITE_URL } from "../config/site";
 import { bookOgImageSrc } from "../lib/shop/bookAssets";
 import { isListedTheme, offerPrice, sortThemes } from "../lib/shop/themes";
 import { SHIPPING_FLAT_RATE } from "../lib/shop/cart";
+import { ISBN } from "../lib/shop/retail";
 
 /**
  * Google Merchant Center product feed (RSS 2.0 + g: namespace).
  * Fetched by Merchant Center on a schedule; built from the books collection.
  */
 export const prerender = true;
-
-/** ISBN-13 per edition (registered to Album Amicorum, First Edition 2026). */
-const ISBN: Record<string, string> = {
-  flowers: "9798997498702",
-  animals: "9798997498719",
-  mermaids: "9798997498726",
-  dinosaurs: "9798997498733",
-  space: "9798997498740",
-  fairies: "9798997498757",
-  forest: "9798997498764",
-};
 
 /** Singular edition names used in product titles. */
 const EDITION: Record<string, string> = {
@@ -46,8 +36,8 @@ export async function GET() {
     const edition = EDITION[data.slug] ?? data.title;
     const title = `My Friends Book: ${edition} Edition – Friendship Book for Kids, Hardcover`;
     const description =
-      `A keepsake friend book for ages 5–12. Up to 20 friends each fill in their own pages with ` +
-      `memories, favorite things, drawings and a message. ${data.tagline} 40-page square hardcover, ` +
+      `A keepsake friend book for ages 5–12. Up to 30 friends each fill in their own two pages with ` +
+      `memories, favorite things, drawings and a message. ${data.tagline} 64-page square hardcover, ` +
       `30 × 30 cm (11.8 in), with ${edition.toLowerCase()}-themed illustrations. First Edition, 2026.`;
     const image = abs(await bookOgImageSrc(data.cover));
     const extra: string[] = [];

@@ -8,6 +8,7 @@ import { abs, breadcrumbNode, orgNode, websiteNode } from "seo-core";
 import { SITE_IDENTITY, SITE_URL } from "../../config/site";
 import { bookImage, bookImageSrc, bookOgImageSrc } from "../../lib/shop/bookAssets";
 import { bookGalleryAlt } from "../../lib/shop/bookImageAlt";
+import { amazonUrl } from "../../lib/shop/retail";
 import {
   PRODUCT_LEAD_1,
   PRODUCT_LEAD_2,
@@ -46,6 +47,7 @@ const cartItem = JSON.stringify({
   cover: await bookImageSrc(data.cover),
 });
 
+const amazon = amazonUrl(data.slug);
 const canonicalPath = `/friend-book/${data.slug}/`;
 const crumbs = [
   { name: "Home", href: abs("/", SITE_URL) },
@@ -91,6 +93,11 @@ const { Content } = showStory ? await render(book) : { Content: null };
               <a class="btn btn-secondary" href="/cart/">View Cart</a>
             </div>
             <p class="cart-feedback muted" data-cart-feedback aria-live="polite"></p>
+            {amazon && (
+              <p class="amazon-alt muted">
+                Prefer Amazon? <a href={amazon} target="_blank" rel="noopener" data-amazon-link={data.slug}>Buy the {data.title} edition on Amazon</a> (US only).
+              </p>
+            )}
           </div>
           <ul class="product-facts">
             <li>Made for ages 5–12</li>
