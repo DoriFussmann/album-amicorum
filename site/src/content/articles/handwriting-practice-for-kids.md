@@ -108,7 +108,7 @@ A friendship book can give children a steady, meaningful reason to write for peo
 
 The activity can be treated as a shared creative experience rather than a solitary assignment. A child might begin by completing pages about themselves before passing the book to friends. Each person who contributes adds a page that belongs to them — something that can never be recreated once it has been written and given. That permanence gives the handwriting a weight and value that goes well beyond practice.
 
-The process involves three simple steps: making the book personal, passing it to friends, and allowing it to grow as each person fills a page. Over time, the book becomes an irreplaceable collection of handwriting, drawings, and memories from a particular chapter of childhood.
+The process involves three simple steps: making the book personal, passing it to friends, and allowing it to grow as each person fills their pages. Over time, the book becomes an irreplaceable collection of handwriting, drawings, and memories from a particular chapter of childhood.
 
 ## Practice With Different Types of Pages
 
@@ -142,7 +142,7 @@ Writing by hand is, at its core, a deeply human act. It connects thought to move
 
 ### 1. A Friend Book
 
-Start here. A [Friend Book](/friend-book/) — a beautifully illustrated book that a child passes among their friends, each one filling a page with their favourite things, a drawing, a message, and their handwriting — is the single most complete handwriting activity on this list. It combines every element that makes practice stick: a real audience, personal expression, sensory engagement with a quality object worth caring for, and a permanent keepsake that grows more precious with every page filled.
+Start here. A [Friend Book](/friend-book/) — a beautifully illustrated book that a child passes among their friends, each one filling two pages with their favourite things, a drawing, a message, and their handwriting — is the single most complete handwriting activity on this list. It combines every element that makes practice stick: a real audience, personal expression, sensory engagement with a quality object worth caring for, and a permanent keepsake that grows more precious with every page filled.
 
 The magic of a Friend Book lies in what it asks of a child without ever *telling* them it is asking anything. A child who would resist sitting down to copy sentences will spend twenty careful minutes choosing exactly the right words to write in a friend's book, because those words will last. Every entry becomes a preserved moment — handwriting, personality, and memory sealed together on a single illustrated page. Inspired by the centuries-old *album amicorum* tradition, Album Amicorum's illustrated Friend Books bring this idea home: a beautifully made object that children actually want to fill, page by page, friend by friend. It sits at the top of this list because no other activity combines purpose, audience, craft, and lasting meaning so completely.
 

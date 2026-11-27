@@ -107,7 +107,7 @@ That quality — proof, in the people's own words — is something no amount of 
 
 [My Friends Book](/friend-book/) comes in seven illustrated editions: Animals, Dinosaurs, Fairies, Flowers, Forest, Mermaids and Space. Each one is painted in soft watercolor, from the earthy palette of the Animals edition to the sage and cream woodland of the Forest edition, so the book feels like a considered object rather than a fill-in-the-blank workbook.
 
-Inside, every edition works the same way. Each friend fills a page by hand with memories, favorite things, a drawing and a message, guided by gentle prompts with room to draw, so children of every age can leave their mark. The prompts are light enough to leave room for personality and specific enough to produce something more interesting than a signature and a "have a great summer."
+Inside, every edition works the same way. Each friend fills two pages by hand with memories, favorite things, a drawing and a message, guided by gentle prompts with room to draw, so children of every age can leave their mark. The prompts are light enough to leave room for personality and specific enough to produce something more interesting than a signature and a "have a great summer."
 
 Seven editions mean there is almost always one that suits the child you are buying for: a child who loves animals, one who is drawn to fairies or flowers, one who would rather have dinosaurs or outer space. That choice makes the gift feel chosen rather than grabbed, which matters for something meant to last.
 

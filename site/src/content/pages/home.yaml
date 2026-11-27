@@ -1,6 +1,6 @@
 route: /
 meta_title: Friend Books & Memory Books for Kids | Album Amicorum
-meta_description: A $30 hardcover friend book for kids ages 5–12. Up to 20 friends each fill in a page with favorites, drawings and a handwritten note. Seven illustrated designs.
+meta_description: A $30 hardcover friend book for kids ages 5–12. Up to 30 friends each fill in two pages with favorites, drawings and a handwritten note. Seven illustrated designs.
 sections:
   - type: hero
     eyebrow: My Friends Book
@@ -13,8 +13,8 @@ sections:
     sub: A hardcover fill-in book your child passes around. Each friend gets a page for their favorites, a drawing and a note in their own handwriting.
     facts:
       - $30
-      - Hardcover, 40 pages
-      - Room for 20 friends
+      - Hardcover, 64 pages
+      - Room for 30 friends
       - Ages 5–12
       - 7 designs
     cta_primary:
@@ -37,9 +37,9 @@ sections:
     id: what-is
     eyebrow: What is it?
     heading: A book your child's friends fill in.
-    body: Your child hands the book to a friend, a cousin or a teacher. They fill in a page with their name, favorite things, a memory, a drawing and a message, then it goes to the next friend. Twenty pages later, it is a record of the people in your child's life, in their own handwriting.
+    body: Your child hands the book to a friend, a cousin or a teacher. They fill in their two pages with their name, favorite things, a memory, a drawing and a message, then it goes to the next friend. Thirty friends later, it is a record of the people in your child's life, in their own handwriting.
     highlights:
-      - title: Every friend gets a page
+      - title: Every friend gets two pages
         text: Name, favorites, a memory and a drawing, in their own words.
       - title: Written by hand
         text: No screens, no typing. Just pencils, crayons and real handwriting.
@@ -56,12 +56,12 @@ sections:
   - type: process
     id: how-it-works
     eyebrow: How it works
-    heading: Three steps, twenty friends.
+    heading: Three steps, thirty friends.
     steps:
       - title: Your child starts it
-        text: They fill in the first page with their name, favorites and a drawing. The bookmark marks the next empty page.
+        text: They fill in the first two pages with their name, favorites and a drawing. The bookmark marks the next empty page.
       - title: Friends take a turn
-        text: Pass it to classmates, cousins, a teacher or a coach. Each one fills in a page.
+        text: Pass it to classmates, cousins, a teacher or a coach. Each one fills in two pages.
       - title: You keep it
         text: When the pages are full, it is a book of the people who mattered at that age.
   - type: feature-grid
@@ -96,7 +96,7 @@ sections:
     heading: Good to know
     items:
       - q: What is a friend book?
-        a: A friend book is a fill-in book a child passes to friends, family, and teachers. Each person fills a page by hand with memories, favorite things, drawings, and a message, so the finished book becomes a one-of-a-kind record of the people in that child's life.
+        a: A friend book is a fill-in book a child passes to friends, family, and teachers. Each person fills two pages by hand with memories, favorite things, drawings, and a message, so the finished book becomes a one-of-a-kind record of the people in that child's life.
       - q: What ages is My Friends Book for?
         a: My Friends Book is made for children ages 5–12, from the first school years through the end of elementary school.
       - q: How many editions are there?
@@ -108,7 +108,7 @@ sections:
       - q: How long does delivery take?
         a: Up to 7 days, depending on where you are. If the book is for a date, like a birthday or the last day of school, order at least a week ahead and leave time for friends to fill their pages.
       - q: How many friends can fill one book?
-        a: Each book has 40 pages, with room for 20 friends. For a bigger class or group, get a second book.
+        a: Each book has 64 pages, with room for 30 friends (two pages each). For a bigger class or group, get a second book.
       - q: Where does the name Album Amicorum come from?
         a: Album amicorum is Latin for "Book of Friends." Students in Renaissance Europe carried these books on their travels and collected handwritten entries from the friends and teachers they met.
   - type: cta-band
