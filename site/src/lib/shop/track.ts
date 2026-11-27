@@ -62,3 +62,30 @@ export function trackPurchaseOnce(sessionId: string, items: CartItem[]): void {
     trackShopEvent('purchase', items, sessionId);
   }
 }
+
+/**
+ * Count clicks on "Buy on Amazon" links ([data-amazon-link="<slug>"]) in GA4 and,
+ * when the label is set, as the Google Ads "Amazon link click" conversion. Bound once
+ * per page with a delegated listener. Never throws.
+ */
+export function bindAmazonLinkTracking(): void {
+  const w = window as unknown as { __aaAmazonBound?: boolean };
+  if (w.__aaAmazonBound) return;
+  w.__aaAmazonBound = true;
+  document.addEventListener('click', (event) => {
+    try {
+      const link = (event.target as Element | null)?.closest?.('[data-amazon-link]');
+      if (!link) return;
+      const g = gtag();
+      if (!g) return;
+      const slug = link.getAttribute('data-amazon-link') || '';
+      if (ANALYTICS_ID) g('event', 'amazon_click', { item_id: slug, transport_type: 'beacon' });
+      const label = GOOGLE_ADS_LABELS.amazon_click;
+      if (GOOGLE_ADS_ID && label) {
+        g('event', 'conversion', { send_to: `${GOOGLE_ADS_ID}/${label}`, transport_type: 'beacon' });
+      }
+    } catch {
+      // Tracking must never block the link.
+    }
+  });
+}

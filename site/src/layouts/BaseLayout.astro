@@ -150,5 +150,9 @@ const ogImageUrl = abs(ogImage || DEFAULT_OG_IMAGE, SITE_URL);
         });
       })();
     </script>
-  </body>
+      <script>
+      import { bindAmazonLinkTracking } from "../lib/shop/track";
+      bindAmazonLinkTracking();
+    </script>
+</body>
 </html>

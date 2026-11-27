@@ -22,4 +22,5 @@ export const GOOGLE_ADS_LABELS = {
   purchase: clean(import.meta.env.PUBLIC_GOOGLE_ADS_PURCHASE_LABEL),
   add_to_cart: clean(import.meta.env.PUBLIC_GOOGLE_ADS_ADD_TO_CART_LABEL),
   begin_checkout: clean(import.meta.env.PUBLIC_GOOGLE_ADS_BEGIN_CHECKOUT_LABEL),
+  amazon_click: clean(import.meta.env.PUBLIC_GOOGLE_ADS_AMAZON_CLICK_LABEL),
 };
